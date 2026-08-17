@@ -87,6 +87,25 @@ evidencia excluida, trazabilidad de IDs).
 5 excluidas · 116 ítems activos · 29 documentos. Por célula: IPR 24 · IHA 6 ·
 ICT 0 · IOM 65 · LMD 21. **Todos reproducidos.**
 
+## Encuadre en el roadmap (`docs/08`)
+
+Dominios mantenidos **desacoplados** (roadmap §11): Knowledge → Editorial →
+Planner producen el brief aprobado; Visual / Assets / Integrations solo
+**consumen** output aprobado. La evidencia IDIEM es la capa más estable.
+
+| Fase | Estado | En este repo |
+|---|---|---|
+| A — Knowledge System | ✅ Completa (handoff 2A.2) | consumida en `data/` (inmutable) |
+| B — Content Planner | 🟡 En implementación | M0–M4 listos; M5 (grilla mensual) pendiente |
+| C — Editorial Drafting | 🟡 En implementación | fact sheet + brief; M6 (copy) pendiente |
+| D — Design System | ⏳ Handoff futuro | **interfaz** `DesignSystemProvider` (placeholder) |
+| E — Image Library | ⏳ Handoff futuro | **contrato** `ImageAsset` + `AssetQuery` (placeholder) |
+| F–I — Visual/Approval/Metricool/n8n/Publishing | ⏳ Futuras | interfaces `VisualAssetProvider` / `Publisher` (placeholder) |
+
+Decisiones visuales (paleta, tipografías, templates, clasificación de fotos,
+publicación) **no** se toman aquí: llegan por handoffs específicos. `interfaces.py`
+deja los contratos listos sin implementarlos ni hard-codear nada visual.
+
 ## Fuera de alcance en este hito
 
 Generación gráfica final, selección automática de fotos, publicación social,
