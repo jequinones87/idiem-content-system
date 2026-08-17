@@ -39,7 +39,7 @@ src/idiem/
   factsheet.py       M3  motor de fact sheet
   brief.py           M4  generador de brief (schema-valid)
   planner.py         M5  planner mensual (cuotas, cobertura, gaps)
-  drafting.py        M6  drafting adapter (copy acotado al fact sheet)
+  drafting.py        M6  drafting adapter (esqueleto determinista + copy publicable acotado)
   interfaces.py      placeholders diseño/publicación (rule 12)
   cli.py             CLI de demo local
 tests/               pytest (integridad, retrieval, fact sheet, brief, tests A–F)
@@ -115,7 +115,20 @@ Planner producen el brief aprobado; Visual / Assets / Integrations solo
 
 Decisiones visuales (paleta, tipografías, templates, clasificación de fotos,
 publicación) **no** se toman aquí: llegan por handoffs específicos. `interfaces.py`
-deja los contratos listos sin implementarlos ni hard-codear nada visual.
+deja los contratos listos sin implementarlos ni hard-codear nada visual. La ruta
+gráfica elegida para el futuro es **Claude Artifacts (HTML/SVG)**, a la espera del
+handoff de Design System oficial.
+
+### Redacción de copy (M6): dos caminos, mismos guardrails
+
+- **Esqueleto determinista** (`DeterministicDrafter`): sin credenciales; recombina
+  los hechos del brief como material de trabajo interno.
+- **Copy publicable**: `build_drafting_request` genera un encargo **acotado** (solo
+  `allowed_facts` + ángulo + matices + claims/términos bloqueados). El texto final lo
+  produce `LLMDrafter` (credential-agnostic, modo automático) o `ingest_draft`
+  (redacción asistida en sesión, **sin API key**). Ambos validan **fuga de
+  `knowledge_id`** y **términos bloqueados** (rankings/superlativos, GR-04), mantienen
+  `DRAFT` y conservan trazabilidad.
 
 ## Fuera de alcance en este hito
 

@@ -4,17 +4,29 @@ Generates hook/body/CTA *only after* a brief is factual and policy-compliant.
 It never adds an IDIEM fact that is not already in the fact sheet, keeps the
 status ``DRAFT`` and retains traceability (docs/03 M6).
 
-The drafter sits behind :class:`DraftingAdapter` so a future LLM-based drafter
-can plug in — but any such drafter must remain bounded to the brief's
-``allowed_facts``. The default :class:`DeterministicDrafter` is bounded *by
-construction*: it only recombines strings already present in the brief.
+Two drafting paths, same guardrails:
+
+- :class:`DeterministicDrafter` — no credentials. Recombines the brief's own
+  strings into a fact skeleton (an internal working artifact for a human/LLM to
+  rewrite). Bounded by construction.
+- Publish-intended copy — :class:`LLMDrafter` (credential-agnostic, takes a
+  ``complete`` callable) for automated runs, or :func:`ingest_draft` for
+  agent-assisted drafting written in-session on the user's subscription (no API
+  key). Both enforce :func:`assert_no_fact_leakage` (no foreign knowledge_id)
+  and :func:`assert_no_blocked_claim_terms` (no rankings/superlatives, GR-04),
+  keep status ``DRAFT`` and retain traceability.
+
+Any drafter must remain bounded to the brief's ``allowed_facts``; the bounded
+spec is produced by :func:`build_drafting_request`.
 """
 
 from __future__ import annotations
 
 import copy
+import json
 import re
-from typing import Protocol, runtime_checkable
+from dataclasses import asdict, dataclass, field
+from typing import Callable, Protocol, runtime_checkable
 
 from .brief import validate_brief
 
@@ -68,6 +80,160 @@ def assert_no_fact_leakage(brief: dict, draft: dict) -> None:
             raise ValueError(
                 f"Drafting introdujo un knowledge_id fuera del fact sheet: {token}"
             )
+
+
+# ---------------------------------------------------------------------------
+# Bounded drafting request + publish-intended copy path (agent- or LLM-drafted)
+# ---------------------------------------------------------------------------
+
+# Base superlatives/rankings that are never publishable as IDIEM claims (GR-04),
+# even when they appear inside source verified_evidence.
+_BASE_FORBIDDEN_TERMS = (
+    "único", "unico", "única", "unica",
+    "el más grande del mundo", "el mas grande del mundo",
+    "el mayor del mundo", "líder mundial", "lider mundial",
+    "el mejor del mundo", "primero del mundo", "world ranking",
+    "tercero más grande a nivel mundial", "tercero mas grande a nivel mundial",
+    "uno de los tres", "el más grande de", "el mas grande de",
+)
+
+_QUOTED = re.compile(r"['\"“”«»]([^'\"“”«»]{2,60})['\"“”«»]")
+
+DRAFTING_INSTRUCTIONS = (
+    "Redacta un post de LinkedIn en voz institucional IDIEM (español), sobrio y "
+    "técnico. REGLAS ESTRICTAS: (1) usa ÚNICAMENTE la información de allowed_facts; "
+    "no agregues servicios, cifras, clientes, proyectos ni resultados que no estén "
+    "ahí. (2) Respeta cada nota en mandatory_matices. (3) NUNCA publiques los "
+    "blocked_claims ni forbidden_terms (rankings, superlativos, exclusividades, "
+    "primacías mundiales), aunque aparezcan en el texto de la evidencia. (4) No "
+    "expandas términos marcados como 'mencionar por nombre'. (5) Devuelve SOLO un "
+    "JSON válido: {\"hook\": str, \"body\": str, \"cta\": str}."
+)
+
+
+@dataclass
+class DraftingRequest:
+    """The bounded spec any drafter (agent or LLM) must obey for one brief."""
+
+    content_id: str
+    cell: str
+    editorial_angle: str
+    content_type: str
+    recommended_format: str
+    knowledge_ids: list[str]
+    allowed_facts: list[str]
+    mandatory_matices: list[str]
+    blocked_claims: list[str]
+    forbidden_terms: list[str]
+    instructions: str = DRAFTING_INSTRUCTIONS
+
+    def to_dict(self) -> dict:
+        return asdict(self)
+
+
+def forbidden_terms(brief: dict) -> list[str]:
+    """Terms that must not appear in publish-intended copy for this brief.
+
+    Base superlatives plus any single-quoted phrase surfaced inside the brief's
+    blocked_claims (e.g. 'único', 'el más grande del mundo').
+    """
+    terms = {t.lower() for t in _BASE_FORBIDDEN_TERMS}
+    for claim in brief.get("blocked_claims", []):
+        for m in _QUOTED.findall(claim):
+            terms.add(m.strip().lower())
+    return sorted(terms)
+
+
+def build_drafting_request(brief: dict) -> DraftingRequest:
+    """Derive the bounded drafting spec from a factual, policy-checked brief."""
+    return DraftingRequest(
+        content_id=brief.get("content_id", ""),
+        cell=brief.get("cell", ""),
+        editorial_angle=brief.get("editorial_angle", ""),
+        content_type=brief.get("content_type", ""),
+        recommended_format=brief.get("recommended_format", "STATIC"),
+        knowledge_ids=list(brief.get("knowledge_ids", [])),
+        allowed_facts=[_strip_tag(f) for f in brief.get("allowed_facts", [])],
+        mandatory_matices=[_strip_tag(m) for m in brief.get("mandatory_matices", [])],
+        blocked_claims=[_strip_tag(c) for c in brief.get("blocked_claims", [])],
+        forbidden_terms=forbidden_terms(brief),
+    )
+
+
+def render_drafting_prompt(req: DraftingRequest) -> str:
+    """Render the bounded request as a text prompt for an LLM drafter."""
+    payload = req.to_dict()
+    return (
+        f"{req.instructions}\n\n"
+        f"ENCARGO (JSON de entrada):\n"
+        f"{json.dumps(payload, ensure_ascii=False, indent=2)}\n"
+    )
+
+
+def assert_no_blocked_claim_terms(brief: dict, draft: dict) -> None:
+    """Fail closed if publish-intended copy contains a blocked/forbidden term."""
+    text = " ".join(draft.get(k, "") for k in ("hook", "body", "cta")).lower()
+    for term in forbidden_terms(brief):
+        if term and term in text:
+            raise ValueError(
+                f"El copy contiene un término bloqueado (GR-04): {term!r}"
+            )
+
+
+def _parse_copy(raw: str) -> dict:
+    """Parse an LLM response into {hook, body, cta}. Fails closed on bad output."""
+    try:
+        start = raw.index("{")
+        end = raw.rindex("}") + 1
+        data = json.loads(raw[start:end])
+    except (ValueError, json.JSONDecodeError) as exc:
+        raise ValueError(f"Respuesta de drafting no es JSON válido: {exc}") from exc
+    missing = {"hook", "body", "cta"} - set(data)
+    if missing:
+        raise ValueError(f"Faltan campos en el copy: {sorted(missing)}")
+    return {k: str(data[k]) for k in ("hook", "body", "cta")}
+
+
+class LLMDrafter:
+    """Credential-agnostic LLM drafter.
+
+    Takes a ``complete`` callable (str prompt -> str response). In automated mode
+    pass an Anthropic client wrapper; in agent-assisted mode the copy is produced
+    in-session and fed through :func:`ingest_draft` instead. Either way the output
+    is validated against fact leakage and blocked terms before use.
+    """
+
+    def __init__(self, complete: Callable[[str], str]) -> None:
+        self._complete = complete
+
+    def draft(self, brief: dict) -> dict:
+        if brief.get("status") == "CONTENT_GAP" or not brief.get("allowed_facts"):
+            return {"hook": "", "body": "", "cta": ""}
+        req = build_drafting_request(brief)
+        raw = self._complete(render_drafting_prompt(req))
+        draft = _parse_copy(raw)
+        assert_no_fact_leakage(brief, draft)
+        assert_no_blocked_claim_terms(brief, draft)
+        return draft
+
+
+def ingest_draft(brief: dict, copy_dict: dict) -> dict:
+    """Validate externally-authored publish copy and write it into the brief.
+
+    Used for agent-assisted drafting (copy written in-session on the user's
+    subscription, no API key). Enforces both guards, keeps status DRAFT and
+    re-validates the schema.
+    """
+    clean = {k: str(copy_dict.get(k, "")) for k in ("hook", "body", "cta")}
+    assert_no_fact_leakage(brief, clean)
+    assert_no_blocked_claim_terms(brief, clean)
+    out = copy.deepcopy(brief)
+    out["draft_copy"] = clean
+    note = "M6 drafting: copy publicable ingerido y validado (sin fugas ni claims bloqueados)."
+    if note not in out["qa"]["notes"]:
+        out["qa"]["notes"].append(note)
+    validate_brief(out)
+    return out
 
 
 def apply_draft(brief: dict, drafter: DraftingAdapter | None = None) -> dict:
