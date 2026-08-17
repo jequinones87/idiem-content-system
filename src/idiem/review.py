@@ -118,53 +118,63 @@ def set_post_copy(review: MonthReview, content_id: str, copy_dict: dict) -> Post
 
 _CSS = """
 :root{
-  --bg:#f5f6f8; --panel:#ffffff; --ink:#1a1c20; --muted:#5b6472;
-  --line:#e2e5ea; --accent:#2f6f8f; --gap:#9a3b2f; --chip:#eef1f5;
-  --ok:#2e7d52;
+  --bg:#f6f7f9; --panel:#ffffff; --ink:#191c21; --muted:#5a6472;
+  --line:#e3e6ec; --accent:#2f6f8f; --accent-ink:#ffffff;
+  --gap:#9a3b2f; --warn:#a6791f; --chip:#eef1f5;
 }
-:root:not([data-theme="light"]){}
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#14161a; --panel:#1d2026; --ink:#e8eaed; --muted:#9aa3b2;
-    --line:#2a2e37; --accent:#5aa6c7; --gap:#d98b7f; --chip:#242832; --ok:#6bbf92;
+    --bg:#14161a; --panel:#1c2027; --ink:#e8eaed; --muted:#98a2b2;
+    --line:#2a2f39; --accent:#5aa6c7; --accent-ink:#0c1013;
+    --gap:#e0958a; --warn:#d8b163; --chip:#242a33;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#14161a; --panel:#1d2026; --ink:#e8eaed; --muted:#9aa3b2;
-  --line:#2a2e37; --accent:#5aa6c7; --gap:#d98b7f; --chip:#242832; --ok:#6bbf92;
+  --bg:#14161a; --panel:#1c2027; --ink:#e8eaed; --muted:#98a2b2;
+  --line:#2a2f39; --accent:#5aa6c7; --accent-ink:#0c1013;
+  --gap:#e0958a; --warn:#d8b163; --chip:#242a33;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  line-height:1.5;padding:24px}
-.wrap{max-width:960px;margin:0 auto}
+  line-height:1.55;padding:32px 20px;font-variant-numeric:tabular-nums}
+.wrap{max-width:820px;margin:0 auto}
 .banner{background:var(--chip);border:1px solid var(--line);border-radius:8px;
-  padding:10px 14px;font-size:13px;color:var(--muted);margin-bottom:16px}
-h1{font-size:22px;margin:0 0 4px}
-.sub{color:var(--muted);font-size:14px;margin-bottom:16px}
-.counts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+  padding:10px 14px;font-size:12.5px;color:var(--muted);margin-bottom:20px}
+h1{font-size:23px;margin:0 0 4px;letter-spacing:-0.01em;text-wrap:balance}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);
+  margin:26px 0 12px;font-weight:600}
+.sub{color:var(--muted);font-size:14px;margin-bottom:18px}
+.counts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
 .pill{background:var(--panel);border:1px solid var(--line);border-radius:999px;
-  padding:4px 12px;font-size:13px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;
-  padding:16px 18px;margin-bottom:14px}
-.card h3{margin:0 0 8px;font-size:16px}
-.meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
-.tag{background:var(--chip);border-radius:6px;padding:2px 8px;font-size:12px;color:var(--muted)}
-.tag.status{color:#fff;background:var(--accent)}
-.tag.gap{color:#fff;background:var(--gap)}
-.copy{background:var(--bg);border:1px dashed var(--line);border-radius:8px;
-  padding:12px;margin:10px 0}
-.copy .hook{font-weight:600}
-.copy .body{white-space:pre-wrap;margin:8px 0}
+  padding:4px 12px;font-size:12.5px;color:var(--muted)}
+.pill b{color:var(--ink);font-weight:600}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;
+  padding:16px 18px;margin-bottom:12px}
+.card h3{margin:0 0 10px;font-size:13px;color:var(--muted);font-weight:600;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.02em}
+.meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;align-items:center}
+.tag{background:var(--chip);border-radius:6px;padding:2px 9px;font-size:11.5px;
+  color:var(--muted);letter-spacing:.02em}
+.tag.status{color:var(--accent-ink);background:var(--accent);font-weight:600}
+.tag.gap{color:var(--accent-ink);background:var(--gap);font-weight:600}
+.tag.warn{color:var(--accent-ink);background:var(--warn);font-weight:600}
+.copy{background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--accent);
+  border-radius:8px;padding:14px 16px;margin:12px 0}
+.copy .hook{font-weight:650;font-size:15px}
+.copy .body{white-space:pre-wrap;margin:9px 0;max-width:62ch}
 .copy .cta{color:var(--accent);font-weight:600}
-.sec{margin-top:10px}
-.sec b{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.sec{margin-top:12px}
+.sec b{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
 ul{margin:6px 0 0;padding-left:18px}
-li{font-size:14px;margin:2px 0}
+li{font-size:13.5px;margin:3px 0}
 .blocked li{color:var(--gap)}
-.trace{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--muted)}
+.warns li{color:var(--warn)}
+.trace{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;
+  color:var(--muted);margin-top:4px}
 .overflow{overflow-x:auto}
 .gapcard{border-left:4px solid var(--gap)}
+.gapcard h3{color:var(--ink)}
 """
 
 
@@ -178,11 +188,17 @@ def _chips(label: str, items: list[str], cls: str = "") -> str:
 def _post_card(post: PostReview) -> str:
     b = post.brief
     copy = b.get("draft_copy", {})
+    gov = ""
+    if b.get("blocked_claims"):
+        gov += '<span class="tag gap">claims bloqueados</span>'
+    if any("NAME_ONLY" in m for m in b.get("mandatory_matices", [])):
+        gov += '<span class="tag warn">solo nombrar</span>'
     meta = (
         f'<span class="tag status">{html.escape(post.status)}</span>'
         f'<span class="tag">{html.escape(post.cell)}</span>'
         f'<span class="tag">{html.escape(post.content_type)}</span>'
         f'<span class="tag">{html.escape(post.knowledge_id)}</span>'
+        f"{gov}"
     )
     copy_html = (
         f'<div class="copy">'
@@ -193,7 +209,7 @@ def _post_card(post: PostReview) -> str:
     )
     facts = _chips("Hechos permitidos", b.get("allowed_facts", []))
     blocked = _chips("Claims bloqueados", b.get("blocked_claims", []), "blocked")
-    matices = _chips("Matices obligatorios", b.get("mandatory_matices", []))
+    matices = _chips("Matices obligatorios", b.get("mandatory_matices", []), "warns")
     tr = b.get("traceability", {})
     trace = (
         f'<div class="sec"><b>Trazabilidad</b>'
@@ -221,33 +237,30 @@ def _gap_card(gap: GapReview) -> str:
 def render_review_html(review: MonthReview) -> str:
     """Render the review as self-contained body content (Artifact-ready)."""
     counts = (
-        f'<span class="pill">Target: {review.target_count}</span>'
-        f'<span class="pill">DRAFT: {review.draft_count}</span>'
-        f'<span class="pill">CONTENT_GAP: {review.gap_count}</span>'
+        f'<span class="pill">Target <b>{review.target_count}</b></span>'
+        f'<span class="pill">DRAFT <b>{review.draft_count}</b></span>'
+        f'<span class="pill">CONTENT_GAP <b>{review.gap_count}</b></span>'
     )
     quotas = "".join(
-        f'<span class="pill">{html.escape(cell)}: {n}</span>'
+        f'<span class="pill">{html.escape(cell)} <b>{n}</b></span>'
         for cell, n in sorted(review.quotas.items())
     )
     posts = "".join(_post_card(p) for p in review.posts)
     gaps = "".join(_gap_card(g) for g in review.gaps)
-    gaps_section = (
-        f"<h2 style='font-size:18px'>Content gaps ({review.gap_count})</h2>{gaps}"
-        if gaps
-        else ""
-    )
+    gaps_section = f"<h2>Content gaps · {review.gap_count}</h2>{gaps}" if gaps else ""
     return (
-        f"<title>Revisión de contenido {html.escape(review.month)}</title>"
+        f"<title>Grilla editorial {html.escape(review.month)}</title>"
         f"<style>{_CSS}</style>"
         f'<div class="wrap">'
         f'<div class="banner">Uso interno — herramienta de operación, no es pieza de marca. '
         f"Todo permanece DRAFT hasta aprobación humana. La identidad visual IDIEM llega "
         f"en el handoff del Design System.</div>"
-        f"<h1>Plan de contenido — {html.escape(review.month)}</h1>"
-        f'<div class="sub">Revisión editorial con trazabilidad a la biblioteca 2A.2</div>'
+        f"<h1>Plan de contenido · {html.escape(review.month)}</h1>"
+        f'<div class="sub">Revisión editorial con trazabilidad a la biblioteca 2A.2. '
+        f"Cada post traza a su knowledge_id, hechos permitidos, claims bloqueados y fuentes.</div>"
         f'<div class="counts">{counts}</div>'
         f'<div class="counts">{quotas}</div>'
-        f"<h2 style='font-size:18px'>Posts ({review.draft_count})</h2>"
+        f"<h2>Posts · {review.draft_count}</h2>"
         f"{posts}{gaps_section}"
         f"</div>"
     )
