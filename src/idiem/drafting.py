@@ -103,7 +103,7 @@ DRAFTING_INSTRUCTIONS = (
     "Redacta un post de LinkedIn en voz institucional IDIEM (español) siguiendo la "
     "guía editorial (campo 'style'). FORMA: estructura hook → problema → solución "
     "IDIEM con detalle técnico → impacto → CTA; longitud objetivo del estilo "
-    "(~110-170 palabras, 4-5 párrafos); emojis medidos y temáticos; termina con un "
+    "(~110-170 palabras, 4-5 párrafos); emojis presentes y temáticos (1-4 por párrafo según pertinencia); termina con un "
     "bloque de hashtags (usa 'recommended_hashtags', 4-6, incluyendo #IDIEM) y marca "
     "1-3 términos clave como hashtag inline. "
     "REGLAS FACTUALES ESTRICTAS: (1) usa ÚNICAMENTE la información de allowed_facts; "

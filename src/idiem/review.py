@@ -35,6 +35,7 @@ class PostReview:
     status: str
     editorial_angle: str
     brief: dict
+    sources: list[dict] = field(default_factory=list)
 
 
 @dataclass
@@ -54,6 +55,37 @@ class MonthReview:
     posts: list[PostReview] = field(default_factory=list)
     gaps: list[GapReview] = field(default_factory=list)
     plan: dict = field(default_factory=dict)
+
+
+def _collect_sources(kb: KnowledgeBase, brief: dict) -> list[dict]:
+    """Exact source text behind a post: per knowledge item and 2A.3 enrichment.
+
+    Returns records {label, file, page, text} so a reviewer can verify veracity.
+    """
+    sources: list[dict] = []
+    seen_ext: set[str] = set()
+    for kid in brief.get("knowledge_ids", []):
+        for s in kb.sources_for(kid):
+            sources.append(
+                {"label": kid, "file": s.file_name, "page": s.page, "text": s.verified_evidence}
+            )
+        item = kb.item_by_id.get(kid)
+        if item is None:
+            continue
+        for rec in kb.enrichment_for(item.cell, item.service):
+            eid = rec.get("enrichment_id", "EXT")
+            if eid in seen_ext:
+                continue
+            seen_ext.add(eid)
+            sources.append(
+                {
+                    "label": eid,
+                    "file": rec.get("file_name", ""),
+                    "page": rec.get("page", ""),
+                    "text": rec.get("verified_evidence", ""),
+                }
+            )
+    return sources
 
 
 def compose_month(
@@ -88,6 +120,7 @@ def compose_month(
                     status=drafted["status"],
                     editorial_angle=slot.editorial_angle,
                     brief=drafted,
+                    sources=_collect_sources(kb, drafted),
                 )
             )
         else:
@@ -175,11 +208,29 @@ ul{margin:6px 0 0;padding-left:18px}
 li{font-size:13.5px;margin:3px 0}
 .blocked li{color:var(--gap)}
 .warns li{color:var(--warn)}
-.trace{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;
-  color:var(--muted);margin-top:4px}
 .overflow{overflow-x:auto}
 .gapcard{border-left:4px solid var(--gap)}
 .gapcard h3{color:var(--ink)}
+.srcbtn{cursor:pointer;font:inherit;font-size:13px;font-weight:600;
+  color:var(--accent);background:var(--chip);border:1px solid var(--line);
+  border-radius:8px;padding:7px 12px}
+.srcbtn:hover{border-color:var(--accent)}
+.srcbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.srcdlg{border:1px solid var(--line);border-radius:12px;padding:0;max-width:640px;
+  width:calc(100% - 32px);background:var(--panel);color:var(--ink)}
+.srcdlg::backdrop{background:rgba(0,0,0,.45)}
+.dlghead{display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:14px 16px;border-bottom:1px solid var(--line)}
+.dlgclose{cursor:pointer;font:inherit;border:none;background:transparent;
+  color:var(--muted);font-size:16px}
+.dlgbody{padding:8px 16px 4px;max-height:60vh;overflow-y:auto}
+.srcrow{padding:12px 0;border-bottom:1px solid var(--line)}
+.srcrow:last-child{border-bottom:none}
+.srcmeta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:6px}
+.srcfile{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--muted)}
+.srctext{font-size:14px;line-height:1.5}
+.dlgcta{margin:12px 16px 16px;cursor:pointer;font:inherit;font-weight:600;
+  color:var(--accent-ink);background:var(--accent);border:none;border-radius:8px;padding:8px 16px}
 """
 
 
@@ -215,17 +266,35 @@ def _post_card(post: PostReview) -> str:
     facts = _chips("Hechos permitidos", b.get("allowed_facts", []))
     blocked = _chips("Claims bloqueados", b.get("blocked_claims", []), "blocked")
     matices = _chips("Matices obligatorios", b.get("mandatory_matices", []), "warns")
-    tr = b.get("traceability", {})
-    trace = (
-        f'<div class="sec"><b>Trazabilidad</b>'
-        f'<div class="trace overflow">relations: {html.escape(", ".join(tr.get("relation_ids", [])))}<br>'
-        f'documents: {html.escape(", ".join(tr.get("document_ids", [])))}</div></div>'
+
+    dlg_id = f"src-{post.content_id}"
+    source_btn = (
+        f'<div class="sec"><button class="srcbtn" type="button" '
+        f"onclick=\"document.getElementById('{html.escape(dlg_id)}').showModal()\">"
+        f"🔎 Ver fuente ({len(post.sources)})</button></div>"
+    )
+    rows = ""
+    for s in post.sources:
+        rows += (
+            f'<div class="srcrow"><div class="srcmeta">'
+            f'<span class="tag">{html.escape(str(s.get("label","")))}</span>'
+            f'<span class="srcfile">{html.escape(str(s.get("file","")))} · p.{html.escape(str(s.get("page","")))}</span>'
+            f'</div><div class="srctext">{html.escape(str(s.get("text","")))}</div></div>'
+        )
+    dialog = (
+        f'<dialog id="{html.escape(dlg_id)}" class="srcdlg">'
+        f'<form method="dialog"><div class="dlghead">'
+        f"<b>Fuente exacta · {html.escape(post.content_id)}</b>"
+        f'<button class="dlgclose" value="close">✕</button></div></form>'
+        f'<div class="dlgbody">{rows or "<em>Sin fuentes.</em>"}</div>'
+        f'<form method="dialog"><button class="dlgcta">Cerrar</button></form>'
+        f"</dialog>"
     )
     return (
         f'<div class="card" id="{html.escape(post.content_id)}">'
         f"<h3>#{post.seq:02d} · {html.escape(post.content_id)}</h3>"
         f'<div class="meta">{meta}</div>'
-        f"{copy_html}{facts}{blocked}{matices}{trace}"
+        f"{copy_html}{facts}{blocked}{matices}{source_btn}{dialog}"
         f"</div>"
     )
 

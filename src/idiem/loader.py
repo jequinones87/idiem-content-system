@@ -7,6 +7,8 @@ Never writes to ``data/``. Generated state belongs in ``output/``.
 from __future__ import annotations
 
 import json
+import unicodedata
+from collections import defaultdict
 from pathlib import Path
 from typing import Optional
 
@@ -32,6 +34,11 @@ EDITORIAL_RULES = "05_reglas_editoriales_generacion_IDIEM_2A2.json"
 CLOSURE_VALIDATION = "06_validacion_cierre_biblioteca_2A2.json"
 CELL_RULES = "cell_rules.json"
 EDITORIAL_STYLE = "editorial_style.json"
+EVIDENCE_EXTENSION = "ext_2A3/evidence_2A3.json"
+
+
+def _nfc(s: str) -> str:
+    return unicodedata.normalize("NFC", s or "")
 
 
 def load_editorial_style() -> dict:
@@ -66,6 +73,7 @@ class KnowledgeBase:
         editorial_rules: dict,
         cell_rules: dict,
         closure: dict,
+        extension: Optional[dict] = None,
     ) -> None:
         self.metadata = metadata
         self.cell_definitions = cell_definitions
@@ -111,6 +119,25 @@ class KnowledgeBase:
         self._aux_by_cell: dict[str, list[AuxiliaryEvidence]] = {}
         for a in auxiliary_evidence:
             self._aux_by_cell.setdefault(a.cell, []).append(a)
+
+        # --- 2A.3 evidence extension (additive; never mutates 2A.2) -----------
+        self.extension = extension or {}
+        doc_by_filename = {
+            _nfc(d.file_name): d.document_id for d in source_documents
+        }
+        self._enrichment_by_service: dict[tuple[str, str], list[dict]] = defaultdict(list)
+        self._blocked_source_by_service: dict[tuple[str, str], list[dict]] = defaultdict(list)
+        for rec in self.extension.get("enrichment", []):
+            rec = {**rec, "document_id": doc_by_filename.get(_nfc(rec.get("file_name", "")))}
+            self._enrichment_by_service[(rec["cell"], rec["service"])].append(rec)
+        for rec in self.extension.get("blocked_source", []):
+            self._blocked_source_by_service[(rec["cell"], rec["service"])].append(rec)
+
+    def enrichment_for(self, cell: str, service: str) -> list[dict]:
+        return list(self._enrichment_by_service.get((cell, service), []))
+
+    def blocked_source_for(self, cell: str, service: str) -> list[dict]:
+        return list(self._blocked_source_by_service.get((cell, service), []))
 
     # --- convenience accessors ----------------------------------------------
     def cells(self) -> list[str]:
@@ -240,6 +267,9 @@ def load_knowledge_base(data_dir: Optional[Path] = None) -> KnowledgeBase:
     closure = _load_json(data_dir / CLOSURE_VALIDATION)
     cell_rules = _load_json(CONFIG_DIR / CELL_RULES)
 
+    ext_path = data_dir / EVIDENCE_EXTENSION
+    extension = _load_json(ext_path) if ext_path.exists() else {}
+
     return KnowledgeBase(
         metadata=base["metadata"],
         cell_definitions=[_parse_cell_definition(x) for x in base["cell_definitions"]],
@@ -256,4 +286,5 @@ def load_knowledge_base(data_dir: Optional[Path] = None) -> KnowledgeBase:
         editorial_rules=editorial,
         cell_rules=cell_rules,
         closure=closure,
+        extension=extension,
     )

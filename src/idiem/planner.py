@@ -131,6 +131,40 @@ class MonthlyPlanner:
         quotas = _largest_remainder(weights, target)
         plan.log.append(f"Cuotas normalizadas (target={target}): {quotas}")
 
+        # Directed substitution (configured, not silent): when a cell has quota
+        # but zero coverage (e.g. Transporte), reassign its quota to the
+        # configured fallback cells that DO have coverage headroom. This is an
+        # explicit editorial rule, distinct from allow_rebalance.
+        substitutions = self.config.get("substitutions", {})
+        for src_cell, targets in substitutions.items():
+            q = quotas.get(src_cell, 0)
+            if q <= 0 or len(self._candidates(src_cell, recent)) > 0:
+                continue  # only substitute cells that cannot be filled at all
+            quotas[src_cell] = 0
+            # Fallback targets participate even if they carried no base weight.
+            for t in targets:
+                quotas.setdefault(t, 0)
+            valid = list(targets)
+            plan.log.append(
+                f"Sustitución: {q} cupo(s) de {src_cell} (sin cobertura) -> {valid}."
+            )
+            i = 0
+            while q > 0 and valid:
+                if all(
+                    len(self._candidates(t, recent)) - quotas[t] <= 0 for t in valid
+                ):
+                    break  # no fallback has headroom
+                t = valid[i % len(valid)]
+                if len(self._candidates(t, recent)) - quotas[t] > 0:
+                    quotas[t] += 1
+                    q -= 1
+                i += 1
+            if q > 0:
+                quotas[src_cell] = q  # remainder cannot be covered -> honest gap
+                plan.log.append(
+                    f"Sustitución parcial: {q} cupo(s) sin cobertura disponible -> CONTENT_GAP."
+                )
+
         # Fill per cell up to min(quota, coverage). Track shortfalls.
         filled: dict[str, list] = {}
         shortfall: dict[str, int] = {}

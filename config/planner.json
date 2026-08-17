@@ -11,6 +11,9 @@
     "LAB MINERO DIGITAL": 8
   },
   "allow_rebalance": false,
+  "substitutions": {
+    "INFRA CRÍTICA TRANSPORTE": ["INFRA HOSPITALARIA Y ASISTENCIAL", "INFRA PÚBLICA RESILIENTE"]
+  },
   "notes": [
     "Los pesos se normalizan proporcionalmente al target del mes (metodo del mayor residuo).",
     "Si la evidencia real no soporta la cuota de una celda -> CONTENT_GAP, nunca tomar prestado de otra celda.",

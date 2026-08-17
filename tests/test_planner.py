@@ -3,6 +3,12 @@
 from idiem.planner import MonthlyPlanner, _largest_remainder
 
 
+def _no_subs(kb):
+    p = MonthlyPlanner(kb)
+    p.config = {**p.config, "substitutions": {}}
+    return p
+
+
 def test_largest_remainder_sums_to_target():
     weights = {"A": 6, "B": 6, "C": 8, "D": 6, "E": 8}
     alloc = _largest_remainder(weights, 12)
@@ -15,12 +21,19 @@ def test_plan_hits_target_slot_count(kb):
     assert len(plan.slots) == 12
 
 
-def test_transporte_quota_becomes_content_gap(kb):
+def test_transporte_substituted_by_default(kb):
+    # Default config substitutes Transporte's quota into Salud/Pública.
     plan = MonthlyPlanner(kb).build_plan(month="2026-09", target_count=12)
+    assert len(plan.slots) == 12
+    assert all(s.cell != "INFRA CRÍTICA TRANSPORTE" for s in plan.slots)
+    assert all(s.status == "DRAFT" for s in plan.slots)  # fallbacks have coverage
+
+
+def test_transporte_gap_without_substitution(kb):
+    plan = _no_subs(kb).build_plan(month="2026-09", target_count=12)
     transporte = [s for s in plan.slots if s.cell == "INFRA CRÍTICA TRANSPORTE"]
-    assert transporte, "Transporte debe recibir cuota por peso histórico"
+    assert transporte, "sin sustitución, Transporte recibe cuota por peso"
     assert all(s.status == "CONTENT_GAP" for s in transporte)
-    assert all(s.knowledge_id is None for s in transporte)
     assert plan.gaps
 
 
@@ -47,17 +60,27 @@ def test_does_not_exceed_factual_coverage(kb):
     assert len(kids) == len(set(kids))
 
 
-def test_does_not_borrow_across_cells_by_default(kb):
-    # Give all weight to Transporte: quota can't be met and must NOT be filled
-    # from other cells (no silent rebalance).
-    planner = MonthlyPlanner(kb)
-    plan = planner.build_plan(
+def test_does_not_borrow_across_cells_without_config(kb):
+    # Without substitution config, an unfillable cell must NOT borrow from others.
+    plan = _no_subs(kb).build_plan(
         month="2026-09",
         target_count=5,
         weights={"INFRA CRÍTICA TRANSPORTE": 1},
     )
     assert all(s.status == "CONTENT_GAP" for s in plan.slots)
     assert all(s.cell == "INFRA CRÍTICA TRANSPORTE" for s in plan.slots)
+
+
+def test_substitution_reassigns_transporte_quota(kb):
+    # Configured substitution moves Transporte's quota to the fallback cells.
+    plan = MonthlyPlanner(kb).build_plan(
+        month="2026-09",
+        target_count=5,
+        weights={"INFRA CRÍTICA TRANSPORTE": 1},
+    )
+    assert all(s.cell != "INFRA CRÍTICA TRANSPORTE" for s in plan.slots)
+    fallback = {"INFRA HOSPITALARIA Y ASISTENCIAL", "INFRA PÚBLICA RESILIENTE"}
+    assert all(s.cell in fallback for s in plan.slots if s.status == "DRAFT")
 
 
 def test_recent_history_excludes_ids(kb):

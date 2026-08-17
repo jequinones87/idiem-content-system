@@ -38,10 +38,31 @@ def test_no_cross_cell_leak_in_posts(kb):
             assert item.service == anchor.service
 
 
-def test_transporte_only_appears_as_gap(kb):
+def test_transporte_substituted_not_shown_as_post(kb):
+    # With substitution config, Transporte is reassigned, not shown as a post.
     review = compose_month(kb, "2026-09", target_count=12)
+    assert review.draft_count == 12
     assert all(p.cell != "INFRA CRÍTICA TRANSPORTE" for p in review.posts)
-    assert any(g.cell == "INFRA CRÍTICA TRANSPORTE" for g in review.gaps)
+
+
+def test_posts_expose_source_text(kb):
+    review = compose_month(kb, "2026-09", target_count=12)
+    for post in review.posts:
+        assert post.sources, "cada post debe exponer su texto fuente"
+        for s in post.sources:
+            assert s.get("text")
+            assert s.get("file")
+
+
+def test_render_has_source_button_and_dialog(kb):
+    from idiem.review import render_review_html
+
+    review = compose_month(kb, "2026-09", target_count=12)
+    htmlc = render_review_html(review)
+    assert "Ver fuente" in htmlc
+    assert "<dialog" in htmlc
+    # Codes-as-traceability block is gone; source text is shown instead.
+    assert "relations:" not in htmlc
 
 
 def test_render_contains_month_anchors_and_governance(kb):

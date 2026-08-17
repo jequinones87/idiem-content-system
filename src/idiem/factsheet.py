@@ -181,6 +181,34 @@ def build_fact_sheet(
                 f"({aux.production_policy}, GR-13)."
             )
 
+    # 4b) 2A.3 evidence enrichment for the services present (same cell only).
+    if enrich_same_service:
+        services = {h.item.service for h in hits}
+        for svc in sorted(services):
+            for rec in kb.enrichment_for(cell, svc):
+                eid = rec.get("enrichment_id", "EXT")
+                pol = rec.get("generation_policy", policies.USE_FACTUAL)
+                ev = rec.get("verified_evidence", "")
+                if rec.get("document_id"):
+                    sheet.document_ids.append(rec["document_id"])
+                if policies.is_name_only(pol):
+                    sheet.mandatory_matices.append(f"[{eid}] NAME_ONLY: solo nombrar, no expandir.")
+                    continue
+                if ev:
+                    sheet.allowed_facts.append(f"[{eid}] {ev}")
+                if policies.requires_matiz(pol):
+                    sheet.mandatory_matices.append(
+                        f"[{eid}] Verificar vigencia de acreditaciones/cifras antes de publicar (GR-13)."
+                    )
+                if policies.blocks_claims(pol):
+                    for tmpl in policies.BLOCKED_CLAIM_TEMPLATES:
+                        sheet.blocked_claims.append(f"[{eid}] {tmpl}")
+                sheet.log.append(f"{eid}: enriquecimiento 2A.3 ({pol}).")
+            for rec in kb.blocked_source_for(cell, svc):
+                sheet.blocked_claims.append(
+                    f"[fuente] No afirmar: «{rec.get('text','')}» ({rec.get('reason','GR-04')})."
+                )
+
     # 5) Normalize.
     sheet.knowledge_ids = _dedupe(sheet.knowledge_ids)
     sheet.auxiliary_ids = _dedupe(sheet.auxiliary_ids)

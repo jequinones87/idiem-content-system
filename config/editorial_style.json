@@ -28,12 +28,13 @@
     "note": "Si la evidencia disponible no alcanza para esta longitud, escribir un post más corto y honesto; si es insuficiente, marcar EXPERT_INPUT_REQUIRED. Nunca rellenar con datos no respaldados."
   },
   "emoji": {
-    "usage": "medido y temático",
-    "per_paragraph": "1-2",
+    "usage": "presente y temático",
+    "per_paragraph": "1-4",
     "rules": [
-      "Usar emojis del dominio (🏗️ 🏥 ⚙️ 📐 🛡️ 🔍 ⚠️ 📊 ✅ 👷 🌐 👉).",
+      "Usar de 1 a 4 emojis por párrafo, según pertinencia con el mensaje (no forzar).",
+      "Usar emojis del dominio (🏗️ 🏥 ⚙️ 📐 🛡️ 🔍 ⚠️ 📊 ✅ 👷 🔧 🧪 🛰️ 📈 🌐 👉).",
       "Nunca insertar un emoji dentro de un término técnico o una norma.",
-      "No abrir todos los párrafos con emoji; alternar."
+      "Alternar posiciones (inicio/fin de frase); no abrir todos los párrafos igual."
     ]
   },
   "hashtags": {

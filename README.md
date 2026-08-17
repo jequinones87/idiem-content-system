@@ -29,7 +29,8 @@ data/                canónicos 2A.2 (READ-ONLY, no mutar)
 docs/                handoff (01–04)
 config/cell_rules.json   reglas de celda externas/configurables (regla 11)
 config/planner.json      config del planner (pesos/cadencia/target)
-config/editorial_style.json / .md   guía editorial (tono/estructura/hashtags)
+config/editorial_style.json / .md   guía editorial (tono/estructura/hashtags/emojis)
+data/ext_2A3/evidence_2A3.json   extensión aditiva de evidencia (no muta 2A.2)
 schemas/content_brief.schema.json   JSON Schema del brief
 src/idiem/
   loader.py          M1  carga canónicos -> KnowledgeBase indexada
@@ -140,8 +141,23 @@ handoff de Design System oficial.
   conservan trazabilidad.
 - **Profundidad técnica sin inventar**: los briefs por-post se construyen con
   `enrich_same_service=True` — al ítem ancla se suman los ítems de la **misma célula
-  y mismo servicio**, ampliando la evidencia disponible (nunca cruza células). Si la
-  evidencia sigue siendo delgada: post corto honesto o `EXPERT_INPUT_REQUIRED`.
+  y mismo servicio**, más la **extensión de evidencia 2A.3** (`data/ext_2A3/`):
+  capacidades técnicas citadas del texto fuente de los brochures, con política por
+  registro y **superlativos/rankings bloqueados** (GR-04). Es una **capa aditiva** que
+  no muta 2A.2. Si la evidencia sigue delgada: post corto honesto o `EXPERT_INPUT_REQUIRED`.
+
+### Planner: sustitución de célula sin cobertura
+
+`config/planner.json` permite `substitutions`: cuando una célula tiene cuota pero
+**cero cobertura** (p. ej. Transporte), su cuota se reasigna a las células fallback
+configuradas (Salud/Pública) que sí tienen cobertura. Es una regla **explícita y
+logueada**, no un rebalanceo silencioso; el conocimiento nunca cambia de célula.
+
+### Vista de revisión: "Ver fuente"
+
+Cada post expone un botón **Ver fuente** que abre un popup con el **texto exacto
+verificado** (evidencia + documento + página) de cada knowledge item y registro 2A.3,
+para chequear veracidad. No se muestran códigos internos de relación.
 
 ## Fuera de alcance en este hito
 
