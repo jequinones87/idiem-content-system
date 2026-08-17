@@ -1,0 +1,4041 @@
+{
+  "metadata": {
+    "project": "IDIEM — taxonomía maestra de conocimiento",
+    "version": "2A.2",
+    "date": "2026-08-17",
+    "source_map": "02_mapa_contenidos_2A2_CERRADO.csv",
+    "total_relations": 292,
+    "assigned_relations_2A2": 137,
+    "without_prioritized_cell": 150,
+    "excluded_as_evidence": 5,
+    "manual_cell_review": 0,
+    "principle": "La taxonomía celular incluye relaciones asignadas a una de las cinco células, pero no fuerza claims, credenciales, beneficios, mecanismos de contratación, etapas o evidencias sectoriales dentro de Servicio→Capacidad→Aplicación.",
+    "traceability": "Cada nodo conserva relacion_id y documento_id. La auditoría factual 2A.1B no se sobrescribe.",
+    "important_scope_note": "Las cinco células son una taxonomía comercial/editorial prioritaria, no una representación exhaustiva de todo el portafolio IDIEM."
+  },
+  "cells": {
+    "INFRA PÚBLICA RESILIENTE": {
+      "definition": "Infraestructura pública definida principalmente por la naturaleza del proyecto, excluyendo salud y Metro/EFE cuando corresponden a sus células especializadas.",
+      "assigned_relationship_count": 43,
+      "taxonomy_relation_ids": [
+        "R0020",
+        "R0028",
+        "R0036",
+        "R0039",
+        "R0064",
+        "R0113",
+        "R0114",
+        "R0124",
+        "R0126",
+        "R0137",
+        "R0148",
+        "R0219",
+        "R0262",
+        "R0263",
+        "R0264",
+        "R0267",
+        "R0271",
+        "R0275",
+        "R0276",
+        "R0277",
+        "R0280",
+        "R0284",
+        "R0288",
+        "R0289",
+        "R0290",
+        "R0291",
+        "R0292"
+      ],
+      "auxiliary_relation_ids": [
+        "R0037",
+        "R0038",
+        "R0127",
+        "R0128",
+        "R0129",
+        "R0130",
+        "R0131",
+        "R0132",
+        "R0133",
+        "R0232",
+        "R0233",
+        "R0234",
+        "R0235",
+        "R0236",
+        "R0274",
+        "R0287"
+      ],
+      "service_count": 15,
+      "services": [
+        {
+          "service": "Asesoría a Inspección Fiscal",
+          "relation_ids": [
+            "R0020"
+          ],
+          "documentos": [
+            "DOC-01"
+          ],
+          "taxonomy_statuses": [
+            "NORMALIZADO_SEGUN_AUDITORIA"
+          ],
+          "notes": [
+            "La aplicación “obra pública” fue retirada por auditoría."
+          ],
+          "capabilities": [
+            {
+              "capability": "Sistema de gestión de calidad ISO 9001:2015 para elaboración de informes de inspección técnica",
+              "relation_ids": [
+                "R0020"
+              ],
+              "documentos": [
+                "DOC-01"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "La aplicación “obra pública” fue retirada por auditoría."
+              ],
+              "applications": [
+                {
+                  "application": "Obra en construcción / instalación de equipamiento",
+                  "relation_ids": [
+                    "R0020"
+                  ],
+                  "documentos": [
+                    "DOC-01"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Estudios de falla de componentes",
+          "relation_ids": [
+            "R0028"
+          ],
+          "documentos": [
+            "DOC-01"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Peritaje de componentes metálicos",
+              "relation_ids": [
+                "R0028"
+              ],
+              "documentos": [
+                "DOC-01"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Pavimento de autopistas",
+                  "relation_ids": [
+                    "R0028"
+                  ],
+                  "documentos": [
+                    "DOC-01"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Laboratorio en obra",
+          "relation_ids": [
+            "R0036",
+            "R0064",
+            "R0219"
+          ],
+          "documentos": [
+            "DOC-01",
+            "DOC-04",
+            "DOC-29"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Ensayos de materiales en terreno",
+              "relation_ids": [
+                "R0036"
+              ],
+              "documentos": [
+                "DOC-01"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Terminal aeroportuario",
+                  "relation_ids": [
+                    "R0036"
+                  ],
+                  "documentos": [
+                    "DOC-01"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Laboratorio permanente en faena",
+              "relation_ids": [
+                "R0064",
+                "R0219"
+              ],
+              "documentos": [
+                "DOC-04",
+                "DOC-29"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Infraestructura pública",
+                  "relation_ids": [
+                    "R0064",
+                    "R0219"
+                  ],
+                  "documentos": [
+                    "DOC-04",
+                    "DOC-29"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Evaluación de capacidad de carga de puentes",
+          "relation_ids": [
+            "R0039"
+          ],
+          "documentos": [
+            "DOC-01"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Modelación por elementos finitos y topografía de trazado",
+              "relation_ids": [
+                "R0039"
+              ],
+              "documentos": [
+                "DOC-01"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Puente vial",
+                  "relation_ids": [
+                    "R0039"
+                  ],
+                  "documentos": [
+                    "DOC-01"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Estudios y peritajes contractuales",
+          "relation_ids": [
+            "R0113",
+            "R0114"
+          ],
+          "documentos": [
+            "DOC-14"
+          ],
+          "taxonomy_statuses": [
+            "NORMALIZADO_SEGUN_AUDITORIA",
+            "VALIDADO_2A1B"
+          ],
+          "notes": [
+            "No se generaliza a “Sistema de concesiones”."
+          ],
+          "capabilities": [
+            {
+              "capability": "Peritaje de controversias contractuales",
+              "relation_ids": [
+                "R0113"
+              ],
+              "documentos": [
+                "DOC-14"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Contratos públicos",
+                  "relation_ids": [
+                    "R0113"
+                  ],
+                  "documentos": [
+                    "DOC-14"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Soporte ante el Panel Técnico de Concesiones",
+              "relation_ids": [
+                "R0114"
+              ],
+              "documentos": [
+                "DOC-14"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "No se generaliza a “Sistema de concesiones”."
+              ],
+              "applications": [
+                {
+                  "application": "Panel Técnico de Concesiones",
+                  "relation_ids": [
+                    "R0114"
+                  ],
+                  "documentos": [
+                    "DOC-14"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Asesoría a mandantes públicos",
+          "relation_ids": [
+            "R0124"
+          ],
+          "documentos": [
+            "DOC-17"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Acompañamiento del ciclo completo de proyecto público",
+              "relation_ids": [
+                "R0124"
+              ],
+              "documentos": [
+                "DOC-17"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Proyectos del sector público",
+                  "relation_ids": [
+                    "R0124"
+                  ],
+                  "documentos": [
+                    "DOC-17"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Sustentabilidad",
+          "relation_ids": [
+            "R0126"
+          ],
+          "documentos": [
+            "DOC-17"
+          ],
+          "taxonomy_statuses": [
+            "NORMALIZADO_SEGUN_AUDITORIA"
+          ],
+          "notes": [
+            "Se conservan como nombres/referencias; no se afirma que los tres sean certificaciones."
+          ],
+          "capabilities": [
+            {
+              "capability": "CES / GREEN HOSPITAL / LEED",
+              "relation_ids": [
+                "R0126"
+              ],
+              "documentos": [
+                "DOC-17"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "Se conservan como nombres/referencias; no se afirma que los tres sean certificaciones."
+              ],
+              "applications": [
+                {
+                  "application": "Sector público",
+                  "relation_ids": [
+                    "R0126"
+                  ],
+                  "documentos": [
+                    "DOC-17"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Ingeniería contractual",
+          "relation_ids": [
+            "R0137",
+            "R0148",
+            "R0291"
+          ],
+          "documentos": [
+            "DOC-01",
+            "DOC-18",
+            "DOC-20"
+          ],
+          "taxonomy_statuses": [
+            "NORMALIZADO_SEGUN_AUDITORIA",
+            "VALIDADO_2A1B"
+          ],
+          "notes": [
+            "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+          ],
+          "capabilities": [
+            {
+              "capability": "Diagnóstico contractual",
+              "relation_ids": [
+                "R0137",
+                "R0148"
+              ],
+              "documentos": [
+                "DOC-18",
+                "DOC-20"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+              ],
+              "applications": [
+                {
+                  "application": "Obras públicas",
+                  "relation_ids": [
+                    "R0137",
+                    "R0148"
+                  ],
+                  "documentos": [
+                    "DOC-18",
+                    "DOC-20"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Análisis de prefactibilidad de un reclamo",
+              "relation_ids": [
+                "R0137",
+                "R0148"
+              ],
+              "documentos": [
+                "DOC-18",
+                "DOC-20"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+              ],
+              "applications": [
+                {
+                  "application": "Obras públicas",
+                  "relation_ids": [
+                    "R0137",
+                    "R0148"
+                  ],
+                  "documentos": [
+                    "DOC-18",
+                    "DOC-20"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Apoyo técnico para lograr acuerdo",
+              "relation_ids": [
+                "R0137",
+                "R0148"
+              ],
+              "documentos": [
+                "DOC-18",
+                "DOC-20"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+              ],
+              "applications": [
+                {
+                  "application": "Obras públicas",
+                  "relation_ids": [
+                    "R0137",
+                    "R0148"
+                  ],
+                  "documentos": [
+                    "DOC-18",
+                    "DOC-20"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Análisis a la programación de la obra",
+              "relation_ids": [
+                "R0137",
+                "R0148"
+              ],
+              "documentos": [
+                "DOC-18",
+                "DOC-20"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+              ],
+              "applications": [
+                {
+                  "application": "Obras públicas",
+                  "relation_ids": [
+                    "R0137",
+                    "R0148"
+                  ],
+                  "documentos": [
+                    "DOC-18",
+                    "DOC-20"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Análisis ante término anticipado de contrato",
+              "relation_ids": [
+                "R0137",
+                "R0148"
+              ],
+              "documentos": [
+                "DOC-18",
+                "DOC-20"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+              ],
+              "applications": [
+                {
+                  "application": "Obras públicas",
+                  "relation_ids": [
+                    "R0137",
+                    "R0148"
+                  ],
+                  "documentos": [
+                    "DOC-18",
+                    "DOC-20"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": [
+            {
+              "application": "Terminal Internacional Aeropuerto AMB",
+              "relation_ids": [
+                "R0291"
+              ],
+              "documentos": [
+                "DOC-01"
+              ]
+            }
+          ]
+        },
+        {
+          "service": "Servicios de Tecnología de la Construcción",
+          "relation_ids": [
+            "R0262",
+            "R0275"
+          ],
+          "documentos": [
+            "DOC-16",
+            "DOC-31"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Asesoría e innovación para edificación pública",
+              "relation_ids": [
+                "R0262",
+                "R0275"
+              ],
+              "documentos": [
+                "DOC-16",
+                "DOC-31"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Edificación pública",
+                  "relation_ids": [
+                    "R0262",
+                    "R0275"
+                  ],
+                  "documentos": [
+                    "DOC-16",
+                    "DOC-31"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Sustentabilidad y Arquitectura",
+          "relation_ids": [
+            "R0263",
+            "R0264",
+            "R0276",
+            "R0277"
+          ],
+          "documentos": [
+            "DOC-16",
+            "DOC-31"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_2A1B",
+            "VALIDADO_CON_MATIZ_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Soluciones de sustentabilidad y arquitectura",
+              "relation_ids": [
+                "R0263",
+                "R0276"
+              ],
+              "documentos": [
+                "DOC-16",
+                "DOC-31"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_CON_MATIZ_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Infraestructura y edificación pública",
+                  "relation_ids": [
+                    "R0263",
+                    "R0276"
+                  ],
+                  "documentos": [
+                    "DOC-16",
+                    "DOC-31"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Planes y estudios de cambio climático",
+              "relation_ids": [
+                "R0264",
+                "R0277"
+              ],
+              "documentos": [
+                "DOC-16",
+                "DOC-31"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Infraestructura territorial/comunal",
+                  "relation_ids": [
+                    "R0264",
+                    "R0277"
+                  ],
+                  "documentos": [
+                    "DOC-16",
+                    "DOC-31"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Ingeniería contra incendios",
+          "relation_ids": [
+            "R0267",
+            "R0280",
+            "R0290"
+          ],
+          "documentos": [
+            "DOC-01",
+            "DOC-16",
+            "DOC-31"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_2A1B",
+            "VALIDADO_CON_MATIZ_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Asesoría y estudios de ingeniería contra incendios",
+              "relation_ids": [
+                "R0267",
+                "R0280"
+              ],
+              "documentos": [
+                "DOC-16",
+                "DOC-31"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_CON_MATIZ_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Infraestructura pública/edificación",
+                  "relation_ids": [
+                    "R0267",
+                    "R0280"
+                  ],
+                  "documentos": [
+                    "DOC-16",
+                    "DOC-31"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": [
+            {
+              "application": "Terminal Internacional Aeropuerto AMB",
+              "relation_ids": [
+                "R0290"
+              ],
+              "documentos": [
+                "DOC-01"
+              ]
+            }
+          ]
+        },
+        {
+          "service": "Servicios de ingeniería acústica",
+          "relation_ids": [
+            "R0271",
+            "R0284"
+          ],
+          "documentos": [
+            "DOC-16",
+            "DOC-31"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_CON_MATIZ_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Ensayos, monitoreo y soluciones acústicas",
+              "relation_ids": [
+                "R0271",
+                "R0284"
+              ],
+              "documentos": [
+                "DOC-16",
+                "DOC-31"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_CON_MATIZ_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Edificación pública/entorno",
+                  "relation_ids": [
+                    "R0271",
+                    "R0284"
+                  ],
+                  "documentos": [
+                    "DOC-16",
+                    "DOC-31"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Evaluación estructural y peritajes",
+          "relation_ids": [
+            "R0288"
+          ],
+          "documentos": [
+            "DOC-01"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [],
+          "direct_applications": [
+            {
+              "application": "Puente Viejo Cautín",
+              "relation_ids": [
+                "R0288"
+              ],
+              "documentos": [
+                "DOC-01"
+              ]
+            }
+          ]
+        },
+        {
+          "service": "Diagnóstico técnico de obras ejecutadas",
+          "relation_ids": [
+            "R0289"
+          ],
+          "documentos": [
+            "DOC-01"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Diagnóstico de estado actual",
+              "relation_ids": [
+                "R0289"
+              ],
+              "documentos": [
+                "DOC-01"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Centro Cultural GAM",
+                  "relation_ids": [
+                    "R0289"
+                  ],
+                  "documentos": [
+                    "DOC-01"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Ensayos de especialidades",
+          "relation_ids": [
+            "R0292"
+          ],
+          "documentos": [
+            "DOC-01"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [],
+          "direct_applications": [
+            {
+              "application": "Terminal Internacional Aeropuerto AMB",
+              "relation_ids": [
+                "R0292"
+              ],
+              "documentos": [
+                "DOC-01"
+              ]
+            }
+          ]
+        }
+      ],
+      "auxiliary_evidence": {
+        "ATRIBUTO_CAPACIDAD_ORGANIZACIONAL": [
+          {
+            "relation_id": "R0131",
+            "documento_id": "DOC-17",
+            "nombre_archivo": "Original ficha N°2 - Estudios técnicos y asesorías a mandantes públicos.pdf",
+            "pagina_fuente": "1",
+            "resultado_auditoria_2A1B": "CORRECTO_Y_VERIFICABLE",
+            "estado_uso_2A1B": "APTO_FACTUAL",
+            "evidencia_verificada_2A1B": "La fuente declara '12 áreas especializadas en distintas disciplinas de la ingeniería', servicios multidisciplinarios y 'Para todo tipo de proyecto'.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Enfoque multidisciplinario",
+            "source_capability": "12 áreas especializadas en distintas disciplinas de la ingeniería",
+            "source_application": "Para todo tipo de proyecto",
+            "note": "Capacidad multidisciplinaria; no es servicio técnico discreto."
+          }
+        ],
+        "CREDENCIAL_INSTITUCIONAL": [
+          {
+            "relation_id": "R0132",
+            "documento_id": "DOC-17",
+            "nombre_archivo": "Original ficha N°2 - Estudios técnicos y asesorías a mandantes públicos.pdf",
+            "pagina_fuente": "1",
+            "resultado_auditoria_2A1B": "CORRECTO_CON_MATIZ",
+            "estado_uso_2A1B": "APTO_CON_MATIZ",
+            "evidencia_verificada_2A1B": "La fuente se autodefine como 'Institución de Derecho Público de carácter técnico'.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Sintonizados con los desafíos del sector público y de la construcción",
+            "source_capability": "Institución de Derecho Público de carácter técnico",
+            "source_application": "sector público",
+            "note": "Naturaleza jurídica/institucional de derecho público."
+          }
+        ],
+        "CREDENCIAL_RESPALDO": [
+          {
+            "relation_id": "R0133",
+            "documento_id": "DOC-17",
+            "nombre_archivo": "Original ficha N°2 - Estudios técnicos y asesorías a mandantes públicos.pdf",
+            "pagina_fuente": "1",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente agrupa bajo 'Alto estándar técnico' el respaldo de la Facultad de Ingeniería y la frase 'Acreditaciones ISO 9001 en gestión de calidad, INN y Minvu'.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Alto estándar técnico",
+            "source_capability": "Respaldo de la Facultad de Ingeniería de la Universidad de Chile; Acreditaciones ISO 9001 en gestión de calidad, INN y Minvu",
+            "source_application": "NO IDENTIFICADO",
+            "note": "Separar respaldo universitario de credenciales/acreditaciones; no homogeneizar."
+          }
+        ],
+        "ETAPA_CICLO_DE_VIDA": [
+          {
+            "relation_id": "R0127",
+            "documento_id": "DOC-17",
+            "nombre_archivo": "Original ficha N°2 - Estudios técnicos y asesorías a mandantes públicos.pdf",
+            "pagina_fuente": "2",
+            "resultado_auditoria_2A1B": "CORRECTO_Y_VERIFICABLE",
+            "estado_uso_2A1B": "APTO_FACTUAL",
+            "evidencia_verificada_2A1B": "La etapa Diseño enumera mecánica de suelos, topografía, revisión de proyectos/validación normativa, coordinación BIM, revisión del plan de inspección y ensayos de materiales y sustentabilidad.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Diseño",
+            "source_capability": "Mecánica de suelos; Topografía; Revisión de proyectos y validación normativa (arquitectura, estructura y especialidades); Coordinación BIM; Revisión del plan de inspección y ensayos de materiales; Sustentabilidad",
+            "source_application": "NO IDENTIFICADO",
+            "note": "Bloque de servicios de etapa Diseño; se preserva como estructura de ciclo de vida."
+          },
+          {
+            "relation_id": "R0128",
+            "documento_id": "DOC-17",
+            "nombre_archivo": "Original ficha N°2 - Estudios técnicos y asesorías a mandantes públicos.pdf",
+            "pagina_fuente": "2",
+            "resultado_auditoria_2A1B": "CORRECTO_Y_VERIFICABLE",
+            "estado_uso_2A1B": "APTO_FACTUAL",
+            "evidencia_verificada_2A1B": "La etapa Construcción enumera ITO/Asesoría a la Inspección Fiscal, ensayos de control de obras, levantamiento para término de contrato, BIM en terreno y estudios/asesorías en controversias.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Construcción",
+            "source_capability": "Inspección técnica de obras (Asesoría a la Inspección Fiscal); Ensayos de control de obras; Levantamiento en terreno para término de contrato (Medición de avance físico); BIM en terreno; Estudios técnicos y asesorías en controversias en contratos de construcción",
+            "source_application": "NO IDENTIFICADO",
+            "note": "Bloque de servicios de etapa Construcción; se preserva como estructura de ciclo de vida."
+          },
+          {
+            "relation_id": "R0129",
+            "documento_id": "DOC-17",
+            "nombre_archivo": "Original ficha N°2 - Estudios técnicos y asesorías a mandantes públicos.pdf",
+            "pagina_fuente": "2",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La etapa Operación enumera ocho prestaciones: análisis operacionales, inspecciones, peritajes, mediciones en terreno, sustentabilidad, Modelación As-Build, levantamiento/rehabilitación estructural y servicios a edificios patrimoniales.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Operación",
+            "source_capability": "Análisis operacionales; Inspecciones; Peritajes; Mediciones en terreno; Sustentabilidad; Modelación As-Build; Levantamiento y rehabilitación estructural; Servicios a edificios patrimoniales",
+            "source_application": "edificios patrimoniales",
+            "note": "Bloque de servicios de etapa Operación; no aplicar “edificios patrimoniales” a todo el bloque."
+          },
+          {
+            "relation_id": "R0130",
+            "documento_id": "DOC-17",
+            "nombre_archivo": "Original ficha N°2 - Estudios técnicos y asesorías a mandantes públicos.pdf",
+            "pagina_fuente": "2",
+            "resultado_auditoria_2A1B": "CORRECTO_CON_MATIZ",
+            "estado_uso_2A1B": "APTO_CON_MATIZ",
+            "evidencia_verificada_2A1B": "La fuente utiliza literalmente la grafía 'Modelación As-Build'.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Operación",
+            "source_capability": "Modelación As-Build",
+            "source_application": "NO IDENTIFICADO",
+            "note": "Modelación As-Built declarada dentro de etapa Operación."
+          }
+        ],
+        "I+D_PROTOTIPO": [
+          {
+            "relation_id": "R0037",
+            "documento_id": "DOC-01",
+            "nombre_archivo": "Brochure Idiem infraestructura VF.pdf",
+            "pagina_fuente": "14",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente declara que IDIEM trabaja en desarrollar 'a nivel de prototipo' un Modelo Predictivo para la Conservación de Puentes para el MOP, con análisis sobre servicios, APIs y bases de datos, usando dos puentes de Magallanes.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Modelo Predictivo para la Conservación de Puentes",
+            "source_capability": "Utiliza la información existente con un análisis inteligente e innovador, orquestando distintos servicios, APIs y Bases de Datos",
+            "source_application": "dos puentes ubicados en la Región de Magallanes",
+            "note": "Prototipo de Modelo Predictivo para la Conservación de Puentes; no tratar como servicio comercial vigente."
+          },
+          {
+            "relation_id": "R0038",
+            "documento_id": "DOC-01",
+            "nombre_archivo": "Brochure Idiem infraestructura VF.pdf",
+            "pagina_fuente": "14",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente describe el mismo prototipo de Modelo Predictivo para la Conservación de Puentes, replicable y escalable, adaptado a necesidades del MOP.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Modelo Predictivo para la Conservación de Puentes",
+            "source_capability": "análisis inteligente e innovador, orquestando distintos servicios, APIs y Bases de Datos",
+            "source_application": "puentes",
+            "note": "Prototipo/iniciativa de I+D; no tratar como servicio comercial vigente."
+          }
+        ],
+        "MECANISMO_CONTRATACION": [
+          {
+            "relation_id": "R0232",
+            "documento_id": "DOC-05",
+            "nombre_archivo": "OR Ficha 03 Convenios-IDIEM (1).pdf",
+            "pagina_fuente": "2",
+            "resultado_auditoria_2A1B": "CORRECTO_CON_MATIZ",
+            "estado_uso_2A1B": "APTO_CON_MATIZ",
+            "evidencia_verificada_2A1B": "La fuente afirma que la Ley 21.094 permite a las universidades estatales celebrar convenios de prestación de servicios con el Estado de Chile, excluidos de la aplicación de la Ley 19.886, y que ello permite convenios de manera directa y expedita.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Convenios de prestación de servicios a organismos públicos bajo la Ley 21.094 sobre universidades estatales",
+            "source_capability": "Permite celebrar convenios de prestación de servicios de manera directa y expedita",
+            "source_application": "Estado de Chile / organismos técnicos del Estado",
+            "note": "Convenios con organismos públicos bajo Ley 21.094; vigencia jurídica requiere validación externa."
+          },
+          {
+            "relation_id": "R0233",
+            "documento_id": "DOC-05",
+            "nombre_archivo": "OR Ficha 03 Convenios-IDIEM (1).pdf",
+            "pagina_fuente": "2",
+            "resultado_auditoria_2A1B": "CORRECTO_Y_VERIFICABLE",
+            "estado_uso_2A1B": "APTO_FACTUAL",
+            "evidencia_verificada_2A1B": "La fuente declara que el mecanismo pone a disposición de los organismos técnicos del Estado una red de apoyo de universidades públicas.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Convenios de prestación de servicios a organismos públicos bajo la Ley 21.094 sobre universidades estatales",
+            "source_capability": "Pone a su disposición una red de apoyo de universidades públicas",
+            "source_application": "organismos técnicos del Estado",
+            "note": "Acceso a red de universidades públicas como atributo del mecanismo de convenios."
+          },
+          {
+            "relation_id": "R0234",
+            "documento_id": "DOC-05",
+            "nombre_archivo": "OR Ficha 03 Convenios-IDIEM (1).pdf",
+            "pagina_fuente": "2",
+            "resultado_auditoria_2A1B": "CORRECTO_Y_VERIFICABLE",
+            "estado_uso_2A1B": "APTO_FACTUAL",
+            "evidencia_verificada_2A1B": "La fuente declara que facilita el acceso a equipos de profesionales de alto nivel para resolver necesidades técnicas de organismos del Estado.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Convenios de prestación de servicios a organismos públicos bajo la Ley 21.094 sobre universidades estatales",
+            "source_capability": "Facilita el acceso a equipos de profesionales de alto nivel que colaboren en resolver sus necesidades técnicas",
+            "source_application": "necesidades técnicas de organismos del Estado",
+            "note": "Acceso a equipos profesionales especializados como atributo del mecanismo."
+          },
+          {
+            "relation_id": "R0235",
+            "documento_id": "DOC-05",
+            "nombre_archivo": "OR Ficha 03 Convenios-IDIEM (1).pdf",
+            "pagina_fuente": "1",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente declara 'Te brindamos asesoría técnica para optimizar el uso de los recursos disponibles'. En la misma página, pero como mensaje separado, aparece la ejecución presupuestaria del plan de inversión anual.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Convenios de prestación de servicios a organismos públicos bajo la Ley 21.094 sobre universidades estatales",
+            "source_capability": "Te brindamos asesoría técnica para optimizar el uso de los recursos disponibles",
+            "source_application": "plan de inversión anual",
+            "note": "Asesoría/optimización de recursos vinculada a convenios; no inferir aplicación adicional."
+          },
+          {
+            "relation_id": "R0236",
+            "documento_id": "DOC-05",
+            "nombre_archivo": "OR Ficha 03 Convenios-IDIEM (1).pdf",
+            "pagina_fuente": "1",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente afirma 'Facilita la ejecución presupuestaria del plan de inversión anual'.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Convenios de prestación de servicios a organismos públicos bajo la Ley 21.094 sobre universidades estatales",
+            "source_capability": "Facilita la ejecución presupuestaria del plan de inversión anual",
+            "source_application": "plan de inversión anual",
+            "note": "Beneficio de ejecución presupuestaria declarado; requiere revisión jurídico-administrativa antes de reutilización."
+          },
+          {
+            "relation_id": "R0274",
+            "documento_id": "DOC-16",
+            "nombre_archivo": "Ficha 15 Division DTC trazado (1) (1).pdf",
+            "pagina_fuente": "2",
+            "resultado_auditoria_2A1B": "CORRECTO_CON_MATIZ",
+            "estado_uso_2A1B": "APTO_CON_MATIZ",
+            "evidencia_verificada_2A1B": "La fuente declara que realiza convenios de prestación de servicios a organismos públicos bajo la Ley 21.094 sobre universidades estatales.",
+            "grupo_documental_2A1B": "G_DTC_16_31",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Realizamos convenios de prestación de servicios a organismos públicos bajo la Ley 21.094 sobre universidades estatales",
+            "source_capability": "Realizamos convenios de prestación de servicios a organismos públicos bajo la Ley 21.094 sobre universidades estatales",
+            "source_application": "organismos públicos",
+            "note": "Mención de convenios con organismos públicos bajo Ley 21.094; vigencia jurídica no auditada."
+          },
+          {
+            "relation_id": "R0287",
+            "documento_id": "DOC-31",
+            "nombre_archivo": "Ficha 15 Servicios de tecnología de la construcción (DTC).pdf",
+            "pagina_fuente": "2",
+            "resultado_auditoria_2A1B": "CORRECTO_CON_MATIZ",
+            "estado_uso_2A1B": "APTO_CON_MATIZ",
+            "evidencia_verificada_2A1B": "Contenido idéntico a DOC-16: convenios con organismos públicos bajo Ley 21.094.",
+            "grupo_documental_2A1B": "G_DTC_16_31",
+            "fuente_independiente_2A1B": "NO",
+            "source_service": "Realizamos convenios de prestación de servicios a organismos públicos bajo la Ley 21.094 sobre universidades estatales",
+            "source_capability": "Realizamos convenios de prestación de servicios a organismos públicos bajo la Ley 21.094 sobre universidades estatales",
+            "source_application": "organismos públicos",
+            "note": "Mención de convenios con organismos públicos bajo Ley 21.094; vigencia jurídica no auditada."
+          }
+        ]
+      }
+    },
+    "INFRA HOSPITALARIA Y ASISTENCIAL": {
+      "definition": "Infraestructura de salud pública y privada; el tipo de proyecto sanitario/asistencial tiene prioridad sobre Infra Pública Resiliente.",
+      "assigned_relationship_count": 4,
+      "taxonomy_relation_ids": [
+        "R0125",
+        "R0135",
+        "R0146"
+      ],
+      "auxiliary_relation_ids": [
+        "R0034"
+      ],
+      "service_count": 2,
+      "services": [
+        {
+          "service": "Sustentabilidad",
+          "relation_ids": [
+            "R0125"
+          ],
+          "documentos": [
+            "DOC-17"
+          ],
+          "taxonomy_statuses": [
+            "TERMINO_FUENTE_NO_DEFINIDO"
+          ],
+          "notes": [
+            "GREEN HOSPITAL se conserva como término fuente; su alcance técnico no está definido por el brochure."
+          ],
+          "capabilities": [
+            {
+              "capability": "GREEN HOSPITAL",
+              "relation_ids": [
+                "R0125"
+              ],
+              "documentos": [
+                "DOC-17"
+              ],
+              "taxonomy_statuses": [
+                "TERMINO_FUENTE_NO_DEFINIDO"
+              ],
+              "notes": [
+                "GREEN HOSPITAL se conserva como término fuente; su alcance técnico no está definido por el brochure."
+              ],
+              "applications": []
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Ingeniería contractual",
+          "relation_ids": [
+            "R0135",
+            "R0146"
+          ],
+          "documentos": [
+            "DOC-18",
+            "DOC-20"
+          ],
+          "taxonomy_statuses": [
+            "NORMALIZADO_SEGUN_AUDITORIA"
+          ],
+          "notes": [
+            "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+          ],
+          "capabilities": [
+            {
+              "capability": "Diagnóstico contractual",
+              "relation_ids": [
+                "R0135",
+                "R0146"
+              ],
+              "documentos": [
+                "DOC-18",
+                "DOC-20"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+              ],
+              "applications": [
+                {
+                  "application": "Salud",
+                  "relation_ids": [
+                    "R0135",
+                    "R0146"
+                  ],
+                  "documentos": [
+                    "DOC-18",
+                    "DOC-20"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Análisis de prefactibilidad de un reclamo",
+              "relation_ids": [
+                "R0135",
+                "R0146"
+              ],
+              "documentos": [
+                "DOC-18",
+                "DOC-20"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+              ],
+              "applications": [
+                {
+                  "application": "Salud",
+                  "relation_ids": [
+                    "R0135",
+                    "R0146"
+                  ],
+                  "documentos": [
+                    "DOC-18",
+                    "DOC-20"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Apoyo técnico para lograr acuerdo",
+              "relation_ids": [
+                "R0135",
+                "R0146"
+              ],
+              "documentos": [
+                "DOC-18",
+                "DOC-20"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+              ],
+              "applications": [
+                {
+                  "application": "Salud",
+                  "relation_ids": [
+                    "R0135",
+                    "R0146"
+                  ],
+                  "documentos": [
+                    "DOC-18",
+                    "DOC-20"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Análisis a la programación de la obra",
+              "relation_ids": [
+                "R0135",
+                "R0146"
+              ],
+              "documentos": [
+                "DOC-18",
+                "DOC-20"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+              ],
+              "applications": [
+                {
+                  "application": "Salud",
+                  "relation_ids": [
+                    "R0135",
+                    "R0146"
+                  ],
+                  "documentos": [
+                    "DOC-18",
+                    "DOC-20"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Análisis ante término anticipado de contrato",
+              "relation_ids": [
+                "R0135",
+                "R0146"
+              ],
+              "documentos": [
+                "DOC-18",
+                "DOC-20"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+              ],
+              "applications": [
+                {
+                  "application": "Salud",
+                  "relation_ids": [
+                    "R0135",
+                    "R0146"
+                  ],
+                  "documentos": [
+                    "DOC-18",
+                    "DOC-20"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        }
+      ],
+      "auxiliary_evidence": {
+        "EVIDENCIA_SECTORIAL": [
+          {
+            "relation_id": "R0034",
+            "documento_id": "DOC-01",
+            "nombre_archivo": "Brochure Idiem infraestructura VF.pdf",
+            "pagina_fuente": "12",
+            "resultado_auditoria_2A1B": "CORRECTO_CON_MATIZ",
+            "estado_uso_2A1B": "APTO_CON_MATIZ",
+            "evidencia_verificada_2A1B": "La fuente afirma que IDIEM ha participado en la construcción de 'una gran cantidad de hospitales públicos' dentro de una enumeración histórica de grandes obras.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "NO IDENTIFICADO",
+            "source_capability": "NO IDENTIFICADO",
+            "source_application": "una gran cantidad de hospitales públicos",
+            "note": "Mención histórica a hospitales públicos; no identifica servicio/capacidad."
+          }
+        ]
+      }
+    },
+    "INFRA CRÍTICA TRANSPORTE": {
+      "definition": "Exclusivamente proyectos de Metro y EFE y su infraestructura directamente asociada.",
+      "assigned_relationship_count": 1,
+      "taxonomy_relation_ids": [],
+      "auxiliary_relation_ids": [
+        "R0035"
+      ],
+      "service_count": 0,
+      "services": [],
+      "auxiliary_evidence": {
+        "EVIDENCIA_SECTORIAL": [
+          {
+            "relation_id": "R0035",
+            "documento_id": "DOC-01",
+            "nombre_archivo": "Brochure Idiem infraestructura VF.pdf",
+            "pagina_fuente": "12",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente afirma participación histórica en la construcción del Metro de Santiago y de los túneles de Chacabuco y Lo Prado.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "NO IDENTIFICADO",
+            "source_capability": "NO IDENTIFICADO",
+            "source_application": "Metro de Santiago, de los túneles de Chacabuco y Lo Prado",
+            "note": "Mención a Metro de Santiago y túneles; no identifica servicio/capacidad."
+          }
+        ]
+      }
+    },
+    "INFRA OPERACIÓN MINERA": {
+      "definition": "Continuidad operacional, integridad, confiabilidad, diagnóstico, ingeniería y soporte técnico de infraestructura y activos mineros, incluidos servicios CAPEX especializados.",
+      "assigned_relationship_count": 56,
+      "taxonomy_relation_ids": [
+        "R0010",
+        "R0011",
+        "R0040",
+        "R0041",
+        "R0056",
+        "R0077",
+        "R0078",
+        "R0079",
+        "R0080",
+        "R0081",
+        "R0082",
+        "R0083",
+        "R0084",
+        "R0085",
+        "R0086",
+        "R0087",
+        "R0088",
+        "R0089",
+        "R0136",
+        "R0147",
+        "R0152",
+        "R0153",
+        "R0154",
+        "R0155",
+        "R0156",
+        "R0157",
+        "R0158",
+        "R0159",
+        "R0160",
+        "R0161",
+        "R0162",
+        "R0191",
+        "R0192",
+        "R0193",
+        "R0194",
+        "R0195",
+        "R0196",
+        "R0197",
+        "R0198",
+        "R0199",
+        "R0200",
+        "R0202",
+        "R0203",
+        "R0204",
+        "R0205",
+        "R0206",
+        "R0207",
+        "R0249",
+        "R0260"
+      ],
+      "auxiliary_relation_ids": [
+        "R0090",
+        "R0163",
+        "R0164",
+        "R0165",
+        "R0208",
+        "R0209",
+        "R0210"
+      ],
+      "service_count": 13,
+      "services": [
+        {
+          "service": "Monitoreo geotécnico",
+          "relation_ids": [
+            "R0010",
+            "R0011"
+          ],
+          "documentos": [
+            "DOC-01"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Instrumentación y monitoreo remoto de depósitos de relaves",
+              "relation_ids": [
+                "R0010"
+              ],
+              "documentos": [
+                "DOC-01"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Depósitos de relaves",
+                  "relation_ids": [
+                    "R0010"
+                  ],
+                  "documentos": [
+                    "DOC-01"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Monitoreo remoto",
+              "relation_ids": [
+                "R0011"
+              ],
+              "documentos": [
+                "DOC-01"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Depósitos de relaves",
+                  "relation_ids": [
+                    "R0011"
+                  ],
+                  "documentos": [
+                    "DOC-01"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Ingeniería de apoyo para proyectos mineros",
+          "relation_ids": [
+            "R0040",
+            "R0041"
+          ],
+          "documentos": [
+            "DOC-01"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Levantamiento multidisciplinario de condiciones existentes",
+              "relation_ids": [
+                "R0040"
+              ],
+              "documentos": [
+                "DOC-01"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Infraestructura minera",
+                  "relation_ids": [
+                    "R0040"
+                  ],
+                  "documentos": [
+                    "DOC-01"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Equipo multidisciplinario con modelación BIM",
+              "relation_ids": [
+                "R0041"
+              ],
+              "documentos": [
+                "DOC-01"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Infraestructura minera",
+                  "relation_ids": [
+                    "R0041"
+                  ],
+                  "documentos": [
+                    "DOC-01"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Servicios de ingeniería acústica",
+          "relation_ids": [
+            "R0056"
+          ],
+          "documentos": [
+            "DOC-02"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Estudio de impacto acústico y mapas de ruido",
+              "relation_ids": [
+                "R0056"
+              ],
+              "documentos": [
+                "DOC-02"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Proyectos mineros",
+                  "relation_ids": [
+                    "R0056"
+                  ],
+                  "documentos": [
+                    "DOC-02"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Servicios a operación minera",
+          "relation_ids": [
+            "R0077",
+            "R0078",
+            "R0079",
+            "R0081",
+            "R0082",
+            "R0083",
+            "R0084",
+            "R0085",
+            "R0086",
+            "R0087",
+            "R0088",
+            "R0089",
+            "R0191",
+            "R0192",
+            "R0193",
+            "R0194",
+            "R0195",
+            "R0196",
+            "R0199",
+            "R0200"
+          ],
+          "documentos": [
+            "DOC-07",
+            "DOC-28"
+          ],
+          "taxonomy_statuses": [
+            "NORMALIZADO_SEGUN_AUDITORIA",
+            "TERMINO_FUENTE_NO_DEFINIDO",
+            "VALIDADO_2A1B",
+            "VALIDADO_CON_MATIZ_2A1B"
+          ],
+          "notes": [
+            "Bloque agrupado separado en capacidades/servicios declarados.",
+            "Capacidad explícita conservada.",
+            "Capacidad explícita que había sido omitida en la normalización inicial.",
+            "No se introduce “digital”.",
+            "Se conserva “preventivo”; no se convierte en predictivo.",
+            "Término fuente conservado sin definición técnica adicional.",
+            "“Servicios de alta especialización” se trata como etiqueta editorial; no se introduce “digital”."
+          ],
+          "capabilities": [
+            {
+              "capability": "Monitoreo de estructuras y equipos",
+              "relation_ids": [
+                "R0077",
+                "R0191"
+              ],
+              "documentos": [
+                "DOC-07",
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Activos críticos de operación minera",
+                  "relation_ids": [
+                    "R0077"
+                  ],
+                  "documentos": [
+                    "DOC-07"
+                  ]
+                },
+                {
+                  "application": "Activos críticos en faena",
+                  "relation_ids": [
+                    "R0191"
+                  ],
+                  "documentos": [
+                    "DOC-28"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Monitoreo de salud estructural",
+              "relation_ids": [
+                "R0078",
+                "R0192"
+              ],
+              "documentos": [
+                "DOC-07",
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_CON_MATIZ_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Activos críticos mineros",
+                  "relation_ids": [
+                    "R0078"
+                  ],
+                  "documentos": [
+                    "DOC-07"
+                  ]
+                },
+                {
+                  "application": "Activos críticos en faena",
+                  "relation_ids": [
+                    "R0192"
+                  ],
+                  "documentos": [
+                    "DOC-28"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Peritajes de fallas estructurales y mecánicas",
+              "relation_ids": [
+                "R0079",
+                "R0193"
+              ],
+              "documentos": [
+                "DOC-07",
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Elementos mecánicos",
+                  "relation_ids": [
+                    "R0079",
+                    "R0193"
+                  ],
+                  "documentos": [
+                    "DOC-07",
+                    "DOC-28"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Peritajes de incendios",
+              "relation_ids": [
+                "R0079",
+                "R0193"
+              ],
+              "documentos": [
+                "DOC-07",
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "Capacidad explícita conservada.",
+                "Capacidad explícita que había sido omitida en la normalización inicial."
+              ],
+              "applications": []
+            },
+            {
+              "capability": "Modelamiento digital de estructuras",
+              "relation_ids": [
+                "R0081",
+                "R0196"
+              ],
+              "documentos": [
+                "DOC-07",
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Instalaciones mineras",
+                  "relation_ids": [
+                    "R0081"
+                  ],
+                  "documentos": [
+                    "DOC-07"
+                  ]
+                },
+                {
+                  "application": "Infraestructura de operación minera",
+                  "relation_ids": [
+                    "R0196"
+                  ],
+                  "documentos": [
+                    "DOC-28"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Modelamiento preventivo",
+              "relation_ids": [
+                "R0082",
+                "R0195"
+              ],
+              "documentos": [
+                "DOC-07",
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "TERMINO_FUENTE_NO_DEFINIDO"
+              ],
+              "notes": [
+                "Término fuente conservado sin definición técnica adicional."
+              ],
+              "applications": [
+                {
+                  "application": "Activos críticos de operación minera",
+                  "relation_ids": [
+                    "R0082"
+                  ],
+                  "documentos": [
+                    "DOC-07"
+                  ]
+                },
+                {
+                  "application": "Activos críticos en faena",
+                  "relation_ids": [
+                    "R0195"
+                  ],
+                  "documentos": [
+                    "DOC-28"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Revisión de cumplimiento normativo",
+              "relation_ids": [
+                "R0083"
+              ],
+              "documentos": [
+                "DOC-07"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Marcos normativos y corporativos mineros",
+                  "relation_ids": [
+                    "R0083"
+                  ],
+                  "documentos": [
+                    "DOC-07"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Tecnología del hormigón",
+              "relation_ids": [
+                "R0084"
+              ],
+              "documentos": [
+                "DOC-07"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_CON_MATIZ_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Instalaciones mineras",
+                  "relation_ids": [
+                    "R0084"
+                  ],
+                  "documentos": [
+                    "DOC-07"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Ingeniería contra incendios",
+              "relation_ids": [
+                "R0085"
+              ],
+              "documentos": [
+                "DOC-07"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Instalaciones mineras",
+                  "relation_ids": [
+                    "R0085"
+                  ],
+                  "documentos": [
+                    "DOC-07"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Soluciones tecnológicas para el control de productividad",
+              "relation_ids": [
+                "R0086",
+                "R0199"
+              ],
+              "documentos": [
+                "DOC-07",
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "No se introduce “digital”.",
+                "“Servicios de alta especialización” se trata como etiqueta editorial; no se introduce “digital”."
+              ],
+              "applications": [
+                {
+                  "application": "Instalaciones mineras",
+                  "relation_ids": [
+                    "R0086"
+                  ],
+                  "documentos": [
+                    "DOC-07"
+                  ]
+                },
+                {
+                  "application": "Infraestructura de operación minera",
+                  "relation_ids": [
+                    "R0199"
+                  ],
+                  "documentos": [
+                    "DOC-28"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Resolución de controversias contractuales",
+              "relation_ids": [
+                "R0087"
+              ],
+              "documentos": [
+                "DOC-07"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Instalaciones mineras",
+                  "relation_ids": [
+                    "R0087"
+                  ],
+                  "documentos": [
+                    "DOC-07"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Modelo de propagación de ruido",
+              "relation_ids": [
+                "R0088"
+              ],
+              "documentos": [
+                "DOC-07"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_CON_MATIZ_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Instalaciones mineras",
+                  "relation_ids": [
+                    "R0088"
+                  ],
+                  "documentos": [
+                    "DOC-07"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Monitoreo preventivo de activos críticos (instrumentación, vibraciones)",
+              "relation_ids": [
+                "R0089"
+              ],
+              "documentos": [
+                "DOC-07"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "Se conserva “preventivo”; no se convierte en predictivo."
+              ],
+              "applications": [
+                {
+                  "application": "Activos críticos mineros",
+                  "relation_ids": [
+                    "R0089"
+                  ],
+                  "documentos": [
+                    "DOC-07"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Proyectos de rehabilitación",
+              "relation_ids": [
+                "R0194"
+              ],
+              "documentos": [
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Infraestructura de operación minera",
+                  "relation_ids": [
+                    "R0194"
+                  ],
+                  "documentos": [
+                    "DOC-28"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Tecnología del hormigón (I+D)",
+              "relation_ids": [
+                "R0200"
+              ],
+              "documentos": [
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "Bloque agrupado separado en capacidades/servicios declarados."
+              ],
+              "applications": [
+                {
+                  "application": "Infraestructura de operación minera",
+                  "relation_ids": [
+                    "R0200"
+                  ],
+                  "documentos": [
+                    "DOC-28"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Ingeniería y evaluación de riesgos de incendios",
+              "relation_ids": [
+                "R0200"
+              ],
+              "documentos": [
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "Bloque agrupado separado en capacidades/servicios declarados."
+              ],
+              "applications": [
+                {
+                  "application": "Infraestructura de operación minera",
+                  "relation_ids": [
+                    "R0200"
+                  ],
+                  "documentos": [
+                    "DOC-28"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Inspección de estructuras de acero y peritajes de falla en elementos mecánicos",
+              "relation_ids": [
+                "R0200"
+              ],
+              "documentos": [
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "Bloque agrupado separado en capacidades/servicios declarados."
+              ],
+              "applications": [
+                {
+                  "application": "Infraestructura de operación minera",
+                  "relation_ids": [
+                    "R0200"
+                  ],
+                  "documentos": [
+                    "DOC-28"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Servicios especializados para la resolución de controversias contractuales",
+              "relation_ids": [
+                "R0200"
+              ],
+              "documentos": [
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "Bloque agrupado separado en capacidades/servicios declarados."
+              ],
+              "applications": [
+                {
+                  "application": "Infraestructura de operación minera",
+                  "relation_ids": [
+                    "R0200"
+                  ],
+                  "documentos": [
+                    "DOC-28"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Modelo de propagación de ruidos",
+              "relation_ids": [
+                "R0200"
+              ],
+              "documentos": [
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "Bloque agrupado separado en capacidades/servicios declarados."
+              ],
+              "applications": [
+                {
+                  "application": "Infraestructura de operación minera",
+                  "relation_ids": [
+                    "R0200"
+                  ],
+                  "documentos": [
+                    "DOC-28"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Revisión integral de proyectos de rehabilitación",
+          "relation_ids": [
+            "R0080",
+            "R0198"
+          ],
+          "documentos": [
+            "DOC-07",
+            "DOC-28"
+          ],
+          "taxonomy_statuses": [
+            "NORMALIZADO_SEGUN_AUDITORIA"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Levantamiento de condiciones existentes",
+              "relation_ids": [
+                "R0080",
+                "R0198"
+              ],
+              "documentos": [
+                "DOC-07",
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Infraestructura física de instalaciones mineras",
+                  "relation_ids": [
+                    "R0080"
+                  ],
+                  "documentos": [
+                    "DOC-07"
+                  ]
+                },
+                {
+                  "application": "Infraestructura de operaciones mineras",
+                  "relation_ids": [
+                    "R0198"
+                  ],
+                  "documentos": [
+                    "DOC-28"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Soporte directo de laboratorios",
+              "relation_ids": [
+                "R0080",
+                "R0198"
+              ],
+              "documentos": [
+                "DOC-07",
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Infraestructura física de instalaciones mineras",
+                  "relation_ids": [
+                    "R0080"
+                  ],
+                  "documentos": [
+                    "DOC-07"
+                  ]
+                },
+                {
+                  "application": "Infraestructura de operaciones mineras",
+                  "relation_ids": [
+                    "R0198"
+                  ],
+                  "documentos": [
+                    "DOC-28"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Diagnóstico y desarrollo de alternativas de solución",
+              "relation_ids": [
+                "R0080",
+                "R0198"
+              ],
+              "documentos": [
+                "DOC-07",
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Infraestructura física de instalaciones mineras",
+                  "relation_ids": [
+                    "R0080"
+                  ],
+                  "documentos": [
+                    "DOC-07"
+                  ]
+                },
+                {
+                  "application": "Infraestructura de operaciones mineras",
+                  "relation_ids": [
+                    "R0198"
+                  ],
+                  "documentos": [
+                    "DOC-28"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Ingeniería de rehabilitación",
+              "relation_ids": [
+                "R0080",
+                "R0198"
+              ],
+              "documentos": [
+                "DOC-07",
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Infraestructura física de instalaciones mineras",
+                  "relation_ids": [
+                    "R0080"
+                  ],
+                  "documentos": [
+                    "DOC-07"
+                  ]
+                },
+                {
+                  "application": "Infraestructura de operaciones mineras",
+                  "relation_ids": [
+                    "R0198"
+                  ],
+                  "documentos": [
+                    "DOC-28"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Ingeniería contractual",
+          "relation_ids": [
+            "R0136",
+            "R0147"
+          ],
+          "documentos": [
+            "DOC-18",
+            "DOC-20"
+          ],
+          "taxonomy_statuses": [
+            "NORMALIZADO_SEGUN_AUDITORIA"
+          ],
+          "notes": [
+            "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+          ],
+          "capabilities": [
+            {
+              "capability": "Diagnóstico contractual",
+              "relation_ids": [
+                "R0136",
+                "R0147"
+              ],
+              "documentos": [
+                "DOC-18",
+                "DOC-20"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+              ],
+              "applications": [
+                {
+                  "application": "Minería",
+                  "relation_ids": [
+                    "R0136",
+                    "R0147"
+                  ],
+                  "documentos": [
+                    "DOC-18",
+                    "DOC-20"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Análisis de prefactibilidad de un reclamo",
+              "relation_ids": [
+                "R0136",
+                "R0147"
+              ],
+              "documentos": [
+                "DOC-18",
+                "DOC-20"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+              ],
+              "applications": [
+                {
+                  "application": "Minería",
+                  "relation_ids": [
+                    "R0136",
+                    "R0147"
+                  ],
+                  "documentos": [
+                    "DOC-18",
+                    "DOC-20"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Apoyo técnico para lograr acuerdo",
+              "relation_ids": [
+                "R0136",
+                "R0147"
+              ],
+              "documentos": [
+                "DOC-18",
+                "DOC-20"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+              ],
+              "applications": [
+                {
+                  "application": "Minería",
+                  "relation_ids": [
+                    "R0136",
+                    "R0147"
+                  ],
+                  "documentos": [
+                    "DOC-18",
+                    "DOC-20"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Análisis a la programación de la obra",
+              "relation_ids": [
+                "R0136",
+                "R0147"
+              ],
+              "documentos": [
+                "DOC-18",
+                "DOC-20"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+              ],
+              "applications": [
+                {
+                  "application": "Minería",
+                  "relation_ids": [
+                    "R0136",
+                    "R0147"
+                  ],
+                  "documentos": [
+                    "DOC-18",
+                    "DOC-20"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Análisis ante término anticipado de contrato",
+              "relation_ids": [
+                "R0136",
+                "R0147"
+              ],
+              "documentos": [
+                "DOC-18",
+                "DOC-20"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "“Servicios Ágiles” se conserva como etiqueta editorial, no como nivel taxonómico."
+              ],
+              "applications": [
+                {
+                  "application": "Minería",
+                  "relation_ids": [
+                    "R0136",
+                    "R0147"
+                  ],
+                  "documentos": [
+                    "DOC-18",
+                    "DOC-20"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Gestión de vulnerabilidad e integridad estructural",
+          "relation_ids": [
+            "R0152",
+            "R0153",
+            "R0159",
+            "R0160",
+            "R0161",
+            "R0162",
+            "R0202",
+            "R0203",
+            "R0206"
+          ],
+          "documentos": [
+            "DOC-19",
+            "DOC-27"
+          ],
+          "taxonomy_statuses": [
+            "NORMALIZADO_SEGUN_AUDITORIA",
+            "VALIDADO_2A1B"
+          ],
+          "notes": [
+            "Aplicación directa del servicio; no se usa “Aplicaciones en la industria minera” como servicio.",
+            "El levantamiento se trata como capacidad/subservicio del servicio padre.",
+            "La fila fuente era un encabezado de aplicaciones; se mueve al servicio padre."
+          ],
+          "capabilities": [
+            {
+              "capability": "Inspección y peritaje estructural",
+              "relation_ids": [
+                "R0152",
+                "R0202"
+              ],
+              "documentos": [
+                "DOC-19",
+                "DOC-27"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Infraestructura minera",
+                  "relation_ids": [
+                    "R0152",
+                    "R0202"
+                  ],
+                  "documentos": [
+                    "DOC-19",
+                    "DOC-27"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Levantamiento de información técnica en terreno: inspección visual, aérea y termográfica; modelos 3D con escáner láser y dron",
+              "relation_ids": [
+                "R0153"
+              ],
+              "documentos": [
+                "DOC-19"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "El levantamiento se trata como capacidad/subservicio del servicio padre."
+              ],
+              "applications": [
+                {
+                  "application": "Infraestructura minera",
+                  "relation_ids": [
+                    "R0153"
+                  ],
+                  "documentos": [
+                    "DOC-19"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Seguridad estructural en almacenamiento",
+              "relation_ids": [
+                "R0159"
+              ],
+              "documentos": [
+                "DOC-19"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "La fila fuente era un encabezado de aplicaciones; se mueve al servicio padre."
+              ],
+              "applications": [
+                {
+                  "application": "Depósitos y relaves",
+                  "relation_ids": [
+                    "R0159"
+                  ],
+                  "documentos": [
+                    "DOC-19"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Inspección aérea y modelamiento 3D",
+              "relation_ids": [
+                "R0203"
+              ],
+              "documentos": [
+                "DOC-27"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Infraestructura minera",
+                  "relation_ids": [
+                    "R0203"
+                  ],
+                  "documentos": [
+                    "DOC-27"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": [
+            {
+              "application": "Soportes; edificios industriales",
+              "relation_ids": [
+                "R0160"
+              ],
+              "documentos": [
+                "DOC-19"
+              ]
+            },
+            {
+              "application": "Fundaciones; muros; túneles",
+              "relation_ids": [
+                "R0161"
+              ],
+              "documentos": [
+                "DOC-19"
+              ]
+            },
+            {
+              "application": "Torres de transmisión; subestaciones",
+              "relation_ids": [
+                "R0162"
+              ],
+              "documentos": [
+                "DOC-19"
+              ]
+            },
+            {
+              "application": "Estructuras metálicas: soportes y edificios industriales",
+              "relation_ids": [
+                "R0206"
+              ],
+              "documentos": [
+                "DOC-27"
+              ]
+            },
+            {
+              "application": "Infraestructura de obra civil: fundaciones, muros y túneles",
+              "relation_ids": [
+                "R0206"
+              ],
+              "documentos": [
+                "DOC-27"
+              ]
+            },
+            {
+              "application": "Equipos estáticos y de soporte: chancadores, molinos y correas",
+              "relation_ids": [
+                "R0206"
+              ],
+              "documentos": [
+                "DOC-27"
+              ]
+            },
+            {
+              "application": "Infraestructura eléctrica: torres de transmisión y subestaciones",
+              "relation_ids": [
+                "R0206"
+              ],
+              "documentos": [
+                "DOC-27"
+              ]
+            },
+            {
+              "application": "Depósitos y relaves",
+              "relation_ids": [
+                "R0206"
+              ],
+              "documentos": [
+                "DOC-27"
+              ]
+            }
+          ]
+        },
+        {
+          "service": "Monitoreo de salud estructural",
+          "relation_ids": [
+            "R0154",
+            "R0155",
+            "R0156",
+            "R0204"
+          ],
+          "documentos": [
+            "DOC-19",
+            "DOC-27"
+          ],
+          "taxonomy_statuses": [
+            "NORMALIZADO_SEGUN_AUDITORIA",
+            "VALIDADO_2A1B"
+          ],
+          "notes": [
+            "No se extiende automáticamente a chancadores, molinos y correas.",
+            "No usar “equipo rotativo” para todo el bloque."
+          ],
+          "capabilities": [
+            {
+              "capability": "Sensorización y datos en tiempo real",
+              "relation_ids": [
+                "R0154"
+              ],
+              "documentos": [
+                "DOC-19"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Infraestructura minera",
+                  "relation_ids": [
+                    "R0154"
+                  ],
+                  "documentos": [
+                    "DOC-19"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Análisis de vibraciones de equipo rotativo",
+              "relation_ids": [
+                "R0155",
+                "R0204"
+              ],
+              "documentos": [
+                "DOC-19",
+                "DOC-27"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "No se extiende automáticamente a chancadores, molinos y correas."
+              ],
+              "applications": [
+                {
+                  "application": "Equipo rotativo",
+                  "relation_ids": [
+                    "R0155",
+                    "R0204"
+                  ],
+                  "documentos": [
+                    "DOC-19",
+                    "DOC-27"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Análisis predictivo de fallas",
+              "relation_ids": [
+                "R0156"
+              ],
+              "documentos": [
+                "DOC-19"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Infraestructura minera",
+                  "relation_ids": [
+                    "R0156"
+                  ],
+                  "documentos": [
+                    "DOC-19"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Evaluación estructural: diagnóstico del comportamiento general",
+              "relation_ids": [
+                "R0204"
+              ],
+              "documentos": [
+                "DOC-27"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "No usar “equipo rotativo” para todo el bloque."
+              ],
+              "applications": []
+            },
+            {
+              "capability": "Seguimiento continuo con sensores: información en tiempo real",
+              "relation_ids": [
+                "R0204"
+              ],
+              "documentos": [
+                "DOC-27"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "No usar “equipo rotativo” para todo el bloque."
+              ],
+              "applications": []
+            },
+            {
+              "capability": "Análisis predictivo para mantenimiento oportuno",
+              "relation_ids": [
+                "R0204"
+              ],
+              "documentos": [
+                "DOC-27"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "No usar “equipo rotativo” para todo el bloque."
+              ],
+              "applications": []
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Gestión de integridad estructural (SIM)",
+          "relation_ids": [
+            "R0157",
+            "R0205"
+          ],
+          "documentos": [
+            "DOC-19",
+            "DOC-27"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_CON_MATIZ_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Programa SIM",
+              "relation_ids": [
+                "R0157",
+                "R0205"
+              ],
+              "documentos": [
+                "DOC-19",
+                "DOC-27"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_CON_MATIZ_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Infraestructura minera",
+                  "relation_ids": [
+                    "R0157",
+                    "R0205"
+                  ],
+                  "documentos": [
+                    "DOC-19",
+                    "DOC-27"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Planes de mantenimiento estructural",
+          "relation_ids": [
+            "R0158",
+            "R0207"
+          ],
+          "documentos": [
+            "DOC-19",
+            "DOC-27"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Plan de mantenimiento para vida útil",
+              "relation_ids": [
+                "R0158",
+                "R0207"
+              ],
+              "documentos": [
+                "DOC-19",
+                "DOC-27"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Activos mineros",
+                  "relation_ids": [
+                    "R0158",
+                    "R0207"
+                  ],
+                  "documentos": [
+                    "DOC-19",
+                    "DOC-27"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Revisión de cumplimiento normativo",
+          "relation_ids": [
+            "R0197"
+          ],
+          "documentos": [
+            "DOC-28"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Tres ámbitos de revisión normativa",
+              "relation_ids": [
+                "R0197"
+              ],
+              "documentos": [
+                "DOC-28"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Marcos normativos y corporativos mineros",
+                  "relation_ids": [
+                    "R0197"
+                  ],
+                  "documentos": [
+                    "DOC-28"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Acústica ambiental",
+          "relation_ids": [
+            "R0249"
+          ],
+          "documentos": [
+            "DOC-11"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Estudios de impacto acústico",
+              "relation_ids": [
+                "R0249"
+              ],
+              "documentos": [
+                "DOC-11"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Proyectos mineros",
+                  "relation_ids": [
+                    "R0249"
+                  ],
+                  "documentos": [
+                    "DOC-11"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Ingeniería en confiabilidad de materiales metálicos y poliméricos",
+          "relation_ids": [
+            "R0260"
+          ],
+          "documentos": [
+            "DOC-25"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_CON_MATIZ_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Aplicación multisectorial declarada",
+              "relation_ids": [
+                "R0260"
+              ],
+              "documentos": [
+                "DOC-25"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_CON_MATIZ_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Minería",
+                  "relation_ids": [
+                    "R0260"
+                  ],
+                  "documentos": [
+                    "DOC-25"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        }
+      ],
+      "auxiliary_evidence": {
+        "ATRIBUTO_DIFERENCIADOR": [
+          {
+            "relation_id": "R0090",
+            "documento_id": "DOC-07",
+            "nombre_archivo": "OR Ficha 10 Minería copia.pdf",
+            "pagina_fuente": "2",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La frase 'Ensayos en la misma institución' aparece dentro de 'Propuesta de valor'.",
+            "grupo_documental_2A1B": "G_OP_MINERA_07_28",
+            "fuente_independiente_2A1B": "SI_CON_MATICES",
+            "source_service": "Servicios a operación minera",
+            "source_capability": "Ensayos en la misma institución",
+            "source_application": "NO IDENTIFICADO",
+            "note": "“Ensayos en la misma institución” es un argumento de propuesta de valor, no capacidad técnica independiente."
+          }
+        ],
+        "BENEFICIO_PROPUESTA_VALOR": [
+          {
+            "relation_id": "R0163",
+            "documento_id": "DOC-19",
+            "nombre_archivo": "250407_Soluciones Integrales en Gestión de Vulnerabilidad e Integridad Estructural.pdf",
+            "pagina_fuente": "2",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente ubica 'Visualización técnica clara y accesible' y 'Potencial para la automatización de procesos' dentro de 'Valor agregado para tu operación'.",
+            "grupo_documental_2A1B": "G_VULNERABILIDAD_19_27",
+            "fuente_independiente_2A1B": "SI_CON_MATICES",
+            "source_service": "VALOR AGREGADO PARA TU OPERACIÓN",
+            "source_capability": "Visualización técnica clara y accesible; Potencial para la automatización de procesos",
+            "source_application": "operación minera",
+            "note": "Visualización técnica y potencial de automatización son beneficios/atributos editoriales."
+          },
+          {
+            "relation_id": "R0208",
+            "documento_id": "DOC-27",
+            "nombre_archivo": "FICHA TÉCNICA N°5-GESTIÓN DE VULNERABILIDAD- IDIEM (1).pdf",
+            "pagina_fuente": "2",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "DOC-27 incluye soporte a decisiones, visualización técnica, potencial de automatización y fomento de sostenibilidad dentro de 'Nuestra propuesta de valor'. DOC-19 también contiene 'Fomento de la sostenibilidad'.",
+            "grupo_documental_2A1B": "G_VULNERABILIDAD_19_27",
+            "fuente_independiente_2A1B": "SI_CON_MATICES",
+            "source_service": "Nuestra propuesta de valor",
+            "source_capability": "Soporte para toma de decisiones informadas; Visualización técnica clara y accesible; Potencial para la automatización de procesos; Fomento de la sostenibilidad",
+            "source_application": "operación minera",
+            "note": "Soporte de decisiones, visualización, potencial de automatización y sostenibilidad."
+          }
+        ],
+        "CLAIM_BLOQUEADO": [
+          {
+            "relation_id": "R0165",
+            "documento_id": "DOC-19",
+            "nombre_archivo": "250407_Soluciones Integrales en Gestión de Vulnerabilidad e Integridad Estructural.pdf",
+            "pagina_fuente": "1",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente dice literalmente 'Garantizamos la seguridad estructural en minería mediante la gestión de riesgos y el cumplimiento normativo'.",
+            "grupo_documental_2A1B": "G_VULNERABILIDAD_19_27",
+            "fuente_independiente_2A1B": "SI_CON_MATICES",
+            "source_service": "Soluciones especializadas en gestión de vulnerabilidad e integridad estructural",
+            "source_capability": "Garantizamos la seguridad estructural en minería mediante la gestión de riesgos y el cumplimiento normativo",
+            "source_application": "minería",
+            "note": "Promesa absoluta de seguridad estructural; no modelar como capacidad."
+          },
+          {
+            "relation_id": "R0210",
+            "documento_id": "DOC-27",
+            "nombre_archivo": "FICHA TÉCNICA N°5-GESTIÓN DE VULNERABILIDAD- IDIEM (1).pdf",
+            "pagina_fuente": "1",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente dice 'Garantizamos seguridad estructural mediante la gestión de riesgos y el cumplimiento normativo'.",
+            "grupo_documental_2A1B": "G_VULNERABILIDAD_19_27",
+            "fuente_independiente_2A1B": "SI_CON_MATICES",
+            "source_service": "Gestión de vulnerabilidad e integridad estructural",
+            "source_capability": "Garantizamos seguridad estructural mediante la gestión de riesgos y el cumplimiento normativo",
+            "source_application": "minería",
+            "note": "Claim absoluto de seguridad estructural; no modelar como capacidad."
+          }
+        ],
+        "DIFERENCIADOR": [
+          {
+            "relation_id": "R0164",
+            "documento_id": "DOC-19",
+            "nombre_archivo": "250407_Soluciones Integrales en Gestión de Vulnerabilidad e Integridad Estructural.pdf",
+            "pagina_fuente": "2",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente presenta cinco diferenciadores: equipo multidisciplinario, tecnología de inspección avanzada, adherencia a estándares internacionales, soluciones adaptadas y conocimiento del sector minero.",
+            "grupo_documental_2A1B": "G_VULNERABILIDAD_19_27",
+            "fuente_independiente_2A1B": "SI_CON_MATICES",
+            "source_service": "¿POR QUÉ IDIEM PUEDE SER UN APORTE A TU PROYECTO?",
+            "source_capability": "Equipo multidisciplinario de expertos; Tecnología de inspección avanzada; Adherencia a estándares internacionales; Soluciones adaptadas a sus necesidades; Conocimiento del sector minero",
+            "source_application": "sector minero",
+            "note": "Equipo, tecnología de inspección, adaptación y conocimiento sectorial; incluye claim sobre estándares pendiente de validación."
+          },
+          {
+            "relation_id": "R0209",
+            "documento_id": "DOC-27",
+            "nombre_archivo": "FICHA TÉCNICA N°5-GESTIÓN DE VULNERABILIDAD- IDIEM (1).pdf",
+            "pagina_fuente": "2",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "DOC-27 declara '100% de adherencia a los estándares internacionales'; DOC-19 declara 'Adherencia a estándares internacionales' sin porcentaje.",
+            "grupo_documental_2A1B": "G_VULNERABILIDAD_19_27",
+            "fuente_independiente_2A1B": "SI_CON_MATICES",
+            "source_service": "¿Por qué Idiem es un aporte concreto a tu proyecto?",
+            "source_capability": "Por su equipo multidisciplinario de expertos con profundo conocimiento del sector minero; Con tecnología en inspecciones de avanzada; 100% de adherencia a los estándares internacionales; Soluciones realmente adaptadas a tus necesidades",
+            "source_application": "sector minero",
+            "note": "Diferenciadores declarados; claim “100%” pendiente de validación técnica."
+          }
+        ]
+      }
+    },
+    "LAB MINERO DIGITAL": {
+      "definition": "Laboratorio, ensayos, inspección, control técnico y generación de evidencia para proyectos y obras mineras; “digital” no es requisito técnico.",
+      "assigned_relationship_count": 33,
+      "taxonomy_relation_ids": [
+        "R0063",
+        "R0066",
+        "R0166",
+        "R0167",
+        "R0168",
+        "R0171",
+        "R0172",
+        "R0173",
+        "R0174",
+        "R0175",
+        "R0180",
+        "R0181",
+        "R0182",
+        "R0183",
+        "R0184",
+        "R0188",
+        "R0189",
+        "R0211",
+        "R0212",
+        "R0213",
+        "R0214",
+        "R0218",
+        "R0220"
+      ],
+      "auxiliary_relation_ids": [
+        "R0169",
+        "R0176",
+        "R0177",
+        "R0178",
+        "R0185",
+        "R0186",
+        "R0190",
+        "R0215",
+        "R0216",
+        "R0217"
+      ],
+      "service_count": 5,
+      "services": [
+        {
+          "service": "Laboratorio en obra",
+          "relation_ids": [
+            "R0063",
+            "R0066",
+            "R0218",
+            "R0220"
+          ],
+          "documentos": [
+            "DOC-04",
+            "DOC-29"
+          ],
+          "taxonomy_statuses": [
+            "NORMALIZADO_SEGUN_AUDITORIA",
+            "VALIDADO_2A1B"
+          ],
+          "notes": [
+            "El encabezado “IDIEM ES EFICIENCIA E INMEDIATEZ” no se usa como servicio."
+          ],
+          "capabilities": [
+            {
+              "capability": "Laboratorio permanente en faena",
+              "relation_ids": [
+                "R0063",
+                "R0218"
+              ],
+              "documentos": [
+                "DOC-04",
+                "DOC-29"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Proyectos mineros",
+                  "relation_ids": [
+                    "R0063",
+                    "R0218"
+                  ],
+                  "documentos": [
+                    "DOC-04",
+                    "DOC-29"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Seguimiento digital de resultados de ensayo",
+              "relation_ids": [
+                "R0066"
+              ],
+              "documentos": [
+                "DOC-04"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Proyectos mineros",
+                  "relation_ids": [
+                    "R0066"
+                  ],
+                  "documentos": [
+                    "DOC-04"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Seguimiento en línea de resultados de ensayos",
+              "relation_ids": [
+                "R0220"
+              ],
+              "documentos": [
+                "DOC-29"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "El encabezado “IDIEM ES EFICIENCIA E INMEDIATEZ” no se usa como servicio."
+              ],
+              "applications": [
+                {
+                  "application": "Minería",
+                  "relation_ids": [
+                    "R0220"
+                  ],
+                  "documentos": [
+                    "DOC-29"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Laboratorio de rocas",
+          "relation_ids": [
+            "R0166",
+            "R0167",
+            "R0211"
+          ],
+          "documentos": [
+            "DOC-21",
+            "DOC-30"
+          ],
+          "taxonomy_statuses": [
+            "VALIDADO_2A1B",
+            "VALIDO_CON_CLAIMS_BLOQUEADOS"
+          ],
+          "notes": [
+            "Claims de exclusividad/ranking mundial quedan bloqueados; se conserva la existencia del equipo."
+          ],
+          "capabilities": [
+            {
+              "capability": "Ensayos de mecánica de rocas",
+              "relation_ids": [
+                "R0166",
+                "R0211"
+              ],
+              "documentos": [
+                "DOC-21",
+                "DOC-30"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Macizo rocoso",
+                  "relation_ids": [
+                    "R0166"
+                  ],
+                  "documentos": [
+                    "DOC-21"
+                  ]
+                },
+                {
+                  "application": "Industria minera",
+                  "relation_ids": [
+                    "R0211"
+                  ],
+                  "documentos": [
+                    "DOC-30"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Triaxial Gigante / equipo para grandes partículas",
+              "relation_ids": [
+                "R0167"
+              ],
+              "documentos": [
+                "DOC-21"
+              ],
+              "taxonomy_statuses": [
+                "VALIDO_CON_CLAIMS_BLOQUEADOS"
+              ],
+              "notes": [
+                "Claims de exclusividad/ranking mundial quedan bloqueados; se conserva la existencia del equipo."
+              ],
+              "applications": []
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Laboratorio de geotecnia",
+          "relation_ids": [
+            "R0168",
+            "R0212",
+            "R0213",
+            "R0214"
+          ],
+          "documentos": [
+            "DOC-21",
+            "DOC-30"
+          ],
+          "taxonomy_statuses": [
+            "EVIDENCIA_DE_SERVICIO",
+            "NORMALIZADO_SEGUN_AUDITORIA",
+            "VALIDO_CON_CLAIMS_BLOQUEADOS"
+          ],
+          "notes": [
+            "Asignación a LAB MINERO DIGITAL por decisión explícita del usuario: Triaxial Gigante se considera siempre asociado a proyectos mineros.",
+            "La existencia del laboratorio se conserva; “primer y mayor” queda fuera de la capacidad técnica.",
+            "“Desarrollado con ingeniería propia” se conserva como atributo; ranking mundial pendiente de validación."
+          ],
+          "capabilities": [
+            {
+              "capability": "Triaxial Gigante: ensayo de suelos con partículas de gran tamaño",
+              "relation_ids": [
+                "R0212",
+                "R0213"
+              ],
+              "documentos": [
+                "DOC-30"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "Asignación a LAB MINERO DIGITAL por decisión explícita del usuario: Triaxial Gigante se considera siempre asociado a proyectos mineros."
+              ],
+              "applications": [
+                {
+                  "application": "Gran minería",
+                  "relation_ids": [
+                    "R0212"
+                  ],
+                  "documentos": [
+                    "DOC-30"
+                  ]
+                },
+                {
+                  "application": "Presas de tierra",
+                  "relation_ids": [
+                    "R0213"
+                  ],
+                  "documentos": [
+                    "DOC-30"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Triaxial Gigante",
+              "relation_ids": [
+                "R0214"
+              ],
+              "documentos": [
+                "DOC-30"
+              ],
+              "taxonomy_statuses": [
+                "VALIDO_CON_CLAIMS_BLOQUEADOS"
+              ],
+              "notes": [
+                "“Desarrollado con ingeniería propia” se conserva como atributo; ranking mundial pendiente de validación."
+              ],
+              "applications": []
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Control de calidad de uniones HDPE",
+          "relation_ids": [
+            "R0171",
+            "R0172",
+            "R0173",
+            "R0174",
+            "R0175",
+            "R0188",
+            "R0189"
+          ],
+          "documentos": [
+            "DOC-22",
+            "DOC-23"
+          ],
+          "taxonomy_statuses": [
+            "NORMALIZADO_SEGUN_AUDITORIA",
+            "VALIDADO_2A1B"
+          ],
+          "notes": [],
+          "capabilities": [
+            {
+              "capability": "Control de uniones soldadas HDPE",
+              "relation_ids": [
+                "R0171",
+                "R0188"
+              ],
+              "documentos": [
+                "DOC-22",
+                "DOC-23"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Procesos mineros",
+                  "relation_ids": [
+                    "R0171",
+                    "R0188"
+                  ],
+                  "documentos": [
+                    "DOC-22",
+                    "DOC-23"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Ensayos no destructivos en HDPE",
+              "relation_ids": [
+                "R0172"
+              ],
+              "documentos": [
+                "DOC-23"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Uniones soldadas HDPE",
+                  "relation_ids": [
+                    "R0172"
+                  ],
+                  "documentos": [
+                    "DOC-23"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Ensayos mecánicos en HDPE",
+              "relation_ids": [
+                "R0173"
+              ],
+              "documentos": [
+                "DOC-23"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Uniones soldadas HDPE",
+                  "relation_ids": [
+                    "R0173"
+                  ],
+                  "documentos": [
+                    "DOC-23"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Cobertura de fabricación a montaje",
+              "relation_ids": [
+                "R0174"
+              ],
+              "documentos": [
+                "DOC-23"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Líneas de conducción HDPE",
+                  "relation_ids": [
+                    "R0174"
+                  ],
+                  "documentos": [
+                    "DOC-23"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Documentación técnica de fabricación",
+              "relation_ids": [
+                "R0175"
+              ],
+              "documentos": [
+                "DOC-23"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": []
+            },
+            {
+              "capability": "Ensayos no destructivos y ensayos mecánicos de HDPE",
+              "relation_ids": [
+                "R0189"
+              ],
+              "documentos": [
+                "DOC-22"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Uniones soldadas de HDPE",
+                  "relation_ids": [
+                    "R0189"
+                  ],
+                  "documentos": [
+                    "DOC-22"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        },
+        {
+          "service": "Inspección no destructiva de soldaduras",
+          "relation_ids": [
+            "R0180",
+            "R0181",
+            "R0182",
+            "R0183",
+            "R0184"
+          ],
+          "documentos": [
+            "DOC-24"
+          ],
+          "taxonomy_statuses": [
+            "NORMALIZADO_SEGUN_AUDITORIA",
+            "VALIDADO_2A1B"
+          ],
+          "notes": [
+            "“Principales proyectos mineros” se mantiene fuera como claim promocional."
+          ],
+          "capabilities": [
+            {
+              "capability": "Ensayos no destructivos en soldadura",
+              "relation_ids": [
+                "R0180"
+              ],
+              "documentos": [
+                "DOC-24"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Minería y maestranzas",
+                  "relation_ids": [
+                    "R0180"
+                  ],
+                  "documentos": [
+                    "DOC-24"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Inspección de soldaduras metálicas con técnicas no destructivas",
+              "relation_ids": [
+                "R0181"
+              ],
+              "documentos": [
+                "DOC-24"
+              ],
+              "taxonomy_statuses": [
+                "NORMALIZADO_SEGUN_AUDITORIA"
+              ],
+              "notes": [
+                "“Principales proyectos mineros” se mantiene fuera como claim promocional."
+              ],
+              "applications": [
+                {
+                  "application": "Minería y maestranzas",
+                  "relation_ids": [
+                    "R0181"
+                  ],
+                  "documentos": [
+                    "DOC-24"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Inspección visual y superficial",
+              "relation_ids": [
+                "R0182"
+              ],
+              "documentos": [
+                "DOC-24"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Estructuras y componentes mecánicos",
+                  "relation_ids": [
+                    "R0182"
+                  ],
+                  "documentos": [
+                    "DOC-24"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Detección de defectos internos",
+              "relation_ids": [
+                "R0183"
+              ],
+              "documentos": [
+                "DOC-24"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Soldaduras metálicas",
+                  "relation_ids": [
+                    "R0183"
+                  ],
+                  "documentos": [
+                    "DOC-24"
+                  ]
+                }
+              ]
+            },
+            {
+              "capability": "Calificación de procedimientos y soldadores",
+              "relation_ids": [
+                "R0184"
+              ],
+              "documentos": [
+                "DOC-24"
+              ],
+              "taxonomy_statuses": [
+                "VALIDADO_2A1B"
+              ],
+              "notes": [],
+              "applications": [
+                {
+                  "application": "Procedimientos y soldadores",
+                  "relation_ids": [
+                    "R0184"
+                  ],
+                  "documentos": [
+                    "DOC-24"
+                  ]
+                }
+              ]
+            }
+          ],
+          "direct_applications": []
+        }
+      ],
+      "auxiliary_evidence": {
+        "ATRIBUTO_DIFERENCIADOR": [
+          {
+            "relation_id": "R0169",
+            "documento_id": "DOC-21",
+            "nombre_archivo": "250813_Flyer Rocas.pdf",
+            "pagina_fuente": "1",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente declara experiencia y confiabilidad en ensayos de suelos y rocas, profesionales geotécnicos y geológicos altamente calificados y alto estándar técnico.",
+            "grupo_documental_2A1B": "G_ROCAS_21_30",
+            "fuente_independiente_2A1B": "SI_CON_MATICES",
+            "source_service": "Laboratorio de geotecnia",
+            "source_capability": "Contamos con experiencia y confiabilidad en ensayos de suelos y rocas; Profesionales geotécnicos y geológicos altamente calificados",
+            "source_application": "NO IDENTIFICADO",
+            "note": "Experiencia/confiabilidad y calificación profesional; no capacidad técnica discreta."
+          }
+        ],
+        "BENEFICIO_PROPUESTA_VALOR": [
+          {
+            "relation_id": "R0176",
+            "documento_id": "DOC-23",
+            "nombre_archivo": "FICHA TÉCNICA  CONTROL DE CALIDAD-IDIEM-2025.pdf",
+            "pagina_fuente": "2",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La trazabilidad completa y la sinergia con el área de calidad del cliente aparecen dentro del bloque de beneficios 'Eficiencia, confianza y seguridad técnica'.",
+            "grupo_documental_2A1B": "G_HDPE_22_23",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Eficiencia confianza y seguridad técnica",
+            "source_capability": "Trazabilidad completa del proceso tanto para ensayos no destructivos y destructivos, generando una sinergia con el área de calidad del cliente",
+            "source_application": "área de calidad del cliente",
+            "note": "Trazabilidad completa como beneficio/atributo del control de calidad HDPE."
+          },
+          {
+            "relation_id": "R0177",
+            "documento_id": "DOC-23",
+            "nombre_archivo": "FICHA TÉCNICA  CONTROL DE CALIDAD-IDIEM-2025.pdf",
+            "pagina_fuente": "1",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente relaciona un control de calidad confiable con continuidad operacional y disminución de costos por detenciones no programadas; la misma frase usa 'garantice el cumplimiento de los estándares de ejecución'.",
+            "grupo_documental_2A1B": "G_HDPE_22_23",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Control de calidad en uniones HDPE",
+            "source_capability": "disminuyendo los costos vinculados a detenciones no programadas de la operación producto de fallas inesperadas de las líneas",
+            "source_application": "detenciones no programadas de la operación",
+            "note": "Reducción de detenciones/costos es beneficio declarado, no capacidad técnica."
+          },
+          {
+            "relation_id": "R0190",
+            "documento_id": "DOC-22",
+            "nombre_archivo": "FICHA TÉCNICA  CONTROL DE CALIDAD-IDIEM-2025-IMPRESIÓN.pdf",
+            "pagina_fuente": "2",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente presenta la trazabilidad completa del proceso para ensayos no destructivos y destructivos, generando sinergia con el área de calidad del cliente, dentro del bloque 'Eficiencia, confianza y seguridad técnica'.",
+            "grupo_documental_2A1B": "G_HDPE_22_23",
+            "fuente_independiente_2A1B": "NO_PARA_CONTENIDO",
+            "source_service": "Eficiencia confianza y seguridad técnica",
+            "source_capability": "Trazabilidad completa del proceso tanto para ensayos no destructivos y destructivos",
+            "source_application": "área de calidad del cliente",
+            "note": "Trazabilidad como beneficio/atributo del servicio HDPE."
+          }
+        ],
+        "CLAIM_BLOQUEADO": [
+          {
+            "relation_id": "R0186",
+            "documento_id": "DOC-24",
+            "nombre_archivo": "250401_Inspección no destructiva de soldaduras metálicas (3).pdf",
+            "pagina_fuente": "1",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente afirma que el equipo altamente calificado 'garantiza evaluaciones objetivas, seguras y con resultados confiables y precisos'; el titular también usa 'para garantizar el cumplimiento'.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Equipo humano",
+            "source_capability": "Nuestro equipo altamente calificado garantiza evaluaciones objetivas, seguras y con resultados confiables y precisos",
+            "source_application": "NO IDENTIFICADO",
+            "note": "Promesa absoluta sobre objetividad, seguridad y resultados; no capacidad técnica."
+          },
+          {
+            "relation_id": "R0215",
+            "documento_id": "DOC-30",
+            "nombre_archivo": "FICHA TÉCNICA N°2-LAB.ROCAS- IDIEM (1).pdf",
+            "pagina_fuente": "1",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La ficha usa los claims 'Pioneros en el desarrollo de la geotecnia en Chile', 'Primer y mayor laboratorio de geotecnia del país', 'La más extensa experiencia...' y 'El más alto estándar técnico...'.",
+            "grupo_documental_2A1B": "G_ROCAS_21_30",
+            "fuente_independiente_2A1B": "SI_CON_MATICES",
+            "source_service": "Pioneros en el desarrollo de la geotecnia en Chile",
+            "source_capability": "Primer y mayor laboratorio de geotecnia del país; La más extensa experiencia en ensayos de suelos y rocas; Profesionales geotécnicos y geológicos altamente calificados; El más alto estándar técnico de principio a fin",
+            "source_application": "NO IDENTIFICADO",
+            "note": "Superlativos y atributos de posicionamiento del Laboratorio de geotecnia."
+          },
+          {
+            "relation_id": "R0217",
+            "documento_id": "DOC-30",
+            "nombre_archivo": "FICHA TÉCNICA N°2-LAB.ROCAS- IDIEM (1).pdf",
+            "pagina_fuente": "1",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente afirma que la industria aporta 'un cuarto de cobre del planeta'.",
+            "grupo_documental_2A1B": "G_ROCAS_21_30",
+            "fuente_independiente_2A1B": "SI_CON_MATICES",
+            "source_service": "Laboratorio de rocas",
+            "source_capability": "NO IDENTIFICADO",
+            "source_application": "Una industria líder que aporta un cuarto de cobre del planeta",
+            "note": "Dato macroeconómico/contextual sin fuente citada; no es capacidad/aplicación."
+          }
+        ],
+        "COBERTURA_OPERATIVA": [
+          {
+            "relation_id": "R0178",
+            "documento_id": "DOC-23",
+            "nombre_archivo": "FICHA TÉCNICA  CONTROL DE CALIDAD-IDIEM-2025.pdf",
+            "pagina_fuente": "2",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente declara un equipo de ingenieros y técnicos distribuido a lo largo del país, capaz de integrarse en cualquier etapa de fabricación y montaje.",
+            "grupo_documental_2A1B": "G_HDPE_22_23",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Equipo de ingenieros y técnicos",
+            "source_capability": "Equipo de ingenieros y técnicos distribuidos a lo largo del país, con la capacidad de integrarse en cualquier etapa del proceso de fabricación y montaje",
+            "source_application": "NO IDENTIFICADO",
+            "note": "Cobertura/despliegue territorial del equipo técnico."
+          },
+          {
+            "relation_id": "R0216",
+            "documento_id": "DOC-30",
+            "nombre_archivo": "FICHA TÉCNICA N°2-LAB.ROCAS- IDIEM (1).pdf",
+            "pagina_fuente": "1",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente declara 'Con el más amplio despliegue territorial para apoyar el desarrollo de una industria minera de estándar internacional'.",
+            "grupo_documental_2A1B": "G_ROCAS_21_30",
+            "fuente_independiente_2A1B": "SI_CON_MATICES",
+            "source_service": "Laboratorio de rocas",
+            "source_capability": "Con el más amplio despliegue territorial para apoyar el desarrollo de una industria minera de estándar internacional",
+            "source_application": "industria minera",
+            "note": "Despliegue territorial declarado; superlativo “más amplio” bloqueado."
+          }
+        ],
+        "COBERTURA_TERRITORIAL": [
+          {
+            "relation_id": "R0185",
+            "documento_id": "DOC-24",
+            "nombre_archivo": "250401_Inspección no destructiva de soldaduras metálicas (3).pdf",
+            "pagina_fuente": "1",
+            "resultado_auditoria_2A1B": "CORRECCION_NECESARIA",
+            "estado_uso_2A1B": "NO_USAR_NORMALIZACION_ACTUAL",
+            "evidencia_verificada_2A1B": "La fuente declara presencia de ingenieros y técnicos especializados en Iquique, Antofagasta, Calama, Copiapó y La Serena.",
+            "grupo_documental_2A1B": "",
+            "fuente_independiente_2A1B": "SI",
+            "source_service": "Presencia y confianza",
+            "source_capability": "Contamos con ingenieros y técnicos especializados en Iquique, Antofagasta, Calama, Copiapó y La Serena",
+            "source_application": "Iquique, Antofagasta, Calama, Copiapó, La Serena",
+            "note": "Presencia literal en Iquique, Antofagasta, Calama, Copiapó y La Serena."
+          }
+        ]
+      }
+    }
+  },
+  "outside_cells": {
+    "count": 150,
+    "status": "SIN_CELULA_PRIORIZADA",
+    "note": "Relaciones válidas que permanecen fuera de las cinco células por falta de aplicación sectorial suficiente o por corresponder a ámbitos transversales/no priorizados."
+  },
+  "excluded_relations": {
+    "count": 5,
+    "status": "NO_USAR_COMO_EVIDENCIA"
+  }
+}
