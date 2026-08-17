@@ -70,7 +70,12 @@ def compose_month(
     gaps: list[GapReview] = []
     for slot in plan.slots:
         if slot.status == "DRAFT" and slot.knowledge_id:
-            brief = build_brief(kb, slot.cell, main_knowledge_id=slot.knowledge_id)
+            brief = build_brief(
+                kb,
+                slot.cell,
+                main_knowledge_id=slot.knowledge_id,
+                enrich_same_service=True,
+            )
             brief["content_id"] = slot.content_id  # canonical post id from the plan
             drafted = apply_draft(brief, drafter)
             posts.append(

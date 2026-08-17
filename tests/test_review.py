@@ -20,8 +20,8 @@ def test_compose_matches_plan_slots(kb):
 def test_each_post_is_anchored_and_schema_valid(kb):
     review = compose_month(kb, "2026-09", target_count=12)
     for post in review.posts:
-        # anchored: the brief carries exactly its slot's knowledge_id
-        assert post.brief["knowledge_ids"] == [post.knowledge_id]
+        # anchored: the slot's knowledge_id is the main item in the brief
+        assert post.knowledge_id in post.brief["knowledge_ids"]
         assert post.status == "DRAFT"
         validate_brief(post.brief)
 
@@ -30,8 +30,12 @@ def test_no_cross_cell_leak_in_posts(kb):
     review = compose_month(kb, "2026-09", target_count=12)
     for post in review.posts:
         assert post.brief["cell"] == post.cell
+        # Enrichment stays within the same cell AND the anchor's service.
+        anchor = kb.item_by_id[post.knowledge_id]
         for kid in post.brief["knowledge_ids"]:
-            assert kid == post.knowledge_id
+            item = kb.item_by_id[kid]
+            assert item.cell == post.cell
+            assert item.service == anchor.service
 
 
 def test_transporte_only_appears_as_gap(kb):

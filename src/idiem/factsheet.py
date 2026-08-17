@@ -92,6 +92,8 @@ def build_fact_sheet(
     goal: str | None = None,
     audience: str | None = None,
     main_knowledge_id: str | None = None,
+    enrich_same_service: bool = False,
+    max_enrich_items: int = 6,
 ) -> FactSheet:
     engine = RetrievalEngine(kb)
     rules = CellRules(kb)
@@ -128,11 +130,22 @@ def build_fact_sheet(
                 f"CONTENT_GAP: main_knowledge_id='{main_knowledge_id}' inválido para {cell}."
             )
             return sheet
-        hits = [
-            h
-            for h in engine.retrieve_by_cell(cell)
-            if h.item.knowledge_id == main_knowledge_id
-        ]
+        cell_hits = engine.retrieve_by_cell(cell)
+        anchor = [h for h in cell_hits if h.item.knowledge_id == main_knowledge_id]
+        if enrich_same_service:
+            # Add same-cell siblings sharing the anchor's service, for grounded
+            # technical depth (never crosses cells). Deterministic order.
+            svc = item.service
+            siblings = [
+                h
+                for h in cell_hits
+                if h.item.service == svc
+                and h.item.knowledge_id != main_knowledge_id
+            ]
+            siblings.sort(key=lambda h: h.item.knowledge_id)
+            hits = anchor + siblings[: max(0, max_enrich_items - 1)]
+        else:
+            hits = anchor
     else:
         hits = engine.retrieve(RetrievalQuery(cell=cell, keyword=topic))
 

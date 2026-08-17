@@ -1,0 +1,70 @@
+{
+  "_comment": "Guía editorial EXTERNA y configurable (CLAUDE.md regla 11). Codifica tono/estilo/estructura/longitud/hashtags derivados del corpus real de LinkedIn IDIEM (jun-jul 2026). Gobierna la FORMA del copy; la sustancia técnica sigue acotada a allowed_facts (reglas 2-3). El equipo puede ajustar esto sin tocar código.",
+  "version": "1.0",
+  "archetype": "servicio/insight técnico",
+  "voice": {
+    "person": "1ª persona plural para IDIEM (nosotros/nuestro) + 2ª persona para invitar (tú/te)",
+    "register": "profesional, técnico y consultivo; sobrio; sin superlativos ni autobombo",
+    "principles": [
+      "Liderar con el problema o la tensión del cliente antes de nombrar el servicio.",
+      "Demostrar expertise con especificidad técnica: métodos, disciplinas, normas, entregables.",
+      "Cerrar con impacto de negocio: continuidad operacional, mitigación de riesgos, confiabilidad, cumplimiento.",
+      "Hablar al profesional del sector (mandante, contratista, especialista), no al público general."
+    ]
+  },
+  "structure": {
+    "sections": [
+      {"id": "hook", "desc": "Pregunta directa o afirmación de dolor/tensión. 1 párrafo corto."},
+      {"id": "problema", "desc": "Profundiza el problema o el contexto: qué está en juego (costos, plazos, seguridad, continuidad)."},
+      {"id": "solucion_idiem", "desc": "'En/Desde #IDIEM…' + servicio concreto + detalle técnico (métodos, disciplinas, normas). SOLO desde allowed_facts."},
+      {"id": "impacto", "desc": "Qué permite: decisiones con evidencia, reducción de riesgo, confiabilidad de activos, cumplimiento."},
+      {"id": "cta", "desc": "Invitación sobria + link idiem.cl + bloque de hashtags de cierre."}
+    ]
+  },
+  "length": {
+    "target_words_min": 110,
+    "target_words_max": 170,
+    "paragraphs": "4-5",
+    "note": "Si la evidencia disponible no alcanza para esta longitud, escribir un post más corto y honesto; si es insuficiente, marcar EXPERT_INPUT_REQUIRED. Nunca rellenar con datos no respaldados."
+  },
+  "emoji": {
+    "usage": "medido y temático",
+    "per_paragraph": "1-2",
+    "rules": [
+      "Usar emojis del dominio (🏗️ 🏥 ⚙️ 📐 🛡️ 🔍 ⚠️ 📊 ✅ 👷 🌐 👉).",
+      "Nunca insertar un emoji dentro de un término técnico o una norma.",
+      "No abrir todos los párrafos con emoji; alternar."
+    ]
+  },
+  "hashtags": {
+    "always": ["#IDIEM"],
+    "inline": "Marcar 1-3 términos clave dentro del texto como hashtag (#Ingeniería, #Minería, #Infraestructura, #Seguridad).",
+    "closing_block": {"min": 4, "max": 6},
+    "vocabulary_by_cell": {
+      "INFRA PÚBLICA RESILIENTE": ["#Infraestructura", "#ObrasPúblicas", "#Construcción", "#Ingeniería", "#Calidad"],
+      "INFRA HOSPITALARIA Y ASISTENCIAL": ["#InfraestructuraHospitalaria", "#Hospital", "#Salud", "#Ingeniería", "#Construcción"],
+      "INFRA CRÍTICA TRANSPORTE": ["#Infraestructura", "#Transporte", "#Ingeniería", "#Construcción"],
+      "INFRA OPERACIÓN MINERA": ["#Minería", "#Ingeniería", "#Mantenimiento", "#Seguridad", "#Confiabilidad"],
+      "LAB MINERO DIGITAL": ["#Minería", "#Ensayos", "#Laboratorio", "#Calidad", "#Tecnología"]
+    },
+    "topic_tags": ["#IngenieríaMecánica", "#Ensayos", "#Geotecnia", "#Estructuras", "#Incendios", "#Acústica", "#Sustentabilidad", "#EficienciaEnergética", "#BIM", "#Digitalización", "#Auditoria", "#Innovación"]
+  },
+  "cta_patterns": [
+    "👉 Conoce más sobre nuestros servicios en https://idiem.cl",
+    "🌐 Conoce el alcance de este servicio en https://idiem.cl",
+    "¿Buscas resolver este desafío en tu proyecto? Conversemos en https://idiem.cl"
+  ],
+  "do": [
+    "Anclar cada afirmación técnica a la evidencia del fact sheet.",
+    "Nombrar disciplinas, métodos y normas SOLO si están respaldadas.",
+    "Variar el hook (pregunta / dolor / dato) entre posts para evitar repetición.",
+    "Mantener el copy en estado DRAFT hasta aprobación humana."
+  ],
+  "dont": [
+    "No inventar servicios, cifras, clientes, proyectos ni resultados.",
+    "No usar rankings, superlativos ni exclusividades (GR-04).",
+    "No expandir términos marcados NAME_ONLY_DO_NOT_EXPAND.",
+    "No prometer resultados no respaldados en el CTA.",
+    "No abusar de emojis ni de signos de exclamación."
+  ]
+}

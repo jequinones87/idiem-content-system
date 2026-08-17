@@ -34,6 +34,28 @@ def test_factsheet_anchored_to_main_knowledge_id(kb):
     assert sheet.knowledge_ids == [item.knowledge_id]
 
 
+def test_factsheet_enrich_same_service(kb):
+    # Pick a service with more than one item in a cell.
+    from collections import Counter
+
+    cell = "INFRA OPERACIÓN MINERA"
+    svc_counts = Counter(it.service for it in kb.items_in_cell(cell))
+    svc = next(s for s, n in svc_counts.items() if n > 1)
+    anchor = next(it for it in kb.items_in_cell(cell) if it.service == svc)
+
+    base = build_fact_sheet(kb, cell, main_knowledge_id=anchor.knowledge_id)
+    enriched = build_fact_sheet(
+        kb, cell, main_knowledge_id=anchor.knowledge_id, enrich_same_service=True
+    )
+    # Enrichment adds same-service siblings and more grounded facts.
+    assert len(enriched.knowledge_ids) > len(base.knowledge_ids)
+    assert anchor.knowledge_id in enriched.knowledge_ids
+    for kid in enriched.knowledge_ids:
+        item = kb.item_by_id[kid]
+        assert item.cell == cell        # never crosses cells
+        assert item.service == svc      # same service only
+
+
 def test_factsheet_anchor_from_wrong_cell_is_gap(kb):
     lab_item = kb.items_in_cell("LAB MINERO DIGITAL")[0]
     sheet = build_fact_sheet(

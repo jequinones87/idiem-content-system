@@ -28,6 +28,8 @@ concreta se genera sin trazar a un `knowledge_id` o `auxiliary_id`.
 data/                canónicos 2A.2 (READ-ONLY, no mutar)
 docs/                handoff (01–04)
 config/cell_rules.json   reglas de celda externas/configurables (regla 11)
+config/planner.json      config del planner (pesos/cadencia/target)
+config/editorial_style.json / .md   guía editorial (tono/estructura/hashtags)
 schemas/content_brief.schema.json   JSON Schema del brief
 src/idiem/
   loader.py          M1  carga canónicos -> KnowledgeBase indexada
@@ -128,11 +130,18 @@ handoff de Design System oficial.
 - **Esqueleto determinista** (`DeterministicDrafter`): sin credenciales; recombina
   los hechos del brief como material de trabajo interno.
 - **Copy publicable**: `build_drafting_request` genera un encargo **acotado** (solo
-  `allowed_facts` + ángulo + matices + claims/términos bloqueados). El texto final lo
-  produce `LLMDrafter` (credential-agnostic, modo automático) o `ingest_draft`
-  (redacción asistida en sesión, **sin API key**). Ambos validan **fuga de
-  `knowledge_id`** y **términos bloqueados** (rankings/superlativos, GR-04), mantienen
-  `DRAFT` y conservan trazabilidad.
+  `allowed_facts` + ángulo + matices + claims/términos bloqueados) e incorpora la
+  **guía editorial** (`config/editorial_style.json`) — tono, estructura
+  (hook→problema→solución IDIEM→impacto→CTA), longitud objetivo (~110–170 palabras),
+  emojis medidos y hashtags recomendados por célula. El texto final lo produce
+  `LLMDrafter` (credential-agnostic, modo automático) o `ingest_draft` (redacción
+  asistida en sesión, **sin API key**). Ambos validan **fuga de `knowledge_id`** y
+  **términos bloqueados** (rankings/superlativos, GR-04), mantienen `DRAFT` y
+  conservan trazabilidad.
+- **Profundidad técnica sin inventar**: los briefs por-post se construyen con
+  `enrich_same_service=True` — al ítem ancla se suman los ítems de la **misma célula
+  y mismo servicio**, ampliando la evidencia disponible (nunca cruza células). Si la
+  evidencia sigue siendo delgada: post corto honesto o `EXPERT_INPUT_REQUIRED`.
 
 ## Fuera de alcance en este hito
 

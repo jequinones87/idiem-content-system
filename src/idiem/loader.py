@@ -31,6 +31,13 @@ PRODUCTION_BASE = "04_base_produccion_IDIEM_2A2.json"
 EDITORIAL_RULES = "05_reglas_editoriales_generacion_IDIEM_2A2.json"
 CLOSURE_VALIDATION = "06_validacion_cierre_biblioteca_2A2.json"
 CELL_RULES = "cell_rules.json"
+EDITORIAL_STYLE = "editorial_style.json"
+
+
+def load_editorial_style() -> dict:
+    """Load the external, configurable editorial style guide (config/)."""
+    with (CONFIG_DIR / EDITORIAL_STYLE).open("r", encoding="utf-8") as fh:
+        return json.load(fh)
 
 
 def _tuple(value) -> tuple:

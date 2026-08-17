@@ -100,14 +100,21 @@ _BASE_FORBIDDEN_TERMS = (
 _QUOTED = re.compile(r"['\"“”«»]([^'\"“”«»]{2,60})['\"“”«»]")
 
 DRAFTING_INSTRUCTIONS = (
-    "Redacta un post de LinkedIn en voz institucional IDIEM (español), sobrio y "
-    "técnico. REGLAS ESTRICTAS: (1) usa ÚNICAMENTE la información de allowed_facts; "
+    "Redacta un post de LinkedIn en voz institucional IDIEM (español) siguiendo la "
+    "guía editorial (campo 'style'). FORMA: estructura hook → problema → solución "
+    "IDIEM con detalle técnico → impacto → CTA; longitud objetivo del estilo "
+    "(~110-170 palabras, 4-5 párrafos); emojis medidos y temáticos; termina con un "
+    "bloque de hashtags (usa 'recommended_hashtags', 4-6, incluyendo #IDIEM) y marca "
+    "1-3 términos clave como hashtag inline. "
+    "REGLAS FACTUALES ESTRICTAS: (1) usa ÚNICAMENTE la información de allowed_facts; "
     "no agregues servicios, cifras, clientes, proyectos ni resultados que no estén "
     "ahí. (2) Respeta cada nota en mandatory_matices. (3) NUNCA publiques los "
     "blocked_claims ni forbidden_terms (rankings, superlativos, exclusividades, "
-    "primacías mundiales), aunque aparezcan en el texto de la evidencia. (4) No "
-    "expandas términos marcados como 'mencionar por nombre'. (5) Devuelve SOLO un "
-    "JSON válido: {\"hook\": str, \"body\": str, \"cta\": str}."
+    "primacías mundiales), aunque aparezcan en la evidencia. (4) No expandas términos "
+    "marcados como 'mencionar por nombre'. (5) Si la evidencia no alcanza la longitud "
+    "objetivo, escribe un post más corto y honesto; no rellenes. (6) Devuelve SOLO un "
+    "JSON válido: {\"hook\": str, \"body\": str, \"cta\": str} (el body incluye el "
+    "bloque de hashtags al final)."
 )
 
 
@@ -125,6 +132,8 @@ class DraftingRequest:
     mandatory_matices: list[str]
     blocked_claims: list[str]
     forbidden_terms: list[str]
+    recommended_hashtags: list[str] = field(default_factory=list)
+    style: dict = field(default_factory=dict)
     instructions: str = DRAFTING_INSTRUCTIONS
 
     def to_dict(self) -> dict:
@@ -144,11 +153,27 @@ def forbidden_terms(brief: dict) -> list[str]:
     return sorted(terms)
 
 
-def build_drafting_request(brief: dict) -> DraftingRequest:
-    """Derive the bounded drafting spec from a factual, policy-checked brief."""
+def recommended_hashtags(cell: str, style: dict) -> list[str]:
+    """Closing-block hashtags for a cell: always-tags + the cell's vocabulary."""
+    tags = list(style.get("hashtags", {}).get("always", []))
+    vocab = style.get("hashtags", {}).get("vocabulary_by_cell", {}).get(cell, [])
+    for t in vocab:
+        if t not in tags:
+            tags.append(t)
+    cap = style.get("hashtags", {}).get("closing_block", {}).get("max", 6)
+    return tags[:cap]
+
+
+def build_drafting_request(brief: dict, *, style: dict | None = None) -> DraftingRequest:
+    """Derive the bounded drafting spec (incl. editorial style) from a brief."""
+    if style is None:
+        from .loader import load_editorial_style
+
+        style = load_editorial_style()
+    cell = brief.get("cell", "")
     return DraftingRequest(
         content_id=brief.get("content_id", ""),
-        cell=brief.get("cell", ""),
+        cell=cell,
         editorial_angle=brief.get("editorial_angle", ""),
         content_type=brief.get("content_type", ""),
         recommended_format=brief.get("recommended_format", "STATIC"),
@@ -157,6 +182,8 @@ def build_drafting_request(brief: dict) -> DraftingRequest:
         mandatory_matices=[_strip_tag(m) for m in brief.get("mandatory_matices", [])],
         blocked_claims=[_strip_tag(c) for c in brief.get("blocked_claims", [])],
         forbidden_terms=forbidden_terms(brief),
+        recommended_hashtags=recommended_hashtags(cell, style),
+        style=style,
     )
 
 
