@@ -1,0 +1,19 @@
+{
+  "_comment": "Configuracion EXTERNA del planner mensual (roadmap FASE B; CLAUDE.md regla 11). Pesos y cadencia son configurables y el equipo puede ajustarlos sin tocar codigo. Referencias: docs/01_SCOPE_AND_PRINCIPLES.md.",
+  "version": "2A.2",
+  "default_target_count": 12,
+  "cadence_per_week": "2-3",
+  "cell_weights": {
+    "INFRA CRÍTICA TRANSPORTE": 6,
+    "INFRA HOSPITALARIA Y ASISTENCIAL": 6,
+    "INFRA OPERACIÓN MINERA": 8,
+    "INFRA PÚBLICA RESILIENTE": 6,
+    "LAB MINERO DIGITAL": 8
+  },
+  "allow_rebalance": false,
+  "notes": [
+    "Los pesos se normalizan proporcionalmente al target del mes (metodo del mayor residuo).",
+    "Si la evidencia real no soporta la cuota de una celda -> CONTENT_GAP, nunca tomar prestado de otra celda.",
+    "allow_rebalance=false: no rebalancear en silencio (docs/03 M5). Si se activa, el excedente de cuota no cubierto puede reasignarse a celdas con cobertura disponible."
+  ]
+}

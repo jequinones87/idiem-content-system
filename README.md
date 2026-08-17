@@ -38,6 +38,8 @@ src/idiem/
   cells.py           reglas de celda (consume config)
   factsheet.py       M3  motor de fact sheet
   brief.py           M4  generador de brief (schema-valid)
+  planner.py         M5  planner mensual (cuotas, cobertura, gaps)
+  drafting.py        M6  drafting adapter (copy acotado al fact sheet)
   interfaces.py      placeholders diseño/publicación (rule 12)
   cli.py             CLI de demo local
 tests/               pytest (integridad, retrieval, fact sheet, brief, tests A–F)
@@ -65,7 +67,13 @@ PYTHONPATH=src python -m idiem.cli factsheet "LAB MINERO DIGITAL" --topic Triaxi
 # Brief (schema-valid, DRAFT) y escritura a output/
 PYTHONPATH=src python -m idiem.cli brief "INFRA PÚBLICA RESILIENTE" --write
 
-# Primer demo funcional (los 4 requisitos del handoff)
+# Plan mensual (JSON + CSV a output/)
+PYTHONPATH=src python -m idiem.cli plan 2026-09 --target 12 --write
+
+# Drafting adapter: brief + copy acotado al fact sheet (sigue DRAFT)
+PYTHONPATH=src python -m idiem.cli draft "INFRA OPERACIÓN MINERA"
+
+# Demo funcional (M0–M6)
 PYTHONPATH=src python -m idiem.cli demo
 ```
 
@@ -75,11 +83,14 @@ PYTHONPATH=src python -m idiem.cli demo
 python -m pytest
 ```
 
-Cubren: reproducción del cierre y fail-closed ante IDs duplicados/política
-inválida; retrieval por célula sin fuga cruzada; fact sheet; brief schema-valid;
-y los **tests obligatorios A–F** de `docs/04_ACCEPTANCE_CRITERIA.md`
-(Transporte→`CONTENT_GAP`, `NAME_ONLY`, Triaxial núcleo/claims, frontera minera,
-evidencia excluida, trazabilidad de IDs).
+Cubren (56 tests): reproducción del cierre y fail-closed ante IDs duplicados/
+política inválida; retrieval por célula sin fuga cruzada; fact sheet; brief
+schema-valid; planner mensual (cuotas, cobertura, sin préstamo entre células,
+sin reuso consecutivo, historial reciente); drafting adapter (sin hechos nuevos,
+sigue `DRAFT`, conserva trazabilidad); interfaces de handoff; y los **tests
+obligatorios A–F** de `docs/04_ACCEPTANCE_CRITERIA.md` (Transporte→`CONTENT_GAP`,
+`NAME_ONLY`, Triaxial núcleo/claims, frontera minera, evidencia excluida,
+trazabilidad de IDs).
 
 ## Integridad verificada vs `docs/04`
 
@@ -96,8 +107,8 @@ Planner producen el brief aprobado; Visual / Assets / Integrations solo
 | Fase | Estado | En este repo |
 |---|---|---|
 | A — Knowledge System | ✅ Completa (handoff 2A.2) | consumida en `data/` (inmutable) |
-| B — Content Planner | 🟡 En implementación | M0–M4 listos; M5 (grilla mensual) pendiente |
-| C — Editorial Drafting | 🟡 En implementación | fact sheet + brief; M6 (copy) pendiente |
+| B — Content Planner | 🟡 En implementación | M0–M4 + **M5 planner mensual** (`planner.py`) |
+| C — Editorial Drafting | 🟡 En implementación | fact sheet + brief + **M6 drafting adapter** (`drafting.py`) |
 | D — Design System | ⏳ Handoff futuro | **interfaz** `DesignSystemProvider` (placeholder) |
 | E — Image Library | ⏳ Handoff futuro | **contrato** `ImageAsset` + `AssetQuery` (placeholder) |
 | F–I — Visual/Approval/Metricool/n8n/Publishing | ⏳ Futuras | interfaces `VisualAssetProvider` / `Publisher` (placeholder) |

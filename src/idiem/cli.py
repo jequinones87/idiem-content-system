@@ -23,9 +23,11 @@ from dataclasses import asdict
 
 from .brief import build_brief, write_brief
 from .cells import CellRules
+from .drafting import apply_draft
 from .factsheet import build_fact_sheet
 from .integrity import assert_integrity, run_all_checks
 from .loader import REPO_ROOT, load_knowledge_base
+from .planner import MonthlyPlanner, write_plan_csv, write_plan_json
 from .retrieval import RetrievalEngine
 
 OUTPUT_DIR = REPO_ROOT / "output"
@@ -76,6 +78,31 @@ def cmd_brief(args) -> int:
     return 0
 
 
+def cmd_plan(args) -> int:
+    kb = load_knowledge_base()
+    planner = MonthlyPlanner(kb)
+    plan = planner.build_plan(month=args.month, target_count=args.target)
+    draft = sum(1 for s in plan.slots if s.status == "DRAFT")
+    gaps = sum(1 for s in plan.slots if s.status == "CONTENT_GAP")
+    print(f"Plan {plan.month}: {len(plan.slots)} slots ({draft} DRAFT, {gaps} CONTENT_GAP)")
+    for s in plan.slots:
+        kid = s.knowledge_id or "-"
+        print(f"  #{s.seq:02d} | {s.status:11} | {s.cell} | {kid}")
+    if args.write:
+        pj = write_plan_json(plan, OUTPUT_DIR)
+        pc = write_plan_csv(plan, OUTPUT_DIR)
+        print(f"\nEscrito: {pj}\nEscrito: {pc}", file=sys.stderr)
+    return 0
+
+
+def cmd_draft(args) -> int:
+    kb = load_knowledge_base()
+    brief = build_brief(kb, args.cell, topic=args.topic)
+    drafted = apply_draft(brief)
+    _p(drafted)
+    return 0
+
+
 def cmd_demo(_args) -> int:
     kb = load_knowledge_base()
 
@@ -120,6 +147,21 @@ def cmd_demo(_args) -> int:
     gap_brief = build_brief(kb, TRANSPORTE, topic="Metro L7 estructural")
     print(f"    status: {gap_brief['status']} | content_gaps: {gap_brief['content_gaps']}")
 
+    print("\n[5] Plan mensual (12 posts) con gaps en vez de invenciones")
+    plan = MonthlyPlanner(kb).build_plan(month="2026-09", target_count=12)
+    draftn = sum(1 for s in plan.slots if s.status == "DRAFT")
+    gapn = sum(1 for s in plan.slots if s.status == "CONTENT_GAP")
+    print(f"    slots: {len(plan.slots)} ({draftn} DRAFT, {gapn} CONTENT_GAP)")
+    from collections import Counter
+    per = Counter((s.cell, s.status) for s in plan.slots)
+    for (cell, status), n in sorted(per.items()):
+        print(f"      {cell} [{status}]: {n}")
+
+    print("\n[6] Drafting adapter (copy acotado al fact sheet, sigue DRAFT)")
+    drafted = apply_draft(brief)
+    print(f"    status: {drafted['status']} | hook: {drafted['draft_copy']['hook'][:60]}…")
+    print(f"    QA notes: {drafted['qa']['notes'][-1]}")
+
     print("\nDemo OK.")
     return 0
 
@@ -147,6 +189,17 @@ def build_parser() -> argparse.ArgumentParser:
     p_br.add_argument("--content-type", dest="content_type", default="TECHNICAL_INSIGHT")
     p_br.add_argument("--write", action="store_true")
     p_br.set_defaults(func=cmd_brief)
+
+    p_pl = sub.add_parser("plan", help="Build a monthly plan")
+    p_pl.add_argument("month", help="e.g. 2026-09")
+    p_pl.add_argument("--target", type=int, default=None)
+    p_pl.add_argument("--write", action="store_true")
+    p_pl.set_defaults(func=cmd_plan)
+
+    p_dr = sub.add_parser("draft", help="Build a brief and draft its copy (M6)")
+    p_dr.add_argument("cell")
+    p_dr.add_argument("--topic", default=None)
+    p_dr.set_defaults(func=cmd_draft)
 
     return parser
 
