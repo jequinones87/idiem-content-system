@@ -92,14 +92,22 @@ def build_brief(
     objective: str | None = None,
     editorial_angle: str | None = None,
     recommended_format: str = "STATIC",
+    main_knowledge_id: str | None = None,
 ) -> dict:
-    """Build a schema-valid brief dict for ``cell`` (+ optional topic)."""
+    """Build a schema-valid brief dict for ``cell`` (+ optional topic).
+
+    When ``main_knowledge_id`` is given, the brief is anchored to that single
+    knowledge item (one post = one main item), used e.g. by the monthly planner
+    to turn a plan slot into a concrete post.
+    """
     if content_type not in _VALID_CONTENT_TYPES:
         raise ValueError(f"content_type inválido: {content_type!r}")
     if recommended_format not in {"STATIC", "CAROUSEL"}:
         raise ValueError(f"recommended_format inválido: {recommended_format!r}")
 
-    sheet = build_fact_sheet(kb, cell, topic=topic, audience=audience)
+    sheet = build_fact_sheet(
+        kb, cell, topic=topic, audience=audience, main_knowledge_id=main_knowledge_id
+    )
     angle = _editorial_angle(kb, cell, editorial_angle)
 
     if sheet.is_content_gap:
@@ -117,8 +125,9 @@ def build_brief(
         expert_request = None
 
     visual_points = sheet.allowed_facts[:3]
+    id_seed = main_knowledge_id or topic
     brief = {
-        "content_id": _content_id(cell, topic),
+        "content_id": _content_id(cell, id_seed),
         "status": status,
         "cell": cell,
         "content_type": effective_type,

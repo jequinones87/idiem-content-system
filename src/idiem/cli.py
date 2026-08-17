@@ -29,6 +29,7 @@ from .integrity import assert_integrity, run_all_checks
 from .loader import REPO_ROOT, load_knowledge_base
 from .planner import MonthlyPlanner, write_plan_csv, write_plan_json
 from .retrieval import RetrievalEngine
+from .review import compose_month, write_review
 
 OUTPUT_DIR = REPO_ROOT / "output"
 TRANSPORTE = "INFRA CRÍTICA TRANSPORTE"
@@ -103,6 +104,22 @@ def cmd_draft(args) -> int:
     return 0
 
 
+def cmd_review(args) -> int:
+    kb = load_knowledge_base()
+    review = compose_month(kb, args.month, target_count=args.target)
+    print(
+        f"Review {review.month}: {review.draft_count} posts DRAFT, "
+        f"{review.gap_count} CONTENT_GAP"
+    )
+    for p in review.posts:
+        print(f"  #{p.seq:02d} {p.content_id} | {p.cell} | {p.knowledge_id}")
+    if args.write:
+        paths = write_review(review, OUTPUT_DIR)
+        for name, path in paths.items():
+            print(f"  {name}: {path}", file=sys.stderr)
+    return 0
+
+
 def cmd_demo(_args) -> int:
     kb = load_knowledge_base()
 
@@ -162,6 +179,12 @@ def cmd_demo(_args) -> int:
     print(f"    status: {drafted['status']} | hook: {drafted['draft_copy']['hook'][:60]}…")
     print(f"    QA notes: {drafted['qa']['notes'][-1]}")
 
+    print("\n[7] Vista de revisión mensual (plan -> brief anclado -> copy)")
+    review = compose_month(kb, "2026-09", target_count=12)
+    paths = write_review(review, OUTPUT_DIR)
+    print(f"    posts: {review.draft_count} | gaps: {review.gap_count}")
+    print(f"    HTML: {paths['html']}")
+
     print("\nDemo OK.")
     return 0
 
@@ -200,6 +223,12 @@ def build_parser() -> argparse.ArgumentParser:
     p_dr.add_argument("cell")
     p_dr.add_argument("--topic", default=None)
     p_dr.set_defaults(func=cmd_draft)
+
+    p_rv = sub.add_parser("review", help="Compose a monthly review (HTML+CSV+JSON)")
+    p_rv.add_argument("month", help="e.g. 2026-09")
+    p_rv.add_argument("--target", type=int, default=None)
+    p_rv.add_argument("--write", action="store_true")
+    p_rv.set_defaults(func=cmd_review)
 
     return parser
 

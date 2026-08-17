@@ -40,6 +40,7 @@ src/idiem/
   brief.py           M4  generador de brief (schema-valid)
   planner.py         M5  planner mensual (cuotas, cobertura, gaps)
   drafting.py        M6  drafting adapter (esqueleto determinista + copy publicable acotado)
+  review.py          Vista de revisión mensual (plan -> brief anclado -> copy -> HTML)
   interfaces.py      placeholders diseño/publicación (rule 12)
   cli.py             CLI de demo local
 tests/               pytest (integridad, retrieval, fact sheet, brief, tests A–F)
@@ -72,6 +73,9 @@ PYTHONPATH=src python -m idiem.cli plan 2026-09 --target 12 --write
 
 # Drafting adapter: brief + copy acotado al fact sheet (sigue DRAFT)
 PYTHONPATH=src python -m idiem.cli draft "INFRA OPERACIÓN MINERA"
+
+# Vista de revisión mensual (HTML interno + CSV + JSON a output/)
+PYTHONPATH=src python -m idiem.cli review 2026-09 --target 12 --write
 
 # Demo funcional (M0–M6)
 PYTHONPATH=src python -m idiem.cli demo

@@ -91,6 +91,7 @@ def build_fact_sheet(
     topic: str | None = None,
     goal: str | None = None,
     audience: str | None = None,
+    main_knowledge_id: str | None = None,
 ) -> FactSheet:
     engine = RetrievalEngine(kb)
     rules = CellRules(kb)
@@ -111,9 +112,29 @@ def build_fact_sheet(
         sheet.log.append(f"CONTENT_GAP en {cell}: {gap.reason}")
         return sheet
 
-    # 2) Retrieve same-cell items (optionally narrowed by topic keyword).
-    query = RetrievalQuery(cell=cell, keyword=topic)
-    hits = engine.retrieve(query)
+    # 2) Retrieve same-cell items. When a specific main_knowledge_id is given,
+    # anchor the fact sheet to that single item (one post = one main item);
+    # otherwise retrieve the cell (optionally narrowed by topic keyword).
+    if main_knowledge_id is not None:
+        item = kb.item_by_id.get(main_knowledge_id)
+        if item is None or item.cell != cell:
+            # Fail closed: unknown id, or id from another cell (no cross-cell leak).
+            sheet.is_content_gap = True
+            sheet.content_gaps.append(
+                f"El knowledge_id '{main_knowledge_id}' no existe o no pertenece a "
+                f"la célula '{cell}'. No se importa evidencia de otra célula."
+            )
+            sheet.log.append(
+                f"CONTENT_GAP: main_knowledge_id='{main_knowledge_id}' inválido para {cell}."
+            )
+            return sheet
+        hits = [
+            h
+            for h in engine.retrieve_by_cell(cell)
+            if h.item.knowledge_id == main_knowledge_id
+        ]
+    else:
+        hits = engine.retrieve(RetrievalQuery(cell=cell, keyword=topic))
 
     if not hits:
         # The cell has evidence, but nothing matched the requested topic.

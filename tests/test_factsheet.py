@@ -25,6 +25,24 @@ def test_topic_without_match_is_gap_not_borrowed(kb):
     assert sheet.knowledge_ids == []
 
 
+def test_factsheet_anchored_to_main_knowledge_id(kb):
+    item = kb.items_in_cell("INFRA OPERACIÓN MINERA")[0]
+    sheet = build_fact_sheet(
+        kb, "INFRA OPERACIÓN MINERA", main_knowledge_id=item.knowledge_id
+    )
+    assert not sheet.is_content_gap
+    assert sheet.knowledge_ids == [item.knowledge_id]
+
+
+def test_factsheet_anchor_from_wrong_cell_is_gap(kb):
+    lab_item = kb.items_in_cell("LAB MINERO DIGITAL")[0]
+    sheet = build_fact_sheet(
+        kb, "INFRA OPERACIÓN MINERA", main_knowledge_id=lab_item.knowledge_id
+    )
+    assert sheet.is_content_gap
+    assert sheet.knowledge_ids == []
+
+
 def test_factsheet_only_same_cell_ids(kb):
     for cell, prefix in [
         ("INFRA PÚBLICA RESILIENTE", "KB-IPR"),
