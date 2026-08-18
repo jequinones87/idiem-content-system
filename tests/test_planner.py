@@ -107,3 +107,21 @@ def test_allow_rebalance_config_fills_from_surplus(kb):
     draft = [s for s in plan.slots if s.status == "DRAFT"]
     assert draft, "el rebalance debe producir algunos DRAFT desde cobertura disponible"
     assert all(s.cell != "INFRA CRÍTICA TRANSPORTE" for s in draft)
+
+
+def test_selection_spreads_services(kb):
+    # Fase A: the first-N slice must vary the service instead of clustering into
+    # one. LAB MINERO DIGITAL has 5 distinct services; a 3-item pick must use 3.
+    planner = MonthlyPlanner(kb)
+    picks = planner._candidates("LAB MINERO DIGITAL", set())[:3]
+    services = {kb.item_by_id[it.knowledge_id].service for it in picks}
+    assert len(services) == 3, f"esperaba 3 servicios distintos, obtuve {services}"
+
+
+def test_selection_spreads_capability_within_service(kb):
+    # INFRA HOSPITALARIA has 2 services but 5 distinct contractual capabilities;
+    # picking 3 should not repeat a capability.
+    planner = MonthlyPlanner(kb)
+    picks = planner._candidates("INFRA HOSPITALARIA Y ASISTENCIAL", set())[:3]
+    caps = [kb.item_by_id[it.knowledge_id].capability for it in picks]
+    assert len(set(caps)) == len(caps), f"capacidades repetidas: {caps}"

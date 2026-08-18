@@ -10,7 +10,8 @@
       "Acreditaciones/certificaciones/cifras -> USE_WITH_MATIZ (verificar vigencia, GR-13).",
       "Núcleo técnico con claim adjunto (p.ej. Triaxial Gigante) -> USE_TECHNICAL_CORE_BLOCK_CLAIMS.",
       "Superlativos/rankings/exclusividades -> blocked_source (no publicar, GR-04).",
-      "No expandir términos NAME_ONLY de 2A.2 (p.ej. GREEN HOSPITAL, CES, LEED)."
+      "No expandir términos NAME_ONLY de 2A.2 salvo anulación auditada explícita en 'policy_overrides' (p.ej. LEED, CES, GGHH siguen NAME_ONLY: solo nombrar).",
+      "policy_overrides: cambios de política sobre un knowledge_id de 2A.2 autorizados por la fuente de verdad (cliente). Aditivos y trazables; nunca mutan 2A.2. Cada override lista los hechos habilitados y los claims que permanecen bloqueados."
     ]
   },
   "enrichment": [
@@ -70,5 +71,30 @@
     {"cell": "INFRA PÚBLICA RESILIENTE", "service": "Asesoría a mandantes públicos", "text": "Protagonistas del desarrollo técnico y normativo del país; alto estándar técnico", "reason": "Superlativo/autoatribución (GR-04)", "file_name": "Original ficha N°2 - Estudios técnicos y asesorías a mandantes públicos.pdf", "page": "1"},
     {"cell": "INFRA PÚBLICA RESILIENTE", "service": "Estudios y peritajes contractuales", "text": "más de 400 estudios en los últimos 10 años; más de 90 clientes; distinción Leaders League 'Experto'", "reason": "Cifras/credenciales a verificar antes de publicar (GR-13); reconocimiento no ponderable como hecho técnico", "file_name": "OR Ficha 12 Estudios de ingenieria contractual.pdf", "page": "1"},
     {"cell": "INFRA OPERACIÓN MINERA", "service": "Servicios a operación minera", "text": "más de 125 años de experiencia", "reason": "Credencial a verificar/ponderar antes de publicar (GR-13)", "file_name": "OR Ficha 10 Minería copia.pdf", "page": "2"}
+  ],
+  "policy_overrides": [
+    {
+      "override_id": "OVR-KB-IHA-001",
+      "knowledge_id": "KB-IHA-001",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "service": "Sustentabilidad",
+      "from_policy": "NAME_ONLY_DO_NOT_EXPAND",
+      "to_policy": "USE_TECHNICAL_CORE_BLOCK_CLAIMS",
+      "authorized_by": "usuario (fuente de verdad IDIEM)",
+      "date": "2026-08-18",
+      "rationale": "El usuario habilita el núcleo técnico/definicional de Green Hospital para contenido de sostenibilidad hospitalaria. Registrado como anulación auditada en 2A.3; no muta 2A.2. Los superlativos/rankings y logros de cliente puntual permanecen bloqueados (GR-04).",
+      "allowed_facts": [
+        "Green Hospital (Hospital Verde) es un reconocimiento que promueve la sostenibilidad ambiental en instituciones de salud: adopta prácticas sostenibles para reducir el impacto ambiental, proteger la salud de las personas y su entorno, y promover responsabilidad social y eficiencia operativa, más allá de los estándares tradicionales.",
+        "En Chile, IDIEM (Universidad de Chile) impulsa la certificación Green Hospital en conjunto con organizaciones como Salud sin Daño.",
+        "La evaluación de un Green Hospital considera aspectos como eficiencia energética y reducción de emisiones, gestión segura y ambientalmente responsable de residuos clínicos y hospitalarios, uso sostenible de recursos hídricos y materiales, estrategias de compras y abastecimiento responsables, y promoción de la salud ambiental con educación a colaboradores y comunidad.",
+        "Existen marcos y certificaciones ambientales relacionados aplicables a instalaciones de salud, que pueden nombrarse como referencia: la Red Global de Hospitales Verdes y Saludables (GGHH), y sistemas como LEED for Healthcare, Green Globes Healthcare e IGBC Green Healthcare Rating System."
+      ],
+      "matiz": "Green Hospital habilitado a núcleo técnico/definicional. No afirmar 'primero/único/pionero' ni atribuir categorías (p.ej. 'Oro') a clientes específicos. GGHH es un marco de acción, no una certificación. LEED / Green Globes / IGBC solo se nombran como referencia, no se explican ni se presentan como servicios propios de IDIEM.",
+      "blocked_claims": [
+        {"text": "primer Green Hospital de Chile (Clínica Dávila) / categoría Oro / distinción pionera", "reason": "Superlativo/ranking y logro de cliente puntual; no publicar como hecho (GR-04)."}
+      ],
+      "file_name": "Aporte del usuario — nota Green Hospital (2026-08-18)",
+      "page": "-"
+    }
   ]
 }

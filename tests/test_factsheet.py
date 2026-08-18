@@ -74,3 +74,43 @@ def test_factsheet_only_same_cell_ids(kb):
     ]:
         sheet = build_fact_sheet(kb, cell)
         assert all(k.startswith(prefix) for k in sheet.knowledge_ids), cell
+
+
+def test_green_hospital_override_expands_technical_core(kb):
+    # 2A.3 audited override: GREEN HOSPITAL (NAME_ONLY in 2A.2) is expanded to
+    # its technical/definitional core, while superlatives stay blocked. 2A.2 is
+    # never mutated; the canonical policy is still NAME_ONLY_DO_NOT_EXPAND.
+    assert kb.item_by_id["KB-IHA-001"].generation_policy == "NAME_ONLY_DO_NOT_EXPAND"
+    sheet = build_fact_sheet(
+        kb,
+        "INFRA HOSPITALARIA Y ASISTENCIAL",
+        main_knowledge_id="KB-IHA-001",
+        enrich_same_service=True,
+    )
+    facts = " ".join(sheet.allowed_facts)
+    assert "OVR-KB-IHA-001" in facts
+    assert "eficiencia energética" in facts  # sustainability core is available
+    # The NAME_ONLY "do not expand" caveat is replaced by the override matiz.
+    assert not any("NAME_ONLY_DO_NOT_EXPAND: no explicar" in m for m in sheet.mandatory_matices)
+    # Superlatives / client rankings remain blocked (GR-04).
+    blocked = " ".join(sheet.blocked_claims)
+    assert "primer Green Hospital" in blocked
+
+
+def test_month_level_enrichment_dedup(kb):
+    # Fase B: a shared used-set prevents a 2A.3 record from repeating across the
+    # month. Building the same service twice with a shared set adds no new EXT
+    # facts the second time.
+    used: set[str] = set()
+    first = build_fact_sheet(
+        kb, "LAB MINERO DIGITAL", main_knowledge_id="KB-LMD-001",
+        enrich_same_service=True, used_enrichment_ids=used,
+    )
+    ext_first = [f for f in first.allowed_facts if "[EXT-" in f]
+    assert ext_first, "esperaba enriquecimiento 2A.3 en el primer post"
+    second = build_fact_sheet(
+        kb, "LAB MINERO DIGITAL", main_knowledge_id="KB-LMD-001",
+        enrich_same_service=True, used_enrichment_ids=used,
+    )
+    ext_second = [f for f in second.allowed_facts if "[EXT-" in f]
+    assert ext_second == [], "el enriquecimiento ya usado no debe repetirse"

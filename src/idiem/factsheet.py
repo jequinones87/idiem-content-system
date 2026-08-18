@@ -47,11 +47,33 @@ def _dedupe(seq: list[str]) -> list[str]:
     return out
 
 
-def _facts_from_hit(hit: RetrievalHit, sheet: FactSheet) -> None:
+def _facts_from_hit(kb: KnowledgeBase, hit: RetrievalHit, sheet: FactSheet) -> None:
     """Derive allowed facts / caveats / blocked claims for one item by policy."""
     item = hit.item
     kid = item.knowledge_id
     policy = item.generation_policy
+
+    # Audited 2A.3 policy override (source-of-truth authorized). Replaces the
+    # canonical policy for this item — e.g. GREEN HOSPITAL from NAME_ONLY to
+    # technical core — without mutating 2A.2. Superlatives stay blocked.
+    override = kb.policy_override_for(kid)
+    if override is not None:
+        oid = override["override_id"]
+        for fact in override.get("allowed_facts", []):
+            sheet.allowed_facts.append(f"[{oid}] {fact}")
+        if override.get("matiz"):
+            sheet.mandatory_matices.append(f"[{oid}] {override['matiz']}")
+        for bc in override.get("blocked_claims", []):
+            sheet.blocked_claims.append(
+                f"[{oid}] No afirmar: «{bc.get('text','')}» ({bc.get('reason','GR-04')})."
+            )
+        if override.get("document_id"):
+            sheet.document_ids.append(override["document_id"])
+        sheet.log.append(
+            f"{kid}: override auditado 2A.3 {override.get('from_policy')} -> "
+            f"{override.get('to_policy')} ({oid})."
+        )
+        return
 
     if policies.is_name_only(policy):
         # GR-03: may be named, never expanded or equated to another service.
@@ -94,6 +116,7 @@ def build_fact_sheet(
     main_knowledge_id: str | None = None,
     enrich_same_service: bool = False,
     max_enrich_items: int = 6,
+    used_enrichment_ids: set[str] | None = None,
 ) -> FactSheet:
     engine = RetrievalEngine(kb)
     rules = CellRules(kb)
@@ -168,7 +191,7 @@ def build_fact_sheet(
         sheet.knowledge_ids.append(hit.item.knowledge_id)
         sheet.relation_ids.extend(hit.item.source_relation_ids)
         sheet.document_ids.extend(hit.item.document_ids)
-        _facts_from_hit(hit, sheet)
+        _facts_from_hit(kb, hit, sheet)
 
     # 4) Compatible auxiliary evidence (same cell, usable policy). GR-05.
     for aux in engine._compatible_auxiliary(cell):
@@ -182,11 +205,19 @@ def build_fact_sheet(
             )
 
     # 4b) 2A.3 evidence enrichment for the services present (same cell only).
+    # ``used_enrichment_ids`` de-duplicates enrichment across a month: a given
+    # 2A.3 record (e.g. the ISO/HSEC certification line) surfaces at most once,
+    # so posts stop repeating the same credential/attribute. Mutated in place.
     if enrich_same_service:
         services = {h.item.service for h in hits}
         for svc in sorted(services):
             for rec in kb.enrichment_for(cell, svc):
                 eid = rec.get("enrichment_id", "EXT")
+                if used_enrichment_ids is not None:
+                    if eid in used_enrichment_ids:
+                        sheet.log.append(f"{eid}: omitido (ya usado este mes, de-dup).")
+                        continue
+                    used_enrichment_ids.add(eid)
                 pol = rec.get("generation_policy", policies.USE_FACTUAL)
                 ev = rec.get("verified_evidence", "")
                 if rec.get("document_id"):

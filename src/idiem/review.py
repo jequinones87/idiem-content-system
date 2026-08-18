@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import html
 import json
+import re
 from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -57,26 +58,42 @@ class MonthReview:
     plan: dict = field(default_factory=dict)
 
 
-def _collect_sources(kb: KnowledgeBase, brief: dict) -> list[dict]:
-    """Exact source text behind a post: per knowledge item and 2A.3 enrichment.
+_EXT_TAG = re.compile(r"\[(EXT-\d+)\]")
+_OVR_TAG = re.compile(r"\[(OVR-[A-Za-z0-9\-]+)\]")
 
-    Returns records {label, file, page, text} so a reviewer can verify veracity.
+
+def _collect_sources(kb: KnowledgeBase, brief: dict) -> list[dict]:
+    """Exact source text behind a post, matching the facts actually used.
+
+    Derives evidence rows from (1) each knowledge item's canonical sources,
+    (2) the 2A.3 enrichment records referenced by ``[EXT-####]`` tags present in
+    the post's facts, and (3) any audited ``[OVR-...]`` policy override. Reading
+    the tags off the brief keeps the "Ver fuente" popup consistent with the
+    month-level de-dup: only enrichment actually surfaced in this post is shown.
+    Returns records {label, file, page, text} for veracity checks.
     """
     sources: list[dict] = []
-    seen_ext: set[str] = set()
     for kid in brief.get("knowledge_ids", []):
         for s in kb.sources_for(kid):
             sources.append(
                 {"label": kid, "file": s.file_name, "page": s.page, "text": s.verified_evidence}
             )
-        item = kb.item_by_id.get(kid)
-        if item is None:
+
+    # Scan the fact/claim/matiz lines this post actually carries for 2A.3 tags.
+    lines = (
+        list(brief.get("allowed_facts", []))
+        + list(brief.get("blocked_claims", []))
+        + list(brief.get("mandatory_matices", []))
+    )
+    blob = "\n".join(lines)
+
+    seen_ext: set[str] = set()
+    for eid in _EXT_TAG.findall(blob):
+        if eid in seen_ext:
             continue
-        for rec in kb.enrichment_for(item.cell, item.service):
-            eid = rec.get("enrichment_id", "EXT")
-            if eid in seen_ext:
-                continue
-            seen_ext.add(eid)
+        seen_ext.add(eid)
+        rec = kb.enrichment_by_id(eid)
+        if rec:
             sources.append(
                 {
                     "label": eid,
@@ -85,6 +102,27 @@ def _collect_sources(kb: KnowledgeBase, brief: dict) -> list[dict]:
                     "text": rec.get("verified_evidence", ""),
                 }
             )
+
+    seen_ovr: set[str] = set()
+    for oid in _OVR_TAG.findall(blob):
+        if oid in seen_ovr:
+            continue
+        seen_ovr.add(oid)
+        for kid in brief.get("knowledge_ids", []):
+            ov = kb.policy_override_for(kid)
+            if ov and ov.get("override_id") == oid:
+                text = ov.get("rationale", "")
+                if ov.get("allowed_facts"):
+                    text = ov["allowed_facts"][0]
+                sources.append(
+                    {
+                        "label": oid,
+                        "file": ov.get("file_name", ""),
+                        "page": ov.get("page", ""),
+                        "text": text,
+                    }
+                )
+                break
     return sources
 
 
@@ -98,6 +136,11 @@ def compose_month(
     """Compose a month: plan -> per-slot anchored brief + draft, and gap cards."""
     plan = MonthlyPlanner(kb).build_plan(month=month, target_count=target_count)
 
+    # Month-level de-dup: a 2A.3 enrichment record (e.g. the ISO/HSEC line)
+    # surfaces at most once across the whole month, so posts stop repeating the
+    # same credential/attribute (Fase B). Accumulated across slots in order.
+    used_enrichment_ids: set[str] = set()
+
     posts: list[PostReview] = []
     gaps: list[GapReview] = []
     for slot in plan.slots:
@@ -107,6 +150,7 @@ def compose_month(
                 slot.cell,
                 main_knowledge_id=slot.knowledge_id,
                 enrich_same_service=True,
+                used_enrichment_ids=used_enrichment_ids,
             )
             brief["content_id"] = slot.content_id  # canonical post id from the plan
             drafted = apply_draft(brief, drafter)

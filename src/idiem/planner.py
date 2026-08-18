@@ -82,6 +82,51 @@ def _content_id(cell: str, knowledge_id: str, seq: int) -> str:
     return f"PLAN-{knowledge_id}-{seq:02d}"
 
 
+def _diversify(items: list) -> list:
+    """Reorder items to maximize thematic spread when taking the first N.
+
+    Groups by ``service`` and then, within a service, by ``capability``, and
+    round-robins across those buckets. So ``result[:N]`` covers as many distinct
+    services (then capabilities) as the cell offers before repeating any — the
+    fix for months where the naive ``sorted-by-id[:N]`` slice clustered every
+    slot into the largest/alphabetically-first service.
+    """
+    # Bucket by (service, capability), preserving a deterministic inner order.
+    buckets: dict[tuple[str, str], list] = {}
+    for it in sorted(items, key=lambda x: x.knowledge_id):
+        key = (it.service or "", it.capability or "")
+        buckets.setdefault(key, []).append(it)
+
+    # Order service groups deterministically by name; within a service, order
+    # capability groups by name. Round-robin services first (outer), so distinct
+    # services come first; ties inside a service spread across capabilities.
+    from collections import OrderedDict
+
+    by_service: "OrderedDict[str, list[list]]" = OrderedDict()
+    for (svc, cap) in sorted(buckets):
+        by_service.setdefault(svc, []).append(buckets[(svc, cap)])
+
+    # Flatten each service into a capability-interleaved queue.
+    service_queues: dict[str, list] = {}
+    for svc, cap_groups in by_service.items():
+        q: list = []
+        cap_lists = [list(g) for g in cap_groups]
+        while any(cap_lists):
+            for cl in cap_lists:
+                if cl:
+                    q.append(cl.pop(0))
+        service_queues[svc] = q
+
+    # Round-robin across services.
+    order = sorted(service_queues)
+    out: list = []
+    while any(service_queues[s] for s in order):
+        for s in order:
+            if service_queues[s]:
+                out.append(service_queues[s].pop(0))
+    return out
+
+
 class MonthlyPlanner:
     def __init__(self, kb: KnowledgeBase, config: dict | None = None) -> None:
         self.kb = kb
@@ -94,8 +139,14 @@ class MonthlyPlanner:
         Excludes knowledge IDs in ``recent`` (recent content history) so the
         planner does not repeat what was just published.
         """
-        items = sorted(self.kb.items_in_cell(cell), key=lambda it: it.knowledge_id)
-        return [it for it in items if it.knowledge_id not in recent]
+        items = [
+            it
+            for it in self.kb.items_in_cell(cell)
+            if it.knowledge_id not in recent
+        ]
+        # Spread by service/capability so the first-N slice varies the topic
+        # instead of clustering into the largest service (Fase A).
+        return _diversify(items)
 
     def build_plan(
         self,

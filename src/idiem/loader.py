@@ -127,17 +127,33 @@ class KnowledgeBase:
         }
         self._enrichment_by_service: dict[tuple[str, str], list[dict]] = defaultdict(list)
         self._blocked_source_by_service: dict[tuple[str, str], list[dict]] = defaultdict(list)
+        self._enrichment_by_id: dict[str, dict] = {}
         for rec in self.extension.get("enrichment", []):
             rec = {**rec, "document_id": doc_by_filename.get(_nfc(rec.get("file_name", "")))}
             self._enrichment_by_service[(rec["cell"], rec["service"])].append(rec)
+            self._enrichment_by_id[rec["enrichment_id"]] = rec
         for rec in self.extension.get("blocked_source", []):
             self._blocked_source_by_service[(rec["cell"], rec["service"])].append(rec)
+
+        # --- 2A.3 audited policy overrides (additive; never mutates 2A.2) ------
+        # A change of generation_policy on a 2A.2 knowledge_id, authorized by the
+        # source of truth (e.g. NAME_ONLY -> technical core). Indexed by id.
+        self._policy_override_by_id: dict[str, dict] = {}
+        for rec in self.extension.get("policy_overrides", []):
+            rec = {**rec, "document_id": doc_by_filename.get(_nfc(rec.get("file_name", "")))}
+            self._policy_override_by_id[rec["knowledge_id"]] = rec
 
     def enrichment_for(self, cell: str, service: str) -> list[dict]:
         return list(self._enrichment_by_service.get((cell, service), []))
 
+    def enrichment_by_id(self, enrichment_id: str) -> Optional[dict]:
+        return self._enrichment_by_id.get(enrichment_id)
+
     def blocked_source_for(self, cell: str, service: str) -> list[dict]:
         return list(self._blocked_source_by_service.get((cell, service), []))
+
+    def policy_override_for(self, knowledge_id: str) -> Optional[dict]:
+        return self._policy_override_by_id.get(knowledge_id)
 
     # --- convenience accessors ----------------------------------------------
     def cells(self) -> list[str]:

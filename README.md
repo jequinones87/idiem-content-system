@@ -90,7 +90,7 @@ PYTHONPATH=src python -m idiem.cli demo
 python -m pytest
 ```
 
-Cubren (56 tests): reproducción del cierre y fail-closed ante IDs duplicados/
+Cubren (91 tests): reproducción del cierre y fail-closed ante IDs duplicados/
 política inválida; retrieval por célula sin fuga cruzada; fact sheet; brief
 schema-valid; planner mensual (cuotas, cobertura, sin préstamo entre células,
 sin reuso consecutivo, historial reciente); drafting adapter (sin hechos nuevos,
@@ -145,6 +145,28 @@ handoff de Design System oficial.
   capacidades técnicas citadas del texto fuente de los brochures, con política por
   registro y **superlativos/rankings bloqueados** (GR-04). Es una **capa aditiva** que
   no muta 2A.2. Si la evidencia sigue delgada: post corto honesto o `EXPERT_INPUT_REQUIRED`.
+
+### Variedad temática: selección diversa + de-dup por mes
+
+Para evitar que los posts de una célula repitan el mismo servicio (p. ej. tres
+posts de "Laboratorio en obra"), el planner **no toma los primeros N por código**:
+`planner._diversify` reordena por **máxima dispersión de servicio y luego de
+capability**, de modo que el primer tramo del mes recorre temas distintos antes
+de repetir cualquiera. Además, la composición mensual (`compose_month`) comparte
+un conjunto `used_enrichment_ids`: cada registro de evidencia **2A.3 aparece a lo
+más una vez al mes**, por lo que credenciales o atributos (ISO, HSEC, etc.) dejan
+de repetirse post a post. Ambos son deterministas y trazables.
+
+### Anulaciones auditadas de política (2A.3 `policy_overrides`)
+
+Un cambio de `generation_policy` sobre un `knowledge_id` de 2A.2, **autorizado por
+la fuente de verdad**, se registra en `data/ext_2A3/` como `policy_overrides`
+(aditivo; nunca muta 2A.2). Ejemplo: **GREEN HOSPITAL** pasa de
+`NAME_ONLY_DO_NOT_EXPAND` a núcleo técnico (`USE_TECHNICAL_CORE_BLOCK_CLAIMS`):
+se habilitan los hechos definicionales/técnicos declarados en el override y los
+superlativos/rankings o logros de cliente puntual **permanecen bloqueados**
+(GR-04). El factsheet aplica el override en vez de la política canónica y lo
+registra en el log; la vista "Ver fuente" muestra su procedencia.
 
 ### Planner: sustitución de célula sin cobertura
 

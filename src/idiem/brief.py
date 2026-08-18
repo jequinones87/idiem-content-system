@@ -94,6 +94,7 @@ def build_brief(
     recommended_format: str = "STATIC",
     main_knowledge_id: str | None = None,
     enrich_same_service: bool = False,
+    used_enrichment_ids: set[str] | None = None,
 ) -> dict:
     """Build a schema-valid brief dict for ``cell`` (+ optional topic).
 
@@ -113,6 +114,7 @@ def build_brief(
         audience=audience,
         main_knowledge_id=main_knowledge_id,
         enrich_same_service=enrich_same_service,
+        used_enrichment_ids=used_enrichment_ids,
     )
     angle = _editorial_angle(kb, cell, editorial_angle)
 
