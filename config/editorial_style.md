@@ -53,6 +53,20 @@
 Tags de tema (según corresponda): #IngenieríaMecánica #Ensayos #Geotecnia
 #Estructuras #Incendios #Acústica #Sustentabilidad #BIM #Auditoria.
 
+## Dolor prioritario por célula (organismos públicos)
+
+Insight del equipo comercial: para **Infra Pública**, **Hospitalaria** y **Transporte**,
+el dolor más relevante del mandante es el **atraso en la ejecución de las obras**.
+
+- Es **guía de forma** (enmarca el problema del lector en el hook/problema), **no un
+  hecho de IDIEM**: la sustancia técnica sigue acotada a `allowed_facts`.
+- **Opcional y pertinente:** encabezar con este dolor cuando el servicio del post lo
+  resuelva o mitigue (inspección técnica, control de calidad, diagnóstico, ingeniería
+  contractual, programación de obra). **No** usar en todos los posts ni repetir la
+  misma frase; no aplicar cuando el ángulo es otro (p. ej. sostenibilidad / Green
+  Hospital).
+- Vive en `config/editorial_style.json` → `pain_points_by_cell` (configurable).
+
 ## Sí / No
 
 **Sí:** anclar cada afirmación a la evidencia · nombrar métodos/normas solo si están

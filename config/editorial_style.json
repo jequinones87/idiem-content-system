@@ -50,6 +50,21 @@
     },
     "topic_tags": ["#IngenieríaMecánica", "#Ensayos", "#Geotecnia", "#Estructuras", "#Incendios", "#Acústica", "#Sustentabilidad", "#EficienciaEnergética", "#BIM", "#Digitalización", "#Auditoria", "#Innovación"]
   },
+  "pain_points_by_cell": {
+    "_comment": "Dolor prioritario por célula (insight del equipo comercial). Es guía de FORMA para el hook/problema, NO un hecho de IDIEM: enmarca el problema del lector, no una capacidad. Usar cuando sea pertinente al servicio del post; NO forzar en cada post ni repetir la misma frase. La sustancia técnica sigue acotada a allowed_facts.",
+    "INFRA PÚBLICA RESILIENTE": {
+      "primary": "El atraso en la ejecución de las obras es el dolor más relevante del mandante público.",
+      "usage": "OPCIONAL. Encabezar con este dolor cuando el servicio del post lo resuelva o mitigue (p. ej. inspección técnica, control de calidad, diagnóstico, ingeniería contractual). Variar la redacción; no usar en todos los posts."
+    },
+    "INFRA HOSPITALARIA Y ASISTENCIAL": {
+      "primary": "El atraso en la ejecución de las obras es el dolor más relevante del mandante público de salud.",
+      "usage": "OPCIONAL. Encabezar con este dolor cuando el servicio del post lo resuelva o mitigue (p. ej. ingeniería contractual, programación de obra). No aplicar cuando el ángulo sea otro (p. ej. sostenibilidad / Green Hospital). Variar la redacción."
+    },
+    "INFRA CRÍTICA TRANSPORTE": {
+      "primary": "El atraso en la ejecución de las obras es el dolor más relevante del mandante público de transporte.",
+      "usage": "OPCIONAL. Encabezar con este dolor cuando exista evidencia técnica que lo resuelva. Hoy la célula no tiene cobertura activa (CONTENT_GAP)."
+    }
+  },
   "cta_patterns": [
     "👉 Conoce más sobre nuestros servicios en https://idiem.cl",
     "🌐 Conoce el alcance de este servicio en https://idiem.cl",

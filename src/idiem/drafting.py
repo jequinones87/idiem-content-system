@@ -106,6 +106,9 @@ DRAFTING_INSTRUCTIONS = (
     "(~110-170 palabras, 4-5 párrafos); emojis presentes y temáticos (1-4 por párrafo según pertinencia); termina con un "
     "bloque de hashtags (usa 'recommended_hashtags', 4-6, incluyendo #IDIEM) y marca "
     "1-3 términos clave como hashtag inline. "
+    "DOLOR PRIORITARIO (campo 'pain_point', opcional): si viene y es pertinente al "
+    "servicio del post, encabeza el hook/problema con ese dolor; NO lo fuerces si el "
+    "ángulo del post es otro, y varía la redacción para no repetir la misma frase. "
     "REGLAS FACTUALES ESTRICTAS: (1) usa ÚNICAMENTE la información de allowed_facts; "
     "no agregues servicios, cifras, clientes, proyectos ni resultados que no estén "
     "ahí. (2) Respeta cada nota en mandatory_matices. (3) NUNCA publiques los "
@@ -133,6 +136,7 @@ class DraftingRequest:
     blocked_claims: list[str]
     forbidden_terms: list[str]
     recommended_hashtags: list[str] = field(default_factory=list)
+    pain_point: str = ""
     style: dict = field(default_factory=dict)
     instructions: str = DRAFTING_INSTRUCTIONS
 
@@ -164,6 +168,16 @@ def recommended_hashtags(cell: str, style: dict) -> list[str]:
     return tags[:cap]
 
 
+def pain_point_for(cell: str, style: dict) -> str:
+    """Cell's primary pain point (editorial framing), '' if none configured.
+
+    A market insight that frames the reader's problem in the hook — not an IDIEM
+    fact. Optional guidance: the drafter applies it only when pertinent.
+    """
+    entry = style.get("pain_points_by_cell", {}).get(cell, {})
+    return entry.get("primary", "") if isinstance(entry, dict) else ""
+
+
 def build_drafting_request(brief: dict, *, style: dict | None = None) -> DraftingRequest:
     """Derive the bounded drafting spec (incl. editorial style) from a brief."""
     if style is None:
@@ -183,6 +197,7 @@ def build_drafting_request(brief: dict, *, style: dict | None = None) -> Draftin
         blocked_claims=[_strip_tag(c) for c in brief.get("blocked_claims", [])],
         forbidden_terms=forbidden_terms(brief),
         recommended_hashtags=recommended_hashtags(cell, style),
+        pain_point=pain_point_for(cell, style),
         style=style,
     )
 

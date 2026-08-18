@@ -46,3 +46,23 @@ def test_drafting_request_accepts_injected_style(kb):
     }
     req = build_drafting_request(brief, style=custom)
     assert req.recommended_hashtags == ["#IDIEM", "#Ensayos", "#Calidad"]
+
+
+def test_pain_point_only_for_public_organism_cells(kb):
+    from idiem.brief import build_brief
+    from idiem.drafting import build_drafting_request, pain_point_for
+    from idiem.loader import load_editorial_style
+
+    style = load_editorial_style()
+    # Public-organism cells carry the "atraso de obras" pain point.
+    for cell in ("INFRA PÚBLICA RESILIENTE", "INFRA HOSPITALARIA Y ASISTENCIAL"):
+        assert "atraso" in pain_point_for(cell, style).lower()
+    # Mining / lab cells have no configured pain point.
+    assert pain_point_for("INFRA OPERACIÓN MINERA", style) == ""
+    assert pain_point_for("LAB MINERO DIGITAL", style) == ""
+    # The drafting request surfaces it for a public post.
+    brief = build_brief(
+        kb, "INFRA PÚBLICA RESILIENTE",
+        main_knowledge_id="KB-IPR-001", enrich_same_service=True,
+    )
+    assert "atraso" in build_drafting_request(brief).pain_point.lower()
