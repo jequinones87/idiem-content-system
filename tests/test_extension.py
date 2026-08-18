@@ -58,3 +58,24 @@ def test_enrichment_blocks_source_superlatives(kb):
     )
     blob = " ".join(sheet.blocked_claims).lower()
     assert "no afirmar" in blob or "ranking" in blob or "superlativ" in blob
+
+
+def test_deepened_enrichment_resolves_documents(kb):
+    # Fase E: the deepened 2A.3 curation (EXT-0110+) loads and each record
+    # resolves its source document, and attaches to a real (cell, service).
+    new_ids = [f"EXT-0{n}" for n in range(110, 123)]
+    seen = 0
+    for eid in new_ids:
+        rec = kb.enrichment_by_id(eid)
+        if rec is None:
+            continue
+        seen += 1
+        assert rec.get("document_id"), f"{eid} sin document_id resuelto"
+        assert kb.enrichment_for(rec["cell"], rec["service"]), f"{eid} servicio inexistente"
+    assert seen >= 10, f"esperaba >=10 registros nuevos, vi {seen}"
+
+
+def test_incendios_service_now_has_evidence(kb):
+    # Fase E filled a previously-empty service.
+    recs = kb.enrichment_for("INFRA PÚBLICA RESILIENTE", "Ingeniería contra incendios")
+    assert recs, "Ingeniería contra incendios debe tener evidencia 2A.3"

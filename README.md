@@ -90,7 +90,7 @@ PYTHONPATH=src python -m idiem.cli demo
 python -m pytest
 ```
 
-Cubren (91 tests): reproducción del cierre y fail-closed ante IDs duplicados/
+Cubren (97 tests): reproducción del cierre y fail-closed ante IDs duplicados/
 política inválida; retrieval por célula sin fuga cruzada; fact sheet; brief
 schema-valid; planner mensual (cuotas, cobertura, sin préstamo entre células,
 sin reuso consecutivo, historial reciente); drafting adapter (sin hechos nuevos,
@@ -146,16 +146,29 @@ handoff de Design System oficial.
   registro y **superlativos/rankings bloqueados** (GR-04). Es una **capa aditiva** que
   no muta 2A.2. Si la evidencia sigue delgada: post corto honesto o `EXPERT_INPUT_REQUIRED`.
 
-### Variedad temática: selección diversa + de-dup por mes
+### Variedad temática: selección diversa + subtemas + de-dup por mes
 
-Para evitar que los posts de una célula repitan el mismo servicio (p. ej. tres
-posts de "Laboratorio en obra"), el planner **no toma los primeros N por código**:
-`planner._diversify` reordena por **máxima dispersión de servicio y luego de
-capability**, de modo que el primer tramo del mes recorre temas distintos antes
-de repetir cualquiera. Además, la composición mensual (`compose_month`) comparte
-un conjunto `used_enrichment_ids`: cada registro de evidencia **2A.3 aparece a lo
-más una vez al mes**, por lo que credenciales o atributos (ISO, HSEC, etc.) dejan
-de repetirse post a post. Ambos son deterministas y trazables.
+Para evitar que los posts repitan el mismo tema, el planner **no toma los primeros
+N por código**. `planner._diversify` reordena con tres criterios deterministas:
+
+1. **Servicio primero** (Fase A): el primer tramo del mes recorre servicios
+   distintos, así dos posts nunca comparten la evidencia de un mismo servicio.
+2. **Subtema** (Fase D, `config/subthemes.json`): dentro de un servicio agrupa las
+   `capability` en **temas editoriales** (p. ej. tres tipos de "Monitoreo" → un
+   solo tema), y un **de-dup de subtema a nivel mes** hace que los 12 posts abarquen
+   temas distintos incluso entre células.
+3. **Evidencia primero**: como representante de cada tema elige el ítem **mejor
+   documentado** (más evidencia 2A.3 + fuentes propias), no el de menor código.
+
+Además, `compose_month` comparte un `used_enrichment_ids`: cada registro **2A.3
+aparece a lo más una vez al mes**, por lo que credenciales o atributos (ISO, HSEC…)
+no se repiten post a post. Todo es determinista y trazable.
+
+La capa **2A.3** (`data/ext_2A3/`) fue profundizada (Fase E) curando más
+capacidades técnicas de los brochures para servicios antes sin cobertura
+(ingeniería contra incendios, sustentabilidad y arquitectura, ensayos de
+especialidades, gestión de vulnerabilidad, laboratorio de rocas…), siempre
+grounded al texto fuente y con superlativos/rankings bloqueados (GR-04).
 
 ### Anulaciones auditadas de política (2A.3 `policy_overrides`)
 

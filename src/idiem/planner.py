@@ -19,7 +19,7 @@ import json
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
-from .loader import CONFIG_DIR, KnowledgeBase
+from .loader import CONFIG_DIR, KnowledgeBase, load_subthemes
 from .retrieval import RetrievalEngine
 
 PLANNER_CONFIG = "planner.json"
@@ -82,43 +82,52 @@ def _content_id(cell: str, knowledge_id: str, seq: int) -> str:
     return f"PLAN-{knowledge_id}-{seq:02d}"
 
 
-def _diversify(items: list) -> list:
+def _diversify(items: list, tema_of, score_of=None) -> list:
     """Reorder items to maximize thematic spread when taking the first N.
 
-    Groups by ``service`` and then, within a service, by ``capability``, and
-    round-robins across those buckets. So ``result[:N]`` covers as many distinct
-    services (then capabilities) as the cell offers before repeating any — the
-    fix for months where the naive ``sorted-by-id[:N]`` slice clustered every
-    slot into the largest/alphabetically-first service.
-    """
-    # Bucket by (service, capability), preserving a deterministic inner order.
-    buckets: dict[tuple[str, str], list] = {}
-    for it in sorted(items, key=lambda x: x.knowledge_id):
-        key = (it.service or "", it.capability or "")
-        buckets.setdefault(key, []).append(it)
+    Groups by ``tema`` (subtheme, Fase D) and then, within a tema, by
+    ``capability``, and round-robins across those buckets. So ``result[:N]``
+    covers as many distinct subthemes (then capabilities) as the cell offers
+    before repeating any — sharper than grouping by raw service/capability,
+    because several distinct capabilities can share one theme (e.g. three kinds
+    of "Monitoreo"). ``tema_of(item)`` maps an item to its subtheme.
 
-    # Order service groups deterministically by name; within a service, order
-    # capability groups by name. Round-robin services first (outer), so distinct
-    # services come first; ties inside a service spread across capabilities.
+    ``score_of(item)`` (optional) ranks items by evidence depth: within a tema,
+    the better-evidenced capability/item is chosen first, so the representative
+    of each subtheme is the one with the most to say — not just the lowest id.
+    """
     from collections import OrderedDict
 
-    by_service: "OrderedDict[str, list[list]]" = OrderedDict()
-    for (svc, cap) in sorted(buckets):
-        by_service.setdefault(svc, []).append(buckets[(svc, cap)])
+    score_of = score_of or (lambda _it: 0)
 
-    # Flatten each service into a capability-interleaved queue.
+    # Primary spread is by SERVICE: taking the first N covers distinct services,
+    # so two posts never draw from the same service's enrichment (which would
+    # make them read alike). Within a service, spread by subtheme then
+    # capability; everywhere, better-evidenced items come first.
+    by_service: "OrderedDict[str, list]" = OrderedDict()
+    for it in sorted(items, key=lambda x: (-score_of(x), x.knowledge_id)):
+        by_service.setdefault(it.service or "", []).append(it)
+
     service_queues: dict[str, list] = {}
-    for svc, cap_groups in by_service.items():
+    for svc, its in by_service.items():
+        groups: "OrderedDict[tuple[str, str], list]" = OrderedDict()
+        for it in its:  # already score-then-id ordered
+            groups.setdefault((tema_of(it), it.capability or ""), []).append(it)
+        gkeys = sorted(
+            groups, key=lambda k: (-max(score_of(i) for i in groups[k]), k)
+        )
         q: list = []
-        cap_lists = [list(g) for g in cap_groups]
-        while any(cap_lists):
-            for cl in cap_lists:
-                if cl:
-                    q.append(cl.pop(0))
+        glists = [list(groups[k]) for k in gkeys]
+        while any(glists):
+            for gl in glists:
+                if gl:
+                    q.append(gl.pop(0))
         service_queues[svc] = q
 
-    # Round-robin across services.
-    order = sorted(service_queues)
+    # Round-robin across services, richest service first then name.
+    order = sorted(
+        by_service, key=lambda s: (-max(score_of(i) for i in by_service[s]), s)
+    )
     out: list = []
     while any(service_queues[s] for s in order):
         for s in order:
@@ -132,6 +141,31 @@ class MonthlyPlanner:
         self.kb = kb
         self.config = config or load_planner_config()
         self.engine = RetrievalEngine(kb)
+        # Fase D: capability -> tema lookup per cell (external/configurable).
+        self._tema_by_cap: dict[str, dict[str, str]] = {}
+        for cell, temas in load_subthemes().get("by_cell", {}).items():
+            m: dict[str, str] = {}
+            for tema, caps in temas.items():
+                for cap in caps:
+                    m[cap] = tema
+            self._tema_by_cap[cell] = m
+
+    def _tema_of(self, item) -> str:
+        """Editorial subtheme of an item: mapped tema, else its capability,
+        else its service (Fase D). Configurable via config/subthemes.json."""
+        cap = item.capability
+        mapped = self._tema_by_cap.get(item.cell, {}).get(cap) if cap else None
+        return mapped or cap or item.service
+
+    def _evidence_score(self, item) -> int:
+        """Evidence depth proxy: 2A.3 enrichment records for the item's service
+        plus its own verified sources. Used to prefer the best-documented item
+        as the representative of a subtheme."""
+        n = len(self.kb.enrichment_for(item.cell, item.service))
+        n += sum(1 for s in self.kb.sources_for(item.knowledge_id) if s.verified_evidence)
+        if self.kb.policy_override_for(item.knowledge_id):
+            n += 1
+        return n
 
     def _candidates(self, cell: str, recent: set[str]) -> list:
         """Deterministic, coverage-limited list of usable main items for a cell.
@@ -144,9 +178,10 @@ class MonthlyPlanner:
             for it in self.kb.items_in_cell(cell)
             if it.knowledge_id not in recent
         ]
-        # Spread by service/capability so the first-N slice varies the topic
-        # instead of clustering into the largest service (Fase A).
-        return _diversify(items)
+        # Spread by subtheme/capability so the first-N slice varies the topic
+        # instead of clustering into the largest service or theme (Fase A+D),
+        # preferring the best-evidenced item as each subtheme's representative.
+        return _diversify(items, self._tema_of, self._evidence_score)
 
     def build_plan(
         self,
@@ -217,12 +252,32 @@ class MonthlyPlanner:
                 )
 
         # Fill per cell up to min(quota, coverage). Track shortfalls.
+        # Month-wide subtheme de-dup (Fase D): across ALL cells, prefer items
+        # whose tema has not appeared yet this month, so the 12 posts span
+        # distinct subthemes even when two cells share a theme (e.g. Acústica).
         filled: dict[str, list] = {}
         shortfall: dict[str, int] = {}
-        for cell, quota in quotas.items():
+        used_temas: set[str] = set()
+        for cell in sorted(quotas):
+            quota = quotas[cell]
             candidates = self._candidates(cell, recent)
             take = min(quota, len(candidates))
-            filled[cell] = candidates[:take]
+            picked: list = []
+            # First pass: items with an unused tema (keeps diversified order).
+            for it in candidates:
+                if len(picked) >= take:
+                    break
+                if self._tema_of(it) not in used_temas:
+                    picked.append(it)
+                    used_temas.add(self._tema_of(it))
+            # Second pass: fill any remainder in diversified order.
+            for it in candidates:
+                if len(picked) >= take:
+                    break
+                if it not in picked:
+                    picked.append(it)
+                    used_temas.add(self._tema_of(it))
+            filled[cell] = picked
             short = quota - take
             if short > 0:
                 shortfall[cell] = short

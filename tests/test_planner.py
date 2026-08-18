@@ -125,3 +125,41 @@ def test_selection_spreads_capability_within_service(kb):
     picks = planner._candidates("INFRA HOSPITALARIA Y ASISTENCIAL", set())[:3]
     caps = [kb.item_by_id[it.knowledge_id].capability for it in picks]
     assert len(set(caps)) == len(caps), f"capacidades repetidas: {caps}"
+
+
+def test_subtheme_axis_groups_capabilities(kb):
+    # Fase D: distinct capabilities that share a subtheme resolve to one tema.
+    planner = MonthlyPlanner(kb)
+    a = kb.item_by_id["KB-IOM-006"]  # Monitoreo de estructuras y equipos
+    b = kb.item_by_id["KB-IOM-055"]  # Sensorización y datos en tiempo real
+    assert planner._tema_of(a) == planner._tema_of(b) == "Monitoreo e integridad estructural"
+
+
+def test_month_spans_distinct_subthemes(kb):
+    # Fase D: the 12-post month covers many distinct subthemes (only the
+    # evidence-thin cell may repeat one), not a handful of clustered ones.
+    from idiem.review import compose_month
+
+    planner = MonthlyPlanner(kb)
+    review = compose_month(kb, "2026-09", target_count=12)
+    temas = {planner._tema_of(kb.item_by_id[p.knowledge_id]) for p in review.posts}
+    assert len(temas) >= 10
+
+
+def test_posts_do_not_share_service_within_cell(kb):
+    # Service-first spread: within a cell, the month's posts use distinct
+    # services (so two posts never draw the same service's enrichment).
+    from collections import defaultdict
+    from idiem.review import compose_month
+
+    review = compose_month(kb, "2026-09", target_count=12)
+    by_cell = defaultdict(list)
+    for p in review.posts:
+        by_cell[p.cell].append(kb.item_by_id[p.knowledge_id].service)
+    for cell, services in by_cell.items():
+        # Distinct services, up to how many the cell actually offers (a cell
+        # with fewer services than posts — e.g. Salud — must repeat one).
+        available = len({it.service for it in kb.items_in_cell(cell)})
+        assert len(set(services)) == min(len(services), available), (
+            f"{cell} agrupa servicios innecesariamente: {services}"
+        )

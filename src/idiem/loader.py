@@ -34,6 +34,7 @@ EDITORIAL_RULES = "05_reglas_editoriales_generacion_IDIEM_2A2.json"
 CLOSURE_VALIDATION = "06_validacion_cierre_biblioteca_2A2.json"
 CELL_RULES = "cell_rules.json"
 EDITORIAL_STYLE = "editorial_style.json"
+SUBTHEMES = "subthemes.json"
 EVIDENCE_EXTENSION = "ext_2A3/evidence_2A3.json"
 
 
@@ -44,6 +45,15 @@ def _nfc(s: str) -> str:
 def load_editorial_style() -> dict:
     """Load the external, configurable editorial style guide (config/)."""
     with (CONFIG_DIR / EDITORIAL_STYLE).open("r", encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+def load_subthemes() -> dict:
+    """Load the external, configurable subtheme axis (Fase D). Empty if absent."""
+    path = CONFIG_DIR / SUBTHEMES
+    if not path.exists():
+        return {}
+    with path.open("r", encoding="utf-8") as fh:
         return json.load(fh)
 
 
