@@ -248,6 +248,16 @@ h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--mute
 .copy .cta{color:var(--accent);font-weight:600}
 .sec{margin-top:12px}
 .sec b{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+details.sec>summary{font-size:11px;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--muted);font-weight:600;cursor:pointer;list-style:none;
+  display:flex;align-items:center;gap:8px;padding:3px 0}
+details.sec>summary::-webkit-details-marker{display:none}
+details.sec>summary::before{content:"\25B8";font-size:10px;transition:transform .15s;color:var(--muted)}
+details.sec[open]>summary::before{transform:rotate(90deg)}
+details.sec>summary:hover{color:var(--ink)}
+details.sec .count{background:var(--chip);border:1px solid var(--line);border-radius:999px;
+  padding:0 8px;font-size:10.5px;color:var(--muted);font-weight:600;letter-spacing:0}
+details.sec[open]>summary{margin-bottom:2px}
 ul{margin:6px 0 0;padding-left:18px}
 li{font-size:13.5px;margin:3px 0}
 .blocked li{color:var(--gap)}
@@ -279,10 +289,15 @@ li{font-size:13.5px;margin:3px 0}
 
 
 def _chips(label: str, items: list[str], cls: str = "") -> str:
+    """Collapsible (<details>) section with a count, collapsed by default so a
+    post card stays compact until the reviewer expands it."""
     if not items:
         return ""
     lis = "".join(f"<li>{html.escape(str(x))}</li>" for x in items)
-    return f'<div class="sec {cls}"><b>{html.escape(label)}</b><ul>{lis}</ul></div>'
+    return (
+        f'<details class="sec {cls}"><summary>{html.escape(label)}'
+        f'<span class="count">{len(items)}</span></summary><ul>{lis}</ul></details>'
+    )
 
 
 def _post_card(post: PostReview) -> str:
