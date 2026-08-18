@@ -26,6 +26,7 @@ from .cells import CellRules
 from .drafting import apply_draft
 from .factsheet import build_fact_sheet
 from .integrity import assert_integrity, run_all_checks
+from .ledger import load_ledger, record_month, recent_knowledge_ids, save_ledger
 from .loader import REPO_ROOT, load_knowledge_base
 from .planner import MonthlyPlanner, write_plan_csv, write_plan_json
 from .retrieval import RetrievalEngine
@@ -117,6 +118,38 @@ def cmd_review(args) -> int:
         paths = write_review(review, OUTPUT_DIR)
         for name, path in paths.items():
             print(f"  {name}: {path}", file=sys.stderr)
+    return 0
+
+
+def cmd_month(args) -> int:
+    """Propose the next month using the published ledger's memory (cooldown)."""
+    kb = load_knowledge_base()
+    ledger = load_ledger()
+    recent = recent_knowledge_ids(ledger, args.month, cooldown_months=args.cooldown)
+    review = compose_month(
+        kb, args.month, target_count=args.target, recent_history=recent
+    )
+    print(
+        f"Propuesta {review.month}: {review.draft_count} posts, "
+        f"{review.gap_count} CONTENT_GAP · en cooldown: {len(set(recent))} ítems"
+    )
+    for p in review.posts:
+        fmt = p.graphic_brief.get("recommended_format", "STATIC")
+        photo = "foto" if p.graphic_brief.get("needs_photo") else "template"
+        print(
+            f"  #{p.seq:02d} {p.content_id} | {p.subtheme} | {fmt}/{photo}"
+        )
+    if args.write:
+        paths = write_review(review, OUTPUT_DIR)
+        print(f"\n  HTML: {paths['html']}", file=sys.stderr)
+    if args.record:
+        posts = [
+            {"content_id": p.content_id, "cell": p.cell, "knowledge_id": p.knowledge_id}
+            for p in review.posts
+        ]
+        record_month(ledger, args.month, posts)
+        path = save_ledger(ledger)
+        print(f"  Ledger actualizado: {path}", file=sys.stderr)
     return 0
 
 
@@ -229,6 +262,14 @@ def build_parser() -> argparse.ArgumentParser:
     p_rv.add_argument("--target", type=int, default=None)
     p_rv.add_argument("--write", action="store_true")
     p_rv.set_defaults(func=cmd_review)
+
+    p_mo = sub.add_parser("month", help="Propose next month with ledger memory")
+    p_mo.add_argument("month", help="e.g. 2026-10")
+    p_mo.add_argument("--target", type=int, default=None)
+    p_mo.add_argument("--cooldown", type=int, default=3, help="months of cooldown")
+    p_mo.add_argument("--write", action="store_true", help="write review HTML/CSV/JSON")
+    p_mo.add_argument("--record", action="store_true", help="record to the ledger")
+    p_mo.set_defaults(func=cmd_month)
 
     return parser
 

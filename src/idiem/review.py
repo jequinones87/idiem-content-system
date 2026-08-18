@@ -22,6 +22,7 @@ from pathlib import Path
 
 from .brief import build_brief
 from .drafting import DraftingAdapter, apply_draft, ingest_draft
+from .graphic import build_graphic_brief
 from .loader import KnowledgeBase
 from .planner import MonthlyPlanner, write_plan_csv, write_plan_json
 
@@ -37,6 +38,8 @@ class PostReview:
     editorial_angle: str
     brief: dict
     sources: list[dict] = field(default_factory=list)
+    subtheme: str = ""
+    graphic_brief: dict = field(default_factory=dict)
 
 
 @dataclass
@@ -132,9 +135,17 @@ def compose_month(
     *,
     target_count: int | None = None,
     drafter: DraftingAdapter | None = None,
+    recent_history: list[str] | None = None,
 ) -> MonthReview:
-    """Compose a month: plan -> per-slot anchored brief + draft, and gap cards."""
-    plan = MonthlyPlanner(kb).build_plan(month=month, target_count=target_count)
+    """Compose a month: plan -> per-slot anchored brief + draft + graphic brief.
+
+    ``recent_history`` (from the published ledger) excludes recently-used items
+    so content rotates month to month.
+    """
+    planner = MonthlyPlanner(kb)
+    plan = planner.build_plan(
+        month=month, target_count=target_count, recent_history=recent_history
+    )
 
     # Month-level de-dup: a 2A.3 enrichment record (e.g. the ISO/HSEC line)
     # surfaces at most once across the whole month, so posts stop repeating the
@@ -154,6 +165,7 @@ def compose_month(
             )
             brief["content_id"] = slot.content_id  # canonical post id from the plan
             drafted = apply_draft(brief, drafter)
+            subtheme = planner._tema_of(kb.item_by_id[slot.knowledge_id])
             posts.append(
                 PostReview(
                     seq=slot.seq,
@@ -165,6 +177,8 @@ def compose_month(
                     editorial_angle=slot.editorial_angle,
                     brief=drafted,
                     sources=_collect_sources(kb, drafted),
+                    subtheme=subtheme,
+                    graphic_brief=build_graphic_brief(drafted, subtheme),
                 )
             )
         else:
@@ -186,12 +200,68 @@ def compose_month(
 
 
 def set_post_copy(review: MonthReview, content_id: str, copy_dict: dict) -> PostReview:
-    """Replace a post's draft with validated publishable copy (agent-assisted)."""
+    """Replace a post's draft with validated publishable copy (agent-assisted).
+
+    Re-validates against allowed_facts / blocked terms and regenerates the
+    graphic brief so the visual headline stays in sync with the edited copy.
+    """
     for post in review.posts:
         if post.content_id == content_id:
             post.brief = ingest_draft(post.brief, copy_dict)
+            post.graphic_brief = build_graphic_brief(post.brief, post.subtheme)
             return post
     raise KeyError(f"content_id no encontrado en la review: {content_id}")
+
+
+def replace_post(
+    kb: KnowledgeBase,
+    review: MonthReview,
+    content_id: str,
+    *,
+    drafter: DraftingAdapter | None = None,
+) -> PostReview:
+    """Reject one post and swap in the next best candidate of the same cell.
+
+    The "Cambiar post" action: excludes the rejected item AND every item already
+    used in the month, then takes the cell's next diversified candidate. Keeps
+    policy/traceability intact. Raises if the cell has no alternative left.
+    """
+    target = next((p for p in review.posts if p.content_id == content_id), None)
+    if target is None:
+        raise KeyError(f"content_id no encontrado en la review: {content_id}")
+
+    used = {p.knowledge_id for p in review.posts}  # includes the rejected one
+    planner = MonthlyPlanner(kb)
+    candidates = planner._candidates(target.cell, used)
+    if not candidates:
+        raise ValueError(
+            f"Sin alternativa disponible en la célula '{target.cell}' para reemplazar."
+        )
+    new_item = candidates[0]
+
+    brief = build_brief(
+        kb, target.cell, main_knowledge_id=new_item.knowledge_id,
+        enrich_same_service=True,
+    )
+    brief["content_id"] = target.content_id  # keep the slot's canonical id
+    drafted = apply_draft(brief, drafter)
+    subtheme = planner._tema_of(new_item)
+
+    updated = PostReview(
+        seq=target.seq,
+        content_id=target.content_id,
+        cell=target.cell,
+        knowledge_id=new_item.knowledge_id,
+        content_type=drafted["content_type"],
+        status=drafted["status"],
+        editorial_angle=target.editorial_angle,
+        brief=drafted,
+        sources=_collect_sources(kb, drafted),
+        subtheme=subtheme,
+        graphic_brief=build_graphic_brief(drafted, subtheme),
+    )
+    review.posts[review.posts.index(target)] = updated
+    return updated
 
 
 # ---------------------------------------------------------------------------
@@ -246,6 +316,14 @@ h2{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:var(--mute
 .copy .hook{font-weight:650;font-size:15px}
 .copy .body{white-space:pre-wrap;margin:9px 0;max-width:62ch}
 .copy .cta{color:var(--accent);font-weight:600}
+.gbrief{background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--warn);
+  border-radius:8px;padding:12px 14px;margin:12px 0}
+.gbtag{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.gbtag b{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.gbhead{font-weight:650;font-size:14px;color:var(--ink)}
+.gbpts{margin:6px 0 0;padding-left:18px}
+.gbpts li{font-size:13px;margin:2px 0;color:var(--muted)}
+.gbphoto{margin-top:8px;font-size:12px;color:var(--muted)}
 .sec{margin-top:12px}
 .sec b{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
 details.sec>summary{font-size:11px;text-transform:uppercase;letter-spacing:.06em;
@@ -300,6 +378,34 @@ def _chips(label: str, items: list[str], cls: str = "") -> str:
     )
 
 
+def _graphic_block(post: PostReview) -> str:
+    """Render the graphic brief next to the copy (reviewed together)."""
+    g = post.graphic_brief
+    if not g:
+        return ""
+    fmt = html.escape(str(g.get("recommended_format", "STATIC")))
+    if g.get("recommended_format") == "STATIC" and g.get("carousel_viable"):
+        fmt += " · carrusel posible"
+    headline = html.escape(str(g.get("visual_headline", "")))
+    pts = "".join(f"<li>{html.escape(str(p))}</li>" for p in g.get("key_points", []))
+    pq = g.get("photo_query")
+    if pq:
+        photo = (
+            f'📷 Foto sugerida · {html.escape(str(pq.get("disciplina","")))} · '
+            f'{html.escape(str(pq.get("entorno","")))} · {html.escape(str(pq.get("orientacion","")))}'
+        )
+    else:
+        photo = "🎨 Gráfica template (sin foto)"
+    return (
+        f'<div class="gbrief">'
+        f'<div class="gbtag"><b>Gráfica</b><span class="tag">{fmt}</span></div>'
+        f'<div class="gbhead">{headline}</div>'
+        f"<ul class=\"gbpts\">{pts}</ul>"
+        f'<div class="gbphoto">{photo}</div>'
+        f"</div>"
+    )
+
+
 def _post_card(post: PostReview) -> str:
     b = post.brief
     copy = b.get("draft_copy", {})
@@ -322,6 +428,7 @@ def _post_card(post: PostReview) -> str:
         f'<div class="cta">{html.escape(copy.get("cta",""))}</div>'
         f"</div>"
     )
+    graphic = _graphic_block(post)
     facts = _chips("Hechos permitidos", b.get("allowed_facts", []))
     blocked = _chips("Claims bloqueados", b.get("blocked_claims", []), "blocked")
     matices = _chips("Matices obligatorios", b.get("mandatory_matices", []), "warns")
@@ -353,7 +460,7 @@ def _post_card(post: PostReview) -> str:
         f'<div class="card" id="{html.escape(post.content_id)}">'
         f"<h3>#{post.seq:02d} · {html.escape(post.content_id)}</h3>"
         f'<div class="meta">{meta}</div>'
-        f"{copy_html}{facts}{blocked}{matices}{source_btn}{dialog}"
+        f"{copy_html}{graphic}{facts}{blocked}{matices}{source_btn}{dialog}"
         f"</div>"
     )
 

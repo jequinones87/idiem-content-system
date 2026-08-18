@@ -96,3 +96,22 @@ def test_set_post_copy_ingests_publishable_copy(kb):
     updated = set_post_copy(review, post.content_id, good)
     assert updated.brief["draft_copy"] == good
     assert updated.brief["status"] == "DRAFT"
+
+
+def test_replace_post_swaps_to_new_item(kb):
+    from idiem.review import replace_post
+
+    review = compose_month(kb, "2026-09", target_count=12)
+    target = review.posts[6]
+    old = target.knowledge_id
+    updated = replace_post(kb, review, target.content_id)
+    assert updated.content_id == target.content_id
+    assert updated.knowledge_id != old
+    assert updated.cell == target.cell  # same cell, no cross-cell borrow
+    assert updated.graphic_brief  # graphic brief regenerated
+
+
+def test_render_shows_graphic_brief(kb):
+    review = compose_month(kb, "2026-09", target_count=12)
+    htmlc = render_review_html(review)
+    assert "gbrief" in htmlc  # graphic brief block rendered

@@ -90,7 +90,7 @@ PYTHONPATH=src python -m idiem.cli demo
 python -m pytest
 ```
 
-Cubren (97 tests): reproducción del cierre y fail-closed ante IDs duplicados/
+Cubren (104 tests): reproducción del cierre y fail-closed ante IDs duplicados/
 política inválida; retrieval por célula sin fuga cruzada; fact sheet; brief
 schema-valid; planner mensual (cuotas, cobertura, sin préstamo entre células,
 sin reuso consecutivo, historial reciente); drafting adapter (sin hechos nuevos,
@@ -187,6 +187,27 @@ registra en el log; la vista "Ver fuente" muestra su procedencia.
 **cero cobertura** (p. ej. Transporte), su cuota se reasigna a las células fallback
 configuradas (Salud/Pública) que sí tienen cobertura. Es una regla **explícita y
 logueada**, no un rebalanceo silencioso; el conocimiento nunca cambia de célula.
+
+### Ciclo operativo mensual (memoria + gráfica + reemplazo)
+
+- **Memoria / recambio** (`state/published_ledger.json`, `ledger.py`): cada mes
+  registra los `knowledge_id` publicados; el planner aplica un **enfriamiento**
+  (por defecto 3 meses) para que el mes siguiente no repita. Si la biblioteca se
+  agota, emite `CONTENT_GAP` en vez de reusar.
+- **`graphic_brief` por post** (`graphic.py`): a partir del copy aprobado deriva
+  **titular visual**, **puntos clave**, **formato** (STATIC/CAROUSEL sugerido +
+  flag *carrusel posible*), **needs_photo** y un **`photo_query`**
+  (disciplina/entorno/orientación) que resuelve la librería de fotos. Es
+  **complemento del copy, no copia**, y hereda los mismos términos bloqueados:
+  ningún superlativo llega a la gráfica. Reglas en `config/graphic_rules.json`.
+- **Revisión conjunta**: la vista mensual muestra en una sola tarjeta el copy y su
+  `graphic_brief`, para revisar texto + gráfica de una pasada.
+- **Editar / reemplazar**: `set_post_copy` revalida el copy editado (sin romper
+  reglas) y regenera la gráfica; `replace_post` ("Cambiar post") descarta un post y
+  trae el siguiente mejor candidato de la misma célula/otro subtema.
+- **CLI**: `python -m idiem.cli month 2026-10 --write --record` propone el mes con
+  memoria y (opcional) lo registra en el ledger. Programación sugerida: **lunes de
+  la 3ª semana** (cron `0 9 15-21 * 1`) + botón de regeneración en el artefacto.
 
 ### Vista de revisión: "Ver fuente"
 

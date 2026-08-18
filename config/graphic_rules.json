@@ -1,0 +1,7 @@
+{
+  "_comment": "Reglas EXTERNAS del graphic_brief (CLAUDE.md regla 11). El formato se sugiere; la decisión final es editorial. carousel_min_points: nº de puntos visuales DISTINTOS a partir del cual se sugiere carrusel. photo_entornos: entornos que ameritan foto en vez de gráfica template.",
+  "version": "1.0",
+  "carousel_suggest_points": 7,
+  "carousel_viable_points": 4,
+  "photo_entornos": ["mina", "obra", "terreno", "laboratorio", "faena"]
+}
