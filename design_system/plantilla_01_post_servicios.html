@@ -1,0 +1,356 @@
+<title>Plantilla Post Servicios</title>
+<meta name="description" content="Paso 1 del Design System IDIEM: la plantilla insignia Post-Servicios 1080×1080, reconstruida fielmente desde el manual de normas gráficas y aplicada a un post real de septiembre.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap">
+<style>
+  :root{
+    --red:#e1261d;
+    --red-085:rgba(225,38,29,.85);
+    --gray-blue:#666d72;
+    --gray-light:#efefef;
+    --gray-dark:#2f3030;
+    --ink:#22262a;
+    --paper:#f6f6f4;
+    --card:#ffffff;
+    --line:rgba(47,48,48,.12);
+    --muted:#6a7075;
+    --shadow:0 24px 60px -28px rgba(47,48,48,.45);
+    --mono:"Montserrat",system-ui,sans-serif;
+  }
+  :root:not([data-theme="light"]){
+    @media (prefers-color-scheme: dark){
+      --ink:#eef0f0;
+      --paper:#17191a;
+      --card:#202324;
+      --gray-light:#2a2d2e;
+      --line:rgba(239,239,239,.12);
+      --muted:#9aa1a5;
+      --shadow:0 26px 70px -30px rgba(0,0,0,.75);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ink:#eef0f0;
+    --paper:#17191a;
+    --card:#202324;
+    --gray-light:#2a2d2e;
+    --line:rgba(239,239,239,.12);
+    --muted:#9aa1a5;
+    --shadow:0 26px 70px -30px rgba(0,0,0,.75);
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:var(--mono);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.55;
+    padding:clamp(20px,4vw,64px) clamp(16px,4vw,64px) 80px;
+  }
+  .wrap{max-width:1120px;margin:0 auto}
+
+  /* ---------- page header ---------- */
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:.6em;
+    font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--red);margin:0 0 14px;
+  }
+  .eyebrow .dot{width:.5em;height:.5em;border-radius:50%;background:var(--red)}
+  h1.title{
+    font-size:clamp(1.9rem,4.6vw,3rem);
+    font-weight:800;letter-spacing:-.02em;line-height:1.05;
+    margin:0 0 .5rem;text-wrap:balance;
+  }
+  h1.title b{color:var(--red);font-weight:800}
+  .lede{
+    font-size:clamp(1rem,1.7vw,1.16rem);color:var(--muted);
+    max-width:60ch;margin:0 0 1.6rem;font-weight:400;
+  }
+  .meta{
+    display:flex;flex-wrap:wrap;gap:8px;margin:0 0 40px;
+    font-size:.78rem;
+  }
+  .chip{
+    display:inline-flex;align-items:center;gap:.5em;
+    padding:6px 12px;border:1px solid var(--line);border-radius:100px;
+    background:var(--card);color:var(--ink);font-weight:500;
+  }
+  .chip b{color:var(--red);font-weight:700}
+
+  /* ---------- the 1080x1080 canvas ---------- */
+  .stage{
+    display:flex;justify-content:center;margin:0 0 14px;
+  }
+  .canvas{
+    container-type:inline-size;
+    width:min(1080px,92vw);aspect-ratio:1/1;
+    position:relative;overflow:hidden;
+    border-radius:10px;box-shadow:var(--shadow);
+    background:var(--gray-dark);
+    isolation:isolate;
+    color:#fff;
+    user-select:none;
+  }
+  /* photo slot — structural steel motif behind the legibility gradient.
+     In production this layer is a REAL IDIEM photo (foto propia). */
+  .photo{
+    position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(120% 90% at 78% 18%, rgba(120,132,140,.42), transparent 55%),
+      repeating-linear-gradient(58deg, rgba(255,255,255,.055) 0 2px, transparent 2px 26px),
+      repeating-linear-gradient(-32deg, rgba(255,255,255,.04) 0 2px, transparent 2px 34px),
+      linear-gradient(135deg,#3a3d3e 0%, #2b2e2f 46%, #202323 100%);
+  }
+  .photo::after{ /* faint horizon / dusk tone */
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(100% 70% at 70% 30%, rgba(225,120,80,.10), transparent 60%);
+    mix-blend-mode:screen;
+  }
+  /* gradiente de legibilidad — único degradado permitido (negro) */
+  .legibility{
+    position:absolute;inset:0;z-index:1;
+    background:linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.30) 42%, rgba(0,0,0,0) 66%),
+               linear-gradient(0deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 34%);
+  }
+
+  /* eslogan sup-izq */
+  .slogan{
+    position:absolute;z-index:3;top:5cqw;left:5.4cqw;
+    font-size:2.55cqw;font-weight:300;letter-spacing:.005em;color:#fff;
+    text-shadow:0 1px 10px rgba(0,0,0,.35);
+  }
+  .slogan b{font-weight:700}
+  .slogan .d{color:var(--red)}
+
+  /* logo sup-der — versión fondo oscuro: blanco con 'd' roja */
+  .logo{
+    position:absolute;z-index:3;top:4.5cqw;right:5.4cqw;
+    font-size:5cqw;font-weight:800;letter-spacing:-.02em;color:#fff;line-height:1;
+  }
+  .logo .d{color:var(--red)}
+  .logo .reg{font-size:1.5cqw;font-weight:600;vertical-align:top;margin-left:.15em;opacity:.85}
+
+  /* círculo rojo 750px, centro-izquierda, con mensaje clave dentro */
+  .circle{
+    position:absolute;z-index:2;
+    width:69cqw;height:69cqw;border-radius:50%;
+    border:0.72cqw solid var(--red);
+    top:50%;left:39%;transform:translate(-50%,-50%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:6cqw;
+  }
+  .circle .svc{
+    font-size:2.15cqw;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--red);margin-bottom:1.6cqw;
+  }
+  .circle .msg{
+    font-size:6.1cqw;font-weight:800;line-height:1.04;letter-spacing:-.015em;
+    max-width:47cqw;text-wrap:balance;
+    text-shadow:0 2px 16px rgba(0,0,0,.45);
+  }
+  .circle .msg .hl{color:var(--red)}
+
+  /* servicio / firma inferior */
+  .baseline{
+    position:absolute;z-index:3;left:5.4cqw;bottom:5cqw;
+    font-size:2.35cqw;font-weight:500;color:rgba(255,255,255,.92);
+  }
+  .baseline b{font-weight:700}
+
+  .canvas-caption{
+    text-align:center;font-size:.78rem;color:var(--muted);margin:0 0 46px;
+  }
+
+  /* ---------- anatomy + spec grid ---------- */
+  .grid{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:26px;margin-top:8px;
+  }
+  @media (max-width:820px){ .grid{grid-template-columns:1fr} }
+  .panel{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:clamp(18px,2.4vw,28px);
+  }
+  .panel h2{
+    font-size:.74rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 18px;
+  }
+  .anat{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+  .anat li{
+    display:grid;grid-template-columns:26px 1fr;gap:14px;align-items:start;
+    padding:14px 0;border-top:1px solid var(--line);
+  }
+  .anat li:first-child{border-top:0}
+  .num{
+    width:26px;height:26px;border-radius:50%;display:grid;place-items:center;
+    font-size:.76rem;font-weight:800;color:#fff;background:var(--red);
+  }
+  .anat .name{font-weight:700;font-size:.98rem}
+  .anat .rule{font-size:.86rem;color:var(--muted);margin-top:2px}
+  .anat .tok{
+    display:inline-flex;align-items:center;gap:.45em;margin-top:6px;
+    font-size:.72rem;font-weight:600;color:var(--ink);
+    background:var(--gray-light);border-radius:6px;padding:3px 8px;
+  }
+  .sw{width:.8em;height:.8em;border-radius:3px;border:1px solid var(--line)}
+
+  .kv{display:flex;flex-direction:column;gap:12px}
+  .kv .row{display:flex;flex-direction:column;gap:3px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .kv .row:last-child{border-bottom:0;padding-bottom:0}
+  .kv .k{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .kv .v{font-size:.94rem;font-weight:500}
+  .kv code{
+    font-family:var(--mono);font-weight:600;background:var(--gray-light);
+    padding:1px 6px;border-radius:5px;font-size:.86em;
+  }
+  .check{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
+  .check li{display:flex;gap:10px;align-items:flex-start;font-size:.88rem}
+  .tick{color:var(--red);font-weight:800;flex:none}
+  .note{
+    margin-top:26px;padding:16px 18px;border-left:3px solid var(--red);
+    background:var(--gray-light);border-radius:0 10px 10px 0;
+    font-size:.86rem;color:var(--ink);
+  }
+  .note b{color:var(--red)}
+  .foot{
+    margin-top:40px;padding-top:20px;border-top:1px solid var(--line);
+    font-size:.8rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px;
+  }
+</style>
+
+<div class="wrap">
+  <p class="eyebrow"><span class="dot"></span>IDIEM · Design System · Paso 1</p>
+  <h1 class="title">Plantilla 01 — <b>Post Servicios</b></h1>
+  <p class="lede">La pieza insignia del sistema: formato estático 1080×1080 para comunicar un servicio con un solo mensaje clave. Reconstruida fielmente desde el <em>Manual de Normas Gráficas IDIEM 2025</em> y los tokens de marca, y aplicada a un post real del mes.</p>
+
+  <div class="meta">
+    <span class="chip"><b>1080×1080</b></span>
+    <span class="chip">Formato <b>STATIC</b></span>
+    <span class="chip">Célula <b>IOM</b> · Operación minera</span>
+    <span class="chip">Septiembre · post <b>#10</b></span>
+    <span class="chip">Subtema: Monitoreo e integridad estructural</span>
+  </div>
+
+  <div class="stage">
+    <div class="canvas" role="img" aria-label="Post de servicios IDIEM 1080 por 1080: eslogan Elige bien Elige idiem arriba a la izquierda, logo idiem arriba a la derecha, círculo rojo al centro-izquierda con el mensaje Anticiparse, no reaccionar, sobre una foto de estructura en faena minera.">
+      <div class="photo"></div>
+      <div class="legibility"></div>
+
+      <div class="slogan">Elige bien.Elige <b>idiem<span class="d">.</span></b></div>
+      <div class="logo">idiem<span class="d">.</span></div>
+
+      <div class="circle">
+        <div class="svc">Monitoreo de salud estructural</div>
+        <div class="msg">Anticiparse,<br>no <span class="hl">reaccionar</span>.</div>
+      </div>
+
+      <div class="baseline">Sensores · vibraciones · <b>análisis predictivo</b></div>
+    </div>
+  </div>
+  <p class="canvas-caption">La capa de fondo es un <strong>slot de foto</strong>: en producción se reemplaza por una foto propia IDIEM de la librería (concepto <em>espesador / domo minero</em>, entorno <em>mina</em>, orientación <em>C</em>). El gráfico se mantiene sin # y sin degradados fuera del negro de legibilidad.</p>
+
+  <div class="grid">
+    <div class="panel">
+      <h2>Anatomía de la pieza</h2>
+      <ul class="anat">
+        <li>
+          <span class="num">1</span>
+          <div>
+            <div class="name">Eslogan · superior izquierda</div>
+            <div class="rule">“Elige bien.Elige idiem.” en una sola línea, puntuación y minúsculas exactas, sin cursiva ni sombra dura. Sobre foto oscura va en blanco.</div>
+            <span class="tok">Montserrat Light 300</span>
+          </div>
+        </li>
+        <li>
+          <span class="num">2</span>
+          <div>
+            <div class="name">Logo · superior derecha</div>
+            <div class="rule">Versión fondo oscuro: isotipo blanco con la “d” roja. Área de seguridad 1× la altura de la “d”; nunca toca el borde.</div>
+            <span class="tok"><span class="sw" style="background:#e1261d"></span>“d” en rojo #e1261d</span>
+          </div>
+        </li>
+        <li>
+          <span class="num">3</span>
+          <div>
+            <div class="name">Círculo rojo · centro-izquierda</div>
+            <div class="rule">Elemento gráfico principal. Trazo perfecto 1:1 (Ø 750px sobre 1080), grosor constante, sin sombras ni degradados. Contiene el mensaje clave.</div>
+            <span class="tok"><span class="sw" style="background:#e1261d"></span>Ø 750px · trazo</span>
+          </div>
+        </li>
+        <li>
+          <span class="num">4</span>
+          <div>
+            <div class="name">Mensaje clave · dentro del círculo</div>
+            <div class="rule">Una idea, 45–60pt, Montserrat Bold. El acento en rojo refuerza el concepto. Rotula el servicio arriba en versalitas rojas.</div>
+            <span class="tok">Montserrat Bold 800 · 50pt</span>
+          </div>
+        </li>
+        <li>
+          <span class="num">5</span>
+          <div>
+            <div class="name">Foto propia · fondo</div>
+            <div class="rule">Personas/estructuras reales en faena, encuadre limpio y nítido. Nunca banco de imágenes. Solo el degradado negro de legibilidad sobre ella.</div>
+            <span class="tok"><span class="sw" style="background:#2f3030"></span>slot · foto IDIEM</span>
+          </div>
+        </li>
+        <li>
+          <span class="num">6</span>
+          <div>
+            <div class="name">Bajada técnica · inferior izquierda</div>
+            <div class="rule">Refuerzo breve del servicio (métodos), en Montserrat Medium blanco. Sin hashtags dentro de la imagen: los # viven en el copy.</div>
+            <span class="tok">Montserrat Medium 500</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h2>Trazabilidad &amp; tokens</h2>
+      <div class="kv">
+        <div class="row">
+          <span class="k">Post ancla</span>
+          <span class="v"><code>PLAN-KB-IOM-056-10</code> · Monitoreo de salud estructural</span>
+        </div>
+        <div class="row">
+          <span class="k">Mensaje acotado a evidencia</span>
+          <span class="v">Monitoreo continuo · sensores · análisis de vibraciones · predictivo (sin superlativos, GR-04).</span>
+        </div>
+        <div class="row">
+          <span class="k">Paleta</span>
+          <span class="v">
+            <span class="tok"><span class="sw" style="background:#e1261d"></span>#e1261d</span>
+            <span class="tok"><span class="sw" style="background:#2f3030"></span>#2f3030</span>
+            <span class="tok"><span class="sw" style="background:#666d72"></span>#666d72</span>
+            <span class="tok"><span class="sw" style="background:#efefef"></span>#efefef</span>
+          </span>
+        </div>
+        <div class="row">
+          <span class="k">Tipografía</span>
+          <span class="v">Montserrat — 800 títulos · 500 cuerpo · 300 sutil</span>
+        </div>
+        <div class="row">
+          <span class="k">Foto sugerida (librería)</span>
+          <span class="v">disciplina <code>estructuras</code> · entorno <code>mina</code> · orientación <code>C</code></span>
+        </div>
+      </div>
+
+      <ul class="check">
+        <li><span class="tick">✓</span> Montserrat en toda la pieza</li>
+        <li><span class="tick">✓</span> Rojo #e1261d como único acento</li>
+        <li><span class="tick">✓</span> Círculo rojo con proporción y trazo correctos</li>
+        <li><span class="tick">✓</span> Único degradado negro, auxiliar sobre la foto</li>
+        <li><span class="tick">✓</span> Sin # dentro de la imagen</li>
+        <li><span class="tick">✓</span> Logo con “d” roja y área de seguridad</li>
+      </ul>
+
+      <div class="note">
+        El <b>graphic_brief</b> del motor es la <b>referencia</b> (formato, mensaje, foto sugerida y evidencia). Esta plantilla es la interpretación visual fiel al manual; la gráfica final se produce aquí, en el artefacto, cargando la foto real.
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>Fuente visual: skill idiem-design-system + Manual de Normas Gráficas IDIEM 2025.</span>
+    <span>Tokens: <code>config/design_system/brand_tokens.json</code></span>
+  </div>
+</div>

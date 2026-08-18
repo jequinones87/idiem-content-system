@@ -1,0 +1,92 @@
+{
+  "_comment": "IDIEM Design System — tokens de marca consolidados de la skill idiem-design-system + Manual de Normas Gráficas IDIEM 2025 (CBR Comunicación). Fuente de verdad VISUAL para producir las piezas. EXTERNO/configurable. No inventar colores/tipografías; respetar las reglas del manual.",
+  "version": "2025.1",
+  "sources": [
+    "skill idiem-design-system",
+    "Manual Normas Gráficas- IDIEM 2025.pdf"
+  ],
+  "slogan": {
+    "text": "Elige bien.Elige idiem.",
+    "font": "Centrale Sans Book",
+    "font_fallback": "Montserrat Light",
+    "rules": ["una sola línea, sin saltos", "puntuación y mayúsculas exactas", "sin cursiva/subrayado/sombra", "color institucional"]
+  },
+  "colors": {
+    "red":        {"hex": "#e1261d", "rgb": [225, 38, 29], "pantone": "485C", "uso": "acento principal, círculo, 'd' del logo, CTA, highlight"},
+    "gray_blue":  {"hex": "#666d72", "rgb": [102, 109, 114], "pantone": "431C", "uso": "textos secundarios, subtítulos, equilibrio"},
+    "gray_light": {"hex": "#efefef", "rgb": [239, 239, 239], "pantone": "Cool Gray 1C", "uso": "fondos claros, cards, fondo de cierre"},
+    "gray_dark":  {"hex": "#2f3030", "rgb": [47, 48, 48], "pantone": "426C", "uso": "texto principal, fondos oscuros, íconos"},
+    "white": "#ffffff",
+    "black": "#000000",
+    "red_opacities": {"80": "rgba(225,38,29,.8)", "60": "rgba(225,38,29,.6)", "40": "rgba(225,38,29,.4)", "20": "rgba(225,38,29,.2)"}
+  },
+  "gradient_legibilidad": {
+    "desc": "Único degradado permitido: negro para legibilidad de texto sobre foto. Sutil y controlado.",
+    "from": {"color": "#000000", "opacity": 0.0, "pos": "0%"},
+    "to": {"color": "#000000", "opacity": 0.9, "pos": "100%"},
+    "directions": ["top", "bottom", "left", "right"]
+  },
+  "typography": {
+    "family": "Montserrat",
+    "family_import": "https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap",
+    "weights": {"thin": 200, "light": 300, "regular": 400, "medium": 500, "semibold": 600, "bold": 700, "heavy": 800, "black": 900},
+    "hierarchy": {
+      "H1": {"weight": "700/600", "uso": "títulos principales"},
+      "H2": {"weight": "600", "uso": "subtítulos/secciones"},
+      "P1": {"weight": "400/500", "uso": "cuerpo principal"},
+      "P2": {"weight": "400", "uso": "cuerpo secundario"},
+      "P3": {"weight": "300", "uso": "auxiliar/captions"}
+    },
+    "rules": ["títulos Bold/SemiBold", "cuerpo Regular/Medium", "sutil Light/ExtraLight", "nunca Arial/Inter/Roboto"]
+  },
+  "circle": {
+    "desc": "Elemento gráfico principal. No decorativo: contenedor de texto, fondo de personas, o highlight del logo.",
+    "color": "#e1261d",
+    "tipo": "trazo (stroke); relleno solo si funciona como fondo",
+    "proporcion": "círculo perfecto 1:1",
+    "social_diametro_px": 750,
+    "prohibiciones": ["no cambiar grosor de trazo", "no óvalos", "no sombras/degradados/efectos"]
+  },
+  "iconografia": {
+    "estilo": "trazo delgado 1.5pt, puntas redondeadas",
+    "color": {"sobre_claro": "#2f3030", "sobre_oscuro": "#ffffff"},
+    "familias": ["técnica (más detalle)", "funcional (minimalista)"],
+    "min_px": 40,
+    "libreria_web": "lucide (strokeWidth 1.5, sin relleno)",
+    "prohibiciones": ["no cambiar color", "no cambiar grosor", "no rellenos", "no sombras/degradados", "no íconos fuera de la familia"]
+  },
+  "fotografia": {
+    "estilo": ["personas en acción con equipamiento técnico", "obra/laboratorio/terreno reales", "planos medios/americanos en testimonios", "luz natural o técnica real", "encuadres limpios y nítidos"],
+    "evitar": ["bancos de imágenes genéricos", "personas de espaldas sin contexto", "blanco y negro (en prensa/testimonios)"],
+    "fondo_cielo": {"desc": "cielo despejado azul, nubes sutiles", "solo": "horizontal", "no": ["rotar", "invertir", "reflejar"]}
+  },
+  "logo": {
+    "versiones": {"fondo_claro": "original ('d' roja)", "fondo_oscuro": "blanco con 'd' roja", "fondo_saturado": "blanco completo"},
+    "area_seguridad": "1× altura de la 'd' en todos los lados; nunca tocar bordes",
+    "min_ancho": {"digital_px": 100, "impreso_mm": 25},
+    "cobranding_125": {"min_ancho": {"digital_px": 150, "impreso_mm": 45}, "desc": "distintivo 125 años; misma tipografía/color/proporción"},
+    "prohibiciones": ["sombras", "degradados", "transparencias", "contorno", "distorsión", "cambio de color", "sobre cielos muy oscuros o zonas con ruido"],
+    "asset_pendiente": "SVG/PNG oficial (logo color, blanco, 125) — descargar de la carpeta de recursos del manual"
+  },
+  "social_templates": {
+    "servicios":   {"size": "1080x1080", "circulo_px": 750, "texto_pt": "45-60", "reglas": ["eslogan sup-izq", "logo sup-der", "círculo rojo centro-izquierda con mensaje clave dentro", "círculo BLANCO al centro si la foto tiene ruido visual", "fondo cielo opcional", "sin degradado negro alta opacidad", "sin # en la imagen"], "mapea_a": "graphic_brief.recommended_format = STATIC"},
+    "carrusel":    {"size": "1080x1080", "circulo_px": 750, "titulo_pt": "50-60", "contenido_pt": "30-35", "reglas": ["portada: eslogan+logo+imagen+título", "slides intermedios: íconos + bloques rojos en palabras clave + misma imagen reutilizada, SIN logo", "cierre: eslogan centrado + logo + bajada + idiem.cl sobre fondo gris", "síntesis, no sobrecargar texto"], "mapea_a": "graphic_brief.recommended_format = CAROUSEL"},
+    "prensa":      {"size": "1080x1080", "circulo_px": 750, "titular_pt": "35", "fecha_pt": "20", "reglas": ["foto recortada del vocero", "círculo rojo detrás", "fondo gris claro", "nombre/cargo legible", "logo del medio", "cierre gris"], "mapea_a": "contenido coyuntural (vocería) — insumo externo"},
+    "testimonios": {"size": "1080x1080", "circulo_px": 750, "texto_pt": "30-35", "reglas": ["foto a color recortada", "fondo azul cielo oficial (no reemplazar)", "círculo rojo detrás", "nombre/cargo", "no b/n", "sin #"], "mapea_a": "contenido de personas — insumo externo"},
+    "webinar":     {"size": "1080x1080", "circulo_px": 750, "titulo_pt": "24-55", "reglas": ["círculo rojo rodea el logo sup-der", "íconos temáticos", "fecha/horario bajo el título", "relator+cargo bajo su foto", "cierre gris", "sin logo en slides intermedios"], "mapea_a": "evento (webinar) — insumo externo"},
+    "gif":         {"size": "1080x1080", "titulo_pt": "50-60", "reglas": ["logo sup-der rodeado por el círculo rojo (puede animarse)", "velocidad moderada", "títulos breves abajo", "no logo sin círculo"], "mapea_a": "animación"},
+    "capsulas":    {"size": "1080x1920", "formato": "9:16", "reglas": ["video Full HD, máx 2 min", "círculo rojo 970px en intro", "subtítulos Montserrat Bold 50px", "logo en intro y outro", "eslogan en cierre", "círculo 860px en cierre"], "mapea_a": "video"}
+  },
+  "checklist": [
+    "Montserrat aplicada",
+    "Rojo #e1261d único acento (no otros rojos)",
+    "Gris oscuro #2f3030 texto principal",
+    "Jerarquía Bold->Regular->Light",
+    "Círculo rojo correcto (proporción/trazo)",
+    "Íconos trazo delgado sin relleno",
+    "Solo degradado negro auxiliar sobre fotos",
+    "Sin fuentes genéricas",
+    "Sin # dentro de la imagen",
+    "Logo con área de seguridad 1d, versión según fondo"
+  ]
+}
