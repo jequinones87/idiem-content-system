@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "IDIEM Webinar Brief",
+  "description": "Insumo externo para piezas de webinar. NO ocupa uno de los 12 posts del mes, no entra al ledger de cooldown ni a la rotación de células. La logística (fecha, relator, URLs) es dato libre; cualquier claim tecnico de IDIEM en el temario sigue las reglas de la libreria (NAME_ONLY, sin superlativos).",
+  "type": "object",
+  "required": ["sesiones"],
+  "additionalProperties": false,
+  "properties": {
+    "ciclo": {
+      "type": "string",
+      "description": "Nombre del ciclo (si aplica). Con 2+ sesiones y modo=auto, se arma carrusel."
+    },
+    "modo": {
+      "type": "string",
+      "enum": ["auto", "static", "carousel"],
+      "default": "auto",
+      "description": "auto = 1 sesion -> estatico, 2+ -> carrusel. static/carousel fuerzan el formato."
+    },
+    "inscripcion_url": {
+      "type": "string",
+      "description": "URL global del formulario de inscripcion del ciclo (fallback para cada sesion)."
+    },
+    "sesiones": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Una entrada por webinar. Repetible: en un ciclo se suman varias.",
+      "items": {
+        "type": "object",
+        "required": ["titulo", "fecha"],
+        "additionalProperties": false,
+        "properties": {
+          "titulo": {"type": "string"},
+          "fecha": {"type": "string", "description": "YYYY-MM-DD"},
+          "hora": {"type": "string", "description": "HH:MM (hora local)"},
+          "modalidad": {"type": "string", "enum": ["Online", "Presencial", "Híbrido"], "default": "Online"},
+          "plataforma": {"type": "string", "description": "Zoom, LinkedIn Live, Teams, YouTube, …"},
+          "url_sesion": {"type": "string", "description": "URL de la sesion (Zoom, LinkedIn, etc.)"},
+          "url_inscripcion": {"type": "string", "description": "URL del formulario de inscripcion de esta sesion; si falta, usa inscripcion_url del ciclo."},
+          "relator_id": {"type": "string", "description": "Referencia a la libreria de expositores (EXP-01, …)."},
+          "relator_nombre": {"type": "string", "description": "Se usa si no hay relator_id o para sobrescribir."},
+          "relator_cargo": {"type": "string"},
+          "temario": {"type": "array", "items": {"type": "string"}, "description": "Puntos del temario (alimentan las laminas del carrusel)."}
+        }
+      }
+    }
+  }
+}

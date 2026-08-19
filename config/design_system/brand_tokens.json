@@ -75,6 +75,16 @@
     "eslogan": {"file": "eslogan_idiem_3.svg", "crop_blanco": "eslogan_idiem_3_blanco.svg", "viewBox_full": "0 0 890.88 160.38", "viewBox_blanco": "12 300 872 84", "versiones": ["negro con d roja (fondo claro)", "blanco con d roja (fondo oscuro)"], "tipo": "trazado vectorial (outlines) — NO depende de fuente", "nota": "SVG oficial en curvas; se usa el recorte blanco sobre foto oscura. Reemplaza las versiones previas de texto vivo"},
     "iconografia": {"file": "iconografia_idiem.svg", "viewBox": "0 0 1920 1080", "familia": "funcional", "estado": "integrada", "grilla": "6 columnas; trazo blanco sobre fondo oscuro", "extraidos_png": ["icon_magnifier.png", "icon_location.png", "icon_shield.png"], "nota": "hoja oficial de íconos. Para web se recorta el ícono por su celda y se rasteriza a PNG transparente (la hoja completa pesa 406KB). Trazo delgado, color según fondo"}
   },
+  "eventos_webinar": {
+    "_comment": "Pista de EVENTOS (insumo externo). No ocupa los 12 posts del mes ni el ledger. Un brief con sesiones repetibles alimenta la plantilla; 1 sesión -> estático, 2+ -> carrusel.",
+    "brief_schema": "config/webinar/webinar_brief.schema.json",
+    "brief_ejemplo": "config/webinar/example_brief.json",
+    "motor": "src/idiem/webinar.py",
+    "expositor_library": "config/expositor_library/expositores.csv",
+    "plantilla": "design_system/plantilla_03_webinar.html",
+    "firma_visual": "logo dentro del círculo rojo (sup-der); foto del relator recortada con círculo rojo detrás; sin logo en láminas de sesión; cierre gris con inscripción",
+    "grounding": "logística = dato libre; claim técnico en el temario sigue reglas de la librería (NAME_ONLY, sin superlativos)"
+  },
   "fotografia_seleccion": {
     "_comment": "Cómo cada post obtiene su foto. Fuente: config/photo_library/photo_manifest.csv (109 fotos propias/licenciadas, clasificadas por célula/subtema/disciplina/entorno/orientación). El motor cruza el graphic_brief.photo_query con el manifest.",
     "orden": ["match exacto célula+subtema+disciplina+entorno", "match célula+disciplina+entorno", "match célula+entorno", "sin match -> generación Muapi"],
