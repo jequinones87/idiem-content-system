@@ -29,3 +29,21 @@ def test_graphic_brief_sanitizes_forbidden_source_fact(kb):
     g = build_graphic_brief(brief, "Geotecnia y rocas")
     joined = (g["visual_headline"] + " " + " ".join(g["key_points"])).lower()
     assert "único" not in joined
+
+
+def test_graphic_brief_includes_photo_selection():
+    """When a post needs a photo, the brief carries a concrete decision:
+    a real library photo, or a Muapi spec — never just an abstract query."""
+    from idiem.loader import load_knowledge_base
+    from idiem.review import compose_month
+    kb = load_knowledge_base()
+    review = compose_month(kb, "2026-09", target_count=12)
+    decided = [p.graphic_brief.get("photo_selection") for p in review.posts
+               if p.graphic_brief.get("needs_photo")]
+    assert decided, "at least one post needs a photo"
+    for sel in decided:
+        assert sel and sel["source"] in ("library", "muapi")
+        if sel["source"] == "library":
+            assert sel["photo_id"] and sel["fuente"]
+        else:
+            assert sel["origin"] == "muapi_generada" and sel["prompt"]

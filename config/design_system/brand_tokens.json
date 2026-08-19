@@ -65,8 +65,25 @@
     "area_seguridad": "1× altura de la 'd' en todos los lados; nunca tocar bordes",
     "min_ancho": {"digital_px": 100, "impreso_mm": 25},
     "cobranding_125": {"min_ancho": {"digital_px": 150, "impreso_mm": 45}, "desc": "distintivo 125 años; misma tipografía/color/proporción"},
-    "prohibiciones": ["sombras", "degradados", "transparencias", "contorno", "distorsión", "cambio de color", "sobre cielos muy oscuros o zonas con ruido"],
-    "asset_pendiente": "SVG/PNG oficial (logo color, blanco, 125) — descargar de la carpeta de recursos del manual"
+    "prohibiciones": ["sombras", "degradados", "transparencias", "contorno", "distorsión", "cambio de color", "sobre cielos muy oscuros o zonas con ruido"]
+  },
+  "assets_oficiales": {
+    "_comment": "SVG oficiales entregados por el usuario (carpeta Drive de recursos). Ruta relativa al repo. Son la fuente vectorial real; reemplazan cualquier reconstrucción.",
+    "dir": "design_system/assets",
+    "circulo": {"file": "circulo_geometrico.svg", "viewBox": "0 0 850 850", "tipo": "anillo (relleno)", "color_asset": "#f50000", "color_normalizado": "#e1261d", "recolorable": true, "nota": "recolorar según contraste (rojo/blanco) sin alterar proporción ni grosor"},
+    "logo": {"file": "logo_idiem.svg", "viewBox": "0 0 350 350", "version_en_viewbox": "blanco completo (todas las trazas #fff)", "otras_versiones_en_archivo": ["d roja sobre claro", "blanco con d roja"], "nota": "el viewBox enmarca la versión blanca; ideal sobre foto oscura"},
+    "eslogan": {"file": "eslogan_idiem.svg", "viewBox": "0 0 1000 400", "versiones": ["sobre fondo oscuro (texto blanco, d roja)", "sobre fondo gris/azul", "blanco completo"], "font_asset": "CentraleSansBook", "font_fallback_digital": "Montserrat Light", "nota": "el SVG usa texto vivo en CentraleSans; en web se renderiza el eslogan en Montserrat Light (fallback sancionado) para no depender de la fuente"},
+    "iconografia": {"file": "iconografia_idiem.svg", "estado": "pendiente_de_descarga", "nota": "hoja de íconos oficial; se integra al construir Carrusel/Webinar (usan íconos). Trazo delgado, colores por fondo"}
+  },
+  "fotografia_seleccion": {
+    "_comment": "Cómo cada post obtiene su foto. Fuente: config/photo_library/photo_manifest.csv (109 fotos propias/licenciadas, clasificadas por célula/subtema/disciplina/entorno/orientación). El motor cruza el graphic_brief.photo_query con el manifest.",
+    "orden": ["match exacto célula+subtema+disciplina+entorno", "match célula+disciplina+entorno", "match célula+entorno", "sin match -> generación Muapi"],
+    "muapi_fallback": {
+      "activar_solo_si": "no existe foto adecuada en el manifest para el post",
+      "requisitos": ["carácter profesional y fotorrealista", "coherente con el servicio/célula del post", "sin texto ni logos incrustados", "sin personas identificables inventadas", "encuadre limpio, luz técnica real"],
+      "prohibido": ["reemplazar una foto propia adecuada por una generada", "estética de banco genérico", "inventar resultados/proyectos/clientes específicos"],
+      "marca_trazabilidad": "toda foto generada se rotula origen='muapi_generada' y guarda el prompt usado; nunca se presenta como registro real de un proyecto IDIEM"
+    }
   },
   "social_templates": {
     "servicios":   {"size": "1080x1080", "circulo_px": 750, "texto_pt": "45-60", "reglas": ["eslogan sup-izq", "logo sup-der", "círculo rojo centro-izquierda con mensaje clave dentro", "círculo BLANCO al centro si la foto tiene ruido visual", "fondo cielo opcional", "sin degradado negro alta opacidad", "sin # en la imagen"], "mapea_a": "graphic_brief.recommended_format = STATIC"},

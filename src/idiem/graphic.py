@@ -18,6 +18,7 @@ from collections import Counter
 
 from .drafting import forbidden_terms
 from .loader import CONFIG_DIR
+from .photo_library import decide_photo
 
 _EMOJI = re.compile(
     "[\U0001F000-\U0001FAFF\U00002600-\U000027BF\U0001F1E6-\U0001F1FF←-⇿⬀-⯿️]"
@@ -110,7 +111,13 @@ def _distinct_points(brief: dict, forbidden: list[str]) -> list[str]:
     return out
 
 
-def build_graphic_brief(brief: dict, subtheme: str, *, concept_dict: dict | None = None) -> dict:
+def build_graphic_brief(
+    brief: dict,
+    subtheme: str,
+    *,
+    concept_dict: dict | None = None,
+    exclude_photo_ids: set[str] | None = None,
+) -> dict:
     """Derive the graphic brief for one approved post. Fails closed on any
     forbidden term reaching the visual text."""
     concept_dict = concept_dict if concept_dict is not None else _load_concept_dict()
@@ -136,6 +143,18 @@ def build_graphic_brief(brief: dict, subtheme: str, *, concept_dict: dict | None
         else None
     )
 
+    # Resolve the query to a concrete decision: a real library photo when one
+    # corresponds, otherwise a Muapi generation spec (tagged as generated).
+    photo_selection = None
+    if needs_photo:
+        photo_selection = decide_photo(
+            cell=brief.get("cell", ""),
+            subtema=subtheme,
+            disciplina=disciplina,
+            entorno=entorno,
+            exclude_ids=exclude_photo_ids,
+        )
+
     gb = {
         "content_id": brief.get("content_id"),
         "subtheme": subtheme,
@@ -145,6 +164,7 @@ def build_graphic_brief(brief: dict, subtheme: str, *, concept_dict: dict | None
         "carousel_viable": carousel_viable,
         "needs_photo": needs_photo,
         "photo_query": photo_query,
+        "photo_selection": photo_selection,
         "evidence_ids": list(brief.get("knowledge_ids", [])),
     }
 

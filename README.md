@@ -215,9 +215,30 @@ Cada post expone un botón **Ver fuente** que abre un popup con el **texto exact
 verificado** (evidencia + documento + página) de cada knowledge item y registro 2A.3,
 para chequear veracidad. No se muestran códigos internos de relación.
 
+## Design System &amp; librería de fotos
+
+- **Tokens de marca** (`config/design_system/brand_tokens.json`): fuente de verdad
+  visual consolidada del *Manual de Normas Gráficas IDIEM 2025* + skill
+  `idiem-design-system` (colores, Montserrat, círculo 750px, logo, 7 templates
+  sociales). Externo/configurable: sumar plantillas no requiere tocar código.
+- **Recursos oficiales SVG** (`design_system/assets/`): logo (multi-versión +
+  recorte blanco-con-d-roja), círculo geométrico y eslogan. El color de logo,
+  círculo y eslogan se ajusta al **contraste de la foto** para no perder
+  legibilidad.
+- **Plantillas** (`design_system/*.html`): piezas 1080×1080 autocontenidas
+  (Artifact). **Plantilla 01 — Post Servicios** ya aplicada a un post real, con
+  recurso oficial + foto real de la librería.
+- **Librería de fotos** (`config/photo_library/photo_manifest.csv`, 109 fotos
+  clasificadas por célula/subtema/disciplina/entorno/orientación/derechos):
+  `src/idiem/photo_library.py` **selecciona la foto real** que corresponde al post
+  (match célula + subtema/disciplina/entorno). Si **ninguna corresponde**, devuelve
+  una **especificación de generación Muapi** (prompt profesional y fotorrealista,
+  sin texto/logos, rotulada `muapi_generada` — nunca se presenta como registro real
+  de un proyecto). La decisión viaja en `graphic_brief.photo_selection`.
+
 ## Fuera de alcance en este hito
 
-Generación gráfica final, selección automática de fotos, publicación social,
+Generación gráfica final automática, publicación social,
 enriquecimiento externo de hechos, verificación normativa en vivo, scraping,
 integraciones CRM/ads. La capa visual/publicación entra en handoffs posteriores
 detrás de las interfaces de `src/idiem/interfaces.py`.
