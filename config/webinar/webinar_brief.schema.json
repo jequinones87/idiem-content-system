@@ -29,7 +29,10 @@
         "required": ["titulo", "fecha"],
         "additionalProperties": false,
         "properties": {
-          "titulo": {"type": "string"},
+          "tema": {"type": "string", "description": "Rótulo del bloque rojo (kicker), p.ej. 'Cambio climático:'"},
+          "gancho": {"type": "string", "description": "Título-gancho grande sobre la foto (mensaje de campaña), p.ej. 'Planificar hoy para enfrentar el mañana'"},
+          "foto_tema": {"type": "string", "description": "Foto temática de la mitad superior: id de librería, ruta local, o 'muapi' para generarla. Cambia por sesión en un ciclo."},
+          "titulo": {"type": "string", "description": "Título del webinar (panel inferior)"},
           "fecha": {"type": "string", "description": "YYYY-MM-DD"},
           "hora": {"type": "string", "description": "HH:MM (hora local)"},
           "modalidad": {"type": "string", "enum": ["Online", "Presencial", "Híbrido"], "default": "Online"},

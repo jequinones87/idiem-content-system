@@ -88,6 +88,9 @@ def resolve_session(session: dict, brief: dict, expositores: dict[str, Expositor
     relator_nombre = session.get("relator_nombre") or (exp.nombre if exp else "")
     relator_cargo = session.get("relator_cargo") or (exp.cargo if exp else "")
     return {
+        "tema": session.get("tema", ""),
+        "gancho": session.get("gancho", ""),
+        "foto_tema": session.get("foto_tema", ""),
         "titulo": session.get("titulo", ""),
         "fecha": session.get("fecha", ""),
         "hora": session.get("hora", ""),
