@@ -60,18 +60,14 @@ def card(sesion):
       <div class="photo" style="{photo_style}"></div>
       <div class="photo-grad"></div>
       <img class="eslogan" src="{ESLOGAN}" alt="Elige bien. Elige idiem.">
-      <div class="logo125">
-        <img class="lg" src="{LOGO}" alt="idiem">
-        <span class="bar"></span>
-        <span class="an"><b>125</b><i class="dot"></i><em>años</em></span>
-      </div>
+      <img class="logo" src="{LOGO}" alt="idiem">
       <div class="photo-copy">
         <span class="kicker">{tema}</span>
-        <div class="gancho fit" data-max="6.4" data-min="3.4">{gancho}</div>
+        <div class="gancho fit" data-max="6.0" data-min="3.2">{gancho}</div>
       </div>
       <div class="panel">
         <span class="pill">Webinar:</span>
-        <div class="wtitle fit" data-max="4.2" data-min="2.5">{titulo}</div>
+        <div class="wtitle fit" data-max="3.9" data-min="2.4">{titulo}</div>
         <div class="hr"></div>
         <span class="pill mini">Relator</span>
         <div class="prow">
@@ -93,7 +89,7 @@ static_card = card(plan["sesiones"][0])
 ciclo_cards = "\n".join(card(s) for s in plan["sesiones"])
 
 HTML = f"""<title>Plantilla Webinar</title>
-<meta name="description" content="Paso 3 del Design System IDIEM: la plantilla de Webinar (insumo externo) con el layout oficial de la agencia — foto temática + bloque rojo + gancho, y panel gris con relator y tarjeta de fecha. Estático para un webinar; se agregan slides para un ciclo.">
+<meta name="description" content="Paso 3 del Design System IDIEM: la plantilla de Webinar (insumo externo) con el layout oficial de la agencia — foto temática + bloque rojo + gancho, y panel gris con relator y tarjeta de fecha. Estático para un webinar; se agregan slides para un ciclo, cambiando la foto superior por tema.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap">
@@ -117,36 +113,30 @@ HTML = f"""<title>Plantilla Webinar</title>
 
   /* ===== webinar card ===== */
   .wcard{{container-type:inline-size;position:relative;width:min(560px,86vw);aspect-ratio:1/1;overflow:hidden;border-radius:10px;box-shadow:var(--shadow);background:var(--gray-dark);color:#fff;isolation:isolate;user-select:none}}
-  .photo{{position:absolute;left:0;top:0;width:100%;height:48cqw;z-index:0;background-size:cover;background-position:50% 46%}}
-  .photo-grad{{position:absolute;left:0;top:0;width:100%;height:48cqw;z-index:1;background:linear-gradient(0deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.05) 34%,rgba(0,0,0,.28) 100%)}}
+  .photo{{position:absolute;left:0;top:0;width:100%;height:46cqw;z-index:0;background-size:cover;background-position:50% 46%}}
+  .photo-grad{{position:absolute;left:0;top:0;width:100%;height:46cqw;z-index:1;background:linear-gradient(0deg,rgba(0,0,0,.62) 0%,rgba(0,0,0,.05) 34%,rgba(0,0,0,.28) 100%)}}
   .eslogan{{position:absolute;z-index:3;top:4.4cqw;left:4.8cqw;width:30cqw;height:auto;filter:drop-shadow(0 1px 8px rgba(0,0,0,.5))}}
-  .logo125{{position:absolute;z-index:3;top:4.6cqw;right:4.8cqw;display:flex;align-items:center;gap:2.4cqw;filter:drop-shadow(0 1px 8px rgba(0,0,0,.5))}}
-  .logo125 .lg{{width:15cqw;height:auto;display:block}}
-  .logo125 .bar{{width:.34cqw;height:7.4cqw;background:#fff;opacity:.9;border-radius:2px}}
-  .logo125 .an{{display:flex;flex-direction:column;line-height:1;color:#fff}}
-  .logo125 .an b{{font-size:5.4cqw;font-weight:800;letter-spacing:-.02em;position:relative}}
-  .logo125 .an .dot{{position:absolute;right:-1.9cqw;top:.2cqw;width:1.5cqw;height:1.5cqw;border-radius:50%;background:var(--red)}}
-  .logo125 .an em{{font-style:normal;font-size:2.1cqw;font-weight:600;letter-spacing:.02em;margin-top:.3cqw}}
-  .photo-copy{{position:absolute;z-index:3;left:4.8cqw;right:6cqw;top:46cqw;transform:translateY(-100%);display:flex;flex-direction:column;align-items:flex-start;gap:2.4cqw}}
+  .logo{{position:absolute;z-index:3;top:5cqw;right:5cqw;width:19cqw;height:auto;display:block;filter:drop-shadow(0 1px 8px rgba(0,0,0,.5))}}
+  .photo-copy{{position:absolute;z-index:3;left:4.8cqw;right:6cqw;top:44cqw;transform:translateY(-100%);display:flex;flex-direction:column;align-items:flex-start;gap:2.4cqw}}
   .kicker{{background:var(--red);color:#fff;font-weight:800;font-size:4.4cqw;letter-spacing:-.005em;padding:1.3cqw 2.4cqw;border-radius:.4cqw}}
   .gancho{{font-weight:800;line-height:1.04;letter-spacing:-.015em;text-shadow:0 2px 14px rgba(0,0,0,.5);max-width:78cqw;max-height:20cqw;overflow:hidden}}
 
-  .panel{{position:absolute;left:0;top:48cqw;width:100%;height:52cqw;z-index:2;background:var(--gray-dark);padding:4.2cqw 5cqw 4.2cqw}}
+  .panel{{position:absolute;left:0;top:46cqw;width:100%;height:54cqw;z-index:2;background:var(--gray-dark);padding:4cqw 5cqw 5.6cqw}}
   .pill{{display:inline-block;background:var(--gray-blue);color:#fff;font-weight:700;font-size:2.7cqw;letter-spacing:.02em;padding:1cqw 2.6cqw;border-radius:.7cqw}}
   .pill.mini{{font-size:2.5cqw;padding:.8cqw 2.4cqw}}
-  .wtitle{{font-weight:800;line-height:1.08;letter-spacing:-.01em;color:#fff;margin-top:2cqw;max-width:90cqw;max-height:11cqw;overflow:hidden}}
-  .hr{{height:1px;background:rgba(255,255,255,.22);margin:2.6cqw 0 2.2cqw;width:70cqw}}
-  .prow{{display:flex;align-items:center;justify-content:space-between;gap:3cqw;margin-top:2.4cqw}}
+  .wtitle{{font-weight:800;line-height:1.08;letter-spacing:-.01em;color:#fff;margin-top:1.8cqw;max-width:90cqw;max-height:10cqw;overflow:hidden}}
+  .hr{{height:1px;background:rgba(255,255,255,.22);margin:2.2cqw 0 1.8cqw;width:70cqw}}
+  .prow{{display:flex;align-items:center;justify-content:space-between;gap:3cqw;margin-top:2cqw}}
   .relator{{display:flex;align-items:center;gap:3cqw;min-width:0}}
-  .relator .disc{{position:relative;width:16cqw;height:16cqw;flex:none;border-radius:50%;background:#fff;padding:.7cqw}}
+  .relator .disc{{position:relative;width:14.5cqw;height:14.5cqw;flex:none;border-radius:50%;background:#fff;padding:.7cqw}}
   .relator .disc img{{width:100%;height:100%;object-fit:cover;object-position:50% 20%;border-radius:50%;display:block}}
   .relator .disc .avatar{{width:100%;height:100%;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:6.5cqw;font-weight:800;color:#fff}}
-  .relator .rname{{font-size:3cqw;font-weight:800;letter-spacing:.01em;white-space:nowrap}}
-  .relator .rcargo{{font-size:2.2cqw;font-weight:500;color:rgba(255,255,255,.82);line-height:1.22;margin-top:.5cqw;max-width:30cqw}}
-  .datecard{{flex:none;background:var(--red);border-radius:2.2cqw;padding:2.6cqw 3cqw;display:flex;flex-direction:column;gap:1.6cqw;min-width:30cqw}}
+  .relator .rname{{font-size:2.9cqw;font-weight:800;letter-spacing:.01em;white-space:nowrap}}
+  .relator .rcargo{{font-size:2.05cqw;font-weight:500;color:rgba(255,255,255,.82);line-height:1.22;margin-top:.5cqw;max-width:30cqw}}
+  .datecard{{flex:none;background:var(--red);border-radius:2cqw;padding:2.3cqw 2.8cqw;display:flex;flex-direction:column;gap:1.3cqw;min-width:29cqw}}
   .datecard .drow{{display:flex;align-items:center;gap:2.4cqw}}
-  .datecard .drow img{{width:4.6cqw;height:4.6cqw;object-fit:contain;flex:none}}
-  .datecard .drow span{{font-size:2.9cqw;font-weight:700;color:#fff;line-height:1.12}}
+  .datecard .drow img{{width:4.2cqw;height:4.2cqw;object-fit:contain;flex:none}}
+  .datecard .drow span{{font-size:2.75cqw;font-weight:700;color:#fff;line-height:1.12}}
   .datecard .dhr{{height:1px;background:rgba(255,255,255,.4);margin:0 .5cqw}}
 
   .cap{{font-size:.8rem;color:var(--muted);margin:8px 0 0}}
@@ -166,7 +156,7 @@ HTML = f"""<title>Plantilla Webinar</title>
 <div class="wrap">
   <p class="eyebrow"><span class="dot"></span>IDIEM · Design System · Paso 3 · v2</p>
   <h1 class="title">Plantilla 03 — <b>Webinar</b></h1>
-  <p class="lede">Layout oficial de la agencia: <strong>foto temática</strong> arriba (con eslogan, logo 125 años, bloque rojo del tema y título-gancho) y <strong>panel gris</strong> abajo (título del webinar, relator y tarjeta roja de fecha/hora). <strong>Insumo externo</strong>, no ocupa los 12 del mes. Con una sesión es estático; para un <strong>ciclo</strong> se agregan slides con el mismo diseño y <strong>cambia la foto superior</strong> por tema.</p>
+  <p class="lede">Layout oficial de la agencia: <strong>foto temática</strong> arriba (con eslogan, logo idiem, bloque rojo del tema y título-gancho) y <strong>panel gris</strong> abajo (título del webinar, relator y tarjeta roja de fecha/hora). <strong>Insumo externo</strong>, no ocupa los 12 del mes. Con una sesión es estático; para un <strong>ciclo</strong> se agregan slides con el mismo diseño y <strong>cambia la foto superior</strong> por tema.</p>
   <div class="meta">
     <span class="chip">Insumo <b>externo</b></span>
     <span class="chip">No ocupa los <b>12</b> del mes</span>
