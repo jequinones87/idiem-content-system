@@ -71,16 +71,11 @@ def post_slides(seq: int, post) -> list[str]:
     ps = (post.graphic_brief or {}).get("photo_selection") or {}
     photo_uri = resolve_photo(seq)
     finish = "photo" if photo_uri else G.finish_tag(seq, ps)[0]
-    slides = [G.canvas(seq, cshort, photo_uri, finish)]
     if seq in CAR.CAROUSEL_POSTS:
-        extra = CAR.SLIDES[seq]
-        total = 1 + len(extra)
-        for i, sl in enumerate(extra, start=2):
-            if sl["tipo"] == "int":
-                slides.append(CAR.intermediate_html(sl, i, total, G.LOGO))
-            else:
-                slides.append(CAR.cierre_html(sl, i, total, G.LOGO, G.SLOGAN))
-    return slides
+        # Carrusel: portada + intermedias + cierre, todo con foto de fondo (Plantilla 02).
+        return CAR.build_slides(seq, photo_uri, G.LOGO, G.SLOGAN)
+    # Estático: pieza Servicios (círculo rojo).
+    return [G.canvas(seq, cshort, photo_uri, finish)]
 
 
 def emit(month: str, build: Path) -> None:

@@ -235,7 +235,6 @@ def canvas(seq: int, cell_short: str, photo_uri: str | None, finish: str) -> str
     </div>
   </div>
   <div class="baseline">{g["base"]}</div>
-  <div class="cellbadge">{cell_short}</div>
 </div>'''
 
 
