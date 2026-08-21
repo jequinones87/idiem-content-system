@@ -33,6 +33,17 @@ from bundle_month import grid_style, resolve_photo  # noqa: E402
 BUILD_DEFAULT = Path("/tmp/claude-0/-home-user-idiem-content-system/"
                      "1c5b178b-f8ee-5946-beb8-9cf3fffd70df/scratchpad/ws")
 
+# Sustitución liviana: el pick top del motor pesa 8.3 MB (no descargable por el
+# conector). Se usa su hermana de librería, misma célula/subtema, versión ~1080px.
+PHOTO_SUB = {
+    6:  {"photo_id": "PHO-0044", "orig": "PHO-0061",
+         "fuente": "https://drive.google.com/file/d/1TMjf-mU8rJ-Ds-O2d1sP0ce9MHISjLUS/view",
+         "detalle": "vigas de acero · casco IDIEM"},
+    10: {"photo_id": "PHO-0013", "orig": "PHO-0040",
+         "fuente": "https://drive.google.com/file/d/14Ad1dRP_Dfipr-C88kGtBVJL24KDdMOS/view",
+         "detalle": "domo minero · dron"},
+}
+
 PAGE = """<!doctype html><html lang="es"><head><meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -137,7 +148,13 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     ev_codes = " · ".join(f"<code>{G.esc(e)}</code>" for e in ev[:4]) or f"<code>{G.esc(post.knowledge_id)}</code>"
 
     src = ps.get("source")
-    if src == "library":
+    if seq in PHOTO_SUB:
+        s = PHOTO_SUB[seq]
+        foto = (f'Librería · <code>{s["photo_id"]}</code> ({G.esc(s["detalle"])}) · '
+                f'<a href="{G.esc(s["fuente"])}" target="_blank" rel="noopener">ver en Drive</a>'
+                f'<br><span class="muprompt">sustituta liviana de <code>{s["orig"]}</code> '
+                f'(original 8.3&nbsp;MB, no descargable por el conector)</span>')
+    elif src == "library":
         foto = f'Librería · <code>{G.esc(ps.get("photo_id",""))}</code> · <a href="{G.esc(ps.get("fuente",""))}" target="_blank" rel="noopener">ver en Drive</a>'
     elif src == "muapi":
         foto = 'Muapi (generada) — pendiente de incrustar (deja <code>assets/month/p%02d.jpg</code>)' % seq
@@ -267,6 +284,7 @@ textarea.imgnote{min-height:62px}
 .tr .v{min-width:0;word-break:break-word}
 .tr a{color:var(--red);font-weight:600}
 code{font-family:inherit;font-weight:700;background:var(--gray-light);padding:1px 6px;border-radius:5px;font-size:.9em}
+.muprompt{color:var(--muted);font-size:.72rem;font-style:italic}
 
 /* lightbox */
 .lb{position:fixed;inset:0;background:rgba(6,8,9,.92);display:none;z-index:50;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:24px}
