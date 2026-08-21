@@ -44,6 +44,15 @@ PHOTO_SUB = {
          "detalle": "domo minero · dron"},
 }
 
+# Fotos Adobe Stock licenciadas (tier libre) para los posts sin foto de librería
+# adecuada (antes marcados Muapi). Descargadas, comprimidas a 1080px y usadas
+# localmente; foto real y trazable, sin depender de un CDN externo.
+STOCK_SUB = {
+    7:  {"id": "204006589",  "detalle": "sonómetro en terreno"},
+    8:  {"id": "1614411840", "detalle": "fusión de tubería HDPE"},
+    12: {"id": "340172893",  "detalle": "END por ultrasonido en soldadura"},
+}
+
 PAGE = """<!doctype html><html lang="es"><head><meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -154,6 +163,10 @@ def render_card(seq: int, post, uris: list[str]) -> str:
                 f'<a href="{G.esc(s["fuente"])}" target="_blank" rel="noopener">ver en Drive</a>'
                 f'<br><span class="muprompt">sustituta liviana de <code>{s["orig"]}</code> '
                 f'(original 8.3&nbsp;MB, no descargable por el conector)</span>')
+    elif seq in STOCK_SUB:
+        s = STOCK_SUB[seq]
+        foto = (f'Adobe Stock · <code>#{s["id"]}</code> ({G.esc(s["detalle"])}) · licencia libre'
+                f'<br><span class="muprompt">foto licenciada e incrustada (reemplaza el placeholder Muapi)</span>')
     elif src == "library":
         foto = f'Librería · <code>{G.esc(ps.get("photo_id",""))}</code> · <a href="{G.esc(ps.get("fuente",""))}" target="_blank" rel="noopener">ver en Drive</a>'
     elif src == "muapi":
