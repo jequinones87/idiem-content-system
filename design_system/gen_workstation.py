@@ -42,14 +42,22 @@ PHOTO_SUB = {
     10: {"photo_id": "PHO-0013", "orig": "PHO-0040",
          "fuente": "https://drive.google.com/file/d/14Ad1dRP_Dfipr-C88kGtBVJL24KDdMOS/view",
          "detalle": "domo minero · dron"},
+    3:  {"photo_id": "PHO-0085", "orig": "PHO-0091",
+         "fuente": "https://drive.google.com/file/d/1xUlYXbYXjL1VpIvy_EewpWXAOSQtEWhQ/view",
+         "detalle": "casco IDIEM · tablet · revisión", "reason": "foto original pixelada (329px)"},
+    11: {"photo_id": "PHO-0095", "orig": "PHO-0004",
+         "fuente": "https://drive.google.com/file/d/13ZKXpQ0kMFr0j7TVW7Jl8CIrL3DGOanJ/view",
+         "detalle": "edificio en construcción (Costanera)", "reason": "cambio pedido"},
 }
 
 # Fotos Adobe Stock licenciadas (tier libre) para los posts sin foto de librería
 # adecuada (antes marcados Muapi). Descargadas, comprimidas a 1080px y usadas
 # localmente; foto real y trazable, sin depender de un CDN externo.
 STOCK_SUB = {
+    1:  {"id": "212862972",  "detalle": "acuerdo · ejecutivos"},
     7:  {"id": "204006589",  "detalle": "sonómetro en terreno"},
     8:  {"id": "1614411840", "detalle": "fusión de tubería HDPE"},
+    9:  {"id": "85465544",   "detalle": "hospital moderno"},
     12: {"id": "340172893",  "detalle": "END por ultrasonido en soldadura"},
 }
 
@@ -154,10 +162,11 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     src = ps.get("source")
     if seq in PHOTO_SUB:
         s = PHOTO_SUB[seq]
+        reason = s.get("reason", "original 8.3 MB, no descargable por el conector")
         foto = (f'Librería · <code>{s["photo_id"]}</code> ({G.esc(s["detalle"])}) · '
                 f'<a href="{G.esc(s["fuente"])}" target="_blank" rel="noopener">ver en Drive</a>'
-                f'<br><span class="muprompt">sustituta liviana de <code>{s["orig"]}</code> '
-                f'(original 8.3&nbsp;MB, no descargable por el conector)</span>')
+                f'<br><span class="muprompt">reemplaza a <code>{s["orig"]}</code> '
+                f'({G.esc(reason)})</span>')
     elif seq in STOCK_SUB:
         s = STOCK_SUB[seq]
         foto = (f'Adobe Stock · <code>#{s["id"]}</code> ({G.esc(s["detalle"])}) · licencia libre'
