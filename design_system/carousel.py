@@ -32,10 +32,10 @@ SLIDES = {
         "portada": {"kicker": "PERITAJES · OPERACIÓN MINERA",
                     "title": 'Entender qué <span class="c2rt">ocurrió</span>.'},
         "intermedias": [
-            {"icon": "magnifier", "title": 'Fallas <span class="c2rb">estructurales</span>',
-             "body": "Peritajes de fallas estructurales y mecánicas: determinamos qué ocurrió y por qué."},
             {"icon": "location", "title": 'Peritaje de <span class="c2rb">incendios</span>',
              "body": "Reconstrucción técnica del evento en la operación minera."},
+            {"icon": "magnifier", "title": 'Fallas <span class="c2rb">estructurales</span>',
+             "body": "Peritajes de fallas estructurales y mecánicas: determinamos qué ocurrió y por qué."},
             {"icon": "shield", "title": 'Brechas y <span class="c2rb">estándares</span>',
              "body": "Identificamos, cuantificamos y evaluamos condiciones subestándar según control de fatalidad."},
         ],

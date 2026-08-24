@@ -48,16 +48,20 @@ PHOTO_SUB = {
     11: {"photo_id": "PHO-0095", "orig": "PHO-0004",
          "fuente": "https://drive.google.com/file/d/13ZKXpQ0kMFr0j7TVW7Jl8CIrL3DGOanJ/view",
          "detalle": "edificio en construcción (Costanera)", "reason": "cambio pedido"},
+    1:  {"photo_id": "PHO-0058", "orig": "Adobe Stock #212862972",
+         "fuente": "https://drive.google.com/file/d/1KnC9RDEQUNZMxWX28rphzN2EGLz1ZNOl/view",
+         "detalle": "ejecutivo con laptop · planos", "reason": "cambio pedido: foto de librería"},
+    9:  {"photo_id": "PHO-0067", "orig": "Adobe Stock #85465544",
+         "fuente": "https://drive.google.com/file/d/145Rtu5NfO2uLDK0WWNLPn1ZIqjHTEQ6D/view",
+         "detalle": "hospital", "reason": "cambio pedido: hospital de librería"},
 }
 
 # Fotos Adobe Stock licenciadas (tier libre) para los posts sin foto de librería
 # adecuada (antes marcados Muapi). Descargadas, comprimidas a 1080px y usadas
 # localmente; foto real y trazable, sin depender de un CDN externo.
 STOCK_SUB = {
-    1:  {"id": "212862972",  "detalle": "acuerdo · ejecutivos"},
     7:  {"id": "204006589",  "detalle": "sonómetro en terreno"},
     8:  {"id": "1614411840", "detalle": "fusión de tubería HDPE"},
-    9:  {"id": "85465544",   "detalle": "hospital moderno"},
     12: {"id": "340172893",  "detalle": "END por ultrasonido en soldadura"},
 }
 
