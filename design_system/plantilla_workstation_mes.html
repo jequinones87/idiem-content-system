@@ -33,6 +33,9 @@ h1 b{color:var(--red)}
 .xbtn{font-family:inherit;font-size:.8rem;font-weight:700;color:#fff;background:var(--gray-dark);border:0;
   padding:8px 16px;border-radius:100px;cursor:pointer}
 .xbtn.on{background:var(--red)}
+.idfield{font-family:inherit;font-size:.82rem;color:var(--ink);background:var(--card);border:1px solid var(--line);
+  border-radius:100px;padding:8px 14px;min-width:150px}
+.idfield:focus{outline:2px solid var(--red);outline-offset:1px}
 
 .grid{display:grid;grid-template-columns:1fr;gap:24px}
 @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
@@ -95,8 +98,10 @@ code{font-family:inherit;font-weight:700;background:var(--gray-light);padding:1p
   <h1>Septiembre — <b>desarrollo de los 12 posts</b></h1>
   <p class="lede">Por cada post: la gráfica arriba (clic para ampliar; los carruseles se revisan lámina por lámina), y abajo el <strong>texto editable</strong>, un recuadro para <strong>cambios de imagen</strong> con su botón de regeneración, y descargas <strong>PNG/PDF</strong>. Tus ediciones se guardan en este navegador. Para que Claude aplique las regeneraciones, usa <strong>Exportar cambios</strong> y envíale el archivo.</p>
   <div class="bar">
-    <button class="xbtn export" type="button">⬇ Exportar cambios (JSON)</button>
-    <span class="savehint">Los cambios se guardan solos en este navegador.</span>
+    <input class="idfield" id="revName" type="text" placeholder="Tu nombre" autocomplete="name" spellcheck="false">
+    <input class="idfield" id="revRole" type="text" placeholder="Especialidad / área (opcional)" spellcheck="false">
+    <button class="xbtn export" type="button">⬇ Descargar mis cambios (JSON)</button>
+    <span class="savehint">Pon tu nombre, comenta los posts y descarga tu JSON para enviarlo. Todo se guarda en este navegador.</span>
   </div>
 
   <div class="grid">
@@ -727,7 +732,9 @@ Evidencia técnica que respalda la confiabilidad de cada unión soldada. ✅
     lbPrev.disabled=lbIdx<=0;lbNext.disabled=lbIdx>=lbSlides.length-1;
     lbPrev.style.visibility=lbNext.style.visibility=lbSlides.length>1?'visible':'hidden';}
   function openLB(slides,idx){lbSlides=slides;lbIdx=idx||0;paintLB();lb.classList.add('on');}
-  function closeLB(){lb.classList.remove('on');}
+  function closeLB(){lb.classList.remove('on');
+    var box=document.getElementById('exportBox');
+    if(box){box.remove();lbImg.style.display='';lb.querySelector('.lbbar').style.display='';}}
   lbPrev.addEventListener('click',function(){if(lbIdx>0){lbIdx--;paintLB();}});
   lbNext.addEventListener('click',function(){if(lbIdx<lbSlides.length-1){lbIdx++;paintLB();}});
   lbClose.addEventListener('click',closeLB);
@@ -814,9 +821,21 @@ Evidencia técnica que respalda la confiabilidad de cada unión soldada. ✅
     return new Blob(chunks,{type:'application/pdf'});
   }
 
+  // ---- reviewer identity ----
+  var revName=document.getElementById('revName'), revRole=document.getElementById('revRole');
+  var rv=store._reviewer||{};
+  if(rv.name)revName.value=rv.name; if(rv.role)revRole.value=rv.role;
+  function saveRev(){store._reviewer={name:revName.value.trim(),role:revRole.value.trim()};persist();}
+  revName.addEventListener('input',saveRev); revRole.addEventListener('input',saveRev);
+  function slug(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')
+    .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,40)||'revisor';}
+
   // ---- export changes ----
   document.querySelector('.xbtn.export').addEventListener('click',async function(){
-    var out={month:'2026-09',exported_at:new Date().toISOString(),posts:[]};
+    var name=revName.value.trim();
+    if(!name){toast('Pon tu nombre antes de descargar');revName.focus();return;}
+    var out={reviewer:{name:name,role:revRole.value.trim()||null},
+      month:'2026-09',exported_at:new Date().toISOString(),posts:[]};
     document.querySelectorAll('.post').forEach(function(post){
       var cid=post.getAttribute('data-cid'),r=store[cid]||{};
       if(r.copy||r.note||r.regen){
@@ -826,14 +845,30 @@ Evidencia técnica que respalda la confiabilidad de cada unión soldada. ✅
     });
     if(!out.posts.length){toast('No hay cambios que exportar todavía');return;}
     var json=JSON.stringify(out,null,2);
+    var fname='idiem_cambios_sep2026__'+slug(name)+'.json';
+    // 1) capacidad downloads (dentro del artefacto claude.ai)
     var dl=await downloads();
-    if(dl){try{await dl.save({filename:'idiem_cambios_sep2026.json',data:json});toast('Cambios exportados');return;}
-      catch(e){if(e&&e.code==='declined'){toast('Exportación cancelada');return;}}}
-    // fallback: mostrar en un cuadro para copiar
-    var w=document.getElementById('lb');var pre=document.createElement('textarea');
-    pre.value=json;pre.style.cssText='width:min(90vw,720px);height:60vh;font-family:monospace;font-size:12px';
+    if(dl){try{await dl.save({filename:fname,data:json});toast('Cambios descargados');return;}
+      catch(e){if(e&&e.code==='declined'){toast('Descarga cancelada');return;}}}
+    // 2) descarga por navegador (archivo HTML abierto fuera de claude.ai)
+    try{
+      var blob=new Blob([json],{type:'application/json'});
+      var url=URL.createObjectURL(blob);
+      var a=document.createElement('a');a.href=url;a.download=fname;
+      document.body.appendChild(a);a.click();
+      setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(url);},1500);
+      toast('Cambios descargados');return;
+    }catch(e){}
+    // 3) último recurso: mostrar el JSON para copiar y pegar en un correo
+    var w=document.getElementById('lb');var box=document.createElement('div');
+    box.id='exportBox';box.style.cssText='display:flex;flex-direction:column;gap:10px;align-items:center';
+    var pre=document.createElement('textarea');pre.readOnly=true;pre.value=json;
+    pre.style.cssText='width:min(90vw,720px);height:54vh;font-family:monospace;font-size:12px;padding:10px;border-radius:8px';
+    var cp=document.createElement('button');cp.textContent='Copiar JSON';cp.className='xbtn';
+    cp.onclick=function(){pre.select();try{document.execCommand('copy');}catch(e){}toast('JSON copiado');};
+    box.appendChild(pre);box.appendChild(cp);
     lbImg.style.display='none';w.querySelector('.lbbar').style.display='none';
-    w.insertBefore(pre,w.querySelector('.close').nextSibling);w.classList.add('on');
+    w.insertBefore(box,w.querySelector('.close').nextSibling);w.classList.add('on');
   });
 })();
 </script>
