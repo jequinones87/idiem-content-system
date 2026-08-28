@@ -57,13 +57,15 @@ PHOTO_SUB = {
     8:  {"photo_id": "Tuberia_HDPE_END_ACERO4", "orig": "Adobe Stock #1614411840",
          "fuente": "https://drive.google.com/file/d/1sHwdzCXyJeneC35woSwz8DkT8qKH3fXp/view",
          "detalle": "END en tubería HDPE (foto propia)", "reason": "cambio pedido: foto propia de faena"},
+    9:  {"photo_id": "generica_ejecutivos_casco_construccion", "orig": "Adobe Stock #212862972",
+         "fuente": "https://drive.google.com/file/d/1_eczAWE2nzda5yfFx_jV23xorWODv8cG/view",
+         "detalle": "ejecutivos con casco · apretón de manos en obra", "reason": "cambio pedido: foto de librería"},
 }
 
 # Fotos Adobe Stock licenciadas (tier libre) para los posts sin foto de librería
 # adecuada (antes marcados Muapi). Descargadas, comprimidas a 1080px y usadas
 # localmente; foto real y trazable, sin depender de un CDN externo.
 STOCK_SUB = {
-    9:  {"id": "212862972",  "detalle": "acuerdo · ejecutivos (apretón de manos)"},
     12: {"id": "340172893",  "detalle": "END por ultrasonido en soldadura"},
 }
 
@@ -80,13 +82,15 @@ APPLIED_LOG = {
     2:  [{"date": "2026-08-28", "summary": "Carrusel reformulado: causa-origen, estructural/mecánico, estudio de riesgo"},
          {"date": "2026-08-28", "summary": "Copy reescrito + orden de láminas (incendios → fallas)"}],
     3:  [{"date": "2026-08-24", "summary": "Foto casco + tablet (se corrigió la pixelada)"}],
-    5:  [{"date": "2026-08-28", "summary": "Sello Green Hospital más grande (¼ del lienzo), detrás del círculo"},
+    5:  [{"date": "2026-08-28", "summary": "Sello Green Hospital 50% más grande, detrás del círculo"},
+         {"date": "2026-08-28", "summary": "Sello Green Hospital más grande (¼ del lienzo), detrás del círculo"},
          {"date": "2026-08-28", "summary": "Copy (sin Salud sin Daño, ISO 50001) + sello Green Hospital"}],
     6:  [{"date": "2026-08-21", "summary": "Foto vigas de acero / casco IDIEM"}],
     7:  [{"date": "2026-08-28", "summary": "Círculo movido a la derecha (se ve el equipo de acústica)"},
          {"date": "2026-08-28", "summary": "Copy (estudio de impacto, D.D. 14/24) + foto propia de acústica"}],
     8:  [{"date": "2026-08-28", "summary": "Foto propia de faena (tubería HDPE)"}],
-    9:  [{"date": "2026-08-28", "summary": "Foto de acuerdo / apretón de manos"}],
+    9:  [{"date": "2026-08-28", "summary": "Foto → ejecutivos con casco, apretón de manos en obra (librería)"},
+         {"date": "2026-08-28", "summary": "Foto de acuerdo / apretón de manos"}],
     10: [{"date": "2026-08-21", "summary": "Foto domo minero / dron"}],
     11: [{"date": "2026-08-24", "summary": "Foto edificio en construcción (Costanera)"}],
     12: [{"date": "2026-08-28", "summary": "Título de gráfica → “Detectar antes de fallar”"},
@@ -606,7 +610,7 @@ __CARDS__
 
 <script>
 (function(){
-  var KEY='idiem_ws_sep2026_v2';
+  var KEY='idiem_ws_sep2026_v3';
   function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function readJSON(s){try{return JSON.parse(s||'{}')||{};}catch(e){return {};}}
   function mergeState(base,over){var out={},k;for(k in base)out[k]=base[k];

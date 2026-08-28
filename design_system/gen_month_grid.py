@@ -429,7 +429,7 @@ h1 b{color:var(--red)}
 .baseline b{font-weight:700}
 .cellbadge{position:absolute;z-index:3;right:5.4cqw;bottom:5cqw;font-size:2.1cqw;font-weight:800;letter-spacing:.14em;
   color:#fff;background:rgba(225,38,29,.9);padding:1.1cqw 2.2cqw;border-radius:100px}
-.cornerlogo{position:absolute;z-index:1;right:5cqw;bottom:5cqw;width:25cqw;height:auto;display:block;
+.cornerlogo{position:absolute;z-index:1;right:5cqw;bottom:5cqw;width:37cqw;height:auto;display:block;
   border-radius:50%;filter:drop-shadow(0 2px 12px rgba(0,0,0,.45))}
 .canvas.circ-right .circle-wrap{left:59%}
 .canvas.circ-right .legibility{background:
