@@ -89,7 +89,8 @@ APPLIED_LOG = {
     7:  [{"date": "2026-08-28", "summary": "Círculo movido a la derecha (se ve el equipo de acústica)"},
          {"date": "2026-08-28", "summary": "Copy (estudio de impacto, D.D. 14/24) + foto propia de acústica"}],
     8:  [{"date": "2026-08-28", "summary": "Foto propia de faena (tubería HDPE)"}],
-    9:  [{"date": "2026-08-28", "summary": "Foto → ejecutivos con casco, apretón de manos en obra (librería)"},
+    9:  [{"date": "2026-08-28", "summary": "Reencuadre para que el círculo no tape la cara"},
+         {"date": "2026-08-28", "summary": "Foto → ejecutivos con casco, apretón de manos en obra (librería)"},
          {"date": "2026-08-28", "summary": "Foto de acuerdo / apretón de manos"}],
     10: [{"date": "2026-08-21", "summary": "Foto domo minero / dron"}],
     11: [{"date": "2026-08-24", "summary": "Foto edificio en construcción (Costanera)"}],
@@ -610,7 +611,7 @@ __CARDS__
 
 <script>
 (function(){
-  var KEY='idiem_ws_sep2026_v3';
+  var KEY='idiem_ws_sep2026_v4';
   function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function readJSON(s){try{return JSON.parse(s||'{}')||{};}catch(e){return {};}}
   function mergeState(base,over){var out={},k;for(k in base)out[k]=base[k];
