@@ -71,14 +71,50 @@ STOCK_SUB = {
 GH_SEAL = ("data:image/png;base64," +
            base64.b64encode((ROOT / "assets" / "green_hospital_logo.png").read_bytes()).decode())
 
-# seq -> fecha ISO de la última modificación de contenido (copy/foto/gráfica).
-# Se actualiza en cada ronda de ajustes; alimenta el chip "modificado" de cada post.
-MODIFIED = {
-    1: "2026-08-28", 2: "2026-08-28", 3: "2026-08-23", 5: "2026-08-28",
-    6: "2026-08-21", 7: "2026-08-28", 8: "2026-08-28", 9: "2026-08-28",
-    10: "2026-08-21", 11: "2026-08-23", 12: "2026-08-28",
+# seq -> historial de cambios que YO (Claude) apliqué y republiqué, más reciente
+# primero. Alimenta el chip de estado "publicado · fecha" y el bloque "Historial"
+# de cada post. Espeja la bitácora de docs/09_EDITORIAL_MEMORY.md.
+APPLIED_LOG = {
+    1:  [{"date": "2026-08-28", "summary": "Copy reescrito (MKT) + foto laptop/planos"},
+         {"date": "2026-08-24", "summary": "Foto de acuerdo/ejecutivos (previa)"}],
+    2:  [{"date": "2026-08-28", "summary": "Copy reescrito + orden de láminas (incendios → fallas)"}],
+    3:  [{"date": "2026-08-24", "summary": "Foto casco + tablet (se corrigió la pixelada)"}],
+    5:  [{"date": "2026-08-28", "summary": "Copy (sin Salud sin Daño, ISO 50001) + sello Green Hospital"}],
+    6:  [{"date": "2026-08-21", "summary": "Foto vigas de acero / casco IDIEM"}],
+    7:  [{"date": "2026-08-28", "summary": "Copy (estudio de impacto, D.D. 14/24) + foto propia de acústica"}],
+    8:  [{"date": "2026-08-28", "summary": "Foto propia de faena (tubería HDPE)"}],
+    9:  [{"date": "2026-08-28", "summary": "Foto de acuerdo / apretón de manos"}],
+    10: [{"date": "2026-08-21", "summary": "Foto domo minero / dron"}],
+    11: [{"date": "2026-08-24", "summary": "Foto edificio en construcción (Costanera)"}],
+    12: [{"date": "2026-08-28", "summary": "Gráfica: soldaduras inspeccionadas por muestreo"}],
+    13: [{"date": "2026-08-28", "summary": "Creación — saludo Fiestas Patrias"}],
 }
-NEW_POSTS = {13}  # posts creados nuevos (badge "nuevo")
+NEW_POSTS = {13}  # posts creados nuevos (chip "nuevo")
+
+
+def _fmt_date(iso: str) -> str:
+    y, m, d = iso.split("-")
+    return f"{d}-{m}-{y}"
+
+
+def status_chip(seq: int) -> str:
+    """Chip de estado inicial (lo actualiza el JS según el trabajo del revisor)."""
+    log = APPLIED_LOG.get(seq) or []
+    last = _fmt_date(log[0]["date"]) if log else ""
+    label = f"publicado · {last}" if last else "sin cambios"
+    return (f'<span class="statuschip pub" data-applied="{last}">{label}</span>')
+
+
+def history_html(seq: int) -> str:
+    log = APPLIED_LOG.get(seq) or []
+    if not log:
+        return ""
+    items = "".join(
+        f'<li><span class="hd">{_fmt_date(e["date"])}</span>'
+        f'<span class="hs">{G.esc(e["summary"])}</span></li>'
+        for e in log)
+    return (f'<details class="hist"><summary>Historial de cambios aplicados '
+            f'({len(log)})</summary><ul class="histlist">{items}</ul></details>')
 
 # Posts institucionales que NO vienen del motor (no trazan a knowledge_id). Se
 # arman aparte y se anexan después de los 12. Foto de fondo (estilo Plantilla 02).
@@ -289,13 +325,13 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     # data de láminas para JS (idx -> uri en orden)
     slides_json = G.esc(json.dumps(uris))
 
-    return f'''<article class="post" data-seq="{seq}" data-cid="{G.esc(post.content_id)}" data-car="{"1" if is_car else "0"}">
+    return f'''<article class="post" data-seq="{seq}" data-cid="{G.esc(post.content_id)}" data-car="{"1" if is_car else "0"}" data-status="publicado" data-edited-at="" data-edited-by="">
   <script type="application/json" class="slides-data">{slides_json}</script>
   <div class="graphic">
     <div class="gwrap">
       <img class="main" src="{uris[0]}" data-idx="0" alt="Post {seq:02d}">
       <span class="fmtbadge">{fmt_label}</span>
-      {mod_badge(seq)}
+      {status_chip(seq)}
       <span class="zoomhint">clic para ampliar</span>
     </div>
     {strip}
@@ -304,14 +340,19 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     <div class="chead"><span class="seq">{seq:02d}</span><span class="badge">{cshort}</span>
       <span class="badge ghost">{G.esc(fmt)}</span><span class="sub">{G.esc(subname)}</span></div>
 
-    <label class="lab">Texto del post <span class="hint">— editable, se guarda en tu navegador</span></label>
+    <label class="lab">Texto del post <span class="hint">— editable, se guarda en tu navegador</span>
+      <button class="revert" type="button" data-field="copy" hidden>↺ volver a lo publicado</button></label>
     <textarea class="copy" data-cid="{G.esc(post.content_id)}" spellcheck="false">{G.esc(full_copy)}</textarea>
 
-    <label class="lab">Cambios en la imagen / gráfica</label>
+    <label class="lab">Cambios en la imagen / gráfica
+      <button class="revert" type="button" data-field="note" hidden>↺ limpiar</button></label>
     <textarea class="imgnote" data-cid="{G.esc(post.content_id)}" spellcheck="false"
       placeholder="Ej.: cambiar la foto por una de faena real; achicar el titular; usar otra lámina de cierre…"></textarea>
 
+    <div class="editline"></div>
+
     <div class="btns">
+      <button class="btn ready" type="button">✓ Marcar listo para aplicar</button>
       <button class="btn regen" type="button">🔄 Solicitar regeneración</button>
       <button class="btn ghost png" type="button">Descargar PNG</button>
       <button class="btn ghost pdf" type="button">Descargar PDF</button>
@@ -323,6 +364,7 @@ def render_card(seq: int, post, uris: list[str]) -> str:
       <div class="tr"><span class="k">Evidencia</span><span class="v">{ev_codes}</span></div>
       <div class="tr"><span class="k">Foto</span><span class="v">{foto}</span></div>
     </div>
+    {history_html(seq)}
   </div>
 </article>'''
 
@@ -334,13 +376,13 @@ def render_special_card(s: dict, uris: list[str]) -> str:
     slides_json = G.esc(json.dumps(uris))
     foto = ('Adobe Stock · <code>#260332702</code> (La Moneda · bandera chilena) · licencia libre'
             '<br><span class="muprompt">edificio emblemático de Chile; pieza conmemorativa de Fiestas Patrias</span>')
-    return f'''<article class="post special" data-seq="{seq}" data-cid="{G.esc(s["content_id"])}" data-car="0">
+    return f'''<article class="post special" data-seq="{seq}" data-cid="{G.esc(s["content_id"])}" data-car="0" data-status="publicado" data-edited-at="" data-edited-by="">
   <script type="application/json" class="slides-data">{slides_json}</script>
   <div class="graphic">
     <div class="gwrap">
       <img class="main" src="{uris[0]}" data-idx="0" alt="Post {seq:02d}">
       <span class="fmtbadge">SALUDO · FIESTAS PATRIAS</span>
-      {mod_badge(seq)}
+      {status_chip(seq)}
       <span class="zoomhint">clic para ampliar</span>
     </div>
   </div>
@@ -348,14 +390,19 @@ def render_special_card(s: dict, uris: list[str]) -> str:
     <div class="chead"><span class="seq">{seq:02d}</span><span class="badge">{G.esc(s["cshort"])}</span>
       <span class="badge ghost">{G.esc(s["fmt"])}</span><span class="sub">{G.esc(s["subtheme"])}</span></div>
 
-    <label class="lab">Texto del post <span class="hint">— editable, se guarda en tu navegador</span></label>
+    <label class="lab">Texto del post <span class="hint">— editable, se guarda en tu navegador</span>
+      <button class="revert" type="button" data-field="copy" hidden>↺ volver a lo publicado</button></label>
     <textarea class="copy" data-cid="{G.esc(s["content_id"])}" spellcheck="false">{G.esc(full_copy)}</textarea>
 
-    <label class="lab">Cambios en la imagen / gráfica</label>
+    <label class="lab">Cambios en la imagen / gráfica
+      <button class="revert" type="button" data-field="note" hidden>↺ limpiar</button></label>
     <textarea class="imgnote" data-cid="{G.esc(s["content_id"])}" spellcheck="false"
       placeholder="Ej.: cambiar la foto; ajustar el saludo…"></textarea>
 
+    <div class="editline"></div>
+
     <div class="btns">
+      <button class="btn ready" type="button">✓ Marcar listo para aplicar</button>
       <button class="btn regen" type="button">🔄 Solicitar regeneración</button>
       <button class="btn ghost png" type="button">Descargar PNG</button>
       <button class="btn ghost pdf" type="button">Descargar PDF</button>
@@ -367,6 +414,7 @@ def render_special_card(s: dict, uris: list[str]) -> str:
       <div class="tr"><span class="k">Nota</span><span class="v">{s["trace"]}</span></div>
       <div class="tr"><span class="k">Foto</span><span class="v">{foto}</span></div>
     </div>
+    {history_html(seq)}
   </div>
 </article>'''
 
@@ -423,6 +471,36 @@ h1 b{color:var(--red)}
 .modbadge{position:absolute;top:10px;right:10px;font-size:.6rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(0,0,0,.5);padding:4px 9px;border-radius:100px;backdrop-filter:blur(3px)}
 .modbadge.on{background:rgba(225,38,29,.92)}
 .modbadge.new{background:rgba(21,128,61,.95)}
+/* estado por post */
+.statuschip{position:absolute;top:10px;right:10px;font-size:.6rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(0,0,0,.55);padding:4px 9px;border-radius:100px;backdrop-filter:blur(3px);max-width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.statuschip.pub{background:rgba(45,50,52,.82)}
+.statuschip.pend{background:rgba(198,120,10,.95)}
+.statuschip.ready{background:rgba(225,38,29,.95)}
+/* tablero */
+.dash{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:0 0 22px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.counts{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:.8rem;color:var(--muted)}
+.ct{display:inline-flex;align-items:center;gap:.4em}
+.ct b{font-size:1rem;font-weight:800;color:var(--ink)}
+.ct.pend b{color:#c6780a}.ct.ready b{color:var(--red)}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.fchip{font-family:inherit;font-size:.74rem;font-weight:700;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:100px;padding:5px 12px;cursor:pointer}
+.fchip.on{color:#fff;background:var(--gray-dark);border-color:var(--gray-dark)}
+.jumpnext{font-family:inherit;font-size:.74rem;font-weight:700;color:var(--red);background:transparent;border:0;cursor:pointer;padding:5px 4px}
+.post.hide{display:none}
+/* controles de estado */
+.lab{display:flex;align-items:center;gap:8px}
+.revert{font-family:inherit;font-size:.64rem;font-weight:700;letter-spacing:0;text-transform:none;color:var(--red);background:transparent;border:0;cursor:pointer;padding:0;margin-left:auto}
+.editline{font-size:.72rem;color:var(--muted);min-height:1em;line-height:1.4}
+.editline .who{font-weight:700;color:var(--ink)}
+.btn.ready.on{background:#15803d;border-color:#15803d;color:#fff}
+.hist{margin-top:6px;border-top:1px dashed var(--line);padding-top:8px}
+.hist summary{font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);cursor:pointer}
+.histlist{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:5px}
+.histlist li{display:grid;grid-template-columns:74px 1fr;gap:10px;font-size:.75rem}
+.histlist .hd{font-weight:800;color:var(--red)}
+.histlist .hs{color:var(--ink)}
+.tpub{color:var(--gray-blue)}.tpend{color:#c6780a}.tready{color:var(--red)}
+.xbtn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
 .strip{display:flex;gap:6px;padding:10px 0 0;overflow-x:auto}
 .thumb{height:52px;width:52px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent;flex:none;opacity:.7}
 .thumb.on{border-color:var(--red);opacity:1}
@@ -472,12 +550,27 @@ code{font-family:inherit;font-weight:700;background:var(--gray-light);padding:1p
 <div class="wrap">
   <p class="eyebrow"><span class="dot"></span>IDIEM · Design System · Workstation</p>
   <h1>Septiembre — <b>12 posts + saludo Fiestas Patrias</b></h1>
-  <p class="lede">Por cada post: la gráfica arriba (clic para ampliar; los carruseles se revisan lámina por lámina), y abajo el <strong>texto editable</strong>, un recuadro para <strong>cambios de imagen</strong> con su botón de regeneración, y descargas <strong>PNG/PDF</strong>. En la esquina de cada gráfica, un chip indica <strong>si el post fue modificado y la fecha</strong>. Tus ediciones se guardan en este navegador. Para que Claude aplique las regeneraciones, usa <strong>Exportar cambios</strong> y envíale el archivo.</p>
+  <p class="lede">Cada post muestra su <strong>estado</strong> en la esquina de la gráfica: <b class="tpub">publicado</b> (lo que ya apliqué), <b class="tpend">pendiente</b> (lo editaste, aún sin aplicar) o <b class="tready">listo para aplicar</b> (lo marcaste tú). Abajo tienes el texto editable, notas de imagen, el <strong>historial</strong> de lo aplicado, y <strong>↺ volver a lo publicado</strong>. Con <strong>💾 Guardar y compartir</strong> tu avance queda visible en tus otros dispositivos y para el equipo.</p>
   <div class="bar">
     <input class="idfield" id="revName" type="text" placeholder="Tu nombre" autocomplete="name" spellcheck="false">
     <input class="idfield" id="revRole" type="text" placeholder="Especialidad / área (opcional)" spellcheck="false">
-    <button class="xbtn export" type="button">⬇ Descargar mis cambios (JSON)</button>
-    <span class="savehint">Pon tu nombre, comenta los posts y descarga tu JSON para enviarlo. Todo se guarda en este navegador.</span>
+    <button class="xbtn save" type="button" hidden>💾 Guardar y compartir</button>
+    <button class="xbtn ghost export" type="button">Descargar respaldo (JSON)</button>
+    <span class="savehint" id="savehint">Tus ediciones se guardan en este navegador. “Guardar y compartir” las publica para verlas en otros equipos.</span>
+  </div>
+  <div class="dash">
+    <div class="counts">
+      <span class="ct pend"><b id="nPend">0</b> pendientes</span>
+      <span class="ct ready"><b id="nReady">0</b> listos para aplicar</span>
+      <span class="ct pub"><b id="nPub">0</b> publicados</span>
+    </div>
+    <div class="filters" id="filters">
+      <button class="fchip on" type="button" data-f="todos">Todos</button>
+      <button class="fchip" type="button" data-f="pendiente">Pendientes</button>
+      <button class="fchip" type="button" data-f="listo">Listos</button>
+      <button class="fchip" type="button" data-f="publicado">Publicados</button>
+    </div>
+    <button class="jumpnext" type="button" id="jumpNext">Ir al siguiente pendiente ↓</button>
   </div>
 
   <div class="grid">
@@ -491,6 +584,7 @@ __CARDS__
   </div>
 </div>
 
+<script id="ws-state" type="application/json">{}</script>
 <div class="lb" id="lb">
   <button class="close" id="lbClose" aria-label="cerrar">✕</button>
   <img id="lbImg" alt="">
@@ -505,14 +599,38 @@ __CARDS__
 <script>
 (function(){
   var KEY='idiem_ws_sep2026_v1';
-  var store={};
-  try{store=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){store={};}
+  function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function readJSON(s){try{return JSON.parse(s||'{}')||{};}catch(e){return {};}}
+  function mergeState(base,over){var out={},k;for(k in base)out[k]=base[k];
+    for(k in over){var a=out[k],b=over[k];if(!a){out[k]=b;continue;}
+      var ta=a&&a.editedAt?Date.parse(a.editedAt):0,tb=b&&b.editedAt?Date.parse(b.editedAt):0;
+      out[k]=(tb>=ta)?b:a;}return out;}
+  // Estado COMPARTIDO embebido (viaja entre dispositivos al "Guardar y compartir")
+  // fusionado con el borrador LOCAL de este navegador (gana el más reciente por post).
+  var _embed=readJSON((document.getElementById('ws-state')||{}).textContent);
+  var _local=readJSON(localStorage.getItem(KEY));
+  var store=mergeState(_embed,_local);
   function persist(){try{localStorage.setItem(KEY,JSON.stringify(store));}catch(e){}}
   function rec(cid){return (store[cid]=store[cid]||{});}
 
   function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');
     clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove('on');},1900);}
   function autosize(t){t.style.height='auto';t.style.height=(t.scrollHeight+2)+'px';}
+
+  // ---- helpers de estado ----
+  var revName=document.getElementById('revName');
+  function currentUser(){return (revName&&revName.value.trim())||'';}
+  function fmtWhen(iso){if(!iso)return '';var d=new Date(iso);if(isNaN(d))return '';
+    var D=('0'+d.getDate()).slice(-2),M=('0'+(d.getMonth()+1)).slice(-2);
+    var hh=('0'+d.getHours()).slice(-2),mm=('0'+d.getMinutes()).slice(-2);
+    var today=new Date();var same=d.toDateString()===today.toDateString();
+    return (same?'hoy':D+'-'+M)+' '+hh+':'+mm;}
+
+  function computeStatus(copyEl,noteEl,r){
+    var edited=(copyEl.value!==copyEl.defaultValue)||(noteEl.value.trim()!=='')||!!r.regen;
+    if(!edited)return 'publicado';
+    return r.ready?'listo':'pendiente';
+  }
 
   // ---- per-post wiring ----
   document.querySelectorAll('.post').forEach(function(post){
@@ -522,23 +640,68 @@ __CARDS__
     var r=store[cid]||{};
 
     var copy=post.querySelector('textarea.copy');
-    if(typeof r.copy==='string')copy.value=r.copy;
-    autosize(copy);
-    copy.addEventListener('input',function(){rec(cid).copy=copy.value;persist();autosize(copy);});
-
     var note=post.querySelector('textarea.imgnote');
-    if(typeof r.note==='string')note.value=r.note;
-    autosize(note);
-    note.addEventListener('input',function(){rec(cid).note=note.value;persist();autosize(note);});
-
+    var chip=post.querySelector('.statuschip');
+    var applied=chip?(chip.getAttribute('data-applied')||''):'';
+    var editline=post.querySelector('.editline');
+    var ready=post.querySelector('.btn.ready');
     var regen=post.querySelector('.btn.regen');
+    var revs=post.querySelectorAll('.revert');
+
+    if(typeof r.copy==='string')copy.value=r.copy;
+    if(typeof r.note==='string')note.value=r.note;
+    autosize(copy);autosize(note);
+
+    function refresh(){
+      var st=computeStatus(copy,note,store[cid]||{});
+      post.setAttribute('data-status',st);
+      post.classList.toggle('flag',st!=='publicado');
+      // chip
+      if(chip){chip.className='statuschip '+(st==='publicado'?'pub':st==='listo'?'ready':'pend');
+        var when=fmtWhen((store[cid]||{}).editedAt);
+        chip.textContent = st==='publicado' ? (applied?('publicado · '+applied):'sin cambios')
+          : st==='listo' ? ('✓ listo'+(when?' · '+when:'')) : ('✎ pendiente'+(when?' · '+when:''));}
+      // editline + revert
+      var rr=store[cid]||{};
+      var parts=[];
+      if(copy.value!==copy.defaultValue)parts.push('el texto');
+      if(note.value.trim()!=='')parts.push('una nota de imagen');
+      if(rr.regen)parts.push('regeneración');
+      if(editline){
+        if(parts.length){var by=rr.editedBy?(' · por <span class="who">'+esc(rr.editedBy)+'</span>'):'';
+          editline.innerHTML='Editaste '+parts.join(', ')+' · '+(fmtWhen(rr.editedAt)||'sin fecha')+by;}
+        else editline.textContent='Sin cambios respecto a lo publicado.';
+      }
+      revs.forEach(function(b){var f=b.getAttribute('data-field');
+        b.hidden = f==='copy' ? (copy.value===copy.defaultValue) : (note.value.trim()==='');});
+      // ready button
+      if(ready){var on=!!rr.ready && st!=='publicado';
+        ready.classList.toggle('on',on);
+        ready.textContent=on?'✓ Listo (quitar marca)':'✓ Marcar listo para aplicar';
+        ready.disabled = (st==='publicado');}
+    }
+    function stamp(){var rc=rec(cid);rc.editedAt=new Date().toISOString();rc.editedBy=currentUser();}
+
+    copy.addEventListener('input',function(){rec(cid).copy=copy.value;stamp();persist();autosize(copy);refresh();updateDash();});
+    note.addEventListener('input',function(){rec(cid).note=note.value;stamp();persist();autosize(note);refresh();updateDash();});
+
     function paintRegen(){var on=!!(store[cid]&&store[cid].regen);
-      regen.classList.toggle('on',on);post.classList.toggle('flag',on);
+      regen.classList.toggle('on',on);
       regen.textContent=on?'✓ Regeneración solicitada':'🔄 Solicitar regeneración';}
-    paintRegen();
     regen.addEventListener('click',function(){var cur=!!(store[cid]&&store[cid].regen);
-      rec(cid).regen=!cur;persist();paintRegen();
-      toast(!cur?'Marcado. Exporta los cambios para que Claude regenere.':'Marca quitada.');});
+      rec(cid).regen=!cur;stamp();persist();paintRegen();refresh();updateDash();
+      toast(!cur?'Marcado para regenerar la imagen.':'Marca quitada.');});
+
+    ready.addEventListener('click',function(){var rc=rec(cid);rc.ready=!rc.ready;persist();refresh();updateDash();
+      toast(rc.ready?'Marcado como listo para aplicar.':'Marca de "listo" quitada.');});
+
+    revs.forEach(function(b){b.addEventListener('click',function(){
+      var f=b.getAttribute('data-field');
+      if(f==='copy'){copy.value=copy.defaultValue;rec(cid).copy=copy.defaultValue;autosize(copy);}
+      else{note.value='';rec(cid).note='';autosize(note);}
+      var rc=store[cid]||{};
+      if(copy.value===copy.defaultValue&&note.value.trim()===''&&!rc.regen){rc.ready=false;}
+      persist();refresh();updateDash();toast('Volviste a lo publicado.');});});
 
     // selected slide index for PNG download / main preview
     var curIdx=0;
@@ -562,6 +725,9 @@ __CARDS__
 
     post.querySelector('.btn.png').addEventListener('click',function(){downloadPNG(post,slides,curIdx);});
     post.querySelector('.btn.pdf').addEventListener('click',function(){downloadPDF(post,slides);});
+
+    paintRegen();refresh();
+    post._refresh=refresh;
   });
 
   // ---- lightbox ----
@@ -663,44 +829,96 @@ __CARDS__
   }
 
   // ---- reviewer identity ----
-  var revName=document.getElementById('revName'), revRole=document.getElementById('revRole');
+  var revRole=document.getElementById('revRole');
   var rv=store._reviewer||{};
-  if(rv.name)revName.value=rv.name; if(rv.role)revRole.value=rv.role;
-  function saveRev(){store._reviewer={name:revName.value.trim(),role:revRole.value.trim()};persist();}
-  revName.addEventListener('input',saveRev); revRole.addEventListener('input',saveRev);
+  if(rv.name&&revName)revName.value=rv.name; if(rv.role&&revRole)revRole.value=rv.role;
+  function saveRev(){store._reviewer={name:revName.value.trim(),role:revRole.value.trim(),editedAt:new Date().toISOString()};persist();}
+  if(revName)revName.addEventListener('input',saveRev); if(revRole)revRole.addEventListener('input',saveRev);
   function slug(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')
     .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,40)||'revisor';}
 
-  // ---- export changes ----
-  document.querySelector('.xbtn.export').addEventListener('click',async function(){
-    var name=revName.value.trim();
-    if(!name){toast('Pon tu nombre antes de descargar');revName.focus();return;}
-    var out={reviewer:{name:name,role:revRole.value.trim()||null},
+  // ---- resumen + filtros (dashboard) ----
+  function setTxt(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
+  var curFilter='todos';
+  function applyFilter(){document.querySelectorAll('.post').forEach(function(p){
+    var st=p.getAttribute('data-status')||'publicado';
+    p.classList.toggle('hide', curFilter!=='todos'&&st!==curFilter);});}
+  function updateDash(){var c={pendiente:0,listo:0,publicado:0};
+    document.querySelectorAll('.post').forEach(function(p){var s=p.getAttribute('data-status')||'publicado';
+      if(c[s]==null)c[s]=0;c[s]++;});
+    setTxt('nPend',c.pendiente);setTxt('nReady',c.listo);setTxt('nPub',c.publicado);applyFilter();}
+  var filters=document.getElementById('filters');
+  if(filters)filters.addEventListener('click',function(e){var b=e.target.closest('.fchip');if(!b)return;
+    curFilter=b.getAttribute('data-f');
+    this.querySelectorAll('.fchip').forEach(function(x){x.classList.toggle('on',x===b);});applyFilter();});
+  var jn=document.getElementById('jumpNext');
+  if(jn)jn.addEventListener('click',function(){
+    var t=document.querySelector('.post[data-status="pendiente"]')||document.querySelector('.post[data-status="listo"]');
+    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});else toast('No hay posts pendientes.');});
+
+  // ---- guardar y compartir (capacidad artifact) ----
+  var _art=null,_artTried=false;
+  async function artifactCap(){if(_artTried)return _art;_artTried=true;
+    try{_art=(window.claude&&claude.use)?await claude.use('artifact'):null;}catch(e){_art=null;}return _art;}
+  function buildCleanHTML(){
+    // snapshot del estado compartido en el contenedor embebido
+    var st=document.getElementById('ws-state'); if(st)st.textContent=JSON.stringify(store);
+    var root=document.documentElement.cloneNode(true);
+    // desmontar runtime inyectado por el shell (para publicar HTML limpio)
+    root.querySelectorAll('base').forEach(function(b){var h=b.getAttribute('href')||'';if(h.charAt(0)==='/')b.remove();});
+    root.querySelectorAll('script').forEach(function(s){var t=s.textContent||'';
+      if(t.indexOf('__FRAME_PREAMBLE')>=0||t.indexOf('frame-runtime')>=0)s.remove();});
+    root.querySelectorAll('[data-id]').forEach(function(el){el.removeAttribute('data-id');});
+    root.querySelectorAll('[artifact-sync]').forEach(function(el){el.removeAttribute('artifact-sync');});
+    root.querySelectorAll('[artifact-sync-state]').forEach(function(el){el.removeAttribute('artifact-sync-state');});
+    root.removeAttribute('data-theme');try{root.style.colorScheme='';}catch(e){}
+    return '<!doctype html>\n'+root.outerHTML;
+  }
+  async function saveCloud(){
+    var a=await artifactCap();
+    if(!a){toast('Guardar y compartir no está disponible aquí');return;}
+    var btn=document.querySelector('.xbtn.save');
+    try{sessionStorage.setItem('ws_scroll',String(window.scrollY||window.pageYOffset||0));}catch(e){}
+    if(btn){btn.disabled=true;btn.textContent='Guardando…';}
+    try{await a.publish(buildCleanHTML());toast('Guardado y compartido ✓');}
+    catch(e){var c=e&&e.code;
+      if(c==='conflict'){/* el shell recarga a la versión ganadora */}
+      else if(c==='not_writer'||c==='not_granted'){toast('Tienes esta vista en solo lectura');}
+      else if(c==='rate_limited'){toast('Espera unos segundos y reintenta');}
+      else if(c==='too_large'){toast('La página es muy pesada para guardar');}
+      else{toast('No se pudo guardar');}
+      if(btn){btn.disabled=false;btn.textContent='💾 Guardar y compartir';}}
+  }
+  artifactCap().then(function(a){var btn=document.querySelector('.xbtn.save');
+    if(a&&btn){btn.hidden=false;btn.addEventListener('click',saveCloud);
+      var sh=document.getElementById('savehint');
+      if(sh)sh.textContent='“Guardar y compartir” publica tu avance: lo verás en tus otros dispositivos y el equipo, y Claude puede leerlo para aplicarlo.';}});
+  // restaurar scroll tras la recarga que sigue a publicar
+  try{var sy=sessionStorage.getItem('ws_scroll');if(sy){window.scrollTo(0,parseInt(sy,10)||0);sessionStorage.removeItem('ws_scroll');}}catch(e){}
+
+  // ---- respaldo opcional: descargar JSON ----
+  var expBtn=document.querySelector('.xbtn.export');
+  if(expBtn)expBtn.addEventListener('click',async function(){
+    var out={reviewer:{name:(revName?revName.value.trim():'')||null,role:(revRole?revRole.value.trim():'')||null},
       month:'2026-09',exported_at:new Date().toISOString(),posts:[]};
     document.querySelectorAll('.post').forEach(function(post){
-      var cid=post.getAttribute('data-cid'),r=store[cid]||{};
-      if(r.copy||r.note||r.regen){
-        out.posts.push({content_id:cid,seq:post.getAttribute('data-seq'),
-          copy:r.copy||null,image_note:r.note||null,regenerate:!!r.regen});
-      }
+      var stt=post.getAttribute('data-status');if(stt==='publicado')return;
+      var cid=post.getAttribute('data-cid'),r=store[cid]||{},ce=post.querySelector('textarea.copy');
+      out.posts.push({content_id:cid,seq:post.getAttribute('data-seq'),status:stt,
+        copy:(ce&&ce.value!==ce.defaultValue)?ce.value:null,
+        image_note:(r.note&&r.note.trim())?r.note:null,regenerate:!!r.regen,ready:!!r.ready,
+        edited_by:r.editedBy||null,edited_at:r.editedAt||null});
     });
-    if(!out.posts.length){toast('No hay cambios que exportar todavía');return;}
+    if(!out.posts.length){toast('No hay cambios que respaldar todavía');return;}
     var json=JSON.stringify(out,null,2);
-    var fname='idiem_cambios_sep2026__'+slug(name)+'.json';
-    // 1) capacidad downloads (dentro del artefacto claude.ai)
+    var fname='idiem_cambios_sep2026__'+slug(out.reviewer.name||'revisor')+'.json';
     var dl=await downloads();
-    if(dl){try{await dl.save({filename:fname,data:json});toast('Cambios descargados');return;}
+    if(dl){try{await dl.save({filename:fname,data:json});toast('Respaldo descargado');return;}
       catch(e){if(e&&e.code==='declined'){toast('Descarga cancelada');return;}}}
-    // 2) descarga por navegador (archivo HTML abierto fuera de claude.ai)
-    try{
-      var blob=new Blob([json],{type:'application/json'});
-      var url=URL.createObjectURL(blob);
-      var a=document.createElement('a');a.href=url;a.download=fname;
-      document.body.appendChild(a);a.click();
+    try{var blob=new Blob([json],{type:'application/json'});var url=URL.createObjectURL(blob);
+      var a=document.createElement('a');a.href=url;a.download=fname;document.body.appendChild(a);a.click();
       setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(url);},1500);
-      toast('Cambios descargados');return;
-    }catch(e){}
-    // 3) último recurso: mostrar el JSON para copiar y pegar en un correo
+      toast('Respaldo descargado');return;}catch(e){}
     var w=document.getElementById('lb');var box=document.createElement('div');
     box.id='exportBox';box.style.cssText='display:flex;flex-direction:column;gap:10px;align-items:center';
     var pre=document.createElement('textarea');pre.readOnly=true;pre.value=json;
@@ -711,6 +929,8 @@ __CARDS__
     lbImg.style.display='none';w.querySelector('.lbbar').style.display='none';
     w.insertBefore(box,w.querySelector('.close').nextSibling);w.classList.add('on');
   });
+
+  updateDash();
 })();
 </script>'''
 
