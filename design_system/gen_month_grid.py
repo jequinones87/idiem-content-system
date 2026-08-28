@@ -48,22 +48,32 @@ def data_uri(path: Path) -> str:
 # ---- copy publicable (validado con ingest_draft en sesión) ------------------
 COPY = {
  "PLAN-KB-IHA-005-01": {
-  "hook": "🏥 En una obra pública de salud, el atraso en la ejecución es uno de los dolores más sensibles: retrasa la puesta en marcha de infraestructura crítica para las personas.",
-  "body": ("Y muchas veces ese atraso se origina en cómo se planifica y controla la programación de la obra: sin "
-    "un análisis riguroso, las desviaciones de plazo se detectan tarde. 📅\n\n"
-    "En #IDIEM, dentro de nuestra ingeniería contractual, realizamos análisis a la programación de la obra "
-    "para el sector Salud, uno de los ámbitos que atendemos de forma explícita. 🤝"),
-  "cta": "¿Tu proyecto de salud necesita respaldo contractual? Conversemos en https://idiem.cl 👉\n\n#IDIEM #InfraestructuraHospitalaria #Salud #Ingeniería"},
+  "hook": ("¿Tu obra de salud está cumpliendo el programa?\n\n"
+    "🏥 En proyectos públicos de salud, cada atraso importa. Una desviación en los plazos puede postergar la "
+    "puesta en marcha de infraestructura crítica para las personas y generar importantes impactos "
+    "contractuales y económicos."),
+  "body": ("Muchas veces, el problema no está solo en el atraso observado, sino en cómo se planifica, actualiza y "
+    "controla la programación de la obra.\n\n"
+    "En IDIEM, a través de nuestra Ingeniería Contractual, realizamos análisis técnicos de programación para "
+    "proyectos del sector Salud, que permiten:\n\n"
+    "* Identificar desviaciones respecto del programa contractual.\n"
+    "* Analizar las causas y evolución de los atrasos.\n"
+    "* Evaluar sus efectos sobre los plazos de ejecución.\n"
+    "* Generar respaldo técnico para la gestión de contratos y reclamaciones.\n\n"
+    "Anticiparse al atraso también es parte de una buena gestión contractual."),
+  "cta": "📩 ¿Necesitas analizar la programación de tu proyecto? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #IngenieríaContractual #Construcción #Infraestructura #Salud #GestiónDeProyectos #AnálisisDeAtrasos"},
 
  "PLAN-KB-IOM-011-02": {
-  "hook": "⛏️ Cuando una estructura falla o se produce un incendio en faena, la diferencia entre un hecho aislado y una detención mayor está en entender qué ocurrió.",
-  "body": ("Sin un peritaje riguroso, la causa raíz queda oculta y el riesgo tiende a repetirse, comprometiendo la "
-    "seguridad de las personas y la continuidad operacional. 🔍\n\n"
-    "En #IDIEM realizamos peritajes de fallas estructurales y mecánicas, y peritajes de incendios en la "
-    "operación minera. Identificamos, cuantificamos y evaluamos brechas o condiciones subestándar conforme a "
-    "estándares de seguridad y control de fatalidad. 🛡️📐\n\n"
-    "Evidencia técnica que explica lo ocurrido y sustenta decisiones para prevenir que vuelva a pasar. ✅"),
-  "cta": "¿Necesitas peritar una falla o un incendio en tu operación? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Minería #Ingeniería #Seguridad #Peritajes"},
+  "hook": "🔥 Cuando se produce un incendio en faena, las consecuencias pueden comprometer la seguridad de las personas y afectar seriamente la continuidad operacional.",
+  "body": ("Un peritaje oportuno, riguroso e imparcial permite establecer el origen y la causa del siniestro, pero "
+    "también obtener información clave para tomar decisiones y reducir la probabilidad de que un evento similar "
+    "vuelva a ocurrir. 🔍\n\n"
+    "En #IDIEM realizamos peritajes de incendio causa-origen, además de peritajes estructurales y mecánicos en "
+    "minería. Este trabajo puede complementarse con estudios de riesgo de incendio, identificando "
+    "vulnerabilidades en las instalaciones y definiendo medidas de mitigación. 🛡️📐\n\n"
+    "Evidencia técnica para entender lo ocurrido, identificar brechas y fortalecer la seguridad y continuidad "
+    "de la operación. ✅"),
+  "cta": "¿Necesitas un peritaje de incendio o evaluar el riesgo de tus instalaciones? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Minería #Ingeniería #Seguridad #Peritajes #ContinuidadOperacional"},
 
  "PLAN-KB-IPR-008-03": {
   "hook": "🏛️ Para un mandante público, pocas cosas duelen tanto como el atraso de una obra: cada desviación golpea plazos, presupuesto y confianza.",
@@ -88,12 +98,13 @@ COPY = {
   "cta": "¿Buscas control técnico con trazabilidad en tu faena? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Minería #Ensayos #Laboratorio #Calidad"},
 
  "PLAN-KB-IHA-001-05": {
-  "hook": "🏥 Un hospital no solo cuida a las personas: también puede cuidar el entorno en el que opera. 🌱",
-  "body": ("La sostenibilidad ambiental en salud va más allá de la atención clínica: abarca cómo funciona el "
-    "establecimiento, cómo usa sus recursos y cómo gestiona sus residuos. Ahí es donde un Hospital Verde "
+  "hook": "Un hospital no solo cuida a las personas: también puede cuidar el entorno en el que funciona. 🌱",
+  "body": ("La sostenibilidad ambiental en salud va más allá de la atención clínica: abarca cómo se gestiona el "
+    "establecimiento, cómo usa sus recursos y cómo administra sus residuos. Ahí es donde un Hospital Verde "
     "marca la diferencia. ♻️\n\n"
-    "En #IDIEM impulsamos la certificación GREEN HOSPITAL en Chile, junto a organizaciones como Salud sin "
-    "Daño. Su evaluación considera eficiencia energética y reducción de emisiones, gestión responsable de "
+    "En #IDIEM impulsamos la certificación GREEN HOSPITAL en Chile, que considera normativas nacionales e "
+    "internacionales adecuadas a la realidad nacional, complementándose con otras certificaciones como la "
+    "ISO 50001. Su evaluación abarca eficiencia energética y reducción de emisiones, gestión responsable de "
     "residuos clínicos, uso sostenible de recursos hídricos y materiales, compras responsables y promoción de "
     "la salud ambiental. 🩺\n\n"
     "Sostenibilidad que se traduce en instituciones de salud más eficientes y comprometidas con su "
@@ -113,13 +124,13 @@ COPY = {
   "cta": "¿Necesitas diagnosticar la integridad de tus estructuras? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Minería #Ingeniería #Mantenimiento #Seguridad"},
 
  "PLAN-KB-IPR-021-07": {
-  "hook": "🔊 El ruido de un proyecto no es un tema menor: la normativa lo vigila y la comunidad lo percibe.",
-  "body": ("Sin mediciones, modelación ni seguimiento, un proyecto queda expuesto a incumplimientos normativos y a "
-    "conflictos con su entorno. 📉\n\n"
+  "hook": "🔊 El ruido generado por todo proyecto es una variable relevante: la normativa lo vigila y la comunidad lo percibe.",
+  "body": ("Sin mediciones, estudio de impacto, modelación ni seguimiento, un proyecto queda expuesto a "
+    "incumplimientos normativos y a conflictos con su entorno. 📉\n\n"
     "En #IDIEM entregamos servicios de ingeniería acústica: ensayos en laboratorio y terreno, líneas base e "
     "impacto acústico, desarrollo de mapas de ruido y modelos predictivos de propagación sonora, y monitoreo "
-    "de cumplimiento normativo D.S. 38-11 MMA. También diseñamos soluciones de control de ruido y vibraciones, "
-    "con mediciones de aislamiento acústico. 📡📊\n\n"
+    "de cumplimiento normativo D.S. 38-11 MMA (futuro D.D. 14/24). También diseñamos soluciones de control de "
+    "ruido y vibraciones, con mediciones de aislamiento acústico. 📡📊\n\n"
     "Gestión del ruido convertida en evidencia técnica para cumplir la norma y resguardar el confort. ✅"),
   "cta": "¿Necesitas gestionar la acústica de tu proyecto? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Acústica #Infraestructura #Ingeniería #MedioAmbiente"},
 
@@ -190,7 +201,7 @@ GRAPHIC = {
  9:  {"svc": "Ingeniería contractual",              "msg": "Claridad ante<br>el conflicto.",          "base": "Término anticipado · <b>sector Salud</b>"},
  10: {"svc": "Monitoreo de salud estructural",      "msg": "Anticiparse<br>a la falla.",              "base": "Sensores · vibraciones · <b>análisis predictivo</b>"},
  11: {"svc": "Ensayos de especialidades",           "msg": "Calidad que<br>se ensaya.",               "base": "Suelos · hormigones · <b>END a soldaduras</b>"},
- 12: {"svc": "Inspección no destructiva de soldaduras", "msg": "Cada soldadura<br>verificada.",       "base": "Estado superficial e interno · <b>calificación</b>"},
+ 12: {"svc": "Inspección no destructiva de soldaduras", "msg": "Soldaduras<br>inspeccionadas.",       "base": "Estado superficial e interno · <b>según plan de inspección</b>"},
 }
 
 # seq -> foto real de librería incrustada (data URI)
@@ -216,13 +227,16 @@ def esc(s: str) -> str:
     return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
-def canvas(seq: int, cell_short: str, photo_uri: str | None, finish: str) -> str:
+def canvas(seq: int, cell_short: str, photo_uri: str | None, finish: str,
+           corner_logo: str | None = None) -> str:
     g = GRAPHIC[seq]
     if photo_uri:
         bg = (f'<div class="photo" style="background-image:url(\'{photo_uri}\')"></div>'
               '<div class="legibility"></div>')
     else:
         bg = f'<div class="solidfield"></div><div class="legibility soft"></div>'
+    seal = (f'<img class="cornerlogo" src="{corner_logo}" alt="Certificación Green Hospital IDIEM">'
+            if corner_logo else "")
     return f'''<div class="canvas" data-finish="{finish}">
   {bg}
   <img class="slogan" src="{SLOGAN}" alt="Elige bien. Elige idiem.">
@@ -235,6 +249,7 @@ def canvas(seq: int, cell_short: str, photo_uri: str | None, finish: str) -> str
     </div>
   </div>
   <div class="baseline">{g["base"]}</div>
+  {seal}
 </div>'''
 
 
@@ -413,6 +428,8 @@ h1 b{color:var(--red)}
 .baseline b{font-weight:700}
 .cellbadge{position:absolute;z-index:3;right:5.4cqw;bottom:5cqw;font-size:2.1cqw;font-weight:800;letter-spacing:.14em;
   color:#fff;background:rgba(225,38,29,.9);padding:1.1cqw 2.2cqw;border-radius:100px}
+.cornerlogo{position:absolute;z-index:3;right:5cqw;bottom:5cqw;width:21cqw;height:auto;display:block;
+  border-radius:50%;filter:drop-shadow(0 2px 12px rgba(0,0,0,.45));background:rgba(255,255,255,.14)}
 
 /* ---------- side: copy + trace ---------- */
 .side{padding:16px 18px 18px;display:flex;flex-direction:column;gap:14px;flex:1;min-width:0;border-left:1px solid var(--line)}

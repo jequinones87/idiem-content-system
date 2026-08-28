@@ -54,3 +54,20 @@ Build a deterministic, auditable content-planning and drafting system for IDIEM 
 - Log reasons for every blocked or gap state.
 - Do not duplicate the knowledge base into prompt text when structured retrieval is available.
 - Keep future visual/assets integration behind an interface.
+
+## Editorial memory (aprendizajes del equipo)
+
+Antes de escribir o corregir cualquier copy/pieza, lee `docs/09_EDITORIAL_MEMORY.md`.
+Ahí se acumulan las correcciones de tono, estilo y hechos que el equipo valida; son de
+aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
+
+- **Green Hospital es certificación PROPIA de IDIEM.** NO mencionar a "Salud sin Daño".
+  Se complementa con ISO 50001.
+- **Soldaduras (END):** la soldadura se **inspecciona** (por muestreo, según plan de
+  inspección), no "cada soldadura verificada". Se **califica al soldador** y al
+  procedimiento, NO la soldadura.
+- **Acústica:** norma D.S. 38/2011 MMA (futuro D.D. 14/24).
+- **Voz de marca:** gancho con emoji → problema → "En #IDIEM…" (solución, a veces con
+  viñetas `*`) → cierre ✅ → CTA con https://idiem.cl 👉 → hashtags. Sin superlativos.
+- **Saludos institucionales** (Fiestas Patrias, etc.) NO trazan a knowledge_id: mensaje
+  general, sin proyectos/fechas/cifras no respaldadas por 2A.2.

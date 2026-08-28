@@ -51,25 +51,106 @@ PHOTO_SUB = {
     1:  {"photo_id": "PHO-0058", "orig": "Adobe Stock #212862972",
          "fuente": "https://drive.google.com/file/d/1KnC9RDEQUNZMxWX28rphzN2EGLz1ZNOl/view",
          "detalle": "ejecutivo con laptop · planos", "reason": "cambio pedido: foto de librería"},
-    9:  {"photo_id": "PHO-0067", "orig": "Adobe Stock #85465544",
-         "fuente": "https://drive.google.com/file/d/145Rtu5NfO2uLDK0WWNLPn1ZIqjHTEQ6D/view",
-         "detalle": "hospital", "reason": "cambio pedido: hospital de librería"},
+    7:  {"photo_id": "equipo_acustica_FA-1", "orig": "Adobe Stock #204006589",
+         "fuente": "https://drive.google.com/file/d/19uVCrI97li6szs65HJaT8FdOTe3lZZpK/view",
+         "detalle": "equipo de acústica en terreno (foto propia)", "reason": "cambio pedido: foto propia de faena"},
+    8:  {"photo_id": "Tuberia_HDPE_END_ACERO4", "orig": "Adobe Stock #1614411840",
+         "fuente": "https://drive.google.com/file/d/1sHwdzCXyJeneC35woSwz8DkT8qKH3fXp/view",
+         "detalle": "END en tubería HDPE (foto propia)", "reason": "cambio pedido: foto propia de faena"},
 }
 
 # Fotos Adobe Stock licenciadas (tier libre) para los posts sin foto de librería
 # adecuada (antes marcados Muapi). Descargadas, comprimidas a 1080px y usadas
 # localmente; foto real y trazable, sin depender de un CDN externo.
 STOCK_SUB = {
-    7:  {"id": "204006589",  "detalle": "sonómetro en terreno"},
-    8:  {"id": "1614411840", "detalle": "fusión de tubería HDPE"},
+    9:  {"id": "212862972",  "detalle": "acuerdo · ejecutivos (apretón de manos)"},
     12: {"id": "340172893",  "detalle": "END por ultrasonido en soldadura"},
 }
+
+# Sello de certificación Green Hospital (propia de IDIEM), overlay esquina inf-der del post 5.
+GH_SEAL = ("data:image/png;base64," +
+           base64.b64encode((ROOT / "assets" / "green_hospital_logo.png").read_bytes()).decode())
+
+# seq -> fecha ISO de la última modificación de contenido (copy/foto/gráfica).
+# Se actualiza en cada ronda de ajustes; alimenta el chip "modificado" de cada post.
+MODIFIED = {
+    1: "2026-08-28", 2: "2026-08-28", 3: "2026-08-23", 5: "2026-08-28",
+    6: "2026-08-21", 7: "2026-08-28", 8: "2026-08-28", 9: "2026-08-28",
+    10: "2026-08-21", 11: "2026-08-23", 12: "2026-08-28",
+}
+NEW_POSTS = {13}  # posts creados nuevos (badge "nuevo")
+
+# Posts institucionales que NO vienen del motor (no trazan a knowledge_id). Se
+# arman aparte y se anexan después de los 12. Foto de fondo (estilo Plantilla 02).
+SPECIAL = [{
+    "seq": 13,
+    "content_id": "SALUDO-FIESTAS-PATRIAS-2026-09",
+    "cshort": "SALUDO",
+    "subtheme": "Fiestas Patrias · institucional",
+    "fmt": "SALUDO",
+    "photo": "p13.jpg",
+    "kicker": "FELICES FIESTAS PATRIAS",
+    "title": 'Presentes en la<br>historia de <span class="fpred">Chile</span>.',
+    "sub": "Aportamos ciencia e ingeniería al desarrollo de la infraestructura del país.",
+    "copy": {
+        "hook": "🇨🇱 Este 18 de septiembre celebramos a Chile y a las personas que lo construyen cada día.",
+        "body": ("A lo largo de nuestra historia, en IDIEM hemos acompañado el desarrollo de la "
+                 "infraestructura del país: aportando ciencia, ensayos e ingeniería al servicio de obras "
+                 "que sostienen la vida de las personas.\n\n"
+                 "Caminos, hospitales, edificios y faenas que ayudamos a hacer más seguros y confiables "
+                 "también son parte de la historia de Chile. 🏗️"),
+        "cta": "¡Felices Fiestas Patrias! 🇨🇱\n\n#IDIEM #FiestasPatrias #Chile #Ingeniería #Infraestructura",
+    },
+    "trace": ("Saludo institucional — pieza conmemorativa que <strong>no traza a un knowledge_id</strong>. "
+              "Mensaje general, sin afirmaciones específicas de proyectos, fechas ni cifras."),
+}]
+SPECIAL_BY_CID = {s["content_id"]: s for s in SPECIAL}
+
+FIESTAS_CSS = r'''
+.fpslide{color:#fff;background:var(--gray-dark)}
+.fpphoto{position:absolute;inset:0;z-index:0;background-size:cover;background-position:50% 40%}
+.fpveil{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(9,11,12,.88) 6%,rgba(9,11,12,.28) 48%,rgba(9,11,12,.52) 100%)}
+.fpwrap{position:absolute;z-index:3;left:6cqw;right:6cqw;bottom:8.5cqw;display:flex;flex-direction:column;gap:2.6cqw}
+.fpkick{font-size:2.5cqw;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#fff;opacity:.96}
+.fprule{width:12cqw;height:.7cqw;background:var(--red);border-radius:2px}
+.fptitle{font-size:6.8cqw;font-weight:800;line-height:1.03;letter-spacing:-.02em;text-shadow:0 2px 18px rgba(0,0,0,.55)}
+.fptitle .fpred{color:var(--red)}
+.fpsub{font-size:3.1cqw;font-weight:500;line-height:1.34;color:rgba(255,255,255,.93);max-width:80cqw}
+'''
+
+
+def fiestas_html(photo_uri: str | None, s: dict) -> str:
+    photo = photo_uri or ""
+    return f'''<div class="canvas fpslide" data-finish="photo">
+  <div class="fpphoto" style="background-image:url('{photo}')"></div>
+  <div class="fpveil"></div>
+  <img class="c2slogan" src="{G.SLOGAN}" alt="Elige bien. Elige idiem.">
+  <img class="c2logo" src="{G.LOGO}" alt="Logo IDIEM">
+  <div class="fpwrap">
+    <div class="fpkick">{s["kicker"]}</div>
+    <div class="fprule"></div>
+    <div class="fptitle">{s["title"]}</div>
+    <div class="fpsub">{G.esc(s["sub"])}</div>
+  </div>
+</div>'''
+
+
+def mod_badge(seq: int) -> str:
+    """Chip mínimo esquina sup-der: si el post fue modificado y cuándo."""
+    if seq in NEW_POSTS:
+        return '<span class="modbadge new">★ nuevo</span>'
+    d = MODIFIED.get(seq)
+    if d:
+        y, m, day = d.split("-")
+        return f'<span class="modbadge on">✎ {day}-{m}-{y}</span>'
+    return '<span class="modbadge">sin cambios</span>'
+
 
 PAGE = """<!doctype html><html lang="es"><head><meta charset="utf-8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
-<style>{style}{carcss}</style>
+<style>{style}{carcss}{fpcss}</style>
 <style>
   html,body{{margin:0;padding:0;background:#0a0c0d}}
   .export{{width:1080px;height:1080px;position:relative;overflow:hidden}}
@@ -86,8 +167,9 @@ def post_slides(seq: int, post) -> list[str]:
     if seq in CAR.CAROUSEL_POSTS:
         # Carrusel: portada + intermedias + cierre, todo con foto de fondo (Plantilla 02).
         return CAR.build_slides(seq, photo_uri, G.LOGO, G.SLOGAN)
-    # Estático: pieza Servicios (círculo rojo).
-    return [G.canvas(seq, cshort, photo_uri, finish)]
+    # Estático: pieza Servicios (círculo rojo). Post 5 lleva sello Green Hospital.
+    corner = GH_SEAL if seq == 5 else None
+    return [G.canvas(seq, cshort, photo_uri, finish, corner_logo=corner)]
 
 
 def emit(month: str, build: Path) -> None:
@@ -105,13 +187,25 @@ def emit(month: str, build: Path) -> None:
         slides = post_slides(seq, post)
         pngs = []
         for idx, canvas_html in enumerate(slides):
-            html = PAGE.format(style=style, carcss=CAR.CAROUSEL_CSS, canvas=canvas_html)
+            html = PAGE.format(style=style, carcss=CAR.CAROUSEL_CSS, fpcss=FIESTAS_CSS, canvas=canvas_html)
             hp = posts_dir / f"p{seq:02d}_s{idx}.html"
             pp = posts_dir / f"p{seq:02d}_s{idx}.png"
             hp.write_text(html, encoding="utf-8")
             manifest.append({"html": str(hp), "png": str(pp)})
             pngs.append(str(pp))
         structure.append({"seq": seq, "cid": post.content_id, "pngs": pngs})
+
+    # Posts institucionales (no del motor): se anexan después de los 12.
+    for s in SPECIAL:
+        seq = s["seq"]
+        photo_uri = resolve_photo(seq)
+        html = PAGE.format(style=style, carcss=CAR.CAROUSEL_CSS, fpcss=FIESTAS_CSS,
+                           canvas=fiestas_html(photo_uri, s))
+        hp = posts_dir / f"p{seq:02d}_s0.html"
+        pp = posts_dir / f"p{seq:02d}_s0.png"
+        hp.write_text(html, encoding="utf-8")
+        manifest.append({"html": str(hp), "png": str(pp)})
+        structure.append({"seq": seq, "cid": s["content_id"], "pngs": [str(pp)]})
 
     (build / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False), "utf-8")
     (build / "structure.json").write_text(json.dumps(structure, ensure_ascii=False), "utf-8")
@@ -137,9 +231,11 @@ def build(month: str, build_dir: Path, out_path: Path) -> None:
     cards = []
     for st in structure:
         seq, cid = st["seq"], st["cid"]
-        post = posts[cid]
         uris = [jpeg_uri(p) for p in st["pngs"]]
-        cards.append(render_card(seq, post, uris))
+        if cid in SPECIAL_BY_CID:
+            cards.append(render_special_card(SPECIAL_BY_CID[cid], uris))
+        else:
+            cards.append(render_card(seq, posts[cid], uris))
 
     html = ARTIFACT.replace("__CARDS__", "\n".join(cards))
     out_path.write_text(html, encoding="utf-8")
@@ -199,6 +295,7 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     <div class="gwrap">
       <img class="main" src="{uris[0]}" data-idx="0" alt="Post {seq:02d}">
       <span class="fmtbadge">{fmt_label}</span>
+      {mod_badge(seq)}
       <span class="zoomhint">clic para ampliar</span>
     </div>
     {strip}
@@ -224,6 +321,50 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     <div class="trace">
       <div class="tr"><span class="k">Ancla</span><span class="v"><code>{G.esc(post.content_id)}</code></span></div>
       <div class="tr"><span class="k">Evidencia</span><span class="v">{ev_codes}</span></div>
+      <div class="tr"><span class="k">Foto</span><span class="v">{foto}</span></div>
+    </div>
+  </div>
+</article>'''
+
+
+def render_special_card(s: dict, uris: list[str]) -> str:
+    seq = s["seq"]
+    c = s["copy"]
+    full_copy = f"{c['hook']}\n\n{c['body']}\n\n{c['cta']}"
+    slides_json = G.esc(json.dumps(uris))
+    foto = ('Adobe Stock · <code>#260332702</code> (La Moneda · bandera chilena) · licencia libre'
+            '<br><span class="muprompt">edificio emblemático de Chile; pieza conmemorativa de Fiestas Patrias</span>')
+    return f'''<article class="post special" data-seq="{seq}" data-cid="{G.esc(s["content_id"])}" data-car="0">
+  <script type="application/json" class="slides-data">{slides_json}</script>
+  <div class="graphic">
+    <div class="gwrap">
+      <img class="main" src="{uris[0]}" data-idx="0" alt="Post {seq:02d}">
+      <span class="fmtbadge">SALUDO · FIESTAS PATRIAS</span>
+      {mod_badge(seq)}
+      <span class="zoomhint">clic para ampliar</span>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="chead"><span class="seq">{seq:02d}</span><span class="badge">{G.esc(s["cshort"])}</span>
+      <span class="badge ghost">{G.esc(s["fmt"])}</span><span class="sub">{G.esc(s["subtheme"])}</span></div>
+
+    <label class="lab">Texto del post <span class="hint">— editable, se guarda en tu navegador</span></label>
+    <textarea class="copy" data-cid="{G.esc(s["content_id"])}" spellcheck="false">{G.esc(full_copy)}</textarea>
+
+    <label class="lab">Cambios en la imagen / gráfica</label>
+    <textarea class="imgnote" data-cid="{G.esc(s["content_id"])}" spellcheck="false"
+      placeholder="Ej.: cambiar la foto; ajustar el saludo…"></textarea>
+
+    <div class="btns">
+      <button class="btn regen" type="button">🔄 Solicitar regeneración</button>
+      <button class="btn ghost png" type="button">Descargar PNG</button>
+      <button class="btn ghost pdf" type="button">Descargar PDF</button>
+      <button class="btn ghost copybtn" type="button">Copiar texto</button>
+    </div>
+
+    <div class="trace">
+      <div class="tr"><span class="k">Ancla</span><span class="v"><code>{G.esc(s["content_id"])}</code></span></div>
+      <div class="tr"><span class="k">Nota</span><span class="v">{s["trace"]}</span></div>
       <div class="tr"><span class="k">Foto</span><span class="v">{foto}</span></div>
     </div>
   </div>
@@ -279,6 +420,9 @@ h1 b{color:var(--red)}
 .fmtbadge{position:absolute;top:10px;left:10px;font-size:.66rem;font-weight:800;letter-spacing:.08em;color:#fff;background:rgba(0,0,0,.55);padding:4px 10px;border-radius:100px;backdrop-filter:blur(3px)}
 .zoomhint{position:absolute;bottom:10px;right:10px;font-size:.64rem;font-weight:700;color:#fff;background:rgba(0,0,0,.5);padding:4px 9px;border-radius:100px;opacity:0;transition:opacity .15s}
 .gwrap:hover .zoomhint{opacity:1}
+.modbadge{position:absolute;top:10px;right:10px;font-size:.6rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(0,0,0,.5);padding:4px 9px;border-radius:100px;backdrop-filter:blur(3px)}
+.modbadge.on{background:rgba(225,38,29,.92)}
+.modbadge.new{background:rgba(21,128,61,.95)}
 .strip{display:flex;gap:6px;padding:10px 0 0;overflow-x:auto}
 .thumb{height:52px;width:52px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent;flex:none;opacity:.7}
 .thumb.on{border-color:var(--red);opacity:1}
@@ -327,8 +471,8 @@ code{font-family:inherit;font-weight:700;background:var(--gray-light);padding:1p
 
 <div class="wrap">
   <p class="eyebrow"><span class="dot"></span>IDIEM · Design System · Workstation</p>
-  <h1>Septiembre — <b>desarrollo de los 12 posts</b></h1>
-  <p class="lede">Por cada post: la gráfica arriba (clic para ampliar; los carruseles se revisan lámina por lámina), y abajo el <strong>texto editable</strong>, un recuadro para <strong>cambios de imagen</strong> con su botón de regeneración, y descargas <strong>PNG/PDF</strong>. Tus ediciones se guardan en este navegador. Para que Claude aplique las regeneraciones, usa <strong>Exportar cambios</strong> y envíale el archivo.</p>
+  <h1>Septiembre — <b>12 posts + saludo Fiestas Patrias</b></h1>
+  <p class="lede">Por cada post: la gráfica arriba (clic para ampliar; los carruseles se revisan lámina por lámina), y abajo el <strong>texto editable</strong>, un recuadro para <strong>cambios de imagen</strong> con su botón de regeneración, y descargas <strong>PNG/PDF</strong>. En la esquina de cada gráfica, un chip indica <strong>si el post fue modificado y la fecha</strong>. Tus ediciones se guardan en este navegador. Para que Claude aplique las regeneraciones, usa <strong>Exportar cambios</strong> y envíale el archivo.</p>
   <div class="bar">
     <input class="idfield" id="revName" type="text" placeholder="Tu nombre" autocomplete="name" spellcheck="false">
     <input class="idfield" id="revRole" type="text" placeholder="Especialidad / área (opcional)" spellcheck="false">
