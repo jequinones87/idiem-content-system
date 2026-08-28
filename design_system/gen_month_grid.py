@@ -201,7 +201,7 @@ GRAPHIC = {
  9:  {"svc": "Ingeniería contractual",              "msg": "Claridad ante<br>el conflicto.",          "base": "Término anticipado · <b>sector Salud</b>"},
  10: {"svc": "Monitoreo de salud estructural",      "msg": "Anticiparse<br>a la falla.",              "base": "Sensores · vibraciones · <b>análisis predictivo</b>"},
  11: {"svc": "Ensayos de especialidades",           "msg": "Calidad que<br>se ensaya.",               "base": "Suelos · hormigones · <b>END a soldaduras</b>"},
- 12: {"svc": "Inspección no destructiva de soldaduras", "msg": "Soldaduras<br>inspeccionadas.",       "base": "Estado superficial e interno · <b>según plan de inspección</b>"},
+ 12: {"svc": "Inspección no destructiva de soldaduras", "msg": "Detectar antes<br>de fallar.",         "base": "Estado superficial e interno · <b>según plan de inspección</b>"},
 }
 
 # seq -> foto real de librería incrustada (data URI)
@@ -228,7 +228,7 @@ def esc(s: str) -> str:
 
 
 def canvas(seq: int, cell_short: str, photo_uri: str | None, finish: str,
-           corner_logo: str | None = None) -> str:
+           corner_logo: str | None = None, side: str = "left") -> str:
     g = GRAPHIC[seq]
     if photo_uri:
         bg = (f'<div class="photo" style="background-image:url(\'{photo_uri}\')"></div>'
@@ -237,7 +237,8 @@ def canvas(seq: int, cell_short: str, photo_uri: str | None, finish: str,
         bg = f'<div class="solidfield"></div><div class="legibility soft"></div>'
     seal = (f'<img class="cornerlogo" src="{corner_logo}" alt="Certificación Green Hospital IDIEM">'
             if corner_logo else "")
-    return f'''<div class="canvas" data-finish="{finish}">
+    side_cls = " circ-right" if side == "right" else ""
+    return f'''<div class="canvas{side_cls}" data-finish="{finish}">
   {bg}
   <img class="slogan" src="{SLOGAN}" alt="Elige bien. Elige idiem.">
   <img class="logo" src="{LOGO}" alt="Logo IDIEM">
@@ -428,8 +429,13 @@ h1 b{color:var(--red)}
 .baseline b{font-weight:700}
 .cellbadge{position:absolute;z-index:3;right:5.4cqw;bottom:5cqw;font-size:2.1cqw;font-weight:800;letter-spacing:.14em;
   color:#fff;background:rgba(225,38,29,.9);padding:1.1cqw 2.2cqw;border-radius:100px}
-.cornerlogo{position:absolute;z-index:3;right:5cqw;bottom:5cqw;width:21cqw;height:auto;display:block;
-  border-radius:50%;filter:drop-shadow(0 2px 12px rgba(0,0,0,.45));background:rgba(255,255,255,.14)}
+.cornerlogo{position:absolute;z-index:1;right:5cqw;bottom:5cqw;width:25cqw;height:auto;display:block;
+  border-radius:50%;filter:drop-shadow(0 2px 12px rgba(0,0,0,.45))}
+.canvas.circ-right .circle-wrap{left:59%}
+.canvas.circ-right .legibility{background:
+  linear-gradient(270deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.22) 42%,rgba(0,0,0,.04) 72%),
+  linear-gradient(0deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,0) 30%),
+  linear-gradient(180deg,rgba(0,0,0,.32) 0%,rgba(0,0,0,0) 22%)}
 
 /* ---------- side: copy + trace ---------- */
 .side{padding:16px 18px 18px;display:flex;flex-direction:column;gap:14px;flex:1;min-width:0;border-left:1px solid var(--line)}

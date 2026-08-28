@@ -29,17 +29,17 @@ def _icon(name: str) -> str:
 # la portada usa <span class="c2rt">palabra</span> (texto rojo).
 SLIDES = {
     2: {
-        "portada": {"kicker": "PERITAJES · OPERACIÓN MINERA",
+        "portada": {"kicker": "PERITAJES DE INCENDIO · MINERÍA",
                     "title": 'Entender qué <span class="c2rt">ocurrió</span>.'},
         "intermedias": [
-            {"icon": "location", "title": 'Peritaje de <span class="c2rb">incendios</span>',
-             "body": "Reconstrucción técnica del evento en la operación minera."},
-            {"icon": "magnifier", "title": 'Fallas <span class="c2rb">estructurales</span>',
-             "body": "Peritajes de fallas estructurales y mecánicas: determinamos qué ocurrió y por qué."},
-            {"icon": "shield", "title": 'Brechas y <span class="c2rb">estándares</span>',
-             "body": "Identificamos, cuantificamos y evaluamos condiciones subestándar según control de fatalidad."},
+            {"icon": "magnifier", "title": 'Peritaje de <span class="c2rb">incendio</span>',
+             "body": "Establecemos la causa y el origen del siniestro con rigor e imparcialidad."},
+            {"icon": "location", "title": 'Estructural y <span class="c2rb">mecánico</span>',
+             "body": "Peritajes que determinan qué ocurrió en la operación minera, con un enfoque integral."},
+            {"icon": "shield", "title": 'Estudio de <span class="c2rb">riesgo</span>',
+             "body": "Levantamos vulnerabilidades de las instalaciones y definimos un plan de medidas de mitigación."},
         ],
-        "cierre": {"bajada": "Evidencia técnica que explica lo ocurrido y sustenta decisiones."},
+        "cierre": {"bajada": "Evidencia técnica que explica lo ocurrido y fortalece la seguridad y continuidad de la operación."},
     },
     8: {
         "portada": {"kicker": "CONTROL DE CALIDAD · HDPE",

@@ -77,17 +77,22 @@ GH_SEAL = ("data:image/png;base64," +
 APPLIED_LOG = {
     1:  [{"date": "2026-08-28", "summary": "Copy reescrito (MKT) + foto laptop/planos"},
          {"date": "2026-08-24", "summary": "Foto de acuerdo/ejecutivos (previa)"}],
-    2:  [{"date": "2026-08-28", "summary": "Copy reescrito + orden de láminas (incendios → fallas)"}],
+    2:  [{"date": "2026-08-28", "summary": "Carrusel reformulado: causa-origen, estructural/mecánico, estudio de riesgo"},
+         {"date": "2026-08-28", "summary": "Copy reescrito + orden de láminas (incendios → fallas)"}],
     3:  [{"date": "2026-08-24", "summary": "Foto casco + tablet (se corrigió la pixelada)"}],
-    5:  [{"date": "2026-08-28", "summary": "Copy (sin Salud sin Daño, ISO 50001) + sello Green Hospital"}],
+    5:  [{"date": "2026-08-28", "summary": "Sello Green Hospital más grande (¼ del lienzo), detrás del círculo"},
+         {"date": "2026-08-28", "summary": "Copy (sin Salud sin Daño, ISO 50001) + sello Green Hospital"}],
     6:  [{"date": "2026-08-21", "summary": "Foto vigas de acero / casco IDIEM"}],
-    7:  [{"date": "2026-08-28", "summary": "Copy (estudio de impacto, D.D. 14/24) + foto propia de acústica"}],
+    7:  [{"date": "2026-08-28", "summary": "Círculo movido a la derecha (se ve el equipo de acústica)"},
+         {"date": "2026-08-28", "summary": "Copy (estudio de impacto, D.D. 14/24) + foto propia de acústica"}],
     8:  [{"date": "2026-08-28", "summary": "Foto propia de faena (tubería HDPE)"}],
     9:  [{"date": "2026-08-28", "summary": "Foto de acuerdo / apretón de manos"}],
     10: [{"date": "2026-08-21", "summary": "Foto domo minero / dron"}],
     11: [{"date": "2026-08-24", "summary": "Foto edificio en construcción (Costanera)"}],
-    12: [{"date": "2026-08-28", "summary": "Gráfica: soldaduras inspeccionadas por muestreo"}],
-    13: [{"date": "2026-08-28", "summary": "Creación — saludo Fiestas Patrias"}],
+    12: [{"date": "2026-08-28", "summary": "Título de gráfica → “Detectar antes de fallar”"},
+         {"date": "2026-08-28", "summary": "Gráfica: soldaduras inspeccionadas por muestreo"}],
+    13: [{"date": "2026-08-28", "summary": "Foto → bandera chilena + camión minero (librería)"},
+         {"date": "2026-08-28", "summary": "Creación — saludo Fiestas Patrias"}],
 }
 NEW_POSTS = {13}  # posts creados nuevos (chip "nuevo")
 
@@ -203,9 +208,11 @@ def post_slides(seq: int, post) -> list[str]:
     if seq in CAR.CAROUSEL_POSTS:
         # Carrusel: portada + intermedias + cierre, todo con foto de fondo (Plantilla 02).
         return CAR.build_slides(seq, photo_uri, G.LOGO, G.SLOGAN)
-    # Estático: pieza Servicios (círculo rojo). Post 5 lleva sello Green Hospital.
+    # Estático: pieza Servicios (círculo rojo). Post 5 lleva sello Green Hospital;
+    # post 7 mueve el círculo a la derecha para dejar ver el equipo de acústica.
     corner = GH_SEAL if seq == 5 else None
-    return [G.canvas(seq, cshort, photo_uri, finish, corner_logo=corner)]
+    side = "right" if seq == 7 else "left"
+    return [G.canvas(seq, cshort, photo_uri, finish, corner_logo=corner, side=side)]
 
 
 def emit(month: str, build: Path) -> None:
@@ -374,8 +381,9 @@ def render_special_card(s: dict, uris: list[str]) -> str:
     c = s["copy"]
     full_copy = f"{c['hook']}\n\n{c['body']}\n\n{c['cta']}"
     slides_json = G.esc(json.dumps(uris))
-    foto = ('Adobe Stock · <code>#260332702</code> (La Moneda · bandera chilena) · licencia libre'
-            '<br><span class="muprompt">edificio emblemático de Chile; pieza conmemorativa de Fiestas Patrias</span>')
+    foto = ('Librería · <code>generica_bandera_chile_mineria</code> (bandera chilena + camión minero) · '
+            '<a href="https://drive.google.com/file/d/18Vlym9diMd7rcuAbaWvFMapzAF491biH/view" target="_blank" rel="noopener">ver en Drive</a>'
+            '<br><span class="muprompt">pieza conmemorativa de Fiestas Patrias (reemplaza a La Moneda)</span>')
     return f'''<article class="post special" data-seq="{seq}" data-cid="{G.esc(s["content_id"])}" data-car="0" data-status="publicado" data-edited-at="" data-edited-by="">
   <script type="application/json" class="slides-data">{slides_json}</script>
   <div class="graphic">
@@ -598,7 +606,7 @@ __CARDS__
 
 <script>
 (function(){
-  var KEY='idiem_ws_sep2026_v1';
+  var KEY='idiem_ws_sep2026_v2';
   function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function readJSON(s){try{return JSON.parse(s||'{}')||{};}catch(e){return {};}}
   function mergeState(base,over){var out={},k;for(k in base)out[k]=base[k];
