@@ -362,6 +362,7 @@ def render_card(seq: int, post, uris: list[str]) -> str:
       <span class="badge ghost">{G.esc(fmt)}</span><span class="sub">{G.esc(subname)}</span></div>
 
     <label class="lab">Texto del post <span class="hint">— editable, se guarda en tu navegador</span>
+      <span class="cc" data-cc>0 / 900</span>
       <button class="revert" type="button" data-field="copy" hidden>↺ volver a lo publicado</button></label>
     <textarea class="copy" data-cid="{G.esc(post.content_id)}" spellcheck="false">{G.esc(full_copy)}</textarea>
 
@@ -419,6 +420,7 @@ def render_special_card(s: dict, uris: list[str]) -> str:
       <span class="badge ghost">{G.esc(s["fmt"])}</span><span class="sub">{G.esc(s["subtheme"])}</span></div>
 
     <label class="lab">Texto del post <span class="hint">— editable, se guarda en tu navegador</span>
+      <span class="cc" data-cc>0 / 900</span>
       <button class="revert" type="button" data-field="copy" hidden>↺ volver a lo publicado</button></label>
     <textarea class="copy" data-cid="{G.esc(s["content_id"])}" spellcheck="false">{G.esc(full_copy)}</textarea>
 
@@ -559,6 +561,9 @@ h1 b{color:var(--red)}
 .sub{font-size:.82rem;font-weight:600;color:var(--muted)}
 .lab{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
 .lab .hint{font-weight:600;letter-spacing:0;text-transform:none;color:var(--muted);opacity:.8}
+.cc{margin-left:auto;font-size:.64rem;font-weight:800;letter-spacing:0;text-transform:none;color:var(--muted);white-space:nowrap}
+.cc.warn{color:#c6780a}
+.cc.over{color:var(--red)}
 textarea{font-family:inherit;width:100%;resize:vertical;border:1px solid var(--line);border-radius:10px;
   background:var(--gray-light);color:var(--ink);padding:10px 12px;font-size:.86rem;line-height:1.55}
 textarea:focus{outline:2px solid var(--red);outline-offset:1px;background:var(--card)}
@@ -690,6 +695,7 @@ __CARDS__
 
     var copy=post.querySelector('textarea.copy');
     var note=post.querySelector('textarea.imgnote');
+    var cc=post.querySelector('[data-cc]');
     var chip=post.querySelector('.statuschip');
     var applied=chip?(chip.getAttribute('data-applied')||''):'';
     var editline=post.querySelector('.editline');
@@ -702,6 +708,9 @@ __CARDS__
     autosize(copy);autosize(note);
 
     function refresh(){
+      // contador de caracteres (regla MKT: máx 900; .length cuenta unidades UTF-16)
+      if(cc){var nch=copy.value.length;cc.textContent=nch+' / 900';
+        cc.classList.toggle('warn',nch>860&&nch<=900);cc.classList.toggle('over',nch>900);}
       var st=computeStatus(copy,note,store[cid]||{});
       post.setAttribute('data-status',st);
       post.classList.toggle('flag',st!=='publicado');

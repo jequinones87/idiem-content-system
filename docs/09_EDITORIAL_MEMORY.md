@@ -44,6 +44,11 @@ Estas nacen de correcciones del equipo. Son de aplicación obligatoria.
 
 El equipo de MKT (Kike) es la autoridad de tono. Patrones observados en sus reescrituras:
 
+- **Largo máximo: 900 caracteres (REGLA DURA).** Ningún copy publicable puede superar los
+  **900 caracteres**, contando el cuerpo completo (gancho + desarrollo + CTA + hashtags,
+  incluidos emojis y saltos de línea). Regla fijada por MKT el **2026-08-31**. Si un borrador
+  excede, hay que **recortar antes de aprobar** (no es negociable). Objetivo práctico: apuntar
+  a ~820–880 para dejar margen.
 - **Estructura**: gancho con emoji → párrafo de problema/contexto → párrafo de
   solución que empieza con **"En #IDIEM ..."** (o "En IDIEM ...") → cierre de valor
   con ✅ → **CTA** (pregunta + "Conversemos en https://idiem.cl 👉" o "Contáctanos a
@@ -137,3 +142,7 @@ capacidades técnicas (la célula ICT no tiene conocimiento activo).
   - Fotos: son fotos propias de la **librería de Drive de IDIEM** (no stock ni IA); trazan a
     su archivo por `viewUrl`. Bajadas, reescaladas (lado corto ≈1200px, JPEG q86) e incrustadas
     en `assets/month/pNN.jpg`.
+  - **Nueva regla dura: copy ≤ 900 caracteres** (ver sección "Estilo y tono"). Al fijarla,
+    quedaron **sobre el límite** los posts **1 (1075), 2 (1013), 5 (1028)** y el **4 (900,
+    justo)** — son copies aprobados por MKT en rondas previas. Pendiente: recortarlos con
+    visto bueno de Kike (no se tocan sin su aprobación por ser "oro").

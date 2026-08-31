@@ -69,6 +69,8 @@ aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
 - **Acústica:** norma D.S. 38/2011 MMA (futuro D.D. 14/24).
 - **Voz de marca:** gancho con emoji → problema → "En #IDIEM…" (solución, a veces con
   viñetas `*`) → cierre ✅ → CTA con https://idiem.cl 👉 → hashtags. Sin superlativos.
+- **Largo máximo del copy: 900 caracteres** (cuerpo completo, incluidos emojis, saltos y
+  hashtags). Regla dura de MKT (2026-08-31): si excede, recortar antes de aprobar.
 - **Saludos institucionales** (Fiestas Patrias, etc.) NO trazan a knowledge_id: mensaje
   general, sin proyectos/fechas/cifras no respaldadas por 2A.2.
 - **Efemérides del sector:** al armar la grilla de CADA mes, revisa `config/efemerides.json`
