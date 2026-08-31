@@ -1,0 +1,83 @@
+# PENDIENTES.me — IDIEM Content System (punto de retomada)
+
+> Archivo de contexto para continuar el trabajo en un chat nuevo.
+> Última actualización: 2026-08-31.
+
+## Qué es esto
+Sistema determinista y auditable de contenidos LinkedIn para IDIEM.
+Fuente factual única: paquete 2A.2 (no usar conocimiento general del modelo
+para hechos de IDIEM). Reglas en CLAUDE.md y docs/09_EDITORIAL_MEMORY.md.
+
+## Repo y rama
+- Repo: jequinones87/idiem-content-system
+- Rama de trabajo: claude/file-reading-nsposu
+- Sin PR salvo que Kike lo pida.
+
+## Entregable activo: "Workstation Septiembre"
+Artifact interactivo (12 posts + saludo Fiestas Patrias = 13). Kike revisa/edita
+copy e imágenes; Claude aplica y republica.
+- URL del artifact: https://claude.ai/code/artifact/f9016145-d797-4a02-867e-1e478de62a6b
+- Generador: design_system/gen_workstation.py
+
+## Ciclo leer → aplicar → republicar (cómo trabaja Claude)
+1. Kike hace cambios en la workstation y clic en "💾 Guardar y compartir".
+2. En el chat nuevo: Artifact action:read sobre la URL de arriba.
+3. Extraer el JSON de <script id="ws-state" type="application/json"> (copy/nota/
+   estado + edited-at/by de los posts en pendiente/listo).
+4. Editar los generadores (gen_workstation.py / gen_month_grid.py / carousel.py).
+5. Reconstruir: emit → render → assemble (ver "Pipeline").
+6. Agregar entrada a APPLIED_LOG, marcar post como aplicado.
+7. Artifact publish a la MISMA URL con capabilities={"artifact":{},"downloads":true}
+   (leer la versión viva ANTES de publicar, o el guard rechaza).
+8. Subir la KEY de localStorage (idiem_ws_sep2026_vN → v(N+1)) para resetear el
+   navegador de Kike a estado limpio "publicado". (Actual: v4 → subir a v5.)
+9. Commit + push a claude/file-reading-nsposu (footer Co-Authored-By +
+   Claude-Session). Sin PR salvo pedido explícito.
+
+## Pipeline (comandos)
+- Emit:    (recompone el HTML con las fotos como data-URI baked)
+- Render:  node design_system/render_bundle.cjs <manifest>
+           (usa /opt/node22/lib/node_modules/playwright +
+            executablePath:/opt/pw-browsers/chromium; espera document.fonts.ready;
+            screenshot .export a 1080x1080)
+- Assemble: --assemble arma el artifact final.
+  (Ver los flags exactos en gen_workstation.py; ejecutar --emit ANTES de
+   re-renderizar un slide: la foto se hornea como data-URI en el emit.)
+
+## TODOs abiertos
+1. Aplicar los últimos cambios de Kike a los posts.
+   ESTADO: bloqueado. Al releer el artifact el ws-state estaba vacío
+   ("posts con estado: ninguno"). Kike debe hacer clic en "Guardar y compartir"
+   (o pegar los cambios) y recién ahí releer y aplicar.
+2. Botón "listo para publicar" (aprobado).
+   DISEÑO recomendado: flag NUEVO e independiente "✅ Aprobado para publicar"
+   por post (botón + badge verde en la gráfica + contador en el tablero).
+   Pipeline de estados: revisado → aprobado → subido a LinkedIn.
+   Coexiste con los flags existentes ("listo para aplicar" y "subido a LinkedIn").
+   Campo de estado: approved / approvedAt. Subir KEY localStorage a v5.
+
+## Reglas editoriales NO negociables (recordatorio rápido)
+- Green Hospital es certificación PROPIA de IDIEM. NO mencionar "Salud sin Daño".
+  Se complementa con ISO 50001.
+- Soldaduras (END): la soldadura se INSPECCIONA por muestreo (según plan); se
+  CALIFICA al soldador y el procedimiento, NO "cada soldadura verificada".
+- Acústica: D.S. 38/2011 MMA (futuro D.D. 14/24).
+- Voz de marca: gancho+emoji → problema → "En #IDIEM…" (solución, a veces viñetas *)
+  → cierre ✅ → CTA con https://idiem.cl 👉 → hashtags. Sin superlativos.
+- Saludos institucionales (Fiestas Patrias, etc.) NO trazan a knowledge_id.
+- Efemérides del sector: revisar config/efemerides.json al armar la grilla de cada
+  mes. Transporte Sostenible (26-nov) = INFRA CRÍTICA TRANSPORTE = CONTENT_GAP:
+  institucional general, sin afirmar capacidades técnicas.
+- 2A.2 es la única fuente factual. Ante evidencia insuficiente: CONTENT_GAP o
+  EXPERT_INPUT_REQUIRED. Fail closed.
+
+## Archivos clave
+- design_system/gen_workstation.py — genera la workstation (tablero, chips,
+  historial, botón sync, capabilities al publicar). PHOTO_SUB/STOCK_SUB (trazas
+  de foto), APPLIED_LOG, NEW_POSTS, status_chip, render_card/render_special_card.
+- design_system/gen_month_grid.py — COPY/GRAPHIC de los 12 posts; canvas(seq,…).
+- design_system/carousel.py — SLIDES de carruseles (posts 2 y 8).
+- design_system/bundle_month.py — resolve_photo(seq) desde assets/month/pNN.*
+- config/efemerides.json — efemérides clave del sector.
+- docs/09_EDITORIAL_MEMORY.md — memoria editorial (tono, hechos, bitácora).
+- CLAUDE.md — reglas no negociables.
