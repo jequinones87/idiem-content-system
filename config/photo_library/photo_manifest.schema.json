@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IDIEM Photo Library — registro de foto",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "archivo", "concepto", "tipo", "derechos", "fuente"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^PHO-\\d{4}$", "description": "Id interno, p.ej. PHO-0001"},
+    "archivo": {"type": "string", "description": "Nombre del archivo (con conceptos)"},
+    "concepto": {"type": "array", "items": {"type": "string"}, "description": "Conceptos del nombre (1-3)"},
+    "celulas": {"type": "array", "items": {"enum": ["IPR", "IHA", "ICT", "IOM", "LMD"]}, "description": "Derivado del concepto; una foto puede servir a varias"},
+    "subtemas": {"type": "array", "items": {"type": "string"}, "description": "Derivado del concepto (puede ser vacío = genérica de la célula)"},
+    "disciplina": {"type": "string", "description": "Derivado: faena, geotecnia, laboratorio, soldadura, estructuras, incendios, acustica, salud, sustentabilidad, construccion, personas, etc."},
+    "entorno": {"enum": ["mina", "obra", "laboratorio", "terreno", "oficina"], "description": "Derivado del concepto"},
+    "orientacion": {"enum": ["H", "V", "C"], "description": "Horizontal / Vertical / Cuadrada"},
+    "tipo": {"enum": ["propia_idiem", "stock_licenciada", "persona"], "description": "Origen de la foto"},
+    "derechos": {"type": "string", "description": "propia | licencia_vigente | con_credito | caducidad:AAAA-MM-DD"},
+    "personas": {"enum": ["si", "no"], "description": "¿Personas identificables?"},
+    "consentimiento": {"enum": ["si", "no", "na"], "description": "Consentimiento cuando hay personas"},
+    "fuente": {"type": "string", "description": "Link de Drive o proveedor de stock"},
+    "fecha": {"type": "string", "description": "AAAA-MM-DD (opcional)"},
+    "tags_libres": {"type": "array", "items": {"type": "string"}},
+    "notas": {"type": "string"}
+  }
+}

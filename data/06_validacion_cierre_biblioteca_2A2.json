@@ -1,0 +1,207 @@
+{
+  "metadata": {
+    "project": "IDIEM — validación de cierre de biblioteca",
+    "version": "2A.2",
+    "date": "2026-08-17",
+    "overall_status": "APTO_PARA_HANDOFF_CON_GAPS_DOCUMENTALES_CONTROLADOS"
+  },
+  "summary": {
+    "relations_total": 292,
+    "assigned_to_cells": 137,
+    "technical_source_relations": 102,
+    "auxiliary_relations": 35,
+    "reserve_outside_cells": 150,
+    "excluded_relations": 5,
+    "knowledge_items": 116,
+    "source_documents": 29,
+    "manual_cell_review": 0
+  },
+  "cell_assignment_counts": {
+    "INFRA OPERACIÓN MINERA": 56,
+    "INFRA PÚBLICA RESILIENTE": 43,
+    "INFRA HOSPITALARIA Y ASISTENCIAL": 4,
+    "INFRA CRÍTICA TRANSPORTE": 1,
+    "LAB MINERO DIGITAL": 33
+  },
+  "active_knowledge_counts": {
+    "INFRA PÚBLICA RESILIENTE": 24,
+    "INFRA HOSPITALARIA Y ASISTENCIAL": 6,
+    "INFRA OPERACIÓN MINERA": 65,
+    "LAB MINERO DIGITAL": 21
+  },
+  "effective_technical_source_groups": {
+    "INFRA HOSPITALARIA Y ASISTENCIAL": 2,
+    "INFRA OPERACIÓN MINERA": 7,
+    "INFRA PÚBLICA RESILIENTE": 6,
+    "LAB MINERO DIGITAL": 4
+  },
+  "checks": [
+    {
+      "id": "VC-01",
+      "status": "PASS",
+      "check": "Mapa 2A.2 contiene 292 relation_id únicos.",
+      "result": 292
+    },
+    {
+      "id": "VC-02",
+      "status": "PASS",
+      "check": "Partición de estados del mapa.",
+      "result": {
+        "ASIGNADA_2A2": 137,
+        "SIN_CELULA_PRIORIZADA": 150,
+        "NO_USAR_COMO_EVIDENCIA": 5
+      }
+    },
+    {
+      "id": "VC-03",
+      "status": "PASS",
+      "check": "Las 137 relaciones asignadas se dividen exactamente en 102 técnicas + 35 auxiliares, sin solapamiento.",
+      "result": {
+        "technical": 102,
+        "auxiliary": 35,
+        "overlap": 0
+      }
+    },
+    {
+      "id": "VC-04",
+      "status": "PASS",
+      "check": "La base de producción cubre exactamente las 292 relaciones: técnico + auxiliar + reserva + excluidas.",
+      "result": {
+        "covered": 292,
+        "missing": 0
+      }
+    },
+    {
+      "id": "VC-05",
+      "status": "PASS",
+      "check": "No hay solapamientos entre conocimiento activo, auxiliar, reserva y excluidas.",
+      "result": 0
+    },
+    {
+      "id": "VC-06",
+      "status": "PASS",
+      "check": "Los knowledge_id son únicos.",
+      "result": 116
+    },
+    {
+      "id": "VC-07",
+      "status": "PASS",
+      "check": "La trazabilidad knowledge_id → relation_id/documento coincide con el mapa.",
+      "result": 145
+    },
+    {
+      "id": "VC-08",
+      "status": "PASS",
+      "check": "Las definiciones de células de producción preservan el handoff 2A.2.",
+      "result": 5
+    },
+    {
+      "id": "VC-09",
+      "status": "PASS",
+      "check": "Las reglas factuales del paquete editorial son idénticas a las reglas de generación de la base de producción.",
+      "result": 14
+    },
+    {
+      "id": "VC-10",
+      "status": "PASS",
+      "check": "La plantilla de brief usa el mismo esquema de campos definido en las reglas editoriales.",
+      "result": 21
+    },
+    {
+      "id": "VC-11",
+      "status": "FIXED",
+      "check": "R0168 faltaba en la exportación Excel de la taxonomía, aunque estaba en JSON/Markdown y producción.",
+      "result": "Corregido en 03_taxonomia_maestra_2A2.xlsx"
+    }
+  ],
+  "residual_risks": [
+    {
+      "level": "CONTENT_GAP",
+      "area": "INFRA CRÍTICA TRANSPORTE",
+      "finding": "0 knowledge_items técnicos activos; existe 1 relación auxiliar/sectorial. La regla editorial bloquea generación técnica autónoma y exige CONTENT_GAP o insumo experto."
+    },
+    {
+      "level": "LOW_COVERAGE",
+      "area": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "finding": "6 knowledge_items derivados de 3 relaciones técnicas y 2 grupos documentales efectivos. La célula es utilizable, pero su cobertura documental es reducida frente a Minería y Pública."
+    },
+    {
+      "level": "MANAGED_EXCEPTION",
+      "area": "Auditoría 2A.1B → producción",
+      "finding": "R0082/R0195 se mantienen sólo como NAME_ONLY_DO_NOT_EXPAND; R0167/R0214 conservan únicamente el núcleo técnico del Triaxial con claims bloqueados; R0168 conserva la existencia del Laboratorio de geotecnia con los superlativos bloqueados."
+    }
+  ],
+  "canonical_package": [
+    {
+      "file": "02_mapa_contenidos_2A2_CERRADO.csv",
+      "bytes": 404888,
+      "sha256": "cab322c4fccd4f8efa959bad8423e9e6d56b4e8aa62c52dd3b573492bffc8dd6"
+    },
+    {
+      "file": "02_mapa_contenidos_2A2_CERRADO.xlsx",
+      "bytes": 129861,
+      "sha256": "2fffe2b219b9321ef97b455b7667a9af8d3c5f016249ae8110b755b77cdc8ace"
+    },
+    {
+      "file": "03_taxonomia_maestra_2A2.json",
+      "bytes": 135726,
+      "sha256": "23058580cd96afa269969c35507ad94e5685ea19ea4eaeaf52c2eb8bd14cbe0b"
+    },
+    {
+      "file": "03_taxonomia_maestra_2A2.md",
+      "bytes": 36102,
+      "sha256": "25b7405338a83a3d4408cd62fb9d2791564665d5781d3ca98a582927ed78bb04"
+    },
+    {
+      "file": "03_taxonomia_maestra_2A2.xlsx",
+      "bytes": 21382,
+      "sha256": "21cd6e2ec80e4c4a0eef305b0974615a7a54fbc5c5500ff6ff7e83d414ce5644"
+    },
+    {
+      "file": "04_base_produccion_IDIEM_2A2.json",
+      "bytes": 482773,
+      "sha256": "e2f9f25f04f1a8aee111d09d423ee833d771e63ddf0e85d23f01565d93a8392a"
+    },
+    {
+      "file": "04_base_produccion_IDIEM_2A2.xlsx",
+      "bytes": 96845,
+      "sha256": "3b0c829b9f8d850a222d9ab17592bece7acf3e0bda6735df6ffda71ab91a77fd"
+    },
+    {
+      "file": "04_base_produccion_IDIEM_2A2_README.md",
+      "bytes": 2981,
+      "sha256": "440104d4dbaf3131046a5351391d4508748b21bd0fcedfdd458bbf08d1458e91"
+    },
+    {
+      "file": "04_conocimiento_activo_IDIEM_2A2.csv",
+      "bytes": 68533,
+      "sha256": "27c93f8401a4b9935380fe29637d71c98ff75e7469042fb903bf57a3bc5db858"
+    },
+    {
+      "file": "05_reglas_editoriales_generacion_IDIEM_2A2.json",
+      "bytes": 18659,
+      "sha256": "f93dc1765c647235ddaadb6afb4f358cf0311165f90e1def7bb61a55d7ce24fc"
+    },
+    {
+      "file": "05_reglas_editoriales_generacion_IDIEM_2A2.md",
+      "bytes": 15746,
+      "sha256": "f463f5cd915cbd8d53e24ec4963bb055b90beb2a0e22cf6e0338f0b9c0e53646"
+    },
+    {
+      "file": "05_plantilla_brief_contenido_IDIEM_2A2.json",
+      "bytes": 793,
+      "sha256": "8399630b2413813e9ece6d3b4d61826c4afc821eb3b6cedb161821ef24c05f1b"
+    }
+  ],
+  "exclude_from_claude_operational_input": [
+    "02_mapa_contenidos_2A2.csv",
+    "02_mapa_contenidos_2A2.xlsx",
+    "handoff_IDIEM_2A2_cierre_celulas_2026-08-17.json",
+    "prompt_contexto_IDIEM_2A2_siguiente_chat.md",
+    "preview_*.png",
+    "assigned137.txt",
+    "missing60.txt",
+    "build_taxonomy.py"
+  ],
+  "note": "Los archivos 2A.1B y handoffs anteriores pueden conservarse como historial/auditoría, pero no deben mezclarse con los archivos operativos canónicos del handoff a Claude Code."
+}

@@ -1,0 +1,32 @@
+{
+  "ciclo": "Ciclo de Webinars IDIEM",
+  "modo": "auto",
+  "inscripcion_url": "https://idiem.cl/webinars/inscripcion",
+  "sesiones": [
+    {
+      "tema": "Cambio climático:",
+      "gancho": "Planificar hoy para enfrentar el mañana",
+      "titulo": "Planes territoriales para el cambio climático",
+      "foto_tema": "webinar_tema_puente_cautin.jpg",
+      "fecha": "2026-08-26",
+      "hora": "09:30",
+      "modalidad": "Online",
+      "plataforma": "Zoom",
+      "url_sesion": "https://zoom.us/j/idiem-webinar-1",
+      "url_inscripcion": "https://idiem.cl/webinars/cambio-climatico",
+      "relator_id": "EXP-12"
+    },
+    {
+      "tema": "Integridad estructural:",
+      "gancho": "Anticiparse a la falla",
+      "titulo": "Monitoreo de salud estructural en operación minera",
+      "foto_tema": "pho-0012_domo_mineria.jpg",
+      "fecha": "2026-09-02",
+      "hora": "16:00",
+      "modalidad": "Online",
+      "plataforma": "LinkedIn Live",
+      "url_sesion": "https://www.linkedin.com/events/idiem-webinar-2",
+      "relator_id": "EXP-01"
+    }
+  ]
+}
