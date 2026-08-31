@@ -71,3 +71,9 @@ aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
   viñetas `*`) → cierre ✅ → CTA con https://idiem.cl 👉 → hashtags. Sin superlativos.
 - **Saludos institucionales** (Fiestas Patrias, etc.) NO trazan a knowledge_id: mensaje
   general, sin proyectos/fechas/cifras no respaldadas por 2A.2.
+- **Efemérides del sector:** al armar la grilla de CADA mes, revisa `config/efemerides.json`
+  y suma la pieza conmemorativa si el mes cae en una fecha clave (adicional a los 12 posts,
+  como el saludo de Fiestas Patrias). Las que tienen respaldo técnico en 2A.2 (arquitectura,
+  geología, suelos, integridad estructural) pueden trazar a knowledge_id; **Transporte
+  Sostenible (26-nov) NO** — la célula INFRA CRÍTICA TRANSPORTE es CONTENT_GAP, así que va
+  como institucional general sin afirmar capacidades técnicas.

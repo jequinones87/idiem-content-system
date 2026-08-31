@@ -77,6 +77,23 @@ El equipo de MKT (Kike) es la autoridad de tono. Patrones observados en sus rees
   esquina inferior derecha, sin tapar el círculo ni el logo IDIEM, manteniendo la
   foto de fondo.
 
+## Efemérides clave del sector (calendario de contenidos)
+
+Al planificar la grilla de **cada mes**, revisar `config/efemerides.json` y sumar una
+pieza conmemorativa si el mes cae en una de estas fechas (adicional a los 12 posts base):
+
+| Fecha | Efeméride | Líneas IDIEM | Traza |
+|---|---|---|---|
+| 5 oct | Día Mundial de la Arquitectura | Revisión de proyectos, BIM (IPR/IHA) | puede trazar a knowledge_id |
+| 13 oct | Reducción del Riesgo de Desastres | Integridad estructural, geotecnia, monitoreo (IOM/IPR/LMD) | puede trazar a knowledge_id |
+| 17 oct | Día del Geólogo (Chile) | Geotecnia y rocas, mecánica de suelos (LMD/IOM) | puede trazar a knowledge_id |
+| 26 nov | Transporte Sostenible | INFRA CRÍTICA TRANSPORTE (**CONTENT_GAP**) | **NO** técnico → institucional general |
+| 5 dic | Día Mundial del Suelo | Mecánica de suelos, ensayos de suelos, geotecnia (LMD/IPR/IOM) | puede trazar a knowledge_id |
+
+Regla: mismas cautelas que un saludo — las que no tienen respaldo técnico en 2A.2 se
+mantienen institucionales/generales; **Transporte Sostenible** no puede afirmar
+capacidades técnicas (la célula ICT no tiene conocimiento activo).
+
 ## Piezas institucionales (saludos)
 
 - Los **saludos** (Fiestas Patrias, etc.) son piezas conmemorativas que **NO trazan a

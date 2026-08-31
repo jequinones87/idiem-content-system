@@ -344,6 +344,7 @@ def render_card(seq: int, post, uris: list[str]) -> str:
       <img class="main" src="{uris[0]}" data-idx="0" alt="Post {seq:02d}">
       <span class="fmtbadge">{fmt_label}</span>
       {status_chip(seq)}
+      <span class="li-badge" hidden>🔗 En LinkedIn</span>
       <span class="zoomhint">clic para ampliar</span>
     </div>
     {strip}
@@ -364,6 +365,7 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     <div class="editline"></div>
 
     <div class="btns">
+      <button class="btn linkedin" type="button">🔗 Marcar subido a LinkedIn</button>
       <button class="btn ready" type="button">✓ Marcar listo para aplicar</button>
       <button class="btn regen" type="button">🔄 Solicitar regeneración</button>
       <button class="btn ghost png" type="button">Descargar PNG</button>
@@ -396,6 +398,7 @@ def render_special_card(s: dict, uris: list[str]) -> str:
       <img class="main" src="{uris[0]}" data-idx="0" alt="Post {seq:02d}">
       <span class="fmtbadge">SALUDO · FIESTAS PATRIAS</span>
       {status_chip(seq)}
+      <span class="li-badge" hidden>🔗 En LinkedIn</span>
       <span class="zoomhint">clic para ampliar</span>
     </div>
   </div>
@@ -415,6 +418,7 @@ def render_special_card(s: dict, uris: list[str]) -> str:
     <div class="editline"></div>
 
     <div class="btns">
+      <button class="btn linkedin" type="button">🔗 Marcar subido a LinkedIn</button>
       <button class="btn ready" type="button">✓ Marcar listo para aplicar</button>
       <button class="btn regen" type="button">🔄 Solicitar regeneración</button>
       <button class="btn ghost png" type="button">Descargar PNG</button>
@@ -489,6 +493,15 @@ h1 b{color:var(--red)}
 .statuschip.pub{background:rgba(45,50,52,.82)}
 .statuschip.pend{background:rgba(198,120,10,.95)}
 .statuschip.ready{background:rgba(225,38,29,.95)}
+/* estado de publicación en LinkedIn */
+.li-badge{position:absolute;bottom:10px;left:10px;font-size:.62rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(10,102,194,.95);padding:4px 10px;border-radius:100px;backdrop-filter:blur(3px);display:inline-flex;align-items:center;gap:.35em}
+.post.posted{outline:2px solid rgba(10,102,194,.55);outline-offset:-2px}
+.btn.linkedin{background:transparent;color:#0a66c2;border-color:rgba(10,102,194,.5);font-weight:800}
+.btn.linkedin.on{background:#0a66c2;color:#fff;border-color:#0a66c2}
+.libox{display:inline-flex;align-items:center;gap:.4em;font-size:.8rem;color:var(--muted)}
+.libox b{font-size:1rem;font-weight:800;color:#0a66c2}
+.litoggle{font-family:inherit;font-size:.74rem;font-weight:700;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:100px;padding:5px 12px;cursor:pointer}
+.litoggle.on{color:#fff;background:#0a66c2;border-color:#0a66c2}
 /* tablero */
 .dash{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:0 0 22px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
 .counts{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:.8rem;color:var(--muted)}
@@ -563,7 +576,7 @@ code{font-family:inherit;font-weight:700;background:var(--gray-light);padding:1p
 <div class="wrap">
   <p class="eyebrow"><span class="dot"></span>IDIEM · Design System · Workstation</p>
   <h1>Septiembre — <b>12 posts + saludo Fiestas Patrias</b></h1>
-  <p class="lede">Cada post muestra su <strong>estado</strong> en la esquina de la gráfica: <b class="tpub">publicado</b> (lo que ya apliqué), <b class="tpend">pendiente</b> (lo editaste, aún sin aplicar) o <b class="tready">listo para aplicar</b> (lo marcaste tú). Abajo tienes el texto editable, notas de imagen, el <strong>historial</strong> de lo aplicado, y <strong>↺ volver a lo publicado</strong>. Con <strong>💾 Guardar y compartir</strong> tu avance queda visible en tus otros dispositivos y para el equipo.</p>
+  <p class="lede">Cada post muestra su <strong>estado</strong> en la esquina de la gráfica: <b class="tpub">publicado</b> (lo que ya apliqué), <b class="tpend">pendiente</b> (lo editaste, aún sin aplicar) o <b class="tready">listo para aplicar</b> (lo marcaste tú). Abajo tienes el texto editable, notas de imagen, el <strong>historial</strong> de lo aplicado, y <strong>↺ volver a lo publicado</strong>. Con <strong>💾 Guardar y compartir</strong> tu avance queda visible en tus otros dispositivos y para el equipo. Marca cada post como <strong>🔗 subido a LinkedIn</strong> para llevar el control de lo publicado.</p>
   <div class="bar">
     <input class="idfield" id="revName" type="text" placeholder="Tu nombre" autocomplete="name" spellcheck="false">
     <input class="idfield" id="revRole" type="text" placeholder="Especialidad / área (opcional)" spellcheck="false">
@@ -576,6 +589,7 @@ code{font-family:inherit;font-weight:700;background:var(--gray-light);padding:1p
       <span class="ct pend"><b id="nPend">0</b> pendientes</span>
       <span class="ct ready"><b id="nReady">0</b> listos para aplicar</span>
       <span class="ct pub"><b id="nPub">0</b> publicados</span>
+      <span class="libox">🔗 <b id="nLinked">0</b>/<span id="nTotal">0</span> subidos a LinkedIn</span>
     </div>
     <div class="filters" id="filters">
       <button class="fchip on" type="button" data-f="todos">Todos</button>
@@ -583,6 +597,7 @@ code{font-family:inherit;font-weight:700;background:var(--gray-light);padding:1p
       <button class="fchip" type="button" data-f="listo">Listos</button>
       <button class="fchip" type="button" data-f="publicado">Publicados</button>
     </div>
+    <button class="litoggle" type="button" id="liToggle">Ocultar los ya subidos</button>
     <button class="jumpnext" type="button" id="jumpNext">Ir al siguiente pendiente ↓</button>
   </div>
 
@@ -707,6 +722,19 @@ __CARDS__
 
     ready.addEventListener('click',function(){var rc=rec(cid);rc.ready=!rc.ready;persist();refresh();updateDash();
       toast(rc.ready?'Marcado como listo para aplicar.':'Marca de "listo" quitada.');});
+
+    // ---- estado "subido a LinkedIn" (independiente del estado de contenido) ----
+    var liBtn=post.querySelector('.btn.linkedin');
+    var liBadge=post.querySelector('.li-badge');
+    function paintLinked(){var r2=store[cid]||{};var on=!!r2.posted;
+      post.classList.toggle('posted',on);
+      if(liBtn){liBtn.classList.toggle('on',on);
+        liBtn.textContent=on?('✓ Subido a LinkedIn'+(r2.postedAt?(' · '+fmtWhen(r2.postedAt)):'')):'🔗 Marcar subido a LinkedIn';}
+      if(liBadge)liBadge.hidden=!on;}
+    paintLinked();
+    if(liBtn)liBtn.addEventListener('click',function(){var rc=rec(cid);rc.posted=!rc.posted;
+      rc.postedAt=rc.posted?new Date().toISOString():null;persist();paintLinked();updateDash();
+      toast(rc.posted?'Marcado como subido a LinkedIn.':'Marca de LinkedIn quitada.');});
 
     revs.forEach(function(b){b.addEventListener('click',function(){
       var f=b.getAttribute('data-field');
@@ -852,14 +880,21 @@ __CARDS__
 
   // ---- resumen + filtros (dashboard) ----
   function setTxt(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
-  var curFilter='todos';
+  var curFilter='todos', hidePosted=false;
   function applyFilter(){document.querySelectorAll('.post').forEach(function(p){
     var st=p.getAttribute('data-status')||'publicado';
-    p.classList.toggle('hide', curFilter!=='todos'&&st!==curFilter);});}
-  function updateDash(){var c={pendiente:0,listo:0,publicado:0};
+    var byStatus=curFilter==='todos'||st===curFilter;
+    var byLinked=!hidePosted||!p.classList.contains('posted');
+    p.classList.toggle('hide', !(byStatus&&byLinked));});}
+  function updateDash(){var c={pendiente:0,listo:0,publicado:0},linked=0,total=0;
     document.querySelectorAll('.post').forEach(function(p){var s=p.getAttribute('data-status')||'publicado';
-      if(c[s]==null)c[s]=0;c[s]++;});
-    setTxt('nPend',c.pendiente);setTxt('nReady',c.listo);setTxt('nPub',c.publicado);applyFilter();}
+      if(c[s]==null)c[s]=0;c[s]++;total++;if(p.classList.contains('posted'))linked++;});
+    setTxt('nPend',c.pendiente);setTxt('nReady',c.listo);setTxt('nPub',c.publicado);
+    setTxt('nLinked',linked);setTxt('nTotal',total);applyFilter();}
+  var liToggle=document.getElementById('liToggle');
+  if(liToggle)liToggle.addEventListener('click',function(){hidePosted=!hidePosted;
+    this.classList.toggle('on',hidePosted);
+    this.textContent=hidePosted?'Mostrar todos':'Ocultar los ya subidos';applyFilter();});
   var filters=document.getElementById('filters');
   if(filters)filters.addEventListener('click',function(e){var b=e.target.closest('.fchip');if(!b)return;
     curFilter=b.getAttribute('data-f');
