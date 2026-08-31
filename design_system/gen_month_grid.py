@@ -31,13 +31,30 @@ from idiem.review import compose_month, set_post_copy  # noqa: E402
 ROOT = Path(__file__).resolve().parent
 ASSETS = ROOT / "assets"
 MONTH = ASSETS / "month"
-SCRATCH = Path("/tmp/claude-0/-home-user-idiem-content-system/"
-               "1c5b178b-f8ee-5946-beb8-9cf3fffd70df/scratchpad")
+
+
+def _svg_data_uri(path: Path) -> str:
+    return "data:image/svg+xml;base64," + base64.b64encode(path.read_bytes()).decode()
+
+
+def _ring_path(path: Path) -> str:
+    """Extrae el trazo del anillo geométrico de marca (viewBox 0 0 850 850)."""
+    svg = path.read_text(encoding="utf-8")
+    for d in re.findall(r'd="([^"]+)"', svg):
+        if d.lstrip().startswith("M"):
+            return d
+    raise ValueError(f"no ring path in {path}")
+
 
 # ---- recursos oficiales compartidos (idénticos a Plantilla 01) --------------
-SLOGAN = (SCRATCH / "_slogan.txt").read_text().strip()
-LOGO = (SCRATCH / "_logo.txt").read_text().strip()
-RING = (SCRATCH / "_ring.txt").read_text().strip()
+# Reconstruidos desde los SVG versionados en assets/. Antes vivían en un
+# scratchpad efímero de sesión, lo que rompía la reproducibilidad del pipeline
+# (el import fallaba en cualquier máquina nueva). Ahora la fuente es el repo.
+# Nota: si se hace un re-render completo (emit→render), verificar una lámina
+# contra la gráfica publicada antes de republicar (fidelidad de logo/slogan).
+SLOGAN = _svg_data_uri(ASSETS / "eslogan_idiem_3_blanco.svg")
+LOGO = _svg_data_uri(ASSETS / "logo_idiem_oficial.svg")
+RING = _ring_path(ASSETS / "circulo_geometrico.svg")
 
 
 def data_uri(path: Path) -> str:
@@ -76,7 +93,7 @@ COPY = {
   "cta": "¿Necesitas un peritaje de incendio o evaluar el riesgo de tus instalaciones? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Minería #Ingeniería #Seguridad #Peritajes #ContinuidadOperacional"},
 
  "PLAN-KB-IPR-008-03": {
-  "hook": "🏛️ Para un mandante público, pocas cosas duelen tanto como el atraso de una obra: cada desviación golpea plazos, presupuesto y confianza.",
+  "hook": "🏛️ Para un mandante público, pocas cosas afectan tanto como el atraso de una obra: cada desviación golpea plazos, presupuesto y confianza.",
   "body": ("Y ese atraso muchas veces nace de una mirada fragmentada del proyecto, sin acompañamiento técnico a lo "
     "largo de todo el ciclo. 📉\n\n"
     "En #IDIEM entregamos estudios técnicos y asesorías para el sector público a lo largo del ciclo completo "
@@ -154,7 +171,7 @@ COPY = {
   "cta": "¿Enfrentas un conflicto contractual en salud? Conversemos en https://idiem.cl 👉\n\n#IDIEM #InfraestructuraHospitalaria #Salud #Ingeniería"},
 
  "PLAN-KB-IOM-056-10": {
-  "hook": "📡 Una falla en un equipo rotativo crítico rara vez avisa… salvo que lo estés monitoreando.",
+  "hook": "📡 Una falla en un activo crítico rara vez avisa… salvo que lo estés monitoreando.",
   "body": ("Esperar a la próxima inspección programada puede significar detectar tarde un cambio de comportamiento "
     "en un activo clave de la faena. La vigilancia continua marca la diferencia entre reaccionar y "
     "anticiparse. 🔍\n\n"
@@ -166,16 +183,16 @@ COPY = {
   "cta": "¿Quieres anticiparte a las fallas de tus activos críticos? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Minería #Mantenimiento #Confiabilidad #Monitoreo"},
 
  "PLAN-KB-IPR-024-11": {
-  "hook": "🏗️ En una obra pública, la calidad no se declara: se ensaya. Y un ensayo mal hecho compromete la seguridad de todo el proyecto.",
-  "body": ("Sin control técnico riguroso sobre suelos, hormigones y especialidades, los problemas aparecen tarde, "
-    "cuando corregirlos cuesta más. 📉\n\n"
-    "En #IDIEM ejecutamos ensayos de control de obras en suelos y hormigones —densidad con densímetro nuclear "
-    "o cono de arena, granulometrías, Proctor, CBR, control de hormigón fresco, extracción de testigos y "
-    "madurez— además de ensayos de especialidad: corte directo, placa de carga, resistividad eléctrica, "
-    "ensayos al asfalto, END a soldaduras, resistencia al fuego y peritajes en hormigones. 🧪📐\n\n"
-    "Respaldados por una red de laboratorios acreditados INN y MINVU y certificación ISO 9001, con modalidad "
-    "spot o permanente en terreno. ✅"),
-  "cta": "¿Tu obra necesita control técnico con respaldo? Conversemos en https://idiem.cl 👉\n\n#IDIEM #ObrasPúblicas #Ensayos #Construcción #Calidad"},
+  "hook": ("🏗️ En una obra, la calidad debe demostrarse con evidencia técnica. Ensayos bien ejecutados, un "
+    "muestreo representativo y la trazabilidad permiten verificar especificaciones y detectar desviaciones a "
+    "tiempo."),
+  "body": ("En #IDIEM realizamos control técnico en suelos, hormigones, asfaltos y otras especialidades: densidad "
+    "en terreno, granulometría, Proctor, CBR, hormigón fresco, testigos, madurez, corte directo, placa de "
+    "carga, resistividad eléctrica y END en soldaduras. 🧪📐\n\n"
+    "También realizamos ensayos de resistencia al fuego y evaluaciones periciales en hormigón.\n\n"
+    "Contamos con laboratorios acreditados por el INN e inscritos en el Registro Oficial del MINVU, dentro de "
+    "sus alcances, y un sistema de gestión certificado ISO 9001. Atención puntual o permanente en obra. ✅"),
+  "cta": "¿Tu proyecto necesita control técnico con respaldo? Conversemos en idiem.cl 👉\n\n#IDIEM #ObrasPúblicas #Ensayos #Construcción #Calidad"},
 
  "PLAN-KB-LMD-020-12": {
   "hook": "🔩 Una soldadura defectuosa en una estructura metálica minera puede no verse… hasta que falla.",

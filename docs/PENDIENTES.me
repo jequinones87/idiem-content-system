@@ -10,7 +10,8 @@ para hechos de IDIEM). Reglas en CLAUDE.md y docs/09_EDITORIAL_MEMORY.md.
 
 ## Repo y rama
 - Repo: jequinones87/idiem-content-system
-- Rama de trabajo: claude/file-reading-nsposu
+- Rama de trabajo (ronda 2026-08-31): claude/idiem-editorial-updates-5osizu
+  (continuación de claude/file-reading-nsposu).
 - Sin PR salvo que Kike lo pida.
 
 ## Entregable activo: "Workstation Septiembre"
@@ -30,7 +31,7 @@ copy e imágenes; Claude aplica y republica.
 7. Artifact publish a la MISMA URL con capabilities={"artifact":{},"downloads":true}
    (leer la versión viva ANTES de publicar, o el guard rechaza).
 8. Subir la KEY de localStorage (idiem_ws_sep2026_vN → v(N+1)) para resetear el
-   navegador de Kike a estado limpio "publicado". (Actual: v4 → subir a v5.)
+   navegador de Kike a estado limpio "publicado". (Actual: v5 en vivo → próxima ronda v6.)
 9. Commit + push a claude/file-reading-nsposu (footer Co-Authored-By +
    Claude-Session). Sin PR salvo pedido explícito.
 
@@ -45,16 +46,23 @@ copy e imágenes; Claude aplica y republica.
    re-renderizar un slide: la foto se hornea como data-URI en el emit.)
 
 ## TODOs abiertos
-1. Aplicar los últimos cambios de Kike a los posts.
-   ESTADO: bloqueado. Al releer el artifact el ws-state estaba vacío
-   ("posts con estado: ninguno"). Kike debe hacer clic en "Guardar y compartir"
-   (o pegar los cambios) y recién ahí releer y aplicar.
-2. Botón "listo para publicar" (aprobado).
-   DISEÑO recomendado: flag NUEVO e independiente "✅ Aprobado para publicar"
-   por post (botón + badge verde en la gráfica + contador en el tablero).
-   Pipeline de estados: revisado → aprobado → subido a LinkedIn.
-   Coexiste con los flags existentes ("listo para aplicar" y "subido a LinkedIn").
-   Campo de estado: approved / approvedAt. Subir KEY localStorage a v5.
+(sin pendientes bloqueantes — ver "Hecho en la ronda 2026-08-31")
+
+## Hecho en la ronda 2026-08-31
+1. Aplicados los cambios de Kike desde el ws-state de la workstation:
+   - Copy: post 3 ("afectan"), post 10 ("activo crítico"), post 11 (reescritura completa).
+   - Fotos (librería de Drive de IDIEM, no stock/IA): post 3 `generica_planos_arquitectos_casco`,
+     post 6 `estructura_andamio_minera`, post 9 `generica_ejecutivos_casco_acuerdo`.
+     Bajadas y horneadas en `assets/month/pNN.jpg`; trazas en PHOTO_SUB.
+   - Ojo CTA post 11: MKT dejó "idiem.cl" (sin https). Se respetó literal; confirmar si normalizar.
+2. Botón "✅ Aprobado para publicar" (flag independiente `approved`/`approvedAt`):
+   botón + badge verde en la gráfica + contador `nApproved/nApTotal` en el tablero.
+   Pipeline: revisado → aprobado → subido a LinkedIn. Coexiste con "listo" y "subido a LinkedIn".
+   KEY localStorage subida a **v5** (idiem_ws_sep2026_v5).
+3. Arreglado el pipeline: SLOGAN/LOGO/RING ahora se cargan desde los SVG versionados en
+   `assets/` (antes vivían en un scratchpad efímero → el import fallaba en máquina nueva).
+   LOGO correcto = `logo_idiem_oficial.svg` (el wordmark; NO `logo_idiem.svg`, que es swatch).
+   Deps para correr el pipeline: `pip install jsonschema Pillow`.
 
 ## Reglas editoriales NO negociables (recordatorio rápido)
 - Green Hospital es certificación PROPIA de IDIEM. NO mencionar "Salud sin Daño".

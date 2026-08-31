@@ -119,3 +119,21 @@ capacidades técnicas (la célula ICT no tiene conocimiento activo).
   - Post 12: la soldadura se inspecciona por muestreo (no "cada soldadura verificada");
     se califica al soldador, no la soldadura.
   - Nuevo post 13: saludo Fiestas Patrias (institucional).
+- **2026-08-31** — Ronda MKT (Kike), aplicada desde el ws-state de la workstation:
+  - Post 3: copy → "pocas cosas **afectan** tanto" (antes "duelen"); foto propia de
+    librería `generica_planos_arquitectos_casco` (arquitectos revisando planos + cascos).
+  - Post 6: foto propia de librería `estructura_andamio_minera` (andamiaje industrial/minero;
+    reemplaza vigas de acero).
+  - Post 9: foto propia de librería `generica_ejecutivos_casco_acuerdo` (apretón de manos /
+    acuerdo, con casco y planos; reemplaza la versión "construccion").
+  - Post 10: copy → "una falla en un **activo** crítico" (antes "equipo rotativo").
+  - Post 11: copy reescrito (versión MKT como oro) — "la calidad debe demostrarse con
+    evidencia técnica"; se lista control técnico (suelos, hormigones, asfaltos, END en
+    soldaduras), resistencia al fuego y peritajes; acreditación INN + Registro Oficial MINVU
+    "dentro de sus alcances" + ISO 9001.
+    - **Nota CTA:** MKT escribió "Conversemos en **idiem.cl** 👉" (sin `https://`). Se respetó
+      su texto literal (MKT es la autoridad de tono). El estándar sigue siendo
+      `https://idiem.cl`; confirmar con Kike si debe normalizarse.
+  - Fotos: son fotos propias de la **librería de Drive de IDIEM** (no stock ni IA); trazan a
+    su archivo por `viewUrl`. Bajadas, reescaladas (lado corto ≈1200px, JPEG q86) e incrustadas
+    en `assets/month/pNN.jpg`.

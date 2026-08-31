@@ -23,6 +23,7 @@ import io
 import json
 from pathlib import Path
 import sys
+import tempfile
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
@@ -30,21 +31,20 @@ import gen_month_grid as G          # noqa: E402
 import carousel as CAR              # noqa: E402
 from bundle_month import grid_style, resolve_photo  # noqa: E402
 
-BUILD_DEFAULT = Path("/tmp/claude-0/-home-user-idiem-content-system/"
-                     "1c5b178b-f8ee-5946-beb8-9cf3fffd70df/scratchpad/ws")
+BUILD_DEFAULT = Path(tempfile.gettempdir()) / "idiem_ws_build"
 
 # Sustitución liviana: el pick top del motor pesa 8.3 MB (no descargable por el
 # conector). Se usa su hermana de librería, misma célula/subtema, versión ~1080px.
 PHOTO_SUB = {
-    6:  {"photo_id": "PHO-0044", "orig": "PHO-0061",
-         "fuente": "https://drive.google.com/file/d/1TMjf-mU8rJ-Ds-O2d1sP0ce9MHISjLUS/view",
-         "detalle": "vigas de acero · casco IDIEM"},
+    6:  {"photo_id": "estructura_andamio_minera", "orig": "generica_idiem_vigas_acero",
+         "fuente": "https://drive.google.com/file/d/1tY9VZc5shDLNaNXtQLVOBg1lvxcUrIiL/view",
+         "detalle": "andamiaje en estructura industrial/minera", "reason": "cambio pedido (MKT): estructura + andamio minero"},
     10: {"photo_id": "PHO-0013", "orig": "PHO-0040",
          "fuente": "https://drive.google.com/file/d/14Ad1dRP_Dfipr-C88kGtBVJL24KDdMOS/view",
          "detalle": "domo minero · dron"},
-    3:  {"photo_id": "PHO-0085", "orig": "PHO-0091",
-         "fuente": "https://drive.google.com/file/d/1xUlYXbYXjL1VpIvy_EewpWXAOSQtEWhQ/view",
-         "detalle": "casco IDIEM · tablet · revisión", "reason": "foto original pixelada (329px)"},
+    3:  {"photo_id": "generica_planos_arquitectos_casco", "orig": "generica_casco_idiem_tablet",
+         "fuente": "https://drive.google.com/file/d/1QwCE_7mePOczYoprFyyi9S7ts_kqyJac/view",
+         "detalle": "arquitectos revisando planos en mesa · cascos", "reason": "cambio pedido (MKT): planos + arquitectos + casco"},
     11: {"photo_id": "PHO-0095", "orig": "PHO-0004",
          "fuente": "https://drive.google.com/file/d/13ZKXpQ0kMFr0j7TVW7Jl8CIrL3DGOanJ/view",
          "detalle": "edificio en construcción (Costanera)", "reason": "cambio pedido"},
@@ -57,9 +57,9 @@ PHOTO_SUB = {
     8:  {"photo_id": "Tuberia_HDPE_END_ACERO4", "orig": "Adobe Stock #1614411840",
          "fuente": "https://drive.google.com/file/d/1sHwdzCXyJeneC35woSwz8DkT8qKH3fXp/view",
          "detalle": "END en tubería HDPE (foto propia)", "reason": "cambio pedido: foto propia de faena"},
-    9:  {"photo_id": "generica_ejecutivos_casco_construccion", "orig": "Adobe Stock #212862972",
-         "fuente": "https://drive.google.com/file/d/1_eczAWE2nzda5yfFx_jV23xorWODv8cG/view",
-         "detalle": "ejecutivos con casco · apretón de manos en obra", "reason": "cambio pedido: foto de librería"},
+    9:  {"photo_id": "generica_ejecutivos_casco_acuerdo", "orig": "generica_ejecutivos_casco_construccion",
+         "fuente": "https://drive.google.com/file/d/1ibYJBUmV1q3EKfBJIoDzcDuWpoH67xLO/view",
+         "detalle": "ejecutivos · apretón de manos (acuerdo) · casco y planos", "reason": "cambio pedido (MKT): ejecutivos + casco + acuerdo"},
 }
 
 # Fotos Adobe Stock licenciadas (tier libre) para los posts sin foto de librería
@@ -81,19 +81,24 @@ APPLIED_LOG = {
          {"date": "2026-08-24", "summary": "Foto de acuerdo/ejecutivos (previa)"}],
     2:  [{"date": "2026-08-28", "summary": "Carrusel reformulado: causa-origen, estructural/mecánico, estudio de riesgo"},
          {"date": "2026-08-28", "summary": "Copy reescrito + orden de láminas (incendios → fallas)"}],
-    3:  [{"date": "2026-08-24", "summary": "Foto casco + tablet (se corrigió la pixelada)"}],
+    3:  [{"date": "2026-08-31", "summary": "Copy (“afectan”) + foto arquitectos/planos/casco (MKT)"},
+         {"date": "2026-08-24", "summary": "Foto casco + tablet (se corrigió la pixelada)"}],
     5:  [{"date": "2026-08-28", "summary": "Sello Green Hospital 50% más grande, detrás del círculo"},
          {"date": "2026-08-28", "summary": "Sello Green Hospital más grande (¼ del lienzo), detrás del círculo"},
          {"date": "2026-08-28", "summary": "Copy (sin Salud sin Daño, ISO 50001) + sello Green Hospital"}],
-    6:  [{"date": "2026-08-21", "summary": "Foto vigas de acero / casco IDIEM"}],
+    6:  [{"date": "2026-08-31", "summary": "Foto → estructura/andamio minero (MKT)"},
+         {"date": "2026-08-21", "summary": "Foto vigas de acero / casco IDIEM"}],
     7:  [{"date": "2026-08-28", "summary": "Círculo movido a la derecha (se ve el equipo de acústica)"},
          {"date": "2026-08-28", "summary": "Copy (estudio de impacto, D.D. 14/24) + foto propia de acústica"}],
     8:  [{"date": "2026-08-28", "summary": "Foto propia de faena (tubería HDPE)"}],
-    9:  [{"date": "2026-08-28", "summary": "Reencuadre para que el círculo no tape la cara"},
+    9:  [{"date": "2026-08-31", "summary": "Foto → ejecutivos + apretón de manos (acuerdo) (MKT)"},
+         {"date": "2026-08-28", "summary": "Reencuadre para que el círculo no tape la cara"},
          {"date": "2026-08-28", "summary": "Foto → ejecutivos con casco, apretón de manos en obra (librería)"},
          {"date": "2026-08-28", "summary": "Foto de acuerdo / apretón de manos"}],
-    10: [{"date": "2026-08-21", "summary": "Foto domo minero / dron"}],
-    11: [{"date": "2026-08-24", "summary": "Foto edificio en construcción (Costanera)"}],
+    10: [{"date": "2026-08-31", "summary": "Copy: “activo crítico” (antes “equipo rotativo”) (MKT)"},
+         {"date": "2026-08-21", "summary": "Foto domo minero / dron"}],
+    11: [{"date": "2026-08-31", "summary": "Copy reescrito: control técnico con evidencia (MKT)"},
+         {"date": "2026-08-24", "summary": "Foto edificio en construcción (Costanera)"}],
     12: [{"date": "2026-08-28", "summary": "Título de gráfica → “Detectar antes de fallar”"},
          {"date": "2026-08-28", "summary": "Gráfica: soldaduras inspeccionadas por muestreo"}],
     13: [{"date": "2026-08-28", "summary": "Foto → bandera chilena + camión minero (librería)"},
@@ -344,7 +349,10 @@ def render_card(seq: int, post, uris: list[str]) -> str:
       <img class="main" src="{uris[0]}" data-idx="0" alt="Post {seq:02d}">
       <span class="fmtbadge">{fmt_label}</span>
       {status_chip(seq)}
-      <span class="li-badge" hidden>🔗 En LinkedIn</span>
+      <div class="botleft">
+        <span class="ap-badge" hidden>✅ Aprobado</span>
+        <span class="li-badge" hidden>🔗 En LinkedIn</span>
+      </div>
       <span class="zoomhint">clic para ampliar</span>
     </div>
     {strip}
@@ -365,8 +373,9 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     <div class="editline"></div>
 
     <div class="btns">
-      <button class="btn linkedin" type="button">🔗 Marcar subido a LinkedIn</button>
       <button class="btn ready" type="button">✓ Marcar listo para aplicar</button>
+      <button class="btn approve" type="button">✅ Aprobar para publicar</button>
+      <button class="btn linkedin" type="button">🔗 Marcar subido a LinkedIn</button>
       <button class="btn regen" type="button">🔄 Solicitar regeneración</button>
       <button class="btn ghost png" type="button">Descargar PNG</button>
       <button class="btn ghost pdf" type="button">Descargar PDF</button>
@@ -398,7 +407,10 @@ def render_special_card(s: dict, uris: list[str]) -> str:
       <img class="main" src="{uris[0]}" data-idx="0" alt="Post {seq:02d}">
       <span class="fmtbadge">SALUDO · FIESTAS PATRIAS</span>
       {status_chip(seq)}
-      <span class="li-badge" hidden>🔗 En LinkedIn</span>
+      <div class="botleft">
+        <span class="ap-badge" hidden>✅ Aprobado</span>
+        <span class="li-badge" hidden>🔗 En LinkedIn</span>
+      </div>
       <span class="zoomhint">clic para ampliar</span>
     </div>
   </div>
@@ -418,8 +430,9 @@ def render_special_card(s: dict, uris: list[str]) -> str:
     <div class="editline"></div>
 
     <div class="btns">
-      <button class="btn linkedin" type="button">🔗 Marcar subido a LinkedIn</button>
       <button class="btn ready" type="button">✓ Marcar listo para aplicar</button>
+      <button class="btn approve" type="button">✅ Aprobar para publicar</button>
+      <button class="btn linkedin" type="button">🔗 Marcar subido a LinkedIn</button>
       <button class="btn regen" type="button">🔄 Solicitar regeneración</button>
       <button class="btn ghost png" type="button">Descargar PNG</button>
       <button class="btn ghost pdf" type="button">Descargar PDF</button>
@@ -493,8 +506,15 @@ h1 b{color:var(--red)}
 .statuschip.pub{background:rgba(45,50,52,.82)}
 .statuschip.pend{background:rgba(198,120,10,.95)}
 .statuschip.ready{background:rgba(225,38,29,.95)}
-/* estado de publicación en LinkedIn */
-.li-badge{position:absolute;bottom:10px;left:10px;font-size:.62rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(10,102,194,.95);padding:4px 10px;border-radius:100px;backdrop-filter:blur(3px);display:inline-flex;align-items:center;gap:.35em}
+/* badges de estado de publicación (esquina inf-izq, apilados) */
+.botleft{position:absolute;bottom:10px;left:10px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.ap-badge{font-size:.62rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(21,128,61,.95);padding:4px 10px;border-radius:100px;backdrop-filter:blur(3px);display:inline-flex;align-items:center;gap:.35em}
+.li-badge{font-size:.62rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(10,102,194,.95);padding:4px 10px;border-radius:100px;backdrop-filter:blur(3px);display:inline-flex;align-items:center;gap:.35em}
+/* estado "aprobado para publicar" (independiente) */
+.post.approved{outline:2px solid rgba(21,128,61,.55);outline-offset:-2px}
+.btn.approve{background:transparent;color:#15803d;border-color:rgba(21,128,61,.5);font-weight:800}
+.btn.approve.on{background:#15803d;color:#fff;border-color:#15803d}
+/* estado de publicación en LinkedIn (gana el borde si además está subido) */
 .post.posted{outline:2px solid rgba(10,102,194,.55);outline-offset:-2px}
 .btn.linkedin{background:transparent;color:#0a66c2;border-color:rgba(10,102,194,.5);font-weight:800}
 .btn.linkedin.on{background:#0a66c2;color:#fff;border-color:#0a66c2}
@@ -507,7 +527,7 @@ h1 b{color:var(--red)}
 .counts{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:.8rem;color:var(--muted)}
 .ct{display:inline-flex;align-items:center;gap:.4em}
 .ct b{font-size:1rem;font-weight:800;color:var(--ink)}
-.ct.pend b{color:#c6780a}.ct.ready b{color:var(--red)}
+.ct.pend b{color:#c6780a}.ct.ready b{color:var(--red)}.ct.appr b{color:#15803d}
 .filters{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
 .fchip{font-family:inherit;font-size:.74rem;font-weight:700;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:100px;padding:5px 12px;cursor:pointer}
 .fchip.on{color:#fff;background:var(--gray-dark);border-color:var(--gray-dark)}
@@ -576,7 +596,7 @@ code{font-family:inherit;font-weight:700;background:var(--gray-light);padding:1p
 <div class="wrap">
   <p class="eyebrow"><span class="dot"></span>IDIEM · Design System · Workstation</p>
   <h1>Septiembre — <b>12 posts + saludo Fiestas Patrias</b></h1>
-  <p class="lede">Cada post muestra su <strong>estado</strong> en la esquina de la gráfica: <b class="tpub">publicado</b> (lo que ya apliqué), <b class="tpend">pendiente</b> (lo editaste, aún sin aplicar) o <b class="tready">listo para aplicar</b> (lo marcaste tú). Abajo tienes el texto editable, notas de imagen, el <strong>historial</strong> de lo aplicado, y <strong>↺ volver a lo publicado</strong>. Con <strong>💾 Guardar y compartir</strong> tu avance queda visible en tus otros dispositivos y para el equipo. Marca cada post como <strong>🔗 subido a LinkedIn</strong> para llevar el control de lo publicado.</p>
+  <p class="lede">Cada post muestra su <strong>estado</strong> en la esquina de la gráfica: <b class="tpub">publicado</b> (lo que ya apliqué), <b class="tpend">pendiente</b> (lo editaste, aún sin aplicar) o <b class="tready">listo para aplicar</b> (lo marcaste tú). Abajo tienes el texto editable, notas de imagen, el <strong>historial</strong> de lo aplicado, y <strong>↺ volver a lo publicado</strong>. Con <strong>💾 Guardar y compartir</strong> tu avance queda visible en tus otros dispositivos y para el equipo. Cuando un post quede conforme, márcalo <strong>✅ Aprobado para publicar</strong> y luego <strong>🔗 subido a LinkedIn</strong> una vez publicado (flujo: <b class="tpub">revisado → aprobado → subido</b>).</p>
   <div class="bar">
     <input class="idfield" id="revName" type="text" placeholder="Tu nombre" autocomplete="name" spellcheck="false">
     <input class="idfield" id="revRole" type="text" placeholder="Especialidad / área (opcional)" spellcheck="false">
@@ -589,6 +609,7 @@ code{font-family:inherit;font-weight:700;background:var(--gray-light);padding:1p
       <span class="ct pend"><b id="nPend">0</b> pendientes</span>
       <span class="ct ready"><b id="nReady">0</b> listos para aplicar</span>
       <span class="ct pub"><b id="nPub">0</b> publicados</span>
+      <span class="ct appr">✅ <b id="nApproved">0</b>/<span id="nApTotal">0</span> aprobados</span>
       <span class="libox">🔗 <b id="nLinked">0</b>/<span id="nTotal">0</span> subidos a LinkedIn</span>
     </div>
     <div class="filters" id="filters">
@@ -626,7 +647,7 @@ __CARDS__
 
 <script>
 (function(){
-  var KEY='idiem_ws_sep2026_v4';
+  var KEY='idiem_ws_sep2026_v5';
   function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function readJSON(s){try{return JSON.parse(s||'{}')||{};}catch(e){return {};}}
   function mergeState(base,over){var out={},k;for(k in base)out[k]=base[k];
@@ -735,6 +756,19 @@ __CARDS__
     if(liBtn)liBtn.addEventListener('click',function(){var rc=rec(cid);rc.posted=!rc.posted;
       rc.postedAt=rc.posted?new Date().toISOString():null;persist();paintLinked();updateDash();
       toast(rc.posted?'Marcado como subido a LinkedIn.':'Marca de LinkedIn quitada.');});
+
+    // ---- estado "aprobado para publicar" (independiente: revisado → aprobado → subido) ----
+    var apBtn=post.querySelector('.btn.approve');
+    var apBadge=post.querySelector('.ap-badge');
+    function paintApproved(){var r2=store[cid]||{};var on=!!r2.approved;
+      post.classList.toggle('approved',on);
+      if(apBtn){apBtn.classList.toggle('on',on);
+        apBtn.textContent=on?('✓ Aprobado'+(r2.approvedAt?(' · '+fmtWhen(r2.approvedAt)):'')):'✅ Aprobar para publicar';}
+      if(apBadge)apBadge.hidden=!on;}
+    paintApproved();
+    if(apBtn)apBtn.addEventListener('click',function(){var rc=rec(cid);rc.approved=!rc.approved;
+      rc.approvedAt=rc.approved?new Date().toISOString():null;persist();paintApproved();updateDash();
+      toast(rc.approved?'Aprobado para publicar.':'Aprobación quitada.');});
 
     revs.forEach(function(b){b.addEventListener('click',function(){
       var f=b.getAttribute('data-field');
@@ -886,10 +920,12 @@ __CARDS__
     var byStatus=curFilter==='todos'||st===curFilter;
     var byLinked=!hidePosted||!p.classList.contains('posted');
     p.classList.toggle('hide', !(byStatus&&byLinked));});}
-  function updateDash(){var c={pendiente:0,listo:0,publicado:0},linked=0,total=0;
+  function updateDash(){var c={pendiente:0,listo:0,publicado:0},linked=0,approved=0,total=0;
     document.querySelectorAll('.post').forEach(function(p){var s=p.getAttribute('data-status')||'publicado';
-      if(c[s]==null)c[s]=0;c[s]++;total++;if(p.classList.contains('posted'))linked++;});
+      if(c[s]==null)c[s]=0;c[s]++;total++;if(p.classList.contains('posted'))linked++;
+      if(p.classList.contains('approved'))approved++;});
     setTxt('nPend',c.pendiente);setTxt('nReady',c.listo);setTxt('nPub',c.publicado);
+    setTxt('nApproved',approved);setTxt('nApTotal',total);
     setTxt('nLinked',linked);setTxt('nTotal',total);applyFilter();}
   var liToggle=document.getElementById('liToggle');
   if(liToggle)liToggle.addEventListener('click',function(){hidePosted=!hidePosted;
