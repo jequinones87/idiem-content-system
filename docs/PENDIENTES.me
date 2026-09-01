@@ -64,6 +64,20 @@ copy e imágenes; Claude aplica y republica.
    LOGO correcto = `logo_idiem_oficial.svg` (el wordmark; NO `logo_idiem.svg`, que es swatch).
    Deps para correr el pipeline: `pip install jsonschema Pillow`.
 
+## Agregado 2026-09-01
+- **Regla dura: copy ≤ 900 caracteres** + contador en vivo `N / 900` por post (ámbar >860,
+  rojo >900). PENDIENTE (con visto bueno de Kike): recortar posts 1/2/4/5 que exceden.
+- **Botón "📅 Agendar en Google Calendar" por post** + selector de fecha/hora
+  (`scheduledFor`/`scheduledTime`, default 09:00, evento de 30 min). El artifact NO puede
+  llamar la API de Calendar (iframe sandbox): el botón es un enlace `render?action=TEMPLATE`
+  que abre Calendar con el evento pre-llenado (título + copy + link a la workstation, ctz
+  America/Santiago). Badge `📅 DD-MM` en la gráfica + contador `agendados` en el tablero.
+  Flujo: revisado → aprobado → **agendado** → subido.
+  - PUERTA ABIERTA (a pedido): crear los eventos REALES en bloque vía el conector de Google
+    Calendar (tools `mcp__Google_Calendar__*` en el chat), leyendo `scheduledFor` de cada post.
+- KEY localStorage sigue en **v5** (los flags `approved`/`scheduledFor` son aditivos; no se
+  reseteó para no borrar lo que Kike ya haya marcado).
+
 ## Reglas editoriales NO negociables (recordatorio rápido)
 - Green Hospital es certificación PROPIA de IDIEM. NO mencionar "Salud sin Daño".
   Se complementa con ISO 50001.

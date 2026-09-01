@@ -342,7 +342,7 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     # data de láminas para JS (idx -> uri en orden)
     slides_json = G.esc(json.dumps(uris))
 
-    return f'''<article class="post" data-seq="{seq}" data-cid="{G.esc(post.content_id)}" data-car="{"1" if is_car else "0"}" data-status="publicado" data-edited-at="" data-edited-by="">
+    return f'''<article class="post" data-seq="{seq}" data-cid="{G.esc(post.content_id)}" data-car="{"1" if is_car else "0"}" data-status="publicado" data-edited-at="" data-edited-by="" data-caltitle="{G.esc(f"Post {seq:02d} · {subname}" if subname else f"Post {seq:02d}")}">
   <script type="application/json" class="slides-data">{slides_json}</script>
   <div class="graphic">
     <div class="gwrap">
@@ -351,6 +351,7 @@ def render_card(seq: int, post, uris: list[str]) -> str:
       {status_chip(seq)}
       <div class="botleft">
         <span class="ap-badge" hidden>✅ Aprobado</span>
+        <span class="cal-badge" hidden>📅</span>
         <span class="li-badge" hidden>🔗 En LinkedIn</span>
       </div>
       <span class="zoomhint">clic para ampliar</span>
@@ -383,6 +384,14 @@ def render_card(seq: int, post, uris: list[str]) -> str:
       <button class="btn ghost copybtn" type="button">Copiar texto</button>
     </div>
 
+    <label class="lab">Fecha de publicación <span class="hint">— agéndala en tu Google Calendar</span>
+      <button class="calclear" type="button" hidden>↺ quitar fecha</button></label>
+    <div class="calrow">
+      <input type="date" class="caldate" aria-label="Fecha de publicación">
+      <input type="time" class="caltime" value="09:00" aria-label="Hora de publicación">
+      <a class="btn cal off" target="_blank" rel="noopener">📅 Agendar en Google Calendar</a>
+    </div>
+
     <div class="trace">
       <div class="tr"><span class="k">Ancla</span><span class="v"><code>{G.esc(post.content_id)}</code></span></div>
       <div class="tr"><span class="k">Evidencia</span><span class="v">{ev_codes}</span></div>
@@ -401,7 +410,7 @@ def render_special_card(s: dict, uris: list[str]) -> str:
     foto = ('Librería · <code>generica_bandera_chile_mineria</code> (bandera chilena + camión minero) · '
             '<a href="https://drive.google.com/file/d/18Vlym9diMd7rcuAbaWvFMapzAF491biH/view" target="_blank" rel="noopener">ver en Drive</a>'
             '<br><span class="muprompt">pieza conmemorativa de Fiestas Patrias (reemplaza a La Moneda)</span>')
-    return f'''<article class="post special" data-seq="{seq}" data-cid="{G.esc(s["content_id"])}" data-car="0" data-status="publicado" data-edited-at="" data-edited-by="">
+    return f'''<article class="post special" data-seq="{seq}" data-cid="{G.esc(s["content_id"])}" data-car="0" data-status="publicado" data-edited-at="" data-edited-by="" data-caltitle="{G.esc(f'Post {seq:02d} · {s["subtheme"]}')}">
   <script type="application/json" class="slides-data">{slides_json}</script>
   <div class="graphic">
     <div class="gwrap">
@@ -410,6 +419,7 @@ def render_special_card(s: dict, uris: list[str]) -> str:
       {status_chip(seq)}
       <div class="botleft">
         <span class="ap-badge" hidden>✅ Aprobado</span>
+        <span class="cal-badge" hidden>📅</span>
         <span class="li-badge" hidden>🔗 En LinkedIn</span>
       </div>
       <span class="zoomhint">clic para ampliar</span>
@@ -439,6 +449,14 @@ def render_special_card(s: dict, uris: list[str]) -> str:
       <button class="btn ghost png" type="button">Descargar PNG</button>
       <button class="btn ghost pdf" type="button">Descargar PDF</button>
       <button class="btn ghost copybtn" type="button">Copiar texto</button>
+    </div>
+
+    <label class="lab">Fecha de publicación <span class="hint">— agéndala en tu Google Calendar</span>
+      <button class="calclear" type="button" hidden>↺ quitar fecha</button></label>
+    <div class="calrow">
+      <input type="date" class="caldate" aria-label="Fecha de publicación">
+      <input type="time" class="caltime" value="09:00" aria-label="Hora de publicación">
+      <a class="btn cal off" target="_blank" rel="noopener">📅 Agendar en Google Calendar</a>
     </div>
 
     <div class="trace">
@@ -511,6 +529,7 @@ h1 b{color:var(--red)}
 /* badges de estado de publicación (esquina inf-izq, apilados) */
 .botleft{position:absolute;bottom:10px;left:10px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
 .ap-badge{font-size:.62rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(21,128,61,.95);padding:4px 10px;border-radius:100px;backdrop-filter:blur(3px);display:inline-flex;align-items:center;gap:.35em}
+.cal-badge{font-size:.62rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(124,58,237,.95);padding:4px 10px;border-radius:100px;backdrop-filter:blur(3px);display:inline-flex;align-items:center;gap:.35em}
 .li-badge{font-size:.62rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(10,102,194,.95);padding:4px 10px;border-radius:100px;backdrop-filter:blur(3px);display:inline-flex;align-items:center;gap:.35em}
 /* estado "aprobado para publicar" (independiente) */
 .post.approved{outline:2px solid rgba(21,128,61,.55);outline-offset:-2px}
@@ -520,6 +539,14 @@ h1 b{color:var(--red)}
 .post.posted{outline:2px solid rgba(10,102,194,.55);outline-offset:-2px}
 .btn.linkedin{background:transparent;color:#0a66c2;border-color:rgba(10,102,194,.5);font-weight:800}
 .btn.linkedin.on{background:#0a66c2;color:#fff;border-color:#0a66c2}
+/* fecha de publicación + Google Calendar */
+.calrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:2px}
+.caldate,.caltime{font-family:inherit;font-size:.8rem;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:100px;padding:6px 12px}
+.caldate:focus,.caltime:focus{outline:2px solid var(--red);outline-offset:1px}
+.btn.cal{background:transparent;color:#7c3aed;border-color:rgba(124,58,237,.5);font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:.35em}
+.btn.cal:hover{background:rgba(124,58,237,.10)}
+.btn.cal.off{opacity:.45;pointer-events:none}
+.calclear{font-family:inherit;font-size:.64rem;font-weight:700;letter-spacing:0;text-transform:none;color:#7c3aed;background:transparent;border:0;cursor:pointer;padding:0;margin-left:auto}
 .libox{display:inline-flex;align-items:center;gap:.4em;font-size:.8rem;color:var(--muted)}
 .libox b{font-size:1rem;font-weight:800;color:#0a66c2}
 .litoggle{font-family:inherit;font-size:.74rem;font-weight:700;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:100px;padding:5px 12px;cursor:pointer}
@@ -529,7 +556,7 @@ h1 b{color:var(--red)}
 .counts{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:.8rem;color:var(--muted)}
 .ct{display:inline-flex;align-items:center;gap:.4em}
 .ct b{font-size:1rem;font-weight:800;color:var(--ink)}
-.ct.pend b{color:#c6780a}.ct.ready b{color:var(--red)}.ct.appr b{color:#15803d}
+.ct.pend b{color:#c6780a}.ct.ready b{color:var(--red)}.ct.appr b{color:#15803d}.ct.sched b{color:#7c3aed}
 .filters{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
 .fchip{font-family:inherit;font-size:.74rem;font-weight:700;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:100px;padding:5px 12px;cursor:pointer}
 .fchip.on{color:#fff;background:var(--gray-dark);border-color:var(--gray-dark)}
@@ -615,6 +642,7 @@ code{font-family:inherit;font-weight:700;background:var(--gray-light);padding:1p
       <span class="ct ready"><b id="nReady">0</b> listos para aplicar</span>
       <span class="ct pub"><b id="nPub">0</b> publicados</span>
       <span class="ct appr">✅ <b id="nApproved">0</b>/<span id="nApTotal">0</span> aprobados</span>
+      <span class="ct sched">📅 <b id="nSched">0</b>/<span id="nSchTotal">0</span> agendados</span>
       <span class="libox">🔗 <b id="nLinked">0</b>/<span id="nTotal">0</span> subidos a LinkedIn</span>
     </div>
     <div class="filters" id="filters">
@@ -737,6 +765,8 @@ __CARDS__
         ready.classList.toggle('on',on);
         ready.textContent=on?'✓ Listo (quitar marca)':'✓ Marcar listo para aplicar';
         ready.disabled = (st==='publicado');}
+      // el evento de Calendar incluye el copy: refrescar su enlace si cambió
+      if(typeof paintCal==='function')paintCal();
     }
     function stamp(){var rc=rec(cid);rc.editedAt=new Date().toISOString();rc.editedBy=currentUser();}
 
@@ -778,6 +808,56 @@ __CARDS__
     if(apBtn)apBtn.addEventListener('click',function(){var rc=rec(cid);rc.approved=!rc.approved;
       rc.approvedAt=rc.approved?new Date().toISOString():null;persist();paintApproved();updateDash();
       toast(rc.approved?'Aprobado para publicar.':'Aprobación quitada.');});
+
+    // ---- fecha de publicación + Google Calendar (independiente) ----
+    // El artifact corre en un iframe sandbox y no puede llamar la API de Calendar;
+    // el botón es un enlace "TEMPLATE" que abre Google Calendar con el evento pre-llenado.
+    var calDate=post.querySelector('.caldate');
+    var calTime=post.querySelector('.caltime');
+    var calBtn=post.querySelector('.btn.cal');
+    var calBadge=post.querySelector('.cal-badge');
+    var calClear=post.querySelector('.calclear');
+    var calTitle=post.getAttribute('data-caltitle')||('Post '+post.getAttribute('data-seq'));
+    var WS_URL='https://claude.ai/code/artifact/f9016145-d797-4a02-867e-1e478de62a6b';
+    if(calDate&&typeof r.scheduledFor==='string')calDate.value=r.scheduledFor;
+    if(calTime&&typeof r.scheduledTime==='string'&&r.scheduledTime)calTime.value=r.scheduledTime;
+    function pad2(x){return ('0'+x).slice(-2);}
+    function fmtDM(iso){var p=(iso||'').split('-');return p.length===3?(p[2]+'-'+p[1]):'';}
+    function calURL(){
+      var d=calDate?calDate.value:''; if(!d)return null;
+      var t=(calTime&&calTime.value)||'09:00';
+      var hh=parseInt(t.split(':')[0],10); if(isNaN(hh))hh=9;
+      var mm=parseInt(t.split(':')[1],10); if(isNaN(mm))mm=0;
+      var ymd=d.replace(/-/g,'');
+      var start=ymd+'T'+pad2(hh)+pad2(mm)+'00';
+      var em=mm+30, eh=hh; if(em>=60){em-=60; eh=(hh+1)%24;}
+      var end=ymd+'T'+pad2(eh)+pad2(em)+'00';
+      var title='📢 Publicar en LinkedIn — '+calTitle;
+      var details=(copy.value||'')+'\n\n— Verifica la publicación y marca "subido a LinkedIn" en la workstation:\n'+WS_URL;
+      return 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        +'&text='+encodeURIComponent(title)
+        +'&dates='+start+'/'+end
+        +'&ctz=America/Santiago'
+        +'&details='+encodeURIComponent(details);
+    }
+    function paintCal(){
+      if(!calBtn)return;
+      var d=calDate?calDate.value:'';
+      var url=calURL();
+      if(url){calBtn.setAttribute('href',url);calBtn.classList.remove('off');}
+      else{calBtn.removeAttribute('href');calBtn.classList.add('off');}
+      if(calBadge){if(d){calBadge.hidden=false;calBadge.textContent='📅 '+fmtDM(d);}else calBadge.hidden=true;}
+      if(calClear)calClear.hidden=!d;
+      post.classList.toggle('scheduled',!!d);
+    }
+    function saveCal(){var rc=rec(cid);var d=(calDate&&calDate.value)||'';
+      if(d){rc.scheduledFor=d;rc.scheduledTime=(calTime&&calTime.value)||'09:00';}
+      else{delete rc.scheduledFor;delete rc.scheduledTime;}
+      persist();paintCal();updateDash();}
+    if(calDate)calDate.addEventListener('change',function(){saveCal();
+      toast(calDate.value?('Agendado para el '+fmtDM(calDate.value)+' · abre el botón para crear el evento'):'Fecha quitada.');});
+    if(calTime)calTime.addEventListener('change',saveCal);
+    if(calClear)calClear.addEventListener('click',function(){if(calDate)calDate.value='';if(calTime)calTime.value='09:00';saveCal();toast('Fecha quitada.');});
 
     revs.forEach(function(b){b.addEventListener('click',function(){
       var f=b.getAttribute('data-field');
@@ -929,12 +1009,14 @@ __CARDS__
     var byStatus=curFilter==='todos'||st===curFilter;
     var byLinked=!hidePosted||!p.classList.contains('posted');
     p.classList.toggle('hide', !(byStatus&&byLinked));});}
-  function updateDash(){var c={pendiente:0,listo:0,publicado:0},linked=0,approved=0,total=0;
+  function updateDash(){var c={pendiente:0,listo:0,publicado:0},linked=0,approved=0,scheduled=0,total=0;
     document.querySelectorAll('.post').forEach(function(p){var s=p.getAttribute('data-status')||'publicado';
       if(c[s]==null)c[s]=0;c[s]++;total++;if(p.classList.contains('posted'))linked++;
-      if(p.classList.contains('approved'))approved++;});
+      if(p.classList.contains('approved'))approved++;
+      if(p.classList.contains('scheduled'))scheduled++;});
     setTxt('nPend',c.pendiente);setTxt('nReady',c.listo);setTxt('nPub',c.publicado);
     setTxt('nApproved',approved);setTxt('nApTotal',total);
+    setTxt('nSched',scheduled);setTxt('nSchTotal',total);
     setTxt('nLinked',linked);setTxt('nTotal',total);applyFilter();}
   var liToggle=document.getElementById('liToggle');
   if(liToggle)liToggle.addEventListener('click',function(){hidePosted=!hidePosted;
