@@ -1,7 +1,7 @@
 # PENDIENTES.me — IDIEM Content System (punto de retomada)
 
 > Archivo de contexto para continuar el trabajo en un chat nuevo.
-> Última actualización: 2026-08-31.
+> Última actualización: 2026-09-03 (ronda contenidos de octubre).
 
 ## Qué es esto
 Sistema determinista y auditable de contenidos LinkedIn para IDIEM.
@@ -14,11 +14,17 @@ para hechos de IDIEM). Reglas en CLAUDE.md y docs/09_EDITORIAL_MEMORY.md.
   (continuación de claude/file-reading-nsposu).
 - Sin PR salvo que Kike lo pida.
 
-## Entregable activo: "Workstation Septiembre"
-Artifact interactivo (12 posts + saludo Fiestas Patrias = 13). Kike revisa/edita
-copy e imágenes; Claude aplica y republica.
-- URL del artifact: https://claude.ai/code/artifact/f9016145-d797-4a02-867e-1e478de62a6b
+## Entregable activo: "Workstation Octubre"
+Artifact interactivo (12 posts; efemérides Arquitectura/RRD/Geólogo DENTRO de los 12).
+Kike revisa/edita copy e imágenes; Claude aplica y republica. Es un artefacto NUEVO
+(no reemplaza al de septiembre): DB propia y limpia por mes.
+- URL del artifact OCTUBRE: https://claude.ai/code/artifact/450efcba-81d7-43a9-889a-42762434142f
 - Generador: design_system/gen_workstation.py
+- Mes activo del sistema: `gen_month_grid.MONTH_ID = "2026-10"`.
+
+### Septiembre (cerrado / publicado)
+- Workstation septiembre (13 piezas, all-done): https://claude.ai/code/artifact/f9016145-d797-4a02-867e-1e478de62a6b
+- Archivo de memoria: `content/archive/2026-09.{json,md}`. Fotos: `assets/month/2026-09/`.
 
 ## Ciclo leer → aplicar → republicar (cómo trabaja Claude)
 1. Kike hace cambios en la workstation y clic en "💾 Guardar y compartir".
@@ -107,6 +113,37 @@ copy e imágenes; Claude aplica y republica.
 - Flujo octubre (cuando toque): archivar septiembre ya está hecho → `compose_month(2026-10)`,
   reescribir COPY/PHOTO_SUB para los slots nuevos evitando lo de septiembre, poner
   `SEED_ALL_DONE=False`, rotar `posts` en la DB, subir KEY a v7.
+
+## Agregado 2026-09-03 (3) — Contenidos de octubre (desarrollados)
+- **12 posts curados, subtemas frescos vs septiembre** (memoria de contenidos aplicada).
+  Mix por célula **IOM5 / IPR4 / LMD2 / IHA1** (septiembre fue 3/3/3/3): fue la única forma
+  de rotar TODOS los subtemas, porque IHA (solo "ingeniería contractual" fresca) y LMD (solo
+  "geotecnia y rocas" fresca) están agotadas de subtemas nuevos. Kike aprobó el mix.
+- **Efemérides DENTRO de los 12** (trazan a 2A.2, no son saludos):
+  - #6 (5-oct) Día de la Arquitectura → IPR-018 Sustentabilidad y Arquitectura.
+  - #2 (13-oct) Reducción del Riesgo de Desastres → IOM-047 Vulnerabilidad/integridad (carrusel).
+  - #4 (17-oct) Día del Geólogo → LMD-004 Geotecnia y rocas, redactado **como saludo** a la
+    profesión + contenido de mecánica de rocas (pedido de Kike).
+- **Carruseles:** seq 2 (RRD/integridad) y seq 3 (incendios). `carousel.CAROUSEL_POSTS={2,3}`.
+- **Nota de solape (revisar con Kike):** el subtema "Ingeniería contra incendios" (seq3, IPR-019,
+  preventivo en infraestructura pública) comparte etiqueta con el peritaje de incendios minero de
+  septiembre (IOM-011), aunque célula y ángulo son distintos. Alternativa si se quiere cero solape:
+  cambiar por IPR-002 (peritaje de componentes metálicos) o IPR-023 (diagnóstico de obras).
+- **Guardrails 2A.2 respetados:** geotecnia/Triaxial (LMD-004/007) SIN superlativos ni rankings
+  ("único", "el más grande", "pioneros"); confiabilidad (IOM-065) sin "reconocido mundialmente".
+  Los 12 copies pasan `ingest_draft` sin violaciones y todos ≤900 caracteres.
+- **Mecánica de curación:** `gen_month_grid.compose_current(kb)` restringe cada célula a
+  `MONTH_PICKS` (excluye lo demás, incl. septiembre) y fija `MONTH_WEIGHTS`, de modo que el plan
+  determinista quede con exactamente las 12 piezas. Se extendió `review.compose_month` para aceptar
+  `weights` (retrocompatible; 121 tests verdes). `MONTH_ID="2026-10"`.
+- **Estado/artefacto:** artefacto NUEVO (URL 450efcba…, DB propia y limpia), capacidades
+  `{db, downloads}`. `SEED_ALL_DONE=False`, KEY localStorage **v7** (`idiem_ws_oct2026_v7`).
+  Se limpió el código muerto `saveCloud`/`buildCleanHTML`/`artifactCap`.
+- **Fotos:** octubre parte SIN fotos (campo de marca sólido / carrusel en campo oscuro). Kike
+  elige las fotos de su librería de Drive por pieza y Claude las hornea (`PHOTO_SUB` + `assets/month/2026-10/pNN.jpg`).
+  Las de septiembre se preservaron en `assets/month/2026-09/`.
+- **Pendiente:** (1) confirmar/ajustar el solape de incendios; (2) fotos por pieza; (3) al cerrar
+  octubre, archivar con `archive_month.py` (ya usa `compose_current`) antes de repuntar a noviembre.
 
 ## Reglas editoriales NO negociables (recordatorio rápido)
 - Green Hospital es certificación PROPIA de IDIEM. NO mencionar "Salud sin Daño".

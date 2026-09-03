@@ -58,9 +58,9 @@ def _photo(seq: int, ps: dict) -> dict:
 
 def build_archive(month: str, published_all: bool) -> dict:
     kb = G.load_knowledge_base()
-    review = G.compose_month(kb, month, target_count=12)
-    for cid, c in G.COPY.items():
-        G.set_post_copy(review, cid, c)
+    # Usa la composición curada del mes activo (misma fuente que la workstation),
+    # de modo que el archivo refleje exactamente lo publicado (picks + copy + fotos).
+    review = G.compose_current(kb)
 
     posts = []
     for seq, post in enumerate(review.posts, 1):
@@ -176,7 +176,8 @@ def to_markdown(a: dict) -> str:
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--month", default="2026-09")
+    ap.add_argument("--month", default=G.MONTH_ID,
+                    help="etiqueta del mes a archivar (por defecto, el mes activo del sistema)")
     ap.add_argument("--published-all", action="store_true",
                     help="marca todas las piezas como publicadas (estado del mes cerrado)")
     ap.add_argument("--out-dir", default=str(ROOT.parent / "content" / "archive"))

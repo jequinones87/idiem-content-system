@@ -30,7 +30,37 @@ from idiem.review import compose_month, set_post_copy  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent
 ASSETS = ROOT / "assets"
-MONTH = ASSETS / "month"
+
+# Mes activo del sistema. La memoria de los meses anteriores vive en
+# content/archive/AAAA-MM.{json,md}; las fotos por mes en assets/month/AAAA-MM/.
+MONTH_ID = "2026-10"
+MONTH = ASSETS / "month" / MONTH_ID   # fotos del mes activo (pNN.jpg por seq)
+
+# --- Curación del mes (memoria de contenidos: NO repetir el mes anterior) -----
+# knowledge_ids publicados en 2026-09 (se excluyen para rotar subtemas/ángulos).
+PREV_PUBLISHED = [
+    "KB-IHA-001", "KB-IHA-005", "KB-IHA-006",
+    "KB-IOM-011", "KB-IOM-043", "KB-IOM-056",
+    "KB-IPR-008", "KB-IPR-021", "KB-IPR-024",
+    "KB-LMD-001", "KB-LMD-010", "KB-LMD-020",
+]
+# Las 12 piezas elegidas para octubre (subtemas frescos + efemérides: 5-oct
+# Arquitectura, 13-oct Reducción del Riesgo de Desastres, 17-oct Día del Geólogo)
+# y el mix por célula (IOM5 / IPR4 / LMD2 / IHA1). Determinista: se restringe cada
+# célula a estas piezas y el planner arma el plan; cada pieza traza a su 2A.2.
+MONTH_PICKS = [
+    "KB-IOM-065", "KB-IOM-047", "KB-IOM-063", "KB-IOM-004", "KB-IOM-030",
+    "KB-IPR-018", "KB-IPR-005", "KB-IPR-019", "KB-IPR-016",
+    "KB-LMD-004", "KB-LMD-007",
+    "KB-IHA-002",
+]
+MONTH_WEIGHTS = {
+    "INFRA OPERACIÓN MINERA": 5,
+    "INFRA PÚBLICA RESILIENTE": 4,
+    "LAB MINERO DIGITAL": 2,
+    "INFRA HOSPITALARIA Y ASISTENCIAL": 1,
+}
+_CURATED_CELLS = list(MONTH_WEIGHTS)
 
 
 def _svg_data_uri(path: Path) -> str:
@@ -62,174 +92,153 @@ def data_uri(path: Path) -> str:
     return f"data:image/jpeg;base64,{b}"
 
 
-# ---- copy publicable (validado con ingest_draft en sesión) ------------------
+# ---- copy publicable octubre 2026 (validado con ingest_draft) --------------
+# Cada clave = content_id que arma compose_current (PLAN-<knowledge_id>-<seq>).
 COPY = {
- "PLAN-KB-IHA-005-01": {
-  "hook": ("¿Tu obra de salud está cumpliendo el programa?\n\n"
-    "🏥 En proyectos públicos de salud, cada atraso importa. Una desviación en los plazos puede postergar la "
-    "puesta en marcha de infraestructura crítica para las personas y generar importantes impactos "
-    "contractuales y económicos."),
-  "body": ("Muchas veces, el problema no está solo en el atraso observado, sino en cómo se planifica, actualiza y "
-    "controla la programación de la obra.\n\n"
-    "En IDIEM, a través de nuestra Ingeniería Contractual, realizamos análisis técnicos de programación para "
-    "proyectos del sector Salud, que permiten:\n\n"
-    "* Identificar desviaciones respecto del programa contractual.\n"
-    "* Analizar las causas y evolución de los atrasos.\n"
-    "* Evaluar sus efectos sobre los plazos de ejecución.\n"
-    "* Generar respaldo técnico para la gestión de contratos y reclamaciones.\n\n"
-    "Anticiparse al atraso también es parte de una buena gestión contractual."),
-  "cta": "📩 ¿Necesitas analizar la programación de tu proyecto? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #IngenieríaContractual #Construcción #Infraestructura #Salud #GestiónDeProyectos #AnálisisDeAtrasos"},
+ "PLAN-KB-IHA-002-01": {  # IHA · Ingeniería contractual (Salud) — diagnóstico/reclamos
+  "hook": "🏥 En un proyecto de salud, una controversia contractual mal gestionada puede frenar la obra y tensionar a las partes.",
+  "body": ("Cuando surge un desacuerdo por plazos, alcances o costos, decidir sin un diagnóstico técnico claro suele "
+    "agravar el conflicto y postergar la puesta en marcha de una obra crítica para las personas. ⚖️\n\n"
+    "En #IDIEM, dentro de nuestra Ingeniería Contractual para el sector Salud, entregamos:\n\n"
+    "* Diagnóstico contractual del estado del contrato y sus controversias.\n"
+    "* Análisis de prefactibilidad de un reclamo, para evaluar su sustento técnico.\n"
+    "* Apoyo técnico para lograr acuerdos entre las partes.\n\n"
+    "Respaldo técnico e imparcial para resolver sin improvisar y sostener el avance de la obra. ✅"),
+  "cta": "¿Enfrentas una controversia contractual en salud? Conversemos en https://idiem.cl 👉\n\n#IDIEM #InfraestructuraHospitalaria #Salud #IngenieríaContractual"},
 
- "PLAN-KB-IOM-011-02": {
-  "hook": "🔥 Cuando se produce un incendio en faena, las consecuencias pueden comprometer la seguridad de las personas y afectar seriamente la continuidad operacional.",
-  "body": ("Un peritaje oportuno, riguroso e imparcial permite establecer el origen y la causa del siniestro, pero "
-    "también obtener información clave para tomar decisiones y reducir la probabilidad de que un evento similar "
-    "vuelva a ocurrir. 🔍\n\n"
-    "En #IDIEM realizamos peritajes de incendio causa-origen, además de peritajes estructurales y mecánicos en "
-    "minería. Este trabajo puede complementarse con estudios de riesgo de incendio, identificando "
-    "vulnerabilidades en las instalaciones y definiendo medidas de mitigación. 🛡️📐\n\n"
-    "Evidencia técnica para entender lo ocurrido, identificar brechas y fortalecer la seguridad y continuidad "
-    "de la operación. ✅"),
-  "cta": "¿Necesitas un peritaje de incendio o evaluar el riesgo de tus instalaciones? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Minería #Ingeniería #Seguridad #Peritajes #ContinuidadOperacional"},
+ "PLAN-KB-IOM-047-02": {  # IOM · Vulnerabilidad e integridad estructural (13-oct RRD, carrusel)
+  "hook": "🛡️ El 13 de octubre es el Día Internacional para la Reducción del Riesgo de Desastres. Una estructura vulnerable es un riesgo que no siempre se ve.",
+  "body": ("Fisuras, deformaciones y corrosión avanzan en silencio en soportes, edificios industriales, fundaciones, "
+    "muros, túneles y relaves. Sin conocer su estado real, la operación queda expuesta. 🔎\n\n"
+    "En #IDIEM realizamos inspecciones estructurales especializadas y peritajes, evaluando fisuras, deformaciones y "
+    "corrosión bajo gestión de riesgos y cumplimiento normativo. Sumamos levantamiento en terreno con inspección "
+    "visual, aérea y termográfica, y modelos 3D con escáner láser y dron. 🛰️📐\n\n"
+    "Conocer la vulnerabilidad es el primer paso para reducir el riesgo. ✅"),
+  "cta": "¿Necesitas evaluar la integridad de tus estructuras? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Minería #ReducciónDelRiesgo #IntegridadEstructural #Seguridad"},
 
- "PLAN-KB-IPR-008-03": {
-  "hook": "🏛️ Para un mandante público, pocas cosas afectan tanto como el atraso de una obra: cada desviación golpea plazos, presupuesto y confianza.",
-  "body": ("Y ese atraso muchas veces nace de una mirada fragmentada del proyecto, sin acompañamiento técnico a lo "
-    "largo de todo el ciclo. 📉\n\n"
-    "En #IDIEM entregamos estudios técnicos y asesorías para el sector público a lo largo del ciclo completo "
-    "del proyecto, con 12 áreas especializadas: mecánica de suelos, topografía, revisión de proyectos y "
-    "validación normativa en arquitectura, estructura y especialidades, además de coordinación BIM. 🧭📊\n\n"
-    "Una capacidad multidisciplinaria que da respaldo técnico al mandante para decidir a tiempo y sostener el "
-    "avance de la obra. 🤝"),
-  "cta": "¿Tu proyecto público necesita respaldo integral? Conversemos en https://idiem.cl 👉\n\n#IDIEM #ObrasPúblicas #Ingeniería #BIM #Calidad"},
+ "PLAN-KB-IPR-019-03": {  # IPR · Ingeniería contra incendios (carrusel)
+  "hook": "🔥 En un edificio o instalación, la seguridad contra incendios no se improvisa: se diseña y se verifica.",
+  "body": ("Un incendio pone en riesgo a las personas, la infraestructura y la maquinaria. Sin un análisis técnico "
+    "del riesgo, las brechas aparecen cuando ya es tarde. 🚨\n\n"
+    "En #IDIEM entregamos asesoría y estudios de ingeniería contra incendios: análisis, simulaciones y ensayos "
+    "específicos, inspección y seguimiento a la implementación de los sistemas de protección, y asesoría de riesgo a "
+    "la propiedad para reducir vulnerabilidades. Evaluamos características constructivas, compartimentación, "
+    "protocolos y sistemas de protección. 🛡️📐\n\n"
+    "Prevención basada en evidencia técnica para proteger lo que importa. ✅"),
+  "cta": "¿Necesitas evaluar el riesgo de incendio de tu proyecto? Conversemos en https://idiem.cl 👉\n\n#IDIEM #IngenieríaContraIncendios #Seguridad #Infraestructura #GestiónDelRiesgo"},
 
- "PLAN-KB-LMD-001-04": {
-  "hook": "🧪 En faena minera, un resultado de ensayo que llega tarde ya no sirve para decidir.",
-  "body": ("El control técnico solo agrega valor si la información es confiable y llega a tiempo. La falta de "
-    "trazabilidad y los reportes fuera de plazo debilitan la toma de decisiones en obra. ⏱️\n\n"
-    "En #IDIEM ofrecemos servicio permanente de laboratorio en obra —instalaciones, personal, equipamiento y "
-    "ensayos— para proyectos mineros, energéticos, inmobiliarios e infraestructura pública y privada, con "
-    "modalidades flexibles: visitas, personal permanente, o personal y equipos permanentes en obra. 👷🔬\n\n"
-    "Como institución certificada ISO 17025 e ISO 9001, con estándar HSEC en seguridad y salud ocupacional, "
-    "entregamos informes en plazo y seguimiento en línea de los resultados de #Ensayos. 📈✅"),
-  "cta": "¿Buscas control técnico con trazabilidad en tu faena? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Minería #Ensayos #Laboratorio #Calidad"},
+ "PLAN-KB-LMD-004-04": {  # LMD · Geotecnia y rocas (17-oct Día del Geólogo — saludo + contenido)
+  "hook": "⛏️ Hoy es el Día del Geólogo en Chile. Saludamos a quienes leen la tierra para que la infraestructura se construya sobre bases firmes.",
+  "body": ("La geología aplicada es clave en minería y obras: entender el macizo rocoso permite tomar mejores "
+    "decisiones de diseño y de operación. 🪨\n\n"
+    "En #IDIEM acompañamos ese trabajo con ensayos convencionales y especiales de mecánica de rocas para la "
+    "caracterización del macizo rocoso: compresión no confinada (UCS), triaxiales, carga puntual (PLT), tracción "
+    "indirecta, velocidad de ondas, hinchamientos y difracción de rayos X (DRX). 🔬\n\n"
+    "Ciencia y ensayos al servicio de la geología y la ingeniería del país. ✅"),
+  "cta": "¡Feliz día a las y los geólogos! 👷 ¿Necesitas ensayos de mecánica de rocas? Conversemos en https://idiem.cl 👉\n\n#IDIEM #DíaDelGeólogo #Geotecnia #Minería #MecánicaDeRocas"},
 
- "PLAN-KB-IHA-001-05": {
-  "hook": "Un hospital no solo cuida a las personas: también puede cuidar el entorno en el que funciona. 🌱",
-  "body": ("La sostenibilidad ambiental en salud va más allá de la atención clínica: abarca cómo se gestiona el "
-    "establecimiento, cómo usa sus recursos y cómo administra sus residuos. Ahí es donde un Hospital Verde "
-    "marca la diferencia. ♻️\n\n"
-    "En #IDIEM impulsamos la certificación GREEN HOSPITAL en Chile, que considera normativas nacionales e "
-    "internacionales adecuadas a la realidad nacional, complementándose con otras certificaciones como la "
-    "ISO 50001. Su evaluación abarca eficiencia energética y reducción de emisiones, gestión responsable de "
-    "residuos clínicos, uso sostenible de recursos hídricos y materiales, compras responsables y promoción de "
-    "la salud ambiental. 🩺\n\n"
-    "Sostenibilidad que se traduce en instituciones de salud más eficientes y comprometidas con su "
-    "entorno. 🤝"),
-  "cta": "¿Tu institución de salud avanza hacia la sostenibilidad? Conversemos en https://idiem.cl 👉\n\n#IDIEM #GreenHospital #Sostenibilidad #Salud #InfraestructuraHospitalaria"},
+ "PLAN-KB-IOM-065-05": {  # IOM · Confiabilidad de materiales metálicos y poliméricos
+  "hook": "🔩 En una faena, un material que falla antes de tiempo puede detener la operación y poner en riesgo la seguridad.",
+  "body": ("Cuando un componente metálico o polimérico se comporta distinto a lo esperado, entender por qué es clave "
+    "para evitar que vuelva a ocurrir. 🔍\n\n"
+    "En #IDIEM evaluamos la confiabilidad de los materiales usados en elementos mecánicos y estructuras, con un "
+    "equipo especializado en metalurgia, mecánica, química y estructuras, apoyado en tecnología de laboratorio para "
+    "el análisis de materiales metálicos y poliméricos. 🧪\n\n"
+    "Evidencia técnica para anticipar fallas y respaldar la confiabilidad de tus activos. ✅"),
+  "cta": "¿Necesitas evaluar la confiabilidad de tus materiales? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Minería #Materiales #Confiabilidad #Ingeniería"},
 
- "PLAN-KB-IOM-043-06": {
-  "hook": "🏗️ En infraestructura minera, las fisuras, deformaciones y la corrosión no avisan: avanzan en silencio hasta comprometer la seguridad.",
-  "body": ("Planificar sin conocer el estado real de las estructuras multiplica los imprevistos y expone la "
-    "operación a riesgos evitables. 🔎\n\n"
-    "En #IDIEM realizamos inspecciones estructurales especializadas y peritajes, con evaluación de fisuras, "
-    "deformaciones y corrosión, bajo gestión de riesgos y cumplimiento normativo. Sumamos levantamiento de "
-    "información técnica en terreno mediante inspección visual, aérea y termográfica, y modelos 3D con escáner "
-    "láser y dron. 🛰️📐\n\n"
-    "Una línea base técnica confiable para diagnosticar la integridad estructural y priorizar "
-    "intervenciones. ⚙️✅"),
-  "cta": "¿Necesitas diagnosticar la integridad de tus estructuras? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Minería #Ingeniería #Mantenimiento #Seguridad"},
+ "PLAN-KB-IPR-018-06": {  # IPR · Sustentabilidad y Arquitectura (5-oct Día de la Arquitectura)
+  "hook": "🏛️ En el Día Mundial de la Arquitectura celebramos que diseñar hoy también es diseñar para un futuro sostenible.",
+  "body": ("La arquitectura y la infraestructura pública enfrentan un desafío: reducir su impacto ambiental sin "
+    "resignar calidad ni funcionalidad. 🌱\n\n"
+    "En #IDIEM aportamos soluciones sostenibles para infraestructura, ciudades y edificaciones, con planes y estudios "
+    "de cambio climático para el territorio y las comunas: cálculo de huella de carbono e hídrica, análisis "
+    "energéticos, ciclo de vida de materiales y estudios de reciclaje. ♻️📊\n\n"
+    "Ciencia e ingeniería para una edificación pública más eficiente y responsable. ✅"),
+  "cta": "¿Tu proyecto busca ser más sostenible? Conversemos en https://idiem.cl 👉\n\n#IDIEM #DíaDeLaArquitectura #Sustentabilidad #CambioClimático #EdificaciónPública"},
 
- "PLAN-KB-IPR-021-07": {
-  "hook": "🔊 El ruido generado por todo proyecto es una variable relevante: la normativa lo vigila y la comunidad lo percibe.",
-  "body": ("Sin mediciones, estudio de impacto, modelación ni seguimiento, un proyecto queda expuesto a "
-    "incumplimientos normativos y a conflictos con su entorno. 📉\n\n"
-    "En #IDIEM entregamos servicios de ingeniería acústica: ensayos en laboratorio y terreno, líneas base e "
-    "impacto acústico, desarrollo de mapas de ruido y modelos predictivos de propagación sonora, y monitoreo "
-    "de cumplimiento normativo D.S. 38-11 MMA (futuro D.D. 14/24). También diseñamos soluciones de control de "
-    "ruido y vibraciones, con mediciones de aislamiento acústico. 📡📊\n\n"
-    "Gestión del ruido convertida en evidencia técnica para cumplir la norma y resguardar el confort. ✅"),
-  "cta": "¿Necesitas gestionar la acústica de tu proyecto? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Acústica #Infraestructura #Ingeniería #MedioAmbiente"},
+ "PLAN-KB-LMD-007-07": {  # LMD · Triaxial suelos de partículas grandes (SIN superlativos/rankings)
+  "hook": "🪨 Muchos suelos reales tienen partículas demasiado grandes para los equipos de ensayo convencionales.",
+  "body": ("En presas de tierra, gran minería, energía e infraestructura, ensayar el material tal como es —con sus "
+    "partículas de gran tamaño— es clave para caracterizarlo bien y diseñar con seguridad. 🔬\n\n"
+    "En #IDIEM contamos con un equipo Triaxial para grandes partículas, desarrollado con ingeniería propia, que "
+    "permite ensayar suelos de gran tamaño y obtener parámetros representativos para el diseño geotécnico. 📐\n\n"
+    "Ensayos que reflejan el material real, no una versión reducida de él. ✅"),
+  "cta": "¿Necesitas ensayar suelos de partículas grandes? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Geotecnia #Minería #Ensayos #PresasDeTierra"},
 
- "PLAN-KB-LMD-010-08": {
-  "hook": "🔧 En minería, una unión soldada de HDPE que falla puede detener el transporte de fluidos de toda una operación.",
-  "body": ("Las uniones soldadas de tuberías HDPE para transporte de fluidos son elementos críticos: un defecto no "
-    "detectado a tiempo se transforma en riesgo operacional y sobrecostos por detenciones. ⚠️\n\n"
-    "En #IDIEM controlamos la calidad de estas uniones con ensayos no destructivos —para verificar "
-    "especificaciones y detectar defectos— y ensayos mecánicos que evalúan las propiedades de las uniones "
-    "soldadas. Sumamos asesoría experta en la documentación técnica asociada a su fabricación. 🧪📐\n\n"
-    "Control técnico que respalda la confiabilidad de un componente que la operación no puede dar por "
-    "supuesto. ✅"),
-  "cta": "¿Necesitas asegurar la calidad de tus líneas HDPE? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Minería #Ensayos #HDPE #Calidad"},
+ "PLAN-KB-IOM-004-08": {  # IOM · Modelamiento digital / BIM (minería)
+  "hook": "🏗️ En un proyecto de infraestructura minera, la falta de información confiable del estado real dispara los imprevistos.",
+  "body": ("Coordinar disciplinas sobre datos incompletos multiplica errores, retrabajos y sorpresas en obra. 🧭\n\n"
+    "En #IDIEM abordamos la ingeniería de apoyo para proyectos mineros con un equipo multidisciplinario: ingeniería "
+    "civil, mecánica y geomensura, modelación BIM y mantenimiento industrial, partiendo por el levantamiento de las "
+    "condiciones existentes en las distintas disciplinas. 📐📊\n\n"
+    "Una base digital y multidisciplinaria para decidir con información confiable. ✅"),
+  "cta": "¿Tu proyecto minero necesita ingeniería de apoyo con BIM? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Minería #BIM #Ingeniería #ModelamientoDigital"},
 
- "PLAN-KB-IHA-006-09": {
-  "hook": "🏥 El término anticipado de un contrato en un proyecto de salud es uno de los escenarios más delicados de una obra.",
-  "body": ("Cuando un contrato se detiene antes de tiempo, las partes necesitan claridad técnica para resolver sin "
-    "improvisar. En infraestructura de salud, esa claridad es aún más crítica. ⚖️\n\n"
-    "En #IDIEM, dentro de nuestra ingeniería contractual, realizamos análisis ante el término anticipado de "
-    "contrato para el sector Salud, uno de los ámbitos que atendemos de forma explícita. 🤝"),
-  "cta": "¿Enfrentas un conflicto contractual en salud? Conversemos en https://idiem.cl 👉\n\n#IDIEM #InfraestructuraHospitalaria #Salud #Ingeniería"},
+ "PLAN-KB-IPR-016-09": {  # IPR · Tecnología de la construcción (edificación pública)
+  "hook": "🏢 Innovar en construcción pública exige una pregunta previa: ¿este material o sistema cumple realmente el estándar?",
+  "body": ("Incorporar nuevas soluciones sin validación técnica puede comprometer la calidad y la seguridad de una "
+    "obra que usarán miles de personas. 🔎\n\n"
+    "En #IDIEM ofrecemos Servicios de Tecnología de la Construcción y acompañamos procesos de innovación en la "
+    "edificación pública, con ensayos y certificaciones de materiales, componentes y sistemas para verificar el "
+    "cumplimiento de estándares de calidad y seguridad. 🧪📋\n\n"
+    "Innovación respaldada por evidencia técnica. ✅"),
+  "cta": "¿Buscas validar materiales o sistemas para edificación pública? Conversemos en https://idiem.cl 👉\n\n#IDIEM #EdificaciónPública #Innovación #Ensayos #Construcción"},
 
- "PLAN-KB-IOM-056-10": {
-  "hook": "📡 Una falla en un activo crítico rara vez avisa… salvo que lo estés monitoreando.",
-  "body": ("Esperar a la próxima inspección programada puede significar detectar tarde un cambio de comportamiento "
-    "en un activo clave de la faena. La vigilancia continua marca la diferencia entre reaccionar y "
-    "anticiparse. 🔍\n\n"
-    "En #IDIEM realizamos monitoreo de salud estructural con seguimiento continuo mediante sensores e "
-    "información en tiempo real, análisis de vibraciones de equipo rotativo y análisis predictivo para un "
-    "mantenimiento oportuno. 📊⚙️\n\n"
-    "Datos que se transforman en decisiones anticipadas para sostener la #Confiabilidad de los activos y la "
-    "continuidad operacional. ✅"),
-  "cta": "¿Quieres anticiparte a las fallas de tus activos críticos? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Minería #Mantenimiento #Confiabilidad #Monitoreo"},
+ "PLAN-KB-IOM-063-10": {  # IOM · Cumplimiento normativo
+  "hook": "📋 En una obra o instalación, incumplir la normativa no siempre se nota… hasta que llega una auditoría o una falla.",
+  "body": ("Detectar las brechas normativas a tiempo evita sobrecostos, detenciones y riesgos para las personas. 🔍\n\n"
+    "En #IDIEM realizamos revisión de cumplimiento normativo en tres ámbitos —estructural, incendios y "
+    "especialidades—, identificando las brechas respecto de los marcos aplicables. 🛡️📐\n\n"
+    "Una mirada técnica e independiente para operar con respaldo y sin sorpresas. ✅"),
+  "cta": "¿Necesitas revisar el cumplimiento normativo de tu proyecto? Conversemos en https://idiem.cl 👉\n\n#IDIEM #CumplimientoNormativo #Ingeniería #Seguridad #Calidad"},
 
- "PLAN-KB-IPR-024-11": {
-  "hook": ("🏗️ En una obra, la calidad debe demostrarse con evidencia técnica. Ensayos bien ejecutados, un "
-    "muestreo representativo y la trazabilidad permiten verificar especificaciones y detectar desviaciones a "
-    "tiempo."),
-  "body": ("En #IDIEM realizamos control técnico en suelos, hormigones, asfaltos y otras especialidades: densidad "
-    "en terreno, granulometría, Proctor, CBR, hormigón fresco, testigos, madurez, corte directo, placa de "
-    "carga, resistividad eléctrica y END en soldaduras. 🧪📐\n\n"
-    "También realizamos ensayos de resistencia al fuego y evaluaciones periciales en hormigón.\n\n"
-    "Contamos con laboratorios acreditados por el INN e inscritos en el Registro Oficial del MINVU, dentro de "
-    "sus alcances, y un sistema de gestión certificado ISO 9001. Atención puntual o permanente en obra. ✅"),
-  "cta": "¿Tu proyecto necesita control técnico con respaldo? Conversemos en idiem.cl 👉\n\n#IDIEM #ObrasPúblicas #Ensayos #Construcción #Calidad"},
+ "PLAN-KB-IPR-005-11": {  # IPR · Evaluación estructural de puentes (capacidad de carga)
+  "hook": "🌉 Un puente conecta territorios y sostiene la vida de las comunidades: saber cuánta carga resiste no es un detalle.",
+  "body": ("Con el paso del tiempo y el aumento del tránsito, un puente puede quedar exigido más allá de lo previsto. "
+    "Evaluar su capacidad real es clave para decidir con seguridad. 🔎\n\n"
+    "En #IDIEM evaluamos la capacidad de carga de puentes con diagnóstico, ensayos, modelación por elementos finitos, "
+    "levantamiento topográfico del trazado y análisis de alternativas de diseño, como en el estudio estructural del "
+    "Puente Cortés. 📐📊\n\n"
+    "Evidencia técnica para resguardar la seguridad y la conectividad del territorio. ✅"),
+  "cta": "¿Necesitas evaluar la capacidad de un puente? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Puentes #Infraestructura #Ingeniería #Estructuras"},
 
- "PLAN-KB-LMD-020-12": {
-  "hook": "🔩 Una soldadura defectuosa en una estructura metálica minera puede no verse… hasta que falla.",
-  "body": ("Los defectos superficiales e internos en soldaduras no siempre son evidentes, pero comprometen la "
-    "seguridad de estructuras y componentes mecánicos. Detectarlos a tiempo es parte del control. 🔍\n\n"
-    "En #IDIEM realizamos inspección no destructiva de soldaduras metálicas en minería, maestranzas e "
-    "industria: evaluamos el estado superficial e interno para detectar defectos, y brindamos asesoría en la "
-    "calificación de procedimientos y de soldadores, con equipos técnicos en el norte del país. 🧪📋\n\n"
-    "Evidencia técnica que respalda la confiabilidad de cada unión soldada. ✅"),
-  "cta": "¿Necesitas verificar la calidad de tus soldaduras? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Minería #Ensayos #END #Calidad"},
+ "PLAN-KB-IOM-030-12": {  # IOM · Revisión integral de rehabilitación
+  "hook": "🏗️ Rehabilitar una estructura compleja sin un diagnóstico completo es avanzar a ciegas.",
+  "body": ("Intervenir sin conocer el estado real, sin ensayos que lo respalden ni alternativas evaluadas, encarece "
+    "la obra y arriesga el resultado. 🔍\n\n"
+    "En #IDIEM abordamos la revisión integral de proyectos complejos de rehabilitación en cuatro etapas:\n\n"
+    "* Levantamiento de las condiciones existentes.\n"
+    "* Soporte de nuestros laboratorios.\n"
+    "* Diagnóstico y evaluación de alternativas.\n"
+    "* Ingeniería de rehabilitación.\n\n"
+    "Un proceso ordenado para intervenir con respaldo técnico de principio a fin. ✅"),
+  "cta": "¿Tienes un proyecto de rehabilitación estructural? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Rehabilitación #Ingeniería #Estructuras #Minería"},
 }
 
 # ---- capa visual: titular gráfico (dentro del círculo) + bajada -------------
+# seq -> {svc, msg (<br> para 2 líneas, cabe en el círculo), base (bajada con <b>)}
 GRAPHIC = {
- 1:  {"svc": "Ingeniería contractual",              "msg": "Respaldo técnico<br>en obras de salud.", "base": "Programación · plazos · <b>sector Salud</b>"},
- 2:  {"svc": "Peritajes de fallas e incendios",     "msg": "Entender<br>qué ocurrió.",               "base": "Fallas · incendios · <b>causa raíz</b>"},
- 3:  {"svc": "Asesoría a mandantes públicos",       "msg": "Respaldo técnico<br>al mandante.",        "base": "12 áreas · revisión · <b>coordinación BIM</b>"},
- 4:  {"svc": "Laboratorio en obra",                 "msg": "Resultados<br>a tiempo.",                 "base": "ISO 17025 · HSEC · <b>reportes en plazo</b>"},
- 5:  {"svc": "Green Hospital",                       "msg": "Hospitales que<br>cuidan su entorno.",    "base": "Energía · residuos · <b>agua y materiales</b>"},
- 6:  {"svc": "Inspección y peritaje estructural",   "msg": "Diagnóstico de<br>integridad.",           "base": "Fisuras · corrosión · <b>escáner láser y dron</b>"},
- 7:  {"svc": "Ingeniería acústica",                 "msg": "Gestión técnica<br>del ruido.",           "base": "Mediciones · mapas · <b>D.S. 38-11 MMA</b>"},
- 8:  {"svc": "Control de calidad HDPE",             "msg": "Uniones<br>confiables.",                  "base": "Ensayos no destructivos · <b>ensayos mecánicos</b>"},
- 9:  {"svc": "Ingeniería contractual",              "msg": "Claridad ante<br>el conflicto.",          "base": "Término anticipado · <b>sector Salud</b>"},
- 10: {"svc": "Monitoreo de salud estructural",      "msg": "Anticiparse<br>a la falla.",              "base": "Sensores · vibraciones · <b>análisis predictivo</b>"},
- 11: {"svc": "Ensayos de especialidades",           "msg": "Calidad que<br>se ensaya.",               "base": "Suelos · hormigones · <b>END a soldaduras</b>"},
- 12: {"svc": "Inspección no destructiva de soldaduras", "msg": "Detectar antes<br>de fallar.",         "base": "Estado superficial e interno · <b>según plan de inspección</b>"},
+ 1:  {"svc": "Ingeniería contractual",          "msg": "Claridad ante<br>la controversia.", "base": "Diagnóstico · reclamos · <b>sector Salud</b>"},
+ 2:  {"svc": "Integridad estructural",          "msg": "Reducir<br>el riesgo.",             "base": "Fisuras · corrosión · <b>láser y dron</b>"},
+ 3:  {"svc": "Ingeniería contra incendios",     "msg": "Prevenir<br>el incendio.",          "base": "Análisis · simulaciones · <b>gestión del riesgo</b>"},
+ 4:  {"svc": "Mecánica de rocas",               "msg": "Leer el<br>macizo rocoso.",         "base": "UCS · triaxiales · <b>caracterización</b>"},
+ 5:  {"svc": "Confiabilidad de materiales",     "msg": "Anticiparse<br>a la falla.",        "base": "Metálicos · poliméricos · <b>laboratorio</b>"},
+ 6:  {"svc": "Sustentabilidad y arquitectura",  "msg": "Construir<br>sostenible.",          "base": "Huella C e hídrica · <b>ciclo de vida</b>"},
+ 7:  {"svc": "Triaxial grandes partículas",     "msg": "Ensayar el<br>material real.",      "base": "Suelos de gran tamaño · <b>presas de tierra</b>"},
+ 8:  {"svc": "Ingeniería de apoyo · BIM",       "msg": "Decidir con<br>datos reales.",      "base": "Civil · mecánica · <b>modelación BIM</b>"},
+ 9:  {"svc": "Tecnología de la construcción",   "msg": "Innovar con<br>respaldo.",          "base": "Ensayos · certificación · <b>edificación pública</b>"},
+ 10: {"svc": "Cumplimiento normativo",          "msg": "Cerrar las<br>brechas.",            "base": "Estructural · incendios · <b>especialidades</b>"},
+ 11: {"svc": "Evaluación de puentes",           "msg": "¿Cuánta carga<br>resiste?",         "base": "Capacidad de carga · <b>elementos finitos</b>"},
+ 12: {"svc": "Revisión de rehabilitación",      "msg": "Intervenir<br>con respaldo.",       "base": "Levantamiento · diagnóstico · <b>ingeniería</b>"},
 }
 
-# seq -> foto real de librería incrustada (data URI)
-PHOTO_FILE = {2: "p02.jpg", 3: "p03.jpg", 4: "p04.jpg", 5: "p05.jpg", 11: "p11.jpg"}
+# seq -> foto real de librería incrustada (data URI). Vacío al iniciar el mes:
+# las piezas parten con campo de marca sólido y Kike pide las fotos en la workstation.
+PHOTO_FILE = {}
 
-# seq -> URL Muapi generada (imagen real, se abre en el navegador/plataforma)
-MUAPI_URL = {
- 7:  "https://cdn.muapi.ai/outputs/generated/3df53ef3e65e44dfa908eb3c69a80b19.png",
- 12: "https://cdn.muapi.ai/outputs/generated/1c61d012fe0c4b63836676ba39122c58.png",
- 8:  "https://cdn.muapi.ai/outputs/generated/f8ba829f6b804553b99ce0d1a31f27dd.png",
-}
+# seq -> URL Muapi generada. Sin Muapi este mes.
+MUAPI_URL = {}
 
 CELL_SHORT = {
  "INFRA PÚBLICA RESILIENTE": "IPR",
@@ -356,11 +365,31 @@ def card(post, seq: int) -> str:
 </article>'''
 
 
-def main() -> None:
-    kb = load_knowledge_base()
-    review = compose_month(kb, "2026-09", target_count=12)
+def compose_current(kb):
+    """Compone el mes activo (MONTH_ID) con la curación editorial + copy aplicado.
+
+    Restringe cada célula a MONTH_PICKS (excluye todo lo demás, incluido lo
+    publicado el mes anterior) y fija el mix por célula con MONTH_WEIGHTS, de modo
+    que el plan determinista quede con exactamente las 12 piezas elegidas, cada una
+    trazada a su knowledge_id (2A.2). Devuelve el review con el copy ya aplicado.
+    Es la fuente única de composición para la grilla, la workstation y el archivo.
+    """
+    exclude = [
+        it.knowledge_id
+        for cell in _CURATED_CELLS
+        for it in kb.items_in_cell(cell)
+        if it.knowledge_id not in MONTH_PICKS
+    ]
+    review = compose_month(kb, MONTH_ID, target_count=12,
+                           recent_history=exclude, weights=MONTH_WEIGHTS)
     for cid, c in COPY.items():
         set_post_copy(review, cid, c)
+    return review
+
+
+def main() -> None:
+    kb = load_knowledge_base()
+    review = compose_current(kb)
 
     cards = "\n".join(card(p, i) for i, p in enumerate(review.posts, 1))
     n_photo = len(PHOTO_FILE)
@@ -373,7 +402,7 @@ def main() -> None:
                   .replace("__NTEXT__", str(n_text)))
 
 
-TEMPLATE = r'''<title>Grilla Septiembre IDIEM</title>
+TEMPLATE = r'''<title>Grilla Octubre IDIEM</title>
 <meta name="description" content="Los 12 posts de septiembre de IDIEM como grilla de piezas terminadas (formato Servicios) con copy editable y trazabilidad de evidencia y foto por post.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -489,7 +518,7 @@ code{font-family:inherit;font-weight:700;background:var(--gray-light);padding:1p
 
 <div class="wrap">
   <p class="eyebrow"><span class="dot"></span>IDIEM · Design System · Grilla mensual</p>
-  <h1>Septiembre — <b>12 posts</b></h1>
+  <h1>Octubre — <b>12 posts</b></h1>
   <p class="lede">Cada pieza es un post terminado en formato <strong>Servicios (Plantilla 01)</strong>: recursos oficiales (logo, círculo, eslogan), un mensaje clave acotado a evidencia y la foto que corresponde al servicio. El copy es <strong>editable</strong> —edítalo aquí y cópialo— y cada post traza a su <strong>knowledge_id</strong> y a su foto. Los webinars son un agregado aparte y no ocupan estos 12 espacios.</p>
   <div class="legend">
     <span class="lchip"><span class="fdot photo"></span>__NPHOTO__ con foto real de librería</span>
@@ -503,7 +532,7 @@ __CARDS__
   </div>
 
   <div class="foot">
-    <span>Motor: <code>compose_month(2026-09)</code> · copy validado con <code>ingest_draft</code>.</span>
+    <span>Motor: <code>compose_current(2026-10)</code> · copy validado con <code>ingest_draft</code>.</span>
     <span>Foto: <code>photo_selection</code> (librería/Muapi) · fallback Muapi solo si ninguna foto de librería corresponde.</span>
     <span>Reglas: 2A.2 fuente de verdad · GR-04 sin superlativos · NAME_ONLY.</span>
   </div>

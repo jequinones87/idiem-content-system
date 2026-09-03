@@ -165,3 +165,26 @@ Meses archivados: **2026-09** (13 piezas, publicado).
     quedaron **sobre el límite** los posts **1 (1075), 2 (1013), 5 (1028)** y el **4 (900,
     justo)** — son copies aprobados por MKT en rondas previas. Pendiente: recortarlos con
     visto bueno de Kike (no se tocan sin su aprobación por ser "oro").
+- **2026-09-03** — **Contenidos de octubre 2026** (12 posts, artefacto nuevo):
+  - Memoria de contenidos aplicada: se leyó `content/archive/2026-09.json` y se excluyeron sus
+    12 `knowledge_id`. Mix por célula **IOM5 / IPR4 / LMD2 / IHA1** (aprobado por Kike) para poder
+    rotar todos los subtemas: IHA solo tiene "ingeniería contractual" fresca y LMD solo "geotecnia
+    y rocas" fresca, así que se apoyó en IOM/IPR (canteras profundas).
+  - **Efemérides dentro de los 12** (trazan a 2A.2): Día de la Arquitectura (5-oct, IPR-018
+    sustentabilidad), Reducción del Riesgo de Desastres (13-oct, IOM-047 integridad, carrusel) y
+    Día del Geólogo (17-oct, LMD-004 geotecnia). El del Geólogo se redactó **como saludo** a la
+    profesión + contenido de mecánica de rocas (pedido de Kike).
+  - **Geotecnia / Triaxial (LMD-004, LMD-007):** copy SIN superlativos ni rankings — 2A.2 bloquea
+    "único de Chile y Sudamérica", "el más grande del mundo", "tercero a nivel mundial", "primer y
+    mayor laboratorio", "pioneros". Sí es publicable el núcleo técnico ("Triaxial para grandes
+    partículas, desarrollado con ingeniería propia"). Confiabilidad (IOM-065): sin "reconocido en
+    Chile y el mundo / rigor y excelencia".
+  - **Solape a vigilar:** "Ingeniería contra incendios" (seq3, IPR-019, preventivo en edificación
+    pública) comparte etiqueta de subtema con el peritaje de incendios minero de septiembre
+    (IOM-011); célula y ángulo son distintos (preventivo vs forense) y es pertinente a la semana
+    RRD. Alternativa cero-solape ofrecida a Kike: IPR-002 (componentes metálicos) o IPR-023
+    (diagnóstico de obras ejecutadas).
+  - Los 12 copies pasan `ingest_draft` sin violaciones y todos ≤900 caracteres (rango 638–871).
+  - **Fotos:** octubre parte sin fotos (campo de marca sólido / carrusel en campo oscuro); Kike
+    elegirá fotos de la librería de Drive por pieza. Las de septiembre se preservaron en
+    `assets/month/2026-09/`.

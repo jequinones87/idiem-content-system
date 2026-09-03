@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 ASSETS = ROOT / "assets"
 
-CAROUSEL_POSTS = {2, 8}
+CAROUSEL_POSTS = {2, 3}
 
 
 def _icon(name: str) -> str:
@@ -28,31 +28,33 @@ def _icon(name: str) -> str:
 # Contenido por post. `title` admite <span class="c2rb">palabra</span> (caja roja);
 # la portada usa <span class="c2rt">palabra</span> (texto rojo).
 SLIDES = {
+    # seq 2 · IOM-047 · Vulnerabilidad e integridad estructural (13-oct RRD)
     2: {
-        "portada": {"kicker": "PERITAJES DE INCENDIO · MINERÍA",
-                    "title": 'Entender qué <span class="c2rt">ocurrió</span>.'},
+        "portada": {"kicker": "REDUCCIÓN DEL RIESGO · INTEGRIDAD ESTRUCTURAL",
+                    "title": 'Reducir el <span class="c2rt">riesgo</span>.'},
         "intermedias": [
-            {"icon": "magnifier", "title": 'Peritaje de <span class="c2rb">incendio</span>',
-             "body": "Establecemos la causa y el origen del siniestro con rigor e imparcialidad."},
-            {"icon": "location", "title": 'Estructural y <span class="c2rb">mecánico</span>',
-             "body": "Peritajes que determinan qué ocurrió en la operación minera, con un enfoque integral."},
-            {"icon": "shield", "title": 'Estudio de <span class="c2rb">riesgo</span>',
-             "body": "Levantamos vulnerabilidades de las instalaciones y definimos un plan de medidas de mitigación."},
+            {"icon": "magnifier", "title": 'Inspección y <span class="c2rb">peritaje</span>',
+             "body": "Evaluamos fisuras, deformaciones y corrosión bajo gestión de riesgos y cumplimiento normativo."},
+            {"icon": "location", "title": 'Levantamiento en <span class="c2rb">terreno</span>',
+             "body": "Inspección visual, aérea y termográfica, con modelos 3D por escáner láser y dron."},
+            {"icon": "shield", "title": 'Activos <span class="c2rb">protegidos</span>',
+             "body": "Soportes, edificios industriales, fundaciones, muros, túneles y depósitos de relaves."},
         ],
-        "cierre": {"bajada": "Evidencia técnica que explica lo ocurrido y fortalece la seguridad y continuidad de la operación."},
+        "cierre": {"bajada": "Conocer la vulnerabilidad es el primer paso para reducir el riesgo de desastres."},
     },
-    8: {
-        "portada": {"kicker": "CONTROL DE CALIDAD · HDPE",
-                    "title": 'Uniones <span class="c2rt">confiables</span>.'},
+    # seq 3 · IPR-019 · Ingeniería contra incendios
+    3: {
+        "portada": {"kicker": "INGENIERÍA CONTRA INCENDIOS",
+                    "title": 'Prevenir el <span class="c2rt">incendio</span>.'},
         "intermedias": [
-            {"icon": "magnifier", "title": 'Ensayos <span class="c2rb">no destructivos</span>',
-             "body": "Verifican especificaciones y detectan defectos en la unión soldada."},
-            {"icon": "location", "title": 'Ensayos <span class="c2rb">mecánicos</span>',
-             "body": "Evalúan las propiedades de la unión soldada HDPE."},
-            {"icon": "shield", "title": 'Respaldo <span class="c2rb">documental</span>',
-             "body": "Asesoría experta en la documentación técnica de fabricación."},
+            {"icon": "magnifier", "title": 'Análisis y <span class="c2rb">simulaciones</span>',
+             "body": "Estudios, simulaciones y ensayos específicos para prevenir y proteger."},
+            {"icon": "shield", "title": 'Gestión del <span class="c2rb">riesgo</span>',
+             "body": "Características constructivas, compartimentación, protocolos y sistemas de protección."},
+            {"icon": "location", "title": 'Seguimiento en <span class="c2rb">obra</span>',
+             "body": "Inspección y seguimiento a la implementación de los sistemas de protección."},
         ],
-        "cierre": {"bajada": "Control técnico que respalda la confiabilidad de las líneas HDPE."},
+        "cierre": {"bajada": "Prevención basada en evidencia técnica para proteger a las personas, la infraestructura y la maquinaria."},
     },
 }
 
