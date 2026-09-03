@@ -96,6 +96,18 @@ copy e imágenes; Claude aplica y republica.
   `claude.use('artifact')`, inofensivo). Limpiar en una pasada futura.
 - KEY localStorage en **v6**.
 
+## Agregado 2026-09-03 (2) — Memoria de contenidos por mes
+- `design_system/archive_month.py` congela el contenido de un mes en
+  `content/archive/AAAA-MM.json` + `.md` (copys, fotos, trazas, plan, ángulos, estado + índice
+  de dedup). Reproducible desde los generadores.
+- **Septiembre archivado:** `content/archive/2026-09.{json,md}` (13 piezas, publicado).
+- Regla (en CLAUDE.md + 09_EDITORIAL_MEMORY.md): antes de armar un mes nuevo, archivar el
+  anterior, leer los archivos previos, NO repetir knowledge_ids/subtemas/ángulos, y actualizar
+  hechos si cambiaron.
+- Flujo octubre (cuando toque): archivar septiembre ya está hecho → `compose_month(2026-10)`,
+  reescribir COPY/PHOTO_SUB para los slots nuevos evitando lo de septiembre, poner
+  `SEED_ALL_DONE=False`, rotar `posts` en la DB, subir KEY a v7.
+
 ## Reglas editoriales NO negociables (recordatorio rápido)
 - Green Hospital es certificación PROPIA de IDIEM. NO mencionar "Salud sin Daño".
   Se complementa con ISO 50001.

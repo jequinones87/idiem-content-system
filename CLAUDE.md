@@ -79,3 +79,9 @@ aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
   geología, suelos, integridad estructural) pueden trazar a knowledge_id; **Transporte
   Sostenible (26-nov) NO** — la célula INFRA CRÍTICA TRANSPORTE es CONTENT_GAP, así que va
   como institucional general sin afirmar capacidades técnicas.
+- **Memoria de contenidos mensual (NO repetir):** el contenido de cada mes se archiva en
+  `content/archive/AAAA-MM.json` + `.md` con `design_system/archive_month.py`. Antes de armar
+  un mes nuevo: (1) **archiva el mes anterior** si aún no está; (2) **lee los archivos previos**
+  y NO repitas los mismos `knowledge_id`, subtemas ni ángulos editoriales del mes anterior
+  —rota células/temas—; (3) **actualiza hechos** si cambiaron respecto de lo publicado. El
+  archivo del mes anterior es la fuente de contexto obligatoria para el mes nuevo.

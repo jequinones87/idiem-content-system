@@ -108,6 +108,22 @@ capacidades técnicas (la célula ICT no tiene conocimiento activo).
   infraestructura del país". Si se quieren hitos concretos (año de fundación, obras
   emblemáticas), deben confirmarse contra la librería antes de publicarse.
 
+## Memoria de contenidos por mes (archivo)
+
+El contenido publicado de cada mes se **congela** en `content/archive/AAAA-MM.json` (+ `.md`
+legible) con `design_system/archive_month.py`. Cada archivo guarda, por pieza: célula, subtema,
+ángulo editorial, formato, `knowledge_id`/evidencia, copy final, foto (id + traza) y estado; más
+un **índice de dedup** (knowledge_ids, subtemas, ángulos y distribución de células usadas).
+
+Regla de uso al planificar un mes nuevo:
+1. **Archiva** el mes anterior si aún no está (`archive_month.py --month AAAA-MM --published-all`).
+2. **Lee** los archivos previos (al menos el mes inmediatamente anterior) como contexto.
+3. **No repitas** los mismos `knowledge_id`, subtemas ni ángulos del mes anterior; rota células y
+   temas para que el feed no se sienta repetido.
+4. **Actualiza hechos** si algo cambió respecto de lo ya publicado (y refleja la corrección aquí).
+
+Meses archivados: **2026-09** (13 piezas, publicado).
+
 ## Bitácora de correcciones
 
 - **2026-08-24** — Post 1 → foto acuerdo/ejecutivos; post 3 → foto pixelada cambiada
