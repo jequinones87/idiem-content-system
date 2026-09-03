@@ -1,10 +1,11 @@
 {
-  "_descripcion": "Efemérides clave del sector (infraestructura, construcción, minería) que deben CONSIDERARSE al crear la grilla de contenidos de cada mes. Son piezas conmemorativas: las que tienen respaldo técnico en la librería 2A.2 pueden trazar a knowledge_id; las que no (p. ej. transporte), se tratan como saludo institucional general, sin afirmar proyectos/cifras no respaldados. Ver docs/09_EDITORIAL_MEMORY.md y CLAUDE.md.",
-  "_regla": "Al planificar un mes, revisar si cae alguna de estas fechas y, si corresponde a las líneas de IDIEM, sumar una pieza conmemorativa (adicional a los 12 posts base, como el saludo de Fiestas Patrias).",
+  "_descripcion": "Fechas clave y efemérides que deben CONSIDERARSE al crear la grilla de contenidos de cada mes. Dos tipos: 'efemeride_sector' (infraestructura, construcción, minería) que puede trazar a knowledge_id si hay respaldo en 2A.2; y 'saludo_institucional' (Navidad, Año Nuevo, Fiestas Patrias) que NO traza a knowledge_id — mensaje general, sin proyectos/cifras no respaldados. Ver docs/09_EDITORIAL_MEMORY.md y CLAUDE.md.",
+  "_regla": "Al planificar un mes, revisar si cae alguna de estas fechas y, si corresponde a las líneas de IDIEM, sumar una pieza conmemorativa (adicional a los 12 posts base, como el saludo de Fiestas Patrias). Los saludos institucionales van generales; las efemérides de sector trazan a knowledge_id sólo con respaldo 2A.2, si no CONTENT_GAP.",
   "efemerides": [
     {
       "fecha": "10-05",
       "nombre": "Día Mundial de la Arquitectura",
+      "tipo": "efemeride_sector",
       "ambito": "internacional",
       "celulas_relacionadas": ["INFRA PÚBLICA RESILIENTE", "INFRA HOSPITALARIA Y ASISTENCIAL"],
       "enfoque": "Revisión de proyectos y validación normativa en arquitectura, estructura y especialidades; coordinación BIM.",
@@ -13,14 +14,16 @@
     {
       "fecha": "10-13",
       "nombre": "Día Internacional para la Reducción del Riesgo de Desastres",
+      "tipo": "efemeride_sector",
       "ambito": "internacional",
       "celulas_relacionadas": ["INFRA OPERACIÓN MINERA", "INFRA PÚBLICA RESILIENTE", "LAB MINERO DIGITAL"],
-      "enfoque": "Gestión de vulnerabilidad e integridad estructural, geotecnia, inspección/peritaje, monitoreo de salud estructural.",
-      "traza": "puede trazar a knowledge_id (integridad, geotecnia, monitoreo)"
+      "enfoque": "Fecha fuerte para IDIEM: vulnerabilidad e integridad estructural, resiliencia de la infraestructura, geotecnia, inspección/peritaje, monitoreo de salud estructural, riesgo/peritaje de incendios y continuidad operacional.",
+      "traza": "puede trazar a knowledge_id (integridad, geotecnia, monitoreo, incendios)"
     },
     {
       "fecha": "10-17",
       "nombre": "Día del Geólogo (Chile)",
+      "tipo": "efemeride_sector",
       "ambito": "nacional",
       "celulas_relacionadas": ["LAB MINERO DIGITAL", "INFRA OPERACIÓN MINERA"],
       "enfoque": "Geotecnia y rocas, mecánica de suelos, geología aplicada a la operación minera.",
@@ -29,6 +32,7 @@
     {
       "fecha": "11-26",
       "nombre": "Día del Transporte Sostenible",
+      "tipo": "efemeride_sector",
       "ambito": "internacional",
       "celulas_relacionadas": ["INFRA CRÍTICA TRANSPORTE"],
       "enfoque": "OJO: la célula INFRA CRÍTICA TRANSPORTE está restringida a Metro/EFE y hoy NO tiene conocimiento técnico activo (CONTENT_GAP). Tratar como saludo/pieza institucional general, SIN afirmar capacidades técnicas no respaldadas.",
@@ -37,10 +41,29 @@
     {
       "fecha": "12-05",
       "nombre": "Día Mundial del Suelo",
+      "tipo": "efemeride_sector",
       "ambito": "internacional",
       "celulas_relacionadas": ["LAB MINERO DIGITAL", "INFRA PÚBLICA RESILIENTE", "INFRA OPERACIÓN MINERA"],
       "enfoque": "Mecánica de suelos, geotecnia, ensayos de control de obras en suelos (densidad, granulometría, Proctor, CBR).",
       "traza": "puede trazar a knowledge_id (ensayos de suelos / geotecnia)"
+    },
+    {
+      "fecha": "12-25",
+      "nombre": "Navidad",
+      "tipo": "saludo_institucional",
+      "ambito": "nacional",
+      "celulas_relacionadas": [],
+      "enfoque": "Saludo institucional de cierre de año: mensaje general, cálido y sobrio, alineado a la voz de marca. Sin proyectos, cifras ni afirmaciones técnicas no respaldadas por 2A.2.",
+      "traza": "NO traza a knowledge_id (saludo institucional, como Fiestas Patrias)"
+    },
+    {
+      "fecha": "12-31",
+      "nombre": "Año Nuevo",
+      "tipo": "saludo_institucional",
+      "ambito": "nacional",
+      "celulas_relacionadas": [],
+      "enfoque": "Saludo institucional de Año Nuevo: agradecimiento y proyección al año siguiente, mensaje general. Sin proyectos, cifras ni afirmaciones técnicas no respaldadas por 2A.2.",
+      "traza": "NO traza a knowledge_id (saludo institucional, como Fiestas Patrias)"
     }
   ]
 }

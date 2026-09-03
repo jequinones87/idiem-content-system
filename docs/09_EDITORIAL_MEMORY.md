@@ -90,10 +90,12 @@ pieza conmemorativa si el mes cae en una de estas fechas (adicional a los 12 pos
 | Fecha | Efeméride | Líneas IDIEM | Traza |
 |---|---|---|---|
 | 5 oct | Día Mundial de la Arquitectura | Revisión de proyectos, BIM (IPR/IHA) | puede trazar a knowledge_id |
-| 13 oct | Reducción del Riesgo de Desastres | Integridad estructural, geotecnia, monitoreo (IOM/IPR/LMD) | puede trazar a knowledge_id |
+| 13 oct | Reducción del Riesgo de Desastres | **Fecha fuerte:** vulnerabilidad/integridad estructural, resiliencia, geotecnia, monitoreo, **riesgo/peritaje de incendios** y **continuidad operacional** (IOM/IPR/LMD) | puede trazar a knowledge_id |
 | 17 oct | Día del Geólogo (Chile) | Geotecnia y rocas, mecánica de suelos (LMD/IOM) | puede trazar a knowledge_id |
 | 26 nov | Transporte Sostenible | INFRA CRÍTICA TRANSPORTE (**CONTENT_GAP**) | **NO** técnico → institucional general |
 | 5 dic | Día Mundial del Suelo | Mecánica de suelos, ensayos de suelos, geotecnia (LMD/IPR/IOM) | puede trazar a knowledge_id |
+| 25 dic | Navidad | Saludo institucional (cierre de año) | **NO** traza → saludo general |
+| 31 dic | Año Nuevo | Saludo institucional (proyección) | **NO** traza → saludo general |
 
 Regla: mismas cautelas que un saludo — las que no tienen respaldo técnico en 2A.2 se
 mantienen institucionales/generales; **Transporte Sostenible** no puede afirmar
