@@ -3,6 +3,15 @@
   "_regla": "Al planificar un mes, revisar si cae alguna de estas fechas y, si corresponde a las líneas de IDIEM, sumar una pieza conmemorativa (adicional a los 12 posts base, como el saludo de Fiestas Patrias). Los saludos institucionales van generales; las efemérides de sector trazan a knowledge_id sólo con respaldo 2A.2, si no CONTENT_GAP.",
   "efemerides": [
     {
+      "fecha": "09-18",
+      "nombre": "Fiestas Patrias (Chile)",
+      "tipo": "saludo_institucional",
+      "ambito": "nacional",
+      "celulas_relacionadas": [],
+      "enfoque": "Saludo institucional patrio: aporte de ciencia e ingeniería al desarrollo de la infraestructura del país; mensaje general y sobrio. Sin proyectos, fechas ni cifras no respaldadas por 2A.2. (Se realizó como post 13 de septiembre 2026.)",
+      "traza": "NO traza a knowledge_id (saludo institucional)"
+    },
+    {
       "fecha": "10-05",
       "nombre": "Día Mundial de la Arquitectura",
       "tipo": "efemeride_sector",

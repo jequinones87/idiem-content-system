@@ -89,6 +89,7 @@ pieza conmemorativa si el mes cae en una de estas fechas (adicional a los 12 pos
 
 | Fecha | Efeméride | Líneas IDIEM | Traza |
 |---|---|---|---|
+| 18 sep | Fiestas Patrias (Chile) | Saludo institucional patrio | **NO** traza → saludo general |
 | 5 oct | Día Mundial de la Arquitectura | Revisión de proyectos, BIM (IPR/IHA) | puede trazar a knowledge_id |
 | 13 oct | Reducción del Riesgo de Desastres | **Fecha fuerte:** vulnerabilidad/integridad estructural, resiliencia, geotecnia, monitoreo, **riesgo/peritaje de incendios** y **continuidad operacional** (IOM/IPR/LMD) | puede trazar a knowledge_id |
 | 17 oct | Día del Geólogo (Chile) | Geotecnia y rocas, mecánica de suelos (LMD/IOM) | puede trazar a knowledge_id |
