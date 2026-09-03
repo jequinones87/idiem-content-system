@@ -106,6 +106,13 @@ APPLIED_LOG = {
 }
 NEW_POSTS = {13}  # posts creados nuevos (chip "nuevo")
 
+# Estado "sembrado" en el ws-state publicado. STOPGAP (2026-09-03): deja fijo el
+# registro de septiembre —todos los posts aprobados + subidos a LinkedIn— visible
+# en cualquier equipo, sin depender de "Guardar y compartir". Es temporal, hasta
+# implementar la sincronización real (DB del artefacto). Poner en False (o migrar
+# a la DB) cuando exista esa sincronización.
+SEED_ALL_DONE = True
+
 
 def _fmt_date(iso: str) -> str:
     y, m, d = iso.split("-")
@@ -291,8 +298,17 @@ def build(month: str, build_dir: Path, out_path: Path) -> None:
             cards.append(render_card(seq, posts[cid], uris))
 
     html = ARTIFACT.replace("__CARDS__", "\n".join(cards))
+    if SEED_ALL_DONE:
+        seed = {st["cid"]: {"approved": True, "approvedAt": None,
+                            "posted": True, "postedAt": None}
+                for st in structure}
+        html = html.replace(
+            '<script id="ws-state" type="application/json">{}</script>',
+            '<script id="ws-state" type="application/json">'
+            + json.dumps(seed, ensure_ascii=False) + '</script>')
     out_path.write_text(html, encoding="utf-8")
-    print(f"build: {out_path} ({out_path.stat().st_size//1024} KB, {len(structure)} posts)")
+    print(f"build: {out_path} ({out_path.stat().st_size//1024} KB, {len(structure)} posts, "
+          f"seed={'all-done' if SEED_ALL_DONE else 'empty'})")
 
 
 def render_card(seq: int, post, uris: list[str]) -> str:
@@ -680,7 +696,7 @@ __CARDS__
 
 <script>
 (function(){
-  var KEY='idiem_ws_sep2026_v5';
+  var KEY='idiem_ws_sep2026_v6';
   function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function readJSON(s){try{return JSON.parse(s||'{}')||{};}catch(e){return {};}}
   function mergeState(base,over){var out={},k;for(k in base)out[k]=base[k];
