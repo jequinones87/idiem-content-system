@@ -517,6 +517,9 @@ h1 b{color:var(--red)}
 .lede{font-size:clamp(1rem,1.6vw,1.13rem);color:var(--muted);max-width:74ch;margin:0 0 18px}
 .bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 26px}
 .bar .savehint{font-size:.76rem;color:var(--muted)}
+.syncstate{font-family:inherit;font-size:.74rem;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:100px;padding:6px 12px;display:inline-flex;align-items:center;gap:.4em;white-space:nowrap}
+.syncstate[data-mode="sync"]{color:#15803d;border-color:rgba(21,128,61,.4);background:rgba(21,128,61,.08)}
+.syncstate[data-mode="local"]{color:#c6780a;border-color:rgba(198,120,10,.4);background:rgba(198,120,10,.08)}
 .xbtn{font-family:inherit;font-size:.8rem;font-weight:700;color:#fff;background:var(--gray-dark);border:0;
   padding:8px 16px;border-radius:100px;cursor:pointer}
 .xbtn.on{background:var(--red)}
@@ -644,13 +647,14 @@ code{font-family:inherit;font-weight:700;background:var(--gray-light);padding:1p
 <div class="wrap">
   <p class="eyebrow"><span class="dot"></span>IDIEM · Design System · Workstation</p>
   <h1>Septiembre — <b>12 posts + saludo Fiestas Patrias</b></h1>
-  <p class="lede">Cada post muestra su <strong>estado</strong> en la esquina de la gráfica: <b class="tpub">publicado</b> (lo que ya apliqué), <b class="tpend">pendiente</b> (lo editaste, aún sin aplicar) o <b class="tready">listo para aplicar</b> (lo marcaste tú). Abajo tienes el texto editable, notas de imagen, el <strong>historial</strong> de lo aplicado, y <strong>↺ volver a lo publicado</strong>. Con <strong>💾 Guardar y compartir</strong> tu avance queda visible en tus otros dispositivos y para el equipo. Cuando un post quede conforme, márcalo <strong>✅ Aprobado para publicar</strong> y luego <strong>🔗 subido a LinkedIn</strong> una vez publicado (flujo: <b class="tpub">revisado → aprobado → subido</b>).</p>
+  <p class="lede">Cada post muestra su <strong>estado</strong> en la esquina de la gráfica: <b class="tpub">publicado</b> (lo que ya apliqué), <b class="tpend">pendiente</b> (lo editaste, aún sin aplicar) o <b class="tready">listo para aplicar</b> (lo marcaste tú). Abajo tienes el texto editable, notas de imagen, el <strong>historial</strong> de lo aplicado, y <strong>↺ volver a lo publicado</strong>. Todo lo que marcas se <strong>sincroniza en vivo con el equipo</strong>: aprueba (<strong>✅ Aprobado para publicar</strong>), agenda la fecha, y marca <strong>🔗 subido a LinkedIn</strong> una vez publicado (flujo: <b class="tpub">revisado → aprobado → agendado → subido</b>). No necesitas guardar: se guarda solo.</p>
   <div class="bar">
     <input class="idfield" id="revName" type="text" placeholder="Tu nombre" autocomplete="name" spellcheck="false">
     <input class="idfield" id="revRole" type="text" placeholder="Especialidad / área (opcional)" spellcheck="false">
+    <span class="syncstate" id="syncState" data-mode="init">Conectando…</span>
     <button class="xbtn save" type="button" hidden>💾 Guardar y compartir</button>
     <button class="xbtn ghost export" type="button">Descargar respaldo (JSON)</button>
-    <span class="savehint" id="savehint">Tus ediciones se guardan en este navegador. “Guardar y compartir” las publica para verlas en otros equipos.</span>
+    <span class="savehint" id="savehint">Tus cambios se guardan y comparten con el equipo automáticamente.</span>
   </div>
   <div class="dash">
     <div class="counts">
@@ -708,8 +712,27 @@ __CARDS__
   var _embed=readJSON((document.getElementById('ws-state')||{}).textContent);
   var _local=readJSON(localStorage.getItem(KEY));
   var store=mergeState(_embed,_local);
-  function persist(){try{localStorage.setItem(KEY,JSON.stringify(store));}catch(e){}}
+  function persistLocal(){try{localStorage.setItem(KEY,JSON.stringify(store));}catch(e){}}
+  // ---- estado compartido en vivo (capacidad db del artefacto) ----
+  // La DB es la fuente de verdad cuando está disponible; localStorage queda como
+  // caché offline. persist() guarda local y agenda un push a la DB de los docs
+  // que cambiaron. Un onSnapshot repinta en vivo lo que cambie cualquier equipo.
+  var db=null, dbShadow={}, pushTimer=null;
+  function isPostKey(k){return k && k.charAt(0)!=='_';}
+  function schedulePush(){if(!db)return;clearTimeout(pushTimer);pushTimer=setTimeout(pushNow,400);}
+  function pushNow(){if(!db)return;
+    Object.keys(store).forEach(function(cid){
+      if(!isPostKey(cid))return;
+      var body=JSON.stringify(store[cid]||{});
+      if(body!==dbShadow[cid]){dbShadow[cid]=body;
+        try{db.doc('posts/'+cid).set(store[cid]||{}).catch(function(){});}catch(e){}}
+    });}
+  function persist(){persistLocal();schedulePush();}
   function rec(cid){return (store[cid]=store[cid]||{});}
+  function syncIndicator(mode){var el=document.getElementById('syncState');if(!el)return;
+    el.setAttribute('data-mode',mode);
+    el.textContent = mode==='sync'?'🟢 Sincronizado con el equipo'
+      : mode==='local'?'🟡 Sin conexión · cambios locales' : 'Conectando…';}
 
   function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');
     clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove('on');},1900);}
@@ -906,8 +929,21 @@ __CARDS__
     post.querySelector('.btn.png').addEventListener('click',function(){downloadPNG(post,slides,curIdx);});
     post.querySelector('.btn.pdf').addEventListener('click',function(){downloadPDF(post,slides);});
 
-    paintRegen();refresh();
-    post._refresh=refresh;
+    // Reaplica el estado (store[cid]) a los controles + repinta. Lo llama el
+    // onSnapshot de la DB para reflejar en vivo lo que cambie otro equipo.
+    // No pisa un campo de texto que se está editando (activeElement).
+    function applyState(){
+      var rr=store[cid]||{};
+      if(document.activeElement!==copy){
+        copy.value=(typeof rr.copy==='string')?rr.copy:copy.defaultValue;autosize(copy);}
+      if(document.activeElement!==note){
+        note.value=(typeof rr.note==='string')?rr.note:'';autosize(note);}
+      if(calDate&&document.activeElement!==calDate)calDate.value=rr.scheduledFor||'';
+      if(calTime&&document.activeElement!==calTime)calTime.value=rr.scheduledTime||'09:00';
+      paintRegen();paintApproved();paintLinked();paintCal();refresh();
+    }
+    applyState();
+    post._apply=applyState;
   });
 
   // ---- lightbox ----
@@ -1080,10 +1116,9 @@ __CARDS__
       else{toast('No se pudo guardar');}
       if(btn){btn.disabled=false;btn.textContent='💾 Guardar y compartir';}}
   }
-  artifactCap().then(function(a){var btn=document.querySelector('.xbtn.save');
-    if(a&&btn){btn.hidden=false;btn.addEventListener('click',saveCloud);
-      var sh=document.getElementById('savehint');
-      if(sh)sh.textContent='“Guardar y compartir” publica tu avance: lo verás en tus otros dispositivos y el equipo, y Claude puede leerlo para aplicarlo.';}});
+  // "Guardar y compartir" quedó obsoleto: el estado se sincroniza en vivo por la DB.
+  // Se deja el botón oculto (no se re-muestra) y saveCloud/buildCleanHTML sin cablear.
+  void saveCloud;  // referenciado para evitar "declarado y no usado"
   // restaurar scroll tras la recarga que sigue a publicar
   try{var sy=sessionStorage.getItem('ws_scroll');if(sy){window.scrollTo(0,parseInt(sy,10)||0);sessionStorage.removeItem('ws_scroll');}}catch(e){}
 
@@ -1122,6 +1157,30 @@ __CARDS__
   });
 
   updateDash();
+
+  // ---- conexión a la DB del artefacto (estado compartido en vivo) ----
+  function applyAll(){document.querySelectorAll('.post').forEach(function(p){
+    if(p._apply)p._apply();});updateDash();}
+  (async function(){
+    try{db=(window.claude&&claude.use)?await claude.use('db'):null;}catch(e){db=null;}
+    if(!db){syncIndicator('local');return;}   // sin DB: modo local (localStorage)
+    syncIndicator('sync');
+    try{
+      db.collection('posts').onSnapshot(function(snap){
+        var changed=false;
+        snap.docChanges().forEach(function(ch){
+          var cid=ch.doc.id;
+          var body=ch.type==='removed'?'{}':JSON.stringify(ch.doc.data()||{});
+          if(body===dbShadow[cid])return;              // eco de nuestra propia escritura
+          dbShadow[cid]=body;
+          store[cid]=ch.type==='removed'?{}:Object.assign({},ch.doc.data()||{});
+          changed=true;
+        });
+        if(changed){persistLocal();applyAll();}
+        syncIndicator('sync');
+      },function(err){syncIndicator('local');});
+    }catch(e){syncIndicator('local');}
+  })();
 })();
 </script>'''
 

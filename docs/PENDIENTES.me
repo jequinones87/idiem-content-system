@@ -78,6 +78,24 @@ copy e imágenes; Claude aplica y republica.
 - KEY localStorage sigue en **v5** (los flags `approved`/`scheduledFor` son aditivos; no se
   reseteó para no borrar lo que Kike ya haya marcado).
 
+## Agregado 2026-09-03 — Sincronización en vivo entre equipos (DB del artefacto)
+- El estado del tablero ahora vive en la **capacidad `db`** del artefacto (colección `posts`,
+  1 doc por `content_id` con los flags/ediciones). Se sincroniza **en vivo** entre equipos
+  (`onSnapshot`), sin "Guardar y compartir" y sobrevive republicaciones. `localStorage`
+  quedó como **caché offline**; si no hay `db` (offline/sin permiso), cae a modo local.
+- Capacidades publicadas: **`{db, downloads}`** (se revocó `artifact`; ya no hay
+  auto-publicación desde la página — eso lo hace el generador). Indicador de estado en la
+  barra: 🟢 sincronizado / 🟡 sin conexión.
+- **Acceso:** declarar `db` hace el artefacto **solo para miembros conectados de la
+  organización** (no compartible por link público). Confirmar que el equipo MKT está en la org.
+- Migración: la DB se **sembró** con septiembre 13/13 (aprobado + subido) vía `write_db`.
+- Sembrado offline: `SEED_ALL_DONE=True` deja el `ws-state` embebido en all-done como fallback.
+  Para un mes nuevo, poner `SEED_ALL_DONE=False` (la DB pasa a mandar) y vaciar/rotar `posts`.
+- Respaldo a GitHub (a pedido): `read_db` de `posts` → commitear un `state.json` (aún no hecho).
+- Código muerto: quedaron `saveCloud`/`buildCleanHTML`/`artifactCap` sin cablear (referencian
+  `claude.use('artifact')`, inofensivo). Limpiar en una pasada futura.
+- KEY localStorage en **v6**.
+
 ## Reglas editoriales NO negociables (recordatorio rápido)
 - Green Hospital es certificación PROPIA de IDIEM. NO mencionar "Salud sin Daño".
   Se complementa con ISO 50001.
