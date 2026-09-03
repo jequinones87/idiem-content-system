@@ -179,12 +179,15 @@ Meses archivados: **2026-09** (13 piezas, publicado).
     mayor laboratorio", "pioneros". Sí es publicable el núcleo técnico ("Triaxial para grandes
     partículas, desarrollado con ingeniería propia"). Confiabilidad (IOM-065): sin "reconocido en
     Chile y el mundo / rigor y excelencia".
-  - **Solape a vigilar:** "Ingeniería contra incendios" (seq3, IPR-019, preventivo en edificación
-    pública) comparte etiqueta de subtema con el peritaje de incendios minero de septiembre
-    (IOM-011); célula y ángulo son distintos (preventivo vs forense) y es pertinente a la semana
-    RRD. Alternativa cero-solape ofrecida a Kike: IPR-002 (componentes metálicos) o IPR-023
-    (diagnóstico de obras ejecutadas).
-  - Los 12 copies pasan `ingest_draft` sin violaciones y todos ≤900 caracteres (rango 638–871).
-  - **Fotos:** octubre parte sin fotos (campo de marca sólido / carrusel en campo oscuro); Kike
-    elegirá fotos de la librería de Drive por pieza. Las de septiembre se preservaron en
-    `assets/month/2026-09/`.
+  - **Ronda 2 (Kike):** se reemplazó el post de incendios (IPR-019) por **peritaje de componentes
+    metálicos (IPR-002)** para eliminar el solape de subtema con septiembre; quedan **4 carruseles**
+    (integridad/RRD, Triaxial, componentes metálicos, cumplimiento normativo); y **todos los posts
+    llevan foto** de la librería de Drive de IDIEM.
+  - Los 12 copies pasan `ingest_draft` sin violaciones y todos ≤900 caracteres (rango 638–861).
+  - **Fotos (todas de la librería de Drive de IDIEM):** una por pieza, bajada y reescalada
+    (~1200px lado corto, JPEG q86) a `assets/month/2026-10/pNN.jpg`. Trazan por `viewUrl` en
+    `PHOTO_SUB`. Ej.: puentes → `estructuras_peritajes_puente_cortez` (coincide con el estudio del
+    Puente Cortés citado en el copy); Triaxial → `Equipo_trixial_gigante`. Las de septiembre se
+    preservaron en `assets/month/2026-09/`.
+  - **Nota técnica:** `COPY` pasó a estar **keyed por `knowledge_id`** (no por `content_id`), para
+    que el copy no se rompa cuando cambian los `seq` al reordenar/insertar piezas.

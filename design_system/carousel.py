@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 ASSETS = ROOT / "assets"
 
-CAROUSEL_POSTS = {2, 3}
+CAROUSEL_POSTS = {2, 7, 9, 10}
 
 
 def _icon(name: str) -> str:
@@ -42,19 +42,47 @@ SLIDES = {
         ],
         "cierre": {"bajada": "Conocer la vulnerabilidad es el primer paso para reducir el riesgo de desastres."},
     },
-    # seq 3 · IPR-019 · Ingeniería contra incendios
-    3: {
-        "portada": {"kicker": "INGENIERÍA CONTRA INCENDIOS",
-                    "title": 'Prevenir el <span class="c2rt">incendio</span>.'},
+    # seq 7 · LMD-007 · Triaxial suelos de partículas grandes (SIN superlativos)
+    7: {
+        "portada": {"kicker": "GEOTECNIA · TRIAXIAL GRANDES PARTÍCULAS",
+                    "title": 'Ensayar el <span class="c2rt">material real</span>.'},
         "intermedias": [
-            {"icon": "magnifier", "title": 'Análisis y <span class="c2rb">simulaciones</span>',
-             "body": "Estudios, simulaciones y ensayos específicos para prevenir y proteger."},
-            {"icon": "shield", "title": 'Gestión del <span class="c2rb">riesgo</span>',
-             "body": "Características constructivas, compartimentación, protocolos y sistemas de protección."},
-            {"icon": "location", "title": 'Seguimiento en <span class="c2rb">obra</span>',
-             "body": "Inspección y seguimiento a la implementación de los sistemas de protección."},
+            {"icon": "magnifier", "title": 'Partículas de <span class="c2rb">gran tamaño</span>',
+             "body": "Ensayamos suelos que no caben en los equipos convencionales."},
+            {"icon": "location", "title": 'Dónde <span class="c2rb">aplica</span>',
+             "body": "Gran minería, presas de tierra, energía e infraestructura."},
+            {"icon": "shield", "title": 'Ingeniería <span class="c2rb">propia</span>',
+             "body": "Equipo Triaxial para grandes partículas desarrollado por IDIEM."},
         ],
-        "cierre": {"bajada": "Prevención basada en evidencia técnica para proteger a las personas, la infraestructura y la maquinaria."},
+        "cierre": {"bajada": "Parámetros representativos del material real para un diseño geotécnico seguro."},
+    },
+    # seq 9 · IPR-002 · Peritaje de componentes metálicos
+    9: {
+        "portada": {"kicker": "PERITAJE DE COMPONENTES METÁLICOS",
+                    "title": '¿Por qué <span class="c2rt">falló</span>?'},
+        "intermedias": [
+            {"icon": "magnifier", "title": 'Estudios de <span class="c2rb">falla</span>',
+             "body": "Determinamos la causa raíz de la falla de un componente."},
+            {"icon": "shield", "title": 'Componentes <span class="c2rb">críticos</span>',
+             "body": "Peritajes a pernos, ejes, engranajes y tuberías."},
+            {"icon": "location", "title": 'Pavimento en <span class="c2rb">autopistas</span>',
+             "body": "También evaluamos el daño del pavimento en autopistas."},
+        ],
+        "cierre": {"bajada": "Evidencia técnica para entender la falla y evitar que se repita."},
+    },
+    # seq 10 · IOM-063 · Cumplimiento normativo
+    10: {
+        "portada": {"kicker": "CUMPLIMIENTO NORMATIVO",
+                    "title": 'Cerrar las <span class="c2rt">brechas</span>.'},
+        "intermedias": [
+            {"icon": "magnifier", "title": 'Revisión <span class="c2rb">estructural</span>',
+             "body": "Verificamos el cumplimiento frente a los marcos estructurales aplicables."},
+            {"icon": "shield", "title": 'Incendios y <span class="c2rb">especialidades</span>',
+             "body": "Revisión normativa en protección contra incendios y en especialidades."},
+            {"icon": "location", "title": 'Brechas <span class="c2rb">identificadas</span>',
+             "body": "Detectamos las brechas respecto de la normativa vigente."},
+        ],
+        "cierre": {"bajada": "Una mirada técnica e independiente para operar con respaldo y sin sorpresas."},
     },
 }
 

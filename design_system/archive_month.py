@@ -64,7 +64,7 @@ def build_archive(month: str, published_all: bool) -> dict:
 
     posts = []
     for seq, post in enumerate(review.posts, 1):
-        c = G.COPY[post.content_id]
+        c = G.COPY[post.knowledge_id]
         full = _full_copy(c)
         gb = post.graphic_brief or {}
         ps = gb.get("photo_selection") or {}

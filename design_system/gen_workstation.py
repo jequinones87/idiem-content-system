@@ -35,9 +35,36 @@ BUILD_DEFAULT = Path(tempfile.gettempdir()) / "idiem_ws_build"
 
 # Sustitución liviana: el pick top del motor pesa 8.3 MB (no descargable por el
 # conector). Se usa su hermana de librería, misma célula/subtema, versión ~1080px.
-# seq -> foto de librería incrustada. Vacío al iniciar el mes: las piezas parten
-# con campo de marca sólido y Kike pide las fotos (Drive) en la workstation.
-PHOTO_SUB = {}
+# seq -> foto de la librería de Drive de IDIEM elegida para cada pieza de octubre.
+# Se baja, reescala (~1200px lado corto, JPEG q86) y hornea en assets/month/2026-10/pNN.jpg.
+# 'orig' vacío = no es sustitución (es la foto elegida directamente).
+def _drive(fid): return f"https://drive.google.com/file/d/{fid}/view"
+PHOTO_SUB = {
+    1:  {"photo_id": "generica_hospital", "fuente": _drive("145Rtu5NfO2uLDK0WWNLPn1ZIqjHTEQ6D"),
+         "detalle": "hospital"},
+    2:  {"photo_id": "estructuras_peritajes_espesador_mina_teniente", "fuente": _drive("1-GmcoU1Z9OlUOhJE7yEjjPNEAidYH70n"),
+         "detalle": "espesador minero · El Teniente"},
+    3:  {"photo_id": "generico_ciudad_santiago", "fuente": _drive("107_VieMWx6NPM_nlV0pluItLnGMHIT6L"),
+         "detalle": "ciudad · arquitectura urbana"},
+    4:  {"photo_id": "Sonda_Prospecciones_Geotecnicas", "fuente": _drive("1IIuO-dExwVUZ58DJQYqM-7-taQrsVZnM"),
+         "detalle": "sonda de prospecciones geotécnicas"},
+    5:  {"photo_id": "ensayo_aceros1", "fuente": _drive("1amvDzSYHH5T_3-YLqilt4YpGWpzxdhMq"),
+         "detalle": "ensayo de aceros en laboratorio"},
+    6:  {"photo_id": "generica_hormigon_obra_edificio_equipo_idiem", "fuente": _drive("16urP2GSF1Q43HZLPNX2xCD5TOZ2XxSNz"),
+         "detalle": "hormigón en obra · equipo IDIEM"},
+    7:  {"photo_id": "Equipo_trixial_gigante", "fuente": _drive("1XVR_E9H7G9wKAj_k_KN_W6c_uHK3HlrC"),
+         "detalle": "equipo Triaxial para grandes partículas"},
+    8:  {"photo_id": "generico_modelado_estructura", "fuente": _drive("157A_fs0lXLIOawLs_D92Ze4C-cczSUFS"),
+         "detalle": "modelado 3D de estructura"},
+    9:  {"photo_id": "planta_aceros", "fuente": _drive("125lUuUu3UFValyUGDY0afuRLuGns98Bh"),
+         "detalle": "planta de aceros"},
+    10: {"photo_id": "estructuras_peritajes_analisis_terreno", "fuente": _drive("1U0v0oaWq2nypfKT-REB9FC77Gxegu0Jg"),
+         "detalle": "análisis estructural en terreno"},
+    11: {"photo_id": "estructuras_peritajes_puente_cortez", "fuente": _drive("1KMDuV0Z8AhEQspQHOljrYGhXKoXUuyKy"),
+         "detalle": "peritaje Puente Cortés"},
+    12: {"photo_id": "profesionales_idiem_edificio_terremoto", "fuente": _drive("1r5sGck9HudtK3OhMTu1j3P4wOcrsKZW4"),
+         "detalle": "profesionales IDIEM · edificio post-terremoto"},
+}
 
 # Fotos Adobe Stock licenciadas (tier libre) para los posts sin foto de librería
 # adecuada (antes marcados Muapi). Descargadas, comprimidas a 1080px y usadas
@@ -249,7 +276,7 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     n = len(uris)
     fmt_label = f"CARRUSEL · {n} láminas" if is_car else "STATIC"
 
-    c = G.COPY[post.content_id]
+    c = G.COPY[post.knowledge_id]  # COPY keyed por knowledge_id
     full_copy = f"{c['hook']}\n\n{c['body']}\n\n{c['cta']}"
 
     ev = gb.get("evidence_ids") or []
@@ -258,11 +285,12 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     src = ps.get("source")
     if seq in PHOTO_SUB:
         s = PHOTO_SUB[seq]
-        reason = s.get("reason", "original 8.3 MB, no descargable por el conector")
         foto = (f'Librería · <code>{s["photo_id"]}</code> ({G.esc(s["detalle"])}) · '
-                f'<a href="{G.esc(s["fuente"])}" target="_blank" rel="noopener">ver en Drive</a>'
-                f'<br><span class="muprompt">reemplaza a <code>{s["orig"]}</code> '
-                f'({G.esc(reason)})</span>')
+                f'<a href="{G.esc(s["fuente"])}" target="_blank" rel="noopener">ver en Drive</a>')
+        if s.get("orig"):
+            reason = s.get("reason", "")
+            foto += (f'<br><span class="muprompt">reemplaza a <code>{s["orig"]}</code>'
+                     + (f' ({G.esc(reason)})' if reason else '') + '</span>')
     elif seq in STOCK_SUB:
         s = STOCK_SUB[seq]
         foto = (f'Adobe Stock · <code>#{s["id"]}</code> ({G.esc(s["detalle"])}) · licencia libre'
