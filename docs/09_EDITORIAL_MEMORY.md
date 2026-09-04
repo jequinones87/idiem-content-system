@@ -219,3 +219,23 @@ Meses archivados: **2026-09** (13 piezas, publicado). Octubre 2026 en preparaci�
   - **Fotos:** no existía `generica_geologo` en la librería → se usó `sondaje_relave` (geología de
     terreno); `generica_estructura_acero` no descargaba → se usó `generica_idiem_vigas_acero`
     (mismo tema, vigas de acero).
+- **2026-09-04** — **Ronda de fotos exactas (Kike) + historial de cambios.** Kike subió
+  `generica_geologo` al Drive y pidió aplicar las fotos exactas que había marcado.
+  - **Aplicadas:** geólogo (LMD-004, seq 3) → `generica_geologo`; tecnología de la construcción
+    (IPR-016, seq 5) → `generica_arquitectura-construccion-bim2`. Bajadas del Drive, reescaladas y
+    horneadas a `assets/month/2026-10/p03.jpg` y `p05.jpg`; `PHOTO_SUB` actualizado.
+  - **Anillo rojo configurable por post (`SIDE` en `gen_workstation.py`):** el geólogo usa el anillo
+    a la **derecha** (59%) para dejar la **cara despejada** (pedido explícito: "el círculo rojo no
+    debe tapar a la persona"). Regla: cuando el sujeto llena el encuadre, mover el anillo al lado
+    contrario a la cara.
+  - **Historial de cambios (`APPLIED_LOG`) poblado — OBLIGATORIO.** Cada tarjeta debe mostrar el
+    bloque "Historial de cambios aplicados (N)" como en septiembre. Octubre había quedado vacío
+    (el `<details>` no se renderiza si el log está vacío); ahora las 12 tarjetas lo llevan. **Todo
+    artefacto de workstation debe incluir el historial poblado.**
+  - **`generica_estructura_acero` (8,28 MB) NO se pudo descargar** por el conector de Drive: la
+    sesión expira en cada intento (~10 intentos). Los archivos livianos sí bajan (geólogo 4 MB,
+    BIM 0,5 MB). Regla operativa: **archivos de Drive > ~6 MB fallan; pedir versión comprimida
+    (≤5 MB).** #12 (rehabilitación) mantiene `generica_idiem_vigas_acero` (mismo tema) hasta que
+    Kike re-suba `generica_estructura_acero` comprimida.
+  - **DB del tablero:** notas de foto ya aplicadas (geólogo, BIM) borradas para limpiar el flag;
+    la de `estructura_acero` (#12) se **mantiene** como pendiente.

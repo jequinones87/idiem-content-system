@@ -44,12 +44,12 @@ PHOTO_SUB = {
          "detalle": "domo minero · El Teniente"},
     2:  {"photo_id": "generica_construccion_edificio", "fuente": _drive("1WWMzjdxObQWBQIIvXcqKJQKBowYpc-j4"),
          "detalle": "edificio en construcción"},
-    3:  {"photo_id": "sondaje_relave", "fuente": _drive("1DEFFoyprsBz9EY4Sbs8wXn0vu3GnFoKK"),
-         "detalle": "sondaje geotécnico / exploración"},
+    3:  {"photo_id": "generica_geologo", "fuente": _drive("10yp3LWqAc3yUmHK4_s5sCfyYvR1GUEs8"),
+         "detalle": "geólogo en terreno · lectura de estratos"},
     4:  {"photo_id": "ensayo_aceros1", "fuente": _drive("1amvDzSYHH5T_3-YLqilt4YpGWpzxdhMq"),
          "detalle": "ensayo de aceros en laboratorio"},
-    5:  {"photo_id": "profesional_idiem_obra_construccion_edificio", "fuente": _drive("1hqn_6T-4CnPmpj8ySw_TlKDptCb5SWC_"),
-         "detalle": "profesional IDIEM en obra"},
+    5:  {"photo_id": "generica_arquitectura-construccion-bim2", "fuente": _drive("1wwOTAnuDsvoG6aawb1awhdb6hYA2-lFe"),
+         "detalle": "modelo BIM sobre edificio · tecnología de la construcción"},
     6:  {"photo_id": "Equipo_trixial_gigante", "fuente": _drive("1XVR_E9H7G9wKAj_k_KN_W6c_uHK3HlrC"),
          "detalle": "equipo Triaxial para grandes partículas"},
     7:  {"photo_id": "generico_modelado_estructura", "fuente": _drive("157A_fs0lXLIOawLs_D92Ze4C-cczSUFS"),
@@ -66,6 +66,12 @@ PHOTO_SUB = {
          "detalle": "vigas de acero · estructura (por generica_estructura_acero)"},
 }
 
+# seq -> lado del círculo rojo en la pieza estática. Por defecto "left" (41%);
+# "right" lo lleva a 59% para no tapar al sujeto de la foto. Post 3 (geólogo):
+# la persona está a la izquierda/centro de la toma, así que el anillo va a la
+# derecha para dejar la cara despejada (pedido MKT 2026-09-04).
+SIDE = {3: "right"}
+
 # Fotos Adobe Stock licenciadas (tier libre) para los posts sin foto de librería
 # adecuada (antes marcados Muapi). Descargadas, comprimidas a 1080px y usadas
 # localmente; foto real y trazable, sin depender de un CDN externo.
@@ -80,8 +86,49 @@ GH_SEAL = ("data:image/png;base64," +
 # primero. Alimenta el chip de estado "publicado · fecha" y el bloque "Historial"
 # de cada post. Espeja la bitácora de docs/09_EDITORIAL_MEMORY.md.
 # seq -> historial de cambios aplicados y republicados (más reciente primero).
-# Octubre parte sin historial; se irá poblando a medida que se apliquen rondas.
-APPLIED_LOG = {}
+# Espeja la bitácora de docs/09_EDITORIAL_MEMORY.md: sólo cambios ya aplicados
+# Y republicados (no pendientes). Se va sumando en cada ronda del equipo.
+APPLIED_LOG = {
+    1: [
+        {"date": "2026-09-04", "summary": "Publicado: control de productividad en operación minera (subtema fresco, no usado en septiembre)."},
+    ],
+    2: [
+        {"date": "2026-09-04", "summary": "Gancho ajustado al Día Mundial de la Arquitectura (5-oct) por pedido de MKT."},
+        {"date": "2026-09-04", "summary": "Publicado: sustentabilidad y arquitectura en infraestructura pública."},
+    ],
+    3: [
+        {"date": "2026-09-04", "summary": "Foto cambiada a generica_geologo (Drive); anillo rojo movido a la derecha para no tapar a la persona."},
+        {"date": "2026-09-04", "summary": "Reescrito como saludo del Día del Geólogo (17-oct) + geotecnia, sin detallar otros servicios."},
+    ],
+    4: [
+        {"date": "2026-09-04", "summary": "Reencuadrado a alto nivel (confiabilidad de materiales) para no repetir el ángulo de septiembre."},
+    ],
+    5: [
+        {"date": "2026-09-04", "summary": "Foto cambiada a modelo BIM (generica_arquitectura-construccion-bim2, Drive)."},
+        {"date": "2026-09-04", "summary": "Copy reemplazado por la versión editada por MKT (Tecnología de la Construcción)."},
+    ],
+    6: [
+        {"date": "2026-09-04", "summary": "Convertido en carrusel: Triaxial · suelos de partículas de gran tamaño."},
+    ],
+    7: [
+        {"date": "2026-09-04", "summary": "Publicado: coordinación BIM en operación minera."},
+    ],
+    8: [
+        {"date": "2026-09-04", "summary": "Reemplaza al post de incendios; convertido en carrusel de peritaje de componentes metálicos."},
+    ],
+    9: [
+        {"date": "2026-09-04", "summary": "Convertido en carrusel: cumplimiento normativo."},
+    ],
+    10: [
+        {"date": "2026-09-04", "summary": "Publicado: peritaje de puentes (caso Puente Cortés)."},
+    ],
+    11: [
+        {"date": "2026-09-04", "summary": "Publicado a alto nivel: tecnología e I+D del hormigón (evita repetir septiembre)."},
+    ],
+    12: [
+        {"date": "2026-09-04", "summary": "Convertido en carrusel: revisión integral de rehabilitación (4 etapas)."},
+    ],
+}
 
 NEW_POSTS = set()  # chip "nuevo" (no usado en la tarjeta actual)
 
@@ -185,9 +232,9 @@ def post_slides(seq: int, post) -> list[str]:
     if seq in CAR.CAROUSEL_POSTS:
         # Carrusel: portada + intermedias + cierre, todo con foto de fondo (Plantilla 02).
         return CAR.build_slides(seq, photo_uri, G.LOGO, G.SLOGAN)
-    # Estático: pieza Servicios (círculo rojo). Post 5 lleva sello Green Hospital;
-    # post 7 mueve el círculo a la derecha para dejar ver el equipo de acústica.
-    return [G.canvas(seq, cshort, photo_uri, finish, corner_logo=None, side="left")]
+    # Estático: pieza Servicios (círculo rojo). El lado del anillo se ajusta por
+    # post en SIDE para no tapar al sujeto de la foto (default "left").
+    return [G.canvas(seq, cshort, photo_uri, finish, corner_logo=None, side=SIDE.get(seq, "left"))]
 
 
 def emit(month: str, build: Path) -> None:

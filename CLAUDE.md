@@ -93,3 +93,11 @@ aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
     en idiem.cl 👉" en todos—; (c) variar el gancho (fecha/efeméride, escenario, pregunta, dato);
     (d) si 2A.2 no tiene material fresco bien documentado, es preferible **menos posts sólidos**
     o pedir insumos, antes que rellenar con versiones parecidas (fail closed).
+- **Workstation — historial de cambios OBLIGATORIO** (MKT 2026-09-04): cada tarjeta de cualquier
+  artefacto de workstation debe mostrar el bloque "Historial de cambios aplicados (N)" (poblar
+  `APPLIED_LOG` en `gen_workstation.py`; si el log está vacío el `<details>` no se renderiza). Se
+  actualiza en cada ronda aplicada y republicada.
+- **Fotos siempre desde la librería de Drive de IDIEM.** Archivos > ~6 MB fallan al descargar por
+  el conector (la sesión expira); pedir a MKT una versión comprimida (≤5 MB). El anillo rojo de la
+  pieza estática es configurable por post (`SIDE`): moverlo al lado contrario a la cara/sujeto para
+  no taparlo.
