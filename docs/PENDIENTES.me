@@ -124,11 +124,14 @@ Kike revisa/edita copy e imágenes; Claude aplica y republica. Es un artefacto N
   - #2 (13-oct) Reducción del Riesgo de Desastres → IOM-047 Vulnerabilidad/integridad (carrusel).
   - #4 (17-oct) Día del Geólogo → LMD-004 Geotecnia y rocas, redactado **como saludo** a la
     profesión + contenido de mecánica de rocas (pedido de Kike).
-- **Carruseles:** seq 2 (RRD/integridad) y seq 3 (incendios). `carousel.CAROUSEL_POSTS={2,3}`.
-- **Nota de solape (revisar con Kike):** el subtema "Ingeniería contra incendios" (seq3, IPR-019,
-  preventivo en infraestructura pública) comparte etiqueta con el peritaje de incendios minero de
-  septiembre (IOM-011), aunque célula y ángulo son distintos. Alternativa si se quiere cero solape:
-  cambiar por IPR-002 (peritaje de componentes metálicos) o IPR-023 (diagnóstico de obras).
+- **Carruseles (4, pedido de Kike):** seq 2 (RRD/integridad), 7 (Triaxial), 9 (componentes
+  metálicos) y 10 (cumplimiento normativo). `carousel.CAROUSEL_POSTS={2,7,9,10}`.
+- **Swap incendios → componentes metálicos (IPR-019 → IPR-002):** hecho a pedido de Kike; elimina
+  el solape de subtema con septiembre. Ahora los 12 subtemas son nuevos vs septiembre.
+- **Fotos: las 12 piezas llevan foto** de la librería de Drive de IDIEM (una por pieza), bajadas y
+  reescaladas a `assets/month/2026-10/pNN.jpg`, trazadas por `viewUrl` en `PHOTO_SUB`. (El
+  conector de Drive estuvo intermitente; 3 fotos se resolvieron con archivos del mismo tema que sí
+  descargaron: seq2 domo minería El Teniente, seq3 edificio, seq6 trabajador+hormigón.)
 - **Guardrails 2A.2 respetados:** geotecnia/Triaxial (LMD-004/007) SIN superlativos ni rankings
   ("único", "el más grande", "pioneros"); confiabilidad (IOM-065) sin "reconocido mundialmente".
   Los 12 copies pasan `ingest_draft` sin violaciones y todos ≤900 caracteres.
