@@ -1,7 +1,7 @@
 # PENDIENTES.me — IDIEM Content System (punto de retomada)
 
 > Archivo de contexto para continuar el trabajo en un chat nuevo.
-> Última actualización: 2026-09-03 (ronda contenidos de octubre).
+> Última actualización: 2026-09-04 (ronda MKT: cortar similitud sept↔oct).
 
 ## Qué es esto
 Sistema determinista y auditable de contenidos LinkedIn para IDIEM.
@@ -147,6 +147,23 @@ Kike revisa/edita copy e imágenes; Claude aplica y republica. Es un artefacto N
   Las de septiembre se preservaron en `assets/month/2026-09/`.
 - **Pendiente:** (1) confirmar/ajustar el solape de incendios; (2) fotos por pieza; (3) al cerrar
   octubre, archivar con `archive_month.py` (ya usa `compose_current`) antes de repuntar a noviembre.
+
+## Agregado 2026-09-04 — Ronda MKT (Kike): cortar similitud con septiembre
+- Kike marcó cambios en la workstation (viven en la DB `posts`) + pidió evitar posts/claims/CTAs
+  parecidos entre meses. Aplicado en octubre v3:
+  - **CTAs y ganchos diversificados** en los 12 (regla nueva en CLAUDE.md / 09).
+  - **Grilla nueva** (mix **IOM6/IPR4/LMD2**, IHA fuera): se sacaron contractual (IHA-002),
+    integridad (IOM-047) y se replanteó confiabilidad; se sumaron **control de productividad**
+    (IOM-019) y **tecnología/I+D del hormigón** (IOM-017) — ambos van a **alto nivel** (2A.2 solo
+    los nombra). Día del Geólogo (LMD-004) → **saludo** sin detallar servicios.
+  - **4 carruseles:** Triaxial (6), componentes (8), cumplimiento (9), rehabilitación (12).
+  - `MONTH_PICKS`/`MONTH_WEIGHTS` en gen_month_grid actualizados; `carousel.CAROUSEL_POSTS={6,8,9,12}`.
+  - **Fotos:** no existía `generica_geologo` → `sondaje_relave`; `generica_estructura_acero` no
+    descargaba → `generica_idiem_vigas_acero`. Conector de Drive intermitente (reintentos).
+  - **Límite 2A.2:** la biblioteca casi no tiene subtemas nuevos bien documentados. Para meses
+    futuros: pedir insumos a IDIEM o planificar menos posts. (Ver 09_EDITORIAL_MEMORY.)
+  - **DB:** los docs viejos de `posts` (content_ids de la grilla anterior) quedan huérfanos; se
+    limpian tras republicar (write_db delete) para que el tablero no arrastre notas/flags viejos.
 
 ## Reglas editoriales NO negociables (recordatorio rápido)
 - Green Hospital es certificación PROPIA de IDIEM. NO mencionar "Salud sin Daño".

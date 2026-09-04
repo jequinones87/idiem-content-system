@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 ASSETS = ROOT / "assets"
 
-CAROUSEL_POSTS = {2, 7, 9, 10}
+CAROUSEL_POSTS = {6, 8, 9, 12}
 
 
 def _icon(name: str) -> str:
@@ -28,22 +28,8 @@ def _icon(name: str) -> str:
 # Contenido por post. `title` admite <span class="c2rb">palabra</span> (caja roja);
 # la portada usa <span class="c2rt">palabra</span> (texto rojo).
 SLIDES = {
-    # seq 2 · IOM-047 · Vulnerabilidad e integridad estructural (13-oct RRD)
-    2: {
-        "portada": {"kicker": "REDUCCIÓN DEL RIESGO · INTEGRIDAD ESTRUCTURAL",
-                    "title": 'Reducir el <span class="c2rt">riesgo</span>.'},
-        "intermedias": [
-            {"icon": "magnifier", "title": 'Inspección y <span class="c2rb">peritaje</span>',
-             "body": "Evaluamos fisuras, deformaciones y corrosión bajo gestión de riesgos y cumplimiento normativo."},
-            {"icon": "location", "title": 'Levantamiento en <span class="c2rb">terreno</span>',
-             "body": "Inspección visual, aérea y termográfica, con modelos 3D por escáner láser y dron."},
-            {"icon": "shield", "title": 'Activos <span class="c2rb">protegidos</span>',
-             "body": "Soportes, edificios industriales, fundaciones, muros, túneles y depósitos de relaves."},
-        ],
-        "cierre": {"bajada": "Conocer la vulnerabilidad es el primer paso para reducir el riesgo de desastres."},
-    },
-    # seq 7 · LMD-007 · Triaxial suelos de partículas grandes (SIN superlativos)
-    7: {
+    # seq 6 · LMD-007 · Triaxial suelos de partículas grandes (SIN superlativos)
+    6: {
         "portada": {"kicker": "GEOTECNIA · TRIAXIAL GRANDES PARTÍCULAS",
                     "title": 'Ensayar el <span class="c2rt">material real</span>.'},
         "intermedias": [
@@ -56,8 +42,8 @@ SLIDES = {
         ],
         "cierre": {"bajada": "Parámetros representativos del material real para un diseño geotécnico seguro."},
     },
-    # seq 9 · IPR-002 · Peritaje de componentes metálicos
-    9: {
+    # seq 8 · IPR-002 · Peritaje de componentes metálicos
+    8: {
         "portada": {"kicker": "PERITAJE DE COMPONENTES METÁLICOS",
                     "title": '¿Por qué <span class="c2rt">falló</span>?'},
         "intermedias": [
@@ -70,8 +56,8 @@ SLIDES = {
         ],
         "cierre": {"bajada": "Evidencia técnica para entender la falla y evitar que se repita."},
     },
-    # seq 10 · IOM-063 · Cumplimiento normativo
-    10: {
+    # seq 9 · IOM-063 · Cumplimiento normativo
+    9: {
         "portada": {"kicker": "CUMPLIMIENTO NORMATIVO",
                     "title": 'Cerrar las <span class="c2rt">brechas</span>.'},
         "intermedias": [
@@ -83,6 +69,20 @@ SLIDES = {
              "body": "Detectamos las brechas respecto de la normativa vigente."},
         ],
         "cierre": {"bajada": "Una mirada técnica e independiente para operar con respaldo y sin sorpresas."},
+    },
+    # seq 12 · IOM-030 · Revisión integral de rehabilitación (4 etapas)
+    12: {
+        "portada": {"kicker": "REVISIÓN INTEGRAL DE REHABILITACIÓN",
+                    "title": 'Intervenir con <span class="c2rt">respaldo</span>.'},
+        "intermedias": [
+            {"icon": "magnifier", "title": 'Levantamiento de <span class="c2rb">condiciones</span>',
+             "body": "Registramos el estado real de la estructura existente."},
+            {"icon": "shield", "title": 'Soporte de <span class="c2rb">laboratorios</span>',
+             "body": "Nuestros laboratorios respaldan el diagnóstico con ensayos."},
+            {"icon": "location", "title": 'Diagnóstico e <span class="c2rb">ingeniería</span>',
+             "body": "Evaluamos alternativas y desarrollamos la ingeniería de rehabilitación."},
+        ],
+        "cierre": {"bajada": "Un proceso ordenado para intervenir con respaldo técnico de principio a fin."},
     },
 }
 

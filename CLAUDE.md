@@ -85,3 +85,11 @@ aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
   y NO repitas los mismos `knowledge_id`, subtemas ni ángulos editoriales del mes anterior
   —rota células/temas—; (3) **actualiza hechos** si cambiaron respecto de lo publicado. El
   archivo del mes anterior es la fuente de contexto obligatoria para el mes nuevo.
+  - **No basta con rotar el knowledge_id: evita también CLAIMS, GANCHOS y CTAs parecidos entre
+    meses** (aprendizaje MKT 2026-09-04). Dos posts pueden trazar a items distintos y aun así
+    "sentirse iguales" si repiten el mismo problema-solución, la misma evidencia o el mismo CTA.
+    Reglas: (a) no reutilizar el mismo claim técnico que ya salió el mes anterior; (b) **variar el
+    CTA** —rotar las 3 variantes de la voz de marca en vez de repetir "¿Necesitas…? Conversemos
+    en idiem.cl 👉" en todos—; (c) variar el gancho (fecha/efeméride, escenario, pregunta, dato);
+    (d) si 2A.2 no tiene material fresco bien documentado, es preferible **menos posts sólidos**
+    o pedir insumos, antes que rellenar con versiones parecidas (fail closed).

@@ -124,8 +124,15 @@ Regla de uso al planificar un mes nuevo:
 3. **No repitas** los mismos `knowledge_id`, subtemas ni ángulos del mes anterior; rota células y
    temas para que el feed no se sienta repetido.
 4. **Actualiza hechos** si algo cambió respecto de lo ya publicado (y refleja la corrección aquí).
+5. **No repitas claims, ganchos ni CTAs** del mes anterior (aprendizaje MKT 2026-09-04). Rotar el
+   `knowledge_id` no basta: dos posts se "sienten iguales" si repiten el mismo problema-solución,
+   la misma evidencia o el mismo CTA. Variar el **CTA** (rotar las 3 variantes de marca, no repetir
+   "¿Necesitas…? Conversemos en idiem.cl 👉" en todos), variar el **gancho** (fecha, escenario,
+   pregunta, dato) y no reusar el mismo claim técnico. Si 2A.2 no tiene material fresco bien
+   documentado, preferir **menos posts sólidos** (o pedir insumos) antes que rellenar con versiones
+   parecidas.
 
-Meses archivados: **2026-09** (13 piezas, publicado).
+Meses archivados: **2026-09** (13 piezas, publicado). Octubre 2026 en preparación.
 
 ## Bitácora de correcciones
 
@@ -191,3 +198,24 @@ Meses archivados: **2026-09** (13 piezas, publicado).
     preservaron en `assets/month/2026-09/`.
   - **Nota técnica:** `COPY` pasó a estar **keyed por `knowledge_id`** (no por `content_id`), para
     que el copy no se rompa cuando cambian los `seq` al reordenar/insertar piezas.
+- **2026-09-04** — **Ronda MKT (Kike): octubre demasiado parecido a septiembre.** Kike marcó
+  cambios en la workstation y pidió cortar posts/claims/CTAs similares entre meses. Aplicado:
+  - **CTAs y ganchos diversificados** en los 12 (rotando las 3 variantes de marca; septiembre
+    usaba casi siempre "¿Necesitas…? Conversemos en idiem.cl 👉"). Ver regla nueva arriba.
+  - **Fuera por similitud:** contractual (IHA-002, ya trabajado en sept), integridad estructural
+    (IOM-047, casi calcaba el peritaje estructural de sept) y confiabilidad se replanteó.
+  - **Nuevos temas frescos:** control de productividad (IOM-019) y tecnología/I+D del hormigón
+    (IOM-017). **OJO:** 2A.2 solo los **nombra** (sin detalle), así que sus posts van a **alto
+    nivel**, sin inventar ensayos ni cifras. Confiabilidad (IOM-065) se mantuvo con ángulo de
+    **equipo multidisciplinario** (metalurgia/mecánica/química), distinto del peritaje de
+    componentes (IPR-002).
+  - **Día del Geólogo (LMD-004):** reescrito como **saludo institucional** (importancia de los
+    geólogos), sin detallar servicios.
+  - **Mix del mes: IOM6 / IPR4 / LMD2** (IHA queda fuera: su única cantera fresca era contractual).
+    **4 carruseles:** Triaxial, componentes, cumplimiento y rehabilitación (4 etapas).
+  - **Límite de inventario 2A.2 (importante):** tras septiembre (12) + octubre, la biblioteca casi
+    no tiene subtemas nuevos bien documentados. Para meses futuros conviene **pedir insumos** a
+    IDIEM (hormigón, productividad, etc.) o planificar **menos posts** por mes.
+  - **Fotos:** no existía `generica_geologo` en la librería → se usó `sondaje_relave` (geología de
+    terreno); `generica_estructura_acero` no descargaba → se usó `generica_idiem_vigas_acero`
+    (mismo tema, vigas de acero).
