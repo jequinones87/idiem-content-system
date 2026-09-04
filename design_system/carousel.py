@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 ASSETS = ROOT / "assets"
 
-CAROUSEL_POSTS = {2, 8}
+CAROUSEL_POSTS = {6, 8, 9, 12}
 
 
 def _icon(name: str) -> str:
@@ -28,31 +28,61 @@ def _icon(name: str) -> str:
 # Contenido por post. `title` admite <span class="c2rb">palabra</span> (caja roja);
 # la portada usa <span class="c2rt">palabra</span> (texto rojo).
 SLIDES = {
-    2: {
-        "portada": {"kicker": "PERITAJES DE INCENDIO · MINERÍA",
-                    "title": 'Entender qué <span class="c2rt">ocurrió</span>.'},
+    # seq 6 · LMD-007 · Triaxial suelos de partículas grandes (SIN superlativos)
+    6: {
+        "portada": {"kicker": "GEOTECNIA · TRIAXIAL GRANDES PARTÍCULAS",
+                    "title": 'Ensayar el <span class="c2rt">material real</span>.'},
         "intermedias": [
-            {"icon": "magnifier", "title": 'Peritaje de <span class="c2rb">incendio</span>',
-             "body": "Establecemos la causa y el origen del siniestro con rigor e imparcialidad."},
-            {"icon": "location", "title": 'Estructural y <span class="c2rb">mecánico</span>',
-             "body": "Peritajes que determinan qué ocurrió en la operación minera, con un enfoque integral."},
-            {"icon": "shield", "title": 'Estudio de <span class="c2rb">riesgo</span>',
-             "body": "Levantamos vulnerabilidades de las instalaciones y definimos un plan de medidas de mitigación."},
+            {"icon": "magnifier", "title": 'Partículas de <span class="c2rb">gran tamaño</span>',
+             "body": "Ensayamos suelos que no caben en los equipos convencionales."},
+            {"icon": "location", "title": 'Dónde <span class="c2rb">aplica</span>',
+             "body": "Gran minería, presas de tierra, energía e infraestructura."},
+            {"icon": "shield", "title": 'Ingeniería <span class="c2rb">propia</span>',
+             "body": "Equipo Triaxial para grandes partículas desarrollado por IDIEM."},
         ],
-        "cierre": {"bajada": "Evidencia técnica que explica lo ocurrido y fortalece la seguridad y continuidad de la operación."},
+        "cierre": {"bajada": "Parámetros representativos del material real para un diseño geotécnico seguro."},
     },
+    # seq 8 · IPR-002 · Peritaje de componentes metálicos
     8: {
-        "portada": {"kicker": "CONTROL DE CALIDAD · HDPE",
-                    "title": 'Uniones <span class="c2rt">confiables</span>.'},
+        "portada": {"kicker": "PERITAJE DE COMPONENTES METÁLICOS",
+                    "title": '¿Por qué <span class="c2rt">falló</span>?'},
         "intermedias": [
-            {"icon": "magnifier", "title": 'Ensayos <span class="c2rb">no destructivos</span>',
-             "body": "Verifican especificaciones y detectan defectos en la unión soldada."},
-            {"icon": "location", "title": 'Ensayos <span class="c2rb">mecánicos</span>',
-             "body": "Evalúan las propiedades de la unión soldada HDPE."},
-            {"icon": "shield", "title": 'Respaldo <span class="c2rb">documental</span>',
-             "body": "Asesoría experta en la documentación técnica de fabricación."},
+            {"icon": "magnifier", "title": 'Estudios de <span class="c2rb">falla</span>',
+             "body": "Determinamos la causa raíz de la falla de un componente."},
+            {"icon": "shield", "title": 'Componentes <span class="c2rb">críticos</span>',
+             "body": "Peritajes a pernos, ejes, engranajes y tuberías."},
+            {"icon": "location", "title": 'Pavimento en <span class="c2rb">autopistas</span>',
+             "body": "También evaluamos el daño del pavimento en autopistas."},
         ],
-        "cierre": {"bajada": "Control técnico que respalda la confiabilidad de las líneas HDPE."},
+        "cierre": {"bajada": "Evidencia técnica para entender la falla y evitar que se repita."},
+    },
+    # seq 9 · IOM-063 · Cumplimiento normativo
+    9: {
+        "portada": {"kicker": "CUMPLIMIENTO NORMATIVO",
+                    "title": 'Cerrar las <span class="c2rt">brechas</span>.'},
+        "intermedias": [
+            {"icon": "magnifier", "title": 'Revisión <span class="c2rb">estructural</span>',
+             "body": "Verificamos el cumplimiento frente a los marcos estructurales aplicables."},
+            {"icon": "shield", "title": 'Incendios y <span class="c2rb">especialidades</span>',
+             "body": "Revisión normativa en protección contra incendios y en especialidades."},
+            {"icon": "location", "title": 'Brechas <span class="c2rb">identificadas</span>',
+             "body": "Detectamos las brechas respecto de la normativa vigente."},
+        ],
+        "cierre": {"bajada": "Una mirada técnica e independiente para operar con respaldo y sin sorpresas."},
+    },
+    # seq 12 · IOM-030 · Revisión integral de rehabilitación (4 etapas)
+    12: {
+        "portada": {"kicker": "REVISIÓN INTEGRAL DE REHABILITACIÓN",
+                    "title": 'Intervenir con <span class="c2rt">respaldo</span>.'},
+        "intermedias": [
+            {"icon": "magnifier", "title": 'Levantamiento de <span class="c2rb">condiciones</span>',
+             "body": "Registramos el estado real de la estructura existente."},
+            {"icon": "shield", "title": 'Soporte de <span class="c2rb">laboratorios</span>',
+             "body": "Nuestros laboratorios respaldan el diagnóstico con ensayos."},
+            {"icon": "location", "title": 'Diagnóstico e <span class="c2rb">ingeniería</span>',
+             "body": "Evaluamos alternativas y desarrollamos la ingeniería de rehabilitación."},
+        ],
+        "cierre": {"bajada": "Un proceso ordenado para intervenir con respaldo técnico de principio a fin."},
     },
 }
 

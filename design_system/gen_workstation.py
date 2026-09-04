@@ -23,6 +23,7 @@ import io
 import json
 from pathlib import Path
 import sys
+import tempfile
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
@@ -30,44 +31,52 @@ import gen_month_grid as G          # noqa: E402
 import carousel as CAR              # noqa: E402
 from bundle_month import grid_style, resolve_photo  # noqa: E402
 
-BUILD_DEFAULT = Path("/tmp/claude-0/-home-user-idiem-content-system/"
-                     "1c5b178b-f8ee-5946-beb8-9cf3fffd70df/scratchpad/ws")
+BUILD_DEFAULT = Path(tempfile.gettempdir()) / "idiem_ws_build"
 
 # Sustitución liviana: el pick top del motor pesa 8.3 MB (no descargable por el
 # conector). Se usa su hermana de librería, misma célula/subtema, versión ~1080px.
+# seq -> foto de la librería de Drive de IDIEM elegida para cada pieza de octubre.
+# Se baja, reescala (~1200px lado corto, JPEG q86) y hornea en assets/month/2026-10/pNN.jpg.
+# 'orig' vacío = no es sustitución (es la foto elegida directamente).
+def _drive(fid): return f"https://drive.google.com/file/d/{fid}/view"
 PHOTO_SUB = {
-    6:  {"photo_id": "PHO-0044", "orig": "PHO-0061",
-         "fuente": "https://drive.google.com/file/d/1TMjf-mU8rJ-Ds-O2d1sP0ce9MHISjLUS/view",
-         "detalle": "vigas de acero · casco IDIEM"},
-    10: {"photo_id": "PHO-0013", "orig": "PHO-0040",
-         "fuente": "https://drive.google.com/file/d/14Ad1dRP_Dfipr-C88kGtBVJL24KDdMOS/view",
-         "detalle": "domo minero · dron"},
-    3:  {"photo_id": "PHO-0085", "orig": "PHO-0091",
-         "fuente": "https://drive.google.com/file/d/1xUlYXbYXjL1VpIvy_EewpWXAOSQtEWhQ/view",
-         "detalle": "casco IDIEM · tablet · revisión", "reason": "foto original pixelada (329px)"},
-    11: {"photo_id": "PHO-0095", "orig": "PHO-0004",
-         "fuente": "https://drive.google.com/file/d/13ZKXpQ0kMFr0j7TVW7Jl8CIrL3DGOanJ/view",
-         "detalle": "edificio en construcción (Costanera)", "reason": "cambio pedido"},
-    1:  {"photo_id": "PHO-0058", "orig": "Adobe Stock #212862972",
-         "fuente": "https://drive.google.com/file/d/1KnC9RDEQUNZMxWX28rphzN2EGLz1ZNOl/view",
-         "detalle": "ejecutivo con laptop · planos", "reason": "cambio pedido: foto de librería"},
-    7:  {"photo_id": "equipo_acustica_FA-1", "orig": "Adobe Stock #204006589",
-         "fuente": "https://drive.google.com/file/d/19uVCrI97li6szs65HJaT8FdOTe3lZZpK/view",
-         "detalle": "equipo de acústica en terreno (foto propia)", "reason": "cambio pedido: foto propia de faena"},
-    8:  {"photo_id": "Tuberia_HDPE_END_ACERO4", "orig": "Adobe Stock #1614411840",
-         "fuente": "https://drive.google.com/file/d/1sHwdzCXyJeneC35woSwz8DkT8qKH3fXp/view",
-         "detalle": "END en tubería HDPE (foto propia)", "reason": "cambio pedido: foto propia de faena"},
-    9:  {"photo_id": "generica_ejecutivos_casco_construccion", "orig": "Adobe Stock #212862972",
-         "fuente": "https://drive.google.com/file/d/1_eczAWE2nzda5yfFx_jV23xorWODv8cG/view",
-         "detalle": "ejecutivos con casco · apretón de manos en obra", "reason": "cambio pedido: foto de librería"},
+    1:  {"photo_id": "estructuras_peritajes_domo_mineria_2", "fuente": _drive("16uGyWvnrpDdzaDOFCtjllg2MaaeK_XSd"),
+         "detalle": "domo minero · El Teniente"},
+    2:  {"photo_id": "generica_construccion_edificio", "fuente": _drive("1WWMzjdxObQWBQIIvXcqKJQKBowYpc-j4"),
+         "detalle": "edificio en construcción"},
+    3:  {"photo_id": "generica_geologo", "fuente": _drive("10yp3LWqAc3yUmHK4_s5sCfyYvR1GUEs8"),
+         "detalle": "geólogo en terreno · lectura de estratos"},
+    4:  {"photo_id": "ensayo_aceros1", "fuente": _drive("1amvDzSYHH5T_3-YLqilt4YpGWpzxdhMq"),
+         "detalle": "ensayo de aceros en laboratorio"},
+    5:  {"photo_id": "generica_arquitectura-construccion-bim2", "fuente": _drive("1wwOTAnuDsvoG6aawb1awhdb6hYA2-lFe"),
+         "detalle": "modelo BIM sobre edificio · tecnología de la construcción"},
+    6:  {"photo_id": "Equipo_trixial_gigante", "fuente": _drive("1XVR_E9H7G9wKAj_k_KN_W6c_uHK3HlrC"),
+         "detalle": "equipo Triaxial para grandes partículas"},
+    7:  {"photo_id": "generico_modelado_estructura", "fuente": _drive("157A_fs0lXLIOawLs_D92Ze4C-cczSUFS"),
+         "detalle": "modelado 3D de estructura"},
+    8:  {"photo_id": "planta_aceros", "fuente": _drive("125lUuUu3UFValyUGDY0afuRLuGns98Bh"),
+         "detalle": "planta de aceros"},
+    9:  {"photo_id": "estructuras_peritajes_analisis_terreno", "fuente": _drive("1U0v0oaWq2nypfKT-REB9FC77Gxegu0Jg"),
+         "detalle": "análisis estructural en terreno"},
+    10: {"photo_id": "estructuras_peritajes_puente_cortez", "fuente": _drive("12TxaHcgX3d-VLIGN85eniQOD8Q3NewIT"),
+         "detalle": "peritaje Puente Cortés"},
+    11: {"photo_id": "generico_trabajador_obra_hormigon", "fuente": _drive("1BSzk4cW3J-mEbMyGREzVIiUzhBctleJs"),
+         "detalle": "trabajador en obra · hormigón"},
+    12: {"photo_id": "generica_idiem_vigas_acero", "fuente": _drive("1TMjf-mU8rJ-Ds-O2d1sP0ce9MHISjLUS"),
+         "detalle": "vigas de acero · estructura (por generica_estructura_acero)"},
 }
+
+# seq -> lado del círculo rojo en la pieza estática. Por defecto "left" (41%);
+# "right" lo lleva a 59% para no tapar al sujeto de la foto. Post 3 (geólogo):
+# la persona está a la izquierda/centro de la toma, así que el anillo va a la
+# derecha para dejar la cara despejada (pedido MKT 2026-09-04).
+SIDE = {3: "right"}
 
 # Fotos Adobe Stock licenciadas (tier libre) para los posts sin foto de librería
 # adecuada (antes marcados Muapi). Descargadas, comprimidas a 1080px y usadas
 # localmente; foto real y trazable, sin depender de un CDN externo.
-STOCK_SUB = {
-    12: {"id": "340172893",  "detalle": "END por ultrasonido en soldadura"},
-}
+# Fotos Adobe Stock licenciadas. Sin stock este mes.
+STOCK_SUB = {}
 
 # Sello de certificación Green Hospital (propia de IDIEM), overlay esquina inf-der del post 5.
 GH_SEAL = ("data:image/png;base64," +
@@ -76,30 +85,58 @@ GH_SEAL = ("data:image/png;base64," +
 # seq -> historial de cambios que YO (Claude) apliqué y republiqué, más reciente
 # primero. Alimenta el chip de estado "publicado · fecha" y el bloque "Historial"
 # de cada post. Espeja la bitácora de docs/09_EDITORIAL_MEMORY.md.
+# seq -> historial de cambios aplicados y republicados (más reciente primero).
+# Espeja la bitácora de docs/09_EDITORIAL_MEMORY.md: sólo cambios ya aplicados
+# Y republicados (no pendientes). Se va sumando en cada ronda del equipo.
 APPLIED_LOG = {
-    1:  [{"date": "2026-08-28", "summary": "Copy reescrito (MKT) + foto laptop/planos"},
-         {"date": "2026-08-24", "summary": "Foto de acuerdo/ejecutivos (previa)"}],
-    2:  [{"date": "2026-08-28", "summary": "Carrusel reformulado: causa-origen, estructural/mecánico, estudio de riesgo"},
-         {"date": "2026-08-28", "summary": "Copy reescrito + orden de láminas (incendios → fallas)"}],
-    3:  [{"date": "2026-08-24", "summary": "Foto casco + tablet (se corrigió la pixelada)"}],
-    5:  [{"date": "2026-08-28", "summary": "Sello Green Hospital 50% más grande, detrás del círculo"},
-         {"date": "2026-08-28", "summary": "Sello Green Hospital más grande (¼ del lienzo), detrás del círculo"},
-         {"date": "2026-08-28", "summary": "Copy (sin Salud sin Daño, ISO 50001) + sello Green Hospital"}],
-    6:  [{"date": "2026-08-21", "summary": "Foto vigas de acero / casco IDIEM"}],
-    7:  [{"date": "2026-08-28", "summary": "Círculo movido a la derecha (se ve el equipo de acústica)"},
-         {"date": "2026-08-28", "summary": "Copy (estudio de impacto, D.D. 14/24) + foto propia de acústica"}],
-    8:  [{"date": "2026-08-28", "summary": "Foto propia de faena (tubería HDPE)"}],
-    9:  [{"date": "2026-08-28", "summary": "Reencuadre para que el círculo no tape la cara"},
-         {"date": "2026-08-28", "summary": "Foto → ejecutivos con casco, apretón de manos en obra (librería)"},
-         {"date": "2026-08-28", "summary": "Foto de acuerdo / apretón de manos"}],
-    10: [{"date": "2026-08-21", "summary": "Foto domo minero / dron"}],
-    11: [{"date": "2026-08-24", "summary": "Foto edificio en construcción (Costanera)"}],
-    12: [{"date": "2026-08-28", "summary": "Título de gráfica → “Detectar antes de fallar”"},
-         {"date": "2026-08-28", "summary": "Gráfica: soldaduras inspeccionadas por muestreo"}],
-    13: [{"date": "2026-08-28", "summary": "Foto → bandera chilena + camión minero (librería)"},
-         {"date": "2026-08-28", "summary": "Creación — saludo Fiestas Patrias"}],
+    1: [
+        {"date": "2026-09-04", "summary": "Publicado: control de productividad en operación minera (subtema fresco, no usado en septiembre)."},
+    ],
+    2: [
+        {"date": "2026-09-04", "summary": "Gancho ajustado al Día Mundial de la Arquitectura (5-oct) por pedido de MKT."},
+        {"date": "2026-09-04", "summary": "Publicado: sustentabilidad y arquitectura en infraestructura pública."},
+    ],
+    3: [
+        {"date": "2026-09-04", "summary": "Foto cambiada a generica_geologo (Drive); anillo rojo movido a la derecha para no tapar a la persona."},
+        {"date": "2026-09-04", "summary": "Reescrito como saludo del Día del Geólogo (17-oct) + geotecnia, sin detallar otros servicios."},
+    ],
+    4: [
+        {"date": "2026-09-04", "summary": "Reencuadrado a alto nivel (confiabilidad de materiales) para no repetir el ángulo de septiembre."},
+    ],
+    5: [
+        {"date": "2026-09-04", "summary": "Foto cambiada a modelo BIM (generica_arquitectura-construccion-bim2, Drive)."},
+        {"date": "2026-09-04", "summary": "Copy reemplazado por la versión editada por MKT (Tecnología de la Construcción)."},
+    ],
+    6: [
+        {"date": "2026-09-04", "summary": "Convertido en carrusel: Triaxial · suelos de partículas de gran tamaño."},
+    ],
+    7: [
+        {"date": "2026-09-04", "summary": "Publicado: coordinación BIM en operación minera."},
+    ],
+    8: [
+        {"date": "2026-09-04", "summary": "Reemplaza al post de incendios; convertido en carrusel de peritaje de componentes metálicos."},
+    ],
+    9: [
+        {"date": "2026-09-04", "summary": "Convertido en carrusel: cumplimiento normativo."},
+    ],
+    10: [
+        {"date": "2026-09-04", "summary": "Publicado: peritaje de puentes (caso Puente Cortés)."},
+    ],
+    11: [
+        {"date": "2026-09-04", "summary": "Publicado a alto nivel: tecnología e I+D del hormigón (evita repetir septiembre)."},
+    ],
+    12: [
+        {"date": "2026-09-04", "summary": "Convertido en carrusel: revisión integral de rehabilitación (4 etapas)."},
+    ],
 }
-NEW_POSTS = {13}  # posts creados nuevos (chip "nuevo")
+
+NEW_POSTS = set()  # chip "nuevo" (no usado en la tarjeta actual)
+
+# Estado "sembrado" en el ws-state embebido. En un mes nuevo va en False: el tablero
+# arranca limpio (nada aprobado/subido) y la DB del artefacto es la fuente de verdad
+# del estado compartido. Sólo se pone en True para "congelar" un mes ya cerrado como
+# fallback offline (fue el caso de septiembre 2026).
+SEED_ALL_DONE = False
 
 
 def _fmt_date(iso: str) -> str:
@@ -128,28 +165,10 @@ def history_html(seq: int) -> str:
 
 # Posts institucionales que NO vienen del motor (no trazan a knowledge_id). Se
 # arman aparte y se anexan después de los 12. Foto de fondo (estilo Plantilla 02).
-SPECIAL = [{
-    "seq": 13,
-    "content_id": "SALUDO-FIESTAS-PATRIAS-2026-09",
-    "cshort": "SALUDO",
-    "subtheme": "Fiestas Patrias · institucional",
-    "fmt": "SALUDO",
-    "photo": "p13.jpg",
-    "kicker": "FELICES FIESTAS PATRIAS",
-    "title": 'Presentes en la<br>historia de <span class="fpred">Chile</span>.',
-    "sub": "Aportamos ciencia e ingeniería al desarrollo de la infraestructura del país.",
-    "copy": {
-        "hook": "🇨🇱 Este 18 de septiembre celebramos a Chile y a las personas que lo construyen cada día.",
-        "body": ("A lo largo de nuestra historia, en IDIEM hemos acompañado el desarrollo de la "
-                 "infraestructura del país: aportando ciencia, ensayos e ingeniería al servicio de obras "
-                 "que sostienen la vida de las personas.\n\n"
-                 "Caminos, hospitales, edificios y faenas que ayudamos a hacer más seguros y confiables "
-                 "también son parte de la historia de Chile. 🏗️"),
-        "cta": "¡Felices Fiestas Patrias! 🇨🇱\n\n#IDIEM #FiestasPatrias #Chile #Ingeniería #Infraestructura",
-    },
-    "trace": ("Saludo institucional — pieza conmemorativa que <strong>no traza a un knowledge_id</strong>. "
-              "Mensaje general, sin afirmaciones específicas de proyectos, fechas ni cifras."),
-}]
+# Posts institucionales que NO trazan a knowledge_id (saludos). Octubre no lleva:
+# las 3 efemérides (Arquitectura, RRD, Geólogo) están DENTRO de los 12 y trazan a 2A.2.
+SPECIAL = []
+
 SPECIAL_BY_CID = {s["content_id"]: s for s in SPECIAL}
 
 FIESTAS_CSS = r'''
@@ -213,11 +232,9 @@ def post_slides(seq: int, post) -> list[str]:
     if seq in CAR.CAROUSEL_POSTS:
         # Carrusel: portada + intermedias + cierre, todo con foto de fondo (Plantilla 02).
         return CAR.build_slides(seq, photo_uri, G.LOGO, G.SLOGAN)
-    # Estático: pieza Servicios (círculo rojo). Post 5 lleva sello Green Hospital;
-    # post 7 mueve el círculo a la derecha para dejar ver el equipo de acústica.
-    corner = GH_SEAL if seq == 5 else None
-    side = "right" if seq == 7 else "left"
-    return [G.canvas(seq, cshort, photo_uri, finish, corner_logo=corner, side=side)]
+    # Estático: pieza Servicios (círculo rojo). El lado del anillo se ajusta por
+    # post en SIDE para no tapar al sujeto de la foto (default "left").
+    return [G.canvas(seq, cshort, photo_uri, finish, corner_logo=None, side=SIDE.get(seq, "left"))]
 
 
 def emit(month: str, build: Path) -> None:
@@ -225,9 +242,7 @@ def emit(month: str, build: Path) -> None:
     posts_dir = build / "slides"
     posts_dir.mkdir(exist_ok=True)
     kb = G.load_knowledge_base()
-    review = G.compose_month(kb, month, target_count=12)
-    for cid, c in G.COPY.items():
-        G.set_post_copy(review, cid, c)
+    review = G.compose_current(kb)
 
     style = grid_style()
     manifest, structure = [], []
@@ -270,9 +285,7 @@ def jpeg_uri(png_path: str, q: int = 86) -> str:
 
 def build(month: str, build_dir: Path, out_path: Path) -> None:
     kb = G.load_knowledge_base()
-    review = G.compose_month(kb, month, target_count=12)
-    for cid, c in G.COPY.items():
-        G.set_post_copy(review, cid, c)
+    review = G.compose_current(kb)
     posts = {p.content_id: p for p in review.posts}
     structure = json.loads((build_dir / "structure.json").read_text("utf-8"))
 
@@ -286,8 +299,17 @@ def build(month: str, build_dir: Path, out_path: Path) -> None:
             cards.append(render_card(seq, posts[cid], uris))
 
     html = ARTIFACT.replace("__CARDS__", "\n".join(cards))
+    if SEED_ALL_DONE:
+        seed = {st["cid"]: {"approved": True, "approvedAt": None,
+                            "posted": True, "postedAt": None}
+                for st in structure}
+        html = html.replace(
+            '<script id="ws-state" type="application/json">{}</script>',
+            '<script id="ws-state" type="application/json">'
+            + json.dumps(seed, ensure_ascii=False) + '</script>')
     out_path.write_text(html, encoding="utf-8")
-    print(f"build: {out_path} ({out_path.stat().st_size//1024} KB, {len(structure)} posts)")
+    print(f"build: {out_path} ({out_path.stat().st_size//1024} KB, {len(structure)} posts, "
+          f"seed={'all-done' if SEED_ALL_DONE else 'empty'})")
 
 
 def render_card(seq: int, post, uris: list[str]) -> str:
@@ -301,7 +323,7 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     n = len(uris)
     fmt_label = f"CARRUSEL · {n} láminas" if is_car else "STATIC"
 
-    c = G.COPY[post.content_id]
+    c = G.COPY[post.knowledge_id]  # COPY keyed por knowledge_id
     full_copy = f"{c['hook']}\n\n{c['body']}\n\n{c['cta']}"
 
     ev = gb.get("evidence_ids") or []
@@ -310,11 +332,12 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     src = ps.get("source")
     if seq in PHOTO_SUB:
         s = PHOTO_SUB[seq]
-        reason = s.get("reason", "original 8.3 MB, no descargable por el conector")
         foto = (f'Librería · <code>{s["photo_id"]}</code> ({G.esc(s["detalle"])}) · '
-                f'<a href="{G.esc(s["fuente"])}" target="_blank" rel="noopener">ver en Drive</a>'
-                f'<br><span class="muprompt">reemplaza a <code>{s["orig"]}</code> '
-                f'({G.esc(reason)})</span>')
+                f'<a href="{G.esc(s["fuente"])}" target="_blank" rel="noopener">ver en Drive</a>')
+        if s.get("orig"):
+            reason = s.get("reason", "")
+            foto += (f'<br><span class="muprompt">reemplaza a <code>{s["orig"]}</code>'
+                     + (f' ({G.esc(reason)})' if reason else '') + '</span>')
     elif seq in STOCK_SUB:
         s = STOCK_SUB[seq]
         foto = (f'Adobe Stock · <code>#{s["id"]}</code> ({G.esc(s["detalle"])}) · licencia libre'
@@ -337,14 +360,18 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     # data de láminas para JS (idx -> uri en orden)
     slides_json = G.esc(json.dumps(uris))
 
-    return f'''<article class="post" data-seq="{seq}" data-cid="{G.esc(post.content_id)}" data-car="{"1" if is_car else "0"}" data-status="publicado" data-edited-at="" data-edited-by="">
+    return f'''<article class="post" data-seq="{seq}" data-cid="{G.esc(post.content_id)}" data-car="{"1" if is_car else "0"}" data-status="publicado" data-edited-at="" data-edited-by="" data-caltitle="{G.esc(f"Post {seq:02d} · {subname}" if subname else f"Post {seq:02d}")}">
   <script type="application/json" class="slides-data">{slides_json}</script>
   <div class="graphic">
     <div class="gwrap">
       <img class="main" src="{uris[0]}" data-idx="0" alt="Post {seq:02d}">
       <span class="fmtbadge">{fmt_label}</span>
       {status_chip(seq)}
-      <span class="li-badge" hidden>🔗 En LinkedIn</span>
+      <div class="botleft">
+        <span class="ap-badge" hidden>✅ Aprobado</span>
+        <span class="cal-badge" hidden>📅</span>
+        <span class="li-badge" hidden>🔗 En LinkedIn</span>
+      </div>
       <span class="zoomhint">clic para ampliar</span>
     </div>
     {strip}
@@ -354,6 +381,7 @@ def render_card(seq: int, post, uris: list[str]) -> str:
       <span class="badge ghost">{G.esc(fmt)}</span><span class="sub">{G.esc(subname)}</span></div>
 
     <label class="lab">Texto del post <span class="hint">— editable, se guarda en tu navegador</span>
+      <span class="cc" data-cc>0 / 900</span>
       <button class="revert" type="button" data-field="copy" hidden>↺ volver a lo publicado</button></label>
     <textarea class="copy" data-cid="{G.esc(post.content_id)}" spellcheck="false">{G.esc(full_copy)}</textarea>
 
@@ -365,12 +393,21 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     <div class="editline"></div>
 
     <div class="btns">
-      <button class="btn linkedin" type="button">🔗 Marcar subido a LinkedIn</button>
       <button class="btn ready" type="button">✓ Marcar listo para aplicar</button>
+      <button class="btn approve" type="button">✅ Aprobar para publicar</button>
+      <button class="btn linkedin" type="button">🔗 Marcar subido a LinkedIn</button>
       <button class="btn regen" type="button">🔄 Solicitar regeneración</button>
       <button class="btn ghost png" type="button">Descargar PNG</button>
       <button class="btn ghost pdf" type="button">Descargar PDF</button>
       <button class="btn ghost copybtn" type="button">Copiar texto</button>
+    </div>
+
+    <label class="lab">Fecha de publicación <span class="hint">— agéndala en tu Google Calendar</span>
+      <button class="calclear" type="button" hidden>↺ quitar fecha</button></label>
+    <div class="calrow">
+      <input type="date" class="caldate" aria-label="Fecha de publicación">
+      <input type="time" class="caltime" value="09:00" aria-label="Hora de publicación">
+      <a class="btn cal off" target="_blank" rel="noopener">📅 Agendar en Google Calendar</a>
     </div>
 
     <div class="trace">
@@ -391,14 +428,18 @@ def render_special_card(s: dict, uris: list[str]) -> str:
     foto = ('Librería · <code>generica_bandera_chile_mineria</code> (bandera chilena + camión minero) · '
             '<a href="https://drive.google.com/file/d/18Vlym9diMd7rcuAbaWvFMapzAF491biH/view" target="_blank" rel="noopener">ver en Drive</a>'
             '<br><span class="muprompt">pieza conmemorativa de Fiestas Patrias (reemplaza a La Moneda)</span>')
-    return f'''<article class="post special" data-seq="{seq}" data-cid="{G.esc(s["content_id"])}" data-car="0" data-status="publicado" data-edited-at="" data-edited-by="">
+    return f'''<article class="post special" data-seq="{seq}" data-cid="{G.esc(s["content_id"])}" data-car="0" data-status="publicado" data-edited-at="" data-edited-by="" data-caltitle="{G.esc(f'Post {seq:02d} · {s["subtheme"]}')}">
   <script type="application/json" class="slides-data">{slides_json}</script>
   <div class="graphic">
     <div class="gwrap">
       <img class="main" src="{uris[0]}" data-idx="0" alt="Post {seq:02d}">
       <span class="fmtbadge">SALUDO · FIESTAS PATRIAS</span>
       {status_chip(seq)}
-      <span class="li-badge" hidden>🔗 En LinkedIn</span>
+      <div class="botleft">
+        <span class="ap-badge" hidden>✅ Aprobado</span>
+        <span class="cal-badge" hidden>📅</span>
+        <span class="li-badge" hidden>🔗 En LinkedIn</span>
+      </div>
       <span class="zoomhint">clic para ampliar</span>
     </div>
   </div>
@@ -407,6 +448,7 @@ def render_special_card(s: dict, uris: list[str]) -> str:
       <span class="badge ghost">{G.esc(s["fmt"])}</span><span class="sub">{G.esc(s["subtheme"])}</span></div>
 
     <label class="lab">Texto del post <span class="hint">— editable, se guarda en tu navegador</span>
+      <span class="cc" data-cc>0 / 900</span>
       <button class="revert" type="button" data-field="copy" hidden>↺ volver a lo publicado</button></label>
     <textarea class="copy" data-cid="{G.esc(s["content_id"])}" spellcheck="false">{G.esc(full_copy)}</textarea>
 
@@ -418,12 +460,21 @@ def render_special_card(s: dict, uris: list[str]) -> str:
     <div class="editline"></div>
 
     <div class="btns">
-      <button class="btn linkedin" type="button">🔗 Marcar subido a LinkedIn</button>
       <button class="btn ready" type="button">✓ Marcar listo para aplicar</button>
+      <button class="btn approve" type="button">✅ Aprobar para publicar</button>
+      <button class="btn linkedin" type="button">🔗 Marcar subido a LinkedIn</button>
       <button class="btn regen" type="button">🔄 Solicitar regeneración</button>
       <button class="btn ghost png" type="button">Descargar PNG</button>
       <button class="btn ghost pdf" type="button">Descargar PDF</button>
       <button class="btn ghost copybtn" type="button">Copiar texto</button>
+    </div>
+
+    <label class="lab">Fecha de publicación <span class="hint">— agéndala en tu Google Calendar</span>
+      <button class="calclear" type="button" hidden>↺ quitar fecha</button></label>
+    <div class="calrow">
+      <input type="date" class="caldate" aria-label="Fecha de publicación">
+      <input type="time" class="caltime" value="09:00" aria-label="Hora de publicación">
+      <a class="btn cal off" target="_blank" rel="noopener">📅 Agendar en Google Calendar</a>
     </div>
 
     <div class="trace">
@@ -436,8 +487,8 @@ def render_special_card(s: dict, uris: list[str]) -> str:
 </article>'''
 
 
-ARTIFACT = r'''<title>Workstation Septiembre IDIEM</title>
-<meta name="description" content="Plataforma de desarrollo de los 12 posts de septiembre de IDIEM: gráfica por post, texto editable, notas de imagen con regeneración, descarga PNG/PDF y revisión de carruseles.">
+ARTIFACT = r'''<title>Workstation Octubre IDIEM</title>
+<meta name="description" content="Plataforma de desarrollo de los 12 posts de octubre de IDIEM: gráfica por post, texto editable, notas de imagen con regeneración, descarga PNG/PDF y revisión de carruseles.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
@@ -468,6 +519,9 @@ h1 b{color:var(--red)}
 .lede{font-size:clamp(1rem,1.6vw,1.13rem);color:var(--muted);max-width:74ch;margin:0 0 18px}
 .bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 26px}
 .bar .savehint{font-size:.76rem;color:var(--muted)}
+.syncstate{font-family:inherit;font-size:.74rem;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:100px;padding:6px 12px;display:inline-flex;align-items:center;gap:.4em;white-space:nowrap}
+.syncstate[data-mode="sync"]{color:#15803d;border-color:rgba(21,128,61,.4);background:rgba(21,128,61,.08)}
+.syncstate[data-mode="local"]{color:#c6780a;border-color:rgba(198,120,10,.4);background:rgba(198,120,10,.08)}
 .xbtn{font-family:inherit;font-size:.8rem;font-weight:700;color:#fff;background:var(--gray-dark);border:0;
   padding:8px 16px;border-radius:100px;cursor:pointer}
 .xbtn.on{background:var(--red)}
@@ -493,11 +547,27 @@ h1 b{color:var(--red)}
 .statuschip.pub{background:rgba(45,50,52,.82)}
 .statuschip.pend{background:rgba(198,120,10,.95)}
 .statuschip.ready{background:rgba(225,38,29,.95)}
-/* estado de publicación en LinkedIn */
-.li-badge{position:absolute;bottom:10px;left:10px;font-size:.62rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(10,102,194,.95);padding:4px 10px;border-radius:100px;backdrop-filter:blur(3px);display:inline-flex;align-items:center;gap:.35em}
+/* badges de estado de publicación (esquina inf-izq, apilados) */
+.botleft{position:absolute;bottom:10px;left:10px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.ap-badge{font-size:.62rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(21,128,61,.95);padding:4px 10px;border-radius:100px;backdrop-filter:blur(3px);display:inline-flex;align-items:center;gap:.35em}
+.cal-badge{font-size:.62rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(124,58,237,.95);padding:4px 10px;border-radius:100px;backdrop-filter:blur(3px);display:inline-flex;align-items:center;gap:.35em}
+.li-badge{font-size:.62rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(10,102,194,.95);padding:4px 10px;border-radius:100px;backdrop-filter:blur(3px);display:inline-flex;align-items:center;gap:.35em}
+/* estado "aprobado para publicar" (independiente) */
+.post.approved{outline:2px solid rgba(21,128,61,.55);outline-offset:-2px}
+.btn.approve{background:transparent;color:#15803d;border-color:rgba(21,128,61,.5);font-weight:800}
+.btn.approve.on{background:#15803d;color:#fff;border-color:#15803d}
+/* estado de publicación en LinkedIn (gana el borde si además está subido) */
 .post.posted{outline:2px solid rgba(10,102,194,.55);outline-offset:-2px}
 .btn.linkedin{background:transparent;color:#0a66c2;border-color:rgba(10,102,194,.5);font-weight:800}
 .btn.linkedin.on{background:#0a66c2;color:#fff;border-color:#0a66c2}
+/* fecha de publicación + Google Calendar */
+.calrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:2px}
+.caldate,.caltime{font-family:inherit;font-size:.8rem;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:100px;padding:6px 12px}
+.caldate:focus,.caltime:focus{outline:2px solid var(--red);outline-offset:1px}
+.btn.cal{background:transparent;color:#7c3aed;border-color:rgba(124,58,237,.5);font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:.35em}
+.btn.cal:hover{background:rgba(124,58,237,.10)}
+.btn.cal.off{opacity:.45;pointer-events:none}
+.calclear{font-family:inherit;font-size:.64rem;font-weight:700;letter-spacing:0;text-transform:none;color:#7c3aed;background:transparent;border:0;cursor:pointer;padding:0;margin-left:auto}
 .libox{display:inline-flex;align-items:center;gap:.4em;font-size:.8rem;color:var(--muted)}
 .libox b{font-size:1rem;font-weight:800;color:#0a66c2}
 .litoggle{font-family:inherit;font-size:.74rem;font-weight:700;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:100px;padding:5px 12px;cursor:pointer}
@@ -507,7 +577,7 @@ h1 b{color:var(--red)}
 .counts{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:.8rem;color:var(--muted)}
 .ct{display:inline-flex;align-items:center;gap:.4em}
 .ct b{font-size:1rem;font-weight:800;color:var(--ink)}
-.ct.pend b{color:#c6780a}.ct.ready b{color:var(--red)}
+.ct.pend b{color:#c6780a}.ct.ready b{color:var(--red)}.ct.appr b{color:#15803d}.ct.sched b{color:#7c3aed}
 .filters{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
 .fchip{font-family:inherit;font-size:.74rem;font-weight:700;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:100px;padding:5px 12px;cursor:pointer}
 .fchip.on{color:#fff;background:var(--gray-dark);border-color:var(--gray-dark)}
@@ -539,6 +609,9 @@ h1 b{color:var(--red)}
 .sub{font-size:.82rem;font-weight:600;color:var(--muted)}
 .lab{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
 .lab .hint{font-weight:600;letter-spacing:0;text-transform:none;color:var(--muted);opacity:.8}
+.cc{margin-left:auto;font-size:.64rem;font-weight:800;letter-spacing:0;text-transform:none;color:var(--muted);white-space:nowrap}
+.cc.warn{color:#c6780a}
+.cc.over{color:var(--red)}
 textarea{font-family:inherit;width:100%;resize:vertical;border:1px solid var(--line);border-radius:10px;
   background:var(--gray-light);color:var(--ink);padding:10px 12px;font-size:.86rem;line-height:1.55}
 textarea:focus{outline:2px solid var(--red);outline-offset:1px;background:var(--card)}
@@ -575,20 +648,22 @@ code{font-family:inherit;font-weight:700;background:var(--gray-light);padding:1p
 
 <div class="wrap">
   <p class="eyebrow"><span class="dot"></span>IDIEM · Design System · Workstation</p>
-  <h1>Septiembre — <b>12 posts + saludo Fiestas Patrias</b></h1>
-  <p class="lede">Cada post muestra su <strong>estado</strong> en la esquina de la gráfica: <b class="tpub">publicado</b> (lo que ya apliqué), <b class="tpend">pendiente</b> (lo editaste, aún sin aplicar) o <b class="tready">listo para aplicar</b> (lo marcaste tú). Abajo tienes el texto editable, notas de imagen, el <strong>historial</strong> de lo aplicado, y <strong>↺ volver a lo publicado</strong>. Con <strong>💾 Guardar y compartir</strong> tu avance queda visible en tus otros dispositivos y para el equipo. Marca cada post como <strong>🔗 subido a LinkedIn</strong> para llevar el control de lo publicado.</p>
+  <h1>Octubre — <b>12 posts</b></h1>
+  <p class="lede">Cada post muestra su <strong>estado</strong> en la esquina de la gráfica: <b class="tpub">publicado</b> (lo que ya apliqué), <b class="tpend">pendiente</b> (lo editaste, aún sin aplicar) o <b class="tready">listo para aplicar</b> (lo marcaste tú). Abajo tienes el texto editable, notas de imagen, el <strong>historial</strong> de lo aplicado, y <strong>↺ volver a lo publicado</strong>. Todo lo que marcas se <strong>sincroniza en vivo con el equipo</strong>: aprueba (<strong>✅ Aprobado para publicar</strong>), agenda la fecha, y marca <strong>🔗 subido a LinkedIn</strong> una vez publicado (flujo: <b class="tpub">revisado → aprobado → agendado → subido</b>). No necesitas guardar: se guarda solo.</p>
   <div class="bar">
     <input class="idfield" id="revName" type="text" placeholder="Tu nombre" autocomplete="name" spellcheck="false">
     <input class="idfield" id="revRole" type="text" placeholder="Especialidad / área (opcional)" spellcheck="false">
-    <button class="xbtn save" type="button" hidden>💾 Guardar y compartir</button>
+    <span class="syncstate" id="syncState" data-mode="init">Conectando…</span>
     <button class="xbtn ghost export" type="button">Descargar respaldo (JSON)</button>
-    <span class="savehint" id="savehint">Tus ediciones se guardan en este navegador. “Guardar y compartir” las publica para verlas en otros equipos.</span>
+    <span class="savehint" id="savehint">Tus cambios se guardan y comparten con el equipo automáticamente.</span>
   </div>
   <div class="dash">
     <div class="counts">
       <span class="ct pend"><b id="nPend">0</b> pendientes</span>
       <span class="ct ready"><b id="nReady">0</b> listos para aplicar</span>
       <span class="ct pub"><b id="nPub">0</b> publicados</span>
+      <span class="ct appr">✅ <b id="nApproved">0</b>/<span id="nApTotal">0</span> aprobados</span>
+      <span class="ct sched">📅 <b id="nSched">0</b>/<span id="nSchTotal">0</span> agendados</span>
       <span class="libox">🔗 <b id="nLinked">0</b>/<span id="nTotal">0</span> subidos a LinkedIn</span>
     </div>
     <div class="filters" id="filters">
@@ -606,7 +681,7 @@ __CARDS__
   </div>
 
   <div class="foot">
-    <span>Motor: <code>compose_month(2026-09)</code> · copy validado con <code>ingest_draft</code>.</span>
+    <span>Motor: <code>compose_current(2026-10)</code> · copy validado con <code>ingest_draft</code>.</span>
     <span>2A.2 = fuente de verdad · GR-04 sin superlativos · NAME_ONLY.</span>
     <span>Regeneración de imagen: la aplica Claude (Muapi/librería) al recibir el export.</span>
   </div>
@@ -626,7 +701,7 @@ __CARDS__
 
 <script>
 (function(){
-  var KEY='idiem_ws_sep2026_v4';
+  var KEY='idiem_ws_oct2026_v7';
   function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function readJSON(s){try{return JSON.parse(s||'{}')||{};}catch(e){return {};}}
   function mergeState(base,over){var out={},k;for(k in base)out[k]=base[k];
@@ -638,8 +713,27 @@ __CARDS__
   var _embed=readJSON((document.getElementById('ws-state')||{}).textContent);
   var _local=readJSON(localStorage.getItem(KEY));
   var store=mergeState(_embed,_local);
-  function persist(){try{localStorage.setItem(KEY,JSON.stringify(store));}catch(e){}}
+  function persistLocal(){try{localStorage.setItem(KEY,JSON.stringify(store));}catch(e){}}
+  // ---- estado compartido en vivo (capacidad db del artefacto) ----
+  // La DB es la fuente de verdad cuando está disponible; localStorage queda como
+  // caché offline. persist() guarda local y agenda un push a la DB de los docs
+  // que cambiaron. Un onSnapshot repinta en vivo lo que cambie cualquier equipo.
+  var db=null, dbShadow={}, pushTimer=null;
+  function isPostKey(k){return k && k.charAt(0)!=='_';}
+  function schedulePush(){if(!db)return;clearTimeout(pushTimer);pushTimer=setTimeout(pushNow,400);}
+  function pushNow(){if(!db)return;
+    Object.keys(store).forEach(function(cid){
+      if(!isPostKey(cid))return;
+      var body=JSON.stringify(store[cid]||{});
+      if(body!==dbShadow[cid]){dbShadow[cid]=body;
+        try{db.doc('posts/'+cid).set(store[cid]||{}).catch(function(){});}catch(e){}}
+    });}
+  function persist(){persistLocal();schedulePush();}
   function rec(cid){return (store[cid]=store[cid]||{});}
+  function syncIndicator(mode){var el=document.getElementById('syncState');if(!el)return;
+    el.setAttribute('data-mode',mode);
+    el.textContent = mode==='sync'?'🟢 Sincronizado con el equipo'
+      : mode==='local'?'🟡 Sin conexión · cambios locales' : 'Conectando…';}
 
   function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');
     clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove('on');},1900);}
@@ -669,6 +763,7 @@ __CARDS__
 
     var copy=post.querySelector('textarea.copy');
     var note=post.querySelector('textarea.imgnote');
+    var cc=post.querySelector('[data-cc]');
     var chip=post.querySelector('.statuschip');
     var applied=chip?(chip.getAttribute('data-applied')||''):'';
     var editline=post.querySelector('.editline');
@@ -681,6 +776,9 @@ __CARDS__
     autosize(copy);autosize(note);
 
     function refresh(){
+      // contador de caracteres (regla MKT: máx 900; .length cuenta unidades UTF-16)
+      if(cc){var nch=copy.value.length;cc.textContent=nch+' / 900';
+        cc.classList.toggle('warn',nch>860&&nch<=900);cc.classList.toggle('over',nch>900);}
       var st=computeStatus(copy,note,store[cid]||{});
       post.setAttribute('data-status',st);
       post.classList.toggle('flag',st!=='publicado');
@@ -707,6 +805,8 @@ __CARDS__
         ready.classList.toggle('on',on);
         ready.textContent=on?'✓ Listo (quitar marca)':'✓ Marcar listo para aplicar';
         ready.disabled = (st==='publicado');}
+      // el evento de Calendar incluye el copy: refrescar su enlace si cambió
+      if(typeof paintCal==='function')paintCal();
     }
     function stamp(){var rc=rec(cid);rc.editedAt=new Date().toISOString();rc.editedBy=currentUser();}
 
@@ -735,6 +835,69 @@ __CARDS__
     if(liBtn)liBtn.addEventListener('click',function(){var rc=rec(cid);rc.posted=!rc.posted;
       rc.postedAt=rc.posted?new Date().toISOString():null;persist();paintLinked();updateDash();
       toast(rc.posted?'Marcado como subido a LinkedIn.':'Marca de LinkedIn quitada.');});
+
+    // ---- estado "aprobado para publicar" (independiente: revisado → aprobado → subido) ----
+    var apBtn=post.querySelector('.btn.approve');
+    var apBadge=post.querySelector('.ap-badge');
+    function paintApproved(){var r2=store[cid]||{};var on=!!r2.approved;
+      post.classList.toggle('approved',on);
+      if(apBtn){apBtn.classList.toggle('on',on);
+        apBtn.textContent=on?('✓ Aprobado'+(r2.approvedAt?(' · '+fmtWhen(r2.approvedAt)):'')):'✅ Aprobar para publicar';}
+      if(apBadge)apBadge.hidden=!on;}
+    paintApproved();
+    if(apBtn)apBtn.addEventListener('click',function(){var rc=rec(cid);rc.approved=!rc.approved;
+      rc.approvedAt=rc.approved?new Date().toISOString():null;persist();paintApproved();updateDash();
+      toast(rc.approved?'Aprobado para publicar.':'Aprobación quitada.');});
+
+    // ---- fecha de publicación + Google Calendar (independiente) ----
+    // El artifact corre en un iframe sandbox y no puede llamar la API de Calendar;
+    // el botón es un enlace "TEMPLATE" que abre Google Calendar con el evento pre-llenado.
+    var calDate=post.querySelector('.caldate');
+    var calTime=post.querySelector('.caltime');
+    var calBtn=post.querySelector('.btn.cal');
+    var calBadge=post.querySelector('.cal-badge');
+    var calClear=post.querySelector('.calclear');
+    var calTitle=post.getAttribute('data-caltitle')||('Post '+post.getAttribute('data-seq'));
+    var WS_URL='https://claude.ai/code/artifact/f9016145-d797-4a02-867e-1e478de62a6b';
+    if(calDate&&typeof r.scheduledFor==='string')calDate.value=r.scheduledFor;
+    if(calTime&&typeof r.scheduledTime==='string'&&r.scheduledTime)calTime.value=r.scheduledTime;
+    function pad2(x){return ('0'+x).slice(-2);}
+    function fmtDM(iso){var p=(iso||'').split('-');return p.length===3?(p[2]+'-'+p[1]):'';}
+    function calURL(){
+      var d=calDate?calDate.value:''; if(!d)return null;
+      var t=(calTime&&calTime.value)||'09:00';
+      var hh=parseInt(t.split(':')[0],10); if(isNaN(hh))hh=9;
+      var mm=parseInt(t.split(':')[1],10); if(isNaN(mm))mm=0;
+      var ymd=d.replace(/-/g,'');
+      var start=ymd+'T'+pad2(hh)+pad2(mm)+'00';
+      var em=mm+30, eh=hh; if(em>=60){em-=60; eh=(hh+1)%24;}
+      var end=ymd+'T'+pad2(eh)+pad2(em)+'00';
+      var title='📢 Publicar en LinkedIn — '+calTitle;
+      var details=(copy.value||'')+'\n\n— Verifica la publicación y marca "subido a LinkedIn" en la workstation:\n'+WS_URL;
+      return 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        +'&text='+encodeURIComponent(title)
+        +'&dates='+start+'/'+end
+        +'&ctz=America/Santiago'
+        +'&details='+encodeURIComponent(details);
+    }
+    function paintCal(){
+      if(!calBtn)return;
+      var d=calDate?calDate.value:'';
+      var url=calURL();
+      if(url){calBtn.setAttribute('href',url);calBtn.classList.remove('off');}
+      else{calBtn.removeAttribute('href');calBtn.classList.add('off');}
+      if(calBadge){if(d){calBadge.hidden=false;calBadge.textContent='📅 '+fmtDM(d);}else calBadge.hidden=true;}
+      if(calClear)calClear.hidden=!d;
+      post.classList.toggle('scheduled',!!d);
+    }
+    function saveCal(){var rc=rec(cid);var d=(calDate&&calDate.value)||'';
+      if(d){rc.scheduledFor=d;rc.scheduledTime=(calTime&&calTime.value)||'09:00';}
+      else{delete rc.scheduledFor;delete rc.scheduledTime;}
+      persist();paintCal();updateDash();}
+    if(calDate)calDate.addEventListener('change',function(){saveCal();
+      toast(calDate.value?('Agendado para el '+fmtDM(calDate.value)+' · abre el botón para crear el evento'):'Fecha quitada.');});
+    if(calTime)calTime.addEventListener('change',saveCal);
+    if(calClear)calClear.addEventListener('click',function(){if(calDate)calDate.value='';if(calTime)calTime.value='09:00';saveCal();toast('Fecha quitada.');});
 
     revs.forEach(function(b){b.addEventListener('click',function(){
       var f=b.getAttribute('data-field');
@@ -767,8 +930,21 @@ __CARDS__
     post.querySelector('.btn.png').addEventListener('click',function(){downloadPNG(post,slides,curIdx);});
     post.querySelector('.btn.pdf').addEventListener('click',function(){downloadPDF(post,slides);});
 
-    paintRegen();refresh();
-    post._refresh=refresh;
+    // Reaplica el estado (store[cid]) a los controles + repinta. Lo llama el
+    // onSnapshot de la DB para reflejar en vivo lo que cambie otro equipo.
+    // No pisa un campo de texto que se está editando (activeElement).
+    function applyState(){
+      var rr=store[cid]||{};
+      if(document.activeElement!==copy){
+        copy.value=(typeof rr.copy==='string')?rr.copy:copy.defaultValue;autosize(copy);}
+      if(document.activeElement!==note){
+        note.value=(typeof rr.note==='string')?rr.note:'';autosize(note);}
+      if(calDate&&document.activeElement!==calDate)calDate.value=rr.scheduledFor||'';
+      if(calTime&&document.activeElement!==calTime)calTime.value=rr.scheduledTime||'09:00';
+      paintRegen();paintApproved();paintLinked();paintCal();refresh();
+    }
+    applyState();
+    post._apply=applyState;
   });
 
   // ---- lightbox ----
@@ -886,10 +1062,14 @@ __CARDS__
     var byStatus=curFilter==='todos'||st===curFilter;
     var byLinked=!hidePosted||!p.classList.contains('posted');
     p.classList.toggle('hide', !(byStatus&&byLinked));});}
-  function updateDash(){var c={pendiente:0,listo:0,publicado:0},linked=0,total=0;
+  function updateDash(){var c={pendiente:0,listo:0,publicado:0},linked=0,approved=0,scheduled=0,total=0;
     document.querySelectorAll('.post').forEach(function(p){var s=p.getAttribute('data-status')||'publicado';
-      if(c[s]==null)c[s]=0;c[s]++;total++;if(p.classList.contains('posted'))linked++;});
+      if(c[s]==null)c[s]=0;c[s]++;total++;if(p.classList.contains('posted'))linked++;
+      if(p.classList.contains('approved'))approved++;
+      if(p.classList.contains('scheduled'))scheduled++;});
     setTxt('nPend',c.pendiente);setTxt('nReady',c.listo);setTxt('nPub',c.publicado);
+    setTxt('nApproved',approved);setTxt('nApTotal',total);
+    setTxt('nSched',scheduled);setTxt('nSchTotal',total);
     setTxt('nLinked',linked);setTxt('nTotal',total);applyFilter();}
   var liToggle=document.getElementById('liToggle');
   if(liToggle)liToggle.addEventListener('click',function(){hidePosted=!hidePosted;
@@ -904,51 +1084,14 @@ __CARDS__
     var t=document.querySelector('.post[data-status="pendiente"]')||document.querySelector('.post[data-status="listo"]');
     if(t)t.scrollIntoView({behavior:'smooth',block:'start'});else toast('No hay posts pendientes.');});
 
-  // ---- guardar y compartir (capacidad artifact) ----
-  var _art=null,_artTried=false;
-  async function artifactCap(){if(_artTried)return _art;_artTried=true;
-    try{_art=(window.claude&&claude.use)?await claude.use('artifact'):null;}catch(e){_art=null;}return _art;}
-  function buildCleanHTML(){
-    // snapshot del estado compartido en el contenedor embebido
-    var st=document.getElementById('ws-state'); if(st)st.textContent=JSON.stringify(store);
-    var root=document.documentElement.cloneNode(true);
-    // desmontar runtime inyectado por el shell (para publicar HTML limpio)
-    root.querySelectorAll('base').forEach(function(b){var h=b.getAttribute('href')||'';if(h.charAt(0)==='/')b.remove();});
-    root.querySelectorAll('script').forEach(function(s){var t=s.textContent||'';
-      if(t.indexOf('__FRAME_PREAMBLE')>=0||t.indexOf('frame-runtime')>=0)s.remove();});
-    root.querySelectorAll('[data-id]').forEach(function(el){el.removeAttribute('data-id');});
-    root.querySelectorAll('[artifact-sync]').forEach(function(el){el.removeAttribute('artifact-sync');});
-    root.querySelectorAll('[artifact-sync-state]').forEach(function(el){el.removeAttribute('artifact-sync-state');});
-    root.removeAttribute('data-theme');try{root.style.colorScheme='';}catch(e){}
-    return '<!doctype html>\n'+root.outerHTML;
-  }
-  async function saveCloud(){
-    var a=await artifactCap();
-    if(!a){toast('Guardar y compartir no está disponible aquí');return;}
-    var btn=document.querySelector('.xbtn.save');
-    try{sessionStorage.setItem('ws_scroll',String(window.scrollY||window.pageYOffset||0));}catch(e){}
-    if(btn){btn.disabled=true;btn.textContent='Guardando…';}
-    try{await a.publish(buildCleanHTML());toast('Guardado y compartido ✓');}
-    catch(e){var c=e&&e.code;
-      if(c==='conflict'){/* el shell recarga a la versión ganadora */}
-      else if(c==='not_writer'||c==='not_granted'){toast('Tienes esta vista en solo lectura');}
-      else if(c==='rate_limited'){toast('Espera unos segundos y reintenta');}
-      else if(c==='too_large'){toast('La página es muy pesada para guardar');}
-      else{toast('No se pudo guardar');}
-      if(btn){btn.disabled=false;btn.textContent='💾 Guardar y compartir';}}
-  }
-  artifactCap().then(function(a){var btn=document.querySelector('.xbtn.save');
-    if(a&&btn){btn.hidden=false;btn.addEventListener('click',saveCloud);
-      var sh=document.getElementById('savehint');
-      if(sh)sh.textContent='“Guardar y compartir” publica tu avance: lo verás en tus otros dispositivos y el equipo, y Claude puede leerlo para aplicarlo.';}});
-  // restaurar scroll tras la recarga que sigue a publicar
-  try{var sy=sessionStorage.getItem('ws_scroll');if(sy){window.scrollTo(0,parseInt(sy,10)||0);sessionStorage.removeItem('ws_scroll');}}catch(e){}
+  // "Guardar y compartir" quedó obsoleto: el estado se sincroniza en vivo por la
+  // DB del artefacto (ver más abajo). Se eliminó saveCloud/buildCleanHTML/artifactCap.
 
   // ---- respaldo opcional: descargar JSON ----
   var expBtn=document.querySelector('.xbtn.export');
   if(expBtn)expBtn.addEventListener('click',async function(){
     var out={reviewer:{name:(revName?revName.value.trim():'')||null,role:(revRole?revRole.value.trim():'')||null},
-      month:'2026-09',exported_at:new Date().toISOString(),posts:[]};
+      month:'2026-10',exported_at:new Date().toISOString(),posts:[]};
     document.querySelectorAll('.post').forEach(function(post){
       var stt=post.getAttribute('data-status');if(stt==='publicado')return;
       var cid=post.getAttribute('data-cid'),r=store[cid]||{},ce=post.querySelector('textarea.copy');
@@ -959,7 +1102,7 @@ __CARDS__
     });
     if(!out.posts.length){toast('No hay cambios que respaldar todavía');return;}
     var json=JSON.stringify(out,null,2);
-    var fname='idiem_cambios_sep2026__'+slug(out.reviewer.name||'revisor')+'.json';
+    var fname='idiem_cambios_oct2026__'+slug(out.reviewer.name||'revisor')+'.json';
     var dl=await downloads();
     if(dl){try{await dl.save({filename:fname,data:json});toast('Respaldo descargado');return;}
       catch(e){if(e&&e.code==='declined'){toast('Descarga cancelada');return;}}}
@@ -979,13 +1122,37 @@ __CARDS__
   });
 
   updateDash();
+
+  // ---- conexión a la DB del artefacto (estado compartido en vivo) ----
+  function applyAll(){document.querySelectorAll('.post').forEach(function(p){
+    if(p._apply)p._apply();});updateDash();}
+  (async function(){
+    try{db=(window.claude&&claude.use)?await claude.use('db'):null;}catch(e){db=null;}
+    if(!db){syncIndicator('local');return;}   // sin DB: modo local (localStorage)
+    syncIndicator('sync');
+    try{
+      db.collection('posts').onSnapshot(function(snap){
+        var changed=false;
+        snap.docChanges().forEach(function(ch){
+          var cid=ch.doc.id;
+          var body=ch.type==='removed'?'{}':JSON.stringify(ch.doc.data()||{});
+          if(body===dbShadow[cid])return;              // eco de nuestra propia escritura
+          dbShadow[cid]=body;
+          store[cid]=ch.type==='removed'?{}:Object.assign({},ch.doc.data()||{});
+          changed=true;
+        });
+        if(changed){persistLocal();applyAll();}
+        syncIndicator('sync');
+      },function(err){syncIndicator('local');});
+    }catch(e){syncIndicator('local');}
+  })();
 })();
 </script>'''
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--month", default="2026-09")
+    ap.add_argument("--month", default="2026-10")
     ap.add_argument("--build", default=str(BUILD_DEFAULT))
     ap.add_argument("--emit", action="store_true")
     ap.add_argument("--assemble", action="store_true")

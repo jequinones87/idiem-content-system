@@ -69,6 +69,8 @@ aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
 - **Acústica:** norma D.S. 38/2011 MMA (futuro D.D. 14/24).
 - **Voz de marca:** gancho con emoji → problema → "En #IDIEM…" (solución, a veces con
   viñetas `*`) → cierre ✅ → CTA con https://idiem.cl 👉 → hashtags. Sin superlativos.
+- **Largo máximo del copy: 900 caracteres** (cuerpo completo, incluidos emojis, saltos y
+  hashtags). Regla dura de MKT (2026-08-31): si excede, recortar antes de aprobar.
 - **Saludos institucionales** (Fiestas Patrias, etc.) NO trazan a knowledge_id: mensaje
   general, sin proyectos/fechas/cifras no respaldadas por 2A.2.
 - **Efemérides del sector:** al armar la grilla de CADA mes, revisa `config/efemerides.json`
@@ -77,3 +79,25 @@ aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
   geología, suelos, integridad estructural) pueden trazar a knowledge_id; **Transporte
   Sostenible (26-nov) NO** — la célula INFRA CRÍTICA TRANSPORTE es CONTENT_GAP, así que va
   como institucional general sin afirmar capacidades técnicas.
+- **Memoria de contenidos mensual (NO repetir):** el contenido de cada mes se archiva en
+  `content/archive/AAAA-MM.json` + `.md` con `design_system/archive_month.py`. Antes de armar
+  un mes nuevo: (1) **archiva el mes anterior** si aún no está; (2) **lee los archivos previos**
+  y NO repitas los mismos `knowledge_id`, subtemas ni ángulos editoriales del mes anterior
+  —rota células/temas—; (3) **actualiza hechos** si cambiaron respecto de lo publicado. El
+  archivo del mes anterior es la fuente de contexto obligatoria para el mes nuevo.
+  - **No basta con rotar el knowledge_id: evita también CLAIMS, GANCHOS y CTAs parecidos entre
+    meses** (aprendizaje MKT 2026-09-04). Dos posts pueden trazar a items distintos y aun así
+    "sentirse iguales" si repiten el mismo problema-solución, la misma evidencia o el mismo CTA.
+    Reglas: (a) no reutilizar el mismo claim técnico que ya salió el mes anterior; (b) **variar el
+    CTA** —rotar las 3 variantes de la voz de marca en vez de repetir "¿Necesitas…? Conversemos
+    en idiem.cl 👉" en todos—; (c) variar el gancho (fecha/efeméride, escenario, pregunta, dato);
+    (d) si 2A.2 no tiene material fresco bien documentado, es preferible **menos posts sólidos**
+    o pedir insumos, antes que rellenar con versiones parecidas (fail closed).
+- **Workstation — historial de cambios OBLIGATORIO** (MKT 2026-09-04): cada tarjeta de cualquier
+  artefacto de workstation debe mostrar el bloque "Historial de cambios aplicados (N)" (poblar
+  `APPLIED_LOG` en `gen_workstation.py`; si el log está vacío el `<details>` no se renderiza). Se
+  actualiza en cada ronda aplicada y republicada.
+- **Fotos siempre desde la librería de Drive de IDIEM.** Archivos > ~6 MB fallan al descargar por
+  el conector (la sesión expira); pedir a MKT una versión comprimida (≤5 MB). El anillo rojo de la
+  pieza estática es configurable por post (`SIDE`): moverlo al lado contrario a la cara/sujeto para
+  no taparlo.
