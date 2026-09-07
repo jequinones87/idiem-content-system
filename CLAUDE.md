@@ -101,3 +101,13 @@ aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
   el conector (la sesión expira); pedir a MKT una versión comprimida (≤5 MB). El anillo rojo de la
   pieza estática es configurable por post (`SIDE`): moverlo al lado contrario a la cara/sujeto para
   no taparlo.
+- **Sales Intelligence (capa complementaria).** Al idear/redactar, consulta también
+  `knowledge/sales_intelligence/` vía `idiem.sales_intelligence` (ver `docs/10_SALES_INTELLIGENCE.md`):
+  dolores, necesidades, propuestas de valor, ángulos y casos por célula/segmento. **Precedencia:**
+  reglas oficiales de células > editoriales > servicios/brochures > Sales Intelligence > casos >
+  fuentes externas. Es **autoridad 4/6**: NO clasifica servicios ni redefine células (la célula se
+  resuelve antes con las reglas oficiales). Respeta los estados: `SAFE` alimenta copy; `VERIFY`
+  requiere validación humana antes de publicar (cifras, %, fechas, proyectos, coberturas,
+  certificaciones, 24/7, plazos, legal); `INTERNAL` es solo razonamiento; `DO_NOT_PUBLISH` nunca
+  llega al copy final. Metro/EFE son subsegmentos de Transporte (que sigue siendo CONTENT_GAP
+  técnico); Operación Minera y Lab Minero Digital permanecen separados.
