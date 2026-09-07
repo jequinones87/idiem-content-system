@@ -62,8 +62,8 @@ PHOTO_SUB = {
          "detalle": "peritaje Puente Cortés"},
     11: {"photo_id": "generico_trabajador_obra_hormigon", "fuente": _drive("1BSzk4cW3J-mEbMyGREzVIiUzhBctleJs"),
          "detalle": "trabajador en obra · hormigón"},
-    12: {"photo_id": "generica_idiem_vigas_acero", "fuente": _drive("1TMjf-mU8rJ-Ds-O2d1sP0ce9MHISjLUS"),
-         "detalle": "vigas de acero · estructura (por generica_estructura_acero)"},
+    12: {"photo_id": "generica_estructura_acero_low", "fuente": _drive("11yl7as2U1j192aqSwRUVnQwa7IbtwKxi"),
+         "detalle": "estructura de acero galvanizado · celosía"},
 }
 
 # seq -> lado del círculo rojo en la pieza estática. Por defecto "left" (41%);
@@ -126,6 +126,7 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Publicado a alto nivel: tecnología e I+D del hormigón (evita repetir septiembre)."},
     ],
     12: [
+        {"date": "2026-09-04", "summary": "Foto cambiada a generica_estructura_acero (versión comprimida del Drive)."},
         {"date": "2026-09-04", "summary": "Convertido en carrusel: revisión integral de rehabilitación (4 etapas)."},
     ],
 }

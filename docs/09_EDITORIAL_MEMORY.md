@@ -232,10 +232,11 @@ Meses archivados: **2026-09** (13 piezas, publicado). Octubre 2026 en preparaci�
     bloque "Historial de cambios aplicados (N)" como en septiembre. Octubre había quedado vacío
     (el `<details>` no se renderiza si el log está vacío); ahora las 12 tarjetas lo llevan. **Todo
     artefacto de workstation debe incluir el historial poblado.**
-  - **`generica_estructura_acero` (8,28 MB) NO se pudo descargar** por el conector de Drive: la
-    sesión expira en cada intento (~10 intentos). Los archivos livianos sí bajan (geólogo 4 MB,
-    BIM 0,5 MB). Regla operativa: **archivos de Drive > ~6 MB fallan; pedir versión comprimida
-    (≤5 MB).** #12 (rehabilitación) mantiene `generica_idiem_vigas_acero` (mismo tema) hasta que
-    Kike re-suba `generica_estructura_acero` comprimida.
-  - **DB del tablero:** notas de foto ya aplicadas (geólogo, BIM) borradas para limpiar el flag;
-    la de `estructura_acero` (#12) se **mantiene** como pendiente.
+  - **`generica_estructura_acero` (8,28 MB) NO descargaba** por el conector de Drive: la sesión
+    expira en cada intento (~10 intentos). Los archivos livianos sí bajan (geólogo 4 MB, BIM
+    0,5 MB). Regla operativa: **archivos de Drive > ~6 MB fallan; pedir versión comprimida
+    (≤5 MB).** **Resuelto:** Kike re-subió `generica_estructura_acero_low.JPG` (1,57 MB); bajó sin
+    problema y quedó aplicada en **#12 (rehabilitación)** — celosía de acero galvanizado (reemplaza
+    a `generica_idiem_vigas_acero`).
+  - **DB del tablero:** notas de foto aplicadas (geólogo, BIM, estructura_acero) borradas para
+    limpiar los flags.
