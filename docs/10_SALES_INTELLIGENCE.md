@@ -76,11 +76,17 @@ Un estado desconocido nunca es `SAFE`.
 
 ## Guardrails de seguridad editorial
 
-`si.assert_publishable(text)` falla cerrado si el copy final contiene:
-- lenguaje de garantía causal (`garantiza`, `elimina`, `evita`, `asegura`, `impide`…),
-  con límite de palabra para no chocar con términos válidos (`aseguramiento`);
+`si.assert_publishable(text)` **falla cerrado** (bloqueo duro) solo ante lo que nunca
+debe publicarse sin ambigüedad:
 - placeholders (`Agregar una imagen`, `XXXX`…);
-- una frase `DO_NOT_PUBLISH` de las fichas (p.ej. “laboratorio líder en Chile”).
+- una frase `DO_NOT_PUBLISH` de las fichas (p.ej. “laboratorio líder en Chile”), con
+  match insensible a puntuación/comillas.
+
+`si.causal_guarantee_warnings(text)` es **advisory** (no bloquea): reporta verbos de
+garantía causal (`garantiza`, `elimina`, `evita`, `asegura`, `impide`…) para que un
+humano suavice sobre-promesas. El verbo por sí solo no se prohíbe —“evita sobrecostos”
+es legítimo—; la aprobación humana (regla 10) es el filtro final, no un keyword duro.
+El límite de palabra evita chocar con términos válidos (`aseguramiento`).
 
 Toda cifra, %, monto, fecha, proyecto en curso, cobertura, certificación, capacidad
 24/7, plazo, cantidad de laboratorios/profesionales o afirmación legal (Ley 21.094 /
@@ -98,11 +104,30 @@ No se fuerza si el formato/objetivo editorial pide otro (p.ej. saludos instituci
 origen (`source_ppt`), `drive_id` y las secciones VERIFY usadas. No es necesario mostrar
 esa trazabilidad en el copy final.
 
-## Integración con el sistema actual
+## Integración con el redactor (drafting)
 
-- Es una capa **aditiva**: no muta `data/` (2A.2) ni altera el pipeline de generación
-  vigente (`gen_month_grid` / `review` / `drafting`). Se consulta explícitamente al
-  idear/redactar un mes (SAFE pains/ángulos + flags VERIFY), en línea con el patrón de
-  extensión ya existente (`data/ext_2A3`).
-- El mapeo célula-interna → célula-oficial vive en `config/cell_rules.json`
-  (`sales_intelligence.cell_map`), configurable sin tocar código (regla 11 de CLAUDE.md).
+La capa está **conectada al redactor** de forma aditiva:
+
+- `drafting.build_drafting_request(brief)` adjunta automáticamente el campo
+  `sales_intelligence` (= `SIContext.to_drafting_enrichment()` de la célula del brief):
+  dolores/necesidades/propuestas/ángulos **SAFE**, `verify_flags`, casos y trazabilidad.
+  Ese material viaja al prompt del redactor (`render_drafting_prompt`).
+- Las instrucciones del redactor (`DRAFTING_INSTRUCTIONS`) indican usar ese material
+  **solo como encuadre/ángulo**: los hechos concretos de IDIEM siguen saliendo
+  **únicamente de `allowed_facts`** (SI no agrega capacidades/cifras/clientes). Los
+  `verify_flags` nunca se publican como hecho.
+- Guard adicional: `ingest_draft` y `LLMDrafter.draft` ejecutan
+  `assert_no_sales_intelligence_leak` — rechazan copy final con un **placeholder** o una
+  frase **DO_NOT_PUBLISH** (además de los guards GR-04 y de fuga de hechos). Los verbos de
+  garantía causal quedan como advisory (`causal_guarantee_warnings`), no bloquean el copy
+  ya aprobado por el equipo (la grilla de octubre pasa por este mismo `ingest_draft`).
+- Se puede desactivar por llamada: `build_drafting_request(brief, use_sales_intelligence=False)`.
+- Es **best-effort en disponibilidad**: si el paquete falta o no se puede leer, el
+  redactor sigue funcionando sin enriquecimiento (el contenido en sí es fail-closed
+  por estado).
+
+No muta `data/` (2A.2) ni cambia el pipeline de grilla hand-authored (`gen_month_grid`,
+que usa COPY manual + `ingest_draft`); el guard SI sí protege esa vía de ingesta.
+
+El mapeo célula-interna → célula-oficial vive en `config/cell_rules.json`
+(`sales_intelligence.cell_map`), configurable sin tocar código (regla 11 de CLAUDE.md).

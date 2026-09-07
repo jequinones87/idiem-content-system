@@ -83,6 +83,12 @@ def _norm(text: str) -> str:
     return stripped.casefold()
 
 
+def _squash(text: str) -> str:
+    """Normalize + drop all punctuation to spaces + collapse — for robust phrase
+    matching (fichas carry trailing periods/quotes on DO_NOT_PUBLISH items)."""
+    return re.sub(r"\s+", " ", re.sub(r"[^0-9a-z]+", " ", _norm(text))).strip()
+
+
 def _clean_item(line: str) -> str:
     """Strip bullet/number markers and markdown bold/emphasis from a list line."""
     line = _BULLET_RE.sub("", line.strip())
@@ -423,23 +429,33 @@ class SalesIntelligence:
         return phrases
 
     def forbidden_public_terms(self) -> list[str]:
-        """Causal-guarantee terms + placeholder markers (never in final public copy)."""
-        return list(_CAUSAL_GUARANTEE_TERMS) + list(_PLACEHOLDER_MARKERS)
+        """Placeholder markers that must never reach final public copy."""
+        return list(_PLACEHOLDER_MARKERS)
+
+    def causal_guarantee_warnings(self, text: str) -> list[str]:
+        """ADVISORY (no bloquea): verbos de garantía causal presentes en el texto
+        (CONTENT_RULES §4). El verbo por sí solo no es prohibido —"evita sobrecostos"
+        es legítimo—; se reportan para que un humano suavice sobre-promesas. La
+        aprobación humana (regla 10) es el filtro final, no un keyword duro."""
+        low = _norm(text)
+        return [t for t in _CAUSAL_GUARANTEE_TERMS
+                if re.search(r"\b" + re.escape(_norm(t)) + r"\b", low)]
 
     def assert_publishable(self, text: str, *, check_excluded: bool = True) -> None:
-        """Fail closed if ``text`` carries a causal guarantee, placeholder, or a
-        DO_NOT_PUBLISH phrase. Mirrors ``drafting.assert_no_blocked_claim_terms``."""
+        """Fail closed SOLO ante lo que nunca debe publicarse sin ambigüedad: un
+        placeholder o una frase ``DO_NOT_PUBLISH`` de las fichas. Los verbos de
+        garantía causal NO se bloquean aquí (ver ``causal_guarantee_warnings``): un
+        bloqueo por palabra suelta produce falsos positivos sobre copy legítimo ya
+        aprobado por humanos."""
         low = _norm(text)
-        for term in _CAUSAL_GUARANTEE_TERMS:
-            if re.search(r"\b" + re.escape(_norm(term)) + r"\b", low):
-                raise ValueError(f"Sales Intelligence: término de garantía causal en copy: {term!r}")
         for ph in _PLACEHOLDER_MARKERS:
             if ph in low:
                 raise ValueError(f"Sales Intelligence: placeholder en copy: {ph!r}")
         if check_excluded:
+            squashed = _squash(text)
             for phrase in self.excluded_phrases():
-                p = _norm(phrase)
-                if len(p) >= 6 and p in low:
+                p = _squash(phrase)
+                if len(p) >= 6 and p in squashed:
                     raise ValueError(f"Sales Intelligence: frase DO_NOT_PUBLISH en copy: {phrase!r}")
 
 

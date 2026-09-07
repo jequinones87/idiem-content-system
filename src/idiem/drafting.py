@@ -117,7 +117,15 @@ DRAFTING_INSTRUCTIONS = (
     "marcados como 'mencionar por nombre'. (5) Si la evidencia no alcanza la longitud "
     "objetivo, escribe un post más corto y honesto; no rellenes. (6) Devuelve SOLO un "
     "JSON válido: {\"hook\": str, \"body\": str, \"cta\": str} (el body incluye el "
-    "bloque de hashtags al final)."
+    "bloque de hashtags al final). "
+    "SALES INTELLIGENCE (campo 'sales_intelligence', opcional, autoridad complementaria): "
+    "sus 'pain_points', 'business_needs', 'value_propositions' y 'content_angles' son "
+    "material de IDEACIÓN comercial (encuadre del problema y elección de ángulo). Úsalos "
+    "para encuadrar el hook/problema y elegir el ángulo siguiendo 'content_pattern' "
+    "(problema/necesidad → impacto → capacidad IDIEM → evidencia → CTA), SIN forzarlo. "
+    "PERO no son hechos de IDIEM: NO agregues desde ahí capacidades, servicios, cifras, "
+    "clientes ni resultados; los hechos concretos siguen saliendo SOLO de allowed_facts. "
+    "Los 'verify_flags' son datos NO validados: nunca los publiques como hecho."
 )
 
 
@@ -138,6 +146,7 @@ class DraftingRequest:
     recommended_hashtags: list[str] = field(default_factory=list)
     pain_point: str = ""
     style: dict = field(default_factory=dict)
+    sales_intelligence: dict = field(default_factory=dict)
     instructions: str = DRAFTING_INSTRUCTIONS
 
     def to_dict(self) -> dict:
@@ -178,13 +187,36 @@ def pain_point_for(cell: str, style: dict) -> str:
     return entry.get("primary", "") if isinstance(entry, dict) else ""
 
 
-def build_drafting_request(brief: dict, *, style: dict | None = None) -> DraftingRequest:
-    """Derive the bounded drafting spec (incl. editorial style) from a brief."""
+def sales_intelligence_enrichment(cell: str, *, si=None) -> dict:
+    """Complementary Sales Intelligence ideation material for ``cell`` (SAFE only,
+    plus VERIFY flags). Fails *safe on availability*: if the layer is absent or
+    unreadable, returns ``{}`` so drafting is never blocked. The content itself is
+    fail-closed by state (SAFE affirmable, VERIFY flagged, DO_NOT_PUBLISH omitted)."""
+    if not cell:
+        return {}
+    try:
+        if si is None:
+            from .sales_intelligence import load_sales_intelligence
+
+            si = load_sales_intelligence()
+        return si.context_for(cell).to_drafting_enrichment()
+    except Exception:  # pragma: no cover - layer optional; never break drafting
+        return {}
+
+
+def build_drafting_request(
+    brief: dict, *, style: dict | None = None, si=None,
+    use_sales_intelligence: bool = True,
+) -> DraftingRequest:
+    """Derive the bounded drafting spec (incl. editorial style + Sales Intelligence)."""
     if style is None:
         from .loader import load_editorial_style
 
         style = load_editorial_style()
     cell = brief.get("cell", "")
+    enrichment = (
+        sales_intelligence_enrichment(cell, si=si) if use_sales_intelligence else {}
+    )
     return DraftingRequest(
         content_id=brief.get("content_id", ""),
         cell=cell,
@@ -199,6 +231,7 @@ def build_drafting_request(brief: dict, *, style: dict | None = None) -> Draftin
         recommended_hashtags=recommended_hashtags(cell, style),
         pain_point=pain_point_for(cell, style),
         style=style,
+        sales_intelligence=enrichment,
     )
 
 
@@ -220,6 +253,24 @@ def assert_no_blocked_claim_terms(brief: dict, draft: dict) -> None:
             raise ValueError(
                 f"El copy contiene un término bloqueado (GR-04): {term!r}"
             )
+
+
+def assert_no_sales_intelligence_leak(draft: dict, *, si=None) -> None:
+    """Added safety net (CONTENT_RULES): reject publish copy with a Sales
+    Intelligence causal guarantee, placeholder, or DO_NOT_PUBLISH phrase.
+
+    Best-effort on availability: if the layer can't load, it is skipped (it is a
+    supplemental guard, not the primary factual gate). When active it fails closed
+    on the content."""
+    try:
+        if si is None:
+            from .sales_intelligence import load_sales_intelligence
+
+            si = load_sales_intelligence()
+    except Exception:  # pragma: no cover - layer optional
+        return
+    text = " ".join(draft.get(k, "") for k in ("hook", "body", "cta"))
+    si.assert_publishable(text)
 
 
 def _parse_copy(raw: str) -> dict:
@@ -256,6 +307,7 @@ class LLMDrafter:
         draft = _parse_copy(raw)
         assert_no_fact_leakage(brief, draft)
         assert_no_blocked_claim_terms(brief, draft)
+        assert_no_sales_intelligence_leak(draft)
         return draft
 
 
@@ -269,6 +321,7 @@ def ingest_draft(brief: dict, copy_dict: dict) -> dict:
     clean = {k: str(copy_dict.get(k, "")) for k in ("hook", "body", "cta")}
     assert_no_fact_leakage(brief, clean)
     assert_no_blocked_claim_terms(brief, clean)
+    assert_no_sales_intelligence_leak(clean)
     out = copy.deepcopy(brief)
     out["draft_copy"] = clean
     note = "M6 drafting: copy publicable ingerido y validado (sin fugas ni claims bloqueados)."
