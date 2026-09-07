@@ -43,5 +43,10 @@
     "_comment": "Corte del score normalizado [0,1] (1 = totalmente novedoso).",
     "high": 0.75,
     "medium": 0.5
+  },
+  "coverage": {
+    "_comment": "Umbrales de temas frescos por célula para el reporte de cobertura.",
+    "low_max": 4,
+    "medium_max": 15
   }
 }
