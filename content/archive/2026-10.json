@@ -1,0 +1,831 @@
+{
+  "month": "2026-10",
+  "generated_at": "2026-09-07T19:15:39.940526+00:00",
+  "published": false,
+  "count": 12,
+  "dedup_index": {
+    "knowledge_ids": [
+      "KB-IOM-004",
+      "KB-IOM-017",
+      "KB-IOM-019",
+      "KB-IOM-030",
+      "KB-IOM-063",
+      "KB-IOM-065",
+      "KB-IPR-002",
+      "KB-IPR-005",
+      "KB-IPR-016",
+      "KB-IPR-018",
+      "KB-LMD-004",
+      "KB-LMD-007"
+    ],
+    "subthemes": [
+      "Confiabilidad de materiales",
+      "Control de productividad",
+      "Cumplimiento normativo",
+      "Geotecnia y rocas",
+      "Modelamiento y levantamiento digital",
+      "Peritajes y evaluación estructural",
+      "Sustentabilidad y arquitectura",
+      "Tecnología de la construcción",
+      "Tecnología del hormigón"
+    ],
+    "cells": {
+      "IOM": 6,
+      "IPR": 4,
+      "LMD": 2
+    },
+    "angles": [
+      {
+        "seq": 1,
+        "cell": "IOM",
+        "subtheme": "Control de productividad",
+        "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional."
+      },
+      {
+        "seq": 2,
+        "cell": "IPR",
+        "subtheme": "Sustentabilidad y arquitectura",
+        "angle": "Infraestructura pública que sostiene conectividad, acceso y resiliencia territorial; IDIEM como respaldo técnico al servicio del país."
+      },
+      {
+        "seq": 3,
+        "cell": "LMD",
+        "subtheme": "Geotecnia y rocas",
+        "angle": "Información precisa y trazable, evidencia, control técnico y resultados confiables desde terreno."
+      },
+      {
+        "seq": 4,
+        "cell": "IOM",
+        "subtheme": "Confiabilidad de materiales",
+        "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional."
+      },
+      {
+        "seq": 5,
+        "cell": "IPR",
+        "subtheme": "Tecnología de la construcción",
+        "angle": "Infraestructura pública que sostiene conectividad, acceso y resiliencia territorial; IDIEM como respaldo técnico al servicio del país."
+      },
+      {
+        "seq": 6,
+        "cell": "LMD",
+        "subtheme": "Geotecnia y rocas",
+        "angle": "Información precisa y trazable, evidencia, control técnico y resultados confiables desde terreno."
+      },
+      {
+        "seq": 7,
+        "cell": "IOM",
+        "subtheme": "Modelamiento y levantamiento digital",
+        "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional."
+      },
+      {
+        "seq": 8,
+        "cell": "IPR",
+        "subtheme": "Peritajes y evaluación estructural",
+        "angle": "Infraestructura pública que sostiene conectividad, acceso y resiliencia territorial; IDIEM como respaldo técnico al servicio del país."
+      },
+      {
+        "seq": 9,
+        "cell": "IOM",
+        "subtheme": "Cumplimiento normativo",
+        "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional."
+      },
+      {
+        "seq": 10,
+        "cell": "IPR",
+        "subtheme": "Peritajes y evaluación estructural",
+        "angle": "Infraestructura pública que sostiene conectividad, acceso y resiliencia territorial; IDIEM como respaldo técnico al servicio del país."
+      },
+      {
+        "seq": 11,
+        "cell": "IOM",
+        "subtheme": "Tecnología del hormigón",
+        "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional."
+      },
+      {
+        "seq": 12,
+        "cell": "IOM",
+        "subtheme": "Modelamiento y levantamiento digital",
+        "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional."
+      }
+    ]
+  },
+  "fingerprint_index": {
+    "archetypes": {
+      "problem_solution": 5,
+      "method_or_evidence": 3,
+      "technical_insight": 2,
+      "checklist": 2
+    },
+    "cta_types": {
+      "contact": 9,
+      "no_cta": 1,
+      "conversation": 1,
+      "self_assessment": 1
+    },
+    "hook_types": {
+      "risk": 4,
+      "insight": 5,
+      "opportunity": 2,
+      "case": 1
+    },
+    "pain_categories": {
+      "continuity": 2,
+      "quality_assurance": 2,
+      "other": 1,
+      "risk_of_failure": 2,
+      "compliance_gap": 1,
+      "safety": 2,
+      "decision_uncertainty": 1,
+      "cost_overrun": 1
+    },
+    "visual_themes": {
+      "infrastructure": 5,
+      "people": 2,
+      "laboratory": 3,
+      "equipment": 1,
+      "graphic": 1
+    }
+  },
+  "posts": [
+    {
+      "seq": 1,
+      "content_id": "PLAN-KB-IOM-019-01",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "cell_short": "IOM",
+      "subtheme": "Control de productividad",
+      "editorial_angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
+      "format": "CAROUSEL",
+      "knowledge_id": "KB-IOM-019",
+      "evidence_ids": [
+        "KB-IOM-019",
+        "KB-IOM-006",
+        "KB-IOM-007",
+        "KB-IOM-008",
+        "KB-IOM-009",
+        "KB-IOM-010"
+      ],
+      "graphic": {
+        "svc": "Control de productividad",
+        "msg": "Operar con<br>datos.",
+        "baseline": "Soluciones tecnológicas · <b>operación minera</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "estructuras_peritajes_domo_mineria_2",
+        "fuente": "https://drive.google.com/file/d/16uGyWvnrpDdzaDOFCtjllg2MaaeK_XSd/view",
+        "detalle": "domo minero · El Teniente",
+        "reemplaza_a": "",
+        "motivo": ""
+      },
+      "copy": {
+        "hook": "⛏️ En minería, cada hora de detención no planificada se paga cara.",
+        "body": "La productividad de una faena no se trata solo de producir más, sino de operar con datos y control sobre lo que ocurre en terreno. Sin información oportuna, las decisiones llegan tarde. 📊\n\nEn #IDIEM, dentro de nuestros servicios a la operación minera, desarrollamos soluciones tecnológicas para el control de productividad, orientadas a que la operación cuente con mejor información para decidir. ⚙️\n\nTecnología al servicio de una operación más eficiente y con menos imprevistos. ✅",
+        "cta": "📩 ¿Quieres mejorar la productividad de tu operación? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Minería #Productividad #Tecnología #OperaciónMinera",
+        "full": "⛏️ En minería, cada hora de detención no planificada se paga cara.\n\nLa productividad de una faena no se trata solo de producir más, sino de operar con datos y control sobre lo que ocurre en terreno. Sin información oportuna, las decisiones llegan tarde. 📊\n\nEn #IDIEM, dentro de nuestros servicios a la operación minera, desarrollamos soluciones tecnológicas para el control de productividad, orientadas a que la operación cuente con mejor información para decidir. ⚙️\n\nTecnología al servicio de una operación más eficiente y con menos imprevistos. ✅\n\n📩 ¿Quieres mejorar la productividad de tu operación? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Minería #Productividad #Tecnología #OperaciónMinera",
+        "chars": 705
+      },
+      "posted": null,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IOM-019-01",
+        "service": "Control de productividad",
+        "subtheme": "Control de productividad",
+        "primary_claim": "Control de productividad · Operar con datos.",
+        "pain_point": "En minería, cada hora de detención no planificada se paga cara.",
+        "pain_category": "continuity",
+        "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
+        "hook_type": "risk",
+        "editorial_archetype": "problem_solution",
+        "cta_type": "contact",
+        "format": "CAROUSEL",
+        "evidence_ids": [
+          "KB-IOM-019",
+          "KB-IOM-006",
+          "KB-IOM-007",
+          "KB-IOM-008",
+          "KB-IOM-009",
+          "KB-IOM-010"
+        ],
+        "knowledge_id": "KB-IOM-019",
+        "photo_id": "estructuras_peritajes_domo_mineria_2",
+        "visual_theme": "infrastructure"
+      }
+    },
+    {
+      "seq": 2,
+      "content_id": "PLAN-KB-IPR-018-02",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "cell_short": "IPR",
+      "subtheme": "Sustentabilidad y arquitectura",
+      "editorial_angle": "Infraestructura pública que sostiene conectividad, acceso y resiliencia territorial; IDIEM como respaldo técnico al servicio del país.",
+      "format": "STATIC",
+      "knowledge_id": "KB-IPR-018",
+      "evidence_ids": [
+        "KB-IPR-018",
+        "KB-IPR-017"
+      ],
+      "graphic": {
+        "svc": "Día Mundial de la Arquitectura",
+        "msg": "Diseñar<br>sostenible.",
+        "baseline": "Huella C e hídrica · <b>ciclo de vida</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "generica_construccion_edificio",
+        "fuente": "https://drive.google.com/file/d/1WWMzjdxObQWBQIIvXcqKJQKBowYpc-j4/view",
+        "detalle": "edificio en construcción",
+        "reemplaza_a": "",
+        "motivo": ""
+      },
+      "copy": {
+        "hook": "🏛️ En el Día Mundial de la Arquitectura celebramos que diseñar hoy también es diseñar para un futuro sostenible.",
+        "body": "La arquitectura y la infraestructura pública enfrentan un desafío: reducir su impacto ambiental sin resignar calidad ni funcionalidad. 🌱\n\nEn #IDIEM aportamos soluciones sostenibles para infraestructura, ciudades y edificaciones, con planes y estudios de cambio climático para el territorio y las comunas: cálculo de huella de carbono e hídrica, análisis energéticos, ciclo de vida de materiales y estudios de reciclaje. ♻️📊\n\nCiencia e ingeniería para una edificación más eficiente y responsable. ✅",
+        "cta": "¿Tu proyecto quiere reducir su huella ambiental? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #DíaDeLaArquitectura #Sustentabilidad #CambioClimático #Construcción",
+        "full": "🏛️ En el Día Mundial de la Arquitectura celebramos que diseñar hoy también es diseñar para un futuro sostenible.\n\nLa arquitectura y la infraestructura pública enfrentan un desafío: reducir su impacto ambiental sin resignar calidad ni funcionalidad. 🌱\n\nEn #IDIEM aportamos soluciones sostenibles para infraestructura, ciudades y edificaciones, con planes y estudios de cambio climático para el territorio y las comunas: cálculo de huella de carbono e hídrica, análisis energéticos, ciclo de vida de materiales y estudios de reciclaje. ♻️📊\n\nCiencia e ingeniería para una edificación más eficiente y responsable. ✅\n\n¿Tu proyecto quiere reducir su huella ambiental? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #DíaDeLaArquitectura #Sustentabilidad #CambioClimático #Construcción",
+        "chars": 808
+      },
+      "posted": null,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IPR-018-02",
+        "service": "Día Mundial de la Arquitectura",
+        "subtheme": "Sustentabilidad y arquitectura",
+        "primary_claim": "Día Mundial de la Arquitectura · Diseñar sostenible.",
+        "pain_point": "En el Día Mundial de la Arquitectura celebramos que diseñar hoy también es diseñar para un futuro sostenible.",
+        "pain_category": "quality_assurance",
+        "angle": "Infraestructura pública que sostiene conectividad, acceso y resiliencia territorial; IDIEM como respaldo técnico al servicio del país.",
+        "hook_type": "insight",
+        "editorial_archetype": "problem_solution",
+        "cta_type": "contact",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-IPR-018",
+          "KB-IPR-017"
+        ],
+        "knowledge_id": "KB-IPR-018",
+        "photo_id": "generica_construccion_edificio",
+        "visual_theme": "infrastructure"
+      }
+    },
+    {
+      "seq": 3,
+      "content_id": "PLAN-KB-LMD-004-03",
+      "cell": "LAB MINERO DIGITAL",
+      "cell_short": "LMD",
+      "subtheme": "Geotecnia y rocas",
+      "editorial_angle": "Información precisa y trazable, evidencia, control técnico y resultados confiables desde terreno.",
+      "format": "STATIC",
+      "knowledge_id": "KB-LMD-004",
+      "evidence_ids": [
+        "KB-LMD-004",
+        "KB-LMD-005",
+        "KB-LMD-006"
+      ],
+      "graphic": {
+        "svc": "",
+        "msg": "Feliz día del<br>Geólogo.",
+        "baseline": "Leer la tierra · <b>construir seguro</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "generica_geologo",
+        "fuente": "https://drive.google.com/file/d/10yp3LWqAc3yUmHK4_s5sCfyYvR1GUEs8/view",
+        "detalle": "geólogo en terreno · lectura de estratos",
+        "reemplaza_a": "",
+        "motivo": ""
+      },
+      "copy": {
+        "hook": "⛏️ Hoy es el Día del Geólogo en Chile. 🇨🇱",
+        "body": "Detrás de cada obra segura y de cada faena que opera sobre bases firmes hay geólogas y geólogos que entienden el terreno antes de construir sobre él.\n\nSu trabajo —leer la tierra, anticipar riesgos y caracterizar el subsuelo— es parte esencial del desarrollo de la infraestructura y la minería del país, y también del quehacer de #IDIEM. 🌎🪨\n\nA quienes hacen de la geología una herramienta al servicio de la ingeniería: gracias. 👏",
+        "cta": "¡Feliz Día del Geólogo! 🎉\n\n#IDIEM #DíaDelGeólogo #Geología #Minería #Ingeniería",
+        "full": "⛏️ Hoy es el Día del Geólogo en Chile. 🇨🇱\n\nDetrás de cada obra segura y de cada faena que opera sobre bases firmes hay geólogas y geólogos que entienden el terreno antes de construir sobre él.\n\nSu trabajo —leer la tierra, anticipar riesgos y caracterizar el subsuelo— es parte esencial del desarrollo de la infraestructura y la minería del país, y también del quehacer de #IDIEM. 🌎🪨\n\nA quienes hacen de la geología una herramienta al servicio de la ingeniería: gracias. 👏\n\n¡Feliz Día del Geólogo! 🎉\n\n#IDIEM #DíaDelGeólogo #Geología #Minería #Ingeniería",
+        "chars": 552
+      },
+      "posted": null,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-LMD-004-03",
+        "service": "",
+        "subtheme": "Geotecnia y rocas",
+        "primary_claim": "Feliz día del Geólogo.",
+        "pain_point": "Hoy es el Día del Geólogo en Chile.",
+        "pain_category": "other",
+        "angle": "Información precisa y trazable, evidencia, control técnico y resultados confiables desde terreno.",
+        "hook_type": "insight",
+        "editorial_archetype": "problem_solution",
+        "cta_type": "no_cta",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-LMD-004",
+          "KB-LMD-005",
+          "KB-LMD-006"
+        ],
+        "knowledge_id": "KB-LMD-004",
+        "photo_id": "generica_geologo",
+        "visual_theme": "people"
+      }
+    },
+    {
+      "seq": 4,
+      "content_id": "PLAN-KB-IOM-065-04",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "cell_short": "IOM",
+      "subtheme": "Confiabilidad de materiales",
+      "editorial_angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
+      "format": "STATIC",
+      "knowledge_id": "KB-IOM-065",
+      "evidence_ids": [
+        "KB-IOM-065"
+      ],
+      "graphic": {
+        "svc": "Confiabilidad de materiales",
+        "msg": "Entender<br>el material.",
+        "baseline": "Metalurgia · mecánica · <b>química</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "ensayo_aceros1",
+        "fuente": "https://drive.google.com/file/d/1amvDzSYHH5T_3-YLqilt4YpGWpzxdhMq/view",
+        "detalle": "ensayo de aceros en laboratorio",
+        "reemplaza_a": "",
+        "motivo": ""
+      },
+      "copy": {
+        "hook": "🔬 ¿Por qué un material falla antes de lo esperado?",
+        "body": "Responderlo no es cosa de una sola mirada: exige entender el material desde la metalurgia, la mecánica y la química a la vez.\n\nEn #IDIEM evaluamos la confiabilidad de los materiales usados en elementos mecánicos y estructuras con un equipo especializado en metalurgia, mecánica, química y estructuras, apoyado en tecnología de laboratorio para el análisis de materiales metálicos y poliméricos. 🧪⚙️\n\nUna mirada multidisciplinaria para entender el material y anticipar su comportamiento. ✅",
+        "cta": "📩 ¿Tienes dudas sobre la confiabilidad de un material? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Materiales #Metalurgia #Confiabilidad #Ingeniería",
+        "full": "🔬 ¿Por qué un material falla antes de lo esperado?\n\nResponderlo no es cosa de una sola mirada: exige entender el material desde la metalurgia, la mecánica y la química a la vez.\n\nEn #IDIEM evaluamos la confiabilidad de los materiales usados en elementos mecánicos y estructuras con un equipo especializado en metalurgia, mecánica, química y estructuras, apoyado en tecnología de laboratorio para el análisis de materiales metálicos y poliméricos. 🧪⚙️\n\nUna mirada multidisciplinaria para entender el material y anticipar su comportamiento. ✅\n\n📩 ¿Tienes dudas sobre la confiabilidad de un material? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Materiales #Metalurgia #Confiabilidad #Ingeniería",
+        "chars": 696
+      },
+      "posted": null,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IOM-065-04",
+        "service": "Confiabilidad de materiales",
+        "subtheme": "Confiabilidad de materiales",
+        "primary_claim": "Confiabilidad de materiales · Entender el material.",
+        "pain_point": "¿Por qué un material falla antes de lo esperado?",
+        "pain_category": "risk_of_failure",
+        "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
+        "hook_type": "risk",
+        "editorial_archetype": "problem_solution",
+        "cta_type": "contact",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-IOM-065"
+        ],
+        "knowledge_id": "KB-IOM-065",
+        "photo_id": "ensayo_aceros1",
+        "visual_theme": "laboratory"
+      }
+    },
+    {
+      "seq": 5,
+      "content_id": "PLAN-KB-IPR-016-05",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "cell_short": "IPR",
+      "subtheme": "Tecnología de la construcción",
+      "editorial_angle": "Infraestructura pública que sostiene conectividad, acceso y resiliencia territorial; IDIEM como respaldo técnico al servicio del país.",
+      "format": "STATIC",
+      "knowledge_id": "KB-IPR-016",
+      "evidence_ids": [
+        "KB-IPR-016"
+      ],
+      "graphic": {
+        "svc": "Tecnología de la construcción",
+        "msg": "Innovar con<br>respaldo.",
+        "baseline": "Ensayos · certificación · <b>edificación</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "generico_construccion_edificio_obra",
+        "fuente": "https://drive.google.com/file/d/1PRspVgdZFrutleVS3HC5vUndqh2TVp9Z/view",
+        "detalle": "obra en altura · grúas torre y edificios en construcción",
+        "reemplaza_a": "",
+        "motivo": ""
+      },
+      "copy": {
+        "hook": "🏢 Innovar en la construcción exige una pregunta previa: ¿este material o sistema cumple realmente el estándar?",
+        "body": "Incorporar nuevas soluciones sin validación técnica puede comprometer la calidad y la seguridad de una obra que usarán miles de personas. 🔎\n\nEn #IDIEM ofrecemos Servicios de Tecnología de la Construcción y acompañamos procesos de innovación en la edificación, con ensayos y certificaciones de materiales, componentes y sistemas para verificar el cumplimiento de estándares de calidad y seguridad. 🧪📋\n\nInnovación respaldada por evidencia técnica. ✅",
+        "cta": "¿Buscas validar materiales o sistemas para edificación pública? Conversemos en https://idiem.cl 👉\n\n#IDIEM #EdificaciónPública #Innovación #Ensayos #Construcción",
+        "full": "🏢 Innovar en la construcción exige una pregunta previa: ¿este material o sistema cumple realmente el estándar?\n\nIncorporar nuevas soluciones sin validación técnica puede comprometer la calidad y la seguridad de una obra que usarán miles de personas. 🔎\n\nEn #IDIEM ofrecemos Servicios de Tecnología de la Construcción y acompañamos procesos de innovación en la edificación, con ensayos y certificaciones de materiales, componentes y sistemas para verificar el cumplimiento de estándares de calidad y seguridad. 🧪📋\n\nInnovación respaldada por evidencia técnica. ✅\n\n¿Buscas validar materiales o sistemas para edificación pública? Conversemos en https://idiem.cl 👉\n\n#IDIEM #EdificaciónPública #Innovación #Ensayos #Construcción",
+        "chars": 721
+      },
+      "posted": null,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IPR-016-05",
+        "service": "Tecnología de la construcción",
+        "subtheme": "Tecnología de la construcción",
+        "primary_claim": "Tecnología de la construcción · Innovar con respaldo.",
+        "pain_point": "Innovar en la construcción exige una pregunta previa: ¿este material o sistema cumple realmente el estándar?",
+        "pain_category": "compliance_gap",
+        "angle": "Infraestructura pública que sostiene conectividad, acceso y resiliencia territorial; IDIEM como respaldo técnico al servicio del país.",
+        "hook_type": "opportunity",
+        "editorial_archetype": "method_or_evidence",
+        "cta_type": "conversation",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-IPR-016"
+        ],
+        "knowledge_id": "KB-IPR-016",
+        "photo_id": "generico_construccion_edificio_obra",
+        "visual_theme": "equipment"
+      }
+    },
+    {
+      "seq": 6,
+      "content_id": "PLAN-KB-LMD-007-06",
+      "cell": "LAB MINERO DIGITAL",
+      "cell_short": "LMD",
+      "subtheme": "Geotecnia y rocas",
+      "editorial_angle": "Información precisa y trazable, evidencia, control técnico y resultados confiables desde terreno.",
+      "format": "CARRUSEL",
+      "knowledge_id": "KB-LMD-007",
+      "evidence_ids": [
+        "KB-LMD-007",
+        "KB-LMD-008",
+        "KB-LMD-009",
+        "KB-LMD-021"
+      ],
+      "graphic": {
+        "svc": "Triaxial grandes partículas",
+        "msg": "Ensayar el<br>material real.",
+        "baseline": "Suelos de gran tamaño · <b>presas de tierra</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "Equipo_trixial_gigante",
+        "fuente": "https://drive.google.com/file/d/1XVR_E9H7G9wKAj_k_KN_W6c_uHK3HlrC/view",
+        "detalle": "equipo Triaxial para grandes partículas",
+        "reemplaza_a": "",
+        "motivo": ""
+      },
+      "copy": {
+        "hook": "🪨 Muchos suelos reales tienen partículas demasiado grandes para los equipos de ensayo convencionales.",
+        "body": "En presas de tierra, gran minería, energía e infraestructura, ensayar el material tal como es —con sus partículas de gran tamaño— es clave para caracterizarlo bien y diseñar con seguridad. 🔬\n\nEn #IDIEM contamos con un equipo Triaxial para grandes partículas, desarrollado con ingeniería propia, que permite ensayar suelos de gran tamaño y obtener parámetros representativos para el diseño geotécnico. 📐\n\nEnsayos que reflejan el material real, no una versión reducida de él. ✅",
+        "cta": "¿Necesitas ensayar suelos de gran tamaño? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Geotecnia #Minería #Ensayos #PresasDeTierra",
+        "full": "🪨 Muchos suelos reales tienen partículas demasiado grandes para los equipos de ensayo convencionales.\n\nEn presas de tierra, gran minería, energía e infraestructura, ensayar el material tal como es —con sus partículas de gran tamaño— es clave para caracterizarlo bien y diseñar con seguridad. 🔬\n\nEn #IDIEM contamos con un equipo Triaxial para grandes partículas, desarrollado con ingeniería propia, que permite ensayar suelos de gran tamaño y obtener parámetros representativos para el diseño geotécnico. 📐\n\nEnsayos que reflejan el material real, no una versión reducida de él. ✅\n\n¿Necesitas ensayar suelos de gran tamaño? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Geotecnia #Minería #Ensayos #PresasDeTierra",
+        "chars": 744
+      },
+      "posted": null,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-LMD-007-06",
+        "service": "Triaxial grandes partículas",
+        "subtheme": "Geotecnia y rocas",
+        "primary_claim": "Triaxial grandes partículas · Ensayar el material real.",
+        "pain_point": "Muchos suelos reales tienen partículas demasiado grandes para los equipos de ensayo convencionales.",
+        "pain_category": "safety",
+        "angle": "Información precisa y trazable, evidencia, control técnico y resultados confiables desde terreno.",
+        "hook_type": "insight",
+        "editorial_archetype": "method_or_evidence",
+        "cta_type": "contact",
+        "format": "CARRUSEL",
+        "evidence_ids": [
+          "KB-LMD-007",
+          "KB-LMD-008",
+          "KB-LMD-009",
+          "KB-LMD-021"
+        ],
+        "knowledge_id": "KB-LMD-007",
+        "photo_id": "Equipo_trixial_gigante",
+        "visual_theme": "laboratory"
+      }
+    },
+    {
+      "seq": 7,
+      "content_id": "PLAN-KB-IOM-004-07",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "cell_short": "IOM",
+      "subtheme": "Modelamiento y levantamiento digital",
+      "editorial_angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
+      "format": "STATIC",
+      "knowledge_id": "KB-IOM-004",
+      "evidence_ids": [
+        "KB-IOM-004",
+        "KB-IOM-003"
+      ],
+      "graphic": {
+        "svc": "Ingeniería de apoyo · BIM",
+        "msg": "Decidir con<br>datos reales.",
+        "baseline": "Civil · mecánica · <b>modelación BIM</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "generico_modelado_estructura",
+        "fuente": "https://drive.google.com/file/d/157A_fs0lXLIOawLs_D92Ze4C-cczSUFS/view",
+        "detalle": "modelado 3D de estructura",
+        "reemplaza_a": "",
+        "motivo": ""
+      },
+      "copy": {
+        "hook": "🏗️ Coordinar un proyecto minero sobre información incompleta multiplica errores, retrabajos y sorpresas en obra.",
+        "body": "Cuando cada disciplina trabaja con datos distintos del estado real, los problemas aparecen recién en terreno, cuando corregir cuesta más. 🧭\n\nEn #IDIEM abordamos la ingeniería de apoyo para proyectos mineros con un equipo multidisciplinario: ingeniería civil, mecánica y geomensura, modelación BIM y mantenimiento industrial, partiendo por el levantamiento de las condiciones existentes en cada disciplina. 📐📊\n\nUna base digital y multidisciplinaria para decidir con información confiable. ✅",
+        "cta": "📩 ¿Tu proyecto minero necesita coordinación BIM? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Minería #BIM #Ingeniería #ModelamientoDigital",
+        "full": "🏗️ Coordinar un proyecto minero sobre información incompleta multiplica errores, retrabajos y sorpresas en obra.\n\nCuando cada disciplina trabaja con datos distintos del estado real, los problemas aparecen recién en terreno, cuando corregir cuesta más. 🧭\n\nEn #IDIEM abordamos la ingeniería de apoyo para proyectos mineros con un equipo multidisciplinario: ingeniería civil, mecánica y geomensura, modelación BIM y mantenimiento industrial, partiendo por el levantamiento de las condiciones existentes en cada disciplina. 📐📊\n\nUna base digital y multidisciplinaria para decidir con información confiable. ✅\n\n📩 ¿Tu proyecto minero necesita coordinación BIM? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Minería #BIM #Ingeniería #ModelamientoDigital",
+        "chars": 749
+      },
+      "posted": null,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IOM-004-07",
+        "service": "Ingeniería de apoyo · BIM",
+        "subtheme": "Modelamiento y levantamiento digital",
+        "primary_claim": "Ingeniería de apoyo · BIM · Decidir con datos reales.",
+        "pain_point": "Coordinar un proyecto minero sobre información incompleta multiplica errores, retrabajos y sorpresas en obra.",
+        "pain_category": "decision_uncertainty",
+        "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
+        "hook_type": "case",
+        "editorial_archetype": "technical_insight",
+        "cta_type": "contact",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-IOM-004",
+          "KB-IOM-003"
+        ],
+        "knowledge_id": "KB-IOM-004",
+        "photo_id": "generico_modelado_estructura",
+        "visual_theme": "graphic"
+      }
+    },
+    {
+      "seq": 8,
+      "content_id": "PLAN-KB-IPR-002-08",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "cell_short": "IPR",
+      "subtheme": "Peritajes y evaluación estructural",
+      "editorial_angle": "Infraestructura pública que sostiene conectividad, acceso y resiliencia territorial; IDIEM como respaldo técnico al servicio del país.",
+      "format": "CARRUSEL",
+      "knowledge_id": "KB-IPR-002",
+      "evidence_ids": [
+        "KB-IPR-002"
+      ],
+      "graphic": {
+        "svc": "Peritaje de componentes",
+        "msg": "¿Por qué<br>falló?",
+        "baseline": "Pernos · ejes · <b>engranajes y tuberías</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "planta_aceros",
+        "fuente": "https://drive.google.com/file/d/125lUuUu3UFValyUGDY0afuRLuGns98Bh/view",
+        "detalle": "planta de aceros",
+        "reemplaza_a": "",
+        "motivo": ""
+      },
+      "copy": {
+        "hook": "🔧 Cuando un componente metálico falla, la pregunta clave no es solo qué se rompió, sino por qué.",
+        "body": "Un perno, un eje, un engranaje o una tubería que falla puede detener una operación o comprometer la seguridad. Sin un peritaje riguroso, la causa queda sin resolver y el riesgo permanece. 🔎\n\nEn #IDIEM realizamos estudios de falla de componentes, con peritajes a pernos, ejes, engranajes y tuberías, y también evaluamos el daño del pavimento en autopistas. Determinamos qué ocurrió y entregamos evidencia técnica para decidir. 🧪📐\n\nEntender la falla es el primer paso para evitar que se repita. ✅",
+        "cta": "¿Necesitas peritar la falla de un componente? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Peritajes #Materiales #Ingeniería #FallaDeComponentes",
+        "full": "🔧 Cuando un componente metálico falla, la pregunta clave no es solo qué se rompió, sino por qué.\n\nUn perno, un eje, un engranaje o una tubería que falla puede detener una operación o comprometer la seguridad. Sin un peritaje riguroso, la causa queda sin resolver y el riesgo permanece. 🔎\n\nEn #IDIEM realizamos estudios de falla de componentes, con peritajes a pernos, ejes, engranajes y tuberías, y también evaluamos el daño del pavimento en autopistas. Determinamos qué ocurrió y entregamos evidencia técnica para decidir. 🧪📐\n\nEntender la falla es el primer paso para evitar que se repita. ✅\n\n¿Necesitas peritar la falla de un componente? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Peritajes #Materiales #Ingeniería #FallaDeComponentes",
+        "chars": 772
+      },
+      "posted": null,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IPR-002-08",
+        "service": "Peritaje de componentes",
+        "subtheme": "Peritajes y evaluación estructural",
+        "primary_claim": "Peritaje de componentes · ¿Por qué falló?",
+        "pain_point": "Cuando un componente metálico falla, la pregunta clave no es solo qué se rompió, sino por qué.",
+        "pain_category": "risk_of_failure",
+        "angle": "Infraestructura pública que sostiene conectividad, acceso y resiliencia territorial; IDIEM como respaldo técnico al servicio del país.",
+        "hook_type": "risk",
+        "editorial_archetype": "checklist",
+        "cta_type": "contact",
+        "format": "CARRUSEL",
+        "evidence_ids": [
+          "KB-IPR-002"
+        ],
+        "knowledge_id": "KB-IPR-002",
+        "photo_id": "planta_aceros",
+        "visual_theme": "laboratory"
+      }
+    },
+    {
+      "seq": 9,
+      "content_id": "PLAN-KB-IOM-063-09",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "cell_short": "IOM",
+      "subtheme": "Cumplimiento normativo",
+      "editorial_angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
+      "format": "CARRUSEL",
+      "knowledge_id": "KB-IOM-063",
+      "evidence_ids": [
+        "KB-IOM-063"
+      ],
+      "graphic": {
+        "svc": "Cumplimiento normativo",
+        "msg": "Cerrar las<br>brechas.",
+        "baseline": "Estructural · incendios · <b>especialidades</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "estructuras_peritajes_analisis_terreno",
+        "fuente": "https://drive.google.com/file/d/1U0v0oaWq2nypfKT-REB9FC77Gxegu0Jg/view",
+        "detalle": "análisis estructural en terreno",
+        "reemplaza_a": "",
+        "motivo": ""
+      },
+      "copy": {
+        "hook": "📋 Una brecha normativa puede pasar desapercibida… hasta que una auditoría o una falla la deja en evidencia.",
+        "body": "Detectar las brechas normativas a tiempo evita sobrecostos, detenciones y riesgos para las personas. 🔍\n\nEn #IDIEM realizamos revisión de cumplimiento normativo en tres ámbitos —estructural, incendios y especialidades—, identificando las brechas respecto de los marcos aplicables. 🛡️📐\n\nUna mirada técnica e independiente para operar con respaldo y sin sorpresas. ✅",
+        "cta": "📩 ¿Necesitas revisar el cumplimiento normativo de tu obra? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #CumplimientoNormativo #Ingeniería #Seguridad #Calidad",
+        "full": "📋 Una brecha normativa puede pasar desapercibida… hasta que una auditoría o una falla la deja en evidencia.\n\nDetectar las brechas normativas a tiempo evita sobrecostos, detenciones y riesgos para las personas. 🔍\n\nEn #IDIEM realizamos revisión de cumplimiento normativo en tres ámbitos —estructural, incendios y especialidades—, identificando las brechas respecto de los marcos aplicables. 🛡️📐\n\nUna mirada técnica e independiente para operar con respaldo y sin sorpresas. ✅\n\n📩 ¿Necesitas revisar el cumplimiento normativo de tu obra? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #CumplimientoNormativo #Ingeniería #Seguridad #Calidad",
+        "chars": 636
+      },
+      "posted": null,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IOM-063-09",
+        "service": "Cumplimiento normativo",
+        "subtheme": "Cumplimiento normativo",
+        "primary_claim": "Cumplimiento normativo · Cerrar las brechas.",
+        "pain_point": "Una brecha normativa puede pasar desapercibida…",
+        "pain_category": "cost_overrun",
+        "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
+        "hook_type": "risk",
+        "editorial_archetype": "technical_insight",
+        "cta_type": "contact",
+        "format": "CARRUSEL",
+        "evidence_ids": [
+          "KB-IOM-063"
+        ],
+        "knowledge_id": "KB-IOM-063",
+        "photo_id": "estructuras_peritajes_analisis_terreno",
+        "visual_theme": "infrastructure"
+      }
+    },
+    {
+      "seq": 10,
+      "content_id": "PLAN-KB-IPR-005-10",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "cell_short": "IPR",
+      "subtheme": "Peritajes y evaluación estructural",
+      "editorial_angle": "Infraestructura pública que sostiene conectividad, acceso y resiliencia territorial; IDIEM como respaldo técnico al servicio del país.",
+      "format": "STATIC",
+      "knowledge_id": "KB-IPR-005",
+      "evidence_ids": [
+        "KB-IPR-005"
+      ],
+      "graphic": {
+        "svc": "Evaluación de puentes",
+        "msg": "¿Cuánta carga<br>resiste?",
+        "baseline": "Capacidad de carga · <b>elementos finitos</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "estructuras_peritajes_puente_cortez",
+        "fuente": "https://drive.google.com/file/d/12TxaHcgX3d-VLIGN85eniQOD8Q3NewIT/view",
+        "detalle": "peritaje Puente Cortés",
+        "reemplaza_a": "",
+        "motivo": ""
+      },
+      "copy": {
+        "hook": "🌉 Un puente conecta territorios y sostiene la vida de las comunidades: saber cuánta carga resiste no es un detalle.",
+        "body": "Con el paso del tiempo y el aumento del tránsito, un puente puede quedar exigido más allá de lo previsto. Evaluar su capacidad real es clave para decidir con seguridad. 🔎\n\nEn #IDIEM evaluamos la capacidad de carga de puentes con diagnóstico, ensayos, modelación por elementos finitos, levantamiento topográfico del trazado y análisis de alternativas de diseño, como en el estudio estructural del Puente Cortés. 📐📊\n\nEvidencia técnica para resguardar la seguridad y la conectividad del territorio. ✅",
+        "cta": "¿Necesitas evaluar la capacidad de carga de un puente? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Puentes #Infraestructura #Ingeniería #Estructuras",
+        "full": "🌉 Un puente conecta territorios y sostiene la vida de las comunidades: saber cuánta carga resiste no es un detalle.\n\nCon el paso del tiempo y el aumento del tránsito, un puente puede quedar exigido más allá de lo previsto. Evaluar su capacidad real es clave para decidir con seguridad. 🔎\n\nEn #IDIEM evaluamos la capacidad de carga de puentes con diagnóstico, ensayos, modelación por elementos finitos, levantamiento topográfico del trazado y análisis de alternativas de diseño, como en el estudio estructural del Puente Cortés. 📐📊\n\nEvidencia técnica para resguardar la seguridad y la conectividad del territorio. ✅\n\n¿Necesitas evaluar la capacidad de carga de un puente? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Puentes #Infraestructura #Ingeniería #Estructuras",
+        "chars": 799
+      },
+      "posted": null,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IPR-005-10",
+        "service": "Evaluación de puentes",
+        "subtheme": "Peritajes y evaluación estructural",
+        "primary_claim": "Evaluación de puentes · ¿Cuánta carga resiste?",
+        "pain_point": "Un puente conecta territorios y sostiene la vida de las comunidades: saber cuánta carga resiste no es un detalle.",
+        "pain_category": "safety",
+        "angle": "Infraestructura pública que sostiene conectividad, acceso y resiliencia territorial; IDIEM como respaldo técnico al servicio del país.",
+        "hook_type": "insight",
+        "editorial_archetype": "method_or_evidence",
+        "cta_type": "self_assessment",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-IPR-005"
+        ],
+        "knowledge_id": "KB-IPR-005",
+        "photo_id": "estructuras_peritajes_puente_cortez",
+        "visual_theme": "infrastructure"
+      }
+    },
+    {
+      "seq": 11,
+      "content_id": "PLAN-KB-IOM-017-11",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "cell_short": "IOM",
+      "subtheme": "Tecnología del hormigón",
+      "editorial_angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
+      "format": "STATIC",
+      "knowledge_id": "KB-IOM-017",
+      "evidence_ids": [
+        "KB-IOM-017",
+        "KB-IOM-006",
+        "KB-IOM-007",
+        "KB-IOM-008",
+        "KB-IOM-009",
+        "KB-IOM-010"
+      ],
+      "graphic": {
+        "svc": "Tecnología del hormigón",
+        "msg": "I+D del<br>hormigón.",
+        "baseline": "Innovación · <b>operación minera</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "generico_trabajador_obra_hormigon",
+        "fuente": "https://drive.google.com/file/d/1BSzk4cW3J-mEbMyGREzVIiUzhBctleJs/view",
+        "detalle": "trabajador en obra · hormigón",
+        "reemplaza_a": "",
+        "motivo": ""
+      },
+      "copy": {
+        "hook": "🧱 El hormigón es el material más usado en construcción… y también uno de los que más exige innovación.",
+        "body": "Mejorar su desempeño y su comportamiento frente a condiciones exigentes es un desafío técnico permanente, sobre todo en faenas mineras. 🔬\n\nEn #IDIEM trabajamos en tecnología e investigación y desarrollo (I+D) del hormigón dentro de nuestros servicios a la operación minera, aportando conocimiento técnico a un material clave para la infraestructura. 🏗️\n\nCiencia e ingeniería aplicadas a un material que sostiene el país. ✅",
+        "cta": "📩 ¿Tienes un desafío técnico con hormigón? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Hormigón #Innovación #IDeI #Construcción",
+        "full": "🧱 El hormigón es el material más usado en construcción… y también uno de los que más exige innovación.\n\nMejorar su desempeño y su comportamiento frente a condiciones exigentes es un desafío técnico permanente, sobre todo en faenas mineras. 🔬\n\nEn #IDIEM trabajamos en tecnología e investigación y desarrollo (I+D) del hormigón dentro de nuestros servicios a la operación minera, aportando conocimiento técnico a un material clave para la infraestructura. 🏗️\n\nCiencia e ingeniería aplicadas a un material que sostiene el país. ✅\n\n📩 ¿Tienes un desafío técnico con hormigón? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Hormigón #Innovación #IDeI #Construcción",
+        "chars": 661
+      },
+      "posted": null,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IOM-017-11",
+        "service": "Tecnología del hormigón",
+        "subtheme": "Tecnología del hormigón",
+        "primary_claim": "Tecnología del hormigón · I+D del hormigón.",
+        "pain_point": "El hormigón es el material más usado en construcción…",
+        "pain_category": "continuity",
+        "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
+        "hook_type": "insight",
+        "editorial_archetype": "problem_solution",
+        "cta_type": "contact",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-IOM-017",
+          "KB-IOM-006",
+          "KB-IOM-007",
+          "KB-IOM-008",
+          "KB-IOM-009",
+          "KB-IOM-010"
+        ],
+        "knowledge_id": "KB-IOM-017",
+        "photo_id": "generico_trabajador_obra_hormigon",
+        "visual_theme": "people"
+      }
+    },
+    {
+      "seq": 12,
+      "content_id": "PLAN-KB-IOM-030-12",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "cell_short": "IOM",
+      "subtheme": "Modelamiento y levantamiento digital",
+      "editorial_angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
+      "format": "CARRUSEL",
+      "knowledge_id": "KB-IOM-030",
+      "evidence_ids": [
+        "KB-IOM-030",
+        "KB-IOM-031",
+        "KB-IOM-032",
+        "KB-IOM-033",
+        "KB-IOM-034",
+        "KB-IOM-035"
+      ],
+      "graphic": {
+        "svc": "Revisión de rehabilitación",
+        "msg": "Intervenir<br>con respaldo.",
+        "baseline": "Levantamiento · diagnóstico · <b>ingeniería</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "generica_estructura_acero_low",
+        "fuente": "https://drive.google.com/file/d/11yl7as2U1j192aqSwRUVnQwa7IbtwKxi/view",
+        "detalle": "estructura de acero galvanizado · celosía",
+        "reemplaza_a": "",
+        "motivo": ""
+      },
+      "copy": {
+        "hook": "🏗️ Rehabilitar una estructura compleja sin un diagnóstico completo es avanzar a ciegas.",
+        "body": "Intervenir sin conocer el estado real, sin ensayos que lo respalden ni alternativas evaluadas, encarece la obra y arriesga el resultado. 🔍\n\nEn #IDIEM abordamos la revisión integral de proyectos complejos de rehabilitación en cuatro etapas:\n\n* Levantamiento de las condiciones existentes.\n* Soporte de nuestros laboratorios.\n* Diagnóstico y evaluación de alternativas.\n* Ingeniería de rehabilitación.\n\nUn proceso ordenado para intervenir con respaldo técnico de principio a fin. ✅",
+        "cta": "¿Tienes un proyecto de rehabilitación estructural? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Rehabilitación #Ingeniería #Estructuras #Minería",
+        "full": "🏗️ Rehabilitar una estructura compleja sin un diagnóstico completo es avanzar a ciegas.\n\nIntervenir sin conocer el estado real, sin ensayos que lo respalden ni alternativas evaluadas, encarece la obra y arriesga el resultado. 🔍\n\nEn #IDIEM abordamos la revisión integral de proyectos complejos de rehabilitación en cuatro etapas:\n\n* Levantamiento de las condiciones existentes.\n* Soporte de nuestros laboratorios.\n* Diagnóstico y evaluación de alternativas.\n* Ingeniería de rehabilitación.\n\nUn proceso ordenado para intervenir con respaldo técnico de principio a fin. ✅\n\n¿Tienes un proyecto de rehabilitación estructural? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Rehabilitación #Ingeniería #Estructuras #Minería",
+        "chars": 748
+      },
+      "posted": null,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IOM-030-12",
+        "service": "Revisión de rehabilitación",
+        "subtheme": "Modelamiento y levantamiento digital",
+        "primary_claim": "Revisión de rehabilitación · Intervenir con respaldo.",
+        "pain_point": "Rehabilitar una estructura compleja sin un diagnóstico completo es avanzar a ciegas.",
+        "pain_category": "quality_assurance",
+        "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
+        "hook_type": "opportunity",
+        "editorial_archetype": "checklist",
+        "cta_type": "contact",
+        "format": "CARRUSEL",
+        "evidence_ids": [
+          "KB-IOM-030",
+          "KB-IOM-031",
+          "KB-IOM-032",
+          "KB-IOM-033",
+          "KB-IOM-034",
+          "KB-IOM-035"
+        ],
+        "knowledge_id": "KB-IOM-030",
+        "photo_id": "generica_estructura_acero_low",
+        "visual_theme": "infrastructure"
+      }
+    }
+  ]
+}

@@ -31,6 +31,8 @@ sys.path.insert(0, str(ROOT.parent / "src"))
 import gen_month_grid as G      # noqa: E402  (COPY, GRAPHIC, CELL_SHORT)
 import gen_workstation as W     # noqa: E402  (PHOTO_SUB, STOCK_SUB, SPECIAL, APPLIED_LOG)
 import carousel as CAR          # noqa: E402  (CAROUSEL_POSTS)
+from collections import Counter  # noqa: E402
+from idiem.editorial_fingerprint import fingerprint_archive_post  # noqa: E402
 
 
 def _full_copy(c: dict) -> str:
@@ -111,6 +113,10 @@ def build_archive(month: str, published_all: bool) -> dict:
 
     posts.sort(key=lambda p: p["seq"])
 
+    # Huella editorial por pieza (diversidad más allá de knowledge_id/servicio/subtema).
+    for p in posts:
+        p["editorial_fingerprint"] = fingerprint_archive_post(p).to_dict()
+
     # índice de dedup para el mes siguiente
     kids = [p["knowledge_id"] for p in posts if p["knowledge_id"]]
     subs = sorted({p["subtheme"] for p in posts if p["subtheme"]})
@@ -118,6 +124,16 @@ def build_archive(month: str, published_all: bool) -> dict:
     for p in posts:
         if p["cell_short"]:
             cells[p["cell_short"]] = cells.get(p["cell_short"], 0) + 1
+
+    # índice de huella editorial: distribuciones para QA/novelty/reporting
+    fps = [p["editorial_fingerprint"] for p in posts]
+    fingerprint_index = {
+        "archetypes": dict(Counter(f["editorial_archetype"] for f in fps)),
+        "cta_types": dict(Counter(f["cta_type"] for f in fps)),
+        "hook_types": dict(Counter(f["hook_type"] for f in fps)),
+        "pain_categories": dict(Counter(f["pain_category"] for f in fps)),
+        "visual_themes": dict(Counter(f["visual_theme"] for f in fps if f["visual_theme"])),
+    }
 
     return {
         "month": month,
@@ -131,6 +147,7 @@ def build_archive(month: str, published_all: bool) -> dict:
             "angles": [{"seq": p["seq"], "cell": p["cell_short"], "subtheme": p["subtheme"],
                         "angle": p["editorial_angle"]} for p in posts],
         },
+        "fingerprint_index": fingerprint_index,
         "posts": posts,
     }
 

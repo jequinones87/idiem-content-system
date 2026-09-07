@@ -157,7 +157,30 @@
         "full": "¿Tu obra de salud está cumpliendo el programa?\n\n🏥 En proyectos públicos de salud, cada atraso importa. Una desviación en los plazos puede postergar la puesta en marcha de infraestructura crítica para las personas y generar importantes impactos contractuales y económicos.\n\nMuchas veces, el problema no está solo en el atraso observado, sino en cómo se planifica, actualiza y controla la programación de la obra.\n\nEn IDIEM, a través de nuestra Ingeniería Contractual, realizamos análisis técnicos de programación para proyectos del sector Salud, que permiten:\n\n* Identificar desviaciones respecto del programa contractual.\n* Analizar las causas y evolución de los atrasos.\n* Evaluar sus efectos sobre los plazos de ejecución.\n* Generar respaldo técnico para la gestión de contratos y reclamaciones.\n\nAnticiparse al atraso también es parte de una buena gestión contractual.\n\n📩 ¿Necesitas analizar la programación de tu proyecto? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #IngenieríaContractual #Construcción #Infraestructura #Salud #GestiónDeProyectos #AnálisisDeAtrasos",
         "chars": 1075
       },
-      "posted": true
+      "posted": true,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IHA-005-01",
+        "service": "Ingeniería contractual",
+        "subtheme": "Ingeniería contractual",
+        "primary_claim": "Ingeniería contractual · Respaldo técnico en obras de salud.",
+        "pain_point": "¿Tu obra de salud está cumpliendo el programa?",
+        "pain_category": "delays",
+        "angle": "Infraestructura destinada a la salud y al cuidado de las personas; habitabilidad, confiabilidad y continuidad.",
+        "hook_type": "consequence",
+        "editorial_archetype": "problem_solution",
+        "cta_type": "contact",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-IHA-005",
+          "KB-IHA-002",
+          "KB-IHA-003",
+          "KB-IHA-004",
+          "KB-IHA-006"
+        ],
+        "knowledge_id": "KB-IHA-005",
+        "photo_id": "PHO-0058",
+        "visual_theme": null
+      }
     },
     {
       "seq": 2,
@@ -193,7 +216,31 @@
         "full": "🔥 Cuando se produce un incendio en faena, las consecuencias pueden comprometer la seguridad de las personas y afectar seriamente la continuidad operacional.\n\nUn peritaje oportuno, riguroso e imparcial permite establecer el origen y la causa del siniestro, pero también obtener información clave para tomar decisiones y reducir la probabilidad de que un evento similar vuelva a ocurrir. 🔍\n\nEn #IDIEM realizamos peritajes de incendio causa-origen, además de peritajes estructurales y mecánicos en minería. Este trabajo puede complementarse con estudios de riesgo de incendio, identificando vulnerabilidades en las instalaciones y definiendo medidas de mitigación. 🛡️📐\n\nEvidencia técnica para entender lo ocurrido, identificar brechas y fortalecer la seguridad y continuidad de la operación. ✅\n\n¿Necesitas un peritaje de incendio o evaluar el riesgo de tus instalaciones? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Minería #Ingeniería #Seguridad #Peritajes #ContinuidadOperacional",
         "chars": 1013
       },
-      "posted": true
+      "posted": true,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IOM-011-02",
+        "service": "Peritajes de fallas e incendios",
+        "subtheme": "Ingeniería contra incendios",
+        "primary_claim": "Peritajes de fallas e incendios · Entender qué ocurrió.",
+        "pain_point": "Cuando se produce un incendio en faena, las consecuencias pueden comprometer la seguridad de las personas y afectar seriamente la continuida",
+        "pain_category": "compliance_gap",
+        "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
+        "hook_type": "consequence",
+        "editorial_archetype": "method_or_evidence",
+        "cta_type": "self_assessment",
+        "format": "CARRUSEL",
+        "evidence_ids": [
+          "KB-IOM-011",
+          "KB-IOM-006",
+          "KB-IOM-007",
+          "KB-IOM-008",
+          "KB-IOM-009",
+          "KB-IOM-010"
+        ],
+        "knowledge_id": "KB-IOM-011",
+        "photo_id": "PHO-0077",
+        "visual_theme": null
+      }
     },
     {
       "seq": 3,
@@ -227,7 +274,26 @@
         "full": "🏛️ Para un mandante público, pocas cosas afectan tanto como el atraso de una obra: cada desviación golpea plazos, presupuesto y confianza.\n\nY ese atraso muchas veces nace de una mirada fragmentada del proyecto, sin acompañamiento técnico a lo largo de todo el ciclo. 📉\n\nEn #IDIEM entregamos estudios técnicos y asesorías para el sector público a lo largo del ciclo completo del proyecto, con 12 áreas especializadas: mecánica de suelos, topografía, revisión de proyectos y validación normativa en arquitectura, estructura y especialidades, además de coordinación BIM. 🧭📊\n\nUna capacidad multidisciplinaria que da respaldo técnico al mandante para decidir a tiempo y sostener el avance de la obra. 🤝\n\n¿Tu proyecto público necesita respaldo integral? Conversemos en https://idiem.cl 👉\n\n#IDIEM #ObrasPúblicas #Ingeniería #BIM #Calidad",
         "chars": 830
       },
-      "posted": true
+      "posted": true,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IPR-008-03",
+        "service": "Asesoría a mandantes públicos",
+        "subtheme": "Inspección y aseguramiento de calidad",
+        "primary_claim": "Asesoría a mandantes públicos · Respaldo técnico al mandante.",
+        "pain_point": "Para un mandante público, pocas cosas afectan tanto como el atraso de una obra: cada desviación golpea plazos, presupuesto y confianza.",
+        "pain_category": "delays",
+        "angle": "Infraestructura pública que sostiene conectividad, acceso y resiliencia territorial; IDIEM como respaldo técnico al servicio del país.",
+        "hook_type": "consequence",
+        "editorial_archetype": "technical_insight",
+        "cta_type": "conversation",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-IPR-008"
+        ],
+        "knowledge_id": "KB-IPR-008",
+        "photo_id": "generica_planos_arquitectos_casco",
+        "visual_theme": null
+      }
     },
     {
       "seq": 4,
@@ -260,7 +326,28 @@
         "full": "🧪 En faena minera, un resultado de ensayo que llega tarde ya no sirve para decidir.\n\nEl control técnico solo agrega valor si la información es confiable y llega a tiempo. La falta de trazabilidad y los reportes fuera de plazo debilitan la toma de decisiones en obra. ⏱️\n\nEn #IDIEM ofrecemos servicio permanente de laboratorio en obra —instalaciones, personal, equipamiento y ensayos— para proyectos mineros, energéticos, inmobiliarios e infraestructura pública y privada, con modalidades flexibles: visitas, personal permanente, o personal y equipos permanentes en obra. 👷🔬\n\nComo institución certificada ISO 17025 e ISO 9001, con estándar HSEC en seguridad y salud ocupacional, entregamos informes en plazo y seguimiento en línea de los resultados de #Ensayos. 📈✅\n\n¿Buscas control técnico con trazabilidad en tu faena? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Minería #Ensayos #Laboratorio #Calidad",
         "chars": 900
       },
-      "posted": true
+      "posted": true,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-LMD-001-04",
+        "service": "Laboratorio en obra",
+        "subtheme": "Laboratorio en obra",
+        "primary_claim": "Laboratorio en obra · Resultados a tiempo.",
+        "pain_point": "En faena minera, un resultado de ensayo que llega tarde ya no sirve para decidir.",
+        "pain_category": "delays",
+        "angle": "Información precisa y trazable, evidencia, control técnico y resultados confiables desde terreno.",
+        "hook_type": "insight",
+        "editorial_archetype": "method_or_evidence",
+        "cta_type": "conversation",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-LMD-001",
+          "KB-LMD-002",
+          "KB-LMD-003"
+        ],
+        "knowledge_id": "KB-LMD-001",
+        "photo_id": "PHO-0109",
+        "visual_theme": null
+      }
     },
     {
       "seq": 5,
@@ -291,7 +378,26 @@
         "full": "Un hospital no solo cuida a las personas: también puede cuidar el entorno en el que funciona. 🌱\n\nLa sostenibilidad ambiental en salud va más allá de la atención clínica: abarca cómo se gestiona el establecimiento, cómo usa sus recursos y cómo administra sus residuos. Ahí es donde un Hospital Verde marca la diferencia. ♻️\n\nEn #IDIEM impulsamos la certificación GREEN HOSPITAL en Chile, que considera normativas nacionales e internacionales adecuadas a la realidad nacional, complementándose con otras certificaciones como la ISO 50001. Su evaluación abarca eficiencia energética y reducción de emisiones, gestión responsable de residuos clínicos, uso sostenible de recursos hídricos y materiales, compras responsables y promoción de la salud ambiental. 🩺\n\nSostenibilidad que se traduce en instituciones de salud más eficientes y comprometidas con su entorno. 🤝\n\n¿Tu institución de salud avanza hacia la sostenibilidad? Conversemos en https://idiem.cl 👉\n\n#IDIEM #GreenHospital #Sostenibilidad #Salud #InfraestructuraHospitalaria",
         "chars": 1028
       },
-      "posted": true
+      "posted": true,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IHA-001-05",
+        "service": "Green Hospital",
+        "subtheme": "Sostenibilidad hospitalaria",
+        "primary_claim": "Green Hospital · Hospitales que cuidan su entorno.",
+        "pain_point": "Un hospital no solo cuida a las personas: también puede cuidar el entorno en el que funciona.",
+        "pain_category": "compliance_gap",
+        "angle": "Infraestructura destinada a la salud y al cuidado de las personas; habitabilidad, confiabilidad y continuidad.",
+        "hook_type": "misconception",
+        "editorial_archetype": "method_or_evidence",
+        "cta_type": "conversation",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-IHA-001"
+        ],
+        "knowledge_id": "KB-IHA-001",
+        "photo_id": "PHO-0082",
+        "visual_theme": null
+      }
     },
     {
       "seq": 6,
@@ -330,7 +436,31 @@
         "full": "🏗️ En infraestructura minera, las fisuras, deformaciones y la corrosión no avisan: avanzan en silencio hasta comprometer la seguridad.\n\nPlanificar sin conocer el estado real de las estructuras multiplica los imprevistos y expone la operación a riesgos evitables. 🔎\n\nEn #IDIEM realizamos inspecciones estructurales especializadas y peritajes, con evaluación de fisuras, deformaciones y corrosión, bajo gestión de riesgos y cumplimiento normativo. Sumamos levantamiento de información técnica en terreno mediante inspección visual, aérea y termográfica, y modelos 3D con escáner láser y dron. 🛰️📐\n\nUna línea base técnica confiable para diagnosticar la integridad estructural y priorizar intervenciones. ⚙️✅\n\n¿Necesitas diagnosticar la integridad de tus estructuras? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Minería #Ingeniería #Mantenimiento #Seguridad",
         "chars": 852
       },
-      "posted": true
+      "posted": true,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IOM-043-06",
+        "service": "Inspección y peritaje estructural",
+        "subtheme": "Peritajes e inspección estructural",
+        "primary_claim": "Inspección y peritaje estructural · Diagnóstico de integridad.",
+        "pain_point": "En infraestructura minera, las fisuras, deformaciones y la corrosión no avisan: avanzan en silencio hasta comprometer la seguridad.",
+        "pain_category": "risk_of_failure",
+        "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
+        "hook_type": "risk",
+        "editorial_archetype": "technical_insight",
+        "cta_type": "conversation",
+        "format": "CAROUSEL",
+        "evidence_ids": [
+          "KB-IOM-043",
+          "KB-IOM-044",
+          "KB-IOM-045",
+          "KB-IOM-046",
+          "KB-IOM-047",
+          "KB-IOM-048"
+        ],
+        "knowledge_id": "KB-IOM-043",
+        "photo_id": "estructura_andamio_minera",
+        "visual_theme": "infrastructure"
+      }
     },
     {
       "seq": 7,
@@ -364,7 +494,26 @@
         "full": "🔊 El ruido generado por todo proyecto es una variable relevante: la normativa lo vigila y la comunidad lo percibe.\n\nSin mediciones, estudio de impacto, modelación ni seguimiento, un proyecto queda expuesto a incumplimientos normativos y a conflictos con su entorno. 📉\n\nEn #IDIEM entregamos servicios de ingeniería acústica: ensayos en laboratorio y terreno, líneas base e impacto acústico, desarrollo de mapas de ruido y modelos predictivos de propagación sonora, y monitoreo de cumplimiento normativo D.S. 38-11 MMA (futuro D.D. 14/24). También diseñamos soluciones de control de ruido y vibraciones, con mediciones de aislamiento acústico. 📡📊\n\nGestión del ruido convertida en evidencia técnica para cumplir la norma y resguardar el confort. ✅\n\n¿Necesitas gestionar la acústica de tu proyecto? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Acústica #Infraestructura #Ingeniería #MedioAmbiente",
         "chars": 890
       },
-      "posted": true
+      "posted": true,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IPR-021-07",
+        "service": "Ingeniería acústica",
+        "subtheme": "Acústica",
+        "primary_claim": "Ingeniería acústica · Gestión técnica del ruido.",
+        "pain_point": "El ruido generado por todo proyecto es una variable relevante: la normativa lo vigila y la comunidad lo percibe.",
+        "pain_category": "compliance_gap",
+        "angle": "Infraestructura pública que sostiene conectividad, acceso y resiliencia territorial; IDIEM como respaldo técnico al servicio del país.",
+        "hook_type": "case",
+        "editorial_archetype": "case_or_experience",
+        "cta_type": "conversation",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-IPR-021"
+        ],
+        "knowledge_id": "KB-IPR-021",
+        "photo_id": "equipo_acustica_FA-1",
+        "visual_theme": "equipment"
+      }
     },
     {
       "seq": 8,
@@ -403,7 +552,31 @@
         "full": "🔧 En minería, una unión soldada de HDPE que falla puede detener el transporte de fluidos de toda una operación.\n\nLas uniones soldadas de tuberías HDPE para transporte de fluidos son elementos críticos: un defecto no detectado a tiempo se transforma en riesgo operacional y sobrecostos por detenciones. ⚠️\n\nEn #IDIEM controlamos la calidad de estas uniones con ensayos no destructivos —para verificar especificaciones y detectar defectos— y ensayos mecánicos que evalúan las propiedades de las uniones soldadas. Sumamos asesoría experta en la documentación técnica asociada a su fabricación. 🧪📐\n\nControl técnico que respalda la confiabilidad de un componente que la operación no puede dar por supuesto. ✅\n\n¿Necesitas asegurar la calidad de tus líneas HDPE? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Minería #Ensayos #HDPE #Calidad",
         "chars": 830
       },
-      "posted": true
+      "posted": true,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-LMD-010-08",
+        "service": "Control de calidad HDPE",
+        "subtheme": "Control de calidad HDPE",
+        "primary_claim": "Control de calidad HDPE · Uniones confiables.",
+        "pain_point": "En minería, una unión soldada de HDPE que falla puede detener el transporte de fluidos de toda una operación.",
+        "pain_category": "cost_overrun",
+        "angle": "Información precisa y trazable, evidencia, control técnico y resultados confiables desde terreno.",
+        "hook_type": "risk",
+        "editorial_archetype": "method_or_evidence",
+        "cta_type": "conversation",
+        "format": "CARRUSEL",
+        "evidence_ids": [
+          "KB-LMD-010",
+          "KB-LMD-011",
+          "KB-LMD-012",
+          "KB-LMD-013",
+          "KB-LMD-014",
+          "KB-LMD-015"
+        ],
+        "knowledge_id": "KB-LMD-010",
+        "photo_id": "Tuberia_HDPE_END_ACERO4",
+        "visual_theme": "infrastructure"
+      }
     },
     {
       "seq": 9,
@@ -441,7 +614,30 @@
         "full": "🏥 El término anticipado de un contrato en un proyecto de salud es uno de los escenarios más delicados de una obra.\n\nCuando un contrato se detiene antes de tiempo, las partes necesitan claridad técnica para resolver sin improvisar. En infraestructura de salud, esa claridad es aún más crítica. ⚖️\n\nEn #IDIEM, dentro de nuestra ingeniería contractual, realizamos análisis ante el término anticipado de contrato para el sector Salud, uno de los ámbitos que atendemos de forma explícita. 🤝\n\n¿Enfrentas un conflicto contractual en salud? Conversemos en https://idiem.cl 👉\n\n#IDIEM #InfraestructuraHospitalaria #Salud #Ingeniería",
         "chars": 622
       },
-      "posted": true
+      "posted": true,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IHA-006-09",
+        "service": "Ingeniería contractual",
+        "subtheme": "Ingeniería contractual",
+        "primary_claim": "Ingeniería contractual · Claridad ante el conflicto.",
+        "pain_point": "El término anticipado de un contrato en un proyecto de salud es uno de los escenarios más delicados de una obra.",
+        "pain_category": "other",
+        "angle": "Infraestructura destinada a la salud y al cuidado de las personas; habitabilidad, confiabilidad y continuidad.",
+        "hook_type": "case",
+        "editorial_archetype": "problem_solution",
+        "cta_type": "conversation",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-IHA-006",
+          "KB-IHA-002",
+          "KB-IHA-003",
+          "KB-IHA-004",
+          "KB-IHA-005"
+        ],
+        "knowledge_id": "KB-IHA-006",
+        "photo_id": "generica_ejecutivos_casco_acuerdo",
+        "visual_theme": null
+      }
     },
     {
       "seq": 10,
@@ -480,7 +676,31 @@
         "full": "📡 Una falla en un activo crítico rara vez avisa… salvo que lo estés monitoreando.\n\nEsperar a la próxima inspección programada puede significar detectar tarde un cambio de comportamiento en un activo clave de la faena. La vigilancia continua marca la diferencia entre reaccionar y anticiparse. 🔍\n\nEn #IDIEM realizamos monitoreo de salud estructural con seguimiento continuo mediante sensores e información en tiempo real, análisis de vibraciones de equipo rotativo y análisis predictivo para un mantenimiento oportuno. 📊⚙️\n\nDatos que se transforman en decisiones anticipadas para sostener la #Confiabilidad de los activos y la continuidad operacional. ✅\n\n¿Quieres anticiparte a las fallas de tus activos críticos? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Minería #Mantenimiento #Confiabilidad #Monitoreo",
         "chars": 804
       },
-      "posted": true
+      "posted": true,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IOM-056-10",
+        "service": "Monitoreo de salud estructural",
+        "subtheme": "Monitoreo e integridad estructural",
+        "primary_claim": "Monitoreo de salud estructural · Anticiparse a la falla.",
+        "pain_point": "Una falla en un activo crítico rara vez avisa…",
+        "pain_category": "risk_of_failure",
+        "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
+        "hook_type": "risk",
+        "editorial_archetype": "technical_insight",
+        "cta_type": "conversation",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-IOM-056",
+          "KB-IOM-055",
+          "KB-IOM-057",
+          "KB-IOM-058",
+          "KB-IOM-059",
+          "KB-IOM-060"
+        ],
+        "knowledge_id": "KB-IOM-056",
+        "photo_id": "PHO-0013",
+        "visual_theme": "equipment"
+      }
     },
     {
       "seq": 11,
@@ -514,7 +734,26 @@
         "full": "🏗️ En una obra, la calidad debe demostrarse con evidencia técnica. Ensayos bien ejecutados, un muestreo representativo y la trazabilidad permiten verificar especificaciones y detectar desviaciones a tiempo.\n\nEn #IDIEM realizamos control técnico en suelos, hormigones, asfaltos y otras especialidades: densidad en terreno, granulometría, Proctor, CBR, hormigón fresco, testigos, madurez, corte directo, placa de carga, resistividad eléctrica y END en soldaduras. 🧪📐\n\nTambién realizamos ensayos de resistencia al fuego y evaluaciones periciales en hormigón.\n\nContamos con laboratorios acreditados por el INN e inscritos en el Registro Oficial del MINVU, dentro de sus alcances, y un sistema de gestión certificado ISO 9001. Atención puntual o permanente en obra. ✅\n\n¿Tu proyecto necesita control técnico con respaldo? Conversemos en idiem.cl 👉\n\n#IDIEM #ObrasPúblicas #Ensayos #Construcción #Calidad",
         "chars": 896
       },
-      "posted": true
+      "posted": true,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IPR-024-11",
+        "service": "Ensayos de especialidades",
+        "subtheme": "Ensayos de especialidades",
+        "primary_claim": "Ensayos de especialidades · Calidad que se ensaya.",
+        "pain_point": "En una obra, la calidad debe demostrarse con evidencia técnica.",
+        "pain_category": "quality_assurance",
+        "angle": "Infraestructura pública que sostiene conectividad, acceso y resiliencia territorial; IDIEM como respaldo técnico al servicio del país.",
+        "hook_type": "insight",
+        "editorial_archetype": "method_or_evidence",
+        "cta_type": "conversation",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-IPR-024"
+        ],
+        "knowledge_id": "KB-IPR-024",
+        "photo_id": "PHO-0095",
+        "visual_theme": "infrastructure"
+      }
     },
     {
       "seq": 12,
@@ -549,7 +788,30 @@
         "full": "🔩 Una soldadura defectuosa en una estructura metálica minera puede no verse… hasta que falla.\n\nLos defectos superficiales e internos en soldaduras no siempre son evidentes, pero comprometen la seguridad de estructuras y componentes mecánicos. Detectarlos a tiempo es parte del control. 🔍\n\nEn #IDIEM realizamos inspección no destructiva de soldaduras metálicas en minería, maestranzas e industria: evaluamos el estado superficial e interno para detectar defectos, y brindamos asesoría en la calificación de procedimientos y de soldadores, con equipos técnicos en el norte del país. 🧪📋\n\nEvidencia técnica que respalda la confiabilidad de cada unión soldada. ✅\n\n¿Necesitas verificar la calidad de tus soldaduras? Conversemos en https://idiem.cl 👉\n\n#IDIEM #Minería #Ensayos #END #Calidad",
         "chars": 783
       },
-      "posted": true
+      "posted": true,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-LMD-020-12",
+        "service": "Inspección no destructiva de soldaduras",
+        "subtheme": "Inspección no destructiva de soldaduras",
+        "primary_claim": "Inspección no destructiva de soldaduras · Detectar antes de fallar.",
+        "pain_point": "Una soldadura defectuosa en una estructura metálica minera puede no verse…",
+        "pain_category": "risk_of_failure",
+        "angle": "Información precisa y trazable, evidencia, control técnico y resultados confiables desde terreno.",
+        "hook_type": "risk",
+        "editorial_archetype": "method_or_evidence",
+        "cta_type": "conversation",
+        "format": "CAROUSEL",
+        "evidence_ids": [
+          "KB-LMD-020",
+          "KB-LMD-016",
+          "KB-LMD-017",
+          "KB-LMD-018",
+          "KB-LMD-019"
+        ],
+        "knowledge_id": "KB-LMD-020",
+        "photo_id": "340172893",
+        "visual_theme": null
+      }
     },
     {
       "seq": 13,
@@ -577,7 +839,59 @@
         "full": "🇨🇱 Este 18 de septiembre celebramos a Chile y a las personas que lo construyen cada día.\n\nA lo largo de nuestra historia, en IDIEM hemos acompañado el desarrollo de la infraestructura del país: aportando ciencia, ensayos e ingeniería al servicio de obras que sostienen la vida de las personas.\n\nCaminos, hospitales, edificios y faenas que ayudamos a hacer más seguros y confiables también son parte de la historia de Chile. 🏗️\n\n¡Felices Fiestas Patrias! 🇨🇱\n\n#IDIEM #FiestasPatrias #Chile #Ingeniería #Infraestructura",
         "chars": 516
       },
-      "posted": true
+      "posted": true,
+      "editorial_fingerprint": {
+        "content_id": "SALUDO-FIESTAS-PATRIAS-2026-09",
+        "service": "",
+        "subtheme": "Fiestas Patrias · institucional",
+        "primary_claim": "Presentes en la historia de Chile .",
+        "pain_point": "Este 18 de septiembre celebramos a Chile y a las personas que lo construyen cada día.",
+        "pain_category": "quality_assurance",
+        "angle": "saludo institucional (no traza a knowledge_id)",
+        "hook_type": "statistic",
+        "editorial_archetype": "institutional_or_occasion",
+        "cta_type": "no_cta",
+        "format": "SALUDO",
+        "evidence_ids": [],
+        "knowledge_id": null,
+        "photo_id": "generica_bandera_chile_mineria",
+        "visual_theme": null
+      }
     }
-  ]
+  ],
+  "fingerprint_index": {
+    "archetypes": {
+      "problem_solution": 2,
+      "method_or_evidence": 6,
+      "technical_insight": 3,
+      "case_or_experience": 1,
+      "institutional_or_occasion": 1
+    },
+    "cta_types": {
+      "contact": 1,
+      "self_assessment": 1,
+      "conversation": 10,
+      "no_cta": 1
+    },
+    "hook_types": {
+      "consequence": 3,
+      "insight": 2,
+      "misconception": 1,
+      "risk": 4,
+      "case": 2,
+      "statistic": 1
+    },
+    "pain_categories": {
+      "delays": 3,
+      "compliance_gap": 3,
+      "risk_of_failure": 3,
+      "cost_overrun": 1,
+      "other": 1,
+      "quality_assurance": 2
+    },
+    "visual_themes": {
+      "infrastructure": 3,
+      "equipment": 2
+    }
+  }
 }
