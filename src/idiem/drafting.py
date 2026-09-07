@@ -125,7 +125,14 @@ DRAFTING_INSTRUCTIONS = (
     "(problema/necesidad → impacto → capacidad IDIEM → evidencia → CTA), SIN forzarlo. "
     "PERO no son hechos de IDIEM: NO agregues desde ahí capacidades, servicios, cifras, "
     "clientes ni resultados; los hechos concretos siguen saliendo SOLO de allowed_facts. "
-    "Los 'verify_flags' son datos NO validados: nunca los publiques como hecho."
+    "Los 'verify_flags' son datos NO validados: nunca los publiques como hecho. "
+    "HISTORIAL EDITORIAL (campo 'editorial_history', opcional): resume lo publicado "
+    "recientemente (subtemas, claims, pains, hooks, hook_types, arquetipos, cta_types y "
+    "'recent_phrases_to_avoid'). Su ÚNICO fin es EVITAR REPETICIÓN, NUNCA es fuente de "
+    "hechos. La pieza debe diferenciarse CONCEPTUAL y EDITORIALMENTE del historial: no "
+    "basta con redactar el mismo argumento con sinónimos. Elige un hook_type, un arquetipo "
+    "y un cta_type distintos de los sobre-representados en el historial; cambia el pain o "
+    "el enfoque; evita repetir 'recent_phrases_to_avoid'."
 )
 
 
@@ -147,6 +154,7 @@ class DraftingRequest:
     pain_point: str = ""
     style: dict = field(default_factory=dict)
     sales_intelligence: dict = field(default_factory=dict)
+    editorial_history: dict = field(default_factory=dict)
     instructions: str = DRAFTING_INSTRUCTIONS
 
     def to_dict(self) -> dict:
@@ -204,11 +212,25 @@ def sales_intelligence_enrichment(cell: str, *, si=None) -> dict:
         return {}
 
 
+def editorial_history_for(month: str | None) -> dict:
+    """Resumen del historial editorial reciente para EVITAR REPETICIÓN (no hechos).
+    Fail-safe: sin ``month`` o sin archivo devuelve ``{}`` y no bloquea el drafting."""
+    if not month:
+        return {}
+    try:
+        from .editorial_novelty import load_history, editorial_history_summary
+
+        return editorial_history_summary(load_history(month))
+    except Exception:  # pragma: no cover - historial opcional
+        return {}
+
+
 def build_drafting_request(
     brief: dict, *, style: dict | None = None, si=None,
-    use_sales_intelligence: bool = True,
+    use_sales_intelligence: bool = True, month: str | None = None,
+    editorial_history: dict | None = None,
 ) -> DraftingRequest:
-    """Derive the bounded drafting spec (incl. editorial style + Sales Intelligence)."""
+    """Derive the bounded drafting spec (estilo + Sales Intelligence + historial editorial)."""
     if style is None:
         from .loader import load_editorial_style
 
@@ -217,6 +239,7 @@ def build_drafting_request(
     enrichment = (
         sales_intelligence_enrichment(cell, si=si) if use_sales_intelligence else {}
     )
+    history = editorial_history if editorial_history is not None else editorial_history_for(month)
     return DraftingRequest(
         content_id=brief.get("content_id", ""),
         cell=cell,
@@ -232,6 +255,7 @@ def build_drafting_request(
         pain_point=pain_point_for(cell, style),
         style=style,
         sales_intelligence=enrichment,
+        editorial_history=history,
     )
 
 
