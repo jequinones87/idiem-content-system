@@ -240,3 +240,12 @@ Meses archivados: **2026-09** (13 piezas, publicado). Octubre 2026 en preparaci�
     a `generica_idiem_vigas_acero`).
   - **DB del tablero:** notas de foto aplicadas (geólogo, BIM, estructura_acero) borradas para
     limpiar los flags.
+- **2026-09-07** — **Ajustes finos (Kike) sobre el tablero.**
+  - **#3 Geólogo (gráfica):** el título central pasa a **"Feliz día del Geólogo"** y se **retira el
+    kicker** "Día del Geólogo" (antes: kicker "Día del Geólogo" + "Gracias, geólogos.").
+  - **#5 Tecnología de la Construcción (foto):** cambiada de BIM a **`generico_construccion_edificio_obra`**
+    (obra en altura, grúas torre). Baja bien del Drive (3,3 MB).
+  - **#9 Cumplimiento normativo (copy):** gancho **reformulado** — el original ("Incumplir la normativa
+    no siempre se nota…") daba a entender que se puede incumplir. Nuevo foco: una **brecha** puede pasar
+    desapercibida hasta que una auditoría/falla la deja en evidencia. **Regla:** en cumplimiento, hablar
+    de detectar brechas/no conformidades, nunca insinuar que saltarse la norma es viable.

@@ -177,7 +177,7 @@ COPY = {
   "cta": "¿Necesitas peritar la falla de un componente? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Peritajes #Materiales #Ingeniería #FallaDeComponentes"},
 
  "KB-IOM-063": {  # IOM · Cumplimiento normativo (carrusel)
-  "hook": "📋 Incumplir la normativa no siempre se nota… hasta que llega una auditoría o una falla.",
+  "hook": "📋 Una brecha normativa puede pasar desapercibida… hasta que una auditoría o una falla la deja en evidencia.",
   "body": ("Detectar las brechas normativas a tiempo evita sobrecostos, detenciones y riesgos para las personas. 🔍\n\n"
     "En #IDIEM realizamos revisión de cumplimiento normativo en tres ámbitos —estructural, incendios y "
     "especialidades—, identificando las brechas respecto de los marcos aplicables. 🛡️📐\n\n"
@@ -221,7 +221,7 @@ COPY = {
 GRAPHIC = {
  1:  {"svc": "Control de productividad",        "msg": "Operar con<br>datos.",              "base": "Soluciones tecnológicas · <b>operación minera</b>"},
  2:  {"svc": "Día Mundial de la Arquitectura",  "msg": "Diseñar<br>sostenible.",            "base": "Huella C e hídrica · <b>ciclo de vida</b>"},
- 3:  {"svc": "Día del Geólogo",                 "msg": "Gracias,<br>geólogos.",             "base": "Leer la tierra · <b>construir seguro</b>"},
+ 3:  {"svc": "",                                "msg": "Feliz día del<br>Geólogo.",         "base": "Leer la tierra · <b>construir seguro</b>"},
  4:  {"svc": "Confiabilidad de materiales",     "msg": "Entender<br>el material.",          "base": "Metalurgia · mecánica · <b>química</b>"},
  5:  {"svc": "Tecnología de la construcción",   "msg": "Innovar con<br>respaldo.",          "base": "Ensayos · certificación · <b>edificación</b>"},
  6:  {"svc": "Triaxial grandes partículas",     "msg": "Ensayar el<br>material real.",      "base": "Suelos de gran tamaño · <b>presas de tierra</b>"},

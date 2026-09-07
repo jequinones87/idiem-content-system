@@ -48,8 +48,8 @@ PHOTO_SUB = {
          "detalle": "geólogo en terreno · lectura de estratos"},
     4:  {"photo_id": "ensayo_aceros1", "fuente": _drive("1amvDzSYHH5T_3-YLqilt4YpGWpzxdhMq"),
          "detalle": "ensayo de aceros en laboratorio"},
-    5:  {"photo_id": "generica_arquitectura-construccion-bim2", "fuente": _drive("1wwOTAnuDsvoG6aawb1awhdb6hYA2-lFe"),
-         "detalle": "modelo BIM sobre edificio · tecnología de la construcción"},
+    5:  {"photo_id": "generico_construccion_edificio_obra", "fuente": _drive("1PRspVgdZFrutleVS3HC5vUndqh2TVp9Z"),
+         "detalle": "obra en altura · grúas torre y edificios en construcción"},
     6:  {"photo_id": "Equipo_trixial_gigante", "fuente": _drive("1XVR_E9H7G9wKAj_k_KN_W6c_uHK3HlrC"),
          "detalle": "equipo Triaxial para grandes partículas"},
     7:  {"photo_id": "generico_modelado_estructura", "fuente": _drive("157A_fs0lXLIOawLs_D92Ze4C-cczSUFS"),
@@ -97,6 +97,7 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Publicado: sustentabilidad y arquitectura en infraestructura pública."},
     ],
     3: [
+        {"date": "2026-09-07", "summary": "Gráfica: título central \"Feliz día del Geólogo\" (se retira el kicker \"Día del Geólogo\")."},
         {"date": "2026-09-04", "summary": "Foto cambiada a generica_geologo (Drive); anillo rojo movido a la derecha para no tapar a la persona."},
         {"date": "2026-09-04", "summary": "Reescrito como saludo del Día del Geólogo (17-oct) + geotecnia, sin detallar otros servicios."},
     ],
@@ -104,7 +105,7 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Reencuadrado a alto nivel (confiabilidad de materiales) para no repetir el ángulo de septiembre."},
     ],
     5: [
-        {"date": "2026-09-04", "summary": "Foto cambiada a modelo BIM (generica_arquitectura-construccion-bim2, Drive)."},
+        {"date": "2026-09-07", "summary": "Foto cambiada a obra en altura (generico_construccion_edificio_obra, Drive)."},
         {"date": "2026-09-04", "summary": "Copy reemplazado por la versión editada por MKT (Tecnología de la Construcción)."},
     ],
     6: [
@@ -117,6 +118,7 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Reemplaza al post de incendios; convertido en carrusel de peritaje de componentes metálicos."},
     ],
     9: [
+        {"date": "2026-09-07", "summary": "Gancho reformulado: no dar a entender que se puede incumplir la norma (foco en detectar brechas)."},
         {"date": "2026-09-04", "summary": "Convertido en carrusel: cumplimiento normativo."},
     ],
     10: [
