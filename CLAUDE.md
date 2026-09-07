@@ -111,3 +111,14 @@ aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
   certificaciones, 24/7, plazos, legal); `INTERNAL` es solo razonamiento; `DO_NOT_PUBLISH` nunca
   llega al copy final. Metro/EFE son subsegmentos de Transporte (que sigue siendo CONTENT_GAP
   técnico); Operación Minera y Lab Minero Digital permanecen separados.
+- **Diversidad editorial (motor).** Al planificar/redactar/QA un mes, usa el motor de
+  diversidad (ver `docs/11_EDITORIAL_DIVERSITY.md`): huella editorial por pieza
+  (`editorial_fingerprint`), novedad vs historial (`editorial_novelty`), historial en el
+  drafting, QA editorial (`editorial_qa`, PASS/WARNING/FAIL) y cobertura
+  (`content_coverage`). Objetivo: no repetir claim/pain/hook/arquetipo/CTA aunque cambie
+  el knowledge_id. **Umbrales configurables en `config/editorial_diversity.json`.**
+  Ante conflicto, **FACTUALIDAD > DIVERSIDAD** (no inventar casos/cifras/clientes, no
+  convertir Sales Intelligence ni performance en hechos, no relajar CONTENT_GAP).
+- **Longitud — precedencia:** la fuente de verdad EJECUTABLE de la longitud es
+  `config/editorial_style.json → length` (en **caracteres**: tope duro 900, preferido
+  650-850). Si este documento (`docs/09`) discrepa con ese archivo, **manda el archivo**.

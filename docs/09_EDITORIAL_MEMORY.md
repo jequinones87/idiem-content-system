@@ -249,3 +249,16 @@ Meses archivados: **2026-09** (13 piezas, publicado). Octubre 2026 en preparaci�
     no siempre se nota…") daba a entender que se puede incumplir. Nuevo foco: una **brecha** puede pasar
     desapercibida hasta que una auditoría/falla la deja en evidencia. **Regla:** en cumplimiento, hablar
     de detectar brechas/no conformidades, nunca insinuar que saltarse la norma es viable.
+- **2026-09-07** — **Refactor de diversidad editorial.** Se agregó el motor de diversidad
+  (ver `docs/11_EDITORIAL_DIVERSITY.md`): huella editorial por pieza, novedad vs historial,
+  historial en el drafting, QA editorial (PASS/WARNING/FAIL) y cobertura por célula. Objetivo:
+  no repetir **claim/pain/hook/arquetipo/CTA** aunque cambie el `knowledge_id`. Umbrales en
+  `config/editorial_diversity.json`. **Factualidad manda sobre diversidad** (sin inventar; Sales
+  Intelligence/performance no son hechos; CONTENT_GAP intacto).
+  - **Longitud — fuente de verdad:** ahora es EJECUTABLE en `config/editorial_style.json → length`
+    (en **caracteres**: tope duro 900, preferido 650-850). Se retiró la regla en palabras (110-170)
+    que colisionaba. **Si este documento discrepa con ese archivo, manda el archivo.**
+  - **Diagnóstico octubre (QA automático):** el sistema detecta solo la concentración editorial —
+    CTA `contact` ×9/12, arquetipo `problem_solution` ×5, hook `insight` ×5, visual `infrastructure`
+    ×5, solo 4 arquetipos distintos. Aprendizaje: **variar el `cta_type` (no solo la frase) y rotar
+    arquetipos/hooks** en la próxima grilla. Reporte fijo en `content/archive/2026-10.editorial_qa.md`.
