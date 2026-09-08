@@ -109,6 +109,7 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Copy reemplazado por la versión editada por MKT (Tecnología de la Construcción)."},
     ],
     6: [
+        {"date": "2026-09-08", "summary": "Copy y lámina del carrusel actualizados (pilas ROM / tranques de relaves; materiales granulares gruesos fuera de laboratorios convencionales); recortado a ≤900."},
         {"date": "2026-09-04", "summary": "Convertido en carrusel: Triaxial · suelos de partículas de gran tamaño."},
     ],
     7: [

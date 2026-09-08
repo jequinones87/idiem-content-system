@@ -148,13 +148,14 @@ COPY = {
   "cta": "¿Buscas validar materiales o sistemas para edificación pública? Conversemos en https://idiem.cl 👉\n\n#IDIEM #EdificaciónPública #Innovación #Ensayos #Construcción"},
 
  "KB-LMD-007": {  # LMD · Triaxial suelos de partículas grandes (carrusel, SIN superlativos)
-  "hook": "🪨 Muchos suelos reales tienen partículas demasiado grandes para los equipos de ensayo convencionales.",
-  "body": ("En presas de tierra, gran minería, energía e infraestructura, ensayar el material tal como es —con sus "
-    "partículas de gran tamaño— es clave para caracterizarlo bien y diseñar con seguridad. 🔬\n\n"
+  "hook": "🪨 En minería, estructuras críticas como las pilas ROM o los tranques de relaves están construidas con suelos granulares gruesos.",
+  "body": ("Ensayar ese material según su distribución granulométrica de terreno —con sus partículas de gran tamaño— "
+    "es clave para caracterizarlo bien y diseñar con seguridad en presas de tierra, gran minería, energía e "
+    "infraestructura. 🔬\n\n"
     "En #IDIEM contamos con un equipo Triaxial para grandes partículas, desarrollado con ingeniería propia, que "
     "permite ensayar suelos de gran tamaño y obtener parámetros representativos para el diseño geotécnico. 📐\n\n"
     "Ensayos que reflejan el material real, no una versión reducida de él. ✅"),
-  "cta": "¿Necesitas ensayar suelos de gran tamaño? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Geotecnia #Minería #Ensayos #PresasDeTierra"},
+  "cta": "¿Necesitas ensayar suelos granulares gruesos? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Geotecnia #Minería #Ensayos #PresasDeTierra"},
 
  "KB-IOM-004": {  # IOM · Modelamiento digital / BIM (minería)
   "hook": "🏗️ Coordinar un proyecto minero sobre información incompleta multiplica errores, retrabajos y sorpresas en obra.",

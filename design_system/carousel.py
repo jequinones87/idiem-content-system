@@ -34,7 +34,7 @@ SLIDES = {
                     "title": 'Ensayar el <span class="c2rt">material real</span>.'},
         "intermedias": [
             {"icon": "magnifier", "title": 'Partículas de <span class="c2rb">gran tamaño</span>',
-             "body": "Ensayamos suelos que no caben en los equipos convencionales."},
+             "body": "Ensayamos materiales granulares gruesos, que están fuera de las capacidades de los laboratorios convencionales."},
             {"icon": "location", "title": 'Dónde <span class="c2rb">aplica</span>',
              "body": "Gran minería, presas de tierra, energía e infraestructura."},
             {"icon": "shield", "title": 'Ingeniería <span class="c2rb">propia</span>',
