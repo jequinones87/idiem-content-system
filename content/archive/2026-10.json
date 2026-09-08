@@ -1,6 +1,6 @@
 {
   "month": "2026-10",
-  "generated_at": "2026-09-08T14:36:39.802615+00:00",
+  "generated_at": "2026-09-08T18:47:07.788580+00:00",
   "published": false,
   "count": 12,
   "dedup_index": {
@@ -142,9 +142,8 @@
       "infrastructure": 5,
       "field": 1,
       "laboratory": 3,
-      "equipment": 1,
-      "graphic": 1,
-      "people": 1
+      "equipment": 2,
+      "graphic": 1
     }
   },
   "posts": [
@@ -726,9 +725,9 @@
       },
       "photo": {
         "source": "libreria_idiem",
-        "photo_id": "generico_trabajador_obra_hormigon",
-        "fuente": "https://drive.google.com/file/d/1BSzk4cW3J-mEbMyGREzVIiUzhBctleJs/view",
-        "detalle": "trabajador en obra · hormigón",
+        "photo_id": "sensor_hormigon",
+        "fuente": "https://drive.google.com/file/d/135xOEtISPljHIvdNmiu6Om7jnSpGEPqu/view",
+        "detalle": "sensor embebido en hormigón fresco · obra",
         "reemplaza_a": "",
         "motivo": ""
       },
@@ -761,8 +760,8 @@
           "KB-IOM-010"
         ],
         "knowledge_id": "KB-IOM-017",
-        "photo_id": "generico_trabajador_obra_hormigon",
-        "visual_theme": "people"
+        "photo_id": "sensor_hormigon",
+        "visual_theme": "equipment"
       }
     },
     {

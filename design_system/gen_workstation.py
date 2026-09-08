@@ -60,8 +60,8 @@ PHOTO_SUB = {
          "detalle": "análisis estructural en terreno"},
     10: {"photo_id": "estructuras_peritajes_puente_cortez", "fuente": _drive("12TxaHcgX3d-VLIGN85eniQOD8Q3NewIT"),
          "detalle": "peritaje Puente Cortés"},
-    11: {"photo_id": "generico_trabajador_obra_hormigon", "fuente": _drive("1BSzk4cW3J-mEbMyGREzVIiUzhBctleJs"),
-         "detalle": "trabajador en obra · hormigón"},
+    11: {"photo_id": "sensor_hormigon", "fuente": _drive("135xOEtISPljHIvdNmiu6Om7jnSpGEPqu"),
+         "detalle": "sensor embebido en hormigón fresco · obra"},
     12: {"photo_id": "generica_estructura_acero_low", "fuente": _drive("11yl7as2U1j192aqSwRUVnQwa7IbtwKxi"),
          "detalle": "estructura de acero galvanizado · celosía"},
 }
@@ -128,6 +128,7 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Publicado: peritaje de puentes (caso Puente Cortés)."},
     ],
     11: [
+        {"date": "2026-09-08", "summary": "Foto cambiada a sensor_hormigon; encuadre que baja el sensor al centro-inferior del anillo para que el sensor amarillo quede dentro del área abierta y no lo tape el círculo rojo (texto arriba, equipo de obra al fondo)."},
         {"date": "2026-09-04", "summary": "Publicado a alto nivel: tecnología e I+D del hormigón (evita repetir septiembre)."},
     ],
     12: [
