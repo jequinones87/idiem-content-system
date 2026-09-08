@@ -44,8 +44,8 @@ PHOTO_SUB = {
          "detalle": "domo minero · El Teniente"},
     2:  {"photo_id": "generica_construccion_edificio", "fuente": _drive("1WWMzjdxObQWBQIIvXcqKJQKBowYpc-j4"),
          "detalle": "edificio en construcción"},
-    3:  {"photo_id": "generica_geologo", "fuente": _drive("10yp3LWqAc3yUmHK4_s5sCfyYvR1GUEs8"),
-         "detalle": "geólogo en terreno · lectura de estratos"},
+    3:  {"photo_id": "sondaje_relave", "fuente": _drive("1DEFFoyprsBz9EY4Sbs8wXn0vu3GnFoKK"),
+         "detalle": "sondaje geotécnico en faena · equipo en terreno"},
     4:  {"photo_id": "ensayo_aceros1", "fuente": _drive("1amvDzSYHH5T_3-YLqilt4YpGWpzxdhMq"),
          "detalle": "ensayo de aceros en laboratorio"},
     5:  {"photo_id": "generico_construccion_edificio_obra", "fuente": _drive("1PRspVgdZFrutleVS3HC5vUndqh2TVp9Z"),
@@ -68,9 +68,10 @@ PHOTO_SUB = {
 
 # seq -> lado del círculo rojo en la pieza estática. Por defecto "left" (41%);
 # "right" lo lleva a 59% para no tapar al sujeto de la foto. Post 3 (geólogo):
-# la persona está a la izquierda/centro de la toma, así que el anillo va a la
-# derecha para dejar la cara despejada (pedido MKT 2026-09-04).
-SIDE = {3: "right"}
+# con la foto sondaje_relave, la maquinaria y el equipo quedan bajos y a la
+# derecha del encuadre; el anillo va a la izquierda para no taparlos y el texto
+# cae sobre el cielo (pedido MKT 2026-09-08).
+SIDE = {3: "left"}
 
 # Fotos Adobe Stock licenciadas (tier libre) para los posts sin foto de librería
 # adecuada (antes marcados Muapi). Descargadas, comprimidas a 1080px y usadas
@@ -97,6 +98,7 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Publicado: sustentabilidad y arquitectura en infraestructura pública."},
     ],
     3: [
+        {"date": "2026-09-08", "summary": "Foto cambiada a sondaje_relave; encuadre bajo + anillo a la izquierda para no tapar maquinaria ni personas (texto sobre el cielo, equipo despejado)."},
         {"date": "2026-09-07", "summary": "Gráfica: título central \"Feliz día del Geólogo\" (se retira el kicker \"Día del Geólogo\")."},
         {"date": "2026-09-04", "summary": "Foto cambiada a generica_geologo (Drive); anillo rojo movido a la derecha para no tapar a la persona."},
         {"date": "2026-09-04", "summary": "Reescrito como saludo del Día del Geólogo (17-oct) + geotecnia, sin detallar otros servicios."},

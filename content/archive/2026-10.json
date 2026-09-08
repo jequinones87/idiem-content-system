@@ -1,6 +1,6 @@
 {
   "month": "2026-10",
-  "generated_at": "2026-09-08T13:43:51.050301+00:00",
+  "generated_at": "2026-09-08T14:36:39.802615+00:00",
   "published": false,
   "count": 12,
   "dedup_index": {
@@ -140,10 +140,11 @@
     },
     "visual_themes": {
       "infrastructure": 5,
-      "people": 2,
+      "field": 1,
       "laboratory": 3,
       "equipment": 1,
-      "graphic": 1
+      "graphic": 1,
+      "people": 1
     }
   },
   "posts": [
@@ -286,9 +287,9 @@
       },
       "photo": {
         "source": "libreria_idiem",
-        "photo_id": "generica_geologo",
-        "fuente": "https://drive.google.com/file/d/10yp3LWqAc3yUmHK4_s5sCfyYvR1GUEs8/view",
-        "detalle": "geólogo en terreno · lectura de estratos",
+        "photo_id": "sondaje_relave",
+        "fuente": "https://drive.google.com/file/d/1DEFFoyprsBz9EY4Sbs8wXn0vu3GnFoKK/view",
+        "detalle": "sondaje geotécnico en faena · equipo en terreno",
         "reemplaza_a": "",
         "motivo": ""
       },
@@ -318,8 +319,8 @@
           "KB-LMD-006"
         ],
         "knowledge_id": "KB-LMD-004",
-        "photo_id": "generica_geologo",
-        "visual_theme": "people"
+        "photo_id": "sondaje_relave",
+        "visual_theme": "field"
       }
     },
     {
