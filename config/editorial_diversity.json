@@ -1,0 +1,52 @@
+{
+  "_comment": "Umbrales EXTERNOS y configurables del motor de diversidad editorial (CLAUDE.md regla 11). Ajustar aquí NO requiere tocar el motor. El LÍMITE DE CARACTERES NO vive aquí: su fuente de verdad ejecutable es config/editorial_style.json -> length (hard_max_characters / preferred_*). Aquí solo van umbrales de diversidad/frescura/similitud.",
+  "version": "1.0",
+  "cooldown": {
+    "knowledge_id_months": 3,
+    "subtheme_months": 2,
+    "same_photo_months": 3
+  },
+  "history_window_months": 3,
+  "month_target_posts": 12,
+  "candidate_pool_multiplier": 2.5,
+  "diversity": {
+    "min_distinct_archetypes": 5,
+    "max_same_archetype": 3,
+    "max_same_cta_type": 3,
+    "max_same_hook_type": 3,
+    "max_same_pain_point": 3,
+    "max_same_subtheme": 2,
+    "min_distinct_subthemes": 6,
+    "max_same_visual_theme": 4
+  },
+  "similarity": {
+    "_comment": "Similitud local determinista (Jaccard de tokens normalizados) en [0,1]. >= umbral => near-duplicate.",
+    "exact": 1.0,
+    "near_duplicate_hook": 0.6,
+    "near_duplicate_claim": 0.62,
+    "near_duplicate_copy": 0.72,
+    "near_duplicate_pain": 0.7
+  },
+  "novelty_weights": {
+    "_comment": "Peso de cada dimensión al puntuar la novedad editorial de una pieza vs el historial (0 penaliza, mayor peso = más castigo por repetir).",
+    "knowledge_id": 3.0,
+    "subtheme": 2.0,
+    "primary_claim": 2.5,
+    "pain_point": 2.0,
+    "hook_type": 1.5,
+    "editorial_archetype": 2.0,
+    "cta_type": 1.5,
+    "visual_theme": 1.0,
+    "copy_similarity": 2.5
+  },
+  "novelty_bands": {
+    "_comment": "Corte del score normalizado [0,1] (1 = totalmente novedoso).",
+    "high": 0.75,
+    "medium": 0.5
+  },
+  "coverage": {
+    "_comment": "Umbrales de temas frescos por célula para el reporte de cobertura.",
+    "low_max": 4,
+    "medium_max": 15
+  }
+}

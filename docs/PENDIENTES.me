@@ -1,7 +1,7 @@
 # PENDIENTES.me — IDIEM Content System (punto de retomada)
 
 > Archivo de contexto para continuar el trabajo en un chat nuevo.
-> Última actualización: 2026-08-31.
+> Última actualización: 2026-09-04 (ronda MKT: cortar similitud sept↔oct).
 
 ## Qué es esto
 Sistema determinista y auditable de contenidos LinkedIn para IDIEM.
@@ -10,14 +10,21 @@ para hechos de IDIEM). Reglas en CLAUDE.md y docs/09_EDITORIAL_MEMORY.md.
 
 ## Repo y rama
 - Repo: jequinones87/idiem-content-system
-- Rama de trabajo: claude/file-reading-nsposu
+- Rama de trabajo (ronda 2026-08-31): claude/idiem-editorial-updates-5osizu
+  (continuación de claude/file-reading-nsposu).
 - Sin PR salvo que Kike lo pida.
 
-## Entregable activo: "Workstation Septiembre"
-Artifact interactivo (12 posts + saludo Fiestas Patrias = 13). Kike revisa/edita
-copy e imágenes; Claude aplica y republica.
-- URL del artifact: https://claude.ai/code/artifact/f9016145-d797-4a02-867e-1e478de62a6b
+## Entregable activo: "Workstation Octubre"
+Artifact interactivo (12 posts; efemérides Arquitectura/RRD/Geólogo DENTRO de los 12).
+Kike revisa/edita copy e imágenes; Claude aplica y republica. Es un artefacto NUEVO
+(no reemplaza al de septiembre): DB propia y limpia por mes.
+- URL del artifact OCTUBRE: https://claude.ai/code/artifact/450efcba-81d7-43a9-889a-42762434142f
 - Generador: design_system/gen_workstation.py
+- Mes activo del sistema: `gen_month_grid.MONTH_ID = "2026-10"`.
+
+### Septiembre (cerrado / publicado)
+- Workstation septiembre (13 piezas, all-done): https://claude.ai/code/artifact/f9016145-d797-4a02-867e-1e478de62a6b
+- Archivo de memoria: `content/archive/2026-09.{json,md}`. Fotos: `assets/month/2026-09/`.
 
 ## Ciclo leer → aplicar → republicar (cómo trabaja Claude)
 1. Kike hace cambios en la workstation y clic en "💾 Guardar y compartir".
@@ -30,7 +37,7 @@ copy e imágenes; Claude aplica y republica.
 7. Artifact publish a la MISMA URL con capabilities={"artifact":{},"downloads":true}
    (leer la versión viva ANTES de publicar, o el guard rechaza).
 8. Subir la KEY de localStorage (idiem_ws_sep2026_vN → v(N+1)) para resetear el
-   navegador de Kike a estado limpio "publicado". (Actual: v4 → subir a v5.)
+   navegador de Kike a estado limpio "publicado". (Actual: v5 en vivo → próxima ronda v6.)
 9. Commit + push a claude/file-reading-nsposu (footer Co-Authored-By +
    Claude-Session). Sin PR salvo pedido explícito.
 
@@ -45,16 +52,118 @@ copy e imágenes; Claude aplica y republica.
    re-renderizar un slide: la foto se hornea como data-URI en el emit.)
 
 ## TODOs abiertos
-1. Aplicar los últimos cambios de Kike a los posts.
-   ESTADO: bloqueado. Al releer el artifact el ws-state estaba vacío
-   ("posts con estado: ninguno"). Kike debe hacer clic en "Guardar y compartir"
-   (o pegar los cambios) y recién ahí releer y aplicar.
-2. Botón "listo para publicar" (aprobado).
-   DISEÑO recomendado: flag NUEVO e independiente "✅ Aprobado para publicar"
-   por post (botón + badge verde en la gráfica + contador en el tablero).
-   Pipeline de estados: revisado → aprobado → subido a LinkedIn.
-   Coexiste con los flags existentes ("listo para aplicar" y "subido a LinkedIn").
-   Campo de estado: approved / approvedAt. Subir KEY localStorage a v5.
+(sin pendientes bloqueantes — ver "Hecho en la ronda 2026-08-31")
+
+## Hecho en la ronda 2026-08-31
+1. Aplicados los cambios de Kike desde el ws-state de la workstation:
+   - Copy: post 3 ("afectan"), post 10 ("activo crítico"), post 11 (reescritura completa).
+   - Fotos (librería de Drive de IDIEM, no stock/IA): post 3 `generica_planos_arquitectos_casco`,
+     post 6 `estructura_andamio_minera`, post 9 `generica_ejecutivos_casco_acuerdo`.
+     Bajadas y horneadas en `assets/month/pNN.jpg`; trazas en PHOTO_SUB.
+   - Ojo CTA post 11: MKT dejó "idiem.cl" (sin https). Se respetó literal; confirmar si normalizar.
+2. Botón "✅ Aprobado para publicar" (flag independiente `approved`/`approvedAt`):
+   botón + badge verde en la gráfica + contador `nApproved/nApTotal` en el tablero.
+   Pipeline: revisado → aprobado → subido a LinkedIn. Coexiste con "listo" y "subido a LinkedIn".
+   KEY localStorage subida a **v5** (idiem_ws_sep2026_v5).
+3. Arreglado el pipeline: SLOGAN/LOGO/RING ahora se cargan desde los SVG versionados en
+   `assets/` (antes vivían en un scratchpad efímero → el import fallaba en máquina nueva).
+   LOGO correcto = `logo_idiem_oficial.svg` (el wordmark; NO `logo_idiem.svg`, que es swatch).
+   Deps para correr el pipeline: `pip install jsonschema Pillow`.
+
+## Agregado 2026-09-01
+- **Regla dura: copy ≤ 900 caracteres** + contador en vivo `N / 900` por post (ámbar >860,
+  rojo >900). PENDIENTE (con visto bueno de Kike): recortar posts 1/2/4/5 que exceden.
+- **Botón "📅 Agendar en Google Calendar" por post** + selector de fecha/hora
+  (`scheduledFor`/`scheduledTime`, default 09:00, evento de 30 min). El artifact NO puede
+  llamar la API de Calendar (iframe sandbox): el botón es un enlace `render?action=TEMPLATE`
+  que abre Calendar con el evento pre-llenado (título + copy + link a la workstation, ctz
+  America/Santiago). Badge `📅 DD-MM` en la gráfica + contador `agendados` en el tablero.
+  Flujo: revisado → aprobado → **agendado** → subido.
+  - PUERTA ABIERTA (a pedido): crear los eventos REALES en bloque vía el conector de Google
+    Calendar (tools `mcp__Google_Calendar__*` en el chat), leyendo `scheduledFor` de cada post.
+- KEY localStorage sigue en **v5** (los flags `approved`/`scheduledFor` son aditivos; no se
+  reseteó para no borrar lo que Kike ya haya marcado).
+
+## Agregado 2026-09-03 — Sincronización en vivo entre equipos (DB del artefacto)
+- El estado del tablero ahora vive en la **capacidad `db`** del artefacto (colección `posts`,
+  1 doc por `content_id` con los flags/ediciones). Se sincroniza **en vivo** entre equipos
+  (`onSnapshot`), sin "Guardar y compartir" y sobrevive republicaciones. `localStorage`
+  quedó como **caché offline**; si no hay `db` (offline/sin permiso), cae a modo local.
+- Capacidades publicadas: **`{db, downloads}`** (se revocó `artifact`; ya no hay
+  auto-publicación desde la página — eso lo hace el generador). Indicador de estado en la
+  barra: 🟢 sincronizado / 🟡 sin conexión.
+- **Acceso:** declarar `db` hace el artefacto **solo para miembros conectados de la
+  organización** (no compartible por link público). Confirmar que el equipo MKT está en la org.
+- Migración: la DB se **sembró** con septiembre 13/13 (aprobado + subido) vía `write_db`.
+- Sembrado offline: `SEED_ALL_DONE=True` deja el `ws-state` embebido en all-done como fallback.
+  Para un mes nuevo, poner `SEED_ALL_DONE=False` (la DB pasa a mandar) y vaciar/rotar `posts`.
+- Respaldo a GitHub (a pedido): `read_db` de `posts` → commitear un `state.json` (aún no hecho).
+- Código muerto: quedaron `saveCloud`/`buildCleanHTML`/`artifactCap` sin cablear (referencian
+  `claude.use('artifact')`, inofensivo). Limpiar en una pasada futura.
+- KEY localStorage en **v6**.
+
+## Agregado 2026-09-03 (2) — Memoria de contenidos por mes
+- `design_system/archive_month.py` congela el contenido de un mes en
+  `content/archive/AAAA-MM.json` + `.md` (copys, fotos, trazas, plan, ángulos, estado + índice
+  de dedup). Reproducible desde los generadores.
+- **Septiembre archivado:** `content/archive/2026-09.{json,md}` (13 piezas, publicado).
+- Regla (en CLAUDE.md + 09_EDITORIAL_MEMORY.md): antes de armar un mes nuevo, archivar el
+  anterior, leer los archivos previos, NO repetir knowledge_ids/subtemas/ángulos, y actualizar
+  hechos si cambiaron.
+- Flujo octubre (cuando toque): archivar septiembre ya está hecho → `compose_month(2026-10)`,
+  reescribir COPY/PHOTO_SUB para los slots nuevos evitando lo de septiembre, poner
+  `SEED_ALL_DONE=False`, rotar `posts` en la DB, subir KEY a v7.
+
+## Agregado 2026-09-03 (3) — Contenidos de octubre (desarrollados)
+- **12 posts curados, subtemas frescos vs septiembre** (memoria de contenidos aplicada).
+  Mix por célula **IOM5 / IPR4 / LMD2 / IHA1** (septiembre fue 3/3/3/3): fue la única forma
+  de rotar TODOS los subtemas, porque IHA (solo "ingeniería contractual" fresca) y LMD (solo
+  "geotecnia y rocas" fresca) están agotadas de subtemas nuevos. Kike aprobó el mix.
+- **Efemérides DENTRO de los 12** (trazan a 2A.2, no son saludos):
+  - #6 (5-oct) Día de la Arquitectura → IPR-018 Sustentabilidad y Arquitectura.
+  - #2 (13-oct) Reducción del Riesgo de Desastres → IOM-047 Vulnerabilidad/integridad (carrusel).
+  - #4 (17-oct) Día del Geólogo → LMD-004 Geotecnia y rocas, redactado **como saludo** a la
+    profesión + contenido de mecánica de rocas (pedido de Kike).
+- **Carruseles (4, pedido de Kike):** seq 2 (RRD/integridad), 7 (Triaxial), 9 (componentes
+  metálicos) y 10 (cumplimiento normativo). `carousel.CAROUSEL_POSTS={2,7,9,10}`.
+- **Swap incendios → componentes metálicos (IPR-019 → IPR-002):** hecho a pedido de Kike; elimina
+  el solape de subtema con septiembre. Ahora los 12 subtemas son nuevos vs septiembre.
+- **Fotos: las 12 piezas llevan foto** de la librería de Drive de IDIEM (una por pieza), bajadas y
+  reescaladas a `assets/month/2026-10/pNN.jpg`, trazadas por `viewUrl` en `PHOTO_SUB`. (El
+  conector de Drive estuvo intermitente; 3 fotos se resolvieron con archivos del mismo tema que sí
+  descargaron: seq2 domo minería El Teniente, seq3 edificio, seq6 trabajador+hormigón.)
+- **Guardrails 2A.2 respetados:** geotecnia/Triaxial (LMD-004/007) SIN superlativos ni rankings
+  ("único", "el más grande", "pioneros"); confiabilidad (IOM-065) sin "reconocido mundialmente".
+  Los 12 copies pasan `ingest_draft` sin violaciones y todos ≤900 caracteres.
+- **Mecánica de curación:** `gen_month_grid.compose_current(kb)` restringe cada célula a
+  `MONTH_PICKS` (excluye lo demás, incl. septiembre) y fija `MONTH_WEIGHTS`, de modo que el plan
+  determinista quede con exactamente las 12 piezas. Se extendió `review.compose_month` para aceptar
+  `weights` (retrocompatible; 121 tests verdes). `MONTH_ID="2026-10"`.
+- **Estado/artefacto:** artefacto NUEVO (URL 450efcba…, DB propia y limpia), capacidades
+  `{db, downloads}`. `SEED_ALL_DONE=False`, KEY localStorage **v7** (`idiem_ws_oct2026_v7`).
+  Se limpió el código muerto `saveCloud`/`buildCleanHTML`/`artifactCap`.
+- **Fotos:** octubre parte SIN fotos (campo de marca sólido / carrusel en campo oscuro). Kike
+  elige las fotos de su librería de Drive por pieza y Claude las hornea (`PHOTO_SUB` + `assets/month/2026-10/pNN.jpg`).
+  Las de septiembre se preservaron en `assets/month/2026-09/`.
+- **Pendiente:** (1) confirmar/ajustar el solape de incendios; (2) fotos por pieza; (3) al cerrar
+  octubre, archivar con `archive_month.py` (ya usa `compose_current`) antes de repuntar a noviembre.
+
+## Agregado 2026-09-04 — Ronda MKT (Kike): cortar similitud con septiembre
+- Kike marcó cambios en la workstation (viven en la DB `posts`) + pidió evitar posts/claims/CTAs
+  parecidos entre meses. Aplicado en octubre v3:
+  - **CTAs y ganchos diversificados** en los 12 (regla nueva en CLAUDE.md / 09).
+  - **Grilla nueva** (mix **IOM6/IPR4/LMD2**, IHA fuera): se sacaron contractual (IHA-002),
+    integridad (IOM-047) y se replanteó confiabilidad; se sumaron **control de productividad**
+    (IOM-019) y **tecnología/I+D del hormigón** (IOM-017) — ambos van a **alto nivel** (2A.2 solo
+    los nombra). Día del Geólogo (LMD-004) → **saludo** sin detallar servicios.
+  - **4 carruseles:** Triaxial (6), componentes (8), cumplimiento (9), rehabilitación (12).
+  - `MONTH_PICKS`/`MONTH_WEIGHTS` en gen_month_grid actualizados; `carousel.CAROUSEL_POSTS={6,8,9,12}`.
+  - **Fotos:** no existía `generica_geologo` → `sondaje_relave`; `generica_estructura_acero` no
+    descargaba → `generica_idiem_vigas_acero`. Conector de Drive intermitente (reintentos).
+  - **Límite 2A.2:** la biblioteca casi no tiene subtemas nuevos bien documentados. Para meses
+    futuros: pedir insumos a IDIEM o planificar menos posts. (Ver 09_EDITORIAL_MEMORY.)
+  - **DB:** los docs viejos de `posts` (content_ids de la grilla anterior) quedan huérfanos; se
+    limpian tras republicar (write_db delete) para que el tablero no arrastre notas/flags viejos.
 
 ## Reglas editoriales NO negociables (recordatorio rápido)
 - Green Hospital es certificación PROPIA de IDIEM. NO mencionar "Salud sin Daño".
