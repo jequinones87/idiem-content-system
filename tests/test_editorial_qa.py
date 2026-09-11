@@ -92,16 +92,20 @@ def test_october_regression_detects_concentration():
     r = check_month("2026-10")
     assert r.status == WARNING
     codes = {f.code for f in r.findings}
-    assert "cta_concentration" in codes         # contact x9
+    assert "cta_concentration" in codes         # contact x10
     assert "archetype_concentration" in codes    # problem_solution x5
-    assert "archetype_diversity_low" in codes    # solo 4 arquetipos
+    # el post 13 (hito de acústica) sumó un 5º arquetipo (institutional_or_occasion),
+    # así que ya NO se dispara la baja diversidad de arquetipos.
+    assert "archetype_diversity_low" not in codes
     # el reporte legible se genera sin error
     assert "Reporte editorial — 2026-10" in monthly_editorial_report("2026-10")
 
 
 def test_recent_knowledge_id_not_reused_in_october():
     from idiem.editorial_novelty import load_history, load_month_fingerprints
-    hist_kids = {h.get("knowledge_id") for h in load_history("2026-10")}
-    oct_kids = {f.get("knowledge_id") for f in load_month_fingerprints("2026-10")}
+    # None = piezas institucionales (saludos / hitos) que no trazan a knowledge_id;
+    # no son knowledge_ids, así que quedan fuera del chequeo de frescura.
+    hist_kids = {h.get("knowledge_id") for h in load_history("2026-10")} - {None}
+    oct_kids = {f.get("knowledge_id") for f in load_month_fingerprints("2026-10")} - {None}
     assert hist_kids and oct_kids
     assert hist_kids.isdisjoint(oct_kids)  # frescura: octubre no reusa knowledge_ids recientes

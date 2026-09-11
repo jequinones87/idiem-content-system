@@ -1,6 +1,6 @@
 {
   "month": "2026-10",
-  "generated_at": "2026-09-11T15:08:54.539634+00:00",
+  "generated_at": "2026-09-11T15:36:18.948418+00:00",
   "published": false,
   "count": 13,
   "dedup_index": {
@@ -149,7 +149,7 @@
     },
     "visual_themes": {
       "infrastructure": 5,
-      "field": 2,
+      "field": 1,
       "laboratory": 3,
       "equipment": 2,
       "graphic": 1
@@ -852,8 +852,10 @@
         "msg": ""
       },
       "photo": {
-        "source": "sin_foto",
-        "detalle": "Sin foto por ahora (pedido de MKT). Cuando la elijan, hornear en assets/month/2026-10/p13.jpg (láminas portada/intermedias tomarán la foto de fondo)."
+        "source": "libreria_idiem",
+        "photo_id": "ruido_acustica_discotec",
+        "fuente": "https://drive.google.com/file/d/10JPdH3YNhvOQnleu3LiMmAXV9RqDbNSP/view",
+        "detalle": "local de ocio nocturno · pista y luces"
       },
       "copy": {
         "hook": "🔊 El ruido de las obras y de la vida nocturna ahora tiene reglas más claras.",
@@ -877,8 +879,8 @@
         "format": "CARRUSEL",
         "evidence_ids": [],
         "knowledge_id": null,
-        "photo_id": null,
-        "visual_theme": "field"
+        "photo_id": "ruido_acustica_discotec",
+        "visual_theme": null
       }
     }
   ]

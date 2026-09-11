@@ -136,7 +136,8 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Convertido en carrusel: revisión integral de rehabilitación (4 etapas)."},
     ],
     13: [
-        {"date": "2026-09-11", "summary": "Post adicional creado como carrusel (hito de acústica / instrucción SMA), sin foto por ahora. Copy recortado a los lineamientos (812 car.) y cifra de cobertura dejada en VERIFY."},
+        {"date": "2026-09-11", "summary": "Foto aplicada: ruido_acustica_discotec (local de ocio nocturno) como fondo de portada e intermedias; la lámina de cierre mantiene el campo de marca."},
+        {"date": "2026-09-11", "summary": "Post adicional creado como carrusel (hito de acústica / instrucción SMA). Copy recortado a los lineamientos (812 car.) y cifra de cobertura dejada en VERIFY."},
     ],
 }
 
@@ -197,8 +198,12 @@ SPECIAL = [
                   "de Acústica) — protocolo de gestión de ruido en 6 pasos. "
                   "⚠ VERIFY (MKT): la cobertura «cerca de 150 obras» y toda cifra/plazo se dejaron FUERA del copy "
                   "hasta validación; agregarlas sólo si MKT las confirma."),
-        "photo_note": ("Sin foto por ahora (pedido de MKT). Cuando la elijan, hornear en "
-                       "assets/month/2026-10/p13.jpg (láminas portada/intermedias tomarán la foto de fondo)."),
+        "photo": {"source": "libreria_idiem", "photo_id": "ruido_acustica_discotec",
+                  "fuente": _drive("10JPdH3YNhvOQnleu3LiMmAXV9RqDbNSP"),
+                  "detalle": "local de ocio nocturno · pista y luces"},
+        "foto_html": ('Librería · <code>ruido_acustica_discotec</code> (local de ocio nocturno · pista y luces) · '
+                      '<a href="https://drive.google.com/file/d/10JPdH3YNhvOQnleu3LiMmAXV9RqDbNSP/view" '
+                      'target="_blank" rel="noopener">ver en Drive</a> · fondo de las láminas (portada + intermedias)'),
         "copy": {
             "hook": "🔊 El ruido de las obras y de la vida nocturna ahora tiene reglas más claras.",
             "body": (
