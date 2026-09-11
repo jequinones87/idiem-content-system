@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 import datetime as _dt
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -37,6 +38,10 @@ from idiem.editorial_fingerprint import fingerprint_archive_post  # noqa: E402
 
 def _full_copy(c: dict) -> str:
     return f'{c["hook"]}\n\n{c["body"]}\n\n{c["cta"]}'
+
+
+def _strip_tags(s: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", s or "")).strip()
 
 
 def _photo(seq: int, ps: dict) -> dict:
@@ -89,23 +94,35 @@ def build_archive(month: str, published_all: bool) -> dict:
             "posted": True if published_all else None,
         })
 
-    # posts institucionales (saludos): no trazan a knowledge_id
+    # posts institucionales / adicionales: no trazan a knowledge_id de 2A.2. Pueden ser
+    # saludos de una lámina o carruseles (fuentes oficiales aportadas por MKT).
     for s in W.SPECIAL:
         c = s["copy"]
         full = _full_copy(c)
+        is_car = s["seq"] in CAR.CAROUSEL_POSTS
+        if is_car:
+            sl = CAR.SLIDES.get(s["seq"], {})
+            port = sl.get("portada", {})
+            graphic = {"svc": port.get("kicker", s.get("subtheme", "")),
+                       "title": _strip_tags(port.get("title", "")),
+                       "msg": ""}
+        else:
+            graphic = {"kicker": s.get("kicker", ""), "title": s.get("title", ""),
+                       "sub": s.get("sub", "")}
+        photo = s.get("photo") or {"source": "sin_foto",
+                                   "detalle": s.get("photo_note", "sin foto por ahora")}
         posts.append({
             "seq": s["seq"],
             "content_id": s["content_id"],
             "cell": None,
             "cell_short": s.get("cshort", ""),
             "subtheme": s.get("subtheme", ""),
-            "editorial_angle": "saludo institucional (no traza a knowledge_id)",
-            "format": s.get("fmt", "SALUDO"),
+            "editorial_angle": s.get("editorial_angle", "post institucional (no traza a knowledge_id)"),
+            "format": "CARRUSEL" if is_car else s.get("fmt", "SALUDO"),
             "knowledge_id": None,
             "evidence_ids": [],
-            "graphic": {"kicker": s.get("kicker", ""), "title": s.get("title", ""),
-                        "sub": s.get("sub", "")},
-            "photo": {"source": "libreria_idiem", "photo_id": "generica_bandera_chile_mineria"},
+            "graphic": graphic,
+            "photo": photo,
             "copy": {"hook": c["hook"], "body": c["body"], "cta": c["cta"],
                      "full": full, "chars": len(full)},
             "posted": True if published_all else None,

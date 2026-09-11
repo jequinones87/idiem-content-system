@@ -135,9 +135,12 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Foto cambiada a generica_estructura_acero (versión comprimida del Drive)."},
         {"date": "2026-09-04", "summary": "Convertido en carrusel: revisión integral de rehabilitación (4 etapas)."},
     ],
+    13: [
+        {"date": "2026-09-11", "summary": "Post adicional creado como carrusel (hito de acústica / instrucción SMA), sin foto por ahora. Copy recortado a los lineamientos (812 car.) y cifra de cobertura dejada en VERIFY."},
+    ],
 }
 
-NEW_POSTS = set()  # chip "nuevo" (no usado en la tarjeta actual)
+NEW_POSTS = {13}  # chip "★ nuevo": post recién sumado a la grilla
 
 # Estado "sembrado" en el ws-state embebido. En un mes nuevo va en False: el tablero
 # arranca limpio (nada aprobado/subido) y la DB del artefacto es la fuente de verdad
@@ -174,7 +177,44 @@ def history_html(seq: int) -> str:
 # arman aparte y se anexan después de los 12. Foto de fondo (estilo Plantilla 02).
 # Posts institucionales que NO trazan a knowledge_id (saludos). Octubre no lleva:
 # las 3 efemérides (Arquitectura, RRD, Geólogo) están DENTRO de los 12 y trazan a 2A.2.
-SPECIAL = []
+SPECIAL = [
+    # seq 13 · Post ADICIONAL (fuera del motor): hito institucional de acústica.
+    # NO traza a knowledge_id de 2A.2; se sustenta en fuentes oficiales aportadas por
+    # MKT. Es CARRUSEL (láminas en carousel.py SLIDES[13]) y va SIN foto por ahora.
+    {
+        "seq": 13,
+        "content_id": "PLAN-ACUSTICA-SMA-13",
+        "cshort": "ACÚS",
+        "fmt": "CARRUSEL",
+        "fmtbadge": "CARRUSEL · ACÚSTICA",
+        "subtheme": "Acústica · control de ruido (hito SMA)",
+        "editorial_angle": ("hito institucional — evidencia técnica de IDIEM que sustenta la nueva "
+                            "instrucción de la SMA (no traza a knowledge_id de 2A.2; fuentes oficiales aportadas por MKT)"),
+        "trace": ("Instrucción General SMA (Res. 2.163 exenta, 30-07-2026; D.O. N°44.522, 11-08-2026) · "
+                  "art. 21 D.S. N°14/2024 MMA (Norma de Emisión de Ruido para Fuentes Fijas) · "
+                  "doc. MMA «Medidas y recomendaciones para el control y gestión de ruido en locales de ocio "
+                  "nocturno» — consultoría pública adjudicada a IDIEM · FIA 2024 (XIII Congreso Iberoamericano "
+                  "de Acústica) — protocolo de gestión de ruido en 6 pasos. "
+                  "⚠ VERIFY (MKT): la cobertura «cerca de 150 obras» y toda cifra/plazo se dejaron FUERA del copy "
+                  "hasta validación; agregarlas sólo si MKT las confirma."),
+        "photo_note": ("Sin foto por ahora (pedido de MKT). Cuando la elijan, hornear en "
+                       "assets/month/2026-10/p13.jpg (láminas portada/intermedias tomarán la foto de fondo)."),
+        "copy": {
+            "hook": "🔊 El ruido de las obras y de la vida nocturna ahora tiene reglas más claras.",
+            "body": (
+                "La nueva Instrucción General de la SMA —asociada al D.S. N°14/2024— fija recomendaciones "
+                "para los Planes de Condiciones de Operación en faenas constructivas y locales de ocio nocturno.\n\n"
+                "En #IDIEM aportamos la base técnica que sustenta estas directrices:\n"
+                "* Ocio nocturno: los contenidos técnicos del documento del Ministerio del Medio Ambiente se "
+                "elaboraron en una consultoría pública adjudicada a IDIEM.\n"
+                "* Obras: nuestro protocolo de gestión de ruido (FIA 2024) ordena evaluación, mitigación y "
+                "monitoreo continuo en 6 pasos.\n\n"
+                "Investigación e ingeniería al servicio de mejores políticas públicas. ✅"),
+            "cta": ("Trabajemos juntos por un manejo responsable del ruido 👉 https://idiem.cl\n\n"
+                    "#IDIEM #Acústica #ControlDeRuido #MedioAmbiente #Construcción"),
+        },
+    },
+]
 
 SPECIAL_BY_CID = {s["content_id"]: s for s in SPECIAL}
 
@@ -265,17 +305,24 @@ def emit(month: str, build: Path) -> None:
             pngs.append(str(pp))
         structure.append({"seq": seq, "cid": post.content_id, "pngs": pngs})
 
-    # Posts institucionales (no del motor): se anexan después de los 12.
+    # Posts institucionales (no del motor): se anexan después de los 12. Pueden ser
+    # una sola lámina (saludo, estilo Plantilla 02) o un carrusel (láminas en carousel.py).
     for s in SPECIAL:
         seq = s["seq"]
         photo_uri = resolve_photo(seq)
-        html = PAGE.format(style=style, carcss=CAR.CAROUSEL_CSS, fpcss=FIESTAS_CSS,
-                           canvas=fiestas_html(photo_uri, s))
-        hp = posts_dir / f"p{seq:02d}_s0.html"
-        pp = posts_dir / f"p{seq:02d}_s0.png"
-        hp.write_text(html, encoding="utf-8")
-        manifest.append({"html": str(hp), "png": str(pp)})
-        structure.append({"seq": seq, "cid": s["content_id"], "pngs": [str(pp)]})
+        if seq in CAR.CAROUSEL_POSTS:
+            slides = CAR.build_slides(seq, photo_uri, G.LOGO, G.SLOGAN)
+        else:
+            slides = [fiestas_html(photo_uri, s)]
+        pngs = []
+        for idx, canvas_html in enumerate(slides):
+            html = PAGE.format(style=style, carcss=CAR.CAROUSEL_CSS, fpcss=FIESTAS_CSS, canvas=canvas_html)
+            hp = posts_dir / f"p{seq:02d}_s{idx}.html"
+            pp = posts_dir / f"p{seq:02d}_s{idx}.png"
+            hp.write_text(html, encoding="utf-8")
+            manifest.append({"html": str(hp), "png": str(pp)})
+            pngs.append(str(pp))
+        structure.append({"seq": seq, "cid": s["content_id"], "pngs": pngs})
 
     (build / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False), "utf-8")
     (build / "structure.json").write_text(json.dumps(structure, ensure_ascii=False), "utf-8")
@@ -432,15 +479,33 @@ def render_special_card(s: dict, uris: list[str]) -> str:
     c = s["copy"]
     full_copy = f"{c['hook']}\n\n{c['body']}\n\n{c['cta']}"
     slides_json = G.esc(json.dumps(uris))
-    foto = ('Librería · <code>generica_bandera_chile_mineria</code> (bandera chilena + camión minero) · '
-            '<a href="https://drive.google.com/file/d/18Vlym9diMd7rcuAbaWvFMapzAF491biH/view" target="_blank" rel="noopener">ver en Drive</a>'
-            '<br><span class="muprompt">pieza conmemorativa de Fiestas Patrias (reemplaza a La Moneda)</span>')
-    return f'''<article class="post special" data-seq="{seq}" data-cid="{G.esc(s["content_id"])}" data-car="0" data-status="publicado" data-edited-at="" data-edited-by="" data-caltitle="{G.esc(f'Post {seq:02d} · {s["subtheme"]}')}">
+    is_car = seq in CAR.CAROUSEL_POSTS
+    n = len(uris)
+    fmt_label = f"CARRUSEL · {n} láminas" if is_car else "STATIC"
+    fmtbadge = s.get("fmtbadge", "SALUDO INSTITUCIONAL")
+
+    # Foto: cada special puede declarar su propia traza; si no, se toma como sin foto.
+    if s.get("foto_html"):
+        foto = s["foto_html"]
+    elif s.get("photo_note"):
+        foto = ('Sin foto por diseño (<code>needs_photo=false</code>)'
+                f'<br><span class="muprompt">{G.esc(s["photo_note"])}</span>')
+    else:
+        foto = 'Sin foto por diseño (<code>needs_photo=false</code>)'
+
+    strip = ""
+    if is_car:
+        thumbs = "".join(
+            f'<img class="thumb{" on" if i==0 else ""}" src="{u}" data-idx="{i}" alt="lámina {i+1}">'
+            for i, u in enumerate(uris))
+        strip = f'<div class="strip">{thumbs}</div>'
+
+    return f'''<article class="post special" data-seq="{seq}" data-cid="{G.esc(s["content_id"])}" data-car="{"1" if is_car else "0"}" data-status="publicado" data-edited-at="" data-edited-by="" data-caltitle="{G.esc(f'Post {seq:02d} · {s["subtheme"]}')}">
   <script type="application/json" class="slides-data">{slides_json}</script>
   <div class="graphic">
     <div class="gwrap">
       <img class="main" src="{uris[0]}" data-idx="0" alt="Post {seq:02d}">
-      <span class="fmtbadge">SALUDO · FIESTAS PATRIAS</span>
+      <span class="fmtbadge">{G.esc(fmtbadge)}</span>
       {status_chip(seq)}
       <div class="botleft">
         <span class="ap-badge" hidden>✅ Aprobado</span>
@@ -449,6 +514,7 @@ def render_special_card(s: dict, uris: list[str]) -> str:
       </div>
       <span class="zoomhint">clic para ampliar</span>
     </div>
+    {strip}
   </div>
   <div class="controls">
     <div class="chead"><span class="seq">{seq:02d}</span><span class="badge">{G.esc(s["cshort"])}</span>
@@ -495,7 +561,7 @@ def render_special_card(s: dict, uris: list[str]) -> str:
 
 
 ARTIFACT = r'''<title>Workstation Octubre IDIEM</title>
-<meta name="description" content="Plataforma de desarrollo de los 12 posts de octubre de IDIEM: gráfica por post, texto editable, notas de imagen con regeneración, descarga PNG/PDF y revisión de carruseles.">
+<meta name="description" content="Plataforma de desarrollo de los 13 posts de octubre de IDIEM: gráfica por post, texto editable, notas de imagen con regeneración, descarga PNG/PDF y revisión de carruseles.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
@@ -655,7 +721,7 @@ code{font-family:inherit;font-weight:700;background:var(--gray-light);padding:1p
 
 <div class="wrap">
   <p class="eyebrow"><span class="dot"></span>IDIEM · Design System · Workstation</p>
-  <h1>Octubre — <b>12 posts</b></h1>
+  <h1>Octubre — <b>13 posts</b></h1>
   <p class="lede">Cada post muestra su <strong>estado</strong> en la esquina de la gráfica: <b class="tpub">publicado</b> (lo que ya apliqué), <b class="tpend">pendiente</b> (lo editaste, aún sin aplicar) o <b class="tready">listo para aplicar</b> (lo marcaste tú). Abajo tienes el texto editable, notas de imagen, el <strong>historial</strong> de lo aplicado, y <strong>↺ volver a lo publicado</strong>. Todo lo que marcas se <strong>sincroniza en vivo con el equipo</strong>: aprueba (<strong>✅ Aprobado para publicar</strong>), agenda la fecha, y marca <strong>🔗 subido a LinkedIn</strong> una vez publicado (flujo: <b class="tpub">revisado → aprobado → agendado → subido</b>). No necesitas guardar: se guarda solo.</p>
   <div class="bar">
     <input class="idfield" id="revName" type="text" placeholder="Tu nombre" autocomplete="name" spellcheck="false">

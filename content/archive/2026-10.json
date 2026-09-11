@@ -1,8 +1,8 @@
 {
   "month": "2026-10",
-  "generated_at": "2026-09-08T18:47:07.788580+00:00",
+  "generated_at": "2026-09-11T15:08:54.539634+00:00",
   "published": false,
-  "count": 12,
+  "count": 13,
   "dedup_index": {
     "knowledge_ids": [
       "KB-IOM-004",
@@ -19,6 +19,7 @@
       "KB-LMD-007"
     ],
     "subthemes": [
+      "Acústica · control de ruido (hito SMA)",
       "Confiabilidad de materiales",
       "Control de productividad",
       "Cumplimiento normativo",
@@ -32,7 +33,8 @@
     "cells": {
       "IOM": 6,
       "IPR": 4,
-      "LMD": 2
+      "LMD": 2,
+      "ACÚS": 1
     },
     "angles": [
       {
@@ -106,6 +108,12 @@
         "cell": "IOM",
         "subtheme": "Modelamiento y levantamiento digital",
         "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional."
+      },
+      {
+        "seq": 13,
+        "cell": "ACÚS",
+        "subtheme": "Acústica · control de ruido (hito SMA)",
+        "angle": "hito institucional — evidencia técnica de IDIEM que sustenta la nueva instrucción de la SMA (no traza a knowledge_id de 2A.2; fuentes oficiales aportadas por MKT)"
       }
     ]
   },
@@ -114,22 +122,23 @@
       "problem_solution": 5,
       "method_or_evidence": 3,
       "technical_insight": 2,
-      "checklist": 2
+      "checklist": 2,
+      "institutional_or_occasion": 1
     },
     "cta_types": {
-      "contact": 9,
+      "contact": 10,
       "no_cta": 1,
       "conversation": 1,
       "self_assessment": 1
     },
     "hook_types": {
       "risk": 4,
-      "insight": 5,
+      "insight": 6,
       "opportunity": 2,
       "case": 1
     },
     "pain_categories": {
-      "continuity": 2,
+      "continuity": 3,
       "quality_assurance": 2,
       "other": 1,
       "risk_of_failure": 2,
@@ -140,7 +149,7 @@
     },
     "visual_themes": {
       "infrastructure": 5,
-      "field": 1,
+      "field": 2,
       "laboratory": 3,
       "equipment": 2,
       "graphic": 1
@@ -825,6 +834,51 @@
         "knowledge_id": "KB-IOM-030",
         "photo_id": "generica_estructura_acero_low",
         "visual_theme": "infrastructure"
+      }
+    },
+    {
+      "seq": 13,
+      "content_id": "PLAN-ACUSTICA-SMA-13",
+      "cell": null,
+      "cell_short": "ACÚS",
+      "subtheme": "Acústica · control de ruido (hito SMA)",
+      "editorial_angle": "hito institucional — evidencia técnica de IDIEM que sustenta la nueva instrucción de la SMA (no traza a knowledge_id de 2A.2; fuentes oficiales aportadas por MKT)",
+      "format": "CARRUSEL",
+      "knowledge_id": null,
+      "evidence_ids": [],
+      "graphic": {
+        "svc": "ACÚSTICA · CONTROL DE RUIDO",
+        "title": "Del dato técnico a la norma.",
+        "msg": ""
+      },
+      "photo": {
+        "source": "sin_foto",
+        "detalle": "Sin foto por ahora (pedido de MKT). Cuando la elijan, hornear en assets/month/2026-10/p13.jpg (láminas portada/intermedias tomarán la foto de fondo)."
+      },
+      "copy": {
+        "hook": "🔊 El ruido de las obras y de la vida nocturna ahora tiene reglas más claras.",
+        "body": "La nueva Instrucción General de la SMA —asociada al D.S. N°14/2024— fija recomendaciones para los Planes de Condiciones de Operación en faenas constructivas y locales de ocio nocturno.\n\nEn #IDIEM aportamos la base técnica que sustenta estas directrices:\n* Ocio nocturno: los contenidos técnicos del documento del Ministerio del Medio Ambiente se elaboraron en una consultoría pública adjudicada a IDIEM.\n* Obras: nuestro protocolo de gestión de ruido (FIA 2024) ordena evaluación, mitigación y monitoreo continuo en 6 pasos.\n\nInvestigación e ingeniería al servicio de mejores políticas públicas. ✅",
+        "cta": "Trabajemos juntos por un manejo responsable del ruido 👉 https://idiem.cl\n\n#IDIEM #Acústica #ControlDeRuido #MedioAmbiente #Construcción",
+        "full": "🔊 El ruido de las obras y de la vida nocturna ahora tiene reglas más claras.\n\nLa nueva Instrucción General de la SMA —asociada al D.S. N°14/2024— fija recomendaciones para los Planes de Condiciones de Operación en faenas constructivas y locales de ocio nocturno.\n\nEn #IDIEM aportamos la base técnica que sustenta estas directrices:\n* Ocio nocturno: los contenidos técnicos del documento del Ministerio del Medio Ambiente se elaboraron en una consultoría pública adjudicada a IDIEM.\n* Obras: nuestro protocolo de gestión de ruido (FIA 2024) ordena evaluación, mitigación y monitoreo continuo en 6 pasos.\n\nInvestigación e ingeniería al servicio de mejores políticas públicas. ✅\n\nTrabajemos juntos por un manejo responsable del ruido 👉 https://idiem.cl\n\n#IDIEM #Acústica #ControlDeRuido #MedioAmbiente #Construcción",
+        "chars": 812
+      },
+      "posted": null,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-ACUSTICA-SMA-13",
+        "service": "ACÚSTICA · CONTROL DE RUIDO",
+        "subtheme": "Acústica · control de ruido (hito SMA)",
+        "primary_claim": "ACÚSTICA · CONTROL DE RUIDO · Del dato técnico a la norma.",
+        "pain_point": "El ruido de las obras y de la vida nocturna ahora tiene reglas más claras.",
+        "pain_category": "continuity",
+        "angle": "hito institucional — evidencia técnica de IDIEM que sustenta la nueva instrucción de la SMA (no traza a knowledge_id de 2A.2; fuentes oficiales aportadas por MKT)",
+        "hook_type": "insight",
+        "editorial_archetype": "institutional_or_occasion",
+        "cta_type": "contact",
+        "format": "CARRUSEL",
+        "evidence_ids": [],
+        "knowledge_id": null,
+        "photo_id": null,
+        "visual_theme": "field"
       }
     }
   ]

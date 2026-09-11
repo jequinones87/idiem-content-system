@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 ASSETS = ROOT / "assets"
 
-CAROUSEL_POSTS = {6, 8, 9, 12}
+CAROUSEL_POSTS = {6, 8, 9, 12, 13}
 
 
 def _icon(name: str) -> str:
@@ -84,12 +84,37 @@ SLIDES = {
         ],
         "cierre": {"bajada": "Un proceso ordenado para intervenir con respaldo técnico de principio a fin."},
     },
+    # seq 13 · HITO INSTITUCIONAL · Acústica / control de ruido (post adicional).
+    # NO traza a knowledge_id de 2A.2: se sustenta en fuentes oficiales aportadas por
+    # MKT (Instrucción General SMA · D.S. N°14/2024 · doc. MMA ocio nocturno con
+    # consultoría IDIEM · protocolo FIA 2024). Sin superlativos ni cifras de desempeño.
+    13: {
+        "portada": {"kicker": "ACÚSTICA · CONTROL DE RUIDO",
+                    "title": 'Del dato técnico a la <span class="c2rt">norma</span>.'},
+        "intermedias": [
+            {"icon": "location", "title": 'Nueva <span class="c2rb">instrucción</span>',
+             "body": "La SMA fija recomendaciones para los Planes de Condiciones de Operación en faenas constructivas y locales de ocio nocturno (D.S. N°14/2024)."},
+            {"icon": "magnifier", "title": 'Ocio <span class="c2rb">nocturno</span>',
+             "body": "Los contenidos técnicos del documento del Ministerio del Medio Ambiente se elaboraron en una consultoría pública adjudicada a IDIEM."},
+            {"icon": "shield", "title": 'Obras de <span class="c2rb">construcción</span>',
+             "body": "Nuestro protocolo de gestión de ruido ordena la evaluación, la mitigación y el monitoreo continuo en 6 pasos (FIA 2024)."},
+        ],
+        "cierre": {"bajada": "Investigación e ingeniería de la Universidad de Chile al servicio de mejores políticas públicas y un manejo responsable del ruido."},
+    },
 }
+
+
+def _photo_div(photo_uri: str | None) -> str:
+    """Fondo de la lámina. Con foto: imagen a sangre. Sin foto (placeholder MKT):
+    campo de marca en degradado para que la pieza no se vea rota mientras no hay foto."""
+    if photo_uri:
+        return f'<div class="c2photo" style="background-image:url(\'{photo_uri}\')"></div>'
+    return '<div class="c2photo c2nophoto"></div>'
 
 
 def portada_html(photo_uri: str, sl: dict, logo: str, slogan: str) -> str:
     return f'''<div class="canvas c2slide" data-finish="carousel">
-  <div class="c2photo" style="background-image:url('{photo_uri}')"></div>
+  {_photo_div(photo_uri)}
   <div class="c2grad"></div>
   <img class="c2slogan" src="{slogan}" alt="Elige bien. Elige idiem.">
   <img class="c2logo" src="{logo}" alt="Logo IDIEM">
@@ -100,7 +125,7 @@ def portada_html(photo_uri: str, sl: dict, logo: str, slogan: str) -> str:
 
 def intermedia_html(photo_uri: str, num: str, sl: dict, logo: str) -> str:
     return f'''<div class="canvas c2slide" data-finish="carousel">
-  <div class="c2photo" style="background-image:url('{photo_uri}')"></div>
+  {_photo_div(photo_uri)}
   <div class="c2veil"></div>
   <img class="c2logo" src="{logo}" alt="Logo IDIEM">
   <div class="c2num">{num}</div>
@@ -136,7 +161,8 @@ def build_slides(seq: int, photo_uri: str, logo: str, slogan: str) -> list[str]:
 # CSS namespaced c2* (no choca con el canvas Servicios). Basado en Plantilla 02.
 CAROUSEL_CSS = r'''
 .c2slide{color:#fff;background:var(--gray-dark)}
-.c2photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:50% 42%}
+.c2photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:50% 42%;background-color:var(--gray-dark)}
+.c2nophoto{background:radial-gradient(120% 120% at 78% 12%, #3a4042 0%, #23292b 60%, #191d1f 100%)}
 .c2grad{position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(0,0,0,.82) 4%,rgba(0,0,0,.15) 46%,rgba(0,0,0,.38) 100%)}
 .c2veil{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(20,21,22,.72),rgba(20,21,22,.86))}
 .c2slogan{position:absolute;z-index:3;top:5.4cqw;left:5.6cqw;width:34cqw;height:auto;display:block;filter:drop-shadow(0 1px 10px rgba(0,0,0,.4))}
