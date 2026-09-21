@@ -131,11 +131,11 @@ COPY = {
   "hook": "🔬 ¿Por qué un material falla antes de lo esperado?",
   "body": ("Responderlo no es cosa de una sola mirada: exige entender el material desde la metalurgia, la mecánica "
     "y la química a la vez.\n\n"
-    "En #IDIEM evaluamos la confiabilidad de los materiales usados en elementos mecánicos y estructuras con un "
+    "En #IDIEM evaluamos la calidad de los materiales usados en elementos mecánicos y estructuras con un "
     "equipo especializado en metalurgia, mecánica, química y estructuras, apoyado en tecnología de laboratorio para "
     "el análisis de materiales metálicos y poliméricos. 🧪⚙️\n\n"
     "Una mirada multidisciplinaria para entender el material y anticipar su comportamiento. ✅"),
-  "cta": "📩 ¿Tienes dudas sobre la confiabilidad de un material? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Materiales #Metalurgia #Confiabilidad #Ingeniería"},
+  "cta": "📩 ¿Tienes dudas sobre la calidad de un material? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Materiales #Metalurgia #Confiabilidad #Ingeniería"},
 
  "KB-IPR-016": {  # IPR · Tecnología de la construcción — COPY EDITADO POR KIKE (verbatim)
   "hook": "🏢 Innovar en la construcción exige una pregunta previa: ¿este material o sistema cumple realmente el estándar?",
@@ -158,7 +158,7 @@ COPY = {
   "cta": "¿Necesitas ensayar suelos granulares gruesos? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Geotecnia #Minería #Ensayos #PresasDeTierra"},
 
  "KB-IOM-004": {  # IOM · Modelamiento digital / BIM (minería)
-  "hook": "🏗️ Coordinar un proyecto minero sobre información incompleta multiplica errores, retrabajos y sorpresas en obra.",
+  "hook": "🏗️ Coordinar un proyecto minero con información incompleta multiplica errores, retrabajos y sorpresas en obra.",
   "body": ("Cuando cada disciplina trabaja con datos distintos del estado real, los problemas aparecen recién en "
     "terreno, cuando corregir cuesta más. 🧭\n\n"
     "En #IDIEM abordamos la ingeniería de apoyo para proyectos mineros con un equipo multidisciplinario: ingeniería "
@@ -189,9 +189,8 @@ COPY = {
   "hook": "🌉 Un puente conecta territorios y sostiene la vida de las comunidades: saber cuánta carga resiste no es un detalle.",
   "body": ("Con el paso del tiempo y el aumento del tránsito, un puente puede quedar exigido más allá de lo previsto. "
     "Evaluar su capacidad real es clave para decidir con seguridad. 🔎\n\n"
-    "En #IDIEM evaluamos la capacidad de carga de puentes con diagnóstico, ensayos, modelación por elementos finitos, "
-    "levantamiento topográfico del trazado y análisis de alternativas de diseño, como en el estudio estructural del "
-    "Puente Cortés. 📐📊\n\n"
+    "En #IDIEM evaluamos la capacidad de carga de puentes con diagnóstico, pruebas, ensayos, modelación por elementos "
+    "finitos, levantamiento topográfico del trazado y análisis de alternativas de diseño. 📐📊\n\n"
     "Evidencia técnica para resguardar la seguridad y la conectividad del territorio. ✅"),
   "cta": "¿Necesitas evaluar la capacidad de carga de un puente? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Puentes #Infraestructura #Ingeniería #Estructuras"},
 
@@ -223,7 +222,7 @@ GRAPHIC = {
  1:  {"svc": "Control de productividad",        "msg": "Operar con<br>datos.",              "base": "Soluciones tecnológicas · <b>operación minera</b>"},
  2:  {"svc": "Día Mundial de la Arquitectura",  "msg": "Diseñar<br>sostenible.",            "base": "Huella C e hídrica · <b>ciclo de vida</b>"},
  3:  {"svc": "",                                "msg": "Feliz día del<br>Geólogo.",         "base": "Leer la tierra · <b>construir seguro</b>"},
- 4:  {"svc": "Confiabilidad de materiales",     "msg": "Entender<br>el material.",          "base": "Metalurgia · mecánica · <b>química</b>"},
+ 4:  {"svc": "Calidad de materiales",           "msg": "Entender<br>el material.",          "base": "Metalurgia · mecánica · <b>química</b>"},
  5:  {"svc": "Tecnología de la construcción",   "msg": "Innovar con<br>respaldo.",          "base": "Ensayos · certificación · <b>edificación</b>"},
  6:  {"svc": "Triaxial grandes partículas",     "msg": "Ensayar el<br>material real.",      "base": "Suelos de gran tamaño · <b>presas de tierra</b>"},
  7:  {"svc": "Ingeniería de apoyo · BIM",       "msg": "Decidir con<br>datos reales.",      "base": "Civil · mecánica · <b>modelación BIM</b>"},

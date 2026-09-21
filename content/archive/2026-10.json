@@ -1,6 +1,6 @@
 {
   "month": "2026-10",
-  "generated_at": "2026-09-21T11:42:38.125075+00:00",
+  "generated_at": "2026-09-21T12:27:42.858560+00:00",
   "published": false,
   "count": 13,
   "dedup_index": {
@@ -344,7 +344,7 @@
         "KB-IOM-065"
       ],
       "graphic": {
-        "svc": "Confiabilidad de materiales",
+        "svc": "Calidad de materiales",
         "msg": "Entender<br>el material.",
         "baseline": "Metalurgia · mecánica · <b>química</b>"
       },
@@ -358,17 +358,17 @@
       },
       "copy": {
         "hook": "🔬 ¿Por qué un material falla antes de lo esperado?",
-        "body": "Responderlo no es cosa de una sola mirada: exige entender el material desde la metalurgia, la mecánica y la química a la vez.\n\nEn #IDIEM evaluamos la confiabilidad de los materiales usados en elementos mecánicos y estructuras con un equipo especializado en metalurgia, mecánica, química y estructuras, apoyado en tecnología de laboratorio para el análisis de materiales metálicos y poliméricos. 🧪⚙️\n\nUna mirada multidisciplinaria para entender el material y anticipar su comportamiento. ✅",
-        "cta": "📩 ¿Tienes dudas sobre la confiabilidad de un material? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Materiales #Metalurgia #Confiabilidad #Ingeniería",
-        "full": "🔬 ¿Por qué un material falla antes de lo esperado?\n\nResponderlo no es cosa de una sola mirada: exige entender el material desde la metalurgia, la mecánica y la química a la vez.\n\nEn #IDIEM evaluamos la confiabilidad de los materiales usados en elementos mecánicos y estructuras con un equipo especializado en metalurgia, mecánica, química y estructuras, apoyado en tecnología de laboratorio para el análisis de materiales metálicos y poliméricos. 🧪⚙️\n\nUna mirada multidisciplinaria para entender el material y anticipar su comportamiento. ✅\n\n📩 ¿Tienes dudas sobre la confiabilidad de un material? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Materiales #Metalurgia #Confiabilidad #Ingeniería",
-        "chars": 696
+        "body": "Responderlo no es cosa de una sola mirada: exige entender el material desde la metalurgia, la mecánica y la química a la vez.\n\nEn #IDIEM evaluamos la calidad de los materiales usados en elementos mecánicos y estructuras con un equipo especializado en metalurgia, mecánica, química y estructuras, apoyado en tecnología de laboratorio para el análisis de materiales metálicos y poliméricos. 🧪⚙️\n\nUna mirada multidisciplinaria para entender el material y anticipar su comportamiento. ✅",
+        "cta": "📩 ¿Tienes dudas sobre la calidad de un material? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Materiales #Metalurgia #Confiabilidad #Ingeniería",
+        "full": "🔬 ¿Por qué un material falla antes de lo esperado?\n\nResponderlo no es cosa de una sola mirada: exige entender el material desde la metalurgia, la mecánica y la química a la vez.\n\nEn #IDIEM evaluamos la calidad de los materiales usados en elementos mecánicos y estructuras con un equipo especializado en metalurgia, mecánica, química y estructuras, apoyado en tecnología de laboratorio para el análisis de materiales metálicos y poliméricos. 🧪⚙️\n\nUna mirada multidisciplinaria para entender el material y anticipar su comportamiento. ✅\n\n📩 ¿Tienes dudas sobre la calidad de un material? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Materiales #Metalurgia #Confiabilidad #Ingeniería",
+        "chars": 684
       },
       "posted": null,
       "editorial_fingerprint": {
         "content_id": "PLAN-KB-IOM-065-04",
-        "service": "Confiabilidad de materiales",
+        "service": "Calidad de materiales",
         "subtheme": "Confiabilidad de materiales",
-        "primary_claim": "Confiabilidad de materiales · Entender el material.",
+        "primary_claim": "Calidad de materiales · Entender el material.",
         "pain_point": "¿Por qué un material falla antes de lo esperado?",
         "pain_category": "risk_of_failure",
         "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
@@ -523,11 +523,11 @@
         "motivo": ""
       },
       "copy": {
-        "hook": "🏗️ Coordinar un proyecto minero sobre información incompleta multiplica errores, retrabajos y sorpresas en obra.",
+        "hook": "🏗️ Coordinar un proyecto minero con información incompleta multiplica errores, retrabajos y sorpresas en obra.",
         "body": "Cuando cada disciplina trabaja con datos distintos del estado real, los problemas aparecen recién en terreno, cuando corregir cuesta más. 🧭\n\nEn #IDIEM abordamos la ingeniería de apoyo para proyectos mineros con un equipo multidisciplinario: ingeniería civil, mecánica y geomensura, modelación BIM y mantenimiento industrial, partiendo por el levantamiento de las condiciones existentes en cada disciplina. 📐📊\n\nUna base digital y multidisciplinaria para decidir con información confiable. ✅",
         "cta": "📩 ¿Tu proyecto minero necesita coordinación BIM? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Minería #BIM #Ingeniería #ModelamientoDigital",
-        "full": "🏗️ Coordinar un proyecto minero sobre información incompleta multiplica errores, retrabajos y sorpresas en obra.\n\nCuando cada disciplina trabaja con datos distintos del estado real, los problemas aparecen recién en terreno, cuando corregir cuesta más. 🧭\n\nEn #IDIEM abordamos la ingeniería de apoyo para proyectos mineros con un equipo multidisciplinario: ingeniería civil, mecánica y geomensura, modelación BIM y mantenimiento industrial, partiendo por el levantamiento de las condiciones existentes en cada disciplina. 📐📊\n\nUna base digital y multidisciplinaria para decidir con información confiable. ✅\n\n📩 ¿Tu proyecto minero necesita coordinación BIM? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Minería #BIM #Ingeniería #ModelamientoDigital",
-        "chars": 749
+        "full": "🏗️ Coordinar un proyecto minero con información incompleta multiplica errores, retrabajos y sorpresas en obra.\n\nCuando cada disciplina trabaja con datos distintos del estado real, los problemas aparecen recién en terreno, cuando corregir cuesta más. 🧭\n\nEn #IDIEM abordamos la ingeniería de apoyo para proyectos mineros con un equipo multidisciplinario: ingeniería civil, mecánica y geomensura, modelación BIM y mantenimiento industrial, partiendo por el levantamiento de las condiciones existentes en cada disciplina. 📐📊\n\nUna base digital y multidisciplinaria para decidir con información confiable. ✅\n\n📩 ¿Tu proyecto minero necesita coordinación BIM? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Minería #BIM #Ingeniería #ModelamientoDigital",
+        "chars": 747
       },
       "posted": null,
       "editorial_fingerprint": {
@@ -535,7 +535,7 @@
         "service": "Ingeniería de apoyo · BIM",
         "subtheme": "Modelamiento y levantamiento digital",
         "primary_claim": "Ingeniería de apoyo · BIM · Decidir con datos reales.",
-        "pain_point": "Coordinar un proyecto minero sobre información incompleta multiplica errores, retrabajos y sorpresas en obra.",
+        "pain_point": "Coordinar un proyecto minero con información incompleta multiplica errores, retrabajos y sorpresas en obra.",
         "pain_category": "decision_uncertainty",
         "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
         "hook_type": "case",
@@ -684,10 +684,10 @@
       },
       "copy": {
         "hook": "🌉 Un puente conecta territorios y sostiene la vida de las comunidades: saber cuánta carga resiste no es un detalle.",
-        "body": "Con el paso del tiempo y el aumento del tránsito, un puente puede quedar exigido más allá de lo previsto. Evaluar su capacidad real es clave para decidir con seguridad. 🔎\n\nEn #IDIEM evaluamos la capacidad de carga de puentes con diagnóstico, ensayos, modelación por elementos finitos, levantamiento topográfico del trazado y análisis de alternativas de diseño, como en el estudio estructural del Puente Cortés. 📐📊\n\nEvidencia técnica para resguardar la seguridad y la conectividad del territorio. ✅",
+        "body": "Con el paso del tiempo y el aumento del tránsito, un puente puede quedar exigido más allá de lo previsto. Evaluar su capacidad real es clave para decidir con seguridad. 🔎\n\nEn #IDIEM evaluamos la capacidad de carga de puentes con diagnóstico, pruebas, ensayos, modelación por elementos finitos, levantamiento topográfico del trazado y análisis de alternativas de diseño. 📐📊\n\nEvidencia técnica para resguardar la seguridad y la conectividad del territorio. ✅",
         "cta": "¿Necesitas evaluar la capacidad de carga de un puente? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Puentes #Infraestructura #Ingeniería #Estructuras",
-        "full": "🌉 Un puente conecta territorios y sostiene la vida de las comunidades: saber cuánta carga resiste no es un detalle.\n\nCon el paso del tiempo y el aumento del tránsito, un puente puede quedar exigido más allá de lo previsto. Evaluar su capacidad real es clave para decidir con seguridad. 🔎\n\nEn #IDIEM evaluamos la capacidad de carga de puentes con diagnóstico, ensayos, modelación por elementos finitos, levantamiento topográfico del trazado y análisis de alternativas de diseño, como en el estudio estructural del Puente Cortés. 📐📊\n\nEvidencia técnica para resguardar la seguridad y la conectividad del territorio. ✅\n\n¿Necesitas evaluar la capacidad de carga de un puente? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Puentes #Infraestructura #Ingeniería #Estructuras",
-        "chars": 799
+        "full": "🌉 Un puente conecta territorios y sostiene la vida de las comunidades: saber cuánta carga resiste no es un detalle.\n\nCon el paso del tiempo y el aumento del tránsito, un puente puede quedar exigido más allá de lo previsto. Evaluar su capacidad real es clave para decidir con seguridad. 🔎\n\nEn #IDIEM evaluamos la capacidad de carga de puentes con diagnóstico, pruebas, ensayos, modelación por elementos finitos, levantamiento topográfico del trazado y análisis de alternativas de diseño. 📐📊\n\nEvidencia técnica para resguardar la seguridad y la conectividad del territorio. ✅\n\n¿Necesitas evaluar la capacidad de carga de un puente? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Puentes #Infraestructura #Ingeniería #Estructuras",
+        "chars": 758
       },
       "posted": null,
       "editorial_fingerprint": {

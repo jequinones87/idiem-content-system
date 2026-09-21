@@ -105,6 +105,7 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Reescrito como saludo del Día del Geólogo (17-oct) + geotecnia, sin detallar otros servicios."},
     ],
     4: [
+        {"date": "2026-09-21", "summary": "Título de la gráfica y copy: \"confiabilidad de materiales\" pasa a \"calidad de materiales\" (pedido de MKT). Se mantiene el hashtag #Confiabilidad."},
         {"date": "2026-09-04", "summary": "Reencuadrado a alto nivel (confiabilidad de materiales) para no repetir el ángulo de septiembre."},
     ],
     5: [
@@ -116,6 +117,7 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Convertido en carrusel: Triaxial · suelos de partículas de gran tamaño."},
     ],
     7: [
+        {"date": "2026-09-21", "summary": "Gancho ajustado: \"…proyecto minero con información incompleta…\" (antes \"sobre\"), pedido de MKT."},
         {"date": "2026-09-04", "summary": "Publicado: coordinación BIM en operación minera."},
     ],
     8: [
@@ -126,6 +128,7 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Convertido en carrusel: cumplimiento normativo."},
     ],
     10: [
+        {"date": "2026-09-21", "summary": "Copy: se agrega \"pruebas\" a los métodos y se retira la mención al estudio del Puente Cortés (pedido de MKT); queda más general."},
         {"date": "2026-09-04", "summary": "Publicado: peritaje de puentes (caso Puente Cortés)."},
     ],
     11: [
@@ -133,6 +136,7 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Publicado a alto nivel: tecnología e I+D del hormigón (evita repetir septiembre)."},
     ],
     12: [
+        {"date": "2026-09-21", "summary": "Carrusel: se suma una lámina de \"Instrumentación y monitoreo\" (seguimiento con sensores del comportamiento tras la intervención; traza a monitoreo de salud estructural IOM)."},
         {"date": "2026-09-04", "summary": "Foto cambiada a generica_estructura_acero (versión comprimida del Drive)."},
         {"date": "2026-09-04", "summary": "Convertido en carrusel: revisión integral de rehabilitación (4 etapas)."},
     ],

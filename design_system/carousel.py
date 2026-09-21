@@ -81,6 +81,8 @@ SLIDES = {
              "body": "Nuestros laboratorios respaldan el diagnóstico con ensayos."},
             {"icon": "location", "title": 'Diagnóstico e <span class="c2rb">ingeniería</span>',
              "body": "Evaluamos alternativas y desarrollamos la ingeniería de rehabilitación."},
+            {"icon": "clock", "title": 'Instrumentación y <span class="c2rb">monitoreo</span>',
+             "body": "Seguimos el comportamiento de la estructura con sensores para verificar la intervención en el tiempo."},
         ],
         "cierre": {"bajada": "Un proceso ordenado para intervenir con respaldo técnico de principio a fin."},
     },
