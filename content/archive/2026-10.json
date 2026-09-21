@@ -1,6 +1,6 @@
 {
   "month": "2026-10",
-  "generated_at": "2026-09-21T12:41:20.950647+00:00",
+  "generated_at": "2026-09-21T13:07:52.017365+00:00",
   "published": false,
   "count": 13,
   "dedup_index": {
@@ -149,11 +149,11 @@
       "continuity": 2
     },
     "visual_themes": {
-      "infrastructure": 4,
-      "field": 1,
+      "field": 2,
       "laboratory": 3,
       "equipment": 2,
-      "graphic": 1
+      "graphic": 1,
+      "infrastructure": 3
     }
   },
   "posts": [
@@ -180,9 +180,9 @@
       },
       "photo": {
         "source": "libreria_idiem",
-        "photo_id": "estructuras_peritajes_domo_mineria_2",
-        "fuente": "https://drive.google.com/file/d/16uGyWvnrpDdzaDOFCtjllg2MaaeK_XSd/view",
-        "detalle": "domo minero · El Teniente",
+        "photo_id": "acuerdo_mineros",
+        "fuente": "https://drive.google.com/file/d/1wetOIpMB7RZ9Tazv8c4ZsK89xm5zuwxP/view",
+        "detalle": "apretón de manos en faena minera · acuerdo",
         "reemplaza_a": "",
         "motivo": ""
       },
@@ -214,8 +214,8 @@
           "KB-IOM-042"
         ],
         "knowledge_id": "KB-IOM-038",
-        "photo_id": "estructuras_peritajes_domo_mineria_2",
-        "visual_theme": "infrastructure"
+        "photo_id": "acuerdo_mineros",
+        "visual_theme": "field"
       }
     },
     {

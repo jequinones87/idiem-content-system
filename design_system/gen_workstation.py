@@ -40,8 +40,8 @@ BUILD_DEFAULT = Path(tempfile.gettempdir()) / "idiem_ws_build"
 # 'orig' vacío = no es sustitución (es la foto elegida directamente).
 def _drive(fid): return f"https://drive.google.com/file/d/{fid}/view"
 PHOTO_SUB = {
-    1:  {"photo_id": "estructuras_peritajes_domo_mineria_2", "fuente": _drive("16uGyWvnrpDdzaDOFCtjllg2MaaeK_XSd"),
-         "detalle": "domo minero · El Teniente"},
+    1:  {"photo_id": "acuerdo_mineros", "fuente": _drive("1wetOIpMB7RZ9Tazv8c4ZsK89xm5zuwxP"),
+         "detalle": "apretón de manos en faena minera · acuerdo"},
     2:  {"photo_id": "arquitectos_generico_2", "fuente": _drive("18MjBtsVGh4ul8taRUb-Lg2A_UHuoFZ8-"),
          "detalle": "arquitectos sobre planos · maqueta eólica y cascos"},
     3:  {"photo_id": "sondaje_relave", "fuente": _drive("1DEFFoyprsBz9EY4Sbs8wXn0vu3GnFoKK"),
@@ -91,7 +91,8 @@ GH_SEAL = ("data:image/png;base64," +
 # Y republicados (no pendientes). Se va sumando en cada ronda del equipo.
 APPLIED_LOG = {
     1: [
-        {"date": "2026-09-21", "summary": "Post cambiado por completo (pedido de MKT): de \"control de productividad\" (KB-IOM-019) a \"Ingeniería contractual\" minera (KB-IOM-038); apoyo técnico en diagnóstico contractual, programación de obra y reclamos. Traza a KB-IOM-038/039/040/041/042. Foto pendiente de definir (se mantiene la de faena minera por ahora)."},
+        {"date": "2026-09-21", "summary": "Foto aplicada: acuerdo_mineros (apretón de manos en faena minera) — refuerza el ángulo de acuerdos/ingeniería contractual."},
+        {"date": "2026-09-21", "summary": "Post cambiado por completo (pedido de MKT): de \"control de productividad\" (KB-IOM-019) a \"Ingeniería contractual\" minera (KB-IOM-038); apoyo técnico en diagnóstico contractual, programación de obra y reclamos. Traza a KB-IOM-038/039/040/041/042."},
         {"date": "2026-09-04", "summary": "Publicado: control de productividad en operación minera (subtema fresco, no usado en septiembre)."},
     ],
     2: [
