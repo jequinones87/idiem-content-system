@@ -262,3 +262,15 @@ Meses archivados: **2026-09** (13 piezas, publicado). Octubre 2026 en preparaci�
     CTA `contact` ×9/12, arquetipo `problem_solution` ×5, hook `insight` ×5, visual `infrastructure`
     ×5, solo 4 arquetipos distintos. Aprendizaje: **variar el `cta_type` (no solo la frase) y rotar
     arquetipos/hooks** en la próxima grilla. Reporte fijo en `content/archive/2026-10.editorial_qa.md`.
+- **2026-09-21** — **Ronda MKT (Kike) sobre el tablero de octubre — posts seleccionados.**
+  - **#9 Cumplimiento normativo (carrusel, lámina 02):** el cuerpo pasa a **"Verificamos el
+    cumplimiento frente a marcos normativos aplicables."** (antes "marcos estructurales") y el título
+    de la lámina se ajusta a **"Marcos normativos"** para no dejar título estructural con cuerpo
+    normativo. Sigue el foco de detectar brechas, sin insinuar que saltarse la norma sea viable.
+  - **#13 Acústica (carrusel):** portada con **nuevo título** —"Conoce las nuevas exigencias
+    acústicas para la construcción y locales de ocio nocturno."— (se baja el cuerpo del titular con
+    `title_size` porque el texto es largo). **Foto de fondo DIVIDIDA en TODAS las láminas** (cierre
+    incluido, con velo reforzado para legibilidad): mitad izquierda `generica_obra_construccion_edificio`
+    (obra), mitad derecha `ruido_acustica_discotec` (ocio nocturno). Se compone un `p13.jpg` 1080²
+    con las dos fotos de librería y se retira la foto por-lámina anterior (`p13_s3`). Regla de diseño
+    reutilizable: `CIERRE_PHOTO` habilita foto en el cierre de un carrusel concreto sin tocar los demás.

@@ -126,6 +126,7 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Reemplaza al post de incendios; convertido en carrusel de peritaje de componentes metálicos."},
     ],
     9: [
+        {"date": "2026-09-21", "summary": "Lámina 02 (slide 2): el cuerpo pasa a \"Verificamos el cumplimiento frente a marcos normativos aplicables.\" (antes \"marcos estructurales\") y el título se ajusta a \"Marcos normativos\" para mantener coherencia (pedido de MKT)."},
         {"date": "2026-09-07", "summary": "Gancho reformulado: no dar a entender que se puede incumplir la norma (foco en detectar brechas)."},
         {"date": "2026-09-04", "summary": "Convertido en carrusel: cumplimiento normativo."},
     ],
@@ -143,6 +144,7 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Convertido en carrusel: revisión integral de rehabilitación (4 etapas)."},
     ],
     13: [
+        {"date": "2026-09-21", "summary": "Portada: nuevo título \"Conoce las nuevas exigencias acústicas para la construcción y locales de ocio nocturno.\" (pedido de MKT). Foto de fondo DIVIDIDA en todas las láminas (cierre incluido): mitad izquierda generica_obra_construccion_edificio (obra) · mitad derecha ruido_acustica_discotec (ocio nocturno)."},
         {"date": "2026-09-21", "summary": "Copy: gancho reformulado (\"la gestión de ruido… cuenta con herramientas más claras\"). Lámina 04 (Obras) pasa a foto propia generica_obra_construccion_edificio; portada y láminas 01/02 mantienen la escena de ocio nocturno."},
         {"date": "2026-09-11", "summary": "Foto aplicada: ruido_acustica_discotec (local de ocio nocturno) como fondo de portada e intermedias; la lámina de cierre mantiene el campo de marca."},
         {"date": "2026-09-11", "summary": "Post adicional creado como carrusel (hito de acústica / instrucción SMA). Copy recortado a los lineamientos (812 car.) y cifra de cobertura dejada en VERIFY."},
@@ -206,16 +208,17 @@ SPECIAL = [
                   "de Acústica) — protocolo de gestión de ruido en 6 pasos. "
                   "⚠ VERIFY (MKT): la cobertura «cerca de 150 obras» y toda cifra/plazo se dejaron FUERA del copy "
                   "hasta validación; agregarlas sólo si MKT las confirma."),
-        "photo": {"source": "libreria_idiem", "photo_id": "ruido_acustica_discotec",
-                  "fuente": _drive("10JPdH3YNhvOQnleu3LiMmAXV9RqDbNSP"),
-                  "detalle": "local de ocio nocturno · pista y luces"},
-        "foto_html": ('Portada + láminas 01/02 · Librería <code>ruido_acustica_discotec</code> (local de ocio '
-                      'nocturno · pista y luces) · <a href="https://drive.google.com/file/d/10JPdH3YNhvOQnleu3LiMmAXV9RqDbNSP/view" '
-                      'target="_blank" rel="noopener">ver en Drive</a>'
-                      '<br>Lámina 04 (Obras) · Librería <code>generica_obra_construccion_edificio</code> (obra en altura · grúa torre) · '
+        "photo": {"source": "libreria_idiem",
+                  "photo_id": "split · generica_obra_construccion_edificio + ruido_acustica_discotec",
+                  "fuente": _drive("19RbuqrQknv1QWgQYetXtEgB1r08TCCr1"),
+                  "detalle": "foto dividida: izq. obra en construcción · der. local de ocio nocturno"},
+        "foto_html": ('Todas las láminas · <b>foto dividida</b>. Mitad izquierda: Librería '
+                      '<code>generica_obra_construccion_edificio</code> (obra en altura · grúa torre) · '
                       '<a href="https://drive.google.com/file/d/19RbuqrQknv1QWgQYetXtEgB1r08TCCr1/view" '
                       'target="_blank" rel="noopener">ver en Drive</a>'
-                      '<br><span class="muprompt">lámina de cierre: campo de marca (sin foto)</span>'),
+                      '<br>Mitad derecha: Librería <code>ruido_acustica_discotec</code> (local de ocio '
+                      'nocturno · pista y luces) · <a href="https://drive.google.com/file/d/10JPdH3YNhvOQnleu3LiMmAXV9RqDbNSP/view" '
+                      'target="_blank" rel="noopener">ver en Drive</a>'),
         "copy": {
             "hook": "🔊 La gestión de ruido de las obras y la vida nocturna ahora cuenta con herramientas más claras.",
             "body": (

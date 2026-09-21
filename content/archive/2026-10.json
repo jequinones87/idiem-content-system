@@ -1,6 +1,6 @@
 {
   "month": "2026-10",
-  "generated_at": "2026-09-21T13:07:52.017365+00:00",
+  "generated_at": "2026-09-21T13:52:58.241482+00:00",
   "published": false,
   "count": 13,
   "dedup_index": {
@@ -153,7 +153,7 @@
       "laboratory": 3,
       "equipment": 2,
       "graphic": 1,
-      "infrastructure": 3
+      "infrastructure": 4
     }
   },
   "posts": [
@@ -847,14 +847,14 @@
       "evidence_ids": [],
       "graphic": {
         "svc": "ACÚSTICA · CONTROL DE RUIDO",
-        "title": "Del dato técnico a la norma.",
+        "title": "Conoce las nuevas exigencias acústicas para la construcción y locales de ocio nocturno.",
         "msg": ""
       },
       "photo": {
         "source": "libreria_idiem",
-        "photo_id": "ruido_acustica_discotec",
-        "fuente": "https://drive.google.com/file/d/10JPdH3YNhvOQnleu3LiMmAXV9RqDbNSP/view",
-        "detalle": "local de ocio nocturno · pista y luces"
+        "photo_id": "split · generica_obra_construccion_edificio + ruido_acustica_discotec",
+        "fuente": "https://drive.google.com/file/d/19RbuqrQknv1QWgQYetXtEgB1r08TCCr1/view",
+        "detalle": "foto dividida: izq. obra en construcción · der. local de ocio nocturno"
       },
       "copy": {
         "hook": "🔊 La gestión de ruido de las obras y la vida nocturna ahora cuenta con herramientas más claras.",
@@ -868,7 +868,7 @@
         "content_id": "PLAN-ACUSTICA-SMA-13",
         "service": "ACÚSTICA · CONTROL DE RUIDO",
         "subtheme": "Acústica · control de ruido (hito SMA)",
-        "primary_claim": "ACÚSTICA · CONTROL DE RUIDO · Del dato técnico a la norma.",
+        "primary_claim": "ACÚSTICA · CONTROL DE RUIDO · Conoce las nuevas exigencias acústicas para la construcción y locales de ocio nocturno.",
         "pain_point": "La gestión de ruido de las obras y la vida nocturna ahora cuenta con herramientas más claras.",
         "pain_category": "continuity",
         "angle": "hito institucional — evidencia técnica de IDIEM que sustenta la nueva instrucción de la SMA (no traza a knowledge_id de 2A.2; fuentes oficiales aportadas por MKT)",
@@ -878,8 +878,8 @@
         "format": "CARRUSEL",
         "evidence_ids": [],
         "knowledge_id": null,
-        "photo_id": "ruido_acustica_discotec",
-        "visual_theme": null
+        "photo_id": "split · generica_obra_construccion_edificio + ruido_acustica_discotec",
+        "visual_theme": "infrastructure"
       }
     }
   ]
