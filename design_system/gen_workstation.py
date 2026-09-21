@@ -91,6 +91,7 @@ GH_SEAL = ("data:image/png;base64," +
 # Y republicados (no pendientes). Se va sumando en cada ronda del equipo.
 APPLIED_LOG = {
     1: [
+        {"date": "2026-09-21", "summary": "Post cambiado por completo (pedido de MKT): de \"control de productividad\" (KB-IOM-019) a \"Ingeniería contractual\" minera (KB-IOM-038); apoyo técnico en diagnóstico contractual, programación de obra y reclamos. Traza a KB-IOM-038/039/040/041/042. Foto pendiente de definir (se mantiene la de faena minera por ahora)."},
         {"date": "2026-09-04", "summary": "Publicado: control de productividad en operación minera (subtema fresco, no usado en septiembre)."},
     ],
     2: [

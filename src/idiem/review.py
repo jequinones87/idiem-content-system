@@ -137,6 +137,7 @@ def compose_month(
     drafter: DraftingAdapter | None = None,
     recent_history: list[str] | None = None,
     weights: dict | None = None,
+    pick_order: list[str] | None = None,
 ) -> MonthReview:
     """Compose a month: plan -> per-slot anchored brief + draft + graphic brief.
 
@@ -148,7 +149,7 @@ def compose_month(
     planner = MonthlyPlanner(kb)
     plan = planner.build_plan(
         month=month, target_count=target_count, recent_history=recent_history,
-        weights=weights,
+        weights=weights, pick_order=pick_order,
     )
 
     # Month-level de-dup: a 2A.3 enrichment record (e.g. the ISO/HSEC line)

@@ -1,14 +1,14 @@
 {
   "month": "2026-10",
-  "generated_at": "2026-09-21T12:27:42.858560+00:00",
+  "generated_at": "2026-09-21T12:41:20.950647+00:00",
   "published": false,
   "count": 13,
   "dedup_index": {
     "knowledge_ids": [
       "KB-IOM-004",
       "KB-IOM-017",
-      "KB-IOM-019",
       "KB-IOM-030",
+      "KB-IOM-038",
       "KB-IOM-063",
       "KB-IOM-065",
       "KB-IPR-002",
@@ -21,9 +21,9 @@
     "subthemes": [
       "Acústica · control de ruido (hito SMA)",
       "Confiabilidad de materiales",
-      "Control de productividad",
       "Cumplimiento normativo",
       "Geotecnia y rocas",
+      "Ingeniería contractual",
       "Modelamiento y levantamiento digital",
       "Peritajes y evaluación estructural",
       "Sustentabilidad y arquitectura",
@@ -40,7 +40,7 @@
       {
         "seq": 1,
         "cell": "IOM",
-        "subtheme": "Control de productividad",
+        "subtheme": "Ingeniería contractual",
         "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional."
       },
       {
@@ -119,8 +119,8 @@
   },
   "fingerprint_index": {
     "archetypes": {
-      "problem_solution": 5,
-      "method_or_evidence": 3,
+      "method_or_evidence": 4,
+      "problem_solution": 4,
       "technical_insight": 2,
       "checklist": 2,
       "institutional_or_occasion": 1
@@ -138,14 +138,15 @@
       "case": 1
     },
     "pain_categories": {
-      "continuity": 3,
+      "delays": 1,
       "quality_assurance": 2,
       "other": 1,
       "risk_of_failure": 2,
       "compliance_gap": 1,
       "safety": 2,
       "decision_uncertainty": 1,
-      "cost_overrun": 1
+      "cost_overrun": 1,
+      "continuity": 2
     },
     "visual_themes": {
       "infrastructure": 4,
@@ -158,25 +159,24 @@
   "posts": [
     {
       "seq": 1,
-      "content_id": "PLAN-KB-IOM-019-01",
+      "content_id": "PLAN-KB-IOM-038-01",
       "cell": "INFRA OPERACIÓN MINERA",
       "cell_short": "IOM",
-      "subtheme": "Control de productividad",
+      "subtheme": "Ingeniería contractual",
       "editorial_angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
-      "format": "CAROUSEL",
-      "knowledge_id": "KB-IOM-019",
+      "format": "STATIC",
+      "knowledge_id": "KB-IOM-038",
       "evidence_ids": [
-        "KB-IOM-019",
-        "KB-IOM-006",
-        "KB-IOM-007",
-        "KB-IOM-008",
-        "KB-IOM-009",
-        "KB-IOM-010"
+        "KB-IOM-038",
+        "KB-IOM-039",
+        "KB-IOM-040",
+        "KB-IOM-041",
+        "KB-IOM-042"
       ],
       "graphic": {
-        "svc": "Control de productividad",
-        "msg": "Operar con<br>datos.",
-        "baseline": "Soluciones tecnológicas · <b>operación minera</b>"
+        "svc": "Ingeniería contractual",
+        "msg": "Resolver con<br>respaldo.",
+        "baseline": "Diagnóstico · programación · <b>reclamos</b>"
       },
       "photo": {
         "source": "libreria_idiem",
@@ -187,34 +187,33 @@
         "motivo": ""
       },
       "copy": {
-        "hook": "⛏️ En minería, cada hora de detención no planificada se paga cara.",
-        "body": "La productividad de una faena no se trata solo de producir más, sino de operar con datos y control sobre lo que ocurre en terreno. Sin información oportuna, las decisiones llegan tarde. 📊\n\nEn #IDIEM, dentro de nuestros servicios a la operación minera, desarrollamos soluciones tecnológicas para el control de productividad, orientadas a que la operación cuente con mejor información para decidir. ⚙️\n\nTecnología al servicio de una operación más eficiente y con menos imprevistos. ✅",
-        "cta": "📩 ¿Quieres mejorar la productividad de tu operación? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Minería #Productividad #Tecnología #OperaciónMinera",
-        "full": "⛏️ En minería, cada hora de detención no planificada se paga cara.\n\nLa productividad de una faena no se trata solo de producir más, sino de operar con datos y control sobre lo que ocurre en terreno. Sin información oportuna, las decisiones llegan tarde. 📊\n\nEn #IDIEM, dentro de nuestros servicios a la operación minera, desarrollamos soluciones tecnológicas para el control de productividad, orientadas a que la operación cuente con mejor información para decidir. ⚙️\n\nTecnología al servicio de una operación más eficiente y con menos imprevistos. ✅\n\n📩 ¿Quieres mejorar la productividad de tu operación? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Minería #Productividad #Tecnología #OperaciónMinera",
-        "chars": 705
+        "hook": "📑 En un proyecto minero, un conflicto contractual mal manejado puede costar tanto como una falla técnica.",
+        "body": "Reclamos, atrasos y diferencias por la programación de la obra escalan cuando faltan antecedentes técnicos sólidos para respaldarlos. ⚖️\n\nEn #IDIEM entregamos apoyo técnico independiente en materia contractual para obras mineras:\n* Diagnóstico contractual y análisis de la programación de la obra.\n* Prefactibilidad de un reclamo y apoyo técnico para lograr acuerdos.\n* Análisis ante el término anticipado de un contrato.\n\nEvidencia técnica para resolver diferencias con respaldo. ✅",
+        "cta": "📩 ¿Enfrentas una diferencia contractual en tu obra? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Minería #IngenieríaContractual #Obras #GestiónDeProyectos",
+        "full": "📑 En un proyecto minero, un conflicto contractual mal manejado puede costar tanto como una falla técnica.\n\nReclamos, atrasos y diferencias por la programación de la obra escalan cuando faltan antecedentes técnicos sólidos para respaldarlos. ⚖️\n\nEn #IDIEM entregamos apoyo técnico independiente en materia contractual para obras mineras:\n* Diagnóstico contractual y análisis de la programación de la obra.\n* Prefactibilidad de un reclamo y apoyo técnico para lograr acuerdos.\n* Análisis ante el término anticipado de un contrato.\n\nEvidencia técnica para resolver diferencias con respaldo. ✅\n\n📩 ¿Enfrentas una diferencia contractual en tu obra? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Minería #IngenieríaContractual #Obras #GestiónDeProyectos",
+        "chars": 750
       },
       "posted": null,
       "editorial_fingerprint": {
-        "content_id": "PLAN-KB-IOM-019-01",
-        "service": "Control de productividad",
-        "subtheme": "Control de productividad",
-        "primary_claim": "Control de productividad · Operar con datos.",
-        "pain_point": "En minería, cada hora de detención no planificada se paga cara.",
-        "pain_category": "continuity",
+        "content_id": "PLAN-KB-IOM-038-01",
+        "service": "Ingeniería contractual",
+        "subtheme": "Ingeniería contractual",
+        "primary_claim": "Ingeniería contractual · Resolver con respaldo.",
+        "pain_point": "En un proyecto minero, un conflicto contractual mal manejado puede costar tanto como una falla técnica.",
+        "pain_category": "delays",
         "angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
         "hook_type": "risk",
-        "editorial_archetype": "problem_solution",
+        "editorial_archetype": "method_or_evidence",
         "cta_type": "contact",
-        "format": "CAROUSEL",
+        "format": "STATIC",
         "evidence_ids": [
-          "KB-IOM-019",
-          "KB-IOM-006",
-          "KB-IOM-007",
-          "KB-IOM-008",
-          "KB-IOM-009",
-          "KB-IOM-010"
+          "KB-IOM-038",
+          "KB-IOM-039",
+          "KB-IOM-040",
+          "KB-IOM-041",
+          "KB-IOM-042"
         ],
-        "knowledge_id": "KB-IOM-019",
+        "knowledge_id": "KB-IOM-038",
         "photo_id": "estructuras_peritajes_domo_mineria_2",
         "visual_theme": "infrastructure"
       }
@@ -717,7 +716,7 @@
       "cell_short": "IOM",
       "subtheme": "Tecnología del hormigón",
       "editorial_angle": "Operación minera y activos que no pueden detenerse; refuerza el concepto de continuidad operacional.",
-      "format": "STATIC",
+      "format": "CAROUSEL",
       "knowledge_id": "KB-IOM-017",
       "evidence_ids": [
         "KB-IOM-017",
@@ -759,7 +758,7 @@
         "hook_type": "insight",
         "editorial_archetype": "problem_solution",
         "cta_type": "contact",
-        "format": "STATIC",
+        "format": "CAROUSEL",
         "evidence_ids": [
           "KB-IOM-017",
           "KB-IOM-006",

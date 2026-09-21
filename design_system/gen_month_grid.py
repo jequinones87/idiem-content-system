@@ -47,9 +47,14 @@ PREV_PUBLISHED = [
 # Las 12 piezas elegidas para octubre (subtemas frescos + efemérides: 5-oct
 # Arquitectura, 17-oct Día del Geólogo). Determinista: se restringe cada célula a
 # estas piezas y el planner arma el plan; cada pieza traza a su 2A.2.
+# El orden POR CÉLULA fija el seq de cada pieza (compose_month recibe pick_order):
+# IOM -> seq 1,4,7,9,11,12 · IPR -> seq 2,5,8,10 · LMD -> seq 3,6 (round-robin).
+# Ronda MKT (2026-09-21): el post 1 (antes KB-IOM-019 "Control de productividad")
+# cambia a KB-IOM-038 (Ingeniería contractual minera). El resto conserva su seq,
+# content_id, foto y aprobación intactos.
 MONTH_PICKS = [
-    "KB-IOM-019", "KB-IOM-017", "KB-IOM-065", "KB-IOM-063", "KB-IOM-004", "KB-IOM-030",
-    "KB-IPR-018", "KB-IPR-005", "KB-IPR-002", "KB-IPR-016",
+    "KB-IOM-038", "KB-IOM-065", "KB-IOM-004", "KB-IOM-063", "KB-IOM-017", "KB-IOM-030",
+    "KB-IPR-018", "KB-IPR-016", "KB-IPR-002", "KB-IPR-005",
     "KB-LMD-004", "KB-LMD-007",
 ]
 # Ronda MKT (2026-09-04): se sacaron los posts muy parecidos a septiembre (contractual
@@ -107,6 +112,17 @@ COPY = {
     "control de productividad, orientadas a que la operación cuente con mejor información para decidir. ⚙️\n\n"
     "Tecnología al servicio de una operación más eficiente y con menos imprevistos. ✅"),
   "cta": "📩 ¿Quieres mejorar la productividad de tu operación? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Minería #Productividad #Tecnología #OperaciónMinera"},
+
+ "KB-IOM-038": {  # IOM · Ingeniería contractual (minería) — reemplaza a KB-IOM-019 en el post 1
+  "hook": "📑 En un proyecto minero, un conflicto contractual mal manejado puede costar tanto como una falla técnica.",
+  "body": ("Reclamos, atrasos y diferencias por la programación de la obra escalan cuando faltan antecedentes "
+    "técnicos sólidos para respaldarlos. ⚖️\n\n"
+    "En #IDIEM entregamos apoyo técnico independiente en materia contractual para obras mineras:\n"
+    "* Diagnóstico contractual y análisis de la programación de la obra.\n"
+    "* Prefactibilidad de un reclamo y apoyo técnico para lograr acuerdos.\n"
+    "* Análisis ante el término anticipado de un contrato.\n\n"
+    "Evidencia técnica para resolver diferencias con respaldo. ✅"),
+  "cta": "📩 ¿Enfrentas una diferencia contractual en tu obra? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Minería #IngenieríaContractual #Obras #GestiónDeProyectos"},
 
  "KB-IPR-018": {  # IPR · Sustentabilidad y Arquitectura (5-oct Día de la Arquitectura)
   "hook": "🏛️ En el Día Mundial de la Arquitectura celebramos que diseñar hoy también es diseñar para un futuro sostenible.",
@@ -219,7 +235,7 @@ COPY = {
 # ---- capa visual: titular gráfico (dentro del círculo) + bajada -------------
 # Keyed por seq (orden determinista del plan de octubre v3). msg: <br> = 2 líneas.
 GRAPHIC = {
- 1:  {"svc": "Control de productividad",        "msg": "Operar con<br>datos.",              "base": "Soluciones tecnológicas · <b>operación minera</b>"},
+ 1:  {"svc": "Ingeniería contractual",          "msg": "Resolver con<br>respaldo.",         "base": "Diagnóstico · programación · <b>reclamos</b>"},
  2:  {"svc": "Día Mundial de la Arquitectura",  "msg": "Diseñar<br>sostenible.",            "base": "Huella C e hídrica · <b>ciclo de vida</b>"},
  3:  {"svc": "",                                "msg": "Feliz día del<br>Geólogo.",         "base": "Leer la tierra · <b>construir seguro</b>"},
  4:  {"svc": "Calidad de materiales",           "msg": "Entender<br>el material.",          "base": "Metalurgia · mecánica · <b>química</b>"},
@@ -378,7 +394,8 @@ def compose_current(kb):
         if it.knowledge_id not in MONTH_PICKS
     ]
     review = compose_month(kb, MONTH_ID, target_count=12,
-                           recent_history=exclude, weights=MONTH_WEIGHTS)
+                           recent_history=exclude, weights=MONTH_WEIGHTS,
+                           pick_order=MONTH_PICKS)
     # COPY está keyed por knowledge_id; se aplica al content_id que armó el plan.
     for post in review.posts:
         c = COPY.get(post.knowledge_id)
