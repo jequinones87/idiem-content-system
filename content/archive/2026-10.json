@@ -1,6 +1,6 @@
 {
   "month": "2026-10",
-  "generated_at": "2026-09-11T15:36:18.948418+00:00",
+  "generated_at": "2026-09-21T11:42:38.125075+00:00",
   "published": false,
   "count": 13,
   "dedup_index": {
@@ -148,7 +148,7 @@
       "cost_overrun": 1
     },
     "visual_themes": {
-      "infrastructure": 5,
+      "infrastructure": 4,
       "field": 1,
       "laboratory": 3,
       "equipment": 2,
@@ -239,18 +239,18 @@
       },
       "photo": {
         "source": "libreria_idiem",
-        "photo_id": "generica_construccion_edificio",
-        "fuente": "https://drive.google.com/file/d/1WWMzjdxObQWBQIIvXcqKJQKBowYpc-j4/view",
-        "detalle": "edificio en construcción",
+        "photo_id": "arquitectos_generico_2",
+        "fuente": "https://drive.google.com/file/d/18MjBtsVGh4ul8taRUb-Lg2A_UHuoFZ8-/view",
+        "detalle": "arquitectos sobre planos · maqueta eólica y cascos",
         "reemplaza_a": "",
         "motivo": ""
       },
       "copy": {
         "hook": "🏛️ En el Día Mundial de la Arquitectura celebramos que diseñar hoy también es diseñar para un futuro sostenible.",
-        "body": "La arquitectura y la infraestructura pública enfrentan un desafío: reducir su impacto ambiental sin resignar calidad ni funcionalidad. 🌱\n\nEn #IDIEM aportamos soluciones sostenibles para infraestructura, ciudades y edificaciones, con planes y estudios de cambio climático para el territorio y las comunas: cálculo de huella de carbono e hídrica, análisis energéticos, ciclo de vida de materiales y estudios de reciclaje. ♻️📊\n\nCiencia e ingeniería para una edificación más eficiente y responsable. ✅",
-        "cta": "¿Tu proyecto quiere reducir su huella ambiental? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #DíaDeLaArquitectura #Sustentabilidad #CambioClimático #Construcción",
-        "full": "🏛️ En el Día Mundial de la Arquitectura celebramos que diseñar hoy también es diseñar para un futuro sostenible.\n\nLa arquitectura y la infraestructura pública enfrentan un desafío: reducir su impacto ambiental sin resignar calidad ni funcionalidad. 🌱\n\nEn #IDIEM aportamos soluciones sostenibles para infraestructura, ciudades y edificaciones, con planes y estudios de cambio climático para el territorio y las comunas: cálculo de huella de carbono e hídrica, análisis energéticos, ciclo de vida de materiales y estudios de reciclaje. ♻️📊\n\nCiencia e ingeniería para una edificación más eficiente y responsable. ✅\n\n¿Tu proyecto quiere reducir su huella ambiental? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #DíaDeLaArquitectura #Sustentabilidad #CambioClimático #Construcción",
-        "chars": 808
+        "body": "La arquitectura y la infraestructura pública enfrentan un desafío: reducir su impacto ambiental sin someter la calidad ni la funcionalidad. 🌱\n\nEn #IDIEM aportamos soluciones sostenibles para infraestructura, ciudades y edificaciones, con planes y estudios de cambio climático para el territorio y las comunas: cálculo de huella de carbono e hídrica, análisis energéticos, ciclo de vida de materiales y estudios de reciclaje. ♻️📊\n\nCiencia e ingeniería se funden con la Arquitectura y el diseño para una edificación más eficiente y responsable. ✅",
+        "cta": "¿Tu proyecto quiere ser más sustentable? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #DíaDeLaArquitectura #Sustentabilidad #CambioClimático #Construcción",
+        "full": "🏛️ En el Día Mundial de la Arquitectura celebramos que diseñar hoy también es diseñar para un futuro sostenible.\n\nLa arquitectura y la infraestructura pública enfrentan un desafío: reducir su impacto ambiental sin someter la calidad ni la funcionalidad. 🌱\n\nEn #IDIEM aportamos soluciones sostenibles para infraestructura, ciudades y edificaciones, con planes y estudios de cambio climático para el territorio y las comunas: cálculo de huella de carbono e hídrica, análisis energéticos, ciclo de vida de materiales y estudios de reciclaje. ♻️📊\n\nCiencia e ingeniería se funden con la Arquitectura y el diseño para una edificación más eficiente y responsable. ✅\n\n¿Tu proyecto quiere ser más sustentable? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #DíaDeLaArquitectura #Sustentabilidad #CambioClimático #Construcción",
+        "chars": 847
       },
       "posted": null,
       "editorial_fingerprint": {
@@ -270,8 +270,8 @@
           "KB-IPR-017"
         ],
         "knowledge_id": "KB-IPR-018",
-        "photo_id": "generica_construccion_edificio",
-        "visual_theme": "infrastructure"
+        "photo_id": "arquitectos_generico_2",
+        "visual_theme": null
       }
     },
     {
@@ -858,11 +858,11 @@
         "detalle": "local de ocio nocturno · pista y luces"
       },
       "copy": {
-        "hook": "🔊 El ruido de las obras y de la vida nocturna ahora tiene reglas más claras.",
+        "hook": "🔊 La gestión de ruido de las obras y la vida nocturna ahora cuenta con herramientas más claras.",
         "body": "La nueva Instrucción General de la SMA —asociada al D.S. N°14/2024— fija recomendaciones para los Planes de Condiciones de Operación en faenas constructivas y locales de ocio nocturno.\n\nEn #IDIEM aportamos la base técnica que sustenta estas directrices:\n* Ocio nocturno: los contenidos técnicos del documento del Ministerio del Medio Ambiente se elaboraron en una consultoría pública adjudicada a IDIEM.\n* Obras: nuestro protocolo de gestión de ruido (FIA 2024) ordena evaluación, mitigación y monitoreo continuo en 6 pasos.\n\nInvestigación e ingeniería al servicio de mejores políticas públicas. ✅",
         "cta": "Trabajemos juntos por un manejo responsable del ruido 👉 https://idiem.cl\n\n#IDIEM #Acústica #ControlDeRuido #MedioAmbiente #Construcción",
-        "full": "🔊 El ruido de las obras y de la vida nocturna ahora tiene reglas más claras.\n\nLa nueva Instrucción General de la SMA —asociada al D.S. N°14/2024— fija recomendaciones para los Planes de Condiciones de Operación en faenas constructivas y locales de ocio nocturno.\n\nEn #IDIEM aportamos la base técnica que sustenta estas directrices:\n* Ocio nocturno: los contenidos técnicos del documento del Ministerio del Medio Ambiente se elaboraron en una consultoría pública adjudicada a IDIEM.\n* Obras: nuestro protocolo de gestión de ruido (FIA 2024) ordena evaluación, mitigación y monitoreo continuo en 6 pasos.\n\nInvestigación e ingeniería al servicio de mejores políticas públicas. ✅\n\nTrabajemos juntos por un manejo responsable del ruido 👉 https://idiem.cl\n\n#IDIEM #Acústica #ControlDeRuido #MedioAmbiente #Construcción",
-        "chars": 812
+        "full": "🔊 La gestión de ruido de las obras y la vida nocturna ahora cuenta con herramientas más claras.\n\nLa nueva Instrucción General de la SMA —asociada al D.S. N°14/2024— fija recomendaciones para los Planes de Condiciones de Operación en faenas constructivas y locales de ocio nocturno.\n\nEn #IDIEM aportamos la base técnica que sustenta estas directrices:\n* Ocio nocturno: los contenidos técnicos del documento del Ministerio del Medio Ambiente se elaboraron en una consultoría pública adjudicada a IDIEM.\n* Obras: nuestro protocolo de gestión de ruido (FIA 2024) ordena evaluación, mitigación y monitoreo continuo en 6 pasos.\n\nInvestigación e ingeniería al servicio de mejores políticas públicas. ✅\n\nTrabajemos juntos por un manejo responsable del ruido 👉 https://idiem.cl\n\n#IDIEM #Acústica #ControlDeRuido #MedioAmbiente #Construcción",
+        "chars": 831
       },
       "posted": null,
       "editorial_fingerprint": {
@@ -870,7 +870,7 @@
         "service": "ACÚSTICA · CONTROL DE RUIDO",
         "subtheme": "Acústica · control de ruido (hito SMA)",
         "primary_claim": "ACÚSTICA · CONTROL DE RUIDO · Del dato técnico a la norma.",
-        "pain_point": "El ruido de las obras y de la vida nocturna ahora tiene reglas más claras.",
+        "pain_point": "La gestión de ruido de las obras y la vida nocturna ahora cuenta con herramientas más claras.",
         "pain_category": "continuity",
         "angle": "hito institucional — evidencia técnica de IDIEM que sustenta la nueva instrucción de la SMA (no traza a knowledge_id de 2A.2; fuentes oficiales aportadas por MKT)",
         "hook_type": "insight",

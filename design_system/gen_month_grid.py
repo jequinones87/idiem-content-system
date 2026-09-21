@@ -111,12 +111,12 @@ COPY = {
  "KB-IPR-018": {  # IPR · Sustentabilidad y Arquitectura (5-oct Día de la Arquitectura)
   "hook": "🏛️ En el Día Mundial de la Arquitectura celebramos que diseñar hoy también es diseñar para un futuro sostenible.",
   "body": ("La arquitectura y la infraestructura pública enfrentan un desafío: reducir su impacto ambiental sin "
-    "resignar calidad ni funcionalidad. 🌱\n\n"
+    "someter la calidad ni la funcionalidad. 🌱\n\n"
     "En #IDIEM aportamos soluciones sostenibles para infraestructura, ciudades y edificaciones, con planes y estudios "
     "de cambio climático para el territorio y las comunas: cálculo de huella de carbono e hídrica, análisis "
     "energéticos, ciclo de vida de materiales y estudios de reciclaje. ♻️📊\n\n"
-    "Ciencia e ingeniería para una edificación más eficiente y responsable. ✅"),
-  "cta": "¿Tu proyecto quiere reducir su huella ambiental? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #DíaDeLaArquitectura #Sustentabilidad #CambioClimático #Construcción"},
+    "Ciencia e ingeniería se funden con la Arquitectura y el diseño para una edificación más eficiente y responsable. ✅"),
+  "cta": "¿Tu proyecto quiere ser más sustentable? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #DíaDeLaArquitectura #Sustentabilidad #CambioClimático #Construcción"},
 
  "KB-LMD-004": {  # LMD · Día del Geólogo — SALUDO institucional (sin detallar servicios, pedido de Kike)
   "hook": "⛏️ Hoy es el Día del Geólogo en Chile. 🇨🇱",

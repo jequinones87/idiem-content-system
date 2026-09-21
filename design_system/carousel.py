@@ -148,12 +148,22 @@ def cierre_html(sl: dict, logo: str, slogan: str) -> str:
 </div>'''
 
 
-def build_slides(seq: int, photo_uri: str, logo: str, slogan: str) -> list[str]:
-    """Portada + 3 intermedias + cierre para un post de carrusel."""
+def build_slides(seq: int, photo_uri: str, logo: str, slogan: str, photo_of=None) -> list[str]:
+    """Portada + 3 intermedias + cierre para un post de carrusel.
+
+    `photo_of(idx)` permite una foto por lámina (idx global: 0=portada,
+    1..n=intermedias). Si devuelve None para una lámina, se usa `photo_uri`.
+    El cierre siempre es campo de marca (sin foto)."""
+    def ph(idx: int):
+        if photo_of is not None:
+            u = photo_of(idx)
+            if u:
+                return u
+        return photo_uri
     data = SLIDES[seq]
-    out = [portada_html(photo_uri, data["portada"], logo, slogan)]
+    out = [portada_html(ph(0), data["portada"], logo, slogan)]
     for i, sl in enumerate(data["intermedias"], start=1):
-        out.append(intermedia_html(photo_uri, f"0{i}", sl, logo))
+        out.append(intermedia_html(ph(i), f"0{i}", sl, logo))
     out.append(cierre_html(data["cierre"], logo, slogan))
     return out
 

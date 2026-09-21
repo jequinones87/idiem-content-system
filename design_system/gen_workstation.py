@@ -42,8 +42,8 @@ def _drive(fid): return f"https://drive.google.com/file/d/{fid}/view"
 PHOTO_SUB = {
     1:  {"photo_id": "estructuras_peritajes_domo_mineria_2", "fuente": _drive("16uGyWvnrpDdzaDOFCtjllg2MaaeK_XSd"),
          "detalle": "domo minero · El Teniente"},
-    2:  {"photo_id": "generica_construccion_edificio", "fuente": _drive("1WWMzjdxObQWBQIIvXcqKJQKBowYpc-j4"),
-         "detalle": "edificio en construcción"},
+    2:  {"photo_id": "arquitectos_generico_2", "fuente": _drive("18MjBtsVGh4ul8taRUb-Lg2A_UHuoFZ8-"),
+         "detalle": "arquitectos sobre planos · maqueta eólica y cascos"},
     3:  {"photo_id": "sondaje_relave", "fuente": _drive("1DEFFoyprsBz9EY4Sbs8wXn0vu3GnFoKK"),
          "detalle": "sondaje geotécnico en faena · equipo en terreno"},
     4:  {"photo_id": "ensayo_aceros1", "fuente": _drive("1amvDzSYHH5T_3-YLqilt4YpGWpzxdhMq"),
@@ -94,6 +94,7 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Publicado: control de productividad en operación minera (subtema fresco, no usado en septiembre)."},
     ],
     2: [
+        {"date": "2026-09-21", "summary": "Foto cambiada a arquitectos_generico_2 (arquitectos sobre planos, maqueta eólica y cascos). Copy con ajustes de MKT: \"sin someter la calidad ni la funcionalidad\", cierre \"Ciencia e ingeniería se funden con la Arquitectura y el diseño…\" y CTA \"¿Tu proyecto quiere ser más sustentable?\"."},
         {"date": "2026-09-04", "summary": "Gancho ajustado al Día Mundial de la Arquitectura (5-oct) por pedido de MKT."},
         {"date": "2026-09-04", "summary": "Publicado: sustentabilidad y arquitectura en infraestructura pública."},
     ],
@@ -136,6 +137,7 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Convertido en carrusel: revisión integral de rehabilitación (4 etapas)."},
     ],
     13: [
+        {"date": "2026-09-21", "summary": "Copy: gancho reformulado (\"la gestión de ruido… cuenta con herramientas más claras\"). Lámina 04 (Obras) pasa a foto propia generica_obra_construccion_edificio; portada y láminas 01/02 mantienen la escena de ocio nocturno."},
         {"date": "2026-09-11", "summary": "Foto aplicada: ruido_acustica_discotec (local de ocio nocturno) como fondo de portada e intermedias; la lámina de cierre mantiene el campo de marca."},
         {"date": "2026-09-11", "summary": "Post adicional creado como carrusel (hito de acústica / instrucción SMA). Copy recortado a los lineamientos (812 car.) y cifra de cobertura dejada en VERIFY."},
     ],
@@ -201,11 +203,15 @@ SPECIAL = [
         "photo": {"source": "libreria_idiem", "photo_id": "ruido_acustica_discotec",
                   "fuente": _drive("10JPdH3YNhvOQnleu3LiMmAXV9RqDbNSP"),
                   "detalle": "local de ocio nocturno · pista y luces"},
-        "foto_html": ('Librería · <code>ruido_acustica_discotec</code> (local de ocio nocturno · pista y luces) · '
-                      '<a href="https://drive.google.com/file/d/10JPdH3YNhvOQnleu3LiMmAXV9RqDbNSP/view" '
-                      'target="_blank" rel="noopener">ver en Drive</a> · fondo de las láminas (portada + intermedias)'),
+        "foto_html": ('Portada + láminas 01/02 · Librería <code>ruido_acustica_discotec</code> (local de ocio '
+                      'nocturno · pista y luces) · <a href="https://drive.google.com/file/d/10JPdH3YNhvOQnleu3LiMmAXV9RqDbNSP/view" '
+                      'target="_blank" rel="noopener">ver en Drive</a>'
+                      '<br>Lámina 04 (Obras) · Librería <code>generica_obra_construccion_edificio</code> (obra en altura · grúa torre) · '
+                      '<a href="https://drive.google.com/file/d/19RbuqrQknv1QWgQYetXtEgB1r08TCCr1/view" '
+                      'target="_blank" rel="noopener">ver en Drive</a>'
+                      '<br><span class="muprompt">lámina de cierre: campo de marca (sin foto)</span>'),
         "copy": {
-            "hook": "🔊 El ruido de las obras y de la vida nocturna ahora tiene reglas más claras.",
+            "hook": "🔊 La gestión de ruido de las obras y la vida nocturna ahora cuenta con herramientas más claras.",
             "body": (
                 "La nueva Instrucción General de la SMA —asociada al D.S. N°14/2024— fija recomendaciones "
                 "para los Planes de Condiciones de Operación en faenas constructivas y locales de ocio nocturno.\n\n"
@@ -283,7 +289,9 @@ def post_slides(seq: int, post) -> list[str]:
     finish = "photo" if photo_uri else G.finish_tag(seq, ps)[0]
     if seq in CAR.CAROUSEL_POSTS:
         # Carrusel: portada + intermedias + cierre, todo con foto de fondo (Plantilla 02).
-        return CAR.build_slides(seq, photo_uri, G.LOGO, G.SLOGAN)
+        # photo_of permite una foto por lámina (pNN_sIDX.jpg); si no hay, usa la base.
+        return CAR.build_slides(seq, photo_uri, G.LOGO, G.SLOGAN,
+                                photo_of=lambda idx: resolve_photo(seq, idx))
     # Estático: pieza Servicios (círculo rojo). El lado del anillo se ajusta por
     # post en SIDE para no tapar al sujeto de la foto (default "left").
     return [G.canvas(seq, cshort, photo_uri, finish, corner_logo=None, side=SIDE.get(seq, "left"))]
@@ -316,7 +324,8 @@ def emit(month: str, build: Path) -> None:
         seq = s["seq"]
         photo_uri = resolve_photo(seq)
         if seq in CAR.CAROUSEL_POSTS:
-            slides = CAR.build_slides(seq, photo_uri, G.LOGO, G.SLOGAN)
+            slides = CAR.build_slides(seq, photo_uri, G.LOGO, G.SLOGAN,
+                                      photo_of=lambda idx: resolve_photo(seq, idx))
         else:
             slides = [fiestas_html(photo_uri, s)]
         pngs = []
