@@ -144,6 +144,7 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Convertido en carrusel: revisión integral de rehabilitación (4 etapas)."},
     ],
     13: [
+        {"date": "2026-09-21", "summary": "Foto: se aclara la mitad derecha (ruido_acustica_discotec, ocio nocturno) que se veía muy oscura —brillo/contraste/saturación levantados—; la mitad izquierda (obra) se mantiene igual (pedido de MKT)."},
         {"date": "2026-09-21", "summary": "Portada: nuevo título \"Conoce las nuevas exigencias acústicas para la construcción y locales de ocio nocturno.\" (pedido de MKT). Foto de fondo DIVIDIDA en todas las láminas (cierre incluido): mitad izquierda generica_obra_construccion_edificio (obra) · mitad derecha ruido_acustica_discotec (ocio nocturno)."},
         {"date": "2026-09-21", "summary": "Copy: gancho reformulado (\"la gestión de ruido… cuenta con herramientas más claras\"). Lámina 04 (Obras) pasa a foto propia generica_obra_construccion_edificio; portada y láminas 01/02 mantienen la escena de ocio nocturno."},
         {"date": "2026-09-11", "summary": "Foto aplicada: ruido_acustica_discotec (local de ocio nocturno) como fondo de portada e intermedias; la lámina de cierre mantiene el campo de marca."},

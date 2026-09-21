@@ -274,3 +274,7 @@ Meses archivados: **2026-09** (13 piezas, publicado). Octubre 2026 en preparaci�
     (obra), mitad derecha `ruido_acustica_discotec` (ocio nocturno). Se compone un `p13.jpg` 1080²
     con las dos fotos de librería y se retira la foto por-lámina anterior (`p13_s3`). Regla de diseño
     reutilizable: `CIERRE_PHOTO` habilita foto en el cierre de un carrusel concreto sin tocar los demás.
+  - **#13 Acústica (foto, 2ª pasada):** la mitad derecha (`ruido_acustica_discotec`) se veía muy
+    oscura bajo los velos; se **aclara** al componer `p13.jpg` (brillo ×1.42, contraste ×1.06,
+    saturación ×1.05); la mitad izquierda (obra) se mantiene sin tocar. Aprendizaje: al dividir una
+    foto, igualar la exposición de ambas mitades porque los velos del carrusel oscurecen aún más.
