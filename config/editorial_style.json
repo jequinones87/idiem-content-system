@@ -22,10 +22,13 @@
     ]
   },
   "length": {
-    "target_words_min": 110,
-    "target_words_max": 170,
+    "_comment": "FUENTE DE VERDAD EJECUTABLE de la longitud. El sistema controla en CARACTERES del copy completo (hook+body+cta, incluidos emojis, saltos y hashtags). Si aquí y docs/09_EDITORIAL_MEMORY.md discrepan, MANDA este archivo.",
+    "unit": "characters",
+    "hard_max_characters": 900,
+    "preferred_min_characters": 650,
+    "preferred_max_characters": 850,
     "paragraphs": "4-5",
-    "note": "Si la evidencia disponible no alcanza para esta longitud, escribir un post más corto y honesto; si es insuficiente, marcar EXPERT_INPUT_REQUIRED. Nunca rellenar con datos no respaldados."
+    "note": "900 es el tope duro de MKT. Rango preferido 650-850. Si la evidencia no alcanza, escribir un post más corto y honesto; si es insuficiente, marcar EXPERT_INPUT_REQUIRED. Nunca rellenar con datos no respaldados."
   },
   "emoji": {
     "usage": "presente y temático",

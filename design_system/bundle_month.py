@@ -35,14 +35,21 @@ import gen_month_grid as G  # noqa: E402  (misma fuente de datos/visual)
 MONTH_LABEL = {"2026-09": "septiembre_2026"}
 
 
-def resolve_photo(seq: int):
-    """Cualquier assets/month/pNN.(jpg|jpeg|png) -> data URI. Extensible."""
-    for ext in ("jpg", "jpeg", "png"):
-        f = G.MONTH / f"p{seq:02d}.{ext}"
+def resolve_photo(seq: int, idx: int | None = None):
+    """assets/month/pNN.(jpg|jpeg|png) -> data URI. Extensible.
+
+    Con `idx` (índice de lámina) busca primero una foto por lámina
+    pNN_sIDX.(jpg|jpeg|png) y, si no existe, cae a la foto base pNN.*."""
+    import base64
+    names = []
+    if idx is not None:
+        names += [f"p{seq:02d}_s{idx}.{ext}" for ext in ("jpg", "jpeg", "png")]
+    names += [f"p{seq:02d}.{ext}" for ext in ("jpg", "jpeg", "png")]
+    for name in names:
+        f = G.MONTH / name
         if f.exists():
             b = f.read_bytes()
-            import base64
-            mime = "png" if ext == "png" else "jpeg"
+            mime = "png" if name.endswith("png") else "jpeg"
             return f"data:image/{mime};base64,{base64.b64encode(b).decode()}"
     return None
 

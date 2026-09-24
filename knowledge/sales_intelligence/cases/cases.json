@@ -1,0 +1,51 @@
+[
+  {
+    "case_id": "EFE_PASARELA_SAN_BERNARDO",
+    "cell": "transporte",
+    "segment": "efe",
+    "client": "EFE",
+    "asset": "Pasarela San Bernardo",
+    "themes": [
+      "serviciabilidad",
+      "diagnostico",
+      "seguimiento_post_intervencion"
+    ],
+    "publication_status": "VERIFY"
+  },
+  {
+    "case_id": "EFE_6_PUENTES",
+    "cell": "transporte",
+    "segment": "efe",
+    "client": "EFE",
+    "asset": "Programa 6 Puentes",
+    "themes": [
+      "diagnostico",
+      "rehabilitacion",
+      "bases_licitacion",
+      "mantenimiento"
+    ],
+    "publication_status": "VERIFY"
+  },
+  {
+    "case_id": "OPMIN_CMP",
+    "cell": "operacion_minera",
+    "client": "CMP",
+    "themes": [
+      "integridad_estructural",
+      "monitoreo",
+      "mantenimiento"
+    ],
+    "publication_status": "VERIFY"
+  },
+  {
+    "case_id": "OPMIN_CODELCO",
+    "cell": "operacion_minera",
+    "client": "Codelco",
+    "themes": [
+      "integridad_estructural",
+      "seguimiento",
+      "deformaciones"
+    ],
+    "publication_status": "VERIFY"
+  }
+]

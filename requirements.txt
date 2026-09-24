@@ -1,2 +1,4 @@
 jsonschema>=4.20
 pytest>=8.0
+# design_system pipeline (gen_workstation/gen_month_grid → PNG/JPEG baking)
+Pillow>=10.0

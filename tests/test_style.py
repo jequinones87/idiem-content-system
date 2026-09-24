@@ -13,7 +13,9 @@ def test_style_guide_loads_with_required_keys():
     style = load_editorial_style()
     for key in ("voice", "structure", "length", "emoji", "hashtags"):
         assert key in style
-    assert style["length"]["target_words_min"] >= 1
+    # Longitud controlada en CARACTERES (fuente de verdad ejecutable, no palabras).
+    assert style["length"]["hard_max_characters"] == 900
+    assert style["length"]["preferred_min_characters"] <= style["length"]["preferred_max_characters"] <= 900
     assert "#IDIEM" in style["hashtags"]["always"]
 
 
