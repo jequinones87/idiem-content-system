@@ -54,8 +54,8 @@ PHOTO_SUB = {
          "detalle": "equipo Triaxial para grandes partículas"},
     7:  {"photo_id": "generico_modelado_estructura", "fuente": _drive("157A_fs0lXLIOawLs_D92Ze4C-cczSUFS"),
          "detalle": "modelado 3D de estructura"},
-    8:  {"photo_id": "planta_aceros", "fuente": _drive("125lUuUu3UFValyUGDY0afuRLuGns98Bh"),
-         "detalle": "planta de aceros"},
+    8:  {"photo_id": "ensayo_aceros2", "fuente": _drive("1lMfLcWp2X8eON3uINy-ZRzOHCwt44TPF"),
+         "detalle": "técnico IDIEM mecanizando probeta metálica en laboratorio"},
     9:  {"photo_id": "estructuras_peritajes_analisis_terreno", "fuente": _drive("1U0v0oaWq2nypfKT-REB9FC77Gxegu0Jg"),
          "detalle": "análisis estructural en terreno"},
     10: {"photo_id": "estructuras_peritajes_puente_cortez", "fuente": _drive("12TxaHcgX3d-VLIGN85eniQOD8Q3NewIT"),
@@ -91,6 +91,7 @@ GH_SEAL = ("data:image/png;base64," +
 # Y republicados (no pendientes). Se va sumando en cada ronda del equipo.
 APPLIED_LOG = {
     1: [
+        {"date": "2026-09-24", "summary": "Copy con ajustes de MKT: \"inconsistencias durante la ejecución de la obra\" (antes \"diferencias por la programación\") y primera viñeta \"Diagnóstico contractual y de ejecución de la obra.\"."},
         {"date": "2026-09-21", "summary": "Foto aplicada: acuerdo_mineros (apretón de manos en faena minera) — refuerza el ángulo de acuerdos/ingeniería contractual."},
         {"date": "2026-09-21", "summary": "Post cambiado por completo (pedido de MKT): de \"control de productividad\" (KB-IOM-019) a \"Ingeniería contractual\" minera (KB-IOM-038); apoyo técnico en diagnóstico contractual, programación de obra y reclamos. Traza a KB-IOM-038/039/040/041/042."},
         {"date": "2026-09-04", "summary": "Publicado: control de productividad en operación minera (subtema fresco, no usado en septiembre)."},
@@ -123,6 +124,7 @@ APPLIED_LOG = {
         {"date": "2026-09-04", "summary": "Publicado: coordinación BIM en operación minera."},
     ],
     8: [
+        {"date": "2026-09-24", "summary": "Foto cambiada a ensayo_aceros2 (técnico IDIEM mecanizando una probeta metálica): la anterior era una maestranza de acero estructural y las fallas peritadas son de componentes mecánicos. La lámina 03 \"Pavimento en autopistas\" se reemplaza por \"Evidencia para decidir\" (frase ya aprobada del copy) y se retira la mención a pavimentos del copy, por no corresponder al mensaje (pedido de MKT)."},
         {"date": "2026-09-04", "summary": "Reemplaza al post de incendios; convertido en carrusel de peritaje de componentes metálicos."},
     ],
     9: [

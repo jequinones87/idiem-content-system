@@ -278,3 +278,14 @@ Meses archivados: **2026-09** (13 piezas, publicado). Octubre 2026 en preparaci�
     oscura bajo los velos; se **aclara** al componer `p13.jpg` (brillo ×1.42, contraste ×1.06,
     saturación ×1.05); la mitad izquierda (obra) se mantiene sin tocar. Aprendizaje: al dividir una
     foto, igualar la exposición de ambas mitades porque los velos del carrusel oscurecen aún más.
+- **2026-09-24** — **Ronda MKT (Kike) sobre el tablero de octubre.**
+  - **#8 Peritaje de componentes metálicos (carrusel):** foto cambiada a **`ensayo_aceros2`** (técnico
+    IDIEM mecanizando una probeta metálica). La anterior (`planta_aceros`) era una maestranza de acero
+    estructural y no calzaba: las fallas peritadas son de **componentes mecánicos**. La lámina 03
+    "Pavimento en autopistas" se reemplaza por **"Evidencia para decidir"** (frase ya aprobada del copy;
+    KB-IPR-002 sólo respalda peritajes a pernos, ejes, engranajes y tuberías + pavimento, así que no se
+    agregan métodos nuevos) y se retira también la mención a pavimentos del copy. **Regla:** en peritaje
+    de componentes, la foto debe mostrar piezas/ensayos mecánicos, no estructura ni pavimento.
+  - **#1 Ingeniería contractual (copy):** se incorporan las ediciones de MKT hechas en el tablero:
+    "inconsistencias durante la ejecución de la obra" y viñeta "Diagnóstico contractual y de ejecución
+    de la obra.".

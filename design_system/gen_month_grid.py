@@ -115,10 +115,10 @@ COPY = {
 
  "KB-IOM-038": {  # IOM · Ingeniería contractual (minería) — reemplaza a KB-IOM-019 en el post 1
   "hook": "📑 En un proyecto minero, un conflicto contractual mal manejado puede costar tanto como una falla técnica.",
-  "body": ("Reclamos, atrasos y diferencias por la programación de la obra escalan cuando faltan antecedentes "
+  "body": ("Reclamos, atrasos e inconsistencias durante la ejecución de la obra escalan cuando faltan antecedentes "
     "técnicos sólidos para respaldarlos. ⚖️\n\n"
     "En #IDIEM entregamos apoyo técnico independiente en materia contractual para obras mineras:\n"
-    "* Diagnóstico contractual y análisis de la programación de la obra.\n"
+    "* Diagnóstico contractual y de ejecución de la obra.\n"
     "* Prefactibilidad de un reclamo y apoyo técnico para lograr acuerdos.\n"
     "* Análisis ante el término anticipado de un contrato.\n\n"
     "Evidencia técnica para resolver diferencias con respaldo. ✅"),
@@ -187,9 +187,8 @@ COPY = {
   "hook": "🔧 Cuando un componente metálico falla, la pregunta clave no es solo qué se rompió, sino por qué.",
   "body": ("Un perno, un eje, un engranaje o una tubería que falla puede detener una operación o comprometer la "
     "seguridad. Sin un peritaje riguroso, la causa queda sin resolver y el riesgo permanece. 🔎\n\n"
-    "En #IDIEM realizamos estudios de falla de componentes, con peritajes a pernos, ejes, engranajes y tuberías, y "
-    "también evaluamos el daño del pavimento en autopistas. Determinamos qué ocurrió y entregamos evidencia técnica "
-    "para decidir. 🧪📐\n\n"
+    "En #IDIEM realizamos estudios de falla de componentes, con peritajes a pernos, ejes, engranajes y tuberías. "
+    "Determinamos qué ocurrió y entregamos evidencia técnica para decidir. 🧪📐\n\n"
     "Entender la falla es el primer paso para evitar que se repita. ✅"),
   "cta": "¿Necesitas peritar la falla de un componente? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Peritajes #Materiales #Ingeniería #FallaDeComponentes"},
 
