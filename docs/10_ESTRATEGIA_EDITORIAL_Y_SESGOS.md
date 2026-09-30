@@ -112,6 +112,10 @@ Se elimina la contradicción anterior (110–170 palabras / 1–4 emojis vs 900 
 habitual **820–880**; emojis **1–2 por párrafo como máximo**. Vive solo en
 `config/editorial_diversity.json` → `length`.
 
+**Excepción (MKT, 30-09-2026):** los posts de evento (webinars: inscripción, recordatorio,
+día del evento) llevan URL larga y quedan **exentos del máximo de 900 caracteres**
+(contador de referencia 1300), procurando igual la mayor brevedad.
+
 ## 13. Tono
 
 Institucional, técnico, profesional, editorial y **comprensible para un público no
@@ -123,6 +127,10 @@ conocimiento técnico aporta valor antes de introducir lo comercial.**
 Una sola memoria rica: **el archivo mensual consolidado** (copies definitivos del mes).
 De él se derivan fingerprints, estadísticas, recent hooks, recent CTAs, temas
 recientes y QA. **No mantener memorias manuales paralelas que puedan divergir.**
+
+**División acordada (MKT, 30-09-2026):** `docs/09_EDITORIAL_MEMORY.md` guarda solo **reglas y
+correcciones del equipo**; hooks, CTAs, pain points, arquetipos y estadísticas recientes se
+**derivan del consolidado mensual**.
 
 ## 15. Flujo objetivo
 

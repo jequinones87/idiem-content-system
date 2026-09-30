@@ -97,6 +97,8 @@ de sept 2026 — octubre tuvo CTA `contact` en 9/12 posts y ~4 arquetipos.
 - **Hook ≠ pain point**: registrarlos por separado.
 - Narrativa desde la necesidad del cliente; valor técnico antes que lo comercial.
 - **Longitud única: ≤ 900 caracteres (objetivo 820–880), máx. 1–2 emojis por párrafo.**
+  Excepción: posts de evento (webinars) llevan URL y quedan exentos del tope (ref. 1300).
+- Límites de diversidad de `editorial_diversity.json`: **aprobados por MKT** (30-09-2026).
 - Datos de fuentes: jerarquía células → reglas editoriales → brochures → Sales
   Intelligence → casos; clasificar `SAFE` / `VERIFY` / `INTERNAL` / `DO_NOT_PUBLISH`
   (`VERIFY` se valida antes; `DO_NOT_PUBLISH` nunca llega al copy).

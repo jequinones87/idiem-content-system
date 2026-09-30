@@ -42,7 +42,8 @@
     "max_chars": 900,
     "target_chars_min": 820,
     "target_chars_max": 880,
-    "note": "Regla ÚNICA, validada en caracteres (reemplaza 110-170 palabras). Fuente: config/editorial_diversity.json. Si la evidencia no alcanza, post más corto y honesto; si es insuficiente, EXPERT_INPUT_REQUIRED. Nunca rellenar."
+    "note": "Regla ÚNICA, validada en caracteres (reemplaza 110-170 palabras). Fuente: config/editorial_diversity.json. Si la evidencia no alcanza, post más corto y honesto; si es insuficiente, EXPERT_INPUT_REQUIRED. Nunca rellenar.",
+    "exceptions": "Posts de evento (webinar/inscripción) exentos del máximo de 900 caracteres; ver config/editorial_diversity.json."
   },
   "emoji": {
     "usage": "presente y temático",

@@ -52,12 +52,13 @@ CONTENT_CSS = r"""
 
 /* portada / cierre reusan .wcard del banner; extras: */
 .ppanel{flex-direction:column;align-items:flex-start;justify-content:center;gap:3cqw;padding:0 6cqw}
-.pp-lead{font-size:5.4cqw;font-weight:800;line-height:1.08;letter-spacing:-.01em;color:#fff;max-width:86cqw}
+.pp-lead{font-size:4.9cqw;font-weight:800;line-height:1.08;letter-spacing:-.01em;color:#fff;max-width:86cqw}
+.pp-red{color:var(--red)}
 .pp-date{font-size:3.2cqw;font-weight:600;color:rgba(255,255,255,.9)}
 .pp-swipe{align-self:flex-end;font-size:3cqw;font-weight:800;color:var(--red);letter-spacing:.02em}
-.cierre-cta{display:flex;flex-direction:column;align-items:center;gap:2.6cqw}
-.cta-pill{background:var(--red);color:#fff;font-weight:800;font-size:3.5cqw;padding:2cqw 5cqw;border-radius:100px}
-.cta-note{font-size:2.7cqw;font-weight:600;color:rgba(255,255,255,.86);text-align:center;max-width:70cqw}
+.cierre-cta{flex:none;width:38cqw;display:flex;flex-direction:column;align-items:center;gap:2.6cqw}
+.cta-pill{white-space:nowrap;background:var(--red);color:#fff;font-weight:800;font-size:3.5cqw;padding:2cqw 5cqw;border-radius:100px}
+.cta-note{font-size:2.7cqw;font-weight:600;color:rgba(255,255,255,.86);text-align:center;line-height:1.35}
 """
 
 RELEVANCIA = (
@@ -96,7 +97,7 @@ def portada(s: dict) -> str:
     hora = (s["hora"] or "").strip()
     inner = (f'<div class="wcard">{_banner(s.get("foto_tema", ""), "Webinar:", s["titulo"])}'
              f'<div class="panel ppanel">'
-             f'<div class="pp-lead">Por qué es relevante para tu proyecto</div>'
+             f'<div class="pp-lead"><span class="pp-red">NCh203:</span> cómo asegurar la calidad del acero cuando la cadena de suministro es global</div>'
              f'<div class="pp-date">🗓️ {dia} {fecha} · {hora} hrs · Online</div>'
              f'<div class="pp-swipe">Desliza →</div>'
              f'</div></div>')
@@ -144,7 +145,7 @@ def cierre(s: dict) -> str:
              f'</div>'
              f'<div class="cierre-cta">'
              f'<div class="cta-pill">📩 Inscríbete</div>'
-             f'<div class="cta-note">{dia} {fecha} · {hora} hrs<br>Link en la descripción</div>'
+             f'<div class="cta-note">{dia} {fecha}<br>{hora} hrs<br>Link en la descripción</div>'
              f'</div>'
              f'</div></div>')
     return _wrap(inner, "Webinar · cierre")

@@ -99,7 +99,14 @@ def card(sesion: dict, variant: str = "inv") -> str:
     cred_line = f'<div class="cline">{cred}</div>' if cred else ""
     cargo_line = f'<div class="cline">{cargo}</div>' if cargo else ""
 
-    if variant == "live":
+    if variant == "manana":
+        pill = '<span class="wpill live">⏰ ¡Mañana!</span>'
+        datecard = f"""<div class="datecard">
+          <div class="drow"><img src="{IC_CAL}" alt=""><span>{dia}<br>{fecha}</span></div>
+          <div class="dhr"></div>
+          <div class="drow"><img src="{IC_CLK}" alt=""><span>{hora_txt}</span></div>
+        </div>"""
+    elif variant == "live":
         pill = '<span class="wpill live">🔴 ¡Webinar hoy!</span>'
         datecard = f"""<div class="datecard">
           <div class="drow"><img src="{IC_CAL}" alt=""><span>Hoy<br>{fecha}</span></div>

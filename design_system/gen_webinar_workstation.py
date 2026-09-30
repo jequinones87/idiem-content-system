@@ -108,6 +108,12 @@ COPY = {
   "#IDIEM #AceroEstructural #NCh203 #Minería #Industria #Webinar"),
 }
 
+# Copies definitivos editados por MKT en la workstation (30-09-2026): sobrescriben los defaults.
+_COPIES_FILE = ROOT / "design_system" / "webinars" / "acero_copies.json"
+if _COPIES_FILE.exists():
+    for _k, _v in json.loads(_COPIES_FILE.read_text(encoding="utf-8"))["copies"].items():
+        COPY[int(_k)] = _v
+
 # seq -> (fecha_label, objetivo, tipo, [slides], link(nombre,url), sched(date,time), imagen_traza, historial[(fecha,txt)])
 POSTS = {
  1: {"fecha": "1 oct", "obj": "Apertura de inscripciones", "tipo": "STATIC", "slides": ["inv"],
@@ -119,17 +125,19 @@ POSTS = {
  2: {"fecha": "5 oct", "obj": "Relevancia + temática", "tipo": "CARRUSEL", "slides": ["car1", "car2", "car3", "car4"],
      "sched": ("2026-10-05", "09:00"),
      "imagen": "Banner + láminas de contenido (portada · contexto NCh203 · temario · cierre)",
-     "hist": [(APPLIED, "Carrusel de 4 láminas creado para la serie del webinar."),
+     "hist": [(APPLIED, "Ajuste MKT: portada con llamado preciso (NCh203 y cadena de suministro global); cierre con David en las mismas proporciones que el post 1; copy editado por MKT."),
+              (APPLIED, "Carrusel de 4 láminas creado para la serie del webinar."),
               (APPLIED, "Contexto NCh203 (cadena de suministro global) + temario de 5 puntos."),
               (APPLIED, "Cierre con relator y CTA de inscripción.")]},
  3: {"fecha": "8 oct", "obj": "Recordatorio · trazabilidad", "tipo": "STATIC", "slides": ["inv"],
      "sched": ("2026-10-08", "09:00"),
      "imagen": "Banner de serie (provisto por MKT) · relator David Silva",
      "hist": [(APPLIED, "Recordatorio: misma gráfica de invitación, copy con foco en trazabilidad/brechas.")]},
- 4: {"fecha": "13 oct", "obj": "Víspera del evento", "tipo": "STATIC", "slides": ["inv"],
+ 4: {"fecha": "13 oct", "obj": "Víspera del evento", "tipo": "STATIC", "slides": ["manana"],
      "sched": ("2026-10-13", "09:00"),
      "imagen": "Banner de serie (provisto por MKT) · relator David Silva",
-     "hist": [(APPLIED, "Víspera: misma gráfica de invitación, copy '⏰ mañana' + últimas inscripciones.")]},
+     "hist": [(APPLIED, "Ajuste MKT: banner con '⏰ ¡Mañana!' en vez de 'Webinar:' (estilo post 5) + copy editado por MKT."),
+              (APPLIED, "Víspera: gráfica de invitación, copy '⏰ mañana' + últimas inscripciones.")]},
  5: {"fecha": "14 oct", "obj": "Día del evento · ingreso", "tipo": "STATIC", "slides": ["live"],
      "sched": ("2026-10-14", "08:00"),
      "imagen": "Banner · variante día del evento (ingreso por Zoom)",
