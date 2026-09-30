@@ -41,6 +41,9 @@ _CAL_SVG = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="n
 _CLK_SVG = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" '
             'stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">'
             '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2"/></svg>')
+_PLAY_SVG = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" '
+             'stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">'
+             '<circle cx="12" cy="12" r="9"/><path d="M10 8.3l6 3.7-6 3.7z" fill="#fff"/></svg>')
 
 
 def svg_uri(svg: str) -> str:
@@ -59,6 +62,7 @@ LOGO = uri(AST / "logo_idiem_oficial.svg", "image/svg+xml")
 ESLOGAN = uri(AST / "eslogan_idiem_3_blanco.svg", "image/svg+xml")
 IC_CAL = svg_uri(_CAL_SVG)
 IC_CLK = svg_uri(_CLK_SVG)
+IC_PLAY = svg_uri(_PLAY_SVG)
 
 
 def fecha_txt(iso: str) -> tuple[str, str]:
@@ -74,7 +78,7 @@ def initials(name: str) -> str:
     return (parts[0][0] + (parts[-1][0] if len(parts) > 1 else "")).upper()
 
 
-def card(sesion: dict) -> str:
+def card(sesion: dict, variant: str = "inv") -> str:
     titulo = sesion["titulo"]
     dia, fecha = fecha_txt(sesion["fecha"])
     hora = (sesion["hora"] or "").strip()
@@ -94,6 +98,24 @@ def card(sesion: dict) -> str:
                    if photo_uri else 'background:#4a4d4e')
     cred_line = f'<div class="cline">{cred}</div>' if cred else ""
     cargo_line = f'<div class="cline">{cargo}</div>' if cargo else ""
+
+    if variant == "live":
+        pill = '<span class="wpill live">🔴 ¡Webinar hoy!</span>'
+        datecard = f"""<div class="datecard">
+          <div class="drow"><img src="{IC_CAL}" alt=""><span>Hoy<br>{fecha}</span></div>
+          <div class="dhr"></div>
+          <div class="drow"><img src="{IC_CLK}" alt=""><span>{hora_txt}</span></div>
+          <div class="dhr"></div>
+          <div class="drow"><img src="{IC_PLAY}" alt=""><span>Ingresa<br>por Zoom</span></div>
+        </div>"""
+    else:
+        pill = '<span class="wpill">Webinar:</span>'
+        datecard = f"""<div class="datecard">
+          <div class="drow"><img src="{IC_CAL}" alt=""><span>{dia}<br>{fecha}</span></div>
+          <div class="dhr"></div>
+          <div class="drow"><img src="{IC_CLK}" alt=""><span>{hora_txt}</span></div>
+        </div>"""
+
     return f"""
     <div class="wcard">
       <div class="photo" style="{photo_style}"></div>
@@ -101,7 +123,7 @@ def card(sesion: dict) -> str:
       <img class="eslogan" src="{ESLOGAN}" alt="Elige bien. Elige idiem.">
       <img class="logo" src="{LOGO}" alt="idiem">
       <div class="banner-copy">
-        <span class="wpill">Webinar:</span>
+        {pill}
         <div class="wtitle fit" data-max="6.2" data-min="3.8">{titulo}</div>
       </div>
       <div class="panel">
@@ -113,11 +135,7 @@ def card(sesion: dict) -> str:
             {cargo_line}
           </div>
         </div>
-        <div class="datecard">
-          <div class="drow"><img src="{IC_CAL}" alt=""><span>{dia}<br>{fecha}</span></div>
-          <div class="dhr"></div>
-          <div class="drow"><img src="{IC_CLK}" alt=""><span>{hora_txt}</span></div>
-        </div>
+        {datecard}
       </div>
     </div>"""
 
@@ -140,6 +158,7 @@ body{font-family:"Montserrat",system-ui,sans-serif}
 .banner-copy{position:absolute;z-index:3;left:5cqw;right:6cqw;top:46cqw;transform:translateY(-100%);
   display:flex;flex-direction:column;align-items:flex-start;gap:2.4cqw}
 .wpill{display:inline-block;background:var(--red);color:#fff;font-weight:800;font-size:4.6cqw;letter-spacing:.005em;padding:1.3cqw 3cqw;border-radius:.5cqw}
+.wpill.live{font-size:4.9cqw}
 .wtitle{font-weight:800;line-height:1.05;letter-spacing:-.012em;color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.55);
   max-width:90cqw;max-height:26cqw;overflow:hidden}
 
@@ -177,6 +196,7 @@ def main() -> None:
     brief_path = sys.argv[1] if len(sys.argv) > 1 else str(
         ROOT / "config" / "webinar" / "acero_estructural_brief.json")
     idx = int(sys.argv[2]) if len(sys.argv) > 2 else 0
+    variant = sys.argv[3] if len(sys.argv) > 3 else "inv"
     plan = build_webinar_plan(load_brief(brief_path))
     html = f"""<!doctype html><html lang="es"><head><meta charset="utf-8">
 <title>Webinar IDIEM</title>
@@ -184,7 +204,7 @@ def main() -> None:
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap">
 <style>{CSS}</style></head>
-<body><div class="export">{card(plan["sesiones"][idx])}</div>
+<body><div class="export">{card(plan["sesiones"][idx], variant)}</div>
 <script>{FIT_JS}</script></body></html>"""
     sys.stdout.write(html)
 
