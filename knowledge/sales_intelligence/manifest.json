@@ -1,0 +1,65 @@
+{
+  "package": "idiem_sales_intelligence",
+  "version": "2.0",
+  "date": "2026-09-07",
+  "status": "complete",
+  "authority": "supplemental",
+  "precedence": [
+    "official_cell_rules",
+    "editorial_rules",
+    "validated_services_and_brochures",
+    "sales_intelligence",
+    "cases_and_evidence",
+    "external_sources"
+  ],
+  "sources": [
+    {
+      "cell": "transporte",
+      "segment": "metro",
+      "knowledge_file": "transport/metro.md",
+      "source_title": "IDIEM - Servcios a Metro 2026.pptx",
+      "drive_id": "10b9Osg2gLky0ujFc2ec-800Zn7tWsbiW",
+      "status": "ready"
+    },
+    {
+      "cell": "transporte",
+      "segment": "efe",
+      "knowledge_file": "transport/efe.md",
+      "source_title": "IDIEM - Servcios a EFE 2026.pptx",
+      "drive_id": "14OBe2lk8a9h88pg2L_nxw1jCe4dPAyAx",
+      "status": "ready"
+    },
+    {
+      "cell": "operacion_minera",
+      "segment": "continuidad_operacional",
+      "knowledge_file": "operacion_minera/operacion_minera.md",
+      "source_title": "IDIEM - Servcios a Operación Minera.pptx",
+      "drive_id": "1Q6t9l39UlVjfJgA0WEuoUImG3d4ftPOt",
+      "status": "ready"
+    },
+    {
+      "cell": "infraestructura_publica_resiliente",
+      "segment": "mop",
+      "knowledge_file": "infraestructura_publica/mop.md",
+      "source_title": "IDIEM - MOP 2025 VF.pptx",
+      "drive_id": "1582NZs8eBXPQUk5M4HpuG_8mq1mHPUL2",
+      "status": "ready"
+    },
+    {
+      "cell": "hospitalaria_asistencial",
+      "segment": "salud_publica",
+      "knowledge_file": "hospitalaria/salud_publica.md",
+      "source_title": "IDIEM - Salud Pública 2025 VF.pptx",
+      "drive_id": "1A2J__5-EGh9mU7M1EilhFxGRZDbWDyh7",
+      "status": "ready"
+    },
+    {
+      "cell": "laboratorio_minero_digital",
+      "segment": "laboratorio_minero_integral",
+      "knowledge_file": "laboratorio_minero/laboratorio_minero_integral.md",
+      "source_title": "Idiem- Laboratorio Minero Integral VF.pptx",
+      "drive_id": "15vwIVd3yCdYbI3brbu-FyefLg7KK2YlN",
+      "status": "ready"
+    }
+  ]
+}

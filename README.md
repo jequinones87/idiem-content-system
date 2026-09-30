@@ -84,6 +84,29 @@ PYTHONPATH=src python -m idiem.cli review 2026-09 --target 12 --write
 PYTHONPATH=src python -m idiem.cli demo
 ```
 
+## Diversidad editorial
+
+Capa que evita que la parrilla "se sienta repetitiva" aunque cada pieza sea factualmente
+distinta (ver `docs/11_EDITORIAL_DIVERSITY.md`). No debilita ninguna garantía factual;
+ante conflicto **FACTUALIDAD > DIVERSIDAD**.
+
+- **Fingerprint** por pieza (`idiem.editorial_fingerprint`): hook_type, cta_type,
+  editorial_archetype, visual_theme, pain_category, primary_claim… (archivado en
+  `content/archive/<mes>.json`).
+- **Novelty engine** (`idiem.editorial_novelty`): similitud local determinista + equivalencia
+  estructural vs historial; `select_diverse` (pool→selección) para el planner.
+- **Historial → drafting**: `build_drafting_request(brief, month=...)` inyecta el resumen del
+  historial (evitar repetición, no es fuente de hechos).
+- **QA editorial** (`idiem.editorial_qa`): PASS/WARNING/FAIL por pieza y por mes + reporte.
+- **Cobertura** (`idiem.content_coverage`): temas frescos por célula (OK/MEDIUM/LOW/CONTENT_GAP).
+- **Umbrales**: `config/editorial_diversity.json`. **Longitud** (caracteres): `config/editorial_style.json → length` (fuente de verdad; manda sobre `docs/09`).
+
+```bash
+PYTHONPATH=src python -m idiem.editorial_qa --month 2026-10        # QA + reporte editorial
+PYTHONPATH=src python -m idiem.content_coverage --month 2026-11    # cobertura por célula
+PYTHONPATH=src python design_system/archive_month.py --month 2026-10 --out-dir content/archive
+```
+
 ## Tests
 
 ```bash

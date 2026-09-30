@@ -88,3 +88,34 @@ def record_month(ledger: Ledger, month: str, posts: list[dict]) -> Ledger:
         for p in posts
     ]
     return ledger
+
+
+# --- memoria unificada: el ledger es un ÍNDICE DERIVADO del archivo mensual ----
+# Fuente de verdad rica = content/archive/<month>.json. El ledger (cooldown por
+# knowledge_id) se puede reconstruir desde el archivo para que ambas memorias no
+# diverjan (CLAUDE.md regla 13 / refactor de diversidad §12).
+import json as _json  # noqa: E402
+
+ARCHIVE_DIR = REPO_ROOT / "content" / "archive"
+
+
+def build_ledger_from_archive(archive_dir: Path | None = None) -> Ledger:
+    """Reconstruye el ledger (índice de cooldown) desde content/archive/*.json."""
+    d = archive_dir or ARCHIVE_DIR
+    ledger = Ledger()
+    if not d.exists():
+        return ledger
+    for path in sorted(d.glob("*.json")):
+        try:
+            data = _json.loads(path.read_text(encoding="utf-8"))
+        except (ValueError, OSError):
+            continue
+        month = data.get("month") or path.stem
+        posts = [
+            {"content_id": p.get("content_id"), "cell": p.get("cell"),
+             "knowledge_id": p.get("knowledge_id")}
+            for p in data.get("posts", []) if p.get("knowledge_id")
+        ]
+        if posts:
+            ledger.months[month] = posts
+    return ledger

@@ -136,15 +136,20 @@ def compose_month(
     target_count: int | None = None,
     drafter: DraftingAdapter | None = None,
     recent_history: list[str] | None = None,
+    weights: dict | None = None,
+    pick_order: list[str] | None = None,
 ) -> MonthReview:
     """Compose a month: plan -> per-slot anchored brief + draft + graphic brief.
 
     ``recent_history`` (from the published ledger) excludes recently-used items
-    so content rotates month to month.
+    so content rotates month to month. ``weights`` (per-cell) overrides the
+    default cell mix for the month; when ``None`` the planner uses its configured
+    weights (unchanged behaviour).
     """
     planner = MonthlyPlanner(kb)
     plan = planner.build_plan(
-        month=month, target_count=target_count, recent_history=recent_history
+        month=month, target_count=target_count, recent_history=recent_history,
+        weights=weights, pick_order=pick_order,
     )
 
     # Month-level de-dup: a 2A.3 enrichment record (e.g. the ISO/HSEC line)

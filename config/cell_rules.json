@@ -43,6 +43,27 @@
       ]
     }
   },
+  "sales_intelligence": {
+    "_comment": "Capa complementaria (autoridad 4/6). NO clasifica servicios ni redefine celdas: solo mapea las celdas internas del paquete a las celdas oficiales para el retrieval contextual. La celda se resuelve SIEMPRE con las reglas oficiales antes de consultar esta capa.",
+    "root": "knowledge/sales_intelligence",
+    "authority": "supplemental",
+    "precedence_rank": 4,
+    "cell_map": {
+      "transporte": "INFRA CRÍTICA TRANSPORTE",
+      "operacion_minera": "INFRA OPERACIÓN MINERA",
+      "infraestructura_publica_resiliente": "INFRA PÚBLICA RESILIENTE",
+      "hospitalaria_asistencial": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "laboratorio_minero_digital": "LAB MINERO DIGITAL"
+    },
+    "precedence": [
+      "official_cell_rules",
+      "editorial_rules",
+      "validated_services_and_brochures",
+      "sales_intelligence",
+      "cases_and_evidence",
+      "external_sources"
+    ]
+  },
   "digital_does_not_determine_lab": true,
   "triaxial_is_mining": true,
   "notes": [
