@@ -20,6 +20,7 @@ IC_CLK = uri(f"{AST}/icon_clock.png", "image/png")
 RELATOR_PHOTO = {  # relator_id -> local portrait
     "EXP-12": f"{AST}/expositor_paula_araneda.jpg",
     "EXP-01": f"{AST}/expositor_juan_guzman.jpg",
+    "EXP-08": f"{AST}/expositor_david_silva.jpg",
 }
 DIAS = ["Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"]
 MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto",

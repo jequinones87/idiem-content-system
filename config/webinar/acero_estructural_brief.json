@@ -1,0 +1,27 @@
+{
+  "ciclo": "Ciclo de Webinars IDIEM",
+  "modo": "static",
+  "inscripcion_url": "",
+  "sesiones": [
+    {
+      "tema": "Acero estructural",
+      "gancho": "Aseguramiento de calidad, del origen a la obra",
+      "titulo": "Acero estructural en proyectos mineros e industriales",
+      "foto_tema": "webinar_tema_acero_estructural.jpg",
+      "fecha": "2026-10-14",
+      "hora": "09:30",
+      "modalidad": "Online",
+      "plataforma": "",
+      "url_sesion": "",
+      "url_inscripcion": "",
+      "relator_id": "EXP-08",
+      "temario": [
+        "¿Qué ha cambiado en la aplicación de la NCh203 en los últimos años?",
+        "Principales aprendizajes derivados de la experiencia en certificación de acero estructural.",
+        "Brechas y desafíos en la trazabilidad y verificación del cumplimiento normativo.",
+        "El rol del laboratorio y de la certificación en el aseguramiento de calidad de proyectos.",
+        "Reflexiones y recomendaciones para fortalecer el cumplimiento de la NCh203 en proyectos mineros e industriales."
+      ]
+    }
+  ]
+}
