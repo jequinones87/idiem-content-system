@@ -1,6 +1,6 @@
 {
  "month": "2026-11",
- "status": "PROPUESTA v2 — ajustada con decisiones MKT (30-09-2026); pendiente OK final antes de redactar",
+ "status": "PROPUESTA v3 — decisiones MKT aplicadas; pendiente OK final antes de redactar",
  "rebalance_note": "Aprobado por MKT. Queda: Minería 6 · Pública 3 · Lab 1 · Salud 1 = 11 + efeméride. LAB MINERO DIGITAL sin pieza nueva que no repita sep/oct.",
  "compared_against": [
   "state/consolidated/2026-10.json",
@@ -8,14 +8,15 @@
  ],
  "diversity_check": {
   "errors": [],
-  "distinct_archetypes": 7,
+  "distinct_archetypes": 8,
   "archetypes": {
    "risk_prevention": 2,
-   "capability_application": 2,
+   "evidence_learning": 1,
    "technical_question": 1,
    "problem_impact_capability": 2,
    "process_result": 2,
    "project_challenge": 1,
+   "capability_application": 1,
    "data_implication": 1
   },
   "hooks": {
@@ -54,17 +55,19 @@
    "seq": 2,
    "date": "2026-11-04",
    "cell": "INFRA PÚBLICA RESILIENTE",
-   "knowledge_id": "KB-IPR-004",
-   "format": "STATIC",
-   "theme": "Laboratorio permanente en obra para infraestructura pública y privada",
-   "archetype": "capability_application",
+   "knowledge_id": "KB-IPR-003",
+   "format": "CAROUSEL",
+   "theme": "Hormigones: control en obra en el nuevo terminal del Aeropuerto AMB",
+   "archetype": "evidence_learning",
    "hook_type": "insight",
    "cta_type": "knowledge",
-   "pain_point": "controlar la calidad cuando la obra avanza en varios frentes a la vez",
-   "main_claim": "laboratorio permanente en faena para infraestructura pública y privada (+ KB-IPR-003 ensayos en terreno como apoyo)",
+   "pain_point": "en una obra de gran escala el hormigón no se puede controlar a distancia",
+   "main_claim": "laboratorio instalado en obra en el nuevo terminal internacional del AMB con estudios, ensayos y diagnósticos de estructuras, hormigones y aceros",
    "flags": [
-    "reuso del servicio 'laboratorio en obra' (sep, minería) con sector y problema distintos",
-    "no nombrar el terminal aeroportuario de KB-IPR-003 (ya hay un post del AMB, #6)"
+    "pedido MKT: post orientado a hormigones",
+    "AMB aprobado como caso por MKT (también en #6: separados 9 días, servicios distintos)",
+    "absorbe el tema 'laboratorio permanente en obra' (KB-IPR-004 como apoyo) para no repetir servicio en el mes",
+    "no repetir la lista de ensayos del post 11 de septiembre: foco en el caso y en el control en obra"
    ]
   },
   {
@@ -129,7 +132,8 @@
    "pain_point": "en un edificio de alta afluencia la seguridad contra incendio se define en el diseño",
    "main_claim": "asesoría y estudios de ingeniería contra incendios (AMB)",
    "flags": [
-    "USE_WITH_MATIZ: conservar matiz"
+    "USE_WITH_MATIZ: conservar matiz",
+    "AMB aprobado como caso por MKT (30-09-2026)"
    ]
   },
   {
@@ -234,7 +238,9 @@
   "rebalanceo aprobado",
   "#4 y #11 (reuso con ángulo nuevo) aprobados",
   "post-webinar descartado: David Silva no comparte contenido",
-  "caso GAM descartado: tema sensible"
+  "caso GAM descartado: tema sensible",
+  "#7 -> post orientado a hormigones",
+  "AMB se puede usar como caso"
  ],
  "removed": [
   {
@@ -244,6 +250,10 @@
   {
    "theme": "Caso GAM",
    "reason": "tema sensible (MKT)"
+  },
+  {
+   "theme": "Laboratorio permanente en obra (KB-IPR-004)",
+   "reason": "absorbido por el post de hormigones (mismo servicio)"
   }
  ]
 }
