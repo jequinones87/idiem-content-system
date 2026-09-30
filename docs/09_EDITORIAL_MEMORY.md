@@ -35,6 +35,14 @@ Estas nacen de correcciones del equipo. Son de aplicación obligatoria.
 - Norma vigente de ruido: **D.S. 38/2011 MMA** (referible como "D.S. 38-11 MMA");
   mencionar cuando aplique el **futuro D.D. 14/24**.
 
+### Temas y personas sensibles (MKT, 30-09-2026)
+- **Centro Cultural GAM:** tema sensible hoy. **No usarlo como caso** (KB-IPR-023) hasta nuevo aviso.
+- **David Silva (Jefe División Aceros Control):** no le gusta compartir contenido. **No publicar
+  aprendizajes, contenidos ni resúmenes de sus charlas o webinars.** La logística de eventos
+  donde es relator sí se puede comunicar.
+- Regla general: todo post que **nombre un proyecto o caso** se marca para que MKT valide su
+  sensibilidad antes de redactar.
+
 ### Ingeniería contractual (célula IHA)
 - Ámbitos que IDIEM atiende de forma explícita en el sector Salud: **análisis de
   programación**, **análisis ante término anticipado de contrato**, respaldo técnico
