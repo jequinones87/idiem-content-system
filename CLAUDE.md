@@ -67,8 +67,9 @@ aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
   inspección), no "cada soldadura verificada". Se **califica al soldador** y al
   procedimiento, NO la soldadura.
 - **Acústica:** norma D.S. 38/2011 MMA (futuro D.D. 14/24).
-- **Voz de marca:** gancho con emoji → problema → "En #IDIEM…" (solución, a veces con
-  viñetas `*`) → cierre ✅ → CTA con https://idiem.cl 👉 → hashtags. Sin superlativos.
+- **Voz de marca:** técnica, institucional, sobria, comprensible para no especialistas; sin
+  superlativos. La secuencia gancho → problema → "En #IDIEM…" → ✅ → CTA es **un** arquetipo,
+  no la plantilla por defecto (ver sección siguiente).
 - **Saludos institucionales** (Fiestas Patrias, etc.) NO trazan a knowledge_id: mensaje
   general, sin proyectos/fechas/cifras no respaldadas por 2A.2.
 - **Efemérides del sector:** al armar la grilla de CADA mes, revisa `config/efemerides.json`
@@ -77,3 +78,27 @@ aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
   geología, suelos, integridad estructural) pueden trazar a knowledge_id; **Transporte
   Sostenible (26-nov) NO** — la célula INFRA CRÍTICA TRANSPORTE es CONTENT_GAP, así que va
   como institucional general sin afirmar capacidades técnicas.
+
+## Diversidad editorial y control de sesgos (OBLIGATORIO desde noviembre 2026)
+
+Fuente: `docs/10_ESTRATEGIA_EDITORIAL_Y_SESGOS.md` + `config/editorial_diversity.json`
+(mandan sobre `config/editorial_style.*` y sobre la memoria editorial). Origen: auditoría
+de sept 2026 — octubre tuvo CTA `contact` en 9/12 posts y ~4 arquetipos.
+
+- La unidad de diversidad **no es el tema**: es tema + argumento + pain point + claim +
+  **arquetipo** + **hook_type** + **cta_type** + estructura. Pregunta obligatoria:
+  *"¿ya contamos algo parecido de esta misma manera?"*.
+- **La diversidad se decide ANTES de redactar.** Para cada grilla mensual, primero armar y
+  mostrar a MKT la **tabla de asignación** (por post: arquetipo, hook_type, cta_type, pain
+  point, claim) respetando los límites de `editorial_diversity.json`; después redactar con
+  esas asignaciones como restricción. QA es la última barrera, no el mecanismo principal.
+- 6–8 arquetipos por mes; no repetir arquetipo/hook_type/cta_type en posts consecutivos.
+- **CTA por intención**; `contact` **no** es default; no repetir textual un CTA reciente.
+- **Hook ≠ pain point**: registrarlos por separado.
+- Narrativa desde la necesidad del cliente; valor técnico antes que lo comercial.
+- **Longitud única: ≤ 900 caracteres (objetivo 820–880), máx. 1–2 emojis por párrafo.**
+- Datos de fuentes: jerarquía células → reglas editoriales → brochures → Sales
+  Intelligence → casos; clasificar `SAFE` / `VERIFY` / `INTERNAL` / `DO_NOT_PUBLISH`
+  (`VERIFY` se valida antes; `DO_NOT_PUBLISH` nunca llega al copy).
+- Memoria única = archivo mensual consolidado (no memorias paralelas).
+- Octubre 2026 cerrado manualmente: **no regenerar**.

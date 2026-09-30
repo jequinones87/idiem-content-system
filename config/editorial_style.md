@@ -1,4 +1,9 @@
-# Guía editorial IDIEM — copies de LinkedIn (arquetipo servicio/insight técnico)
+# Guía editorial IDIEM — copies de LinkedIn
+
+> ⚠️ **Actualizado 30-09-2026 (auditoría de sesgos).** Ya no existe un arquetipo ni una
+> estructura únicos. La diversidad (arquetipos, hooks, CTA por intención, límites) y la
+> longitud se rigen por `docs/10_ESTRATEGIA_EDITORIAL_Y_SESGOS.md` y
+> `config/editorial_diversity.json`, que **mandan sobre esta guía**. Desde noviembre 2026.
 
 > Derivada del corpus real publicado (jun–jul 2026). Gobierna la **forma** del
 > copy. La **sustancia técnica** siempre se acota a la evidencia trazable del fact
@@ -13,27 +18,23 @@
   autobombo.
 - **A quién:** al profesional del sector (mandante, contratista, especialista).
 
-## Estructura (4–5 párrafos)
+## Estructura
 
-1. **Hook** — pregunta directa o afirmación de dolor/tensión.
-   *“¿Cómo planificar el mantenimiento de un activo cuando no existe información
-   histórica confiable?”*
-2. **Problema** — qué está en juego: costos, plazos, seguridad, continuidad.
-3. **Solución IDIEM** — *“En/Desde #IDIEM…”* + servicio concreto + **detalle
-   técnico** (métodos, disciplinas, normas, entregables). Solo desde la evidencia.
-4. **Impacto** — qué permite: decisiones con evidencia, reducción de riesgo,
-   confiabilidad de activos, cumplimiento normativo, continuidad operacional.
-5. **CTA + hashtags** — invitación sobria + `https://idiem.cl` + bloque de cierre.
+La secuencia *hook → problema → "En #IDIEM…" → impacto → CTA* es **solo uno** de los
+arquetipos (`problem_impact_capability`), **no el default**. Cada post recibe su arquetipo,
+hook_type y cta_type **antes** de redactar (ver doc 10). Regla general: el conocimiento
+técnico aporta valor **antes** que lo comercial; no todos los posts abren con el problema,
+ni nombran a IDIEM en el mismo lugar, ni terminan en venta explícita.
 
-## Longitud
+## Longitud (regla única, en caracteres)
 
-- **~110–170 palabras**, 4–5 párrafos cortos.
+- **Máximo 900 caracteres**; objetivo habitual **820–880**. Se valida en caracteres.
 - Si la evidencia no alcanza: post **más corto y honesto**; si es insuficiente,
   marcar **`EXPERT_INPUT_REQUIRED`**. Nunca rellenar con datos no respaldados.
 
 ## Emojis
 
-- Medidos y temáticos (1–2 por párrafo): 🏗️ 🏥 ⚙️ 📐 🛡️ 🔍 ⚠️ 📊 ✅ 👷 🌐 👉
+- Medidos y temáticos (**máximo 1–2 por párrafo**): 🏗️ 🏥 ⚙️ 📐 🛡️ 🔍 ⚠️ 📊 ✅ 👷 🌐 👉
 - Nunca dentro de un término técnico o una norma. No abrir todos los párrafos con
   emoji.
 
@@ -70,8 +71,10 @@ el dolor más relevante del mandante es el **atraso en la ejecución de las obra
 ## Sí / No
 
 **Sí:** anclar cada afirmación a la evidencia · nombrar métodos/normas solo si están
-respaldados · variar el hook entre posts · mantener `DRAFT` hasta aprobación humana.
+respaldados · rotar arquetipo, hook_type y cta_type (doc 10) · elegir el CTA por intención · mantener `DRAFT` hasta aprobación humana.
 
 **No:** inventar servicios/cifras/clientes/resultados · rankings/superlativos/
 exclusividades (GR-04) · expandir términos `NAME_ONLY` · prometer resultados no
-respaldados · abusar de emojis o signos de exclamación.
+respaldados · abusar de emojis o signos de exclamación · usar `contact` como CTA por
+defecto · repetir textual "Contáctanos y conversemos sobre tu caso" / "Contáctanos a
+través de nuestros canales oficiales".

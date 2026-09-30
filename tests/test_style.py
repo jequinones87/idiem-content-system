@@ -13,7 +13,9 @@ def test_style_guide_loads_with_required_keys():
     style = load_editorial_style()
     for key in ("voice", "structure", "length", "emoji", "hashtags"):
         assert key in style
-    assert style["length"]["target_words_min"] >= 1
+    # Longitud: regla única en caracteres (auditoría de sesgos, 30-09-2026).
+    assert style["length"]["unit"] == "characters"
+    assert 0 < style["length"]["target_chars_min"] <= style["length"]["target_chars_max"] <= style["length"]["max_chars"]
     assert "#IDIEM" in style["hashtags"]["always"]
 
 
@@ -32,7 +34,7 @@ def test_drafting_request_carries_style_and_hashtags(kb):
     assert "#IDIEM" in req.recommended_hashtags
     prompt = render_drafting_prompt(req)
     assert "hashtags" in prompt.lower()
-    assert "110" in prompt or "length" in prompt.lower()
+    assert "max_chars" in prompt
 
 
 def test_drafting_request_accepts_injected_style(kb):

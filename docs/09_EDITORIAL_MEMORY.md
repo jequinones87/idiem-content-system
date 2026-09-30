@@ -40,14 +40,33 @@ Estas nacen de correcciones del equipo. Son de aplicación obligatoria.
   programación**, **análisis ante término anticipado de contrato**, respaldo técnico
   para gestión de contratos y **reclamaciones**.
 
+## ⚠️ Estrategia editorial y control de sesgos (desde noviembre 2026) — MANDA
+
+La auditoría de sept 2026 detectó que los posts eran técnicamente distintos pero
+**narrativamente iguales** (octubre: CTA `contact` 9/12, ~4 arquetipos, dos fórmulas de
+CTA repetidas ~5 veces cada una). Regla vigente: **`docs/10_ESTRATEGIA_EDITORIAL_Y_SESGOS.md`**
++ **`config/editorial_diversity.json`**. En resumen:
+
+- Preguntar **"¿ya contamos algo parecido de esta misma manera?"**, no solo "¿ya hablamos
+  de este servicio?".
+- **Antes de redactar** se asigna a cada post: arquetipo (6–8 por mes), `hook_type`,
+  `cta_type`, pain point y claim. El texto se escribe **con esas restricciones**.
+- **CTA por intención** (contacto, conversación técnica, profundización, conocimiento,
+  evento, descarga, descubrimiento). **`contact` NO es default.** No repetir textual.
+- Narrativa **desde la necesidad del cliente**, valor técnico **antes** que lo comercial;
+  no todo post termina en venta explícita.
+- **Longitud: ≤ 900 caracteres (objetivo 820–880), 1–2 emojis por párrafo máximo.**
+- Octubre **no se regenera** (cerrado manualmente); su versión definitiva debe
+  consolidarse como memoria.
+
 ## Estilo y tono del copy (voz de marca, según ediciones aprobadas por MKT)
 
-El equipo de MKT (Kike) es la autoridad de tono. Patrones observados en sus reescrituras:
+El equipo de MKT (Kike) es la autoridad de tono. Patrones observados en sus reescrituras
+(**válidos como voz, NO como plantilla fija** — ver sección anterior):
 
-- **Estructura**: gancho con emoji → párrafo de problema/contexto → párrafo de
-  solución que empieza con **"En #IDIEM ..."** (o "En IDIEM ...") → cierre de valor
-  con ✅ → **CTA** (pregunta + "Conversemos en https://idiem.cl 👉" o "Contáctanos a
-  través de nuestros canales oficiales") → **línea de hashtags**.
+- **Estructura** *(solo arquetipo `problem_impact_capability`, no default)*: gancho →
+  problema/contexto → solución **"En #IDIEM ..."** → cierre de valor ✅ → CTA → hashtags.
+  Los demás arquetipos ordenan el relato distinto.
 - **Listas**: cuando hay entregables/beneficios, usar viñetas con `*` (un ítem por
   línea), como en el post de programación de obra.
 - **Emojis**: sí, pero **medidos y temáticos** (🏥 🔊 🔥 🔍 🛡️ 📐 ♻️ 🩺 ✅ 📩 👉 🏗️ 🇨🇱).
@@ -57,9 +76,9 @@ El equipo de MKT (Kike) es la autoridad de tono. Patrones observados en sus rees
   entrega.
 - **Sin superlativos** (GR-04): nada de "líderes", "los mejores", "#1", etc.
 - **Hashtags**: `#IDIEM` + 4–6 temáticos (p. ej. #Minería #Ingeniería #Seguridad).
-- **CTA**: variantes válidas — "📩 ¿Necesitas…? Contáctanos y conversemos sobre tu
-  caso." / "¿Necesitas…? Contáctanos a través de nuestros canales oficiales 👉
-  https://idiem.cl" / "¿…? Conversemos en https://idiem.cl 👉".
+- **CTA**: se elige por **intención** (`cta_type`) y se redacta cada vez. ⛔ Las fórmulas
+  "Contáctanos y conversemos sobre tu caso" y "Contáctanos a través de nuestros canales
+  oficiales" quedaron **sobreusadas** en octubre: no usarlas como default ni repetirlas.
 - **Registro**: profesional, técnico pero accesible, orientado al beneficio y a la
   evidencia técnica.
 
