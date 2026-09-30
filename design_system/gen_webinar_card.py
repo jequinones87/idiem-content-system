@@ -30,7 +30,21 @@ RELATOR_PHOTO = {
 # Encuadre de la foto temática (portrait/landscape) por archivo: background-position
 FOTO_POS = {
     "webinar_tema_acero_estructural.jpg": "50% 64%",
+    "webinar_banner_serie.jpg": "50% 52%",
 }
+
+# Íconos blancos (SVG) para la tarjeta roja de fecha/hora: alto contraste sobre rojo.
+_CAL_SVG = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" '
+            'stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">'
+            '<rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18"/>'
+            '<path d="M8 2.5v4M16 2.5v4"/></svg>')
+_CLK_SVG = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" '
+            'stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">'
+            '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.4 2"/></svg>')
+
+
+def svg_uri(svg: str) -> str:
+    return "data:image/svg+xml;base64," + base64.b64encode(svg.encode()).decode()
 
 DIAS = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
@@ -43,8 +57,8 @@ def uri(path: Path, mime: str) -> str:
 
 LOGO = uri(AST / "logo_idiem_oficial.svg", "image/svg+xml")
 ESLOGAN = uri(AST / "eslogan_idiem_3_blanco.svg", "image/svg+xml")
-IC_CAL = uri(AST / "icon_calendar.png", "image/png")
-IC_CLK = uri(AST / "icon_clock.png", "image/png")
+IC_CAL = svg_uri(_CAL_SVG)
+IC_CLK = svg_uri(_CLK_SVG)
 
 
 def fecha_txt(iso: str) -> tuple[str, str]:

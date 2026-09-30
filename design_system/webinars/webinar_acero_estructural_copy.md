@@ -3,8 +3,9 @@
 **Pieza:** invitación (estático 1080×1080, Plantilla 03 Webinar)
 **Fecha del webinar:** miércoles 14 de octubre de 2026 · 09:30 hrs (Chile) · Online
 **Relator:** David Silva — Ing. Civil U. de Chile · MBA · Jefe División Aceros Control, IDIEM
-**Foto temática:** `webinar_tema_acero_estructural.jpg` (librería IDIEM · `PHO-0044` vigas de acero)
+**Banner (fijo de la serie):** `webinar_banner_serie.jpg` — va en TODOS los posts del ciclo, cambie o no el contenido.
 **Brief:** `config/webinar/acero_estructural_brief.json`
+**Inscripción:** https://docs.google.com/forms/d/e/1FAIpQLSdIHQss1ajlR2E1cQAU7EPPUZlaVJ5OGU4h8T6kh_b76fDHCQ/viewform?usp=pp_url&entry.1892003034=LinkedIn
 
 ---
 
@@ -26,12 +27,16 @@ En el webinar abordaremos:
 🎙️ **Relator:** David Silva, Ing. Civil U. de Chile · MBA, Jefe División Aceros Control de IDIEM.
 🗓️ **Miércoles 14 de octubre · 09:30 hrs (Chile) · Online**
 
-¿Participas en la especificación, suministro, fabricación, inspección o recepción de estructuras de acero? Este webinar es para ti. 📩 Inscríbete a través de nuestros canales oficiales 👉 https://idiem.cl
+¿Participas en la especificación, suministro, fabricación, inspección o recepción de estructuras de acero? Este webinar es para ti.
+
+📩 **Inscríbete aquí** 👉 https://docs.google.com/forms/d/e/1FAIpQLSdIHQss1ajlR2E1cQAU7EPPUZlaVJ5OGU4h8T6kh_b76fDHCQ/viewform?usp=pp_url&entry.1892003034=LinkedIn
 
 #IDIEM #AceroEstructural #NCh203 #Minería #Industria #AseguramientoDeCalidad #Certificación #Ingeniería
 
 ---
 
-## Pendiente de dato (logística)
-- **URL de inscripción / plataforma:** no entregada aún. Cuando la tengas, la sumo al copy
-  (`url_inscripcion`) y, si quieres, un botón/línea en la pieza.
+## Logística
+- **Inscripción (Google Forms):** incluida en el copy y en `url_inscripcion` del brief.
+  El parámetro `entry.1892003034=LinkedIn` etiqueta como "LinkedIn" el origen de quien se inscribe.
+- **Link de Zoom** — `https://us02web.zoom.us/j/84226077802?pwd=basVXzx7rE41rnjqLR0z1oGa4vCzW3.1`
+  ⚠️ **Solo se comparte en el post del día del webinar (14-oct), no en esta invitación.**
