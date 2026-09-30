@@ -102,6 +102,7 @@ def resolve_session(session: dict, brief: dict, expositores: dict[str, Expositor
         "relator_id": session.get("relator_id", ""),
         "relator_nombre": relator_nombre,
         "relator_cargo": relator_cargo,
+        "relator_credenciales": session.get("relator_credenciales", ""),
         "relator_foto_id": exp.foto_principal_id if exp else "",
         "relator_carpeta_url": exp.carpeta_url if exp else "",
         "temario": list(session.get("temario", [])),

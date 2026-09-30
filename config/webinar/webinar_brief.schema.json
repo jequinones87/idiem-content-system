@@ -42,6 +42,7 @@
           "relator_id": {"type": "string", "description": "Referencia a la libreria de expositores (EXP-01, …)."},
           "relator_nombre": {"type": "string", "description": "Se usa si no hay relator_id o para sobrescribir."},
           "relator_cargo": {"type": "string"},
+          "relator_credenciales": {"type": "string", "description": "Credenciales académicas del relator (p.ej. 'Ing. Civil U. de Chile · MBA'). Se muestra bajo el nombre, sobre el cargo."},
           "temario": {"type": "array", "items": {"type": "string"}, "description": "Puntos del temario (alimentan las laminas del carrusel)."}
         }
       }
