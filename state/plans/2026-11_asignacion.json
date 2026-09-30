@@ -1,0 +1,250 @@
+{
+ "month": "2026-11",
+ "status": "PROPUESTA — pendiente de aprobación MKT (no redactar antes)",
+ "rebalance_note": "LAB MINERO DIGITAL (21) y HOSPITALARIA (6) agotadas en sep-oct (ancla o apoyo). Propuesta: IOM 6 · IPR 3 · LMD 2 · IHA 1. planner.allow_rebalance=false → requiere OK de MKT.",
+ "compared_against": [
+  "state/consolidated/2026-10.json",
+  "sep 2026 (compose_month + gen_month_grid.COPY)"
+ ],
+ "diversity_check": {
+  "errors": [],
+  "distinct_archetypes": 8,
+  "archetypes": {
+   "risk_prevention": 2,
+   "evidence_learning": 2,
+   "technical_question": 1,
+   "problem_impact_capability": 2,
+   "process_result": 2,
+   "project_challenge": 1,
+   "capability_application": 1,
+   "data_implication": 1
+  },
+  "hooks": {
+   "scenario": 1,
+   "insight": 2,
+   "question": 2,
+   "contrast": 2,
+   "process_step": 2,
+   "technical_claim": 2,
+   "risk": 1
+  },
+  "ctas": {
+   "technical_conversation": 3,
+   "knowledge": 2,
+   "deep_dive": 2,
+   "commercial_contact": 2,
+   "service_discovery": 2,
+   "download": 1
+  }
+ },
+ "posts": [
+  {
+   "seq": 1,
+   "date": "2026-11-02",
+   "cell": "INFRA OPERACIÓN MINERA",
+   "knowledge_id": "KB-IOM-001",
+   "format": "STATIC",
+   "theme": "Monitoreo remoto de depósitos de relaves",
+   "archetype": "risk_prevention",
+   "hook_type": "scenario",
+   "cta_type": "technical_conversation",
+   "pain_point": "cambios en un relave que no se ven a simple vista",
+   "main_claim": "instrumentación y monitoreo remoto de depósitos de relaves",
+   "flags": []
+  },
+  {
+   "seq": 2,
+   "date": "2026-11-04",
+   "cell": "INFRA PÚBLICA RESILIENTE",
+   "knowledge_id": "KB-IPR-023",
+   "format": "CAROUSEL",
+   "theme": "Diagnóstico de estado actual — Centro Cultural GAM",
+   "archetype": "evidence_learning",
+   "hook_type": "insight",
+   "cta_type": "knowledge",
+   "pain_point": "intervenir un edificio en uso sin conocer su estado real",
+   "main_claim": "diagnóstico de estado actual como base de decisión (caso GAM)",
+   "flags": [
+    "verificar en fact sheet que la relación nombre al GAM textualmente (ER-12)"
+   ]
+  },
+  {
+   "seq": 3,
+   "date": "2026-11-06",
+   "cell": "INFRA OPERACIÓN MINERA",
+   "knowledge_id": "KB-IOM-053",
+   "format": "STATIC",
+   "theme": "Vulnerabilidad de torres de transmisión y subestaciones",
+   "archetype": "technical_question",
+   "hook_type": "question",
+   "cta_type": "deep_dive",
+   "pain_point": "la energía de la faena depende de estructuras expuestas",
+   "main_claim": "gestión de vulnerabilidad e integridad aplicada a infraestructura eléctrica",
+   "flags": [
+    "USE_AUDITED_CORRECTION"
+   ]
+  },
+  {
+   "seq": 4,
+   "date": "2026-11-09",
+   "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+   "knowledge_id": "KB-IHA-004",
+   "format": "STATIC",
+   "theme": "Apoyo técnico para lograr acuerdos en obras de salud",
+   "archetype": "problem_impact_capability",
+   "hook_type": "contrast",
+   "cta_type": "commercial_contact",
+   "pain_point": "diferencias contractuales que escalan en obras de salud",
+   "main_claim": "apoyo técnico para lograr acuerdos",
+   "flags": [
+    "USE_AUDITED_CORRECTION",
+    "reuso de célula: ángulo 'acuerdo' ≠ programación/término (sep)"
+   ]
+  },
+  {
+   "seq": 5,
+   "date": "2026-11-11",
+   "cell": "INFRA OPERACIÓN MINERA",
+   "knowledge_id": "KB-IOM-061",
+   "format": "CAROUSEL",
+   "theme": "Programa SIM de gestión de integridad estructural",
+   "archetype": "process_result",
+   "hook_type": "process_step",
+   "cta_type": "service_discovery",
+   "pain_point": "integridad gestionada sin sistema: información dispersa",
+   "main_claim": "SIM como programa de gestión de integridad",
+   "flags": [
+    "USE_WITH_MATIZ: conservar matiz"
+   ]
+  },
+  {
+   "seq": 6,
+   "date": "2026-11-13",
+   "cell": "INFRA PÚBLICA RESILIENTE",
+   "knowledge_id": "KB-IPR-020",
+   "format": "STATIC",
+   "theme": "Ingeniería contra incendios — Terminal Internacional Aeropuerto AMB",
+   "archetype": "project_challenge",
+   "hook_type": "technical_claim",
+   "cta_type": "technical_conversation",
+   "pain_point": "en un edificio de alta afluencia la seguridad contra incendio se define en el diseño",
+   "main_claim": "asesoría y estudios de ingeniería contra incendios (AMB)",
+   "flags": [
+    "USE_WITH_MATIZ: conservar matiz"
+   ]
+  },
+  {
+   "seq": 7,
+   "date": "2026-11-16",
+   "cell": "LAB MINERO DIGITAL",
+   "knowledge_id": "EXPERT_INPUT",
+   "format": "CAROUSEL",
+   "theme": "Post-webinar: aprendizajes NCh203 en acero estructural",
+   "archetype": "evidence_learning",
+   "hook_type": "question",
+   "cta_type": "download",
+   "pain_point": "cumplir NCh203 con cadena de suministro global",
+   "main_claim": "aprendizajes compartidos por David Silva en el webinar",
+   "flags": [
+    "EXPERT_INPUT_REQUIRED: 3-4 aprendizajes de David y/o grabación"
+   ]
+  },
+  {
+   "seq": 8,
+   "date": "2026-11-18",
+   "cell": "INFRA OPERACIÓN MINERA",
+   "knowledge_id": "KB-IOM-012",
+   "format": "STATIC",
+   "theme": "Modelamiento digital de estructuras",
+   "archetype": "capability_application",
+   "hook_type": "contrast",
+   "cta_type": "deep_dive",
+   "pain_point": "planos que ya no representan lo construido",
+   "main_claim": "modelamiento digital de estructuras en instalaciones mineras",
+   "flags": []
+  },
+  {
+   "seq": 9,
+   "date": "2026-11-20",
+   "cell": "INFRA PÚBLICA RESILIENTE",
+   "knowledge_id": "KB-IPR-001",
+   "format": "STATIC",
+   "theme": "Asesoría a Inspección Fiscal con sistema ISO 9001:2015",
+   "archetype": "problem_impact_capability",
+   "hook_type": "risk",
+   "cta_type": "commercial_contact",
+   "pain_point": "informes de inspección técnica sin un sistema de calidad detrás",
+   "main_claim": "sistema de gestión de calidad ISO 9001:2015 para elaborar informes de inspección técnica",
+   "flags": [
+    "USE_AUDITED_CORRECTION: NO decir 'obra pública' (retirado por auditoría)"
+   ]
+  },
+  {
+   "seq": 10,
+   "date": "2026-11-23",
+   "cell": "INFRA OPERACIÓN MINERA",
+   "knowledge_id": "KB-IOM-019",
+   "format": "STATIC",
+   "theme": "Control de productividad en operación minera",
+   "archetype": "data_implication",
+   "hook_type": "insight",
+   "cta_type": "knowledge",
+   "pain_point": "la productividad se discute con percepciones, no con datos",
+   "main_claim": "soluciones tecnológicas para el control de productividad",
+   "flags": [
+    "USE_AUDITED_CORRECTION"
+   ]
+  },
+  {
+   "seq": 11,
+   "date": "2026-11-25",
+   "cell": "LAB MINERO DIGITAL",
+   "knowledge_id": "KB-LMD-013",
+   "format": "CAROUSEL",
+   "theme": "HDPE: control de la fabricación al montaje",
+   "archetype": "process_result",
+   "hook_type": "process_step",
+   "cta_type": "service_discovery",
+   "pain_point": "la calidad de una línea HDPE se juega en cada etapa, no solo en el ensayo",
+   "main_claim": "cobertura de control desde la fabricación hasta el montaje",
+   "flags": [
+    "reuso con ángulo nuevo (ER-16): sep abordó ensayos de uniones"
+   ]
+  },
+  {
+   "seq": 12,
+   "date": "2026-11-27",
+   "cell": "INFRA OPERACIÓN MINERA",
+   "knowledge_id": "KB-IOM-062",
+   "format": "STATIC",
+   "theme": "Plan de mantenimiento estructural para la vida útil",
+   "archetype": "risk_prevention",
+   "hook_type": "technical_claim",
+   "cta_type": "technical_conversation",
+   "pain_point": "el mantenimiento reactivo acorta la vida útil",
+   "main_claim": "plan de mantenimiento estructural para vida útil de activos",
+   "flags": []
+  }
+ ],
+ "extra": [
+  {
+   "seq": 13,
+   "date": "2026-11-26",
+   "type": "EFEMERIDE",
+   "theme": "Día del Transporte Sostenible",
+   "cell": "institucional (INFRA CRÍTICA TRANSPORTE = CONTENT_GAP)",
+   "knowledge_id": null,
+   "archetype": "institucional",
+   "hook_type": "scenario",
+   "cta_type": "knowledge",
+   "flags": [
+    "sin claims técnicos ni capacidades (CONTENT_GAP)"
+   ]
+  }
+ ],
+ "backup_items": [
+  "KB-IPR-022 Puente Viejo Cautín (evidence_learning; ojo: puentes ya en oct)",
+  "KB-IPR-007 Soporte ante el Panel Técnico de Concesiones (verificar vigencia GR-13)",
+  "KB-IOM-027 Inspección de estructuras de acero y peritajes de falla"
+ ]
+}
