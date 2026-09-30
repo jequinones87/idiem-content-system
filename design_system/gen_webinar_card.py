@@ -137,7 +137,7 @@ body{font-family:"Montserrat",system-ui,sans-serif}
   background:linear-gradient(0deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.12) 42%,rgba(0,0,0,.32) 100%)}
 .eslogan{position:absolute;z-index:3;top:4.4cqw;left:4.8cqw;width:30cqw;height:auto;filter:drop-shadow(0 1px 8px rgba(0,0,0,.5))}
 .logo{position:absolute;z-index:3;top:5cqw;right:5cqw;width:19cqw;height:auto;display:block;filter:drop-shadow(0 1px 8px rgba(0,0,0,.5))}
-.banner-copy{position:absolute;z-index:3;left:5cqw;right:6cqw;top:48.5cqw;transform:translateY(-100%);
+.banner-copy{position:absolute;z-index:3;left:5cqw;right:6cqw;top:46cqw;transform:translateY(-100%);
   display:flex;flex-direction:column;align-items:flex-start;gap:2.4cqw}
 .wpill{display:inline-block;background:var(--red);color:#fff;font-weight:800;font-size:4.6cqw;letter-spacing:.005em;padding:1.3cqw 3cqw;border-radius:.5cqw}
 .wtitle{font-weight:800;line-height:1.05;letter-spacing:-.012em;color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.55);
@@ -146,8 +146,8 @@ body{font-family:"Montserrat",system-ui,sans-serif}
 /* ---- panel gris: relator + fecha ---- */
 .panel{position:absolute;left:0;top:50cqw;width:100%;height:50cqw;z-index:2;background:var(--gray-dark);
   display:flex;align-items:center;justify-content:space-between;gap:3cqw;padding:0 5.5cqw}
-.relator-block{display:flex;flex-direction:column;align-items:center;text-align:center;gap:2.8cqw;flex:1;min-width:0}
-.disc{position:relative;width:31cqw;height:31cqw;flex:none;border-radius:50%;background:#fff;padding:1cqw;
+.relator-block{display:flex;flex-direction:column;align-items:center;text-align:center;gap:3.2cqw;flex:1;min-width:0}
+.disc{position:relative;width:26cqw;height:26cqw;flex:none;border-radius:50%;background:#fff;padding:.9cqw;
   box-shadow:0 10px 30px -12px rgba(0,0,0,.55)}
 .disc img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;border-radius:50%;display:block}
 .disc .avatar{width:100%;height:100%;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;font-size:13cqw;font-weight:800;color:#fff}
