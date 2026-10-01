@@ -43,24 +43,28 @@
           {
             "icon": "location",
             "title": "El caso: <span class=\"c2rb\">aeropuerto</span>",
-            "body": "En el nuevo terminal internacional del Aeropuerto Arturo Merino Benítez, IDIEM instaló un laboratorio en obra."
+            "body": "En la construcción del nuevo terminal internacional del Aeropuerto Arturo Merino Benítez, IDIEM instaló un laboratorio en obra. Nuestra participación contempló además ingeniería contra incendios, ingeniería contractual y ensayos de especialidades."
           },
           {
             "icon": "magnifier",
             "title": "Estudios, ensayos <span class=\"c2rb\">y diagnósticos</span>",
-            "body": "De estructuras, hormigones y aceros, junto a los frentes de trabajo."
+            "body": "De estructuras, hormigones y aceros, realizados junto a los frentes de trabajo: los resultados se obtienen donde se construye y donde se toman las decisiones."
           },
           {
             "icon": "shield",
             "title": "Instalaciones, personal <span class=\"c2rb\">y equipos</span>",
-            "body": "Un servicio para todo tipo de infraestructura, pública y privada."
+            "body": "Un servicio permanente en obra, con entrega de informes en plazo y seguimiento en línea de los resultados, para infraestructura pública y privada."
           }
         ],
         "cierre": {
-          "bajada": "Ensayos en el mismo lugar donde se toman las decisiones de la obra."
+          "bajada": "Control técnico donde ocurre la obra, con informes en plazo y resultados en línea."
         }
       },
       "hist": [
+        {
+          "date": "01-10-2026",
+          "summary": "Láminas: textos reformulados con la relevancia del laboratorio en obra, la participación de IDIEM en el aeropuerto y sus beneficios (títulos sin cambio, pedido MKT)."
+        },
         {
           "date": "01-10-2026",
           "summary": "Carrusel reformulado: foco en laboratorio en obra con el caso del aeropuerto (más que hormigones) + foto aeroporto_stgo + copy ajustado al nuevo foco (pedido MKT)."
@@ -122,24 +126,28 @@
           {
             "icon": "calendar",
             "title": "Planificación y <span class=\"c2rb\">monitoreo</span>",
-            "body": "Planificación y monitoreo continuo de la integridad estructural."
+            "body": "La integridad de una estructura no se revisa una sola vez: se planifica y se monitorea de forma continua a lo largo de la operación."
           },
           {
             "icon": "magnifier",
             "title": "Análisis de <span class=\"c2rb\">antecedentes</span>",
-            "body": "Los antecedentes de las estructuras, analizados como parte del programa."
+            "body": "Registros, inspecciones previas y mediciones dejan de estar dispersos: se analizan en conjunto para entender el estado de cada estructura."
           },
           {
             "icon": "shield",
             "title": "Inspecciones <span class=\"c2rb\">y sensores</span>",
-            "body": "Inspecciones y sensores trabajando en conjunto en infraestructura minera."
+            "body": "Evidencia de terreno y datos de sensores en un mismo programa: la base para decidir dónde y cuándo intervenir en la infraestructura minera."
           }
         ],
         "cierre": {
-          "bajada": "Programa SIM (Structural Integrity Management) aplicado en infraestructura minera."
+          "bajada": "SIM ordena planificación, monitoreo, antecedentes, inspecciones y sensores en un solo proceso para la infraestructura minera."
         }
       },
       "hist": [
+        {
+          "date": "01-10-2026",
+          "summary": "Láminas: textos reformulados con la importancia y la propuesta de valor del SIM (títulos sin cambio, pedido MKT)."
+        },
         {
           "date": "01-10-2026",
           "summary": "Copy: edición de MKT aplicada (salto de línea tras «Primero se planifica.»)."
@@ -172,9 +180,9 @@
       "photo": {
         "file": "p07.jpg",
         "source": "library",
-        "id": "PHO-0052",
-        "detalle": "generico_modelado_estructura · modelo 3D de estructura (foto elegida por MKT)",
-        "drive": "https://drive.google.com/file/d/157A_fs0lXLIOawLs_D92Ze4C-cczSUFS/view",
+        "id": "modelado_bim",
+        "detalle": "modelo BIM de estructura (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/1i7u8LwD7WuVAf8cFj8wPO1lqq4iYkvAi/view",
         "pos": "50% 50%"
       },
       "side": "left",
@@ -182,6 +190,10 @@
       "msg": "Las estructuras<br>como están hoy.",
       "base": "Levantamiento de condiciones · <b>modelamiento digital</b>",
       "hist": [
+        {
+          "date": "01-10-2026",
+          "summary": "Foto → modelado_bim (pedido MKT)."
+        },
         {
           "date": "01-10-2026",
           "summary": "Foto → generico_modelado_estructura (pedido MKT)."
@@ -239,24 +251,28 @@
           {
             "icon": "location",
             "title": "Desde la <span class=\"c2rb\">fabricación</span>",
-            "body": "El control de calidad de la línea parte en su fabricación."
+            "body": "Asesoría en la documentación técnica de la fabricación de uniones soldadas y ensayos que verifican las especificaciones y estándares del proyecto."
           },
           {
             "icon": "magnifier",
             "title": "Uniones <span class=\"c2rb\">soldadas</span>",
-            "body": "Elementos críticos en los procesos mineros, con ensayos destructivos y no destructivos."
+            "body": "Son elementos críticos de los procesos mineros por su impacto en la continuidad operacional: ensayos no destructivos detectan defectos y ensayos mecánicos evalúan su calidad."
           },
           {
             "icon": "shield",
             "title": "Hasta el <span class=\"c2rb\">montaje</span>",
-            "body": "Cobertura nacional y proyectos de diversa complejidad."
+            "body": "Ensayos destructivos y no destructivos hasta el montaje de la línea, con cobertura nacional y en proyectos de diversa complejidad."
           }
         ],
         "cierre": {
-          "bajada": "Calidad controlada a lo largo de todo el recorrido de la línea HDPE."
+          "bajada": "Calidad controlada en cada etapa de una línea crítica para la continuidad operacional."
         }
       },
       "hist": [
+        {
+          "date": "01-10-2026",
+          "summary": "Láminas: textos reformulados con la relevancia del control HDPE (criticidad y continuidad operacional), en línea con el pedido MKT para los carruseles."
+        },
         {
           "date": "01-10-2026",
           "summary": "Foto → Tuberia_HDPE_END_ACERO1 (pedido MKT)."

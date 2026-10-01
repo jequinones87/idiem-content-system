@@ -100,6 +100,12 @@ El equipo de MKT (Kike) es la autoridad de tono. Patrones observados en sus rees
 - **NO** incluir las siglas de célula (IHA, IOM, etc.) en la pieza: es manejo interno.
 - **Carruseles** → diseño **foto de fondo (Plantilla 02)**: portada + intermedias
   numeradas (ícono + palabra en caja roja + bajada) + cierre de marca. NO diseño plano.
+- **Textos de las láminas de carrusel (MKT, 01-10-2026):** el título puede ser una etiqueta corta, pero
+  la **bajada debe decir algo relevante**: por qué importa (riesgo/necesidad del cliente), qué aporta
+  IDIEM y qué gana el cliente (propuesta de valor), con el mismo nivel del copy del post. ⛔ No sirve
+  repetir el título con otras palabras ni listar el componente sin su valor. Si hay un caso, la lámina
+  del caso explica la participación de IDIEM. Todo sigue trazando a 2A.2 (sin inventar beneficios ni
+  resultados; con `USE_WITH_MATIZ` el valor se expresa como propósito, sin ampliar el alcance).
 - **Estáticos** → formato **Servicios (Plantilla 01)**: círculo rojo con servicio +
   mensaje clave + baseline.
 - **Fotos**: preferir **fotos propias de faena** de la librería de IDIEM cuando existan;
@@ -157,3 +163,5 @@ capacidades técnicas (la célula ICT no tiene conocimiento activo).
   - #2: carrusel y copy reformulados hacia "laboratorio en obra" con el caso del aeropuerto.
   - #6: sin aeropuerto → servicio genérico de ingeniería contra incendios (ancla KB-IPR-019).
   - #5: edición de copy de MKT (salto de línea tras el gancho).
+  - Carruseles #2, #5 y #10: bajadas reescritas con relevancia y propuesta de valor (pedido MKT:
+    "los mensajes del carrusel no dicen nada relevante"). #7 foto → `modelado_bim`.
