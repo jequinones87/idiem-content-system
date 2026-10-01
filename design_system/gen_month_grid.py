@@ -31,13 +31,10 @@ from idiem.review import compose_month, set_post_copy  # noqa: E402
 ROOT = Path(__file__).resolve().parent
 ASSETS = ROOT / "assets"
 MONTH = ASSETS / "month"
-SCRATCH = Path("/tmp/claude-0/-home-user-idiem-content-system/"
-               "1c5b178b-f8ee-5946-beb8-9cf3fffd70df/scratchpad")
 
 # ---- recursos oficiales compartidos (idénticos a Plantilla 01) --------------
-SLOGAN = (SCRATCH / "_slogan.txt").read_text().strip()
-LOGO = (SCRATCH / "_logo.txt").read_text().strip()
-RING = (SCRATCH / "_ring.txt").read_text().strip()
+sys.path.insert(0, str(ROOT))
+from brand_assets import LOGO, RING, SLOGAN  # noqa: E402,F401
 
 
 def data_uri(path: Path) -> str:

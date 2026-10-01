@@ -1,0 +1,245 @@
+{
+  "month": "2026-11",
+  "status": "DRAFT",
+  "note": "Capa visual de noviembre (Plantilla 01 Servicios / Plantilla 02 carrusel / pieza conmemorativa). Todo texto de pieza traza al copy DRAFT de 2026-11_copies.json; sin siglas de célula; sin superlativos. Fotos: librería propia IDIEM (Drive) salvo la efeméride (Adobe Stock, licencia libre: no hay foto propia de transporte descargable).",
+  "photo_dir": "design_system/assets/month_2026-11",
+  "posts": {
+    "1": {
+      "photo": {
+        "file": "p01.jpg",
+        "source": "library",
+        "id": "PHO-0099",
+        "detalle": "tranque de relaves · talud",
+        "drive": "https://drive.google.com/file/d/1mRrEu66GubxiIdd0SgFAvwK_kgFM3Bjj/view",
+        "pos": "50% 50%"
+      },
+      "side": "left",
+      "svc": "Monitoreo de relaves",
+      "msg": "Anticiparse a lo<br>que no se ve.",
+      "base": "Instrumentación · <b>monitoreo a distancia</b>"
+    },
+    "2": {
+      "photo": {
+        "file": "p02.jpg",
+        "source": "library",
+        "id": "PHO-0097",
+        "detalle": "profesional IDIEM junto a camión de hormigón en obra",
+        "drive": "https://drive.google.com/file/d/1B6eQJMaQe1R1rKSqPowBjUcvcZ3ReCrC/view",
+        "pos": "62% 40%"
+      },
+      "carousel": {
+        "portada": {
+          "kicker": "HORMIGONES · CONTROL EN OBRA",
+          "title": "Se controla <span class=\"c2rt\">donde se construye</span>."
+        },
+        "intermedias": [
+          {
+            "icon": "location",
+            "title": "Laboratorio <span class=\"c2rb\">en obra</span>",
+            "body": "En el nuevo terminal internacional del Aeropuerto Arturo Merino Benítez, IDIEM instaló un laboratorio en obra."
+          },
+          {
+            "icon": "magnifier",
+            "title": "Estructuras, hormigones <span class=\"c2rb\">y aceros</span>",
+            "body": "Estudios, ensayos y diagnósticos junto a los frentes de trabajo."
+          },
+          {
+            "icon": "shield",
+            "title": "Pública <span class=\"c2rb\">y privada</span>",
+            "body": "Un servicio que prestamos a todo tipo de infraestructura."
+          }
+        ],
+        "cierre": {
+          "bajada": "Ensayos en el mismo lugar donde se toman las decisiones de la obra."
+        }
+      }
+    },
+    "3": {
+      "photo": {
+        "file": "p03.jpg",
+        "source": "library",
+        "id": "PHO-0041",
+        "detalle": "torre de alta tensión · levantamiento",
+        "drive": "https://drive.google.com/file/d/1cqacewO07jjzAcPe7V6aWuq4C5J6xPSm/view",
+        "pos": "68% 30%"
+      },
+      "side": "left",
+      "svc": "Integridad estructural",
+      "msg": "Torres y<br>subestaciones.",
+      "base": "Inspección visual · aérea · <b>termográfica</b>"
+    },
+    "4": {
+      "photo": {
+        "file": "p04.jpg",
+        "source": "library",
+        "id": "PHO-0053",
+        "detalle": "planos y documentos de trabajo",
+        "drive": "https://drive.google.com/file/d/106O9BRW4nnxHT17zRJB_fwVQ_Bs3SLt1/view",
+        "pos": "60% 50%"
+      },
+      "side": "left",
+      "svc": "Ingeniería contractual",
+      "msg": "Una base técnica<br>para acordar.",
+      "base": "Sector Salud · acuerdos · <b>prefactibilidad de reclamos</b>"
+    },
+    "5": {
+      "photo": {
+        "file": "p05.jpg",
+        "source": "library",
+        "id": "PHO-0042",
+        "detalle": "dron de inspección con profesionales en terreno",
+        "drive": "https://drive.google.com/file/d/1h0O5lel8VmbdeYVhJ0C4lHMIfUQ5iqMk/view",
+        "pos": "60% 45%"
+      },
+      "carousel": {
+        "portada": {
+          "kicker": "GESTIÓN DE INTEGRIDAD ESTRUCTURAL · SIM",
+          "title": "Un solo <span class=\"c2rt\">proceso</span>."
+        },
+        "intermedias": [
+          {
+            "icon": "calendar",
+            "title": "Planificación y <span class=\"c2rb\">monitoreo</span>",
+            "body": "Planificación y monitoreo continuo de la integridad estructural."
+          },
+          {
+            "icon": "magnifier",
+            "title": "Análisis de <span class=\"c2rb\">antecedentes</span>",
+            "body": "Los antecedentes de las estructuras, analizados como parte del programa."
+          },
+          {
+            "icon": "shield",
+            "title": "Inspecciones <span class=\"c2rb\">y sensores</span>",
+            "body": "Inspecciones y sensores trabajando en conjunto en infraestructura minera."
+          }
+        ],
+        "cierre": {
+          "bajada": "Programa SIM (Structural Integrity Management) aplicado en infraestructura minera."
+        }
+      }
+    },
+    "6": {
+      "photo": {
+        "file": "p06.jpg",
+        "source": "library",
+        "id": "PHO-0073",
+        "detalle": "ensayo de humos fríos en laboratorio de incendio",
+        "drive": "https://drive.google.com/file/d/1NvR0W4hVMrO8IzpQ70SizhF6XZ_n3pcz/view",
+        "pos": "60% 50%"
+      },
+      "side": "left",
+      "svc": "Ingeniería contra incendios",
+      "msg": "Seguridad que se<br>define antes.",
+      "base": "Análisis · simulaciones · <b>ensayos específicos</b>"
+    },
+    "7": {
+      "photo": {
+        "file": "p07.jpg",
+        "source": "library",
+        "id": "PHO-0102",
+        "detalle": "estación total · levantamiento topográfico en terreno",
+        "drive": "https://drive.google.com/file/d/1C6lsmuPxn_xpjXQ3yt4rz1rrRw1nbhPw/view",
+        "pos": "50% 50%"
+      },
+      "side": "left",
+      "svc": "Modelamiento digital",
+      "msg": "Las estructuras<br>como están hoy.",
+      "base": "Levantamiento de condiciones · <b>modelamiento digital</b>"
+    },
+    "8": {
+      "photo": {
+        "file": "p08.jpg",
+        "source": "library",
+        "id": "PHO-0088",
+        "detalle": "profesional IDIEM revisando planos en obra",
+        "drive": "https://drive.google.com/file/d/1LeD87VrUVQn4iH7NesS_AY8Ovobar6zz/view",
+        "pos": "50% 50%"
+      },
+      "side": "left",
+      "svc": "Asesoría a Inspección Fiscal",
+      "msg": "Calidad en<br>los informes.",
+      "base": "Inspección técnica · <b>ISO 9001:2015</b>",
+      "flag": "VERIFY: vigencia de la certificación ISO 9001:2015 antes de publicar (GR-13)."
+    },
+    "9": {
+      "photo": {
+        "file": "p09.jpg",
+        "source": "library",
+        "id": "PHO-0054",
+        "detalle": "faena minera a rajo abierto",
+        "drive": "https://drive.google.com/file/d/1k47H8j5hCCTS2wAT4NEIz2sIjB6qULNf/view",
+        "pos": "60% 50%"
+      },
+      "side": "left",
+      "svc": "Control de productividad",
+      "msg": "Decidir<br>con datos.",
+      "base": "Operación minera · <b>soluciones tecnológicas</b>",
+      "flag": "VERIFY: validar con especialista el alcance de 'soluciones tecnológicas para el control de productividad' (KB-IOM-019 solo nombra la capacidad)."
+    },
+    "10": {
+      "photo": {
+        "file": "p10.jpg",
+        "source": "library",
+        "id": "Tuberia_HDPE_END_ACERO2",
+        "detalle": "tendido de tubería HDPE en faena · equipo de termofusión",
+        "drive": "https://drive.google.com/file/d/1cnF1j2Cm1ieAONBsEr5prRdUXnq4xIUA/view",
+        "pos": "50% 50%"
+      },
+      "carousel": {
+        "portada": {
+          "kicker": "CONTROL DE CALIDAD · LÍNEAS HDPE",
+          "title": "De la fabricación <span class=\"c2rt\">al montaje</span>."
+        },
+        "intermedias": [
+          {
+            "icon": "location",
+            "title": "Desde la <span class=\"c2rb\">fabricación</span>",
+            "body": "El control de calidad de la línea parte en su fabricación."
+          },
+          {
+            "icon": "magnifier",
+            "title": "Uniones <span class=\"c2rb\">soldadas</span>",
+            "body": "Elementos críticos en los procesos mineros, con ensayos destructivos y no destructivos."
+          },
+          {
+            "icon": "shield",
+            "title": "Hasta el <span class=\"c2rb\">montaje</span>",
+            "body": "Cobertura nacional y proyectos de diversa complejidad."
+          }
+        ],
+        "cierre": {
+          "bajada": "Calidad controlada a lo largo de todo el recorrido de la línea HDPE."
+        }
+      }
+    },
+    "11": {
+      "photo": {
+        "file": "p11.jpg",
+        "source": "library",
+        "id": "estructura_andamio_minera",
+        "detalle": "estructura minera con andamiaje",
+        "drive": "https://drive.google.com/file/d/1tY9VZc5shDLNaNXtQLVOBg1lvxcUrIiL/view",
+        "pos": "50% 50%"
+      },
+      "side": "left",
+      "svc": "Planes de mantenimiento",
+      "msg": "Prolongar la<br>vida útil.",
+      "base": "Activos mineros · <b>normativas y buenas prácticas</b>"
+    },
+    "E": {
+      "photo": {
+        "file": "pE.jpg",
+        "source": "stock",
+        "id": "316415352",
+        "detalle": "tren subterráneo en movimiento · estación",
+        "pos": "50% 50%"
+      },
+      "special": {
+        "kicker": "26 DE NOVIEMBRE · DÍA MUNDIAL DEL TRANSPORTE SOSTENIBLE",
+        "title": "Infraestructura que<br>nos <span class=\"fpred\">conecta</span>.",
+        "sub": "Aportamos ciencia e ingeniería al desarrollo de la infraestructura del país."
+      },
+      "trace": "Efeméride institucional — <strong>no traza a knowledge_id</strong>. La célula INFRA CRÍTICA TRANSPORTE es CONTENT_GAP: mensaje general, sin capacidades técnicas de transporte."
+    }
+  }
+}
