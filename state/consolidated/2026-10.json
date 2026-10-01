@@ -1,0 +1,246 @@
+{
+ "month": "2026-10",
+ "status": "CERRADO — programado por MKT; no regenerar",
+ "source": "Workstation Octubre (artefacto 9XbzZUmBKE3Kgy2wa7BU94, versión 24-09) + overrides de su base de datos",
+ "fingerprint_note": "archetype/hook_type/cta_type/pain_point anotados por Claude (heurístico) el 30-09-2026 para el control de novedad de noviembre.",
+ "stats": {
+  "commercial_contact": 10,
+  "posts": 13
+ },
+ "posts": [
+  {
+   "seq": 1,
+   "cid": "PLAN-KB-IOM-038-01",
+   "cell": "IOM",
+   "fmt": "STATIC",
+   "sub": "",
+   "evidence": "KB-IOM-038 · KB-IOM-039 · KB-IOM-040 · KB-IOM-041",
+   "copy": "📑 En un proyecto minero, un conflicto contractual mal manejado puede costar tanto como una falla técnica.\n\nReclamos, atrasos e inconsistencias durante la ejecución de la obra escalan cuando faltan antecedentes técnicos sólidos para respaldarlos. ⚖️\n\nEn #IDIEM entregamos apoyo técnico independiente en materia contractual para obras mineras:\n* Diagnóstico contractual y de ejecución de la obra.\n* Prefactibilidad de un reclamo y apoyo técnico para lograr acuerdos.\n* Análisis ante el término anticipado de un contrato.\n\nEvidencia técnica para resolver diferencias con respaldo. ✅\n\n📩 ¿Enfrentas una diferencia contractual en tu obra? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Minería #IngenieríaContractual #Obras #GestiónDeProyectos",
+   "fingerprint": {
+    "archetype": "problem_impact_capability",
+    "hook_type": "risk",
+    "cta_type": "commercial_contact",
+    "pain_point": "conflicto contractual minero",
+    "cta_text": [
+     "📩 ¿Enfrentas una diferencia contractual en tu obra? Contáctanos y conversemos sobre tu caso."
+    ]
+   }
+  },
+  {
+   "seq": 2,
+   "cid": "PLAN-KB-IPR-018-02",
+   "cell": "IPR",
+   "fmt": "STATIC",
+   "sub": "",
+   "evidence": "KB-IPR-018 · KB-IPR-017",
+   "copy": "🏛️ En el Día Mundial de la Arquitectura celebramos que diseñar hoy también es diseñar para un futuro sostenible.\n\nLa arquitectura y la infraestructura pública enfrentan un desafío: reducir su impacto ambiental sin someter la calidad ni la funcionalidad. 🌱\n\nEn #IDIEM aportamos soluciones sostenibles para infraestructura, ciudades y edificaciones, con planes y estudios de cambio climático para el territorio y las comunas: cálculo de huella de carbono e hídrica, análisis energéticos, ciclo de vida de materiales y estudios de reciclaje. ♻️📊\n\nCiencia e ingeniería se funden con la Arquitectura y el diseño para una edificación más eficiente y responsable. ✅\n\n¿Tu proyecto quiere ser más sustentable? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #DíaDeLaArquitectura #Sustentabilidad #CambioClimático #Construcción",
+   "fingerprint": {
+    "archetype": "efemeride",
+    "hook_type": "insight",
+    "cta_type": "commercial_contact",
+    "pain_point": "Día Mundial de la Arquitectura / sustentabilidad",
+    "cta_text": [
+     "¿Tu proyecto quiere ser más sustentable? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl"
+    ]
+   }
+  },
+  {
+   "seq": 3,
+   "cid": "PLAN-KB-LMD-004-03",
+   "cell": "LMD",
+   "fmt": "STATIC",
+   "sub": "",
+   "evidence": "KB-LMD-004 · KB-LMD-005 · KB-LMD-006",
+   "copy": "⛏️ Hoy es el Día del Geólogo en Chile. 🇨🇱\n\nDetrás de cada obra segura y de cada faena que opera sobre bases firmes hay geólogas y geólogos que entienden el terreno antes de construir sobre él.\n\nSu trabajo —leer la tierra, anticipar riesgos y caracterizar el subsuelo— es parte esencial del desarrollo de la infraestructura y la minería del país, y también del quehacer de #IDIEM. 🌎🪨\n\nA quienes hacen de la geología una herramienta al servicio de la ingeniería: gracias. 👏\n\n¡Feliz Día del Geólogo! 🎉\n\n#IDIEM #DíaDelGeólogo #Geología #Minería #Ingeniería",
+   "fingerprint": {
+    "archetype": "efemeride",
+    "hook_type": "scenario",
+    "cta_type": "knowledge",
+    "pain_point": "Día del Geólogo",
+    "cta_text": [
+     "¡Feliz Día del Geólogo! 🎉"
+    ]
+   }
+  },
+  {
+   "seq": 4,
+   "cid": "PLAN-KB-IOM-065-04",
+   "cell": "IOM",
+   "fmt": "STATIC",
+   "sub": "",
+   "evidence": "KB-IOM-065",
+   "copy": "🔬 ¿Por qué un material falla antes de lo esperado?\n\nResponderlo no es cosa de una sola mirada: exige entender el material desde la metalurgia, la mecánica y la química a la vez.\n\nEn #IDIEM evaluamos la calidad de los materiales usados en elementos mecánicos y estructuras con un equipo especializado en metalurgia, mecánica, química y estructuras, apoyado en tecnología de laboratorio para el análisis de materiales metálicos y poliméricos. 🧪⚙️\n\nUna mirada multidisciplinaria para entender el material y anticipar su comportamiento. ✅\n\n📩 ¿Tienes dudas sobre la calidad de un material? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Materiales #Metalurgia #Confiabilidad #Ingeniería",
+   "fingerprint": {
+    "archetype": "technical_question",
+    "hook_type": "question",
+    "cta_type": "commercial_contact",
+    "pain_point": "material que falla antes de lo esperado",
+    "cta_text": [
+     "📩 ¿Tienes dudas sobre la calidad de un material? Contáctanos y conversemos sobre tu caso."
+    ]
+   }
+  },
+  {
+   "seq": 5,
+   "cid": "PLAN-KB-IPR-016-05",
+   "cell": "IPR",
+   "fmt": "STATIC",
+   "sub": "",
+   "evidence": "KB-IPR-016",
+   "copy": "🏢 Innovar en la construcción exige una pregunta previa: ¿este material o sistema cumple realmente el estándar?\n\nIncorporar nuevas soluciones sin validación técnica puede comprometer la calidad y la seguridad de una obra que usarán miles de personas. 🔎\n\nEn #IDIEM ofrecemos Servicios de Tecnología de la Construcción y acompañamos procesos de innovación en la edificación, con ensayos y certificaciones de materiales, componentes y sistemas para verificar el cumplimiento de estándares de calidad y seguridad. 🧪📋\n\nInnovación respaldada por evidencia técnica. ✅\n\n¿Buscas validar materiales o sistemas para edificación pública? Conversemos en https://idiem.cl 👉\n\n#IDIEM #EdificaciónPública #Innovación #Ensayos #Construcción",
+   "fingerprint": {
+    "archetype": "technical_question",
+    "hook_type": "question",
+    "cta_type": "technical_conversation",
+    "pain_point": "validar materiales/sistemas en edificación",
+    "cta_text": [
+     "¿Buscas validar materiales o sistemas para edificación pública? Conversemos en https://idiem.cl 👉"
+    ]
+   }
+  },
+  {
+   "seq": 6,
+   "cid": "PLAN-KB-LMD-007-06",
+   "cell": "LMD",
+   "fmt": "CARRUSEL · 5 láminas",
+   "sub": "",
+   "evidence": "KB-LMD-007 · KB-LMD-008 · KB-LMD-009 · KB-LMD-021",
+   "copy": "🪨 En minería, estructuras críticas como las pilas ROM o los tranques de relaves están construidas con suelos granulares gruesos.\n\nEnsayar ese material según su distribución granulométrica de terreno —con sus partículas de gran tamaño— es clave para caracterizarlo bien y diseñar con seguridad en presas de tierra, gran minería, energía e infraestructura. 🔬\n\nEn #IDIEM contamos con un equipo Triaxial para grandes partículas, desarrollado con ingeniería propia, que permite ensayar suelos de gran tamaño y obtener parámetros representativos para el diseño geotécnico. 📐\n\nEnsayos que reflejan el material real, no una versión reducida de él. ✅\n\n¿Necesitas ensayar suelos granulares gruesos? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Geotecnia #Minería #Ensayos #PresasDeTierra",
+   "fingerprint": {
+    "archetype": "capability_application",
+    "hook_type": "technical_claim",
+    "cta_type": "commercial_contact",
+    "pain_point": "ensayo de suelos granulares gruesos",
+    "cta_text": [
+     "¿Necesitas ensayar suelos granulares gruesos? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl"
+    ]
+   }
+  },
+  {
+   "seq": 7,
+   "cid": "PLAN-KB-IOM-004-07",
+   "cell": "IOM",
+   "fmt": "STATIC",
+   "sub": "",
+   "evidence": "KB-IOM-004 · KB-IOM-003",
+   "copy": "🏗️ Coordinar un proyecto minero con información incompleta multiplica errores, retrabajos y sorpresas en obra.\n\nCuando cada disciplina trabaja con datos distintos del estado real, los problemas aparecen recién en terreno, cuando corregir cuesta más. 🧭\n\nEn #IDIEM abordamos la ingeniería de apoyo para proyectos mineros con un equipo multidisciplinario: ingeniería civil, mecánica y geomensura, modelación BIM y mantenimiento industrial, partiendo por el levantamiento de las condiciones existentes en cada disciplina. 📐📊\n\nUna base digital y multidisciplinaria para decidir con información confiable. ✅\n\n📩 ¿Tu proyecto minero necesita coordinación BIM? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Minería #BIM #Ingeniería #ModelamientoDigital",
+   "fingerprint": {
+    "archetype": "problem_impact_capability",
+    "hook_type": "risk",
+    "cta_type": "commercial_contact",
+    "pain_point": "coordinación con información incompleta",
+    "cta_text": [
+     "📩 ¿Tu proyecto minero necesita coordinación BIM? Contáctanos y conversemos sobre tu caso."
+    ]
+   }
+  },
+  {
+   "seq": 8,
+   "cid": "PLAN-KB-IPR-002-08",
+   "cell": "IPR",
+   "fmt": "CARRUSEL · 5 láminas",
+   "sub": "",
+   "evidence": "KB-IPR-002",
+   "copy": "🔧 Cuando un componente metálico falla, la pregunta clave no es solo qué se rompió, sino por qué.\n\nUn perno, un eje, un engranaje o una tubería que falla puede detener una operación o comprometer la seguridad. Sin un análisis riguroso, la causa queda sin resolver y el riesgo permanece. 🔎\n\nEn #IDIEM realizamos estudios de falla de componentes, con peritajes a pernos, ejes, engranajes y tuberías. Determinamos qué ocurrió y entregamos evidencia técnica para decidir. 🧪📐\n\nEntender la falla es el primer paso para evitar que se repita. ✅\n\n¿Necesitas peritar la falla de un componente? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Peritajes #Materiales #Ingeniería #FallaDeComponentes",
+   "fingerprint": {
+    "archetype": "technical_question",
+    "hook_type": "insight",
+    "cta_type": "commercial_contact",
+    "pain_point": "por qué falla un componente metálico",
+    "cta_text": [
+     "¿Necesitas peritar la falla de un componente? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl"
+    ]
+   }
+  },
+  {
+   "seq": 9,
+   "cid": "PLAN-KB-IOM-063-09",
+   "cell": "IOM",
+   "fmt": "CARRUSEL · 5 láminas",
+   "sub": "",
+   "evidence": "KB-IOM-063",
+   "copy": "📋 Una brecha normativa puede pasar desapercibida… hasta que una auditoría o una falla la deja en evidencia.\n\nDetectar las brechas normativas a tiempo evita sobrecostos, detenciones y riesgos para las personas. 🔍\n\nEn #IDIEM realizamos revisión de cumplimiento normativo en tres ámbitos —estructural, incendios y especialidades—, identificando las brechas respecto de los marcos aplicables. 🛡️📐\n\nUna mirada técnica e independiente para operar con respaldo y sin sorpresas. ✅\n\n📩 ¿Necesitas revisar el cumplimiento normativo de tu obra? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #CumplimientoNormativo #Ingeniería #Seguridad #Calidad",
+   "fingerprint": {
+    "archetype": "risk_prevention",
+    "hook_type": "risk",
+    "cta_type": "commercial_contact",
+    "pain_point": "brecha normativa oculta",
+    "cta_text": [
+     "📩 ¿Necesitas revisar el cumplimiento normativo de tu obra? Contáctanos y conversemos sobre tu caso."
+    ]
+   }
+  },
+  {
+   "seq": 10,
+   "cid": "PLAN-KB-IPR-005-10",
+   "cell": "IPR",
+   "fmt": "STATIC",
+   "sub": "",
+   "evidence": "KB-IPR-005",
+   "copy": "🌉 Un puente conecta territorios y sostiene la vida de las comunidades: saber cuánta carga resiste no es un detalle.\n\nCon el paso del tiempo y el aumento del tránsito, un puente puede quedar exigido más allá de lo previsto. Evaluar su capacidad real es clave para decidir con seguridad. 🔎\n\nEn #IDIEM evaluamos la capacidad de carga de puentes con diagnóstico, pruebas, ensayos, modelación por elementos finitos, levantamiento topográfico del trazado y análisis de alternativas de diseño. 📐📊\n\nEvidencia técnica para resguardar la seguridad y la conectividad del territorio. ✅\n\n¿Necesitas evaluar la capacidad de carga de un puente? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Puentes #Infraestructura #Ingeniería #Estructuras",
+   "fingerprint": {
+    "archetype": "problem_impact_capability",
+    "hook_type": "insight",
+    "cta_type": "commercial_contact",
+    "pain_point": "capacidad de carga de puentes",
+    "cta_text": [
+     "¿Necesitas evaluar la capacidad de carga de un puente? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl"
+    ]
+   }
+  },
+  {
+   "seq": 11,
+   "cid": "PLAN-KB-IOM-017-11",
+   "cell": "IOM",
+   "fmt": "STATIC",
+   "sub": "",
+   "evidence": "KB-IOM-017 · KB-IOM-006 · KB-IOM-007 · KB-IOM-008",
+   "copy": "🧱 El hormigón es el material más usado en construcción… y también uno de los que más exige innovación.\n\nMejorar su desempeño y su comportamiento frente a condiciones exigentes es un desafío técnico permanente, sobre todo en faenas mineras. 🔬\n\nEn #IDIEM trabajamos en tecnología e investigación y desarrollo (I+D) del hormigón dentro de nuestros servicios a la operación minera, aportando conocimiento técnico a un material clave para la infraestructura. 🏗️\n\nCiencia e ingeniería aplicadas a un material que sostiene el país. ✅\n\n📩 ¿Tienes un desafío técnico con hormigón? Contáctanos y conversemos sobre tu caso.\n\n#IDIEM #Hormigón #Innovación #IDeI #Construcción",
+   "fingerprint": {
+    "archetype": "data_implication",
+    "hook_type": "insight",
+    "cta_type": "commercial_contact",
+    "pain_point": "innovación en hormigón",
+    "cta_text": [
+     "📩 ¿Tienes un desafío técnico con hormigón? Contáctanos y conversemos sobre tu caso."
+    ]
+   }
+  },
+  {
+   "seq": 12,
+   "cid": "PLAN-KB-IOM-030-12",
+   "cell": "IOM",
+   "fmt": "CARRUSEL · 6 láminas",
+   "sub": "",
+   "evidence": "KB-IOM-030 · KB-IOM-031 · KB-IOM-032 · KB-IOM-033",
+   "copy": "🏗️ Rehabilitar una estructura compleja sin un diagnóstico completo es avanzar a ciegas.\n\nIntervenir sin conocer el estado real, sin ensayos que lo respalden ni alternativas evaluadas, encarece la obra y arriesga el resultado. 🔍\n\nEn #IDIEM abordamos la revisión integral de proyectos complejos de rehabilitación en cuatro etapas:\n\n* Levantamiento de las condiciones existentes.\n* Soporte de nuestros laboratorios.\n* Diagnóstico y evaluación de alternativas.\n* Ingeniería de rehabilitación.\n\nUn proceso ordenado para intervenir con respaldo técnico de principio a fin. ✅\n\n¿Tienes un proyecto de rehabilitación estructural? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl\n\n#IDIEM #Rehabilitación #Ingeniería #Estructuras #Minería",
+   "fingerprint": {
+    "archetype": "problem_impact_capability",
+    "hook_type": "risk",
+    "cta_type": "commercial_contact",
+    "pain_point": "rehabilitar sin diagnóstico",
+    "cta_text": [
+     "¿Tienes un proyecto de rehabilitación estructural? Contáctanos a través de nuestros canales oficiales 👉 https://idiem.cl"
+    ]
+   }
+  },
+  {
+   "seq": 13,
+   "cid": "PLAN-ACUSTICA-SMA-13",
+   "cell": "ACÚS",
+   "fmt": "CARRUSEL · ACÚSTICA",
+   "sub": "Acústica · control de ruido (hito SMA)",
+   "evidence": "",
+   "copy": "🔊 La gestión de ruido de las obras y la vida nocturna ahora cuenta con herramientas más claras.\n\nLa nueva Instrucción General de la SMA —asociada al D.S. N°14/2024— fija recomendaciones para los Planes de Condiciones de Operación en faenas constructivas y locales de ocio nocturno.\n\nEn #IDIEM aportamos la base técnica que sustenta estas directrices:\n* Ocio nocturno: los contenidos técnicos del documento del Ministerio del Medio Ambiente se elaboraron en una consultoría pública adjudicada a IDIEM.\n* Obras: nuestro protocolo de gestión de ruido (FIA 2024) ordena evaluación, mitigación y monitoreo continuo en 6 pasos.\n\nInvestigación e ingeniería al servicio de mejores políticas públicas. ✅\n\nTrabajemos juntos por un manejo responsable del ruido 👉 https://idiem.cl\n\n#IDIEM #Acústica #ControlDeRuido #MedioAmbiente #Construcción",
+   "fingerprint": {
+    "archetype": "capability_application",
+    "hook_type": "insight",
+    "cta_type": "technical_conversation",
+    "pain_point": "gestión de ruido (norma SMA)",
+    "cta_text": [
+     "Trabajemos juntos por un manejo responsable del ruido 👉 https://idiem.cl"
+    ]
+   }
+  }
+ ]
+}

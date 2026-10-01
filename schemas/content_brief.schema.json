@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://idiem.local/schemas/content_brief.schema.json",
+  "title": "IDIEM Content Brief 2A.2",
+  "description": "Structured, auditable content brief. Derived from data/05_reglas_editoriales_generacion_IDIEM_2A2.json -> content_brief_schema. Canonical data under data/ must not be mutated.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "content_id",
+    "status",
+    "cell",
+    "content_type",
+    "audience",
+    "objective",
+    "editorial_angle",
+    "core_problem_or_question",
+    "knowledge_ids",
+    "auxiliary_ids",
+    "allowed_facts",
+    "mandatory_matices",
+    "blocked_claims",
+    "content_gaps",
+    "expert_input_required",
+    "expert_input_request",
+    "recommended_format",
+    "draft_copy",
+    "visual_brief",
+    "traceability",
+    "qa"
+  ],
+  "properties": {
+    "content_id": { "type": "string", "minLength": 1 },
+    "status": {
+      "type": "string",
+      "enum": ["DRAFT", "FACT_CHECKED", "EXPERT_REVIEW", "APPROVED", "BLOCKED", "CONTENT_GAP"]
+    },
+    "cell": {
+      "type": "string",
+      "enum": [
+        "INFRA PÚBLICA RESILIENTE",
+        "INFRA HOSPITALARIA Y ASISTENCIAL",
+        "INFRA CRÍTICA TRANSPORTE",
+        "INFRA OPERACIÓN MINERA",
+        "LAB MINERO DIGITAL"
+      ]
+    },
+    "content_type": {
+      "type": "string",
+      "enum": [
+        "TECHNICAL_INSIGHT",
+        "SERVICE_EXPLAINER",
+        "PROJECT_EVIDENCE",
+        "VALUE_ATTRIBUTE",
+        "EXPERT_INPUT_REQUIRED"
+      ]
+    },
+    "audience": { "type": ["string", "null"] },
+    "objective": { "type": "string" },
+    "editorial_angle": { "type": "string" },
+    "core_problem_or_question": { "type": "string" },
+    "knowledge_ids": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^KB-[A-Z]{3}-\\d{3}$" }
+    },
+    "auxiliary_ids": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^AUX-\\d{3}$" }
+    },
+    "allowed_facts": { "type": "array", "items": { "type": "string" } },
+    "mandatory_matices": { "type": "array", "items": { "type": "string" } },
+    "blocked_claims": { "type": "array", "items": { "type": "string" } },
+    "content_gaps": { "type": "array", "items": { "type": "string" } },
+    "expert_input_required": { "type": "boolean" },
+    "expert_input_request": { "type": ["string", "null"] },
+    "recommended_format": { "type": "string", "enum": ["STATIC", "CAROUSEL"] },
+    "draft_copy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["hook", "body", "cta"],
+      "properties": {
+        "hook": { "type": "string" },
+        "body": { "type": "string" },
+        "cta": { "type": "string" }
+      }
+    },
+    "visual_brief": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["main_message", "supporting_points", "evidence_to_visualize"],
+      "properties": {
+        "main_message": { "type": "string" },
+        "supporting_points": { "type": "array", "items": { "type": "string" } },
+        "evidence_to_visualize": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "traceability": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["relation_ids", "document_ids"],
+      "properties": {
+        "relation_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^R\\d{4}$" }
+        },
+        "document_ids": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^DOC-\\d{2}$" }
+        }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fact_check_passed", "editorial_check_passed", "human_approval", "notes"],
+      "properties": {
+        "fact_check_passed": { "type": "boolean" },
+        "editorial_check_passed": { "type": "boolean" },
+        "human_approval": { "type": "boolean" },
+        "notes": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}
