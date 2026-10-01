@@ -42,6 +42,11 @@ Estas nacen de correcciones del equipo. Son de aplicación obligatoria.
   donde es relator sí se puede comunicar.
 - Regla general: todo post que **nombre un proyecto o caso** se marca para que MKT valide su
   sensibilidad antes de redactar.
+- **Un caso/proyecto nombrado va en UN solo post por mes** (MKT, 01-10-2026). Si otro post toca el
+  mismo servicio, se redacta como servicio genérico, sin repetir el caso. Ej.: nov-2026, el Aeropuerto
+  AMB queda solo en el post de laboratorio en obra; el de incendios va sin mencionarlo.
+- **Laboratorio en obra:** el foco es el concepto (laboratorio dentro de la obra, junto a los frentes
+  de trabajo) ilustrado con el caso, no el material (hormigones). (MKT, 01-10-2026.)
 
 ### Ingeniería contractual (célula IHA)
 - Ámbitos que IDIEM atiende de forma explícita en el sector Salud: **análisis de
@@ -146,3 +151,9 @@ capacidades técnicas (la célula ICT no tiene conocimiento activo).
   - Post 12: la soldadura se inspecciona por muestreo (no "cada soldadura verificada");
     se califica al soldador, no la soldadura.
   - Nuevo post 13: saludo Fiestas Patrias (institucional).
+- **2026-10-01** — Ronda MKT noviembre (workstation):
+  - Fotos elegidas por MKT: #1 `tranque_caren4`, #2 `aeroporto_stgo`, #4 `generica_hospital`,
+    #7 `generico_modelado_estructura`, #10 `Tuberia_HDPE_END_ACERO1`, efeméride `metro_stgo`.
+  - #2: carrusel y copy reformulados hacia "laboratorio en obra" con el caso del aeropuerto.
+  - #6: sin aeropuerto → servicio genérico de ingeniería contra incendios (ancla KB-IPR-019).
+  - #5: edición de copy de MKT (salto de línea tras el gancho).

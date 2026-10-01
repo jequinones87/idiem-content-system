@@ -241,9 +241,13 @@ def card(it: dict, uris: list[str], applied: str) -> str:
         thumbs = "".join(f'<img class="thumb{" on" if i == 0 else ""}" src="{u}" data-idx="{i}" alt="lámina {i+1}">'
                          for i, u in enumerate(uris))
         strip = f'<div class="strip">{thumbs}</div>'
-    hist = ('<details class="hist"><summary>Historial de cambios aplicados (1)</summary><ul class="histlist">'
-            f'<li><span class="hd">{applied}</span><span class="hs">Pieza y copy DRAFT creados según la tabla de '
-            'asignación v3 aprobada por MKT.</span></li></ul></details>')
+    # historial: cambios aplicados (graficas.json "hist", más reciente primero) + creación
+    log = list(g.get("hist", [])) + [{"date": g.get("created", applied),
+                                      "summary": "Pieza y copy DRAFT creados según la tabla de asignación v3 aprobada por MKT."}]
+    items_html = "".join(f'<li><span class="hd">{G.esc(e["date"])}</span><span class="hs">{G.esc(e["summary"])}</span></li>'
+                         for e in log)
+    hist = (f'<details class="hist"><summary>Historial de cambios aplicados ({len(log)})</summary>'
+            f'<ul class="histlist">{items_html}</ul></details>')
     title = f"Nov · Post {it['key']} ({_fecha(it['date'])})" if not is_special else f"Nov · Efeméride ({_fecha(it['date'])})"
     label = f"{int(it['key']):02d}" if it["key"].isdigit() else "★"
     return f'''<article class="post{" special" if is_special else ""}" data-seq="{it['key']}" data-cid="{cid}" data-car="{1 if is_car else 0}" data-status="publicado" data-edited-at="" data-edited-by="" data-caltitle="{G.esc(title)}">

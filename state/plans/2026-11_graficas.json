@@ -8,51 +8,65 @@
       "photo": {
         "file": "p01.jpg",
         "source": "library",
-        "id": "PHO-0099",
-        "detalle": "tranque de relaves · talud",
-        "drive": "https://drive.google.com/file/d/1mRrEu66GubxiIdd0SgFAvwK_kgFM3Bjj/view",
-        "pos": "50% 50%"
+        "id": "tranque_caren4",
+        "detalle": "tranque de relaves · vista aérea del muro (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/1NFb94U5FJbBw8W_mMJRrQ3Zk2ozt04no/view",
+        "pos": "62% 50%"
       },
       "side": "left",
       "svc": "Monitoreo de relaves",
       "msg": "Anticiparse a lo<br>que no se ve.",
-      "base": "Instrumentación · <b>monitoreo a distancia</b>"
+      "base": "Instrumentación · <b>monitoreo a distancia</b>",
+      "hist": [
+        {
+          "date": "01-10-2026",
+          "summary": "Foto → tranque_caren4 (pedido MKT)."
+        }
+      ],
+      "created": "01-10-2026"
     },
     "2": {
       "photo": {
         "file": "p02.jpg",
         "source": "library",
-        "id": "PHO-0097",
-        "detalle": "profesional IDIEM junto a camión de hormigón en obra",
-        "drive": "https://drive.google.com/file/d/1B6eQJMaQe1R1rKSqPowBjUcvcZ3ReCrC/view",
-        "pos": "62% 40%"
+        "id": "aeroporto_stgo",
+        "detalle": "nuevo terminal internacional Aeropuerto AMB · vista aérea (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/1yHNdw2coWC3bbJn-jRSVoxxagushQGIG/view",
+        "pos": "50% 50%"
       },
       "carousel": {
         "portada": {
-          "kicker": "HORMIGONES · CONTROL EN OBRA",
-          "title": "Se controla <span class=\"c2rt\">donde se construye</span>."
+          "kicker": "LABORATORIO EN OBRA",
+          "title": "El laboratorio, <span class=\"c2rt\">dentro de la obra</span>."
         },
         "intermedias": [
           {
             "icon": "location",
-            "title": "Laboratorio <span class=\"c2rb\">en obra</span>",
+            "title": "El caso: <span class=\"c2rb\">aeropuerto</span>",
             "body": "En el nuevo terminal internacional del Aeropuerto Arturo Merino Benítez, IDIEM instaló un laboratorio en obra."
           },
           {
             "icon": "magnifier",
-            "title": "Estructuras, hormigones <span class=\"c2rb\">y aceros</span>",
-            "body": "Estudios, ensayos y diagnósticos junto a los frentes de trabajo."
+            "title": "Estudios, ensayos <span class=\"c2rb\">y diagnósticos</span>",
+            "body": "De estructuras, hormigones y aceros, junto a los frentes de trabajo."
           },
           {
             "icon": "shield",
-            "title": "Pública <span class=\"c2rb\">y privada</span>",
-            "body": "Un servicio que prestamos a todo tipo de infraestructura."
+            "title": "Instalaciones, personal <span class=\"c2rb\">y equipos</span>",
+            "body": "Un servicio para todo tipo de infraestructura, pública y privada."
           }
         ],
         "cierre": {
           "bajada": "Ensayos en el mismo lugar donde se toman las decisiones de la obra."
         }
-      }
+      },
+      "hist": [
+        {
+          "date": "01-10-2026",
+          "summary": "Carrusel reformulado: foco en laboratorio en obra con el caso del aeropuerto (más que hormigones) + foto aeroporto_stgo + copy ajustado al nuevo foco (pedido MKT)."
+        }
+      ],
+      "created": "01-10-2026"
     },
     "3": {
       "photo": {
@@ -66,21 +80,29 @@
       "side": "left",
       "svc": "Integridad estructural",
       "msg": "Torres y<br>subestaciones.",
-      "base": "Inspección visual · aérea · <b>termográfica</b>"
+      "base": "Inspección visual · aérea · <b>termográfica</b>",
+      "created": "01-10-2026"
     },
     "4": {
       "photo": {
         "file": "p04.jpg",
         "source": "library",
-        "id": "PHO-0053",
-        "detalle": "planos y documentos de trabajo",
-        "drive": "https://drive.google.com/file/d/106O9BRW4nnxHT17zRJB_fwVQ_Bs3SLt1/view",
-        "pos": "60% 50%"
+        "id": "PHO-0067",
+        "detalle": "generica_hospital · edificio hospitalario (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/145Rtu5NfO2uLDK0WWNLPn1ZIqjHTEQ6D/view",
+        "pos": "62% 50%"
       },
       "side": "left",
       "svc": "Ingeniería contractual",
       "msg": "Una base técnica<br>para acordar.",
-      "base": "Sector Salud · acuerdos · <b>prefactibilidad de reclamos</b>"
+      "base": "Sector Salud · acuerdos · <b>prefactibilidad de reclamos</b>",
+      "hist": [
+        {
+          "date": "01-10-2026",
+          "summary": "Foto → generica_hospital (pedido MKT)."
+        }
+      ],
+      "created": "01-10-2026"
     },
     "5": {
       "photo": {
@@ -116,7 +138,14 @@
         "cierre": {
           "bajada": "Programa SIM (Structural Integrity Management) aplicado en infraestructura minera."
         }
-      }
+      },
+      "hist": [
+        {
+          "date": "01-10-2026",
+          "summary": "Copy: edición de MKT aplicada (salto de línea tras «Primero se planifica.»)."
+        }
+      ],
+      "created": "01-10-2026"
     },
     "6": {
       "photo": {
@@ -130,21 +159,35 @@
       "side": "left",
       "svc": "Ingeniería contra incendios",
       "msg": "Seguridad que se<br>define antes.",
-      "base": "Análisis · simulaciones · <b>ensayos específicos</b>"
+      "base": "Análisis · simulaciones · <b>ensayos específicos</b>",
+      "hist": [
+        {
+          "date": "01-10-2026",
+          "summary": "Copy sin mención al aeropuerto: servicio genérico de ingeniería contra incendios (el caso ya va en el post 2) · ancla KB-IPR-019 (pedido MKT)."
+        }
+      ],
+      "created": "01-10-2026"
     },
     "7": {
       "photo": {
         "file": "p07.jpg",
         "source": "library",
-        "id": "PHO-0102",
-        "detalle": "estación total · levantamiento topográfico en terreno",
-        "drive": "https://drive.google.com/file/d/1C6lsmuPxn_xpjXQ3yt4rz1rrRw1nbhPw/view",
+        "id": "PHO-0052",
+        "detalle": "generico_modelado_estructura · modelo 3D de estructura (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/157A_fs0lXLIOawLs_D92Ze4C-cczSUFS/view",
         "pos": "50% 50%"
       },
       "side": "left",
       "svc": "Modelamiento digital",
       "msg": "Las estructuras<br>como están hoy.",
-      "base": "Levantamiento de condiciones · <b>modelamiento digital</b>"
+      "base": "Levantamiento de condiciones · <b>modelamiento digital</b>",
+      "hist": [
+        {
+          "date": "01-10-2026",
+          "summary": "Foto → generico_modelado_estructura (pedido MKT)."
+        }
+      ],
+      "created": "01-10-2026"
     },
     "8": {
       "photo": {
@@ -159,7 +202,8 @@
       "svc": "Asesoría a Inspección Fiscal",
       "msg": "Calidad en<br>los informes.",
       "base": "Inspección técnica · <b>ISO 9001:2015</b>",
-      "flag": "VERIFY: vigencia de la certificación ISO 9001:2015 antes de publicar (GR-13)."
+      "flag": "VERIFY: vigencia de la certificación ISO 9001:2015 antes de publicar (GR-13).",
+      "created": "01-10-2026"
     },
     "9": {
       "photo": {
@@ -174,15 +218,16 @@
       "svc": "Control de productividad",
       "msg": "Decidir<br>con datos.",
       "base": "Operación minera · <b>soluciones tecnológicas</b>",
-      "flag": "VERIFY: validar con especialista el alcance de 'soluciones tecnológicas para el control de productividad' (KB-IOM-019 solo nombra la capacidad)."
+      "flag": "VERIFY: validar con especialista el alcance de 'soluciones tecnológicas para el control de productividad' (KB-IOM-019 solo nombra la capacidad).",
+      "created": "01-10-2026"
     },
     "10": {
       "photo": {
         "file": "p10.jpg",
         "source": "library",
-        "id": "Tuberia_HDPE_END_ACERO2",
-        "detalle": "tendido de tubería HDPE en faena · equipo de termofusión",
-        "drive": "https://drive.google.com/file/d/1cnF1j2Cm1ieAONBsEr5prRdUXnq4xIUA/view",
+        "id": "Tuberia_HDPE_END_ACERO1",
+        "detalle": "tubería HDPE en faena (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/1S61AUi0KE5jzgOvIu5JSlYIkw84oj27X/view",
         "pos": "50% 50%"
       },
       "carousel": {
@@ -210,7 +255,14 @@
         "cierre": {
           "bajada": "Calidad controlada a lo largo de todo el recorrido de la línea HDPE."
         }
-      }
+      },
+      "hist": [
+        {
+          "date": "01-10-2026",
+          "summary": "Foto → Tuberia_HDPE_END_ACERO1 (pedido MKT)."
+        }
+      ],
+      "created": "01-10-2026"
     },
     "11": {
       "photo": {
@@ -224,14 +276,16 @@
       "side": "left",
       "svc": "Planes de mantenimiento",
       "msg": "Prolongar la<br>vida útil.",
-      "base": "Activos mineros · <b>normativas y buenas prácticas</b>"
+      "base": "Activos mineros · <b>normativas y buenas prácticas</b>",
+      "created": "01-10-2026"
     },
     "E": {
       "photo": {
         "file": "pE.jpg",
-        "source": "stock",
-        "id": "316415352",
-        "detalle": "tren subterráneo en movimiento · estación",
+        "source": "library",
+        "id": "metro_stgo",
+        "detalle": "tren de metro en estación (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/1yA70oPQA5PHDBnB-SkShfsNOOoCMMJxD/view",
         "pos": "50% 50%"
       },
       "special": {
@@ -239,7 +293,14 @@
         "title": "Infraestructura que<br>nos <span class=\"fpred\">conecta</span>.",
         "sub": "Aportamos ciencia e ingeniería al desarrollo de la infraestructura del país."
       },
-      "trace": "Efeméride institucional — <strong>no traza a knowledge_id</strong>. La célula INFRA CRÍTICA TRANSPORTE es CONTENT_GAP: mensaje general, sin capacidades técnicas de transporte."
+      "trace": "Efeméride institucional — <strong>no traza a knowledge_id</strong>. La célula INFRA CRÍTICA TRANSPORTE es CONTENT_GAP: mensaje general, sin capacidades técnicas de transporte.",
+      "hist": [
+        {
+          "date": "01-10-2026",
+          "summary": "Foto → metro_stgo (pedido MKT)."
+        }
+      ],
+      "created": "01-10-2026"
     }
   }
 }
