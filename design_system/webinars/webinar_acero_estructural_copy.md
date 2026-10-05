@@ -1,7 +1,7 @@
 # Webinar — Acero estructural en proyectos mineros e industriales
 
 **Pieza:** invitación (estático 1080×1080, Plantilla 03 Webinar)
-**Fecha del webinar:** miércoles 14 de octubre de 2026 · 09:30 hrs (Chile) · Online
+**Fecha del webinar:** miércoles 21 de octubre de 2026 · 09:30 hrs (Chile) · Online
 **Relator:** David Silva — Ing. Civil U. de Chile · MBA · Jefe División Aceros Control, IDIEM
 **Banner (fijo de la serie):** `webinar_banner_serie.jpg` — va en TODOS los posts del ciclo, cambie o no el contenido.
 **Brief:** `config/webinar/acero_estructural_brief.json`
@@ -25,7 +25,7 @@ En el webinar abordaremos:
 * Recomendaciones para fortalecer el cumplimiento de la NCh203.
 
 🎙️ **Relator:** David Silva, Ing. Civil U. de Chile · MBA, Jefe División Aceros Control de IDIEM.
-🗓️ **Miércoles 14 de octubre · 09:30 hrs (Chile) · Online**
+🗓️ **Miércoles 21 de octubre · 09:30 hrs (Chile) · Online**
 
 ¿Participas en la especificación, suministro, fabricación, inspección o recepción de estructuras de acero? Este webinar es para ti.
 
@@ -39,4 +39,4 @@ En el webinar abordaremos:
 - **Inscripción (Google Forms):** incluida en el copy y en `url_inscripcion` del brief.
   El parámetro `entry.1892003034=LinkedIn` etiqueta como "LinkedIn" el origen de quien se inscribe.
 - **Link de Zoom** — `https://us02web.zoom.us/j/84226077802?pwd=basVXzx7rE41rnjqLR0z1oGa4vCzW3.1`
-  ⚠️ **Solo se comparte en el post del día del webinar (14-oct), no en esta invitación.**
+  ⚠️ **Solo se comparte en el post del día del webinar (21-oct), no en esta invitación.**

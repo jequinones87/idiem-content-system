@@ -29,6 +29,7 @@ FORM = ("https://docs.google.com/forms/d/e/1FAIpQLSdIHQss1ajlR2E1cQAU7EPPUZlaVJ5
         "T6kh_b76fDHCQ/viewform?usp=pp_url&entry.1892003034=LinkedIn")
 ZOOM = "https://us02web.zoom.us/j/84226077802?pwd=basVXzx7rE41rnjqLR0z1oGa4vCzW3.1"
 APPLIED = "30-09-2026"
+RESCHEDULED = "05-10-2026"  # MKT: webinar movido del 14 al 21 de octubre
 
 
 def jpeg_uri(name: str, q: int = 86) -> str:
@@ -55,7 +56,7 @@ COPY = {
   "estructural para proyectos mineros e industriales. Te invitamos a este webinar para "
   "compartir aprendizajes y buenas prácticas. ✅\n\n"
   "🎙️ David Silva, Jefe División Aceros Control de IDIEM\n"
-  "🗓️ Miércoles 14 de octubre · 09:30 hrs (Chile) · Online\n\n"
+  "🗓️ Miércoles 21 de octubre · 09:30 hrs (Chile) · Online\n\n"
   f"📩 Inscríbete aquí 👉 {FORM}\n\n"
   "#IDIEM #AceroEstructural #NCh203 #Minería #Industria #AseguramientoDeCalidad #Certificación"),
 
@@ -69,7 +70,7 @@ COPY = {
   "aplicada— compartiremos los aprendizajes de años controlando y certificando acero "
   "estructural para proyectos mineros e industriales.\n\n"
   "🎙️ David Silva, Jefe División Aceros Control de IDIEM\n"
-  "🗓️ Miércoles 14 de octubre · 09:30 hrs (Chile) · Online\n\n"
+  "🗓️ Miércoles 21 de octubre · 09:30 hrs (Chile) · Online\n\n"
   f"📩 Inscríbete aquí 👉 {FORM}\n\n"
   "#IDIEM #AceroEstructural #NCh203 #Minería #Industria #AseguramientoDeCalidad"),
 
@@ -82,7 +83,7 @@ COPY = {
   "En este webinar, David Silva —Jefe División Aceros Control de IDIEM— compartirá los "
   "aprendizajes de años en control y certificación de acero estructural, y buenas prácticas "
   "para cerrar esas brechas, independiente del origen del acero o del lugar de fabricación. ✅\n\n"
-  "🗓️ Miércoles 14 de octubre · 09:30 hrs (Chile) · Online\n\n"
+  "🗓️ Miércoles 21 de octubre · 09:30 hrs (Chile) · Online\n\n"
   f"📩 Inscríbete aquí 👉 {FORM}\n\n"
   "#IDIEM #AceroEstructural #NCh203 #Minería #Industria #Trazabilidad #Certificación"),
 
@@ -93,7 +94,7 @@ COPY = {
   "aplicación de la NCh203, las brechas más recurrentes en trazabilidad y el rol del "
   "laboratorio y la certificación en el aseguramiento de calidad. 🧱\n\n"
   "🎙️ David Silva, Jefe División Aceros Control de IDIEM\n"
-  "🗓️ Miércoles 14 de octubre · 09:30 hrs (Chile) · Online\n\n"
+  "🗓️ Miércoles 21 de octubre · 09:30 hrs (Chile) · Online\n\n"
   f"Aún estás a tiempo de inscribirte 📩 👉 {FORM}\n\n"
   "#IDIEM #AceroEstructural #NCh203 #Minería #Industria #AseguramientoDeCalidad"),
 
@@ -119,29 +120,34 @@ POSTS = {
  1: {"fecha": "1 oct", "obj": "Apertura de inscripciones", "tipo": "STATIC", "slides": ["inv"],
      "sched": ("2026-10-01", "09:00"),
      "imagen": "Banner de serie (provisto por MKT) · relator David Silva",
-     "hist": [(APPLIED, "Pieza creada para la serie del webinar del 14-oct (relator David Silva)."),
+     "hist": [(RESCHEDULED, "Fecha del webinar → miércoles 21 de octubre (antes 14): gráfica actualizada."),
+              (APPLIED, "Pieza creada para la serie del webinar del 14-oct (relator David Silva)."),
               (APPLIED, "Banner fijo de la serie (imagen provista por MKT) + logo/eslogan."),
               (APPLIED, "Layout: foto de David ampliada + credenciales; íconos de fecha en blanco.")]},
  2: {"fecha": "5 oct", "obj": "Relevancia + temática", "tipo": "CARRUSEL", "slides": ["car1", "car2", "car3", "car4"],
      "sched": ("2026-10-05", "09:00"),
      "imagen": "Banner + láminas de contenido (portada · contexto NCh203 · temario · cierre)",
-     "hist": [(APPLIED, "Ajuste MKT: portada con llamado preciso (NCh203 y cadena de suministro global); cierre con David en las mismas proporciones que el post 1; copy editado por MKT."),
+     "hist": [(RESCHEDULED, "Fecha del webinar → miércoles 21 de octubre (antes 14): portada y cierre actualizados."),
+              (APPLIED, "Ajuste MKT: portada con llamado preciso (NCh203 y cadena de suministro global); cierre con David en las mismas proporciones que el post 1; copy editado por MKT."),
               (APPLIED, "Carrusel de 4 láminas creado para la serie del webinar."),
               (APPLIED, "Contexto NCh203 (cadena de suministro global) + temario de 5 puntos."),
               (APPLIED, "Cierre con relator y CTA de inscripción.")]},
  3: {"fecha": "8 oct", "obj": "Recordatorio · trazabilidad", "tipo": "STATIC", "slides": ["inv"],
      "sched": ("2026-10-08", "09:00"),
      "imagen": "Banner de serie (provisto por MKT) · relator David Silva",
-     "hist": [(APPLIED, "Recordatorio: misma gráfica de invitación, copy con foco en trazabilidad/brechas.")]},
- 4: {"fecha": "13 oct", "obj": "Víspera del evento", "tipo": "STATIC", "slides": ["manana"],
-     "sched": ("2026-10-13", "09:00"),
+     "hist": [(RESCHEDULED, "Fecha del webinar → miércoles 21 de octubre (antes 14): gráfica actualizada."),
+              (APPLIED, "Recordatorio: misma gráfica de invitación, copy con foco en trazabilidad/brechas.")]},
+ 4: {"fecha": "20 oct", "obj": "Víspera del evento", "tipo": "STATIC", "slides": ["manana"],
+     "sched": ("2026-10-20", "09:00"),
      "imagen": "Banner de serie (provisto por MKT) · relator David Silva",
-     "hist": [(APPLIED, "Ajuste MKT: banner con '⏰ ¡Mañana!' en vez de 'Webinar:' (estilo post 5) + copy editado por MKT."),
+     "hist": [(RESCHEDULED, "Webinar reprogramado al 21-oct: víspera pasa al 20 de octubre + gráfica actualizada."),
+              (APPLIED, "Ajuste MKT: banner con '⏰ ¡Mañana!' en vez de 'Webinar:' (estilo post 5) + copy editado por MKT."),
               (APPLIED, "Víspera: gráfica de invitación, copy '⏰ mañana' + últimas inscripciones.")]},
- 5: {"fecha": "14 oct", "obj": "Día del evento · ingreso", "tipo": "STATIC", "slides": ["live"],
-     "sched": ("2026-10-14", "08:00"),
+ 5: {"fecha": "21 oct", "obj": "Día del evento · ingreso", "tipo": "STATIC", "slides": ["live"],
+     "sched": ("2026-10-21", "08:00"),
      "imagen": "Banner · variante día del evento (ingreso por Zoom)",
-     "hist": [(APPLIED, "Variante 'día del evento': '🔴 ¡Webinar hoy!' + tarjeta 'Ingresa por Zoom'."),
+     "hist": [(RESCHEDULED, "Webinar reprogramado al 21-oct: post del día del evento pasa al 21 de octubre + gráfica actualizada."),
+              (APPLIED, "Variante 'día del evento': '🔴 ¡Webinar hoy!' + tarjeta 'Ingresa por Zoom'."),
               (APPLIED, "El link de Zoom va SOLO en este post; posts 1–4 llevan el formulario.")]},
 }
 
@@ -180,7 +186,7 @@ def card(seq: int) -> str:
     <div class="gwrap">
       <img class="main" src="{main}" data-idx="0" alt="Post {seq}">
       <span class="fmtbadge">{p['tipo']}</span>
-      <span class="statuschip pub" data-applied="{APPLIED}">publicado · {APPLIED}</span>
+      <span class="statuschip pub" data-applied="{RESCHEDULED}">publicado · {RESCHEDULED}</span>
       <div class="botleft">
         <span class="ap-badge" hidden>✅ Aprobado</span>
         <span class="cal-badge" hidden>📅</span>
@@ -251,7 +257,7 @@ def build() -> str:
     cfg_json = json.dumps(cfg, ensure_ascii=False)
 
     return f'''<title>Workstation Webinar Acero · IDIEM</title>
-<meta name="description" content="Serie de 5 posts del webinar de acero estructural (NCh203, 14-oct): gráfica por post, texto editable, notas de imagen, agenda en Google Calendar, aprobación y estado en LinkedIn, con sincronización en vivo con el equipo.">
+<meta name="description" content="Serie de 5 posts del webinar de acero estructural (NCh203, 21-oct): gráfica por post, texto editable, notas de imagen, agenda en Google Calendar, aprobación y estado en LinkedIn, con sincronización en vivo con el equipo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
@@ -263,7 +269,7 @@ def build() -> str:
 <div class="wrap">
   <p class="eyebrow"><span class="dot"></span>IDIEM · Design System · Workstation · Webinar</p>
   <h1>Webinar Acero estructural — <b>5 posts</b></h1>
-  <p class="lede">Serie de difusión del webinar del <strong>14 de octubre</strong> (relator David Silva). Cada post muestra su <strong>estado</strong> en la esquina de la gráfica. Abajo tienes el texto editable, notas de imagen, el <strong>historial</strong> y <strong>↺ volver a lo publicado</strong>. Todo se <strong>sincroniza en vivo con el equipo</strong>: aprueba (<strong>✅ Aprobado para publicar</strong>), agenda la fecha, y marca <strong>🔗 subido a LinkedIn</strong> (flujo: <b class="tpub">revisado → aprobado → agendado → subido</b>). No necesitas guardar: se guarda solo. <em>Insumo externo del webinar: no traza a knowledge_id; el link de Zoom va solo en el post del día del evento.</em></p>
+  <p class="lede">Serie de difusión del webinar del <strong>21 de octubre</strong> (reprogramado desde el 14) (relator David Silva). Cada post muestra su <strong>estado</strong> en la esquina de la gráfica. Abajo tienes el texto editable, notas de imagen, el <strong>historial</strong> y <strong>↺ volver a lo publicado</strong>. Todo se <strong>sincroniza en vivo con el equipo</strong>: aprueba (<strong>✅ Aprobado para publicar</strong>), agenda la fecha, y marca <strong>🔗 subido a LinkedIn</strong> (flujo: <b class="tpub">revisado → aprobado → agendado → subido</b>). No necesitas guardar: se guarda solo. <em>Insumo externo del webinar: no traza a knowledge_id; el link de Zoom va solo en el post del día del evento.</em></p>
   <div class="bar">
     <input class="idfield" id="revName" type="text" placeholder="Tu nombre" autocomplete="name" spellcheck="false">
     <input class="idfield" id="revRole" type="text" placeholder="Especialidad / área (opcional)" spellcheck="false">
