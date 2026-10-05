@@ -1,0 +1,156 @@
+{
+  "_comment": "Eje de SUBTEMAS (Fase D): agrupa capabilities de 2A.2 en temas editoriales para diversificar el mes por tema (no por capability suelta). EXTERNO y configurable (CLAUDE.md regla 11); ADITIVO, no muta 2A.2. Resolución: item.capability -> tema; si la capability no está mapeada -> tema = la propia capability; si capability es null -> tema = el service.",
+  "version": "2A.3",
+  "by_cell": {
+    "INFRA HOSPITALARIA Y ASISTENCIAL": {
+      "Ingeniería contractual": [
+        "Diagnóstico contractual",
+        "Análisis de prefactibilidad de un reclamo",
+        "Apoyo técnico para lograr acuerdo",
+        "Análisis a la programación de la obra",
+        "Análisis ante término anticipado de contrato"
+      ],
+      "Sostenibilidad hospitalaria": [
+        "GREEN HOSPITAL"
+      ]
+    },
+    "INFRA OPERACIÓN MINERA": {
+      "Monitoreo e integridad estructural": [
+        "Monitoreo de estructuras y equipos",
+        "Monitoreo de salud estructural",
+        "Monitoreo preventivo de activos críticos (instrumentación, vibraciones)",
+        "Sensorización y datos en tiempo real",
+        "Análisis de vibraciones de equipo rotativo",
+        "Análisis predictivo de fallas",
+        "Evaluación estructural: diagnóstico del comportamiento general",
+        "Seguimiento continuo con sensores: información en tiempo real",
+        "Análisis predictivo para mantenimiento oportuno",
+        "Programa SIM",
+        "Plan de mantenimiento para vida útil",
+        "Instrumentación y monitoreo remoto de depósitos de relaves",
+        "Monitoreo remoto"
+      ],
+      "Modelamiento y levantamiento digital": [
+        "Modelamiento digital de estructuras",
+        "Modelamiento preventivo",
+        "Levantamiento multidisciplinario de condiciones existentes",
+        "Equipo multidisciplinario con modelación BIM",
+        "Levantamiento de condiciones existentes",
+        "Levantamiento de información técnica en terreno: inspección visual, aérea y termográfica; modelos 3D con escáner láser y dron",
+        "Inspección aérea y modelamiento 3D"
+      ],
+      "Peritajes e inspección estructural": [
+        "Peritajes de fallas estructurales y mecánicas",
+        "Inspección de estructuras de acero y peritajes de falla en elementos mecánicos",
+        "Inspección y peritaje estructural",
+        "Seguridad estructural en almacenamiento"
+      ],
+      "Ingeniería contra incendios": [
+        "Peritajes de incendios",
+        "Ingeniería contra incendios",
+        "Ingeniería y evaluación de riesgos de incendios"
+      ],
+      "Ingeniería contractual": [
+        "Resolución de controversias contractuales",
+        "Servicios especializados para la resolución de controversias contractuales",
+        "Diagnóstico contractual",
+        "Análisis de prefactibilidad de un reclamo",
+        "Apoyo técnico para lograr acuerdo",
+        "Análisis a la programación de la obra",
+        "Análisis ante término anticipado de contrato"
+      ],
+      "Acústica": [
+        "Modelo de propagación de ruido",
+        "Modelo de propagación de ruidos",
+        "Estudio de impacto acústico y mapas de ruido",
+        "Estudios de impacto acústico"
+      ],
+      "Tecnología del hormigón": [
+        "Tecnología del hormigón",
+        "Tecnología del hormigón (I+D)"
+      ],
+      "Rehabilitación de proyectos": [
+        "Proyectos de rehabilitación",
+        "Soporte directo de laboratorios",
+        "Diagnóstico y desarrollo de alternativas de solución",
+        "Ingeniería de rehabilitación"
+      ],
+      "Cumplimiento normativo": [
+        "Revisión de cumplimiento normativo",
+        "Tres ámbitos de revisión normativa"
+      ],
+      "Control de productividad": [
+        "Soluciones tecnológicas para el control de productividad"
+      ],
+      "Confiabilidad de materiales": [
+        "Aplicación multisectorial declarada"
+      ]
+    },
+    "INFRA PÚBLICA RESILIENTE": {
+      "Ingeniería contractual": [
+        "Diagnóstico contractual",
+        "Análisis de prefactibilidad de un reclamo",
+        "Apoyo técnico para lograr acuerdo",
+        "Análisis a la programación de la obra",
+        "Análisis ante término anticipado de contrato",
+        "Peritaje de controversias contractuales",
+        "Soporte ante el Panel Técnico de Concesiones"
+      ],
+      "Inspección y aseguramiento de calidad": [
+        "Sistema de gestión de calidad ISO 9001:2015 para elaboración de informes de inspección técnica",
+        "Acompañamiento del ciclo completo de proyecto público"
+      ],
+      "Laboratorio en obra": [
+        "Ensayos de materiales en terreno",
+        "Laboratorio permanente en faena"
+      ],
+      "Peritajes y evaluación estructural": [
+        "Peritaje de componentes metálicos",
+        "Modelación por elementos finitos y topografía de trazado",
+        "Diagnóstico de estado actual"
+      ],
+      "Ingeniería contra incendios": [
+        "Asesoría y estudios de ingeniería contra incendios"
+      ],
+      "Sustentabilidad y arquitectura": [
+        "CES / GREEN HOSPITAL / LEED",
+        "Soluciones de sustentabilidad y arquitectura",
+        "Planes y estudios de cambio climático"
+      ],
+      "Acústica": [
+        "Ensayos, monitoreo y soluciones acústicas"
+      ],
+      "Tecnología de la construcción": [
+        "Asesoría e innovación para edificación pública"
+      ]
+    },
+    "LAB MINERO DIGITAL": {
+      "Laboratorio en obra": [
+        "Laboratorio permanente en faena",
+        "Seguimiento digital de resultados de ensayo",
+        "Seguimiento en línea de resultados de ensayos"
+      ],
+      "Geotecnia y rocas": [
+        "Ensayos de mecánica de rocas",
+        "Triaxial Gigante / equipo para grandes partículas",
+        "Triaxial Gigante: ensayo de suelos con partículas de gran tamaño",
+        "Triaxial Gigante"
+      ],
+      "Control de calidad HDPE": [
+        "Control de uniones soldadas HDPE",
+        "Ensayos no destructivos en HDPE",
+        "Ensayos mecánicos en HDPE",
+        "Cobertura de fabricación a montaje",
+        "Documentación técnica de fabricación",
+        "Ensayos no destructivos y ensayos mecánicos de HDPE"
+      ],
+      "Inspección no destructiva de soldaduras": [
+        "Ensayos no destructivos en soldadura",
+        "Inspección de soldaduras metálicas con técnicas no destructivas",
+        "Inspección visual y superficial",
+        "Detección de defectos internos",
+        "Calificación de procedimientos y soldadores"
+      ]
+    }
+  }
+}

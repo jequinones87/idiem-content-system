@@ -1,0 +1,53 @@
+# PENDIENTES.me — IDIEM Content System (punto de retomada)
+
+> Contexto para continuar en un chat nuevo. Última actualización: 2026-10-05.
+> Leer primero: `CLAUDE.md` → `docs/10_ESTRATEGIA_EDITORIAL_Y_SESGOS.md` →
+> `docs/09_EDITORIAL_MEMORY.md`.
+
+## Repo y rama
+- Repo `jequinones87/idiem-content-system` · rama `claude/file-reading-nsposu` · sin PR salvo pedido.
+
+## Estado actual
+- **Septiembre**: publicado. Workstation: https://claude.ai/code/artifact/f9016145-d797-4a02-867e-1e478de62a6b
+- **Octubre**: cerrado por edición manual y **programado**. NO regenerar.
+  Workstation: https://claude.ai/artifact/9XbzZUmBKE3Kgy2wa7BU94
+- **Webinar acero: reprogramado al miércoles 21-oct, 09:30** (antes 14-oct; MKT 05-10-2026). Gráficas con
+  fecha actualizadas; víspera → 20-oct y post del evento → 21-oct. 5 posts en workstation con sync en vivo (db):
+  https://claude.ai/artifact/9VHLEeZ2WYm2pUwyhb4FkA · generador `design_system/gen_webinar_workstation.py`.
+  Zoom solo en el post del día del evento.
+- **Noviembre**: 11 posts + efeméride (26-nov) en **DRAFT**, en revisión MKT. Workstation (db + downloads):
+  https://claude.ai/artifact/BnifYwYQhXMhPv4cCCXhG3 · generador data-driven `design_system/gen_month_ws.py`
+  (lee `state/plans/2026-11_{asignacion,copies,graficas}.json`). Fotos en `design_system/assets/month_2026-11/`.
+- **Workstations** mensual y webinar usan los módulos compartidos
+  `design_system/workstation_shared/workstation_ui.{css,js}` (estándar octubre, config por `window.WSCFG`).
+
+## Pendientes inmediatos
+1. ✅ Webinar acero: ajustes MKT aplicados (posts 2 y 4) y 5 posts programados. Posts de evento
+   exentos del tope de 900 caracteres.
+2. ✅ Octubre consolidado como memoria: `state/consolidated/2026-10.json` (copies definitivos +
+   huella editorial). Ledger de publicados sep+oct en `state/published_ledger.json`.
+3. **Noviembre**: asignación v3 aprobada; copies + gráficas DRAFT en workstation. Pendiente: revisión MKT,
+   VERIFY #8 (vigencia ISO 9001:2015). #9 reemplazado por cumplimiento normativo (KB-IOM-016). Al publicar: ledger +
+   consolidado `state/consolidated/2026-11.json`.
+   Lab Minero Digital y Hospitalaria quedaron sin ítems frescos: pedir insumos nuevos antes de diciembre.
+4. Fotos de librería > ~7 MB no bajan por el conector de Drive (correa CMDIC, espesador, ciudad Santiago,
+   obra línea de metro): pedir a MKT versiones livianas (~2 MB) para próximos meses.
+
+## Backlog de implementación (auditoría de sesgos — antes/durante noviembre)
+Hoy la diversidad es solo taxonómica (planner por subtema + ledger por knowledge_id).
+Mientras no exista el código, la asignación se hace **a mano** (tabla de asignación previa a redactar).
+- [ ] `select_diverse` integrado al **planner**: asigna arquetipo, hook_type, cta_type, ángulo, enfoque.
+- [ ] El **drafter** recibe esas asignaciones como restricciones (hoy recibe solo `editorial_style`).
+- [ ] **Editorial Fingerprint** + **archive** mensual consolidado (fuente única de memoria).
+- [ ] **Novelty Engine** (proximidad multidimensional contra la ventana de recencia).
+- [ ] `recent_hooks` / `recent_ctas` derivados del consolidado — **hook ≠ pain point**.
+- [ ] Validador de **caracteres** en el pipeline (≤ 900; hoy solo el contador de la workstation).
+- [ ] QA editorial de diversidad (temática, narrativa, hooks, comercial, conceptual, textual).
+- [ ] Clasificación de datos `SAFE/VERIFY/INTERNAL/DO_NOT_PUBLISH` cuando entren brochures / Sales Intelligence.
+- [x] Assets de bootstrap del pipeline mensual → `design_system/brand_assets.py` (desde los SVG versionados).
+
+## Reglas que no se negocian (resumen)
+Ver `CLAUDE.md`. 2A.2 es la única fuente factual; fail closed (CONTENT_GAP / EXPERT_INPUT_REQUIRED);
+Green Hospital propia (sin "Salud sin Daño", + ISO 50001); soldadura se inspecciona por muestreo y
+se califica al soldador; D.S. 38/2011 MMA (futuro D.D. 14/24); Transporte = CONTENT_GAP;
+efemérides en `config/efemerides.json`; diversidad editorial según doc 10.

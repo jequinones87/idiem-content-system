@@ -1,0 +1,344 @@
+{
+  "month": "2026-11",
+  "status": "DRAFT",
+  "note": "Capa visual de noviembre (Plantilla 01 Servicios / Plantilla 02 carrusel / pieza conmemorativa). Todo texto de pieza traza al copy DRAFT de 2026-11_copies.json; sin siglas de célula; sin superlativos. Fotos: librería propia IDIEM (Drive) salvo la efeméride (Adobe Stock, licencia libre: no hay foto propia de transporte descargable).",
+  "photo_dir": "design_system/assets/month_2026-11",
+  "posts": {
+    "1": {
+      "photo": {
+        "file": "p01.jpg",
+        "source": "library",
+        "id": "tranque_caren4",
+        "detalle": "tranque de relaves · vista aérea del muro (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/1NFb94U5FJbBw8W_mMJRrQ3Zk2ozt04no/view",
+        "pos": "62% 50%"
+      },
+      "side": "left",
+      "svc": "Monitoreo de relaves",
+      "msg": "Una vigilancia<br>que no termina.",
+      "base": "Instrumentación · <b>monitoreo permanente a distancia</b>",
+      "hist": [
+        {
+          "date": "05-10-2026",
+          "summary": "Copy profundizado: control 24/7, infraestructura que crece y razones del monitoreo + titular de pieza «Una vigilancia que no termina» (pedido MKT)."
+        },
+        {
+          "date": "01-10-2026",
+          "summary": "Foto → tranque_caren4 (pedido MKT)."
+        }
+      ],
+      "created": "01-10-2026"
+    },
+    "2": {
+      "photo": {
+        "file": "p02.jpg",
+        "source": "library",
+        "id": "aeroporto_stgo",
+        "detalle": "nuevo terminal internacional Aeropuerto AMB · vista aérea (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/1yHNdw2coWC3bbJn-jRSVoxxagushQGIG/view",
+        "pos": "50% 50%"
+      },
+      "carousel": {
+        "portada": {
+          "kicker": "LABORATORIO EN OBRA",
+          "title": "El laboratorio, <span class=\"c2rt\">dentro de la obra</span>."
+        },
+        "intermedias": [
+          {
+            "icon": "location",
+            "title": "El caso: <span class=\"c2rb\">aeropuerto</span>",
+            "body": "En la construcción del nuevo terminal internacional del Aeropuerto Arturo Merino Benítez, IDIEM instaló un laboratorio en obra. Nuestra participación contempló además ingeniería contra incendios, ingeniería contractual y ensayos de especialidades."
+          },
+          {
+            "icon": "magnifier",
+            "title": "Estudios, ensayos <span class=\"c2rb\">y diagnósticos</span>",
+            "body": "De estructuras, hormigones y aceros, realizados junto a los frentes de trabajo: los resultados se obtienen donde se construye y donde se toman las decisiones."
+          },
+          {
+            "icon": "shield",
+            "title": "Instalaciones, personal <span class=\"c2rb\">y equipos</span>",
+            "body": "Un servicio permanente en obra, con entrega de informes en plazo y seguimiento en línea de los resultados, para infraestructura pública y privada."
+          }
+        ],
+        "cierre": {
+          "bajada": "Control técnico donde ocurre la obra, con informes en plazo y resultados en línea."
+        }
+      },
+      "hist": [
+        {
+          "date": "01-10-2026",
+          "summary": "Láminas: textos reformulados con la relevancia del laboratorio en obra, la participación de IDIEM en el aeropuerto y sus beneficios (títulos sin cambio, pedido MKT)."
+        },
+        {
+          "date": "01-10-2026",
+          "summary": "Carrusel reformulado: foco en laboratorio en obra con el caso del aeropuerto (más que hormigones) + foto aeroporto_stgo + copy ajustado al nuevo foco (pedido MKT)."
+        }
+      ],
+      "created": "01-10-2026"
+    },
+    "3": {
+      "photo": {
+        "file": "p03.jpg",
+        "source": "library",
+        "id": "PHO-0041",
+        "detalle": "torre de alta tensión · levantamiento",
+        "drive": "https://drive.google.com/file/d/1cqacewO07jjzAcPe7V6aWuq4C5J6xPSm/view",
+        "pos": "68% 30%"
+      },
+      "side": "left",
+      "svc": "Integridad estructural",
+      "msg": "Torres y<br>subestaciones.",
+      "base": "Inspección visual · aérea · <b>termográfica</b>",
+      "created": "01-10-2026"
+    },
+    "4": {
+      "photo": {
+        "file": "p04.jpg",
+        "source": "library",
+        "id": "PHO-0067",
+        "detalle": "generica_hospital · edificio hospitalario (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/145Rtu5NfO2uLDK0WWNLPn1ZIqjHTEQ6D/view",
+        "pos": "62% 50%"
+      },
+      "side": "left",
+      "svc": "Ingeniería contractual",
+      "msg": "Una base técnica<br>para acordar.",
+      "base": "Sector Salud · acuerdos · <b>prefactibilidad de reclamos</b>",
+      "hist": [
+        {
+          "date": "01-10-2026",
+          "summary": "Foto → generica_hospital (pedido MKT)."
+        }
+      ],
+      "created": "01-10-2026"
+    },
+    "5": {
+      "photo": {
+        "file": "p05.jpg",
+        "source": "library",
+        "id": "PHO-0042",
+        "detalle": "dron de inspección con profesionales en terreno",
+        "drive": "https://drive.google.com/file/d/1h0O5lel8VmbdeYVhJ0C4lHMIfUQ5iqMk/view",
+        "pos": "60% 45%"
+      },
+      "carousel": {
+        "portada": {
+          "kicker": "GESTIÓN DE INTEGRIDAD ESTRUCTURAL · SIM",
+          "title": "Un solo <span class=\"c2rt\">proceso</span>."
+        },
+        "intermedias": [
+          {
+            "icon": "calendar",
+            "title": "Primero, <span class=\"c2rb\">planificar</span>",
+            "body": "La integridad de una estructura no se revisa una sola vez: se planifica como un proceso que acompaña toda la operación."
+          },
+          {
+            "icon": "magnifier",
+            "title": "Análisis de <span class=\"c2rb\">antecedentes</span>",
+            "body": "Registros, inspecciones previas y mediciones dejan de estar dispersos: se analizan en conjunto para entender el estado de cada estructura."
+          },
+          {
+            "icon": "shield",
+            "title": "Inspecciones <span class=\"c2rb\">en terreno</span>",
+            "body": "La evidencia de terreno confirma el estado de las estructuras y orienta dónde poner la atención."
+          },
+          {
+            "icon": "clock",
+            "title": "Monitoreo <span class=\"c2rb\">continuo</span>",
+            "body": "Sensores trabajando en conjunto para seguir el comportamiento de las estructuras en el tiempo: la base para decidir dónde y cuándo intervenir."
+          }
+        ],
+        "cierre": {
+          "bajada": "SIM ordena planificación, antecedentes, inspecciones y monitoreo continuo en un solo proceso para la infraestructura minera."
+        }
+      },
+      "hist": [
+        {
+          "date": "05-10-2026",
+          "summary": "Copy de MKT aplicado + carrusel: monitoreo sale de la lámina 2 y va al final en lámina propia (Monitoreo continuo) (pedido MKT)."
+        },
+        {
+          "date": "01-10-2026",
+          "summary": "Láminas: textos reformulados con la importancia y la propuesta de valor del SIM (títulos sin cambio, pedido MKT)."
+        },
+        {
+          "date": "01-10-2026",
+          "summary": "Copy: edición de MKT aplicada (salto de línea tras «Primero se planifica.»)."
+        }
+      ],
+      "created": "01-10-2026"
+    },
+    "6": {
+      "photo": {
+        "file": "p06.jpg",
+        "source": "library",
+        "id": "PHO-0073",
+        "detalle": "ensayo de humos fríos en laboratorio de incendio",
+        "drive": "https://drive.google.com/file/d/1NvR0W4hVMrO8IzpQ70SizhF6XZ_n3pcz/view",
+        "pos": "60% 50%"
+      },
+      "side": "left",
+      "svc": "Ingeniería contra incendios",
+      "msg": "Seguridad que se<br>define antes.",
+      "base": "Análisis · simulaciones · <b>ensayos específicos</b>",
+      "hist": [
+        {
+          "date": "01-10-2026",
+          "summary": "Copy sin mención al aeropuerto: servicio genérico de ingeniería contra incendios (el caso ya va en el post 2) · ancla KB-IPR-019 (pedido MKT)."
+        }
+      ],
+      "created": "01-10-2026"
+    },
+    "7": {
+      "photo": {
+        "file": "p07.jpg",
+        "source": "library",
+        "id": "modelado_bim",
+        "detalle": "modelo BIM de estructura (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/1i7u8LwD7WuVAf8cFj8wPO1lqq4iYkvAi/view",
+        "pos": "50% 50%"
+      },
+      "side": "left",
+      "svc": "Modelamiento digital",
+      "msg": "Las estructuras<br>como están hoy.",
+      "base": "Levantamiento de condiciones · <b>modelamiento digital</b>",
+      "hist": [
+        {
+          "date": "01-10-2026",
+          "summary": "Foto → modelado_bim (pedido MKT)."
+        },
+        {
+          "date": "01-10-2026",
+          "summary": "Foto → generico_modelado_estructura (pedido MKT)."
+        }
+      ],
+      "created": "01-10-2026"
+    },
+    "8": {
+      "photo": {
+        "file": "p08.jpg",
+        "source": "library",
+        "id": "PHO-0088",
+        "detalle": "profesional IDIEM revisando planos en obra",
+        "drive": "https://drive.google.com/file/d/1LeD87VrUVQn4iH7NesS_AY8Ovobar6zz/view",
+        "pos": "50% 50%"
+      },
+      "side": "left",
+      "svc": "Asesoría a Inspección Fiscal",
+      "msg": "Calidad en<br>los informes.",
+      "base": "Inspección técnica · <b>ISO 9001:2015</b>",
+      "flag": "VERIFY: vigencia de la certificación ISO 9001:2015 antes de publicar (GR-13).",
+      "created": "01-10-2026"
+    },
+    "9": {
+      "photo": {
+        "file": "p09.jpg",
+        "source": "library",
+        "id": "PHO-0054",
+        "detalle": "faena minera a rajo abierto",
+        "drive": "https://drive.google.com/file/d/1k47H8j5hCCTS2wAT4NEIz2sIjB6qULNf/view",
+        "pos": "60% 50%"
+      },
+      "side": "left",
+      "svc": "Cumplimiento normativo",
+      "msg": "Priorizar con<br>evidencia.",
+      "base": "Estructural · incendios · <b>especialidades</b>",
+      "created": "01-10-2026",
+      "hist": [
+        {
+          "date": "05-10-2026",
+          "summary": "Post reemplazado: revisión de cumplimiento normativo (KB-IOM-016) en vez de productividad, sin certeza del servicio (pedido MKT)."
+        }
+      ]
+    },
+    "10": {
+      "photo": {
+        "file": "p10.jpg",
+        "source": "library",
+        "id": "Tuberia_HDPE_END_ACERO1",
+        "detalle": "tubería HDPE en faena (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/1S61AUi0KE5jzgOvIu5JSlYIkw84oj27X/view",
+        "pos": "50% 50%"
+      },
+      "carousel": {
+        "portada": {
+          "kicker": "CONTROL DE CALIDAD · LÍNEAS HDPE",
+          "title": "De la fabricación <span class=\"c2rt\">al montaje</span>."
+        },
+        "intermedias": [
+          {
+            "icon": "location",
+            "title": "Desde la <span class=\"c2rb\">fabricación</span>",
+            "body": "Asesoría en la documentación técnica de la fabricación de uniones soldadas y ensayos que verifican el cumplimiento del proyecto."
+          },
+          {
+            "icon": "magnifier",
+            "title": "Uniones <span class=\"c2rb\">soldadas</span>",
+            "body": "Son elementos críticos de los procesos mineros por su impacto en la continuidad operacional: ensayos no destructivos detectan defectos y ensayos mecánicos evalúan su calidad."
+          },
+          {
+            "icon": "shield",
+            "title": "Hasta el <span class=\"c2rb\">montaje</span>",
+            "body": "Ensayos destructivos y no destructivos hasta el montaje de la línea, con cobertura nacional y en proyectos de diversa complejidad."
+          }
+        ],
+        "cierre": {
+          "bajada": "Calidad controlada en cada etapa de una línea crítica para la continuidad operacional."
+        }
+      },
+      "hist": [
+        {
+          "date": "05-10-2026",
+          "summary": "Lámina 2: «ensayos que verifican el cumplimiento del proyecto» (pedido MKT)."
+        },
+        {
+          "date": "01-10-2026",
+          "summary": "Láminas: textos reformulados con la relevancia del control HDPE (criticidad y continuidad operacional), en línea con el pedido MKT para los carruseles."
+        },
+        {
+          "date": "01-10-2026",
+          "summary": "Foto → Tuberia_HDPE_END_ACERO1 (pedido MKT)."
+        }
+      ],
+      "created": "01-10-2026"
+    },
+    "11": {
+      "photo": {
+        "file": "p11.jpg",
+        "source": "library",
+        "id": "estructura_andamio_minera",
+        "detalle": "estructura minera con andamiaje",
+        "drive": "https://drive.google.com/file/d/1tY9VZc5shDLNaNXtQLVOBg1lvxcUrIiL/view",
+        "pos": "50% 50%"
+      },
+      "side": "left",
+      "svc": "Planes de mantenimiento",
+      "msg": "Prolongar la<br>vida útil.",
+      "base": "Activos mineros · <b>normativas y buenas prácticas</b>",
+      "created": "01-10-2026"
+    },
+    "E": {
+      "photo": {
+        "file": "pE.jpg",
+        "source": "library",
+        "id": "metro_stgo",
+        "detalle": "tren de metro en estación (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/1yA70oPQA5PHDBnB-SkShfsNOOoCMMJxD/view",
+        "pos": "50% 50%"
+      },
+      "special": {
+        "kicker": "26 DE NOVIEMBRE · DÍA MUNDIAL DEL TRANSPORTE SOSTENIBLE",
+        "title": "Infraestructura que<br>nos <span class=\"fpred\">conecta</span>.",
+        "sub": "Aportamos ciencia e ingeniería al desarrollo de la infraestructura del país."
+      },
+      "trace": "Efeméride institucional — <strong>no traza a knowledge_id</strong>. La célula INFRA CRÍTICA TRANSPORTE es CONTENT_GAP: mensaje general, sin capacidades técnicas de transporte.",
+      "hist": [
+        {
+          "date": "01-10-2026",
+          "summary": "Foto → metro_stgo (pedido MKT)."
+        }
+      ],
+      "created": "01-10-2026"
+    }
+  }
+}

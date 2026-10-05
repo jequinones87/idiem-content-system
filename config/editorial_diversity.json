@@ -1,0 +1,220 @@
+{
+  "_comment": "Fuente ÚNICA y ejecutable de diversidad editorial y longitud. Doc: docs/10_ESTRATEGIA_EDITORIAL_Y_SESGOS.md. Aplica desde la grilla de noviembre 2026. Límites numéricos (limits_per_month, recency) APROBADOS por MKT el 30-09-2026.",
+  "version": "1.0",
+  "effective_from_month": "2026-11",
+  "origin": "Auditoría del sistema 7-8 sept 2026 (handoff MKT integrado 30-09-2026)",
+  "length": {
+    "unit": "characters",
+    "max_chars": 900,
+    "target_chars_min": 820,
+    "target_chars_max": 880,
+    "emojis_per_paragraph_max": 2,
+    "note": "Reemplaza 110-170 palabras / 1-4 emojis por párrafo (reglas contradictorias eliminadas). Validar SIEMPRE en caracteres.",
+    "exceptions": {
+      "event_posts": {
+        "applies_to": "posts de evento (webinars, inscripciones, día del evento) que llevan URL de inscripción o acceso",
+        "rule": "Exentos del máximo de 900 caracteres (decisión MKT 30-09-2026). Contador de referencia: 1300. Mantener el texto lo más breve posible."
+      }
+    }
+  },
+  "archetypes": [
+    {
+      "id": "problem_impact_capability",
+      "logic": "problema del cliente → impacto → capacidad",
+      "opens_with_service": false
+    },
+    {
+      "id": "risk_prevention",
+      "logic": "riesgo → prevención / gestión",
+      "opens_with_service": false
+    },
+    {
+      "id": "technical_question",
+      "logic": "pregunta técnica → explicación",
+      "opens_with_service": false
+    },
+    {
+      "id": "data_implication",
+      "logic": "dato / insight → implicancia",
+      "opens_with_service": false
+    },
+    {
+      "id": "process_result",
+      "logic": "proceso → resultado",
+      "opens_with_service": false
+    },
+    {
+      "id": "project_challenge",
+      "logic": "desafío de proyecto → solución técnica",
+      "opens_with_service": false
+    },
+    {
+      "id": "evidence_learning",
+      "logic": "evidencia / caso → aprendizaje",
+      "opens_with_service": false,
+      "requires": "relación textual proyecto/caso (ER-12, ER-13)"
+    },
+    {
+      "id": "capability_application",
+      "logic": "capacidad técnica → aplicación concreta",
+      "opens_with_service": true
+    }
+  ],
+  "hook_types": [
+    {
+      "id": "question",
+      "desc": "pregunta directa al lector"
+    },
+    {
+      "id": "risk",
+      "desc": "riesgo o consecuencia"
+    },
+    {
+      "id": "insight",
+      "desc": "observación técnica no obvia"
+    },
+    {
+      "id": "data_point",
+      "desc": "cifra o dato (solo con contexto y vigencia, ER-10)"
+    },
+    {
+      "id": "technical_claim",
+      "desc": "afirmación técnica respaldada"
+    },
+    {
+      "id": "scenario",
+      "desc": "escena concreta de obra/operación"
+    },
+    {
+      "id": "contrast",
+      "desc": "creencia común vs criterio técnico"
+    },
+    {
+      "id": "process_step",
+      "desc": "abre desde un paso del proceso"
+    }
+  ],
+  "hook_is_not_pain_point": "hook_type y pain_point son atributos distintos: registrarlos por separado (bug detectado: recent_hooks se poblaba con pain_point).",
+  "cta_types": [
+    {
+      "id": "commercial_contact",
+      "intent": "contacto comercial",
+      "default": false
+    },
+    {
+      "id": "technical_conversation",
+      "intent": "conversación técnica con un especialista"
+    },
+    {
+      "id": "deep_dive",
+      "intent": "profundización (conocer más del tema)"
+    },
+    {
+      "id": "knowledge",
+      "intent": "conocimiento, sin venta explícita (cierre reflexivo o pregunta abierta)"
+    },
+    {
+      "id": "event",
+      "intent": "evento / webinar / inscripción"
+    },
+    {
+      "id": "download",
+      "intent": "descarga de un recurso"
+    },
+    {
+      "id": "service_discovery",
+      "intent": "descubrir el alcance de un servicio"
+    }
+  ],
+  "cta_rules": [
+    "Elegir primero el cta_type según el objetivo del post; redactar después.",
+    "commercial_contact NO es el default.",
+    "No repetir textualmente una formulación de CTA usada en la ventana de recencia.",
+    "No todo post debe terminar en venta explícita."
+  ],
+  "overused_cta_formulas": [
+    "Contáctanos y conversemos sobre tu caso",
+    "Contáctanos a través de nuestros canales oficiales"
+  ],
+  "limits_per_month": {
+    "_basis": "grilla de 12 posts; aprobado por MKT 30-09-2026",
+    "min_distinct_archetypes": 6,
+    "max_posts_per_archetype": 2,
+    "max_posts_per_hook_type": 3,
+    "max_posts_per_cta_type": 3,
+    "max_consecutive_same_archetype": 1,
+    "max_consecutive_same_hook_type": 1,
+    "max_consecutive_same_cta_type": 1
+  },
+  "recency": {
+    "_basis": "aprobado por MKT 30-09-2026",
+    "compare_against_months": 2,
+    "no_verbatim_cta_within_months": 2,
+    "no_same_pain_point_plus_claim_within_months": 2
+  },
+  "fingerprint_fields": [
+    "cell",
+    "service_capability",
+    "theme",
+    "pain_point",
+    "main_claim",
+    "focus",
+    "archetype",
+    "hook_type",
+    "cta_type",
+    "structure"
+  ],
+  "novelty": {
+    "rule": "Comparación multidimensional contra los posts de la ventana de recencia. Si coincide en arquetipo + hook_type + cta_type (+ estructura) con un post reciente, es BAJA NOVEDAD aunque el servicio sea distinto: reasignar ANTES de redactar.",
+    "stage": "preventivo (planner/select_diverse) + verificación post-draft; QA es la última barrera, no la principal"
+  },
+  "pipeline": [
+    "planner",
+    "read_recent_history",
+    "select_diverse",
+    "assign_archetype",
+    "assign_hook_type",
+    "assign_cta_type",
+    "select_topic_knowledge",
+    "drafter (recibe asignaciones como restricciones)",
+    "novelty_check",
+    "qa",
+    "archive_fingerprint"
+  ],
+  "memory_source": {
+    "single_source": "archivo mensual consolidado (copies definitivos del mes)",
+    "derive_from_it": [
+      "fingerprints",
+      "estadísticas",
+      "recent_hooks",
+      "recent_ctas",
+      "temas recientes",
+      "QA"
+    ],
+    "rule": "No mantener memorias manuales paralelas que puedan divergir.",
+    "division": "docs/09_EDITORIAL_MEMORY.md guarda SOLO reglas y correcciones del equipo (hechos, tono validado). Hooks, CTAs, pain points, arquetipos y estadísticas recientes se derivan del archivo mensual consolidado. Aprobado por MKT 30-09-2026."
+  },
+  "source_hierarchy": [
+    "reglas oficiales de células",
+    "reglas editoriales",
+    "brochures",
+    "Sales Intelligence (complementa, no reemplaza)",
+    "casos / evidencias"
+  ],
+  "data_classification": {
+    "SAFE": "publicable",
+    "VERIFY": "validar antes de publicar",
+    "INTERNAL": "uso interno, no va al copy",
+    "DO_NOT_PUBLISH": "nunca llega al copy final"
+  },
+  "tone": [
+    "institucional",
+    "técnico",
+    "profesional",
+    "editorial",
+    "comprensible para público no necesariamente especialista",
+    "el conocimiento técnico aporta valor antes del componente comercial",
+    "no parecer una secuencia de avisos publicitarios"
+  ],
+  "october_2026": "Cerrado por edición manual y programado; NO se regenera. Pendiente consolidarlo como memoria (copies definitivos, CTAs, enfoques, fingerprints, archive, QA)."
+}

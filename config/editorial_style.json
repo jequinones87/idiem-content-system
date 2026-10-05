@@ -1,0 +1,154 @@
+{
+  "_comment": "Guía editorial EXTERNA y configurable (CLAUDE.md regla 11). Codifica tono/estilo/estructura/longitud/hashtags derivados del corpus real de LinkedIn IDIEM (jun-jul 2026). Gobierna la FORMA del copy; la sustancia técnica sigue acotada a allowed_facts (reglas 2-3). El equipo puede ajustar esto sin tocar código. ACTUALIZADO 30-09-2026 (auditoría de sesgos): la diversidad editorial (arquetipos, hook_type, cta_type, límites, longitud) se rige por config/editorial_diversity.json y docs/10_ESTRATEGIA_EDITORIAL_Y_SESGOS.md, que MANDAN sobre este archivo. Desde noviembre 2026.",
+  "version": "1.1",
+  "archetype": "Ya NO hay arquetipo único. 'servicio/insight técnico' era la causa del sesgo detectado. Rotar entre los arquetipos de config/editorial_diversity.json (6-8 por mes).",
+  "voice": {
+    "person": "1ª persona plural para IDIEM (nosotros/nuestro) + 2ª persona para invitar (tú/te)",
+    "register": "profesional, técnico y consultivo; sobrio; sin superlativos ni autobombo",
+    "principles": [
+      "Liderar con el problema o la tensión del cliente antes de nombrar el servicio.",
+      "Demostrar expertise con especificidad técnica: métodos, disciplinas, normas, entregables.",
+      "Cerrar con impacto de negocio: continuidad operacional, mitigación de riesgos, confiabilidad, cumplimiento.",
+      "Hablar al profesional del sector (mandante, contratista, especialista), no al público general."
+    ]
+  },
+  "structure": {
+    "sections": [
+      {
+        "id": "hook",
+        "desc": "Pregunta directa o afirmación de dolor/tensión. 1 párrafo corto."
+      },
+      {
+        "id": "problema",
+        "desc": "Profundiza el problema o el contexto: qué está en juego (costos, plazos, seguridad, continuidad)."
+      },
+      {
+        "id": "solucion_idiem",
+        "desc": "'En/Desde #IDIEM…' + servicio concreto + detalle técnico (métodos, disciplinas, normas). SOLO desde allowed_facts."
+      },
+      {
+        "id": "impacto",
+        "desc": "Qué permite: decisiones con evidencia, reducción de riesgo, confiabilidad de activos, cumplimiento."
+      },
+      {
+        "id": "cta",
+        "desc": "Invitación sobria + link idiem.cl + bloque de hashtags de cierre."
+      }
+    ],
+    "_note": "Esta estructura (hook → problema → En #IDIEM → impacto → CTA) corresponde SOLO al arquetipo 'problem_impact_capability'. NO es la estructura por defecto: cada arquetipo tiene su propia lógica narrativa y no todos los posts abren con el problema ni nombran a IDIEM en el mismo lugar."
+  },
+  "length": {
+    "unit": "characters",
+    "max_chars": 900,
+    "target_chars_min": 820,
+    "target_chars_max": 880,
+    "note": "Regla ÚNICA, validada en caracteres (reemplaza 110-170 palabras). Fuente: config/editorial_diversity.json. Si la evidencia no alcanza, post más corto y honesto; si es insuficiente, EXPERT_INPUT_REQUIRED. Nunca rellenar.",
+    "exceptions": "Posts de evento (webinar/inscripción) exentos del máximo de 900 caracteres; ver config/editorial_diversity.json."
+  },
+  "emoji": {
+    "usage": "presente y temático",
+    "per_paragraph": "1-2 (máximo)",
+    "rules": [
+      "Máximo 1-2 emojis por párrafo, solo si son pertinentes (no forzar).",
+      "Usar emojis del dominio (🏗️ 🏥 ⚙️ 📐 🛡️ 🔍 ⚠️ 📊 ✅ 👷 🔧 🧪 🛰️ 📈 🌐 👉).",
+      "Nunca insertar un emoji dentro de un término técnico o una norma.",
+      "Alternar posiciones (inicio/fin de frase); no abrir todos los párrafos igual."
+    ]
+  },
+  "hashtags": {
+    "always": [
+      "#IDIEM"
+    ],
+    "inline": "Marcar 1-3 términos clave dentro del texto como hashtag (#Ingeniería, #Minería, #Infraestructura, #Seguridad).",
+    "closing_block": {
+      "min": 4,
+      "max": 6
+    },
+    "vocabulary_by_cell": {
+      "INFRA PÚBLICA RESILIENTE": [
+        "#Infraestructura",
+        "#ObrasPúblicas",
+        "#Construcción",
+        "#Ingeniería",
+        "#Calidad"
+      ],
+      "INFRA HOSPITALARIA Y ASISTENCIAL": [
+        "#InfraestructuraHospitalaria",
+        "#Hospital",
+        "#Salud",
+        "#Ingeniería",
+        "#Construcción"
+      ],
+      "INFRA CRÍTICA TRANSPORTE": [
+        "#Infraestructura",
+        "#Transporte",
+        "#Ingeniería",
+        "#Construcción"
+      ],
+      "INFRA OPERACIÓN MINERA": [
+        "#Minería",
+        "#Ingeniería",
+        "#Mantenimiento",
+        "#Seguridad",
+        "#Confiabilidad"
+      ],
+      "LAB MINERO DIGITAL": [
+        "#Minería",
+        "#Ensayos",
+        "#Laboratorio",
+        "#Calidad",
+        "#Tecnología"
+      ]
+    },
+    "topic_tags": [
+      "#IngenieríaMecánica",
+      "#Ensayos",
+      "#Geotecnia",
+      "#Estructuras",
+      "#Incendios",
+      "#Acústica",
+      "#Sustentabilidad",
+      "#EficienciaEnergética",
+      "#BIM",
+      "#Digitalización",
+      "#Auditoria",
+      "#Innovación"
+    ]
+  },
+  "pain_points_by_cell": {
+    "_comment": "Dolor prioritario por célula (insight del equipo comercial). Es guía de FORMA para el hook/problema, NO un hecho de IDIEM: enmarca el problema del lector, no una capacidad. Usar cuando sea pertinente al servicio del post; NO forzar en cada post ni repetir la misma frase. La sustancia técnica sigue acotada a allowed_facts.",
+    "INFRA PÚBLICA RESILIENTE": {
+      "primary": "El atraso en la ejecución de las obras es el dolor más relevante del mandante público.",
+      "usage": "OPCIONAL. Encabezar con este dolor cuando el servicio del post lo resuelva o mitigue (p. ej. inspección técnica, control de calidad, diagnóstico, ingeniería contractual). Variar la redacción; no usar en todos los posts."
+    },
+    "INFRA HOSPITALARIA Y ASISTENCIAL": {
+      "primary": "El atraso en la ejecución de las obras es el dolor más relevante del mandante público de salud.",
+      "usage": "OPCIONAL. Encabezar con este dolor cuando el servicio del post lo resuelva o mitigue (p. ej. ingeniería contractual, programación de obra). No aplicar cuando el ángulo sea otro (p. ej. sostenibilidad / Green Hospital). Variar la redacción."
+    },
+    "INFRA CRÍTICA TRANSPORTE": {
+      "primary": "El atraso en la ejecución de las obras es el dolor más relevante del mandante público de transporte.",
+      "usage": "OPCIONAL. Encabezar con este dolor cuando exista evidencia técnica que lo resuelva. Hoy la célula no tiene cobertura activa (CONTENT_GAP)."
+    }
+  },
+  "cta_patterns": [
+    "👉 Conoce más sobre nuestros servicios en https://idiem.cl",
+    "🌐 Conoce el alcance de este servicio en https://idiem.cl",
+    "¿Buscas resolver este desafío en tu proyecto? Conversemos en https://idiem.cl"
+  ],
+  "do": [
+    "Anclar cada afirmación técnica a la evidencia del fact sheet.",
+    "Nombrar disciplinas, métodos y normas SOLO si están respaldadas.",
+    "Rotar hook_type entre posts (pregunta, riesgo, insight, dato, afirmación técnica, escena, contraste, proceso) según los límites de config/editorial_diversity.json; un hook no es un pain point.",
+    "Mantener el copy en estado DRAFT hasta aprobación humana.",
+    "Aportar valor técnico antes del componente comercial; no todo post termina en venta explícita."
+  ],
+  "dont": [
+    "No inventar servicios, cifras, clientes, proyectos ni resultados.",
+    "No usar rankings, superlativos ni exclusividades (GR-04).",
+    "No expandir términos marcados NAME_ONLY_DO_NOT_EXPAND.",
+    "No prometer resultados no respaldados en el CTA.",
+    "No abusar de emojis ni de signos de exclamación.",
+    "No repetir arquetipo, hook_type o cta_type en posts consecutivos, ni la misma formulación de CTA."
+  ],
+  "cta_patterns_note": "Ejemplos, NO fórmulas por defecto. Primero se elige el cta_type según la intención del post (config/editorial_diversity.json → cta_types) y después se redacta. commercial_contact NO es el default. No repetir textual un CTA de los últimos meses. Fórmulas sobreusadas en octubre: ver overused_cta_formulas."
+}
