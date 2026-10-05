@@ -246,6 +246,7 @@ def card(it: dict, uris: list[str], applied: str) -> str:
                                       "summary": "Pieza y copy DRAFT creados según la tabla de asignación v3 aprobada por MKT."}]
     items_html = "".join(f'<li><span class="hd">{G.esc(e["date"])}</span><span class="hs">{G.esc(e["summary"])}</span></li>'
                          for e in log)
+    applied = log[0]["date"]  # el chip muestra la última aplicación de ESTE post
     hist = (f'<details class="hist"><summary>Historial de cambios aplicados ({len(log)})</summary>'
             f'<ul class="histlist">{items_html}</ul></details>')
     title = f"Nov · Post {it['key']} ({_fecha(it['date'])})" if not is_special else f"Nov · Efeméride ({_fecha(it['date'])})"

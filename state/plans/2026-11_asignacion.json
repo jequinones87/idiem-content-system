@@ -169,17 +169,15 @@
       "seq": 9,
       "date": "2026-11-23",
       "cell": "INFRA OPERACIÓN MINERA",
-      "knowledge_id": "KB-IOM-019",
+      "knowledge_id": "KB-IOM-016",
       "format": "STATIC",
-      "theme": "Control de productividad en operación minera",
+      "theme": "Revisión de cumplimiento normativo en la operación minera",
       "archetype": "data_implication",
       "hook_type": "insight",
       "cta_type": "knowledge",
-      "pain_point": "la productividad se discute con percepciones, no con datos",
-      "main_claim": "soluciones tecnológicas para el control de productividad",
-      "flags": [
-        "USE_AUDITED_CORRECTION"
-      ]
+      "pain_point": "brechas normativas sin cuantificar que no se pueden priorizar",
+      "main_claim": "identificación, cuantificación y evaluación de brechas según estándares y normas aplicables",
+      "flags": []
     },
     {
       "seq": 10,
@@ -243,6 +241,10 @@
     {
       "date": "2026-10-01",
       "decision": "Revisión MKT en workstation: #2 foco en laboratorio en obra (caso AMB) más que en hormigones; #6 sin aeropuerto (servicio genérico, ancla KB-IPR-019) porque el caso ya va en #2; fotos nuevas en #1, #2, #4, #7, #10 y efeméride."
+    },
+    {
+      "date": "2026-10-05",
+      "decision": "#9 productividad (KB-IOM-019) reemplazado por revisión de cumplimiento normativo (KB-IOM-016 + EXT-0006): MKT sin certeza del servicio de productividad. Se mantienen arquetipo/hook/CTA asignados. #1 profundizado (24/7, infraestructura que crece). #5 SIM: monitoreo siempre al final (lámina propia). #10 lámina 2 ajustada."
     }
   ],
   "removed": [

@@ -15,9 +15,13 @@
       },
       "side": "left",
       "svc": "Monitoreo de relaves",
-      "msg": "Anticiparse a lo<br>que no se ve.",
-      "base": "Instrumentación · <b>monitoreo a distancia</b>",
+      "msg": "Una vigilancia<br>que no termina.",
+      "base": "Instrumentación · <b>monitoreo permanente a distancia</b>",
       "hist": [
+        {
+          "date": "05-10-2026",
+          "summary": "Copy profundizado: control 24/7, infraestructura que crece y razones del monitoreo + titular de pieza «Una vigilancia que no termina» (pedido MKT)."
+        },
         {
           "date": "01-10-2026",
           "summary": "Foto → tranque_caren4 (pedido MKT)."
@@ -125,8 +129,8 @@
         "intermedias": [
           {
             "icon": "calendar",
-            "title": "Planificación y <span class=\"c2rb\">monitoreo</span>",
-            "body": "La integridad de una estructura no se revisa una sola vez: se planifica y se monitorea de forma continua a lo largo de la operación."
+            "title": "Primero, <span class=\"c2rb\">planificar</span>",
+            "body": "La integridad de una estructura no se revisa una sola vez: se planifica como un proceso que acompaña toda la operación."
           },
           {
             "icon": "magnifier",
@@ -135,15 +139,24 @@
           },
           {
             "icon": "shield",
-            "title": "Inspecciones <span class=\"c2rb\">y sensores</span>",
-            "body": "Evidencia de terreno y datos de sensores en un mismo programa: la base para decidir dónde y cuándo intervenir en la infraestructura minera."
+            "title": "Inspecciones <span class=\"c2rb\">en terreno</span>",
+            "body": "La evidencia de terreno confirma el estado de las estructuras y orienta dónde poner la atención."
+          },
+          {
+            "icon": "clock",
+            "title": "Monitoreo <span class=\"c2rb\">continuo</span>",
+            "body": "Sensores trabajando en conjunto para seguir el comportamiento de las estructuras en el tiempo: la base para decidir dónde y cuándo intervenir."
           }
         ],
         "cierre": {
-          "bajada": "SIM ordena planificación, monitoreo, antecedentes, inspecciones y sensores en un solo proceso para la infraestructura minera."
+          "bajada": "SIM ordena planificación, antecedentes, inspecciones y monitoreo continuo en un solo proceso para la infraestructura minera."
         }
       },
       "hist": [
+        {
+          "date": "05-10-2026",
+          "summary": "Copy de MKT aplicado + carrusel: monitoreo sale de la lámina 2 y va al final en lámina propia (Monitoreo continuo) (pedido MKT)."
+        },
         {
           "date": "01-10-2026",
           "summary": "Láminas: textos reformulados con la importancia y la propuesta de valor del SIM (títulos sin cambio, pedido MKT)."
@@ -227,11 +240,16 @@
         "pos": "60% 50%"
       },
       "side": "left",
-      "svc": "Control de productividad",
-      "msg": "Decidir<br>con datos.",
-      "base": "Operación minera · <b>soluciones tecnológicas</b>",
-      "flag": "VERIFY: validar con especialista el alcance de 'soluciones tecnológicas para el control de productividad' (KB-IOM-019 solo nombra la capacidad).",
-      "created": "01-10-2026"
+      "svc": "Cumplimiento normativo",
+      "msg": "Priorizar con<br>evidencia.",
+      "base": "Estructural · incendios · <b>especialidades</b>",
+      "created": "01-10-2026",
+      "hist": [
+        {
+          "date": "05-10-2026",
+          "summary": "Post reemplazado: revisión de cumplimiento normativo (KB-IOM-016) en vez de productividad, sin certeza del servicio (pedido MKT)."
+        }
+      ]
     },
     "10": {
       "photo": {
@@ -251,7 +269,7 @@
           {
             "icon": "location",
             "title": "Desde la <span class=\"c2rb\">fabricación</span>",
-            "body": "Asesoría en la documentación técnica de la fabricación de uniones soldadas y ensayos que verifican las especificaciones y estándares del proyecto."
+            "body": "Asesoría en la documentación técnica de la fabricación de uniones soldadas y ensayos que verifican el cumplimiento del proyecto."
           },
           {
             "icon": "magnifier",
@@ -269,6 +287,10 @@
         }
       },
       "hist": [
+        {
+          "date": "05-10-2026",
+          "summary": "Lámina 2: «ensayos que verifican el cumplimiento del proyecto» (pedido MKT)."
+        },
         {
           "date": "01-10-2026",
           "summary": "Láminas: textos reformulados con la relevancia del control HDPE (criticidad y continuidad operacional), en línea con el pedido MKT para los carruseles."

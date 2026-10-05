@@ -48,6 +48,18 @@ Estas nacen de correcciones del equipo. Son de aplicación obligatoria.
 - **Laboratorio en obra:** el foco es el concepto (laboratorio dentro de la obra, junto a los frentes
   de trabajo) ilustrado con el caso, no el material (hormigones). (MKT, 01-10-2026.)
 
+### Operación minera (célula IOM) — MKT, 05-10-2026
+- **Depósitos de relaves:** infraestructura crítica que requiere **control 24/7** por seguridad y que
+  **nunca está terminada** (crece mientras la operación continúa): el monitoreo es un proceso que no
+  termina. Explicar *por qué* se monitorea, no solo nombrar el servicio. (Input experto MKT: se usa como
+  característica de la infraestructura; la capacidad IDIEM sigue siendo literal: monitoreo a distancia
+  para resguardar de manera permanente la seguridad.)
+- **SIM (gestión de integridad estructural):** la secuencia es planificación → antecedentes → inspecciones
+  → instrumentación/**monitoreo**. El **monitoreo siempre va al final**.
+- **Control de productividad (KB-IOM-019/020):** ⛔ no usar hasta nuevo aviso — MKT no tiene certeza del
+  servicio.
+- **HDPE:** los ensayos "verifican el cumplimiento del proyecto" (formulación preferida por MKT).
+
 ### Ingeniería contractual (célula IHA)
 - Ámbitos que IDIEM atiende de forma explícita en el sector Salud: **análisis de
   programación**, **análisis ante término anticipado de contrato**, respaldo técnico
@@ -165,3 +177,6 @@ capacidades técnicas (la célula ICT no tiene conocimiento activo).
   - #5: edición de copy de MKT (salto de línea tras el gancho).
   - Carruseles #2, #5 y #10: bajadas reescritas con relevancia y propuesta de valor (pedido MKT:
     "los mensajes del carrusel no dicen nada relevante"). #7 foto → `modelado_bim`.
+- **2026-10-05** — Ronda MKT noviembre (2): #1 profundizado (24/7, crece, razones del monitoreo);
+  #5 SIM con monitoreo al final (lámina propia) + copy de MKT; #9 productividad → revisión de
+  cumplimiento normativo (KB-IOM-016); #10 lámina 2 ajustada. Aprobados: 2, 3, 6, 7, 8, 11 y efeméride.
