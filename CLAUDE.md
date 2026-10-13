@@ -104,3 +104,8 @@ de sept 2026 — octubre tuvo CTA `contact` en 9/12 posts y ~4 arquetipos.
   (`VERIFY` se valida antes; `DO_NOT_PUBLISH` nunca llega al copy).
 - Memoria única = archivo mensual consolidado (no memorias paralelas).
 - Octubre 2026 cerrado manualmente: **no regenerar**.
+
+## Videos de carrusel (desde octubre 2026)
+
+Todo video de un carrusel/post se hace con la skill `.claude/skills/video-carrusel-idiem/` (leer su
+SKILL.md y seguir su pipeline y QA sin improvisar el método). Resumen en `docs/09_EDITORIAL_MEMORY.md`.

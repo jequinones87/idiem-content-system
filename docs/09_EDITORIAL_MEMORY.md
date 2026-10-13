@@ -118,11 +118,22 @@ El equipo de MKT (Kike) es la autoridad de tono. Patrones observados en sus rees
   repetir el título con otras palabras ni listar el componente sin su valor. Si hay un caso, la lámina
   del caso explica la participación de IDIEM. Todo sigue trazando a 2A.2 (sin inventar beneficios ni
   resultados; con `USE_WITH_MATIZ` el valor se expresa como propósito, sin ampliar el alcance).
-- **Video MP4 (formato de PRUEBA en redes, MKT 13-10-2026):** un carrusel puede publicarse como video
-  usando **las mismas láminas e información** (sin contenido nuevo): 1080×1080, fundidos + zoom leve,
-  tiempo de lectura por lámina (portada 3,5 s · intermedias 4,5 s · cierre 4 s) y **música de fondo
-  chill house sutil** (original sintetizada, `design_system/music_chill.py`). Generador:
-  `design_system/gen_carousel_video.py`. El carrusel PNG/PDF queda como respaldo. Primer caso: #5 SIM nov-2026.
+- **Videos (MKT 13-10-2026) — OBLIGATORIO usar la skill `.claude/skills/video-carrusel-idiem/`** (leer su
+  SKILL.md). Pipeline fijo: config JSON → `build.py` → `music.py` (si se pide) → `render.py` (cuadro a cuadro
+  con `window.seek(t)`) → `qa.py`. Reglas clave:
+  - ⛔ Nunca animar las láminas como imágenes planas (zoom/fundido del PNG), ni grabar pantalla en tiempo
+    real, ni IA generativa de video, ni fuentes de reemplazo. Se reconstruye en capas: foto limpia original
+    de la librería + textos reales en HTML (Montserrat incrustada) + logo SVG.
+  - Textos **literales** de las láminas aprobadas, con sus mismos saltos de línea; no resumir ni reescribir.
+  - Movimiento sobrio de marca: un solo fondo con zoom lento 1,00→1,10 y velo; entradas expo-out, salidas
+    cubic-in; títulos palabra a palabra desde máscara; caja roja que se barre; íconos Lucide trazo a trazo;
+    párrafo línea a línea; logo y número persistentes; cierre que **termina sobre el logo**.
+  - Tiempos: portada 4 s · láminas 5,5–9 s (`1,6 + palabras/4,4`) · cierre ≈ 6 s; cortes en múltiplos de
+    0,5 s (120 BPM). Si supera ~45 s, avisar a MKT antes de renderizar (no recortar textos).
+  - Música solo si se pide: pista original de `music.py` (−17 LUFS, pico ≤ −1 dBTP). Entregar MP4 con y sin
+    música y decir que la música **requiere aprobación auditiva** de una persona.
+  - QA obligatorio: chequeos técnicos de `qa.py` + revisar a ojo `hoja_transiciones.jpg` y `comparacion.jpg`.
+  - Entrega: `video.mp4`, `video_musica.mp4`, `video.html` y nota de diferencias con la pieza aprobada.
 - **Estáticos** → formato **Servicios (Plantilla 01)**: círculo rojo con servicio +
   mensaje clave + baseline.
 - **Fotos**: preferir **fotos propias de faena** de la librería de IDIEM cuando existan;
@@ -185,4 +196,5 @@ capacidades técnicas (la célula ICT no tiene conocimiento activo).
 - **2026-10-05** — Ronda MKT noviembre (2): #1 profundizado (24/7, crece, razones del monitoreo);
   #5 SIM con monitoreo al final (lámina propia) + copy de MKT; #9 productividad → revisión de
   cumplimiento normativo (KB-IOM-016); #10 lámina 2 ajustada. Aprobados: 2, 3, 6, 7, 8, 11 y efeméride.
-- **2026-10-13** — #5 SIM: carrusel convertido a video MP4 con música chill house sutil (formato de prueba).
+- **2026-10-13** — #5 SIM: primer video (método propio de zoom/fundido sobre PNG) **rechazado por MKT**; se
+  regeneró con la skill `video-carrusel-idiem` (38 s, en capas, con y sin música). Ese método queda vigente.

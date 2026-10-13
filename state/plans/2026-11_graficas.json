@@ -155,6 +155,10 @@
       "hist": [
         {
           "date": "13-10-2026",
+          "summary": "Video regenerado con la skill video-carrusel-idiem (MKT): reconstruido en capas (foto limpia + textos reales + logo vectorial), animación de marca, 38 s; MP4 con y sin música; QA técnico y visual aprobado."
+        },
+        {
+          "date": "13-10-2026",
           "summary": "Formato de prueba: carrusel convertido a video MP4 (mismas láminas e información, fundidos y zoom leve, 22,5 s) con música chill house sutil (pedido MKT)."
         },
         {
@@ -172,10 +176,13 @@
       ],
       "created": "01-10-2026",
       "video": {
-        "file": "video/p05_sim.mp4",
-        "published": "media/p05_sim.mp4",
-        "seconds": 22.5,
-        "music": "música chill house sutil, original sintetizada (design_system/music_chill.py, sin licencias de terceros)"
+        "file": "video/p05_sim_musica.mp4",
+        "published": "media/p05_sim_musica.mp4",
+        "silent_published": "media/p05_sim.mp4",
+        "preview_published": "media/p05_sim_preview.html",
+        "seconds": 38.0,
+        "skill": ".claude/skills/video-carrusel-idiem (config/2026-11_p05_sim.json)",
+        "music": "música chill house original de la skill (scripts/music.py, 120 BPM, −17 LUFS) — requiere aprobación auditiva de MKT"
       }
     },
     "6": {

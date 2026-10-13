@@ -238,8 +238,8 @@ def card(it: dict, uris: list[str], applied: str) -> str:
     if g.get("video"):
         v = g["video"]
         trace += (f'<div class="tr"><span class="k">Video</span><span class="v">MP4 1080×1080 · '
-                  f'{v["seconds"]:.1f} s · mismas láminas del carrusel con fundidos y zoom leve · '
-                  f'{G.esc(v["music"])}</span></div>')
+                  f'{v["seconds"]:.1f} s · mismos textos literales de las láminas, reconstruidos en capas '
+                  f'con la skill <code>video-carrusel-idiem</code> · {G.esc(v["music"])}</span></div>')
 
     video = g.get("video")  # formato de prueba: carrusel publicado como video MP4
     vtag = img_style = vbtn = ""
@@ -249,7 +249,13 @@ def card(it: dict, uris: list[str], applied: str) -> str:
                 f'src="{G.esc(video["published"])}"></video>')
         img_style = ' style="display:none"'
         vbtn = (f'<button class="btn ghost mp4" type="button" data-src="{G.esc(video["published"])}" '
-                f'data-name="idiem_nov_post{it["key"]}.mp4">Descargar MP4</button>')
+                f'data-name="idiem_nov_post{it["key"]}_musica.mp4">Descargar MP4</button>')
+        if video.get("silent_published"):
+            vbtn += (f'<button class="btn ghost mp4" type="button" data-src="{G.esc(video["silent_published"])}" '
+                     f'data-name="idiem_nov_post{it["key"]}.mp4">MP4 sin música</button>')
+        if video.get("preview_published"):
+            vbtn += (f'<a class="btn ghost" href="{G.esc(video["preview_published"])}" target="_blank" '
+                     f'rel="noopener">Ver animación (HTML)</a>')
     strip = ""
     if is_car:
         thumbs = "".join(f'<img class="thumb{" on" if i == 0 else ""}" src="{u}" data-idx="{i}" alt="lámina {i+1}">'
