@@ -154,6 +154,10 @@
       },
       "hist": [
         {
+          "date": "13-10-2026",
+          "summary": "Formato de prueba: carrusel convertido a video MP4 (mismas láminas e información, fundidos y zoom leve, 22,5 s) con música chill house sutil (pedido MKT)."
+        },
+        {
           "date": "05-10-2026",
           "summary": "Copy de MKT aplicado + carrusel: monitoreo sale de la lámina 2 y va al final en lámina propia (Monitoreo continuo) (pedido MKT)."
         },
@@ -166,7 +170,13 @@
           "summary": "Copy: edición de MKT aplicada (salto de línea tras «Primero se planifica.»)."
         }
       ],
-      "created": "01-10-2026"
+      "created": "01-10-2026",
+      "video": {
+        "file": "video/p05_sim.mp4",
+        "published": "media/p05_sim.mp4",
+        "seconds": 22.5,
+        "music": "música chill house sutil, original sintetizada (design_system/music_chill.py, sin licencias de terceros)"
+      }
     },
     "6": {
       "photo": {

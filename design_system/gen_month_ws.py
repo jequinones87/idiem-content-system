@@ -235,12 +235,28 @@ def card(it: dict, uris: list[str], applied: str) -> str:
         trace += (f'<div class="tr"><span class="k">Verificar</span><span class="v">'
                   f'<span class="pending">⚠ {G.esc(flag)}</span></span></div>')
     trace += f'<div class="tr"><span class="k">Foto</span><span class="v">{foto}</span></div>'
+    if g.get("video"):
+        v = g["video"]
+        trace += (f'<div class="tr"><span class="k">Video</span><span class="v">MP4 1080×1080 · '
+                  f'{v["seconds"]:.1f} s · mismas láminas del carrusel con fundidos y zoom leve · '
+                  f'{G.esc(v["music"])}</span></div>')
 
+    video = g.get("video")  # formato de prueba: carrusel publicado como video MP4
+    vtag = img_style = vbtn = ""
+    if video:
+        fmt_label = f'VIDEO MP4 · {video["seconds"]:.0f} s'
+        vtag = (f'<video class="pvideo" controls playsinline preload="metadata" poster="{uris[0]}" '
+                f'src="{G.esc(video["published"])}"></video>')
+        img_style = ' style="display:none"'
+        vbtn = (f'<button class="btn ghost mp4" type="button" data-src="{G.esc(video["published"])}" '
+                f'data-name="idiem_nov_post{it["key"]}.mp4">Descargar MP4</button>')
     strip = ""
     if is_car:
         thumbs = "".join(f'<img class="thumb{" on" if i == 0 else ""}" src="{u}" data-idx="{i}" alt="lámina {i+1}">'
                          for i, u in enumerate(uris))
         strip = f'<div class="strip">{thumbs}</div>'
+        if video:
+            strip = f'<p class="striplab">Láminas del video (respaldo en carrusel PNG/PDF)</p>' + strip
     # historial: cambios aplicados (graficas.json "hist", más reciente primero) + creación
     log = list(g.get("hist", [])) + [{"date": g.get("created", applied),
                                       "summary": "Pieza y copy DRAFT creados según la tabla de asignación v3 aprobada por MKT."}]
@@ -255,7 +271,7 @@ def card(it: dict, uris: list[str], applied: str) -> str:
   <script type="application/json" class="slides-data">{G.esc(json.dumps(uris))}</script>
   <div class="graphic">
     <div class="gwrap">
-      <img class="main" src="{uris[0]}" data-idx="0" alt="Post {label}">
+      {vtag}<img class="main" src="{uris[0]}" data-idx="0" alt="Post {label}"{img_style}>
       <span class="fmtbadge">{fmt_label}</span>
       <span class="statuschip pub" data-applied="{applied}">publicado · {applied}</span>
       <div class="botleft">
@@ -289,7 +305,7 @@ def card(it: dict, uris: list[str], applied: str) -> str:
       <button class="btn linkedin" type="button">🔗 Marcar subido a LinkedIn</button>
       <button class="btn regen" type="button">🔄 Solicitar regeneración</button>
       <button class="btn ghost png" type="button">Descargar PNG</button>
-      <button class="btn ghost pdf" type="button">Descargar PDF</button>
+      {vbtn}<button class="btn ghost pdf" type="button">Descargar PDF</button>
       <button class="btn ghost copybtn" type="button">Copiar texto</button>
     </div>
 
@@ -338,6 +354,9 @@ ARTIFACT = r'''<title>Workstation __MES__ IDIEM</title>
 [hidden]{display:none!important}
 __CSS__
 .trace .pending{color:#c77a0a;font-weight:600}
+.pvideo{display:block;width:100%;aspect-ratio:1/1;background:#000;border-radius:inherit}
+.striplab{margin:8px 0 2px;font-size:.72rem;color:var(--muted)}
+.gwrap:has(.pvideo) .botleft{bottom:58px}
 </style>
 
 <div class="wrap">
@@ -394,6 +413,21 @@ __CARDS__
 <div class="toast" id="toast"></div>
 
 <script>window.WSCFG=__CFG__;</script>
+<script>
+// Descarga del video MP4 (formato de prueba) vía la capacidad `downloads`.
+document.querySelectorAll('.btn.mp4').forEach(function(b){
+  b.addEventListener('click',async function(){
+    var t=document.getElementById('toast');
+    function say(m){if(t){t.textContent=m;t.classList.add('on');setTimeout(function(){t.classList.remove('on');},2200);}}
+    try{
+      var dl=(window.claude&&claude.use)?await claude.use('downloads'):null;
+      var blob=await (await fetch(b.getAttribute('data-src'))).blob();
+      if(dl){await dl.save({filename:b.getAttribute('data-name'),data:blob});say('Video listo para guardar');}
+      else{var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=b.getAttribute('data-name');a.click();}
+    }catch(e){say('No se pudo descargar el video');}
+  });
+});
+</script>
 <script>
 __JS__
 </script>'''

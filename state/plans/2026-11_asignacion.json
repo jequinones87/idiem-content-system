@@ -117,7 +117,8 @@
       "main_claim": "SIM como programa de gestión de integridad",
       "flags": [
         "USE_WITH_MATIZ: conservar matiz"
-      ]
+      ],
+      "delivery": "VIDEO_MP4"
     },
     {
       "seq": 6,
@@ -245,6 +246,10 @@
     {
       "date": "2026-10-05",
       "decision": "#9 productividad (KB-IOM-019) reemplazado por revisión de cumplimiento normativo (KB-IOM-016 + EXT-0006): MKT sin certeza del servicio de productividad. Se mantienen arquetipo/hook/CTA asignados. #1 profundizado (24/7, infraestructura que crece). #5 SIM: monitoreo siempre al final (lámina propia). #10 lámina 2 ajustada."
+    },
+    {
+      "date": "2026-10-13",
+      "decision": "Nuevo formato de prueba en redes: el carrusel #5 (SIM) se publica como video MP4 (mismas láminas) con música de fondo chill house sutil."
     }
   ],
   "removed": [
