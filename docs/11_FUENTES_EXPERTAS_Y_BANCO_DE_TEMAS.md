@@ -16,8 +16,13 @@
     institución, datos agregados de proyectos. Se valida con MKT o el especialista antes de redactar.
   - **INTERNAL** → cifras de casos, referencias internas, proyectos u hospitales con nombre. Sirven para
     entender el tema; **no van al copy** sin autorización explícita.
-- **Consentimiento del expositor:** antes de convertir una charla en contenido, MKT confirma que el
-  expositor está de acuerdo (precedente: David Silva no comparte contenido).
+- **Foco en el tema, nunca en el expositor (MKT, 14-10-2026):** los contenidos **no nombran ni citan**
+  a los expositores ni a la charla/webinar de origen. Consentimiento de uso confirmado por MKT. Los
+  nombres en este documento son solo trazabilidad interna; los autores no se consideran para contenido.
+- **Servicios declarados en las fuentes = vigentes (MKT, 14-10-2026):** AITO, diagnósticos
+  estructurales hospitalarios, hoja de ruta de mitigación de controversias, etc. se usan como evidencia
+  auxiliar (`SRC-xxx#Cyy`) en briefs y copies.
+- **Fuentes truncadas:** se usa solo el contenido disponible.
 - **Sensibilidad:** todo tema que nombre proyecto, hospital, cliente o incidente se marca para que MKT
   valide antes de redactar.
 - Al armar cada grilla mensual: revisar este banco **junto con** la librería 2A.2 y el ledger
@@ -29,14 +34,14 @@
 
 | ID | Presentación | Expositor | Fecha | Célula |
 |---|---|---|---|---|
-| SRC-001 | Vulnerabilidad de incendio en industria | Diego Olave · Jefe Unidad Ingeniería contra incendios | 01-09-2026 | IOM / IPR (industria: célula a confirmar) |
-| SRC-002 | Desafíos técnicos y contractuales en infraestructura hospitalaria | *(sin autor en el archivo — confirmar)* | 28-07-2026 | IHA |
+| SRC-001 | Vulnerabilidad de incendio en industria | Diego Olave · Jefe Unidad Ingeniería contra incendios | 01-09-2026 | IOM (industria → minería, MKT) |
+| SRC-002 | Desafíos técnicos y contractuales en infraestructura hospitalaria | *(autor no relevante)* | 28-07-2026 | IHA |
 | SRC-003 | Vulnerabilidades en caso de incendios en infraestructura hospitalaria | Diego Olave | 21-07-2026 | IHA |
 | SRC-004 | Vulnerabilidad estructural (vida avanzada) y sísmica en Elementos No Estructurales | Sergio Tapia Pérez · Jefe de Proyectos, Div. Estructuras Peritajes | 14-07-2026 | IHA |
 | SRC-005 | Reglamento RIC en Salud (DS N°8) | Sergio Reygadas Veragua · Jefe de Proyectos Eléctricos, DES | s/f | IHA |
 | SRC-006 | Vulnerabilidad de incendio en infraestructura y faenas mineras | Diego Olave | 19-08-2026 | IOM |
 
-Notas: la lectura de SRC-004 llegó truncada al final (proceso AITO): pedir PDF si se usa ese tramo.
+Notas: la lectura de SRC-004 llegó truncada al final (proceso AITO); se usa solo lo disponible.
 
 ### Ideas fuerza por fuente
 
@@ -65,7 +70,7 @@ Notas: la lectura de SRC-004 llegó truncada al final (proceso AITO): pedir PDF 
   - Documentar los cambios con orden formal y valorización; sin eso, el reclamo es difícil de probar.
 - Distinguir atraso, disrupción, pérdida de productividad, aceleración y concurrencia. Herramientas
   mínimas: CPM, línea base, as-built, curvas S, registro de cambios.
-- Cinco lecciones finales. La "hoja de ruta en 3 fases" como servicio IDIEM queda en **VERIFY**.
+- Cinco lecciones finales. Hoja de ruta de mitigación en 3 fases: servicio IDIEM vigente (validado).
 - Se cruza con la librería en ingeniería contractual de Salud: KB-IHA-002 a 005.
 
 **SRC-003 · Incendio en hospitales (Olave)**
@@ -94,7 +99,7 @@ Notas: la lectura de SRC-004 llegó truncada al final (proceso AITO): pedir PDF 
   uno." Elementos no estructurales (ENE) y su función en cirugía, laboratorio, imagenología y diálisis.
 - Problemas típicos en obra: anclajes, soporte sísmico de ductos, fachadas ventiladas, cielos falsos,
   ascensores y cambios de uso.
-- Servicios que la presentación declara (**VERIFY**, no están en 2A.2):
+- Servicios que la presentación declara (**vigentes, validados por MKT**; evidencia auxiliar):
   - diagnósticos estructurales y propuestas de refuerzo;
   - revisiones sísmicas;
   - peritajes forenses;
@@ -117,10 +122,10 @@ Notas: la lectura de SRC-004 llegó truncada al final (proceso AITO): pedir PDF 
 
 | ID | Célula | Tema | Sugerencia (arquetipo · hook · formato) | Cuidado |
 |---|---|---|---|---|
-| TOP-001 | IHA | ¿Seguirá operativo después del terremoto? ENE en hospitales | technical_question · question · carrusel | AITO = VERIFY |
-| TOP-002 | IHA | AITO: asesoría independiente a la ITO en obras hospitalarias | process_result · process_step · carrusel | servicio VERIFY; consentimiento |
-| TOP-003 | IHA | Hospitales que envejecen: cómo se acumula la vulnerabilidad | risk_prevention · insight · estático | diagnóstico = VERIFY |
-| TOP-004 | IHA | Un hospital no es una obra convencional: 7 fuentes de controversia | evidence_learning · contrast · carrusel | confirmar autor SRC-002 |
+| TOP-001 | IHA | ¿Seguirá operativo después del terremoto? ENE en hospitales | technical_question · question · carrusel | — |
+| TOP-002 | IHA | AITO: asesoría independiente a la ITO en obras hospitalarias | process_result · process_step · carrusel | — |
+| TOP-003 | IHA | Hospitales que envejecen: cómo se acumula la vulnerabilidad | risk_prevention · insight · estático | — |
+| TOP-004 | IHA | Un hospital no es una obra convencional: 7 fuentes de controversia | evidence_learning · contrast · carrusel | — |
 | TOP-005 | IHA | Atraso, disrupción, aceleración, concurrencia: no son lo mismo | data_implication · insight · carrusel | — |
 | TOP-006 | IHA | La sala de imagenología como ejemplo de complejidad | project_challenge · scenario · estático | — |
 | TOP-007 | IHA | Planificar la puesta en marcha desde el diseño | risk_prevention · risk · estático | — |
@@ -128,7 +133,7 @@ Notas: la lectura de SRC-004 llegó truncada al final (proceso AITO): pedir PDF 
 | TOP-009 | IHA | Evacuar o defender en sitio: incendios en hospitales | technical_question · question · carrusel | casos con nombre = VERIFY |
 | TOP-010 | IHA | Pocos incendios eléctricos, gran parte del daño (NFPA) | data_implication · data_point · estático | citar NFPA |
 | TOP-011 | IHA | Calderas, tanques criogénicos y salas eléctricas: la continuidad que no se ve | capability_application · scenario · carrusel | — |
-| TOP-012 | IHA | RIC en salud: el Grupo 2 es ahora la máxima criticidad | technical_question · technical_claim · carrusel | consentimiento |
+| TOP-012 | IHA | RIC en salud: el Grupo 2 es ahora la máxima criticidad | technical_question · technical_claim · carrusel | — |
 | TOP-013 | IHA | La "bola de nieve" de una exigencia eléctrica tardía | process_result · process_step · carrusel | sin cifras INTERNAL |
 | TOP-014 | IHA | Los m² no definen la potencia de un hospital | data_implication · insight · estático | sin nombres ni cifras por proyecto |
 | TOP-015 | IHA | Sistema médico IT en pabellones: de instalar a demostrar | capability_application · technical_claim · estático | — |
@@ -138,19 +143,17 @@ Notas: la lectura de SRC-004 llegó truncada al final (proceso AITO): pedir PDF 
 | TOP-019 | IOM | Correas, CAEX y envolventes: riesgo de incendio en faena | project_challenge · scenario · carrusel | incidentes = VERIFY |
 | TOP-020 | IOM | La curva P-F: detectar el deterioro antes de la falla | data_implication · technical_claim · estático | — |
 | TOP-021 | IOM | Un estudio de riesgo también vence | risk_prevention · risk · estático | — |
-| TOP-022 | IPR* | Estrategia contra incendios en 8 ejes desde el proyecto | process_result · process_step · carrusel | *célula a confirmar |
+| TOP-022 | IOM | Estrategia contra incendios en 8 ejes desde el proyecto | process_result · process_step · carrusel | — |
 
 **Lectura para la planificación:** este material **repone la célula Salud (IHA)**, que quedó sin
-ítems frescos después de noviembre. Hay 17 temas IHA candidatos para diciembre en adelante. Antes
-hay que validar con MKT:
-1. el consentimiento de los expositores;
-2. los servicios en VERIFY (AITO, diagnósticos estructurales, hoja de ruta);
-3. el autor de SRC-002.
+ítems frescos tras noviembre: 17 temas IHA y 5 IOM listos para diciembre en adelante. Validaciones de
+MKT cerradas el 14-10-2026 (consentimiento, servicios vigentes, autores, célula de industria, fuentes
+truncadas). Siguen pendientes por tema: incidentes con nombre (VERIFY) y cifras internas (INTERNAL).
 
 ## Cómo agregar material nuevo
 
-1. Leer la presentación o documento y registrar una fuente `SRC-0NN` (título, expositor, cargo,
-   fecha, link, células).
+1. Leer la presentación o documento y registrar una fuente `SRC-0NN` (título, fecha, link, células;
+   expositor solo como trazabilidad interna, nunca en contenidos).
 2. Extraer afirmaciones `SRC-0NN#Cxx` con `kind` (concept, normative, third_party_stat,
    idiem_capability, public_incident, project_data, internal_reference) y `class`
    (SAFE/VERIFY/INTERNAL/DO_NOT_PUBLISH).

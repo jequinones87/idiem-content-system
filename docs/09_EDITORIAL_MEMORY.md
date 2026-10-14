@@ -60,6 +60,10 @@ Estas nacen de correcciones del equipo. Son de aplicación obligatoria.
   servicio.
 - **HDPE:** los ensayos "verifican el cumplimiento del proyecto" (formulación preferida por MKT).
 
+### Contenidos desde fuentes expertas (MKT, 14-10-2026)
+- Los posts basados en charlas/presentaciones de especialistas **no nombran ni citan al expositor ni a la
+  charla**: el foco es el tema. Ver `docs/11_FUENTES_EXPERTAS_Y_BANCO_DE_TEMAS.md`.
+
 ### Ingeniería contractual (célula IHA)
 - Ámbitos que IDIEM atiende de forma explícita en el sector Salud: **análisis de
   programación**, **análisis ante término anticipado de contrato**, respaldo técnico

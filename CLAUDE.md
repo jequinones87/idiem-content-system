@@ -115,6 +115,7 @@ SKILL.md y seguir su pipeline y QA sin improvisar el método). Resumen en `docs/
 MKT comparte presentaciones de especialistas IDIEM como insumo. Se registran en
 `config/topic_bank/expert_sources.json` (fuentes `SRC-*`, afirmaciones clasificadas
 SAFE/VERIFY/INTERNAL, temas `TOP-*`) con vista legible en `docs/11_FUENTES_EXPERTAS_Y_BANCO_DE_TEMAS.md`.
-Al planificar cada mes, revisar este banco junto a 2A.2. 2A.2 sigue mandando: una capacidad IDIEM que
-solo aparece en una `SRC-*` es VERIFY; incidentes con nombre y cifras de proyectos no van al copy sin
-validación; confirmar consentimiento del expositor antes de usar su charla.
+Al planificar cada mes, revisar este banco junto a 2A.2. Capacidades IDIEM de las `SRC-*` validadas por
+MKT (`validated_by`) se usan como auxiliary_id; incidentes con nombre (VERIFY) y cifras de proyectos
+(INTERNAL) no van al copy sin validación. **Nunca nombrar ni citar a los expositores ni las charlas de
+origen**: el foco es el tema.
