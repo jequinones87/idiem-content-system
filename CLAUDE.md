@@ -109,3 +109,12 @@ de sept 2026 — octubre tuvo CTA `contact` en 9/12 posts y ~4 arquetipos.
 
 Todo video de un carrusel/post se hace con la skill `.claude/skills/video-carrusel-idiem/` (leer su
 SKILL.md y seguir su pipeline y QA sin improvisar el método). Resumen en `docs/09_EDITORIAL_MEMORY.md`.
+
+## Fuentes expertas y banco de temas (desde octubre 2026)
+
+MKT comparte presentaciones de especialistas IDIEM como insumo. Se registran en
+`config/topic_bank/expert_sources.json` (fuentes `SRC-*`, afirmaciones clasificadas
+SAFE/VERIFY/INTERNAL, temas `TOP-*`) con vista legible en `docs/11_FUENTES_EXPERTAS_Y_BANCO_DE_TEMAS.md`.
+Al planificar cada mes, revisar este banco junto a 2A.2. 2A.2 sigue mandando: una capacidad IDIEM que
+solo aparece en una `SRC-*` es VERIFY; incidentes con nombre y cifras de proyectos no van al copy sin
+validación; confirmar consentimiento del expositor antes de usar su charla.

@@ -198,3 +198,6 @@ capacidades técnicas (la célula ICT no tiene conocimiento activo).
   cumplimiento normativo (KB-IOM-016); #10 lámina 2 ajustada. Aprobados: 2, 3, 6, 7, 8, 11 y efeméride.
 - **2026-10-13** — #5 SIM: primer video (método propio de zoom/fundido sobre PNG) **rechazado por MKT**; se
   regeneró con la skill `video-carrusel-idiem` (38 s, en capas, con y sin música). Ese método queda vigente.
+- **2026-10-14** — MKT comparte 6 presentaciones de especialistas (incendio en industria/minería/hospitales,
+  controversias hospitalarias, vulnerabilidad estructural y ENE en hospitales, RIC en salud). Registradas
+  en `docs/11_FUENTES_EXPERTAS_Y_BANCO_DE_TEMAS.md` con 22 temas candidatos (17 de Salud/IHA).
