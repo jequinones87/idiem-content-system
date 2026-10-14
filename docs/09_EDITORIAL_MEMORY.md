@@ -205,3 +205,7 @@ capacidades técnicas (la célula ICT no tiene conocimiento activo).
 - **2026-10-14** — MKT comparte 6 presentaciones de especialistas (incendio en industria/minería/hospitales,
   controversias hospitalarias, vulnerabilidad estructural y ENE en hospitales, RIC en salud). Registradas
   en `docs/11_FUENTES_EXPERTAS_Y_BANCO_DE_TEMAS.md` con 22 temas candidatos (17 de Salud/IHA).
+- 2026-10-14 · Post especial de reconocimiento (Leonardo Massone, Top 2% más citados, Ingeniería Civil):
+  pieza institucional fuera de grilla, no traza a knowledge_id. Plantilla `design_system/gen_post_reconocimiento.py`
+  (data en `config/especiales/`). Los rankings de terceros sobre personas se informan tal cual, sin superlativos
+  sobre IDIEM (GR-04); la atribución de la lista (Stanford/Elsevier) es VERIFY hasta que MKT la confirme.
