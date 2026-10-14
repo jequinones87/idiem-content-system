@@ -58,7 +58,7 @@ body{font-family:"Montserrat",system-ui,sans-serif}
 .title{font-weight:700;font-size:76px;line-height:1.05;letter-spacing:-.012em;text-shadow:0 2px 18px rgba(0,0,0,.55)}
 .online{font-size:30px;font-weight:700;color:rgba(255,255,255,.9)}
 .panel{position:absolute;left:1180px;top:0;width:740px;height:1080px;background:var(--gray-dark);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:44px;padding:120px 80px 90px}
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:44px;padding:270px 80px 50px}
 .logo{position:absolute;top:84px;right:96px;width:230px;height:auto}
 .rel{display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px}
 .disc{width:270px;height:270px;border-radius:50%;background:#fff;padding:9px;box-shadow:0 10px 30px -12px rgba(0,0,0,.55)}
