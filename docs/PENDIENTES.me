@@ -33,6 +33,12 @@
 4. Fotos de librería > ~7 MB no bajan por el conector de Drive (correa CMDIC, espesador, ciudad Santiago,
    obra línea de metro): pedir a MKT versiones livianas (~2 MB) para próximos meses.
 
+## Hallazgo 14-10-2026: tipografía en piezas renderizadas
+Google Fonts NO carga en el entorno de render: las piezas de sep/oct/nov y webinar se rasterizaron con
+fuente de reemplazo, no con Montserrat. El banner de evento del webinar ya incrusta Montserrat
+(`.claude/skills/video-carrusel-idiem/assets/montserrat-*.woff2`). Pendiente: decidir con MKT si se
+re-renderizan las piezas aún no publicadas con Montserrat incrustada (cambia levemente el aspecto).
+
 ## Backlog de implementación (auditoría de sesgos — antes/durante noviembre)
 Hoy la diversidad es solo taxonómica (planner por subtema + ledger por knowledge_id).
 Mientras no exista el código, la asignación se hace **a mano** (tabla de asignación previa a redactar).
