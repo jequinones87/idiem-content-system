@@ -1,0 +1,30 @@
+{
+  "titulo": "Reconocimiento Leonardo Massone",
+  "foto": "design_system/assets/leonardo_massone.jpg",
+  "foto_pos": "50% 0%",
+  "kicker": "Reconocimiento",
+  "cifra": "Top 2%",
+  "lead": "de investigadores más citados del mundo en Ingeniería Civil",
+  "nombre": "Leonardo Massone",
+  "cargo": "Director de IDIEM",
+  "listas": [
+    "<b>Impacto anual:</b> 2021–2024 y 2026",
+    "<b>Trayectoria:</b> 2024–2026"
+  ],
+  "fuente": {
+    "url": "https://topscinet.com/scientist_profile/Massone,%20Leonardo%20M./2004/?stype=single_year",
+    "datos_tomados_de": "pieza TopSciNet compartida por MKT (14-10-2026): Top 2% Scientist in Civil Engineering; Universidad de Chile; single year 2021-2024, 2026; career long 2024-2026; '3 consecutive years, career long'",
+    "class": "SAFE (fuente pública entregada por MKT)",
+    "verify": "Atribución Stanford University / Elsevier confirmada por MKT (15-10-2026)."
+  },
+  "status": "DRAFT",
+  "copy": "Leonardo Massone, director de #IDIEM, figura en la lista de investigadores del 2% más citados del mundo en Ingeniería Civil, elaborada por Stanford University y Elsevier.\n\n📚 La lista mide el impacto de la producción científica a partir de sus citas. Leonardo aparece en la medición anual en 2021, 2022, 2023, 2024 y 2026, y por tercer año consecutivo en la de trayectoria completa (2024–2026).\n\nEs un reconocimiento a un trabajo académico sostenido desde la Universidad de Chile, que en IDIEM se conecta con la práctica: investigación al servicio de los desafíos de la ingeniería y la infraestructura del país.\n\n¡Felicitaciones, Leonardo! 👏\n\n🔗 Perfil completo: https://topscinet.com/scientist_profile/Massone,%20Leonardo%20M./2004/?stype=single_year\n\n#IDIEM #UniversidadDeChile #IngenieríaCivil #Investigación",
+  "copy_meta": {
+    "tipo": "institucional / reconocimiento (no traza a knowledge_id)",
+    "caracteres": 809,
+    "nota_GR04": "Ranking de terceros sobre una persona, pedido por MKT: se informa el dato tal cual, sin superlativos sobre IDIEM.",
+    "verify": [],
+    "estado_mkt": "Copy y gráfica aprobados por MKT (15-10-2026) con fuente agregada."
+  },
+  "fuente_txt": "Fuente: Stanford University y Elsevier"
+}

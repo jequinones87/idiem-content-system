@@ -1,0 +1,81 @@
+{
+  "name": "IDIEM · nov-2026 #5 · SIM (11 nov)",
+  "photo": {
+    "file": "../ejemplo/foto_sim_limpia.jpg",
+    "focus": "62% 54%",
+    "zoom": 1.1,
+    "glow": {
+      "x": 685,
+      "y": 575,
+      "r": 140
+    }
+  },
+  "timing": {
+    "cover": 4.0,
+    "step": 7.0,
+    "close": 6.0
+  },
+  "cover": {
+    "eyebrow": "GESTIÓN DE INTEGRIDAD ESTRUCTURAL · SIM",
+    "title": "Un solo *proceso*."
+  },
+  "steps": [
+    {
+      "icon": "calendario",
+      "title": [
+        "Primero, [planificar]"
+      ],
+      "body": [
+        "La integridad de una estructura no se revisa",
+        "una sola vez: se planifica como un proceso que",
+        "acompaña toda la operación."
+      ]
+    },
+    {
+      "icon": "zoom-in",
+      "title": [
+        "Análisis de",
+        "[antecedentes]"
+      ],
+      "body": [
+        "Registros, inspecciones previas y mediciones",
+        "dejan de estar dispersos: se analizan en",
+        "conjunto para entender el estado de cada",
+        "estructura."
+      ]
+    },
+    {
+      "icon": "shield-check",
+      "title": [
+        "Inspecciones [en]",
+        "[terreno]"
+      ],
+      "body": [
+        "La evidencia de terreno confirma el estado de",
+        "las estructuras y orienta dónde poner la",
+        "atención."
+      ]
+    },
+    {
+      "icon": "history",
+      "title": [
+        "Monitoreo [continuo]"
+      ],
+      "body": [
+        "Sensores trabajando en conjunto para seguir el",
+        "comportamiento de las estructuras en el",
+        "tiempo: la base para decidir dónde y cuándo",
+        "intervenir."
+      ]
+    }
+  ],
+  "closing": {
+    "body": [
+      "SIM ordena planificación, antecedentes,",
+      "inspecciones y monitoreo continuo en",
+      "un solo proceso para la infraestructura",
+      "minera."
+    ],
+    "url": "idiem.cl"
+  }
+}

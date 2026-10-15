@@ -1,0 +1,39 @@
+{
+  "content_id": "",
+  "status": "DRAFT",
+  "cell": "",
+  "content_type": "",
+  "audience": null,
+  "objective": "",
+  "editorial_angle": "",
+  "core_problem_or_question": "",
+  "knowledge_ids": [],
+  "auxiliary_ids": [],
+  "allowed_facts": [],
+  "mandatory_matices": [],
+  "blocked_claims": [],
+  "content_gaps": [],
+  "expert_input_required": false,
+  "expert_input_request": null,
+  "recommended_format": "",
+  "draft_copy": {
+    "hook": "",
+    "body": "",
+    "cta": ""
+  },
+  "visual_brief": {
+    "main_message": "",
+    "supporting_points": [],
+    "evidence_to_visualize": []
+  },
+  "traceability": {
+    "relation_ids": [],
+    "document_ids": []
+  },
+  "qa": {
+    "fact_check_passed": false,
+    "editorial_check_passed": false,
+    "human_approval": false,
+    "notes": []
+  }
+}

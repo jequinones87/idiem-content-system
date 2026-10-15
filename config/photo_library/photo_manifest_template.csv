@@ -1,0 +1,6 @@
+id,archivo,concepto,celulas,subtemas,disciplina,entorno,orientacion,tipo,derechos,personas,consentimiento,fuente,fecha,tags_libres,notas
+PHO-0001,faena-minera_dron_H.jpg,faena-minera;dron,IOM;LMD;IPR,Modelamiento y levantamiento digital,faena,mina,H,propia_idiem,propia,no,na,https://drive.google.com/file/d/XXXX/view,2026-05-10,rajo;camion;polvo,Ejemplo: sirve a minería y lab
+PHO-0002,triaxial_laboratorio_V.jpg,triaxial,LMD,Geotecnia y rocas,geotecnia,laboratorio,V,propia_idiem,propia,no,na,https://drive.google.com/file/d/YYYY/view,2026-06-01,equipo;probeta,Ejemplo: equipo Triaxial en laboratorio
+PHO-0003,hospital_sustentabilidad_C.jpg,hospital;sustentabilidad,IHA;IPR,Sostenibilidad hospitalaria,salud,obra,C,stock_licenciada,licencia_vigente,no,na,Envato Elements #12345,2026-06-15,verde;paneles,Ejemplo: stock con licencia
+PHO-0004,,,,,,,,,,,,,,,
+PHO-0005,,,,,,,,,,,,,,,

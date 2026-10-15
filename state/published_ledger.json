@@ -1,0 +1,256 @@
+{
+  "months": {
+    "2026-09": [
+      {
+        "content_id": "PLAN-KB-IHA-005-01",
+        "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+        "knowledge_id": "KB-IHA-005",
+        "evidence_ids": [
+          "KB-IHA-005",
+          "KB-IHA-002",
+          "KB-IHA-003",
+          "KB-IHA-004",
+          "KB-IHA-006"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-IOM-011-02",
+        "cell": "INFRA OPERACIÓN MINERA",
+        "knowledge_id": "KB-IOM-011",
+        "evidence_ids": [
+          "KB-IOM-011",
+          "KB-IOM-006",
+          "KB-IOM-007",
+          "KB-IOM-008",
+          "KB-IOM-009",
+          "KB-IOM-010"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-IPR-008-03",
+        "cell": "INFRA PÚBLICA RESILIENTE",
+        "knowledge_id": "KB-IPR-008",
+        "evidence_ids": [
+          "KB-IPR-008"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-LMD-001-04",
+        "cell": "LAB MINERO DIGITAL",
+        "knowledge_id": "KB-LMD-001",
+        "evidence_ids": [
+          "KB-LMD-001",
+          "KB-LMD-002",
+          "KB-LMD-003"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-IHA-001-05",
+        "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+        "knowledge_id": "KB-IHA-001",
+        "evidence_ids": [
+          "KB-IHA-001"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-IOM-043-06",
+        "cell": "INFRA OPERACIÓN MINERA",
+        "knowledge_id": "KB-IOM-043",
+        "evidence_ids": [
+          "KB-IOM-043",
+          "KB-IOM-044",
+          "KB-IOM-045",
+          "KB-IOM-046",
+          "KB-IOM-047",
+          "KB-IOM-048"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-IPR-021-07",
+        "cell": "INFRA PÚBLICA RESILIENTE",
+        "knowledge_id": "KB-IPR-021",
+        "evidence_ids": [
+          "KB-IPR-021"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-LMD-010-08",
+        "cell": "LAB MINERO DIGITAL",
+        "knowledge_id": "KB-LMD-010",
+        "evidence_ids": [
+          "KB-LMD-010",
+          "KB-LMD-011",
+          "KB-LMD-012",
+          "KB-LMD-013",
+          "KB-LMD-014",
+          "KB-LMD-015"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-IHA-006-09",
+        "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+        "knowledge_id": "KB-IHA-006",
+        "evidence_ids": [
+          "KB-IHA-006",
+          "KB-IHA-002",
+          "KB-IHA-003",
+          "KB-IHA-004",
+          "KB-IHA-005"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-IOM-056-10",
+        "cell": "INFRA OPERACIÓN MINERA",
+        "knowledge_id": "KB-IOM-056",
+        "evidence_ids": [
+          "KB-IOM-056",
+          "KB-IOM-055",
+          "KB-IOM-057",
+          "KB-IOM-058",
+          "KB-IOM-059",
+          "KB-IOM-060"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-IPR-024-11",
+        "cell": "INFRA PÚBLICA RESILIENTE",
+        "knowledge_id": "KB-IPR-024",
+        "evidence_ids": [
+          "KB-IPR-024"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-LMD-020-12",
+        "cell": "LAB MINERO DIGITAL",
+        "knowledge_id": "KB-LMD-020",
+        "evidence_ids": [
+          "KB-LMD-020",
+          "KB-LMD-016",
+          "KB-LMD-017",
+          "KB-LMD-018",
+          "KB-LMD-019"
+        ]
+      }
+    ],
+    "2026-10": [
+      {
+        "content_id": "PLAN-KB-IOM-038-01",
+        "cell": "INFRA OPERACIÓN MINERA",
+        "knowledge_id": "KB-IOM-038",
+        "evidence_ids": [
+          "KB-IOM-038",
+          "KB-IOM-039",
+          "KB-IOM-040",
+          "KB-IOM-041"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-IPR-018-02",
+        "cell": "INFRA PÚBLICA RESILIENTE",
+        "knowledge_id": "KB-IPR-018",
+        "evidence_ids": [
+          "KB-IPR-018",
+          "KB-IPR-017"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-LMD-004-03",
+        "cell": "LAB MINERO DIGITAL",
+        "knowledge_id": "KB-LMD-004",
+        "evidence_ids": [
+          "KB-LMD-004",
+          "KB-LMD-005",
+          "KB-LMD-006"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-IOM-065-04",
+        "cell": "INFRA OPERACIÓN MINERA",
+        "knowledge_id": "KB-IOM-065",
+        "evidence_ids": [
+          "KB-IOM-065"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-IPR-016-05",
+        "cell": "INFRA PÚBLICA RESILIENTE",
+        "knowledge_id": "KB-IPR-016",
+        "evidence_ids": [
+          "KB-IPR-016"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-LMD-007-06",
+        "cell": "LAB MINERO DIGITAL",
+        "knowledge_id": "KB-LMD-007",
+        "evidence_ids": [
+          "KB-LMD-007",
+          "KB-LMD-008",
+          "KB-LMD-009",
+          "KB-LMD-021"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-IOM-004-07",
+        "cell": "INFRA OPERACIÓN MINERA",
+        "knowledge_id": "KB-IOM-004",
+        "evidence_ids": [
+          "KB-IOM-004",
+          "KB-IOM-003"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-IPR-002-08",
+        "cell": "INFRA PÚBLICA RESILIENTE",
+        "knowledge_id": "KB-IPR-002",
+        "evidence_ids": [
+          "KB-IPR-002"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-IOM-063-09",
+        "cell": "INFRA OPERACIÓN MINERA",
+        "knowledge_id": "KB-IOM-063",
+        "evidence_ids": [
+          "KB-IOM-063"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-IPR-005-10",
+        "cell": "INFRA PÚBLICA RESILIENTE",
+        "knowledge_id": "KB-IPR-005",
+        "evidence_ids": [
+          "KB-IPR-005"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-IOM-017-11",
+        "cell": "INFRA OPERACIÓN MINERA",
+        "knowledge_id": "KB-IOM-017",
+        "evidence_ids": [
+          "KB-IOM-017",
+          "KB-IOM-006",
+          "KB-IOM-007",
+          "KB-IOM-008"
+        ]
+      },
+      {
+        "content_id": "PLAN-KB-IOM-030-12",
+        "cell": "INFRA OPERACIÓN MINERA",
+        "knowledge_id": "KB-IOM-030",
+        "evidence_ids": [
+          "KB-IOM-030",
+          "KB-IOM-031",
+          "KB-IOM-032",
+          "KB-IOM-033"
+        ]
+      },
+      {
+        "content_id": "PLAN-ACUSTICA-SMA-13",
+        "cell": "ACÚS",
+        "knowledge_id": "",
+        "evidence_ids": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "_comment": "Reglas de celda EXTERNAS y configurables (CLAUDE.md regla 11). El equipo valida definiciones en paralelo; ajustar aquí NO requiere reescribir codigo. Las definiciones canonicas de celda viven en data/ (read-only); este archivo solo gobierna enrutamiento/prioridad/restricciones a nivel de aplicacion.",
+  "version": "2A.2",
+  "cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL",
+    "INFRA CRÍTICA TRANSPORTE",
+    "INFRA OPERACIÓN MINERA",
+    "LAB MINERO DIGITAL"
+  ],
+  "priority_overrides": [
+    {
+      "id": "HEALTH_OVER_PUBLIC",
+      "when_project_is": "salud",
+      "prefer": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "over": "INFRA PÚBLICA RESILIENTE",
+      "source_rule": "GR-12"
+    }
+  ],
+  "restricted_cells": {
+    "INFRA CRÍTICA TRANSPORTE": {
+      "restricted_to": ["Metro", "EFE"],
+      "technical_status_when_no_active_items": "CONTENT_GAP",
+      "gap_reason": "No hay knowledge_items tecnicos activos especificos de Metro/EFE en la biblioteca actual.",
+      "source_rule": "GR-12"
+    }
+  },
+  "mining_routing": {
+    "_comment": "En mineria el tipo de cliente NO determina la celda; la determina la naturaleza del servicio (GR-09).",
+    "INFRA OPERACIÓN MINERA": {
+      "keywords": [
+        "integridad", "diagnóstico", "diagnostico", "ingeniería", "ingenieria",
+        "confiabilidad", "continuidad", "monitoreo", "inspección estructural",
+        "inspeccion estructural", "peritaje", "rehabilitación", "rehabilitacion",
+        "vulnerabilidad de incendio", "geotecnia de activos", "mantenimiento"
+      ]
+    },
+    "LAB MINERO DIGITAL": {
+      "keywords": [
+        "laboratorio", "ensayo", "inspección", "inspeccion", "control técnico",
+        "control tecnico", "evidencia", "trazabilidad", "muestreo", "certificación de ensayo",
+        "certificacion de ensayo"
+      ]
+    }
+  },
+  "digital_does_not_determine_lab": true,
+  "triaxial_is_mining": true,
+  "notes": [
+    "GR-10: 'Digital' (BIM, monitoreo remoto, plataformas, analitica) NO migra a Lab por si solo.",
+    "GR-11: Triaxial Gigante siempre asociado a proyectos mineros por decision explicita 2A.2."
+  ]
+}
