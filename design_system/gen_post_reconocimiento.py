@@ -55,6 +55,7 @@ body{font-family:"Montserrat",system-ui,sans-serif}
 .role{font-size:26px;font-weight:400;color:rgba(255,255,255,.88)}
 .lists{margin-top:6px;font-size:21px;line-height:1.45;color:rgba(255,255,255,.8)}
 .lists b{color:#fff}
+.src{margin-top:4px;font-size:18px;font-weight:400;color:rgba(255,255,255,.7)}
 .slogan{position:absolute;left:72px;bottom:66px;width:300px;height:auto}
 """
 
@@ -76,6 +77,7 @@ def render(d: dict) -> str:
     <div class="lead">{d["lead"]}</div>
     <div class="who"><div class="name">{d["nombre"]}</div><div class="role">{d["cargo"]}</div></div>
     <div class="lists">{lists}</div>
+    <div class="src">{d["fuente_txt"]}</div>
   </div>
   <img class="slogan" src="{SLOGAN}" alt="Elige bien. Elige idiem.">
 </div></body></html>"""

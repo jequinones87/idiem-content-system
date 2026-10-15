@@ -208,4 +208,4 @@ capacidades técnicas (la célula ICT no tiene conocimiento activo).
 - 2026-10-14 · Post especial de reconocimiento (Leonardo Massone, Top 2% más citados, Ingeniería Civil):
   pieza institucional fuera de grilla, no traza a knowledge_id. Plantilla `design_system/gen_post_reconocimiento.py`
   (data en `config/especiales/`). Los rankings de terceros sobre personas se informan tal cual, sin superlativos
-  sobre IDIEM (GR-04); la atribución de la lista (Stanford/Elsevier) es VERIFY hasta que MKT la confirme.
+  sobre IDIEM (GR-04); la fuente de la lista (Stanford University y Elsevier) va en la gráfica — confirmada por MKT 15-10.
