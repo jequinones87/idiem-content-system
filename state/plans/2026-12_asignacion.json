@@ -1,6 +1,6 @@
 {
   "month": "2026-12",
-  "status": "PROPUESTA v2 — decisiones MKT 19-10 aplicadas; pendiente OK final antes de redactar",
+  "status": "PROPUESTA v3 — respuestas MKT 19-10 aplicadas; los VERIFY se validan, bloquean o ajustan en la revisión de cada post",
   "rebalance_note": "12 posts base (pedido MKT) + 3 piezas fuera del conteo (Día Mundial del Suelo, Navidad en video, Año Nuevo). Minería 5 · Salud 5 · Pública 2. Lab Minero Digital entra solo vía la efeméride del suelo (geosintéticos, VERIFY). Salud se repone con el banco de temas (SRC-* validadas por MKT) y el cruce web (WEB-*, VERIFY = disponible, MKT 19-10-2026).",
   "inputs_reviewed": [
     "state/consolidated/2026-10.json",
@@ -184,6 +184,8 @@
         "SRC-005#C12",
         "SRC-005#C05",
         "SRC-005#C04",
+        "SRC-005#C06",
+        "SRC-005#C01",
         "EXT-0082",
         "WEB-002 (VERIFY: revisión integral de especialidades, incl. eléctrica)",
         "WEB-087 (VERIFY: mediciones de resistencia eléctrica de pisos)"
@@ -200,9 +202,12 @@
       "flags": [
         "pedido MKT 19-10: enfocar en el trabajo IDIEM",
         "EXT-0082 está en IPR (mandantes públicos): se aplica a salud por prioridad GR-12; MKT confirma",
-        "WEB-087 cita la NCh4/2003, que el RIC reemplazó: confirmar la referencia vigente antes de nombrar norma; no citar NCh4/2003 en un post sobre RIC",
-        "no se afirma que IDIEM 'diseña' instalaciones eléctricas: solo revisión y mediciones"
-      ]
+        "no se afirma que IDIEM 'diseña' instalaciones eléctricas: solo revisión y mediciones",
+        "norma de referencia = la de SRC-005 (RIC), no la del sitio (MKT 19-10-2026)",
+        "[No verificado] el artículo del RIC que rige la medición de pisos no está en SRC-005: nombrar el RIC sin artículo o validar en la revisión del post",
+        "VERIFY se resuelve en la revisión del post (MKT 19-10-2026)"
+      ],
+      "norm_reference": "RIC (DS N°8, pliegos vigentes desde 12-07-2021; RIC N°11 centros asistenciales, RIC N°08 sistemas de emergencia), según SRC-005. NO la NCh4/2003 que cita el sitio (decisión MKT 19-10-2026)."
     },
     {
       "seq": 8,
@@ -315,7 +320,8 @@
       "main_claim": "diagnósticos estructurales: estado de conservación, levantamiento de daños y propuestas de refuerzo",
       "flags": [
         "misma capacidad que #1 (diagnóstico): ángulo distinto (envejecimiento vs operación post-sismo); es la opción más débil de la grilla",
-        "alternativa: TOP-025 (diseño de licitación vs operación clínica)"
+        "alternativa: TOP-025 (diseño de licitación vs operación clínica)",
+        "se mantiene (MKT 19-10); se valida o ajusta en la revisión del post"
       ]
     }
   ],
@@ -324,26 +330,26 @@
       "seq": 13,
       "date": "2026-12-05",
       "type": "EFEMERIDE",
-      "theme": "Día Mundial del Suelo — uso sustentable del suelo en minería",
-      "cell": "LAB MINERO DIGITAL (propuesta; MKT confirma)",
-      "knowledge_id": null,
+      "theme": "Día Mundial del Suelo — suelo, depósitos y relaves: estabilidad desde el diseño",
+      "cell": "INFRA OPERACIÓN MINERA (seguridad estructural) + LAB MINERO DIGITAL (ensayos geotécnicos)",
+      "knowledge_id": "KB-IOM-045",
       "auxiliary_ids": [
-        "WEB-139 (VERIFY: inspección de impermeabilización con geosintéticos)",
-        "WEB-106 (VERIFY: ensayos de materiales poliméricos/geomembranas)"
+        "KB-LMD-021 (núcleo técnico; sin superlativos)",
+        "WEB-004 (VERIFY: ensayos geotécnicos especiales para diseño de tranques de relave)"
       ],
       "format": "STATIC",
       "archetype": "institutional_or_occasion",
       "hook_type": "insight",
       "cta_type": "knowledge",
-      "pain_point": "una barrera impermeable mal instalada bajo una pila o un depósito deja el suelo expuesto a filtraciones",
-      "main_claim": "inspección de la impermeabilización con geosintéticos: certificación de materiales, acopio, despliegue, soldadura y ensayos",
+      "pain_point": "un depósito o tranque cuyo suelo y materiales no se caracterizaron bien compromete el territorio que lo rodea",
+      "main_claim": "seguridad estructural en depósitos y relaves, y ensayos geotécnicos para el diseño de tranques",
       "status": "VERIFY",
       "flags": [
-        "pedido MKT 19-10: uso sustentable del suelo con foco en minería y el trabajo IDIEM",
-        "[Inferencia] el sitio no declara la aplicación minera de WEB-139: MKT confirma que IDIEM la presta en faenas (pilas, depósitos)",
-        "no hay servicio IDIEM de remediación de suelos ni cierre de faenas en 2A.2 ni en el sitio: no afirmarlo",
-        "HDPE ya en sep y nov (tuberías): aquí geomembranas, no tuberías",
-        "respaldo si MKT no confirma: KB-IOM-045 (seguridad estructural en depósitos y relaves) + WEB-004 (VERIFY: ensayos geotécnicos para diseño de tranques)"
+        "decisión MKT 19-10: tema de respaldo elegido para el Día del Suelo (geosintéticos queda como respaldo)",
+        "KB-IOM-045 USE_AUDITED_CORRECTION",
+        "[Inferencia] el vínculo con 'uso sustentable del suelo' es el encuadre editorial; no se afirma servicio de remediación ni cierre",
+        "recencia: nov #1 fue instrumentación de relaves y oct #6 Triaxial (tranques): foco en diseño/caracterización, sin repetir instrumentación ni nombrar el Triaxial con claims",
+        "VERIFY (WEB-004) se resuelve en la revisión del post"
       ]
     },
     {
@@ -393,6 +399,7 @@
     }
   ],
   "backup_items": [
+    "Día del Suelo alternativo: WEB-139 + WEB-106 inspección de impermeabilización con geosintéticos (VERIFY)",
     "TOP-025 Diseño de licitación vs operación clínica (SRC-002#C11, C09)",
     "TOP-019 Correas, CAEX y envolventes: riesgo de incendio en faena (KB-IOM-018)",
     "KB-IPR-022 Puente Viejo Cautín (EXPERT_INPUT_REQUIRED: evidencia mínima)",
@@ -418,6 +425,18 @@
     {
       "date": "2026-10-19",
       "decision": "Peritajes de controversias (#4) como video visual, atractivo y dinámico."
+    },
+    {
+      "date": "2026-10-19",
+      "decision": "#7: la referencia normativa es la de la presentación (RIC, DS N°8), no la NCh4/2003 del sitio."
+    },
+    {
+      "date": "2026-10-19",
+      "decision": "Día del Suelo: seguridad estructural de depósitos y relaves + ensayos geotécnicos para tranques."
+    },
+    {
+      "date": "2026-10-19",
+      "decision": "Temas con VERIFY se mantienen; se validan, bloquean o ajustan en la revisión de cada post."
     }
   ],
   "removed": [
