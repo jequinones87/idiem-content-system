@@ -1,0 +1,3881 @@
+{
+  "version": 1,
+  "extracted_on": "2026-10-19",
+  "source": "https://www.idiem.cl/servicios",
+  "description": "Servicios publicados en el sitio de IDIEM, texto literal. Complementa 2A.2 sin reemplazarla.",
+  "rules": {
+    "hierarchy": "2A.2 (knowledge_id) manda. www.idiem.cl es evidencia auxiliar CANDIDATA; no se copia a data/ ni crea capacidades técnicas nuevas (CLAUDE.md reglas 1, 2 y 7).",
+    "classification": "Todo servicio WEB-* entra como VERIFY (MKT 19-10-2026). Solo con validated_by se cita como auxiliary_id (WEB-xxx) en briefs y copies.",
+    "promo_flags": "Los textos en promo_flags son promocionales/superlativos: no pasan al copy aunque el servicio esté validado (voz de marca sin superlativos).",
+    "claim_flags": "Menciones de certificación, acreditación o normas: requieren respaldo en 2A.2 o validación específica antes de afirmarse.",
+    "cells": "El sitio no asigna célula. La célula se decide con config/cell_rules.json al usar el servicio; nunca se mueve conocimiento entre células para cubrir cuota (regla 9). Transporte sigue en CONTENT_GAP.",
+    "recrawl": "Al re-extraer, los IDs se conservan por ruta. Si el texto cambia (content_hash), la validación se borra y el servicio vuelve a VERIFY.",
+    "duplicates": "El sitio repite áreas bajo varias categorías; same_text_as apunta al primer WEB-* con el mismo texto."
+  },
+  "counts": {
+    "categoria": 7,
+    "area": 33,
+    "servicio": 135
+  },
+  "services": [
+    {
+      "id": "WEB-001",
+      "level": "categoria",
+      "path": "/servicios/asesoria-contractual-en-controversias-y-claims",
+      "url": "https://www.idiem.cl/servicios/asesoria-contractual-en-controversias-y-claims",
+      "parent_id": null,
+      "title": "Asesoría contractual en controversias y claims",
+      "description": [
+        "Estudios técnicos y asesoría experta en la prevención y resolución de controversias en contratos de construcción, cualquiera sea su modalidad: Construcción, EP, EPC, EPCM, BOT, u otros; o distribución de riesgos y forma de pago: suma alzada, precios unitarios, mixtos, reembolsables, entre otros.",
+        "Considerando una mirada transversal al ciclo de vida de los proyectos, brindamos servicios y estudios técnicos que permiten el control y programación del proceso constructivo en todas sus etapas, optimizando la gestión de las empresas.",
+        "Tenemos un área de estudios y asesorías en gestión contractual. Ofrecemos estudios técnicos imparciales e independientes, buscando que ante una controversia las partes alcancen un correcto entendimiento respecto de las materias pendientes de resolución. Gracias a estos servicios, se puede contar con información oportuna y respaldo técnico para la toma de decisiones.",
+        "Ante un eventual término anticipado del contrato de construcción (TAC), realizamos el diagnóstico técnico de la situación actual de la obra y el levantamiento en terreno de las partidas no finalizadas.",
+        "Verificamos la calidad de ejecución de instalaciones, obra gruesa y materiales, registro de avance físico y financiero. También hacemos la validación de no conformidades y requerimientos de información (RDI), control de documentos, desarrollo de pruebas de instalaciones y elaboración de planimetría as built de levantamiento, utilizando modelos 3D, con el objetivo de comprobar las obras ejecutadas y retomar la construcción de las obras pendientes."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "31569ecc52c69e9d"
+    },
+    {
+      "id": "WEB-002",
+      "level": "categoria",
+      "path": "/servicios/asesorias-y-estudios-tecnicos",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos",
+      "parent_id": null,
+      "title": "Asesorías y estudios técnicos",
+      "description": [
+        "Equipo multidisciplinario de profesionales de alta especialización en distintas disciplinas de la ingeniería, orientadas a resolver una problemática específica. A través de las asesorías y estudios, buscamos ser un socio estratégico en la formulación de nuevas soluciones para nuestros clientes a través de la innovación y el uso de nuevas tecnologías.",
+        "Realizamos la revisión integral de proyectos lo que considera la estructura, aceros, hormigones y suelos, además de especialidades como incendios, eléctrica, sanitaria, ascensores y climatización. Con esto, se busca verificar el cumplimiento de la normativa y de las bases de diseño.",
+        "Además, contamos con experiencia en la mitigación de riesgos naturales. Esto nos permite realizar estudios en la detección temprana de amenazas relacionadas con factores ambientales, enfocados en proyectos de infraestructura ubicados en zonas geográficas potencialmente riesgosas. Integramos todas las disciplinas y especialidades técnicas necesarias para abordar estos riesgos, contemplando topografía, mecánica de suelos y de rocas, geología, geofísica, ingeniería sísmica y mecánica.",
+        "Otro aporte a la sustentabilidad es el apoyo que prestamos a mandantes en sus procesos de certificación LEED, CES o CEV, en las fases de diseño, construcción y operación de sus proyectos.",
+        "Por otra parte, somos especialistas en ingeniería contra incendios, asesoría que se puede aplicar en todas las etapas de un proyecto. Entregamos respaldo para el desarrollo de manuales de criterios de diseño, procesos de capacitación a personal clave, diagnóstico de instalaciones, diseño conceptual y básico de proyectos de seguridad, análisis de riesgo para toma de decisiones, simulaciones computacionales de incendios y evacuación de personas, entre otras prestaciones.",
+        "Por medio de la coordinación 3D - BIM, somos capaces de anticipar la construcción antes de su ejecución, visualizando zonas complejas y adelantando soluciones sobre interferencias, inconsistencias y otros problemas de coordinación.",
+        "El modelamiento digital abarca desde el levantamiento y caracterización de estructuras en un modelo digital, hasta la generación de un activo digital modelado, sensorizado y con sistemas de alertas. En las etapas de diseño se pueden hacer validaciones, simulaciones de escenarios y coordinaciones. Luego en etapas de construcción se pueden validar avances y complementar con servicios de fotogrametría. Lo anterior, nos permite construir un activo digital de valor hacia la industria y a la vez capturar los beneficios del diseño/construcción digital concurrente y en línea."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [
+        "alta especialización"
+      ],
+      "claim_flags": [
+        "certificación",
+        "normativa"
+      ],
+      "content_hash": "2fd01e5c42f98793"
+    },
+    {
+      "id": "WEB-003",
+      "level": "categoria",
+      "path": "/servicios/ensayos-de-laboratorio",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio",
+      "parent_id": null,
+      "title": "Ensayos de laboratorio",
+      "description": [
+        "Pruebas que permiten determinar las características mecánicas, térmicas, acústicas, entre otras, de un material, producto o solución constructiva. Los ensayos se realizan siguiendo la metodología técnica establecida en normas nacionales o extranjeras.",
+        "Velar por la calidad de los principales insumos que se utilizan en la construcción nacional es otra de nuestras actividades permanentes.",
+        "Así, en los laboratorios y grupos de alta especialización de IDIEM realizamos una gran variedad de ensayos de control de hormigones, cementos, aceros y otros materiales.",
+        "Certificamos, de este modo, gran parte de los insumos esenciales de la construcción, como cementos, aceros y hormigones."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [
+        "alta especialización",
+        "gran parte",
+        "gran variedad",
+        "principales"
+      ],
+      "claim_flags": [
+        "Certificamos",
+        "normas"
+      ],
+      "content_hash": "7ce559f664d33a46"
+    },
+    {
+      "id": "WEB-004",
+      "level": "categoria",
+      "path": "/servicios/geotecnia-y-prospecciones",
+      "url": "https://www.idiem.cl/servicios/geotecnia-y-prospecciones",
+      "parent_id": null,
+      "title": "Geotecnia y Prospecciones",
+      "description": [
+        "Caracterización geotécnica del suelo a través de exploración, ensayos in-situ y en laboratorio e informes de ingeniería, con el objetivo de obtener información base para desarrollar estudios de mecánica de suelos.",
+        "Abarca tanto la evaluación de las condiciones del suelo para el emplazamiento de infraestructura civil, hasta el estudio de condiciones de materiales de suelo y roca para la instalación de infraestructura de gran envergadura asociadas.",
+        "Realizamos exploraciones geotécnicas, desde la planificación de la campaña y la ejecución de las exploraciones, con todos los ensayos requeridos, hasta la interpretación de los resultados. También efectuamos labores de caracterización geotécnica, considerando ensayos de laboratorio y de terreno para estudiar el comportamiento del suelo.",
+        "Además, ofrecemos servicios específicos en modelamiento numérico, para dar respuesta al comportamiento de obras mineras de gran envergadura, tanto en condición estática como sísmica. Contamos también con la capacidad de realizar ensayos geotécnicos especiales para la minería, cuyo foco es el diseño de tranques de relave",
+        "Contamos también con la capacidad de realizar ensayos geotécnicos especiales para la minería, cuyo foco es el diseño de tranques de relave."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "bbfef26efc4a3d01"
+    },
+    {
+      "id": "WEB-005",
+      "level": "categoria",
+      "path": "/servicios/inspeccion-tecnica-de-obra",
+      "url": "https://www.idiem.cl/servicios/inspeccion-tecnica-de-obra",
+      "parent_id": null,
+      "title": "Inspección técnica de obra",
+      "description": [
+        "Gestión, ingeniería e inspección de la calidad de la construcción en el área de edificación, montaje industrial, minería e infraestructura, orientados a satisfacer las necesidades específicas del mandante y atender las particularidades de cada proyecto.",
+        "Durante la etapa de construcción de un proyecto, tenemos la capacidad de realizar la inspección técnica de obra (ITO) desde una perspectiva integral y exhaustiva, incorporando tecnología de punta. Ponemos a disposición de nuestros clientes una plataforma virtual, que posibilita la gestión integrada de documentos, servicios y la firma digital.",
+        "A través de este servicio, tomando como base el plan de inspección elaborado por IDIEM, supervisamos que la obra se levante de acuerdo con el permiso de edificación aprobado, sus modificaciones, y al proyecto de arquitectura, estructura y especialidades.",
+        "Esto contempla el control, tanto de aspectos técnicos como de tipo administrativo, incluyendo los siguientes factores principales:",
+        "∙ Calidad de la obra.∙ Costos del proyecto.∙ Cumplimiento de la programación.∙ Ruta crítica.∙ Estados de pagos ordinarios y adicionales.∙ Medición del avance físico y financiero.∙ Obras adicionales y/o extraordinarias.∙ Gestión administrativa del contrato de construcción.∙ Indicadores de gestión para las empresas constructoras.∙ Gestión de ensayos obligatorios de obra.",
+        "También ofrecemos asesorías técnicas en gestión de calidad y auditorías al autocontrol de la obra, por medio de intervenciones programadas a partidas críticas que estén generando costos adicionales o retrasos en obra, producto de reparaciones o correcciones relacionadas a su mala ejecución. Realizamos la inspección en planta de elementos prefabricados, por niveles de calidad aceptable, y hacemos seguimiento en obra de la productividad, a través de KPI diseñados a medida y en línea con las tendencias del mercado.",
+        "A su vez, efectuamos la inspección técnica de especialidades, llevada a cabo por equipos de profesionales multidisciplinarios. Por medio de este control técnico de la ejecución del proyecto, se busca verificar que las obras se realicen de acuerdo con los planos, especificaciones técnicas, bases de diseño y recomendaciones de los proveedores. Esta etapa considera especialidades como electricidad, corrientes débiles, climatización, ventilación, extracción, presurización, gas combustible, agua potable, alcantarillado, agua lluvia, telecomunicaciones, ascensores, montacargas, escaleras mecánicas, control centralizado, ruidos e ingeniería contra incendios."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [
+        "principales"
+      ],
+      "claim_flags": [],
+      "content_hash": "351e9285f58e1c99"
+    },
+    {
+      "id": "WEB-006",
+      "level": "categoria",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica",
+      "parent_id": null,
+      "title": "Laboratorios en obra o fábrica",
+      "description": [
+        "Ensayos de laboratorio y estudios técnicos realizados en obra para grandes proyectos de construcción, faenas operativas o fábricas.",
+        "Debido a su ubicación en zonas generalmente aisladas, sumado a la complejidad de sus accesos y al gran volumen de requerimientos que generan, los proyectos mineros necesitan resolver in situ sus necesidades relacionadas con el control de la calidad de materiales de construcción.",
+        "Para ello hemos desarrollado la capacidad de instalar laboratorios de ensayo de materiales “en obra”, con reportes digitales, lo que nos permite entregar un servicio integral a nuestros clientes, respondiendo a todos sus requerimientos de forma oportuna, con altos estándares de calidad, operación, confiabilidad y seguridad.",
+        "Dentro de nuestros servicios en terreno, destacamos los controles de shotcrete durante su colocación en túneles mineros, para verificar que su desempeño esté siempre dentro los límites establecidos de acuerdo a especificaciones técnicas, entre otras pruebas.",
+        "Además, contamos con una plataforma de clientes para acceder digitalmente a reportes automatizados desde nuestros laboratorios en terreno, con una trazabilidad desde el seguimiento de muestras hasta el análisis y descarga de resultados."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [
+        "altos estándares"
+      ],
+      "claim_flags": [],
+      "content_hash": "f12d09220827000c"
+    },
+    {
+      "id": "WEB-007",
+      "level": "categoria",
+      "path": "/servicios/peritajes-y-analisis-de-fallas",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas",
+      "parent_id": null,
+      "title": "Peritajes y análisis de fallas",
+      "description": [
+        "Proceso metodológico de investigación de carácter técnico y administrativo con el propósito de determinar las causas concretas de una condición, de un accidente o mal funcionamiento.",
+        "Ante fallas o colapsos de estructuras, realizamos peritajes técnicos, estudios e informes de alta complejidad, respondiendo de este modo a la necesidad del medio de contar con un organismo imparcial y multidisciplinario que entregue una visión independiente y con sustento técnico.",
+        "Frente a problemas estructurales, deformaciones de losas, desprendimiento de revestimientos o problemas de instalaciones eléctricas, sanitarias, ascensores o climatización, ofrecemos peritaje de falla. Este tipo de estudio de IDIEM tiene por objetivo determinar las causas, basado principalmente en información recogida en el lugar de la falla, la cual es analizada en conjunto con otros antecedentes. El estudio considera revisiones de diseño, inspección en terreno, ensayos y pruebas específicas, para luego entregar los diagnósticos técnicos. Los peritajes, además, permiten detectar deficiencias de diseño, construcción o vulnerabilidades asociadas a la operación.",
+        "Peritajes de causa y origen de incendios. Realizamos investigaciones de incendios y explosiones basadas en la norma NFPA 921 determinando causa, origen, formas de propagación del incendio u otras aristas asociadas a estos siniestros. Estos peritajes establecen el nivel de daño en una estructura, su eventual recuperabilidad, o necesidad de reparación o demolición. Los objetivos específicos del estudio son determinar el origen probable del incendio y determinar los factores probables que incidieron en la causa."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "norma"
+      ],
+      "content_hash": "7859a70808914c0d"
+    },
+    {
+      "id": "WEB-008",
+      "level": "area",
+      "path": "/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual",
+      "url": "https://www.idiem.cl/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual",
+      "parent_id": "WEB-001",
+      "title": "Ingeniería contractual",
+      "description": [
+        "Servicio de apoyo a mandantes, contratistas, árbitros y jueces, en la resolución o prevención de controversias o reclamaciones en el ámbito de contratos de construcción, mediante estudios técnicos de expertos o asesoría en las diferentes etapas, sean estas durante el proceso de licitación, ejecución y cierre de la obra."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "4e4e5111975c79db"
+    },
+    {
+      "id": "WEB-009",
+      "level": "area",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/digitalizacion-de-la-construccion",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/digitalizacion-de-la-construccion",
+      "parent_id": "WEB-002",
+      "title": "Digitalización de la construcción",
+      "description": [
+        "Servicios de apoyo y facilitación para la incorporación de procesos digitales en los proyectos. Permite el modelamiento y coordinación de proyectos, el levantamiento de condiciones existes, el control de avance y la instrumentación de estructuras."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "2944a4022fced4ce"
+    },
+    {
+      "id": "WEB-010",
+      "level": "area",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/estructuras",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/estructuras",
+      "parent_id": "WEB-002",
+      "title": "Estructuras",
+      "description": [
+        "Equipo especialista de ingenieros y técnicos de vasta experiencia en peritajes y evaluaciones de todo tipo de infraestructura pública y privada. Equipados con la mejor tecnología (escáner laser, dron y equipos de monitoreo) que permite desarrollar y responder a requerimientos de alta complejidad técnica."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [
+        "mejor",
+        "todo tipo"
+      ],
+      "claim_flags": [],
+      "content_hash": "ade13a592d93b15e"
+    },
+    {
+      "id": "WEB-011",
+      "level": "area",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/geotecnia-y-mecanica-de-suelos",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/geotecnia-y-mecanica-de-suelos",
+      "parent_id": "WEB-002",
+      "title": "Geotecnia y mecánica de suelos",
+      "description": [
+        "Asesoría geotécnica experta, exploración y caracterización de suelos, con el apoyo de ensayos de laboratorio y en terreno, en todas las etapas del proyecto. Contamos con el único triaxial gigante en Chile, además de una amplia gama de ensayos y estudios, orientados a proyectos complejos de minería y energía, como también a proyectos inmobiliarios y de otros sectores."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [
+        "único"
+      ],
+      "claim_flags": [],
+      "content_hash": "03df6ef79cdf9795"
+    },
+    {
+      "id": "WEB-012",
+      "level": "area",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contra-incendios",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contra-incendios",
+      "parent_id": "WEB-002",
+      "title": "Ingeniería contra incendios",
+      "description": [
+        "Los incendios son fenómenos complejos y su entendimiento requiere una aproximación multidisciplinaria. La ingeniería contra incendios estudia estrategias pasivas y activas, que buscan minimizar el nivel de riesgo de incendio a nivel de infraestructura y de las personas. Nuestras asesorías se aplican tanto en etapa de diseño como durante la operación y abarcan proyectos de edificación (comercial y residencial) como infraestructura industrial y minera."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "41aa8437854324c6"
+    },
+    {
+      "id": "WEB-013",
+      "level": "area",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual",
+      "parent_id": "WEB-002",
+      "title": "Ingeniería contractual",
+      "description": [
+        "Servicio de apoyo a mandantes, contratistas, árbitros y jueces, en la resolución o prevención de controversias o reclamaciones en el ámbito de contratos de construcción, mediante estudios técnicos de expertos o asesoría en las diferentes etapas, sean estas durante el proceso de licitación, ejecución y cierre de la obra."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "4e4e5111975c79db",
+      "same_text_as": "WEB-008"
+    },
+    {
+      "id": "WEB-014",
+      "level": "area",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/inspeccion-de-obra",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/inspeccion-de-obra",
+      "parent_id": "WEB-002",
+      "title": "Inspección de obra",
+      "description": [
+        "Comprende la gestión, ingeniería e inspección de la calidad de la construcción en el área de edificación, montaje industrial, minería e infraestructura, orientados a satisfacer las necesidades específicas del mandante y atender las particularidades de cada proyecto. Aborda desde el diseño a la operación."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "8f216fb399e52357"
+    },
+    {
+      "id": "WEB-015",
+      "level": "area",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/productividad",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/productividad",
+      "parent_id": "WEB-002",
+      "title": "Productividad",
+      "description": [
+        "Mejorar la productividad de los proyectos de construcción es el objetivo principal de este grupo de servicios. La mirada es integral, abarcando las etapas de diseño, construcción y posterior evaluación de resultados. Si buscas mejorar la productividad de tus obras, realiza un diagnóstico a través de nuestro índice de productividad y conoce las oportunidades de mejora. Las asesorías incluyen, evaluación de opciones de industrialización, acompañamiento durante la construcción, evaluación de desempeño y plan de mejoramiento, entre otros."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "6a8ad58c1e080e25"
+    },
+    {
+      "id": "WEB-016",
+      "level": "area",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/sustentabilidad",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/sustentabilidad",
+      "parent_id": "WEB-002",
+      "title": "Sustentabilidad",
+      "description": [
+        "Comprende asesorías técnicas en las áreas de construcción sustentable, abarcando todo el ciclo de vida de los proyectos, desde el diseño, la construcción y luego la operación. Idiem además es consultor en la aplicación de las distintas certificaciones sustentables que se aplican en Chile, entre ellas LEED, CES, CVS, CEV y en el desarrollo y evaluación de materiales, a través de Catalogo Verde y de sus asesorías en análisis de ciclo de vida (ACV)."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "certificaciones"
+      ],
+      "content_hash": "519960fa1096e340"
+    },
+    {
+      "id": "WEB-017",
+      "level": "area",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/tecnologia-del-hormigon",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/tecnologia-del-hormigon",
+      "parent_id": "WEB-002",
+      "title": "Tecnología del Hormigón",
+      "description": [
+        "Asesores expertos en Tecnología del Hormigón con apoyo de laboratorios y equipamiento para investigación y prospecciones del hormigón en terreno, lo que nos permite prestar una amplia gama de servicios orientados a dar soluciones en las distintas etapas de los proyectos de ingeniería y construcción de obras de hormigón."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "14b7c2557f792993"
+    },
+    {
+      "id": "WEB-018",
+      "level": "area",
+      "path": "/servicios/ensayos-de-laboratorio/aceros",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/aceros",
+      "parent_id": "WEB-003",
+      "title": "Aceros",
+      "description": [
+        "Equipo de expertos y laboratorio especializado en el control de calidad de aceros utilizados en la construcción y ensayos para determinación de propiedades del acero. Contamos con equipamiento de alta tecnología que nos permite realizar inspecciones, peritajes y análisis a todo de tipo de elementos, sistemas, productos, piezas de acero y ejecución de soldaduras."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [
+        "alta tecnología",
+        "todo de tipo"
+      ],
+      "claim_flags": [],
+      "content_hash": "2464b02c88fce1fa"
+    },
+    {
+      "id": "WEB-019",
+      "level": "area",
+      "path": "/servicios/ensayos-de-laboratorio/control-de-otros-materiales",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/control-de-otros-materiales",
+      "parent_id": "WEB-003",
+      "title": "Control de otros materiales",
+      "description": [
+        "Amplia oferta de ensayos de laboratorio y en terreno, tanto obligatorios como voluntarios, los cuales se aplican a materiales de construcción, productos y soluciones constructivas. Estamos acreditados ante INN para ensayos en las áreas de elementos prefabricados, incendios, higrotermia, entre otros. Contamos con una amplia gama de ensayos orientados a demostrar cumplimiento normativo, incluyendo los ensayos solicitados por MMA, OGUC, MINVU y SERVIU."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "acreditados",
+        "INN",
+        "normativo"
+      ],
+      "content_hash": "379d05a176ca5129"
+    },
+    {
+      "id": "WEB-020",
+      "level": "area",
+      "path": "/servicios/ensayos-de-laboratorio/estructuras",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/estructuras",
+      "parent_id": "WEB-003",
+      "title": "Estructuras",
+      "description": [
+        "Equipo especialista de ingenieros y técnicos de vasta experiencia en peritajes y evaluaciones de todo tipo de infraestructura pública y privada. Equipados con la mejor tecnología (escáner laser, dron y equipos de monitoreo) que permite desarrollar y responder a requerimientos de alta complejidad técnica."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [
+        "mejor",
+        "todo tipo"
+      ],
+      "claim_flags": [],
+      "content_hash": "ade13a592d93b15e",
+      "same_text_as": "WEB-010"
+    },
+    {
+      "id": "WEB-021",
+      "level": "area",
+      "path": "/servicios/ensayos-de-laboratorio/geotecnia-y-mecanica-de-suelos",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/geotecnia-y-mecanica-de-suelos",
+      "parent_id": "WEB-003",
+      "title": "Geotecnia y mecánica de suelos",
+      "description": [
+        "Asesoría geotécnica experta, exploración y caracterización de suelos, con el apoyo de ensayos de laboratorio y en terreno, en todas las etapas del proyecto. Contamos con el único triaxial gigante en Chile, además de una amplia gama de ensayos y estudios, orientados a proyectos complejos de minería y energía, como también a proyectos inmobiliarios y de otros sectores."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [
+        "único"
+      ],
+      "claim_flags": [],
+      "content_hash": "03df6ef79cdf9795",
+      "same_text_as": "WEB-011"
+    },
+    {
+      "id": "WEB-022",
+      "level": "area",
+      "path": "/servicios/ensayos-de-laboratorio/ingenieria-contra-incendios",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/ingenieria-contra-incendios",
+      "parent_id": "WEB-003",
+      "title": "Ingeniería contra incendios",
+      "description": [
+        "Los incendios son fenómenos complejos y su entendimiento requiere una aproximación multidisciplinaria. La ingeniería contra incendios estudia estrategias, pasivas y activas, que buscan minimizar el nivel de riesgo de incendio a nivel de infraestructura y de las personas. Nuestras asesorías se aplican tanto en la etapa de diseño como durante la operación y abarcan proyectos de edificación (comercial y residencial) como infraestructura industrial y minera."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "6811937db7321522"
+    },
+    {
+      "id": "WEB-023",
+      "level": "area",
+      "path": "/servicios/ensayos-de-laboratorio/inspeccion-de-obra",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/inspeccion-de-obra",
+      "parent_id": "WEB-003",
+      "title": "Inspección de obra",
+      "description": [
+        "Comprende la gestión, ingeniería e inspección de la calidad de la construcción en el área de edificación, montaje industrial, minería e infraestructura, orientados a satisfacer las necesidades específicas del mandante y atender las particularidades de cada proyecto. Aborda desde el diseño a la operación."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "8f216fb399e52357",
+      "same_text_as": "WEB-014"
+    },
+    {
+      "id": "WEB-024",
+      "level": "area",
+      "path": "/servicios/ensayos-de-laboratorio/laboratorios-en-obra-o-fabrica",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/laboratorios-en-obra-o-fabrica",
+      "parent_id": "WEB-003",
+      "title": "Laboratorios en obra o fábrica",
+      "description": [
+        "Ensayos de laboratorio y estudios técnicos realizados en obra para grandes proyectos de construcción, faenas operativas o fábricas."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "22b2c322fb2c3d1e"
+    },
+    {
+      "id": "WEB-025",
+      "level": "area",
+      "path": "/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon",
+      "parent_id": "WEB-003",
+      "title": "Tecnología del Hormigón",
+      "description": [
+        "Asesores expertos en Tecnología del Hormigón con apoyo de laboratorios y equipamiento para investigación y prospecciones del hormigón en terreno, lo que nos permite prestar una amplia gama de servicios orientados a dar soluciones en las distintas etapas de los proyectos de ingeniería y construcción de obras de hormigón."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "14b7c2557f792993",
+      "same_text_as": "WEB-017"
+    },
+    {
+      "id": "WEB-026",
+      "level": "area",
+      "path": "/servicios/geotecnia-y-prospecciones/geotecnia-y-mecanica-de-suelos",
+      "url": "https://www.idiem.cl/servicios/geotecnia-y-prospecciones/geotecnia-y-mecanica-de-suelos",
+      "parent_id": "WEB-004",
+      "title": "Geotecnia y mecánica de suelos",
+      "description": [
+        "Asesoría geotécnica experta, exploración y caracterización de suelos, con el apoyo de ensayos de laboratorio y en terreno, en todas las etapas del proyecto. Contamos con el único triaxial gigante en Chile, además de una amplia gama de ensayos y estudios, orientados a proyectos complejos de minería y energía, como también a proyectos inmobiliarios y de otros sectores."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [
+        "único"
+      ],
+      "claim_flags": [],
+      "content_hash": "03df6ef79cdf9795",
+      "same_text_as": "WEB-011"
+    },
+    {
+      "id": "WEB-027",
+      "level": "area",
+      "path": "/servicios/geotecnia-y-prospecciones/laboratorios-en-obra",
+      "url": "https://www.idiem.cl/servicios/geotecnia-y-prospecciones/laboratorios-en-obra",
+      "parent_id": "WEB-004",
+      "title": "Laboratorios en obra",
+      "description": [
+        "Implementación de laboratorios en proyectos, cumpliendo con altos estándares técnicos, de calidad, seguridad y ambientales. Estos servicios se caracterizan por la flexibilidad para cumplir con distintos requerimientos y necesidades del cliente, en distintas condiciones, ubicación geográfica y exigencias de los programas."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [
+        "altos estándares"
+      ],
+      "claim_flags": [],
+      "content_hash": "666347c22ae54773"
+    },
+    {
+      "id": "WEB-028",
+      "level": "area",
+      "path": "/servicios/inspeccion-tecnica-de-obra/aceros",
+      "url": "https://www.idiem.cl/servicios/inspeccion-tecnica-de-obra/aceros",
+      "parent_id": "WEB-005",
+      "title": "Aceros",
+      "description": [
+        "Equipo de expertos y laboratorio especializado en el control de calidad de aceros utilizados en la construcción y ensayos para determinación de propiedades del acero. Contamos equipamiento de alta tecnología que nos permite realizar inspecciones, peritajes y análisis a todo de tipo de elementos, sistemas, productos, piezas de acero y ejecución de soldaduras."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [
+        "alta tecnología",
+        "todo de tipo"
+      ],
+      "claim_flags": [],
+      "content_hash": "96f8dd31d3234049"
+    },
+    {
+      "id": "WEB-029",
+      "level": "area",
+      "path": "/servicios/inspeccion-tecnica-de-obra/control-de-otros-materiales",
+      "url": "https://www.idiem.cl/servicios/inspeccion-tecnica-de-obra/control-de-otros-materiales",
+      "parent_id": "WEB-005",
+      "title": "Control de otros materiales",
+      "description": [
+        "Amplia oferta de ensayos de laboratorio y en terreno, tanto obligatorios como voluntarios, los cuales se aplican a materiales de construcción, productos y soluciones constructivas. Estamos acreditados ante INN para ensayos en las áreas de elementos prefabricados, incendios, higrotermia, entre otros. Contamos con una amplia gama de ensayos en orientados a demostrar cumplimiento normativo, incluyendo los ensayos solicitados por MMA, OGUC, MINVU y SERVIU."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "acreditados",
+        "INN",
+        "normativo"
+      ],
+      "content_hash": "f54e2e419a1cce2f"
+    },
+    {
+      "id": "WEB-030",
+      "level": "area",
+      "path": "/servicios/inspeccion-tecnica-de-obra/inspeccion-de-obra",
+      "url": "https://www.idiem.cl/servicios/inspeccion-tecnica-de-obra/inspeccion-de-obra",
+      "parent_id": "WEB-005",
+      "title": "Inspección de obra",
+      "description": [
+        "Comprende la gestión, ingeniería e inspección de la calidad de la construcción en el área de edificación, montaje industrial, minería e infraestructura, orientados a satisfacer las necesidades específicas del mandante y atender las particularidades de cada proyecto. Aborda desde el diseño a la operación."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "8f216fb399e52357",
+      "same_text_as": "WEB-014"
+    },
+    {
+      "id": "WEB-031",
+      "level": "area",
+      "path": "/servicios/inspeccion-tecnica-de-obra/productividad",
+      "url": "https://www.idiem.cl/servicios/inspeccion-tecnica-de-obra/productividad",
+      "parent_id": "WEB-005",
+      "title": "Productividad",
+      "description": [
+        "Mejorar la productividad de los proyectos de construcción es el objetivo principal de este grupo de servicios. La mirada es integral, abarcando las etapas de diseño, construcción y posterior evaluación de resultados. Si buscas mejorar la productividad de tus obras, realiza un diagnóstico a través de nuestro índice de productividad y conoce las oportunidades de mejora. Las asesorías incluyen, evaluación de opciones de industrialización, acompañamiento durante la construcción, evaluación de desempeño y plan de mejoramiento, entre otros."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "6a8ad58c1e080e25",
+      "same_text_as": "WEB-015"
+    },
+    {
+      "id": "WEB-032",
+      "level": "area",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/aceros",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/aceros",
+      "parent_id": "WEB-006",
+      "title": "Aceros",
+      "description": [
+        "Equipo de expertos y laboratorio especializado en el control de calidad de aceros utilizados en la construcción y ensayos para determinación de propiedades del acero. Contamos equipamiento de alta tecnología que nos permite realizar inspecciones, peritajes y análisis a todo de tipo de elementos, sistemas, productos, piezas de acero y ejecución de soldaduras."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [
+        "alta tecnología",
+        "todo de tipo"
+      ],
+      "claim_flags": [],
+      "content_hash": "96f8dd31d3234049",
+      "same_text_as": "WEB-028"
+    },
+    {
+      "id": "WEB-033",
+      "level": "area",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/control-de-otros-materiales",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/control-de-otros-materiales",
+      "parent_id": "WEB-006",
+      "title": "Control de otros materiales",
+      "description": [
+        "Amplia oferta de ensayos de laboratorio y en terreno, tanto obligatorios como voluntarios, los cuales se aplican a materiales de construcción, productos y soluciones constructivas. Estamos acreditados ante INN para ensayos en las áreas de elementos prefabricados, incendios, higrotermia, entre otros. Contamos con una amplia gama de ensayos en orientados a demostrar cumplimiento normativo, incluyendo los ensayos solicitados por MMA, OGUC, MINVU y SERVIU."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "acreditados",
+        "INN",
+        "normativo"
+      ],
+      "content_hash": "f54e2e419a1cce2f",
+      "same_text_as": "WEB-029"
+    },
+    {
+      "id": "WEB-034",
+      "level": "area",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/estructuras",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/estructuras",
+      "parent_id": "WEB-006",
+      "title": "Estructuras",
+      "description": [
+        "Equipo especialista de ingenieros y técnicos de vasta experiencia en peritajes y evaluaciones de todo tipo de infraestructura pública y privada. Equipados con la mejor tecnología (escáner laser, dron y equipos de monitoreo) que permite desarrollar y responder a requerimientos de alta complejidad técnica."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [
+        "mejor",
+        "todo tipo"
+      ],
+      "claim_flags": [],
+      "content_hash": "ade13a592d93b15e",
+      "same_text_as": "WEB-010"
+    },
+    {
+      "id": "WEB-035",
+      "level": "area",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/geotecnia-y-mecanica-de-suelos",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/geotecnia-y-mecanica-de-suelos",
+      "parent_id": "WEB-006",
+      "title": "Geotecnia y mecánica de suelos",
+      "description": [
+        "Asesoría geotécnica experta, exploración y caracterización de suelos, con el apoyo de ensayos de laboratorio y en terreno, en todas las etapas del proyecto. Contamos con el único triaxial gigante en Chile, además de una amplia gama de ensayos y estudios, orientados a proyectos complejos de minería y energía, como también a proyectos inmobiliarios y de otros sectores."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [
+        "único"
+      ],
+      "claim_flags": [],
+      "content_hash": "03df6ef79cdf9795",
+      "same_text_as": "WEB-011"
+    },
+    {
+      "id": "WEB-036",
+      "level": "area",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/tecnologia-del-hormigon",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/tecnologia-del-hormigon",
+      "parent_id": "WEB-006",
+      "title": "Tecnología del Hormigón",
+      "description": [
+        "Asesores expertos en Tecnología del Hormigón con apoyo de laboratorios y equipamiento para investigación y prospecciones del hormigón en terreno, lo que nos permite prestar una amplia gama de servicios orientados a dar soluciones en las distintas etapas de los proyectos de ingeniería y construcción de obras de hormigón."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "14b7c2557f792993",
+      "same_text_as": "WEB-017"
+    },
+    {
+      "id": "WEB-037",
+      "level": "area",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/estructuras",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/estructuras",
+      "parent_id": "WEB-007",
+      "title": "Estructuras",
+      "description": [
+        "Equipo especialista de ingenieros y técnicos de vasta experiencia en peritajes y evaluaciones de todo tipo de infraestructura pública y privada. Equipados con la mejor tecnología (escáner laser, dron y equipos de monitoreo) que permite desarrollar y responder a requerimientos de alta complejidad técnica."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [
+        "mejor",
+        "todo tipo"
+      ],
+      "claim_flags": [],
+      "content_hash": "ade13a592d93b15e",
+      "same_text_as": "WEB-010"
+    },
+    {
+      "id": "WEB-038",
+      "level": "area",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/geotecnia-y-mecanica-de-suelos",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/geotecnia-y-mecanica-de-suelos",
+      "parent_id": "WEB-007",
+      "title": "Geotecnia y mecánica de suelos",
+      "description": [
+        "Asesoría geotécnica experta, exploración y caracterización de suelos, con el apoyo de ensayos de laboratorio y en terreno, en todas las etapas del proyecto. Contamos con el único triaxial gigante en Chile, además de una amplia gama de ensayos y estudios, orientados a proyectos complejos de minería y energía, como también a proyectos inmobiliarios y de otros sectores."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [
+        "único"
+      ],
+      "claim_flags": [],
+      "content_hash": "03df6ef79cdf9795",
+      "same_text_as": "WEB-011"
+    },
+    {
+      "id": "WEB-039",
+      "level": "area",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/ingenieria-contra-incendios",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/ingenieria-contra-incendios",
+      "parent_id": "WEB-007",
+      "title": "Ingeniería contra incendios",
+      "description": [
+        "Los incendios son fenómenos complejos y su entendimiento requiere una aproximación multidisciplinaria. La ingeniería contra incendios estudia estrategias pasivas y activas, que buscan minimizar el nivel de riesgo de incendio a nivel de infraestructura y de las personas. Nuestras asesorías se aplican tanto en etapa de diseño como durante la operación y abarcan proyectos de edificación (comercial y residencial) como infraestructura industrial y minera."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "41aa8437854324c6",
+      "same_text_as": "WEB-012"
+    },
+    {
+      "id": "WEB-040",
+      "level": "area",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/ingenieria-contractual",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/ingenieria-contractual",
+      "parent_id": "WEB-007",
+      "title": "Ingeniería contractual",
+      "description": [
+        "Servicio de apoyo a mandantes, contratistas, árbitros y jueces, en la resolución o prevención de controversias o reclamaciones en el ámbito de contratos de construcción, mediante estudios técnicos de expertos o asesoría en las diferentes etapas, sean estas durante el proceso de licitación, ejecución y cierre de la obra."
+      ],
+      "offerings": [],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "4e4e5111975c79db",
+      "same_text_as": "WEB-008"
+    },
+    {
+      "id": "WEB-041",
+      "level": "servicio",
+      "path": "/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/asesoria-en-control-y-programacion",
+      "url": "https://www.idiem.cl/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/asesoria-en-control-y-programacion",
+      "parent_id": "WEB-008",
+      "title": "Asesoría en control y programación",
+      "description": [
+        "Asesoría durante la ejecución de la obra con el objeto asegurar el cumplimiento del plazo de la obra, además de contar con información oportuna para la toma de decisión frente a atrasos variaciones de obra."
+      ],
+      "offerings": [
+        "Análisis al programa de obra (vinculaciones, robustez, ruta crítica, duraciones, rendimientos)",
+        "Análisis de retrasos al programa de obra (sensibilidad, pronósticos e impactos)",
+        "Análisis al programa de obra por alteraciones en la secuencia constructiva y su impacto en plazo"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "90e413bcb93dc372"
+    },
+    {
+      "id": "WEB-042",
+      "level": "servicio",
+      "path": "/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/asesorias-tecnicas-a-la-negociacion-entre-las-partes",
+      "url": "https://www.idiem.cl/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/asesorias-tecnicas-a-la-negociacion-entre-las-partes",
+      "parent_id": "WEB-008",
+      "title": "Asesorías técnicas a la negociación entre las partes",
+      "description": [
+        "Asesoría conjunta a las Partes mediante el desarrollo de un estudio técnico para alcanzar un entendimiento respecto de las materias pendientes de resolución respecto a los plazos, los costos y las mayores obras."
+      ],
+      "offerings": [
+        "Análisis de la pertinencia de obras adicionales",
+        "Análisis de impacto en plazo de las modificaciones de obra",
+        "Análisis de los mayores costos directos e indirectos por obras adicionales y/o extraordinarias"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "1633e603b4d6fc58"
+    },
+    {
+      "id": "WEB-043",
+      "level": "servicio",
+      "path": "/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/asesorias-tecnico-contractuales-al-proceso-de-licitacion",
+      "url": "https://www.idiem.cl/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/asesorias-tecnico-contractuales-al-proceso-de-licitacion",
+      "parent_id": "WEB-008",
+      "title": "Asesorías técnico-contractuales al proceso de licitación",
+      "description": [
+        "Asesoría al mandante durante el proceso de licitación con el objeto de prevenir y/o mitigar las controversias durante el desarrollo de las obras, a través de la revisión de los aspectos contractuales y técnicos asociado al proceso de licitación."
+      ],
+      "offerings": [
+        "Análisis de coherencia de los documentos de licitación",
+        "Validación de los plazos de ejecución de obras en base a rendimientos",
+        "Análisis al programa de obra (vinculaciones, robustez, ruta crítica, duraciones, rendimientos) de los oferentes",
+        "Análisis y homologación de las propuestas económicas de los oferentes"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "17760c45cc1dae02"
+    },
+    {
+      "id": "WEB-044",
+      "level": "servicio",
+      "path": "/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/asesorias-tecnico-contractuales-preventivas",
+      "url": "https://www.idiem.cl/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/asesorias-tecnico-contractuales-preventivas",
+      "parent_id": "WEB-008",
+      "title": "Asesorías técnico-contractuales preventivas",
+      "description": [
+        "Asesoría al mandante durante la ejecución de la obra con el objeto de asegurar el cumplimiento del contrato en alcance, plazo y costo, además de contar con información oportuna para la toma de decisión frente a potenciales negociaciones y/o reclamaciones."
+      ],
+      "offerings": [
+        "Análisis de pertinencia de obras adicionales y/o extraordinarias",
+        "Revisión de presupuestos de obras adicionales y/o extraordinarias",
+        "Análisis de compensación de gastos generales y/o utilidades por aumentos o disminuciones de obra",
+        "Análisis de pertinencia y cuantificación de multas",
+        "Análisis de pertinencia ante término anticipado de contratos",
+        "Análisis antes cierres parciales y finiquitos de contratos",
+        "Asesoría a la gestión de controversias"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "b4db53eb55a9084f"
+    },
+    {
+      "id": "WEB-045",
+      "level": "servicio",
+      "path": "/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/auditorias-tecnico-contractuales",
+      "url": "https://www.idiem.cl/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/auditorias-tecnico-contractuales",
+      "parent_id": "WEB-008",
+      "title": "Auditorías técnico-contractuales",
+      "description": [
+        "Estudio técnico de la obra ante pérdidas tributarias para ser presentado ante Servicio de Impuestos Internos"
+      ],
+      "offerings": [
+        "Diagnóstico técnico contractual",
+        "Auditoría de hitos y plazos",
+        "Auditoría de variaciones de costos versus lo ofertado",
+        "Auditoría de la calidad ejecución de la obra",
+        "Estudio técnico de la obra ante pérdidas Tributarias para ser presentado ante Servicio de Impuestos Internos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "e4214c8abbd73bc3"
+    },
+    {
+      "id": "WEB-046",
+      "level": "servicio",
+      "path": "/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/estudios-de-cronogramas-y-analisis-de-retrasos",
+      "url": "https://www.idiem.cl/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/estudios-de-cronogramas-y-analisis-de-retrasos",
+      "parent_id": "WEB-008",
+      "title": "Estudios de cronogramas y análisis de retrasos",
+      "description": [
+        "Análisis técnico al programa de obra en relación a los hechos controversiales. Estas asesorías consideran el análisis y cuantificación del impacto en plazo del programa, utilizando metodologías de Delay Analysis."
+      ],
+      "offerings": [
+        "Análisis de retrasos al programa de obra y su impacto en el plazo de la obra",
+        "Análisis al programa por alteraciones en la secuencia constructiva y su impacto en plazo"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "a9c6249e4e29cd11"
+    },
+    {
+      "id": "WEB-047",
+      "level": "servicio",
+      "path": "/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/estudios-de-impacto-en-costo",
+      "url": "https://www.idiem.cl/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/estudios-de-impacto-en-costo",
+      "parent_id": "WEB-008",
+      "title": "Estudios de impacto en costo",
+      "description": [
+        "Análisis técnico de costos directos o indirectos, en relación a los hechos controversiales. Estas asesorías consideran el análisis y cuantificación de los mayores costos incurridos durante la ejecución de la obra."
+      ],
+      "offerings": [
+        "Análisis y cuantificación de sobrecostos directos e indirectos",
+        "Revisión de presupuestos de obras adicionales y/o extraordinarias",
+        "Análisis de compensación de gastos generales y/o utilidades por aumentos o disminuciones de obra",
+        "Cuantificación de multas",
+        "Cálculos de costos financieros"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "6a8e6dfc9a771aff"
+    },
+    {
+      "id": "WEB-048",
+      "level": "servicio",
+      "path": "/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/estudios-de-perdida-de-productividad",
+      "url": "https://www.idiem.cl/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/estudios-de-perdida-de-productividad",
+      "parent_id": "WEB-008",
+      "title": "Estudios de pérdida de productividad",
+      "description": [
+        "Análisis del incremento de costos en la ejecución de la obra, producto de un cambio de las condiciones iniciales, no atribuibles al Contratista que le generó disminución en los rendimientos en relación a lo ofertado."
+      ],
+      "offerings": [
+        "Análisis forense de la pérdida de productividad"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "be51ad168f3c61b3"
+    },
+    {
+      "id": "WEB-049",
+      "level": "servicio",
+      "path": "/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/estudios-de-pertinencia-de-situaciones",
+      "url": "https://www.idiem.cl/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/estudios-de-pertinencia-de-situaciones",
+      "parent_id": "WEB-008",
+      "title": "Estudios de pertinencia de situaciones",
+      "description": [
+        "Análisis contractual de la obra y de las interferencias o hechos controversiales para determinar si corresponde su compensación en costos y/o plazos de acuerdo con el marco contractual que lo regula."
+      ],
+      "offerings": [
+        "Pertinencia ante variaciones del proyecto",
+        "Pertinencia de obras adicionales y/o extraordinarias",
+        "Pertinencia de aplicabilidad de multas",
+        "Pertinencia de aplicabilidad de Término anticipado de contrato"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "3826c3c58d8acc9f"
+    },
+    {
+      "id": "WEB-050",
+      "level": "servicio",
+      "path": "/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/estudios-tecnico-contractuales",
+      "url": "https://www.idiem.cl/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/estudios-tecnico-contractuales",
+      "parent_id": "WEB-008",
+      "title": "Estudios técnico-contractuales",
+      "description": [
+        "Análisis técnico del cumplimiento de las obligaciones de las partes, de acuerdo al marco contractual, con el objeto de analizar los hechos o situaciones controversiales que se han generado durante el transcurso de la obra y que pueden tener un impacto en los costos, plazos de la obra y pérdidas de productividad si correspondiere."
+      ],
+      "offerings": [
+        "Estudios de pertinencia de situaciones",
+        "Estudios de impacto en costo",
+        "Estudios de impacto en plazo",
+        "Estudios de pérdida de productividad"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "9284c1496bc02f98"
+    },
+    {
+      "id": "WEB-051",
+      "level": "servicio",
+      "path": "/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/peritajes-tecnico-contractuales",
+      "url": "https://www.idiem.cl/servicios/asesoria-contractual-en-controversias-y-claims/ingenieria-contractual/peritajes-tecnico-contractuales",
+      "parent_id": "WEB-008",
+      "title": "Peritajes técnico-contractuales",
+      "description": [
+        "Peritaje solicitado en el marco de un juicio civil o arbitral, requerido por las Partes o por el Juez/Arbitro. Este servicio consiste en analizar y dar respuesta a los puntos de prueba requeridos, con base en la información presentada por las partes."
+      ],
+      "offerings": [
+        "Peritaje técnico contractual"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "3ec0ced00db3f87a"
+    },
+    {
+      "id": "WEB-052",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/digitalizacion-de-la-construccion/control-de-procesos-constructivos",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/digitalizacion-de-la-construccion/control-de-procesos-constructivos",
+      "parent_id": "WEB-009",
+      "title": "Control de procesos constructivos",
+      "description": [
+        "Verificación de cumplimiento de plan de inspección o metodología de trabajo, a través de plataformas digitales, considerando etapas desde diagnóstico, entrega de resultados, propuestas de mejora y seguimiento a la implementación de ellas."
+      ],
+      "offerings": [
+        "Auditoria de autocontrol"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "b579b38cbc220026"
+    },
+    {
+      "id": "WEB-053",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/digitalizacion-de-la-construccion/coordinacion-y-modelado-bim",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/digitalizacion-de-la-construccion/coordinacion-y-modelado-bim",
+      "parent_id": "WEB-009",
+      "title": "Coordinación y modelado BIM",
+      "description": [
+        "Construcción virtual del proyecto a través del modelado 3D de: obra gruesa, instalaciones y terminaciones, que permite anticipar la construcción antes de la ejecución, visualizando zonas complejas y adelantando soluciones sobre interferencias, inconsistencias y otros problemas de coordinación."
+      ],
+      "offerings": [
+        "Coordinación de proyectos BIM",
+        "Elaboración de familias BIM",
+        "ITO – BIM",
+        "Validación normativa 3D"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "normativa"
+      ],
+      "content_hash": "6df5e387d829cf55"
+    },
+    {
+      "id": "WEB-054",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/digitalizacion-de-la-construccion/levantamiento-de-condiciones-existentes",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/digitalizacion-de-la-construccion/levantamiento-de-condiciones-existentes",
+      "parent_id": "WEB-009",
+      "title": "Levantamiento de condiciones existentes",
+      "description": [
+        "Mediante escáner láser y drones, se realiza una modelación en BIM a partir de nube de puntos de estructuras existentes."
+      ],
+      "offerings": [
+        "Modelación en BIM a partir de levantamiento láser 3D"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "27e00f139238878c"
+    },
+    {
+      "id": "WEB-055",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/digitalizacion-de-la-construccion/modelacion-as-built",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/digitalizacion-de-la-construccion/modelacion-as-built",
+      "parent_id": "WEB-009",
+      "title": "Modelación as-built",
+      "description": [
+        "Elaboración final de los modelos BIM de especialidades con toda la información relevante para la gestión y mantenimiento de la infraestructura."
+      ],
+      "offerings": [
+        "Modelación as-built"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "6d0e2d017e29c1a7"
+    },
+    {
+      "id": "WEB-056",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/digitalizacion-de-la-construccion/simulacion-4d",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/digitalizacion-de-la-construccion/simulacion-4d",
+      "parent_id": "WEB-009",
+      "title": "Simulación 4D",
+      "description": [
+        "Elaboración de modelo BIM en donde se incluye la variable tiempo para identificar el avance de las actividades de construcción, graficar el progreso y detectar posibles atrasos."
+      ],
+      "offerings": [
+        "Simulación 4D"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "52525bcb00ef6ca9"
+    },
+    {
+      "id": "WEB-057",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/estructuras/estudio-de-obras-patrimoniales",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/estructuras/estudio-de-obras-patrimoniales",
+      "parent_id": "WEB-010",
+      "title": "Estudio de obras patrimoniales",
+      "description": [
+        "Los estudios de obras patrimoniales consideran el levantamiento de daños y desarrollo de proyecto de reparación de las estructuras, utilizando técnicas adecuadas a los métodos constructivos originales que permiten conservar íntegramente la estructura, con el fin de asegurar su permanencia por el mayor tiempo posible, teniendo en consideración la condición sísmica de nuestro territorio."
+      ],
+      "offerings": [
+        "Diagnóstico arquitectónico de inmuebles patrimoniales"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "ec51a214eff9fea6"
+    },
+    {
+      "id": "WEB-058",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/estructuras/evaluacion-estructural",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/estructuras/evaluacion-estructural",
+      "parent_id": "WEB-010",
+      "title": "Evaluación estructural",
+      "description": [
+        "Estudio que a partir de resultados de inspección, ensayos y cálculo permite evaluar estructuralmente el estado de una instalación."
+      ],
+      "offerings": [
+        "Evaluación estructural de infraestructura"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "106a1747adf86f29"
+    },
+    {
+      "id": "WEB-059",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/estructuras/instrumentacion-estructural-para-diagnostico-y-rehabilitacion",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/estructuras/instrumentacion-estructural-para-diagnostico-y-rehabilitacion",
+      "parent_id": "WEB-010",
+      "title": "Instrumentación estructural para diagnóstico y rehabilitación",
+      "description": [
+        "Monitoreo instrumental de estructuras para el análisis de tensiones, deformaciones y vibraciones operacionales y ambientales"
+      ],
+      "offerings": [
+        "Monitorio de tensiones operacionales, mediante strain gauge (esfuerzos estáticos y dinámicos)",
+        "Monitoreo de vibraciones operacionales, mediante acelerómetros (frecuencia y modos de vibrar)",
+        "Monitoreo de vibraciones ambientales, mediante acelerómetro (efecto de vibraciones de equipos rotatorios y tránsito en personas y estructuras)",
+        "Monitoreo de condiciones, de equipos rotatorios mediante acelerómetros (alineación)"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "d3afdef205c94c9d"
+    },
+    {
+      "id": "WEB-060",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/estructuras/levantamiento-de-condiciones-existentes-con-laser-3d",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/estructuras/levantamiento-de-condiciones-existentes-con-laser-3d",
+      "parent_id": "WEB-010",
+      "title": "Levantamiento de condiciones existentes con láser 3D",
+      "description": [
+        "El levantamiento de condiciones existentes o Modelo 3D se realiza mediante escáner láser y DRON. El servicio que permite elaborar, a partir de la nube de puntos de estructuras as-built, planimetría arquitectónica, medición de verticalidad, deformaciones, soluciones de levantamiento, reparación y/o rehabilitación de instalaciones."
+      ],
+      "offerings": [
+        "Levantamiento láser 3D",
+        "Levantamiento perfiles de túneles",
+        "Modelación BIM de túneles y modelación numérica Malla TIN"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "af05c44d160d2ae7"
+    },
+    {
+      "id": "WEB-061",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/estructuras/revision-de-proyectos-de-calculo",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/estructuras/revision-de-proyectos-de-calculo",
+      "parent_id": "WEB-010",
+      "title": "Revisión de proyectos de cálculo",
+      "description": [
+        "Revisión de proyecto estructural de acuerdo con normativa chilena actual"
+      ],
+      "offerings": [
+        "Revisión proyecto de cálculo"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "normativa"
+      ],
+      "content_hash": "3f48049a85493bc2"
+    },
+    {
+      "id": "WEB-062",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/estructuras/salud-y-monitoreo-estructural",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/estructuras/salud-y-monitoreo-estructural",
+      "parent_id": "WEB-010",
+      "title": "Salud y monitoreo estructural",
+      "description": [
+        "El Monitoreo de Salud Estructural (SHM) es un área donde el objetivo principal es la verificación del estado o la salud de las estructuras con el fin de asegurar un desempeño adecuado y ahorro de costos de mantenimiento mediante una red de sensores adjunta a la estructura, monitoreo continuo y algoritmos."
+      ],
+      "offerings": [
+        "Monitoreo instrumental permanente en estructuras"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "2e4ba11b4c4a6dad"
+    },
+    {
+      "id": "WEB-063",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/estructuras/soluciones-de-reparacion",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/estructuras/soluciones-de-reparacion",
+      "parent_id": "WEB-010",
+      "title": "Soluciones de reparación",
+      "description": [
+        "Estudio que propone a partir de la evaluación estructural, alternativas de reparación en cumplimiento de la normativa vigente y buenas prácticas de la ingeniería."
+      ],
+      "offerings": [
+        "Soluciones de reparación"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "normativa"
+      ],
+      "content_hash": "e09cfd155ce3a9e3"
+    },
+    {
+      "id": "WEB-064",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/geotecnia-y-mecanica-de-suelos/ingenieria-geotecnica",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/geotecnia-y-mecanica-de-suelos/ingenieria-geotecnica",
+      "parent_id": "WEB-011",
+      "title": "Ingeniería geotécnica",
+      "description": [
+        "Estudios geotécnicos orientados a la caracterización del suelo, con el objetivo de evaluar la deformabilidad, resistencia e interacción con estructuras."
+      ],
+      "offerings": [
+        "Caracterización de suelos",
+        "Modelación numérica",
+        "Definición de tipo de fundación recomendada",
+        "Estimación de parámetros de resistencia al corte",
+        "Levantamientos geológicos",
+        "Estabilidad de taludes",
+        "Recomendaciones constructivas para excavaciones",
+        "Recomendaciones para uso de rellenos controlados",
+        "Estimación de módulos de deformación"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "3c17166ace560c41"
+    },
+    {
+      "id": "WEB-065",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/geotecnia-y-mecanica-de-suelos/instrumentacion-y-monitoreo-geotecnico",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/geotecnia-y-mecanica-de-suelos/instrumentacion-y-monitoreo-geotecnico",
+      "parent_id": "WEB-011",
+      "title": "Instrumentación y monitoreo geotécnico",
+      "description": [
+        "Instalación y monitoreo instrumental para mediciones de deformación, verticalidad, desplazamiento y otros parámetros geotécnicos relativos al comportamiento de la masa de suelo"
+      ],
+      "offerings": [
+        "Instalación de piezómetros (Casagrande y cuerda vibrante)",
+        "Instalación de asentímetros",
+        "Instalación de acelerómetros",
+        "Instalación de celdas de carga",
+        "Instalación de celdas de presión",
+        "Instalación de extensómetros",
+        "Mediciones de vibración",
+        "Mediciones de inclinometría"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "239841c4f1fca3bc"
+    },
+    {
+      "id": "WEB-066",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/geotecnia-y-mecanica-de-suelos/revision-de-proyectos-geotecnicos",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/geotecnia-y-mecanica-de-suelos/revision-de-proyectos-geotecnicos",
+      "parent_id": "WEB-011",
+      "title": "Revisión de proyectos geotécnicos",
+      "description": [
+        "Revisión de parámetros, recomendaciones y cumplimiento normativo de informes geotécnicos y de mecánica de suelos."
+      ],
+      "offerings": [
+        "Revisión del cumplimiento normativo de informes según NCh1508",
+        "Revisión de parámetros de resistencia y deformación",
+        "Revisión de exploración y ensayos para el objetivo del informe geotécnico",
+        "Revisión de recomendaciones de tipo de fundación y su horizonte"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "normativo"
+      ],
+      "content_hash": "2b1a13831226f170"
+    },
+    {
+      "id": "WEB-067",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/geotecnia-y-mecanica-de-suelos/topografia-y-geomensura",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/geotecnia-y-mecanica-de-suelos/topografia-y-geomensura",
+      "parent_id": "WEB-011",
+      "title": "Topografía y geomensura",
+      "description": [
+        "Levantamiento y mediciones topográficas, que permiten obtener estimación de dimensiones, modelación tridimensional de terrenos y verificación de magnitudes."
+      ],
+      "offerings": [
+        "Levantamiento topográfico",
+        "Replanteo topográfico",
+        "Levantamiento geodésico",
+        "Nivelaciones",
+        "Medición de polígonos",
+        "Levantamientos aerofotogramétricos mediante dron",
+        "Medición de asentamiento",
+        "Medición de deformaciones",
+        "Medición de alineamientos",
+        "Batimetría de baja profundidad",
+        "Desarrollo de mediciones y levantamientos especiales"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "a936622d9e3996e8"
+    },
+    {
+      "id": "WEB-068",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contra-incendios/cumplimiento-normativo-y-revision-de-proyectos",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contra-incendios/cumplimiento-normativo-y-revision-de-proyectos",
+      "parent_id": "WEB-012",
+      "title": "Cumplimiento normativo y revisión de proyectos",
+      "description": [
+        "Se evalúan las condiciones de seguridad contra incendio de una instalación, evaluar el cumplimiento de disposiciones normativas u otros requerimientos como bases de diseño o términos de referencia en proyectos públicos."
+      ],
+      "offerings": [
+        "Revisión de proyectos para verificar el cumplimiento normativo"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "normativas",
+        "normativo"
+      ],
+      "content_hash": "b08ea4eba42923d7"
+    },
+    {
+      "id": "WEB-069",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contra-incendios/diseno-de-criterios-y-estrategias-de-proteccion-contra-incendios",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contra-incendios/diseno-de-criterios-y-estrategias-de-proteccion-contra-incendios",
+      "parent_id": "WEB-012",
+      "title": "Diseño de criterios y estrategias de protección contra incendios",
+      "description": [
+        "Definición de requerimientos de diseño que deben cumplir los sistemas pasivos y activos de protección contra incendio, con el fin de garantizar un nivel de protección aceptable para el personal y las instalaciones.",
+        "Considera la ingeniería conceptual y básica en instalaciones industriales, mineras, habitacionales y de todo tipo, sobre estrategias de seguridad contra incendios que incluyen sistemas pasivos y activos."
+      ],
+      "offerings": [
+        "Diseño de criterios y estrategias de protección"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [
+        "todo tipo"
+      ],
+      "claim_flags": [],
+      "content_hash": "7aa373fcf50fd8fa"
+    },
+    {
+      "id": "WEB-070",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contra-incendios/estudios-de-atmosferas-explosivas-y-carga-de-combustible",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contra-incendios/estudios-de-atmosferas-explosivas-y-carga-de-combustible",
+      "parent_id": "WEB-012",
+      "title": "Estudios de atmósferas explosivas y carga de combustible",
+      "description": [
+        "Estudios de atmósferas explosivas basada en normativa ATEX define y evalúa las medidas de control de los ambientes donde esa clase de atmósferas estén presente, en distintos tipos de instalaciones industriales sujetas a riesgos de explosiones. Se basa en el cumplimiento de la normativa NFPA 850, 68 y 69.",
+        "Estudio de carga de combustible para recintos industriales, supermercados, centros comerciales, recintos de bodegaje, entre otros, con el objetivo de determinar los niveles de protección pasiva (resistencia al fuego) requeridos para las estructuras y elementos constructivos del recinto."
+      ],
+      "offerings": [
+        "Estudios de atmosferas explosivas",
+        "Estudios de carga de combustible"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "normativa"
+      ],
+      "content_hash": "1d85b3cf481fcdfa"
+    },
+    {
+      "id": "WEB-071",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contra-incendios/estudios-de-vulnerabilidad-ante-incendios",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contra-incendios/estudios-de-vulnerabilidad-ante-incendios",
+      "parent_id": "WEB-012",
+      "title": "Estudios de vulnerabilidad ante incendios",
+      "description": [
+        "Se evalúa la vulnerabilidad de la infraestructura para determinar riesgo ante un incendio e implementación de medidas de mitigación."
+      ],
+      "offerings": [
+        "Estudios de vulnerabilidad ante incendios"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "7e29b6d1f28bafce"
+    },
+    {
+      "id": "WEB-072",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contra-incendios/estudios-y-asimilacion-de-resistencia-al-fuego",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contra-incendios/estudios-y-asimilacion-de-resistencia-al-fuego",
+      "parent_id": "WEB-012",
+      "title": "Estudios y asimilación de resistencia al fuego",
+      "description": [
+        "Determinación de la resistencia al fuego de elementos constructivos, según lo indicado en la OGUC. La asesoría permite evaluar la resistencia al fuego de los elementos que componen una edificación, entre ellos muros, techumbre, losas y entrepisos, vigas y columnas."
+      ],
+      "offerings": [
+        "Estudios de resistencia al fuego",
+        "Asimilación de soluciones constructivas y elementos de construcción",
+        "Asimilación de soluciones constructivas para validar ensayos extranjeros",
+        "Asimilación de curvas de masividad"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "f7f55be80bb4c622"
+    },
+    {
+      "id": "WEB-073",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contra-incendios/simulacion-de-humos-y-evacuacion-de-personas",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contra-incendios/simulacion-de-humos-y-evacuacion-de-personas",
+      "parent_id": "WEB-012",
+      "title": "Simulación de humos y evacuación de personas",
+      "description": [
+        "Estudios orientados principalmente a recintos de gran carga ocupacional, tamaño y/o con grandes afluencias de público tales como como hospitales, estadios, túneles, cárceles, centros comerciales y edificios de gran altura, entre otros.",
+        "Se realizan mediante modelación computacional basada en el código CFD Fire Dynamics Simulator (FDS) que permite crear una serie de escenarios hipotéticos de incendio con distinta severidad y ubicación en un edificio."
+      ],
+      "offerings": [
+        "Estudios de ventilación de humos mediante ANSYS – FDS",
+        "Ventilación sanitaria y en caso de incendio en túneles, mediante memorias de cálculo teóricas y modelación computacional en FDS, a través de la licencia PyroSim",
+        "Simulación computacional a través de software FDS (Fire Dynamics Simulator)",
+        "Estudios de Evacuación de personas en condición de incendios a través de software FDS + EVAC o PathFinder"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "3e13369067b381a4"
+    },
+    {
+      "id": "WEB-074",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/asesoria-en-control-y-programacion",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/asesoria-en-control-y-programacion",
+      "parent_id": "WEB-013",
+      "title": "Asesoría en control y programación",
+      "description": [
+        "Asesoría durante la ejecución de la obra con el objeto asegurar el cumplimiento del plazo de la obra, además de contar con información oportuna para la toma de decisión frente a atrasos variaciones de obra."
+      ],
+      "offerings": [
+        "Análisis al programa de obra (vinculaciones, robustez, ruta crítica, duraciones, rendimientos)",
+        "Análisis de retrasos al programa de obra (sensibilidad, pronósticos e impactos)",
+        "Análisis al programa de obra por alteraciones en la secuencia constructiva y su impacto en plazo"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "90e413bcb93dc372",
+      "same_text_as": "WEB-041"
+    },
+    {
+      "id": "WEB-075",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/asesorias-tecnicas-a-la-negociacion-entre-las-partes",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/asesorias-tecnicas-a-la-negociacion-entre-las-partes",
+      "parent_id": "WEB-013",
+      "title": "Asesorías técnicas a la negociación entre las partes",
+      "description": [
+        "Asesoría conjunta a las Partes mediante el desarrollo de un estudio técnico para alcanzar un entendimiento respecto de las materias pendientes de resolución respecto a los plazos, los costos y las mayores obras."
+      ],
+      "offerings": [
+        "Análisis de la pertinencia de obras adicionales",
+        "Análisis de impacto en plazo de las modificaciones de obra",
+        "Análisis de los mayores costos directos e indirectos por obras adicionales y/o extraordinarias"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "1633e603b4d6fc58",
+      "same_text_as": "WEB-042"
+    },
+    {
+      "id": "WEB-076",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/asesorias-tecnico-contractuales-al-proceso-de-licitacion",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/asesorias-tecnico-contractuales-al-proceso-de-licitacion",
+      "parent_id": "WEB-013",
+      "title": "Asesorías técnico-contractuales al proceso de licitación",
+      "description": [
+        "Asesoría al mandante durante el proceso de licitación con el objeto de prevenir y/o mitigar las controversias durante el desarrollo de las obras, a través de la revisión de los aspectos contractuales y técnicos asociado al proceso de licitación."
+      ],
+      "offerings": [
+        "Análisis de coherencia de los documentos de licitación",
+        "Validación de los plazos de ejecución de obras en base a rendimientos",
+        "Análisis al programa de obra (vinculaciones, robustez, ruta crítica, duraciones, rendimientos) de los oferentes",
+        "Análisis y homologación de las propuestas económicas de los oferentes"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "17760c45cc1dae02",
+      "same_text_as": "WEB-043"
+    },
+    {
+      "id": "WEB-077",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/asesorias-tecnico-contractuales-preventivas",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/asesorias-tecnico-contractuales-preventivas",
+      "parent_id": "WEB-013",
+      "title": "Asesorías técnico-contractuales preventivas",
+      "description": [
+        "Asesoría al mandante durante la ejecución de la obra con el objeto de asegurar el cumplimiento del contrato en alcance, plazo y costo, además de contar con información oportuna para la toma de decisión frente a potenciales negociaciones y/o reclamaciones."
+      ],
+      "offerings": [
+        "Análisis de pertinencia de obras adicionales y/o extraordinarias",
+        "Revisión de presupuestos de obras adicionales y/o extraordinarias",
+        "Análisis de compensación de gastos generales y/o utilidades por aumentos o disminuciones de obra",
+        "Análisis de pertinencia y cuantificación de multas",
+        "Análisis de pertinencia ante término anticipado de contratos",
+        "Análisis antes cierres parciales y finiquitos de contratos",
+        "Asesoría a la gestión de controversias"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "b4db53eb55a9084f",
+      "same_text_as": "WEB-044"
+    },
+    {
+      "id": "WEB-078",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/auditorias-tecnico-contractuales",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/auditorias-tecnico-contractuales",
+      "parent_id": "WEB-013",
+      "title": "Auditorías técnico-contractuales",
+      "description": [
+        "Estudio técnico de la obra ante pérdidas tributarias para ser presentado ante Servicio de Impuestos Internos"
+      ],
+      "offerings": [
+        "Diagnóstico técnico contractual",
+        "Auditoría de hitos y plazos",
+        "Auditoría de variaciones de costos versus lo ofertado",
+        "Auditoría de la calidad ejecución de la obra",
+        "Estudio técnico de la obra ante pérdidas Tributarias para ser presentado ante Servicio de Impuestos Internos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "e4214c8abbd73bc3",
+      "same_text_as": "WEB-045"
+    },
+    {
+      "id": "WEB-079",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/estudios-de-cronogramas-y-analisis-de-retrasos",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/estudios-de-cronogramas-y-analisis-de-retrasos",
+      "parent_id": "WEB-013",
+      "title": "Estudios de cronogramas y análisis de retrasos",
+      "description": [
+        "Análisis técnico al programa de obra en relación a los hechos controversiales. Estas asesorías consideran el análisis y cuantificación del impacto en plazo del programa, utilizando metodologías de Delay Analysis."
+      ],
+      "offerings": [
+        "Análisis de retrasos al programa de obra y su impacto en el plazo de la obra",
+        "Análisis al programa por alteraciones en la secuencia constructiva y su impacto en plazo"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "a9c6249e4e29cd11",
+      "same_text_as": "WEB-046"
+    },
+    {
+      "id": "WEB-080",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/estudios-de-impacto-en-costo",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/estudios-de-impacto-en-costo",
+      "parent_id": "WEB-013",
+      "title": "Estudios de impacto en costo",
+      "description": [
+        "Análisis técnico de costos directos o indirectos, en relación a los hechos controversiales. Estas asesorías consideran el análisis y cuantificación de los mayores costos incurridos durante la ejecución de la obra."
+      ],
+      "offerings": [
+        "Análisis y cuantificación de sobrecostos directos e indirectos",
+        "Revisión de presupuestos de obras adicionales y/o extraordinarias",
+        "Análisis de compensación de gastos generales y/o utilidades por aumentos o disminuciones de obra",
+        "Cuantificación de multas",
+        "Cálculos de costos financieros"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "6a8e6dfc9a771aff",
+      "same_text_as": "WEB-047"
+    },
+    {
+      "id": "WEB-081",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/estudios-de-perdida-de-productividad",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/estudios-de-perdida-de-productividad",
+      "parent_id": "WEB-013",
+      "title": "Estudios de pérdida de productividad",
+      "description": [
+        "Análisis del incremento de costos en la ejecución de la obra, producto de un cambio de las condiciones iniciales, no atribuibles al Contratista que le generó disminución en los rendimientos en relación a lo ofertado."
+      ],
+      "offerings": [
+        "Análisis forense de la pérdida de productividad"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "be51ad168f3c61b3",
+      "same_text_as": "WEB-048"
+    },
+    {
+      "id": "WEB-082",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/estudios-de-pertinencia-de-situaciones",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/estudios-de-pertinencia-de-situaciones",
+      "parent_id": "WEB-013",
+      "title": "Estudios de pertinencia de situaciones",
+      "description": [
+        "Análisis contractual de la obra y de las interferencias o hechos controversiales para determinar si corresponde su compensación en costos y/o plazos de acuerdo con el marco contractual que lo regula."
+      ],
+      "offerings": [
+        "Pertinencia ante variaciones del proyecto",
+        "Pertinencia de obras adicionales y/o extraordinarias",
+        "Pertinencia de aplicabilidad de multas",
+        "Pertinencia de aplicabilidad de Término anticipado de contrato"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "3826c3c58d8acc9f",
+      "same_text_as": "WEB-049"
+    },
+    {
+      "id": "WEB-083",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/estudios-tecnico-contractuales",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/estudios-tecnico-contractuales",
+      "parent_id": "WEB-013",
+      "title": "Estudios técnico-contractuales",
+      "description": [
+        "Análisis técnico del cumplimiento de las obligaciones de las partes, de acuerdo al marco contractual, con el objeto de analizar los hechos o situaciones controversiales que se han generado durante el transcurso de la obra y que pueden tener un impacto en los costos, plazos de la obra y pérdidas de productividad si correspondiere."
+      ],
+      "offerings": [
+        "Estudios de pertinencia de situaciones",
+        "Estudios de impacto en costo",
+        "Estudios de impacto en plazo",
+        "Estudios de pérdida de productividad"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "9284c1496bc02f98",
+      "same_text_as": "WEB-050"
+    },
+    {
+      "id": "WEB-084",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/peritajes-tecnico-contractuales",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/ingenieria-contractual/peritajes-tecnico-contractuales",
+      "parent_id": "WEB-013",
+      "title": "Peritajes técnico-contractuales",
+      "description": [
+        "Peritaje solicitado en el marco de un juicio civil o arbitral, requerido por las Partes o por el Juez/Arbitro. Este servicio consiste en analizar y dar respuesta a los puntos de prueba requeridos, con base en la información presentada por las partes."
+      ],
+      "offerings": [
+        "Peritaje técnico contractual"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "3ec0ced00db3f87a",
+      "same_text_as": "WEB-051"
+    },
+    {
+      "id": "WEB-085",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/inspeccion-de-obra/asesoria-a-la-inspeccion-tecnica",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/inspeccion-de-obra/asesoria-a-la-inspeccion-tecnica",
+      "parent_id": "WEB-014",
+      "title": "Asesoría a la inspección técnica",
+      "description": [
+        "Conjunto de servicios de asesoría que apoyan la ejecución, revisión y control de proyectos en etapa de estudios y ejecución."
+      ],
+      "offerings": [
+        "Asesoría a la inspección fiscal",
+        "Asesoría a la inspección técnica de obras",
+        "Asesoría a la inspección técnica de estudio",
+        "Asesoría a la inspección técnica de especialidades"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "4515b8ea54a7d15c"
+    },
+    {
+      "id": "WEB-086",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/inspeccion-de-obra/certificacion-de-proyectos-habitacionales",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/inspeccion-de-obra/certificacion-de-proyectos-habitacionales",
+      "parent_id": "WEB-014",
+      "title": "Certificación de proyectos habitacionales",
+      "description": [
+        "Esta certificación considera la revisión normativa del diseño de las distintas especialidades del proyecto y la inspección técnica IDIEM en terreno, con el objeto de supervisar que la obra se construya conforme a la documentación aprobada por IDIEM, además de un monitoreo permanente a la constructora mediante indicadores."
+      ],
+      "offerings": [
+        "Certificación de proyectos habitacionales"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "Certificación",
+        "certificación",
+        "normativa"
+      ],
+      "content_hash": "e5feb5dcaed6e3e5"
+    },
+    {
+      "id": "WEB-087",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/inspeccion-de-obra/mediciones-electricas",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/inspeccion-de-obra/mediciones-electricas",
+      "parent_id": "WEB-014",
+      "title": "Mediciones eléctricas",
+      "description": [
+        "Verificar que la resistencia eléctrica de los pisos cumpla con lo indicado por la NCh4/2003 en sus artículos 9.0.6.4, 15.2.7 y 15.2.8"
+      ],
+      "offerings": [
+        "Medición de resistencia eléctrica de pisos conductivos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "22bafd09c0cc9e9b"
+    },
+    {
+      "id": "WEB-088",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/inspeccion-de-obra/revision-de-proyectos-de-especialidades",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/inspeccion-de-obra/revision-de-proyectos-de-especialidades",
+      "parent_id": "WEB-014",
+      "title": "Revisión de proyectos de especialidades",
+      "description": [
+        "Revisión técnica y documental del proyecto para verificar el cumplimiento de normativa, reglamentación y legislación vigente, bases técnicas y criterios de diseño especificados por el mandante al contratista.",
+        "Las especialidades que componen este equipo son: electricidad, corrientes débiles, climatización, ventilación, extracción, presurización, gas combustible, agua potable, alcantarillado, agua lluvia, telecomunicaciones, ascensores, montacargas, escalas mecánicas, control centralizado."
+      ],
+      "offerings": [
+        "Revisión de proyectos de especialidades"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "normativa"
+      ],
+      "content_hash": "c22b5ff719cc1d69"
+    },
+    {
+      "id": "WEB-089",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/inspeccion-de-obra/revision-normativa-de-proyectos",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/inspeccion-de-obra/revision-normativa-de-proyectos",
+      "parent_id": "WEB-014",
+      "title": "Revisión normativa de proyectos",
+      "description": [
+        "Revisión técnica y documental del proyecto para verificar el cumplimiento de: normativa, reglamentación y legislación vigente."
+      ],
+      "offerings": [
+        "Revisión normativa de proyectos",
+        "Revisión normativa de proyectos en 3D (modelos BIM)",
+        "Revisión de reglamentación térmica",
+        "Revisión de otras normativas"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "normativa",
+        "normativas"
+      ],
+      "content_hash": "073dd28b8de548e5"
+    },
+    {
+      "id": "WEB-090",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/inspeccion-de-obra/servicios-asociados-a-post-venta-de-edificaciones",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/inspeccion-de-obra/servicios-asociados-a-post-venta-de-edificaciones",
+      "parent_id": "WEB-014",
+      "title": "Servicios asociados a post venta de edificaciones",
+      "description": [
+        "Verificar cumplimiento de protocolo de vivienda terminada y de las instalaciones de un edificio, mediante inspección visual y pruebas de funcionamiento."
+      ],
+      "offerings": [
+        "Recepción de vivienda terminada",
+        "Recepción final de instalaciones",
+        "Elaboración y seguimiento de planes de mantenimiento"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "300beb8a4607f0ee"
+    },
+    {
+      "id": "WEB-091",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/productividad/estudios-de-industrializacion",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/productividad/estudios-de-industrializacion",
+      "parent_id": "WEB-015",
+      "title": "Estudios de industrialización",
+      "description": [
+        "Estudios de ingeniería en etapas de diseño y construcción que buscan aumentar el nivel de industrialización de las obras, esto con el objetivo de mejorar los niveles de productividad de la obra y aumentar rendimientos."
+      ],
+      "offerings": [
+        "Diagnóstico de la empresa y plan estratégico de industrialización",
+        "Inspección técnica de elementos industrializados en fábrica",
+        "Auditoria de procesos constructivos",
+        "Revisión de proyectos con componentes industrializadas",
+        "Modelación BIM y coordinación 3D"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "dd99eba47584182f"
+    },
+    {
+      "id": "WEB-092",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/productividad/estudios-de-productividad",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/productividad/estudios-de-productividad",
+      "parent_id": "WEB-015",
+      "title": "Estudios de productividad",
+      "description": [
+        "Estudio integral que busca mejorar la productividad de los proyectos de construcción, abarcando las etapas de diseño, ejecución y posterior evaluación de resultados.",
+        "Se realiza un diagnóstico inicial a través de nuestro índice de productividad, el que permite conocer las oportunidades de mejora.",
+        "Las asesorías incluyen, evaluación de opciones de industrialización, acompañamiento durante la construcción, evaluación de desempeño y plan de mejoramiento, entre otros."
+      ],
+      "offerings": [
+        "Análisis de productividad temprana en etapas de diseño",
+        "Mediciones y controles de productividad durante la ejecución de la obra",
+        "Auditoria de procesos constructivos",
+        "Revisión de calidad en terreno",
+        "Estudios de pérdida de productividad en controversias contractuales",
+        "Estudios de impacto en plazo y costos",
+        "Modelación BIM y coordinación 3D",
+        "Evaluación y mapeo de oportunidades de productividad a través del índice de productividad IDIEM"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "6cced2330c3c8ab5"
+    },
+    {
+      "id": "WEB-093",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/sustentabilidad/certificacion-de-construccion-sustentable",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/sustentabilidad/certificacion-de-construccion-sustentable",
+      "parent_id": "WEB-016",
+      "title": "Certificación de construcción sustentable",
+      "description": [
+        "Asesoría de acompañamiento, supervisión y coordinación del correcto desarrollo de los proyectos de arquitectura y especialidades durante el diseño y construcción de edificios. Se realizan seguimientos a los rendimientos energéticos y ambientales, para que al final del proceso se obtengan certificaciones esperadas."
+      ],
+      "offerings": [
+        "LEED Certificación y comisionamiento",
+        "Asesoría CEV Calificación energética de vivienda",
+        "Evaluación CEV Calificación energética de vivienda",
+        "CES Certificación Edificio Sustentable",
+        "CVS Certificación Vivienda Sustentable",
+        "Certificación Green Hospital"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "certificaciones",
+        "Certificación"
+      ],
+      "content_hash": "8ed56ba3c1b91929"
+    },
+    {
+      "id": "WEB-094",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/sustentabilidad/estudios-de-calidad-del-ambiente-en-edificaciones",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/sustentabilidad/estudios-de-calidad-del-ambiente-en-edificaciones",
+      "parent_id": "WEB-016",
+      "title": "Estudios de calidad del ambiente en edificaciones",
+      "description": [
+        "Asesoría en el desarrollo de proyectos con altos estándares de calidad ambiental y prevención de problemas de postventa en materias acústicas, de higrotermia y humedades."
+      ],
+      "offerings": [
+        "Revisión acústica de proyectos para evaluar cumplimiento normativo y reducir problemas de postventa en edificaciones de vivienda",
+        "Revisión acústica de proyectos de infraestructura",
+        "Mediciones ambientales, temperatura humedad CO2 en edificios de vivienda e industriales",
+        "Estudios de causas de humedades en viviendas",
+        "Cumplimiento normativo OGUC y PDA para vivienda"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [
+        "altos estándares"
+      ],
+      "claim_flags": [
+        "normativo"
+      ],
+      "content_hash": "b0b5ec0ea0fc0534"
+    },
+    {
+      "id": "WEB-095",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/sustentabilidad/estudios-y-asesorias-de-eficiencia-energetica",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/sustentabilidad/estudios-y-asesorias-de-eficiencia-energetica",
+      "parent_id": "WEB-016",
+      "title": "Estudios y asesorías de eficiencia energética",
+      "description": [
+        "Mediante la implementación de estrategias de diagnóstico y control, en etapa de diseño, construcción y operación, es posible identificar oportunidades de mejora en eficiencia energética, reducir los consumo de energía, implementar indicadores de gestión energética, controlar costos, mejorar la competitividad organizacional y reducir los impactos ambientales."
+      ],
+      "offerings": [
+        "Auditorías energéticas",
+        "Estudios tarifarios y calidad de energía",
+        "Implementación ISO 50.001",
+        "Modelamiento energético",
+        "Asesoría al diseño de arquitectura en eficiencia energética y sustentabilidad en general"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "ISO"
+      ],
+      "content_hash": "c39ecc403de4a818"
+    },
+    {
+      "id": "WEB-096",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/tecnologia-del-hormigon/desarrollo-de-nuevos-materiales",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/tecnologia-del-hormigon/desarrollo-de-nuevos-materiales",
+      "parent_id": "WEB-017",
+      "title": "Desarrollo de nuevos materiales",
+      "description": [
+        "Realización de estudios de investigación y desarrollo de nuevos materiales, tecnologías y aplicaciones en hormigón."
+      ],
+      "offerings": [
+        "Evaluación de nuevas materias primas para confección de hormigón",
+        "Estudio de compatibilidad y optimización de aditivos",
+        "Estudios de durabilidad de hormigones"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "e2d8905e8fa330e1"
+    },
+    {
+      "id": "WEB-097",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/tecnologia-del-hormigon/ingenieria-del-hormigon",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/tecnologia-del-hormigon/ingenieria-del-hormigon",
+      "parent_id": "WEB-017",
+      "title": "Ingeniería del hormigón",
+      "description": [
+        "Estudios relacionados con el hormigón, considera la evaluación de nuevas materias primas para la confección del hormigón, hasta el desarrollo de hormigones especiales para proyectos con altas exigencias técnicas.",
+        "Análisis de patologías y peritajes, considera los estudios necesarios para establecer la causa de daños o patologías que afectan a las estructuras de hormigón."
+      ],
+      "offerings": [
+        "Análisis y seguimiento del estado de estructuras de hormigón",
+        "Asesoría de hormigones para proyectos especiales",
+        "Asesoría y evaluación de materias primas para la confección de hormigón y cemento",
+        "Diseño y estudio de dosificaciones",
+        "Diseño y revisión de especificaciones técnicas de hormigones",
+        "Estudios de adherencia de revestimientos",
+        "Análisis de patologías y peritajes"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "1b7ba9377db2750c"
+    },
+    {
+      "id": "WEB-098",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/tecnologia-del-hormigon/prospeccion-de-aridos",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/tecnologia-del-hormigon/prospeccion-de-aridos",
+      "parent_id": "WEB-017",
+      "title": "Prospección de áridos",
+      "description": [
+        "Evaluación de áridos para uso en morteros y hormigones."
+      ],
+      "offerings": [
+        "Evaluación de requisitos normativos para los áridos",
+        "Validación de curva granulométrica óptima para uso en hormigón"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "normativos"
+      ],
+      "content_hash": "338983df51aa59c9"
+    },
+    {
+      "id": "WEB-099",
+      "level": "servicio",
+      "path": "/servicios/asesorias-y-estudios-tecnicos/tecnologia-del-hormigon/tecnologia-del-shotcrete",
+      "url": "https://www.idiem.cl/servicios/asesorias-y-estudios-tecnicos/tecnologia-del-hormigon/tecnologia-del-shotcrete",
+      "parent_id": "WEB-017",
+      "title": "Tecnología del shotcrete",
+      "description": [
+        "Ensayos de control para hormigón proyectado en obra."
+      ],
+      "offerings": [
+        "Control de resistencia a distintas edades",
+        "Ensayos para edad temprana, menor a 24 horas",
+        "Ensayos de resistencia residual para shotcrete con fibras",
+        "Determinación de contenido de fibras",
+        "Determinación de rebote",
+        "Calificación de equipo de operadores de shotcrete (pitoneros)",
+        "Calibración de bombas de hormigón y aditivo acelerante"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "be47706d2ae1de50"
+    },
+    {
+      "id": "WEB-100",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/aceros/control-de-calidad-de-productos-de-acero",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/aceros/control-de-calidad-de-productos-de-acero",
+      "parent_id": "WEB-018",
+      "title": "Control de calidad de productos de acero",
+      "description": [
+        "Informes de ensayo oficial y certificados de conformidad de acuerdo a la normativa y requisitos aplicables (físico mecánico, químicos, soldabilidad, tenacidad, dureza, entre otros) de diversos productos de acero: barras para hormigón armado, aceros de uso estructural en sus distintos formatos (planchas, perfiles de acero laminados, soldados o conformados), alambres, mallas electrosoldadas, parrillas, cubiertas, entre otros."
+      ],
+      "offerings": [
+        "Certificación de acero estructural según NCh203",
+        "Certificación barras de acero para hormigón armado según NCh204 y NCh3334",
+        "Certificación perfiles estructurales conformados según NCh3518 y NCh3576",
+        "Certificación de mallas electrosoldadas según NCh218",
+        "Certificación de alambres para uso en hormigón armado según NCh1173",
+        "Certificación enfierradura para uso en hormigón armado según NCh211",
+        "Alambre de grado AT56-50H para uso en hormigón armado según NCh1173",
+        "Mallas electrosoldadas de barra laminadas en caliente soldables para hormigón armado según NCh3335",
+        "Planchas lisas de acero recubiertas según NCh222",
+        "Planchas acanaladas onduladas de acero recubiertas según NCh223",
+        "Parrillas de piso y peldaños según NCh3572",
+        "Ensayos según diversas normas (NCh201, NCh200, NCh218, NCh1173, NCh220ASTME8/E8M)",
+        "Espectrometría de emisión óptica",
+        "Química para Aceros según ASTM E415",
+        "Caracterización de materiales metálicos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "Certificación",
+        "certificados",
+        "normas",
+        "normativa"
+      ],
+      "content_hash": "ff11abe8a6ec11aa"
+    },
+    {
+      "id": "WEB-101",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/control-de-otros-materiales/calibracion-fuerza-modo-compresion",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/control-de-otros-materiales/calibracion-fuerza-modo-compresion",
+      "parent_id": "WEB-019",
+      "title": "Calibración fuerza modo compresión",
+      "description": [
+        "Calibración de equipos desde 0.3 kN hasta 2700 kN."
+      ],
+      "offerings": [
+        "Anillos de carga",
+        "Celdas de carga",
+        "Maquinas en modo compresión",
+        "Gatos hidráulicos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "1aee8f2b0fd9617b"
+    },
+    {
+      "id": "WEB-102",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/control-de-otros-materiales/certificaciones-de-conformidad-modelo-iso-casco",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/control-de-otros-materiales/certificaciones-de-conformidad-modelo-iso-casco",
+      "parent_id": "WEB-019",
+      "title": "Certificaciones de conformidad modelo ISO-CASCO",
+      "description": [
+        "Certificación de materiales de construcción, productos y soluciones constructivas, a través de distintos modelos ISO/CASCO de certificación de conformidad. Idiem actúa como un tercero, avalando la elaboración de lotes de producción, entregando un certificado de conformidad según los requisitos de la norma establecida y un esquema de certificación definido. Todas las certificaciones incluyen informes de ensayos, los cuales nos permiten realizar el seguimiento respectivo a los productos a certificar."
+      ],
+      "offerings": [
+        "Modelo ISO CASCO 3: Ensayo de tipo seguido por una supervisión en planta.",
+        "Modelo ISO CASCO 5: Ensayo de tipo seguido por una supervisión en planta y de muestras tomadas en el comercio.",
+        "Modelo ISO CASCO 7: Ensayo por lotes"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "Certificaciones",
+        "certificaciones",
+        "certificación",
+        "Certificación",
+        "certificado",
+        "certificar",
+        "ISO",
+        "norma"
+      ],
+      "content_hash": "7548c5d8ee78b99a"
+    },
+    {
+      "id": "WEB-103",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/control-de-otros-materiales/ensayos-a-barandas",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/control-de-otros-materiales/ensayos-a-barandas",
+      "parent_id": "WEB-019",
+      "title": "Ensayos a barandas",
+      "description": [
+        "Servicio correspondiente a un ensayo de carga transversal a barandas según la OGUC Título 4: De la Arquitectura, Artículo 4.2.7 Barandas."
+      ],
+      "offerings": [
+        "Ensayo a barandas"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "e6b7acaf1e24e406"
+    },
+    {
+      "id": "WEB-104",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/control-de-otros-materiales/ensayos-de-comportamiento-higrotermico",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/control-de-otros-materiales/ensayos-de-comportamiento-higrotermico",
+      "parent_id": "WEB-019",
+      "title": "Ensayos de comportamiento higrotérmico",
+      "description": [
+        "Ensayos en laboratorio y terreno que permiten caracterizar el comportamiento higrotérmico de productos y materiales."
+      ],
+      "offerings": [
+        "Ensayos solicitados por OGUC: Transmitancia térmica, Conductividad térmica",
+        "Permeabilidad al vapor de agua",
+        "Comportamiento frente a lluvia artificial",
+        "Reflectividad de recubrimientos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "f8a866f72e5d4e5b"
+    },
+    {
+      "id": "WEB-105",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/control-de-otros-materiales/ensayos-y-certificacion-de-elementos-prefabricados",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/control-de-otros-materiales/ensayos-y-certificacion-de-elementos-prefabricados",
+      "parent_id": "WEB-019",
+      "title": "Ensayos y certificación de elementos prefabricados",
+      "description": [
+        "Ensayos mecánicos de flexión, tracción y compresión, que permiten caracterizar los elementos prefabricados y en caso de ser necesario, certificarlos."
+      ],
+      "offerings": [
+        "Ensayos a soleras",
+        "Ensayos a solerillas",
+        "Ensayos a baldosas",
+        "Ensayos a adoquines",
+        "Ensayos a ladrillos",
+        "Ensayos a otros elementos prefabricados"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "certificación",
+        "certificarlos"
+      ],
+      "content_hash": "6512c7f1d4d5274d"
+    },
+    {
+      "id": "WEB-106",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/control-de-otros-materiales/ensayos-y-certificacion-de-materiales-polimericos",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/control-de-otros-materiales/ensayos-y-certificacion-de-materiales-polimericos",
+      "parent_id": "WEB-019",
+      "title": "Ensayos y certificación de materiales poliméricos",
+      "description": [
+        "Ensayos mecánicos y de comportamiento que permiten caracterizar productos y materiales poliméricos."
+      ],
+      "offerings": [
+        "Ensayos en tuberías y geomembranas",
+        "Ensayos mecánicos en plásticos",
+        "Ensayos mecánicos en elementos de caucho y resinas",
+        "Ensayos mecánicos en elementos cerámicos y de vidrio",
+        "Ensayos en tuberías",
+        "Ensayos a otros elementos poliméricos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "certificación"
+      ],
+      "content_hash": "068503243fb187d1"
+    },
+    {
+      "id": "WEB-107",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/control-de-otros-materiales/ensayos-y-mediciones-acusticas",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/control-de-otros-materiales/ensayos-y-mediciones-acusticas",
+      "parent_id": "WEB-019",
+      "title": "Ensayos y mediciones acústicas",
+      "description": [
+        "Ensayos en laboratorio y terreno que permiten caracterizar el comportamiento acústico productos y materiales."
+      ],
+      "offerings": [
+        "Ensayos de laboratorio de comportamiento acústico solicitados por OGUC: aislamiento acústico al ruido aéreo e impacto",
+        "Medición en laboratorio del nivel de absorción sonora de materiales",
+        "Mediciones y evaluación de ruidos en viviendas y edificios",
+        "Medición y evaluación del cumplimiento de DS 38 de MMA",
+        "Evaluación de barreras acústicas",
+        "Modelamiento de soluciones constructivas mediante software"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "ef9430b5e0865771"
+    },
+    {
+      "id": "WEB-108",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/control-de-otros-materiales/inspeccion-de-pinturas",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/control-de-otros-materiales/inspeccion-de-pinturas",
+      "parent_id": "WEB-019",
+      "title": "Inspección de pinturas",
+      "description": [
+        "Inspección de pintura, barnices y productos afines; y pintura intumescente de base acuosa y base solvente."
+      ],
+      "offerings": [
+        "Medición de espesor de película seca mediante equipo electromagnético",
+        "Medición de espesor mediante equipo electromagnético",
+        "Inspección visual",
+        "Prueba de intumescencia",
+        "Prueba ácido clorhídrico"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "5a43ded68d838807"
+    },
+    {
+      "id": "WEB-109",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/control-de-otros-materiales/otros-ensayos-especiales",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/control-de-otros-materiales/otros-ensayos-especiales",
+      "parent_id": "WEB-019",
+      "title": "Otros ensayos especiales",
+      "description": [
+        "Desarrollo de ensayos especiales o basados en estándares internaciones para analizar el comportamiento de nuevos materiales y productos."
+      ],
+      "offerings": [
+        "Ensayos especiales a otros materiales"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "565d198bb06c1cdf"
+    },
+    {
+      "id": "WEB-110",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/estructuras/ensayos-destructivos-y-no-destructivos-del-hormigon",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/estructuras/ensayos-destructivos-y-no-destructivos-del-hormigon",
+      "parent_id": "WEB-020",
+      "title": "Ensayos destructivos y no destructivos del hormigón",
+      "description": [
+        "Ensayos para determinar propiedades mecánicas del hormigón."
+      ],
+      "offerings": [
+        "Detección de espesor de elementos de hormigón y ubicación de armaduras con Georradar",
+        "Análisis de homogeneidad del hormigón a través de Martillo Schmidt",
+        "Ultrasonido",
+        "Potencial de corrosión de armaduras",
+        "Velocidad de corrosión de armaduras"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "f7406ae452d7b5f0"
+    },
+    {
+      "id": "WEB-111",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/estructuras/ensayos-estructurales",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/estructuras/ensayos-estructurales",
+      "parent_id": "WEB-020",
+      "title": "Ensayos estructurales",
+      "description": [
+        "Pruebas que permiten determinar las características físico-mecánicas de un material, elemento o solución constructiva."
+      ],
+      "offerings": [
+        "Ensayos a barras de acero para hormigón armado",
+        "Ensayos a paneles prefabricados",
+        "Ensayos a sistemas de anclaje",
+        "Ensayos de flexión monotónica a alzaprimas y vigas",
+        "Ensayos de compresión monotónica a columnas",
+        "Ensayos de impacto a vidrios",
+        "Ensayos mecánicos a andamios",
+        "Ensayos de tracción unión articulada metálica"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "541f870b9d5b3ecb"
+    },
+    {
+      "id": "WEB-112",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/geotecnia-y-mecanica-de-suelos/control-de-suelos-en-obra",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/geotecnia-y-mecanica-de-suelos/control-de-suelos-en-obra",
+      "parent_id": "WEB-021",
+      "title": "Control de suelos en obra",
+      "description": [
+        "Control de avance en obras de construcción, conforme a las especificaciones técnicas de diseño. Para esto se realiza un control de densidad in situ, que permite obtener el grado de compactación y su correspondiente cumplimiento con lo requerido por el proyecto."
+      ],
+      "offerings": [
+        "Caracterización básica de suelos",
+        "Densidad Máxima Compactada Seca",
+        "Densidad in situ mediante cono de arena o densímetro nuclear",
+        "Ensayo Porchet",
+        "Granulometría o caracterización granulométrica"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "aa1b73fa3b189b5b"
+    },
+    {
+      "id": "WEB-113",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/geotecnia-y-mecanica-de-suelos/ensayos-de-suelo-y-rocas",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/geotecnia-y-mecanica-de-suelos/ensayos-de-suelo-y-rocas",
+      "parent_id": "WEB-021",
+      "title": "Ensayos de suelo y rocas",
+      "description": [
+        "Ensayos geomecánicos en muestras de suelo y roca, tanto en laboratorio como en terreno.",
+        "Los ensayos de laboratorio entregan el comportamiento geomecánico esperado en muestras de suelo y roca, permitiendo replicar condiciones de terreno para su análisis."
+      ],
+      "offerings": [
+        "Análisis petrográficos en roca",
+        "Ensayos básicos en suelos",
+        "Ensayos de compresión Simple con medición de deformación axial y diametral en rocas",
+        "Ensayos edométricos y de permeabilidad en suelos",
+        "Ensayos de caracterización monótona y dinámica en suelo",
+        "Ensayos no destructivos en rocas",
+        "Ensayos de caracterización de materiales granulares gruesos (grandes partículas)"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "f8c0c34501f86f2e"
+    },
+    {
+      "id": "WEB-114",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/ingenieria-contra-incendios/certificacion-e-inspeccion-de-sistemas-contra-incendios",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/ingenieria-contra-incendios/certificacion-e-inspeccion-de-sistemas-contra-incendios",
+      "parent_id": "WEB-022",
+      "title": "Certificación e inspección de sistemas contra incendios",
+      "description": [
+        "Se realizan pruebas hidrostáticas a extintores con agente de extinción a base de polvo químico seco, dióxido de carbono, agua presurizada y espuma mecánica. También se realizan pruebas de presión hidrostática a otros productos como carretes, mangueras, flexibles, storz, terminales, trifurcas y cañerías de acero."
+      ],
+      "offerings": [
+        "Certificación de extintores Clase A, hasta potencial 10",
+        "Certificación de extintores Clase B, hasta potencial 60",
+        "Certificación de carretes y mangueras",
+        "Certificación de Sistema de rociadores",
+        "Certificación de puertas cortafuego y elementos de compartimentación",
+        "Certificación de servicios técnicos en extintores"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "Certificación"
+      ],
+      "content_hash": "ae6497169910fcf9"
+    },
+    {
+      "id": "WEB-115",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/ingenieria-contra-incendios/ensayos-de-fuego",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/ingenieria-contra-incendios/ensayos-de-fuego",
+      "parent_id": "WEB-022",
+      "title": "Ensayos de fuego",
+      "description": [
+        "Pruebas que permiten determinar las características de comportamiento frente al fuego de un material o solución constructiva."
+      ],
+      "offerings": [
+        "Resistencia al fuego de soluciones constructivas",
+        "Resistencia al fuego de puertas y ventanas",
+        "Determinación de la No Combustibilidad de materiales",
+        "Comportamiento al fuego de telas y/o textiles",
+        "Comportamiento al fuego de plásticos y espumas",
+        "Comportamiento al fuego de pinturas y barnices en madera",
+        "Asesoría para ensayos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "e3c1d1b25b98f3f5"
+    },
+    {
+      "id": "WEB-116",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/ingenieria-contra-incendios/inspeccion-de-pintura-intumescente-y-mortero-ignifugo",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/ingenieria-contra-incendios/inspeccion-de-pintura-intumescente-y-mortero-ignifugo",
+      "parent_id": "WEB-022",
+      "title": "Inspección de pintura intumescente y mortero ignífugo",
+      "description": [
+        "Inspección, verificación y reporte de aplicación de pintura intumescente y morteros ignífugos, tanto de sus espesores como de su característica de intumescencia."
+      ],
+      "offerings": [
+        "Inspección y reporte de aplicación de pinturas intumescentes",
+        "Inspección y reporte de aplicación de morteros ignífugos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "e0aad75b70c345bf"
+    },
+    {
+      "id": "WEB-117",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/inspeccion-de-obra/mediciones-electricas",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/inspeccion-de-obra/mediciones-electricas",
+      "parent_id": "WEB-023",
+      "title": "Mediciones eléctricas",
+      "description": [
+        "Verificar que la resistencia eléctrica de los pisos cumpla con lo indicado por la NCh4/2003 en sus artículos 9.0.6.4, 15.2.7 y 15.2.8"
+      ],
+      "offerings": [
+        "Medición de resistencia eléctrica de pisos conductivos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "22bafd09c0cc9e9b",
+      "same_text_as": "WEB-087"
+    },
+    {
+      "id": "WEB-118",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/laboratorios-en-obra-o-fabrica/laboratorios-en-fabrica",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/laboratorios-en-obra-o-fabrica/laboratorios-en-fabrica",
+      "parent_id": "WEB-024",
+      "title": "Laboratorios en fábrica",
+      "description": [
+        "Implementación de laboratorios en fábricas, cumpliendo con altos estándares técnicos, de calidad, seguridad y ambientales.",
+        "Estos servicios se caracterizan por la flexibilidad para cumplir con distintos requerimientos y necesidades del proceso productivo, en distintas condiciones, ubicaciones y esquemas de turnos."
+      ],
+      "offerings": [
+        "Ensayos de cemento",
+        "Ensayos de hormigón",
+        "Ensayos de acero",
+        "Inspección de elementos prefabricados"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [
+        "altos estándares"
+      ],
+      "claim_flags": [],
+      "content_hash": "1e66d0d49bdd92e3"
+    },
+    {
+      "id": "WEB-119",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/laboratorios-en-obra-o-fabrica/laboratorios-en-obra",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/laboratorios-en-obra-o-fabrica/laboratorios-en-obra",
+      "parent_id": "WEB-024",
+      "title": "Laboratorios en obra",
+      "description": [
+        "Implementación de laboratorios en proyectos, cumpliendo con altos estándares técnicos, de calidad, seguridad y ambientales.",
+        "Estos servicios se caracterizan por la flexibilidad para cumplir con distintos requerimientos y necesidades del cliente, en distintas condiciones, ubicación geográfica y exigencias de los programas."
+      ],
+      "offerings": [
+        "Ensayos de áridos",
+        "Ensayos de hormigón",
+        "Ensayos de mecánica de suelos",
+        "Ensayos de shotcrete",
+        "Ensayos no destructivos para soldadura",
+        "Inspección de revestimientos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [
+        "altos estándares"
+      ],
+      "claim_flags": [],
+      "content_hash": "10d3ddaa32e5be6d"
+    },
+    {
+      "id": "WEB-120",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon/adherencia-de-revestimientos",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon/adherencia-de-revestimientos",
+      "parent_id": "WEB-025",
+      "title": "Adherencia de revestimientos",
+      "description": [
+        "Asesorías y peritajes de adhesivos de base cementicia."
+      ],
+      "offerings": [
+        "Análisis de adherencia de revestimientos por tracción directa"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "27398e7b9d1be316"
+    },
+    {
+      "id": "WEB-121",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon/certificacion-y-ensayos-de-productos-de-hormigon",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon/certificacion-y-ensayos-de-productos-de-hormigon",
+      "parent_id": "WEB-025",
+      "title": "Certificación y ensayos de productos de hormigón",
+      "description": [
+        "Ensayos que se realizan tanto al hormigón fresco preparado en laboratorio como a muestras de hormigón endurecido, con el objetivo de determinar propiedades y características físicas y químicas del material, así como su desempeño mecánico."
+      ],
+      "offerings": [
+        "Caracterización de adhesivos cementicios",
+        "Caracterización de madurez del hormigón",
+        "Contenido de aire del hormigón fresco",
+        "Controles de temperaturas de hormigón",
+        "Controles de temperaturas del hormigón y madurez",
+        "Densidad aparente del hormigón fresco",
+        "Determinación de rendimiento del hormigón",
+        "Ensayos de durabilidad",
+        "Ensayos de hormigones autocompactantes",
+        "Ensayos de lechadas",
+        "Ensayos de uniformidad",
+        "Evaluación estadística del hormigón",
+        "Extracción de testigos de hormigón in situ",
+        "Muestreo de hormigón",
+        "Permeabilidad en terreno y laboratorio",
+        "Ensayo de impacto",
+        "Ensayo de abrasión"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "Certificación"
+      ],
+      "content_hash": "53f3e6a6697061f1"
+    },
+    {
+      "id": "WEB-122",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon/control-de-hormigones-en-obra",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon/control-de-hormigones-en-obra",
+      "parent_id": "WEB-025",
+      "title": "Control de hormigones en obra",
+      "description": [
+        "Ensayos para determinar la temperatura de colocación, docilidad y resistencia del hormigón de acuerdo a los requisitos especificados en la NCh170:2016 mediante la extracción de muestras y confección de probetas de hormigón fresco en obra."
+      ],
+      "offerings": [
+        "Extracción de muestras de hormigón fresco en obra",
+        "Determinación de resistencia a la compresión de probetas cilíndricas o cúbicas",
+        "Determinación de tracción por flexión de probetas prismáticas",
+        "Docilidad del hormigón fresco",
+        "Ensayos de permeabilidad",
+        "Madurez del hormigón",
+        "Densidad aparente del hormigón fresco",
+        "Contenido de aire del hormigón fresco",
+        "Control de temperatura del hormigón",
+        "Evaluación estadística del hormigón"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "8f5f6d0e6932b49f"
+    },
+    {
+      "id": "WEB-123",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon/desarrollo-de-nuevos-materiales",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon/desarrollo-de-nuevos-materiales",
+      "parent_id": "WEB-025",
+      "title": "Desarrollo de nuevos materiales",
+      "description": [
+        "Realización de estudios de investigación y desarrollo de nuevos materiales, tecnologías y aplicaciones en hormigón."
+      ],
+      "offerings": [
+        "Evaluación de nuevas materias primas para confección de hormigón",
+        "Estudio de compatibilidad y optimización de aditivos",
+        "Estudios de durabilidad de hormigones"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "e2d8905e8fa330e1",
+      "same_text_as": "WEB-096"
+    },
+    {
+      "id": "WEB-124",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon/ensayos-especiales",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon/ensayos-especiales",
+      "parent_id": "WEB-025",
+      "title": "Ensayos especiales",
+      "description": [
+        "Ensayos necesarios para evaluar y caracterizar los materiales que son utilizados en la confección de hormigones. En esta área se desarrollan ensayos rutinarios del control de calidad de las materias primas para la confección de hormigón y ensayos específicos de materiales para confeccionar hormigones especiales."
+      ],
+      "offerings": [
+        "Caracterización de cementos",
+        "Caracterización de adhesivos",
+        "Caracterización de adiciones cementicias",
+        "Caracterización de aditivos",
+        "Clasificación de aditivos para hormigón",
+        "Control de áridos para confección de hormigones",
+        "Ensayos de agua de amasado",
+        "Ensayos de aguas agresivas al hormigón",
+        "Ensayos especiales a cementos",
+        "Evaluación de la reactividad de áridos",
+        "Hormigones de prueba",
+        "Morteros de prueba"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "d2a7e0a2934d58ea"
+    },
+    {
+      "id": "WEB-125",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon/morteros-y-aditivos",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon/morteros-y-aditivos",
+      "parent_id": "WEB-025",
+      "title": "Morteros y aditivos",
+      "description": [
+        "Ensayos en laboratorio y terreno que permiten analizar y caracterizar el comportamiento de morteros y aditivos."
+      ],
+      "offerings": [
+        "Caracterización de morteros y aditivos",
+        "Análisis de adherencia en laboratorio y en terreno",
+        "Análisis para el diseño y dosificación de morteros",
+        "Evaluación de dosificación y aditivos",
+        "Preparación de mezclas de prueba"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "7da0676b65bc7b2d"
+    },
+    {
+      "id": "WEB-126",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon/prospeccion-de-aridos",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon/prospeccion-de-aridos",
+      "parent_id": "WEB-025",
+      "title": "Prospección de áridos",
+      "description": [
+        "Evaluación de áridos para uso en morteros y hormigones."
+      ],
+      "offerings": [
+        "Evaluación de requisitos normativos para los áridos",
+        "Validación de curva granulométrica óptima para uso en hormigón"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "normativos"
+      ],
+      "content_hash": "338983df51aa59c9",
+      "same_text_as": "WEB-098"
+    },
+    {
+      "id": "WEB-127",
+      "level": "servicio",
+      "path": "/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon/tecnologia-del-shotcrete",
+      "url": "https://www.idiem.cl/servicios/ensayos-de-laboratorio/tecnologia-del-hormigon/tecnologia-del-shotcrete",
+      "parent_id": "WEB-025",
+      "title": "Tecnología del shotcrete",
+      "description": [
+        "Ensayos de control para hormigón proyectado en obra."
+      ],
+      "offerings": [
+        "Control de resistencia a distintas edades",
+        "Ensayos para edad temprana, menor a 24 horas",
+        "Ensayos de resistencia residual para shotcrete con fibras",
+        "Determinación de contenido de fibras",
+        "Determinación de rebote",
+        "Calificación de equipo de operadores de shotcrete (pitoneros)",
+        "Calibración de bombas de hormigón y aditivo acelerante"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "be47706d2ae1de50",
+      "same_text_as": "WEB-099"
+    },
+    {
+      "id": "WEB-128",
+      "level": "servicio",
+      "path": "/servicios/geotecnia-y-prospecciones/geotecnia-y-mecanica-de-suelos/control-de-suelos-en-obra",
+      "url": "https://www.idiem.cl/servicios/geotecnia-y-prospecciones/geotecnia-y-mecanica-de-suelos/control-de-suelos-en-obra",
+      "parent_id": "WEB-026",
+      "title": "Control de suelos en obra",
+      "description": [
+        "Control de avance en obras de construcción, conforme a las especificaciones técnicas de diseño. Para esto se realiza un control de densidad in situ, que permite obtener el grado de compactación y su correspondiente cumplimiento con lo requerido por el proyecto."
+      ],
+      "offerings": [
+        "Caracterización básica de suelos",
+        "Densidad Máxima Compactada Seca",
+        "Densidad in situ mediante cono de arena o densímetro nuclear",
+        "Ensayo Porchet",
+        "Granulometría o caracterización granulométrica"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "aa1b73fa3b189b5b",
+      "same_text_as": "WEB-112"
+    },
+    {
+      "id": "WEB-129",
+      "level": "servicio",
+      "path": "/servicios/geotecnia-y-prospecciones/geotecnia-y-mecanica-de-suelos/ingenieria-geotecnica",
+      "url": "https://www.idiem.cl/servicios/geotecnia-y-prospecciones/geotecnia-y-mecanica-de-suelos/ingenieria-geotecnica",
+      "parent_id": "WEB-026",
+      "title": "Ingeniería geotécnica",
+      "description": [
+        "Estudios geotécnicos orientados a la caracterización del suelo, con el objetivo de evaluar la deformabilidad, resistencia e interacción con estructuras."
+      ],
+      "offerings": [
+        "Caracterización de suelos",
+        "Modelación numérica",
+        "Definición de tipo de fundación recomendada",
+        "Estimación de parámetros de resistencia al corte",
+        "Levantamientos geológicos",
+        "Estabilidad de taludes",
+        "Recomendaciones constructivas para excavaciones",
+        "Recomendaciones para uso de rellenos controlados",
+        "Estimación de módulos de deformación"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "3c17166ace560c41",
+      "same_text_as": "WEB-064"
+    },
+    {
+      "id": "WEB-130",
+      "level": "servicio",
+      "path": "/servicios/geotecnia-y-prospecciones/geotecnia-y-mecanica-de-suelos/instrumentacion-y-monitoreo-geotecnico",
+      "url": "https://www.idiem.cl/servicios/geotecnia-y-prospecciones/geotecnia-y-mecanica-de-suelos/instrumentacion-y-monitoreo-geotecnico",
+      "parent_id": "WEB-026",
+      "title": "Instrumentación y monitoreo geotécnico",
+      "description": [
+        "Instalación y monitoreo instrumental para mediciones de deformación, verticalidad, desplazamiento y otros parámetros geotécnicos relativos al comportamiento de la masa de suelo"
+      ],
+      "offerings": [
+        "Instalación de piezómetros (Casagrande y cuerda vibrante)",
+        "Instalación de asentímetros",
+        "Instalación de acelerómetros",
+        "Instalación de celdas de carga",
+        "Instalación de celdas de presión",
+        "Instalación de extensómetros",
+        "Mediciones de vibración",
+        "Mediciones de inclinometría"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "239841c4f1fca3bc",
+      "same_text_as": "WEB-065"
+    },
+    {
+      "id": "WEB-131",
+      "level": "servicio",
+      "path": "/servicios/geotecnia-y-prospecciones/geotecnia-y-mecanica-de-suelos/prospecciones-geotecnicas",
+      "url": "https://www.idiem.cl/servicios/geotecnia-y-prospecciones/geotecnia-y-mecanica-de-suelos/prospecciones-geotecnicas",
+      "parent_id": "WEB-026",
+      "title": "Prospecciones geotécnicas",
+      "description": [
+        "Exploraciones en suelo y ensayos in situ, para obtener parámetros geotécnicos y geomecánicos, necesarios para el desarrollo de un estudio de mecánica de suelo."
+      ],
+      "offerings": [
+        "Ensayos in-situ para la caracterización de suelo",
+        "Ensayos de carga en pilotes y estructuras",
+        "Ensayos de flujos (Lugeon, Lefranc)",
+        "Ensayos de infiltración (Porchet, doble anillo)",
+        "Exploración mediante calicatas mecanizadas y manuales",
+        "Exploración mediante sondajes diamantinos",
+        "Exploración mediante CPTU",
+        "Ensayos de veleta de corte",
+        "Ensayos de placa de carga",
+        "Ensayos ReMi, MASW, SASW y refracción sísmica",
+        "Ensayos Nakamura (frecuencia fundamental)",
+        "Ensayos presiométricos",
+        "Ensayos downhole",
+        "Ensayos de corte directo in-situ",
+        "Desarrollo de ensayos especiales"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "83f1c7739970fcd3"
+    },
+    {
+      "id": "WEB-132",
+      "level": "servicio",
+      "path": "/servicios/geotecnia-y-prospecciones/geotecnia-y-mecanica-de-suelos/topografia-y-geomensura",
+      "url": "https://www.idiem.cl/servicios/geotecnia-y-prospecciones/geotecnia-y-mecanica-de-suelos/topografia-y-geomensura",
+      "parent_id": "WEB-026",
+      "title": "Topografía y geomensura",
+      "description": [
+        "Levantamiento y mediciones topográficas, que permiten obtener estimación de dimensiones, modelación tridimensional de terrenos y verificación de magnitudes."
+      ],
+      "offerings": [
+        "Levantamiento topográfico",
+        "Replanteo topográfico",
+        "Levantamiento geodésico",
+        "Nivelaciones",
+        "Medición de polígonos",
+        "Levantamientos aerofotogramétricos mediante dron",
+        "Medición de asentamiento",
+        "Medición de deformaciones",
+        "Medición de alineamientos",
+        "Batimetría de baja profundidad",
+        "Desarrollo de mediciones y levantamientos especiales"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "a936622d9e3996e8",
+      "same_text_as": "WEB-067"
+    },
+    {
+      "id": "WEB-133",
+      "level": "servicio",
+      "path": "/servicios/geotecnia-y-prospecciones/laboratorios-en-obra/laboratorios-en-obra",
+      "url": "https://www.idiem.cl/servicios/geotecnia-y-prospecciones/laboratorios-en-obra/laboratorios-en-obra",
+      "parent_id": "WEB-027",
+      "title": "Laboratorios en obra",
+      "description": [
+        "Implementación de laboratorios en proyectos, cumpliendo con altos estándares técnicos, de calidad, seguridad y ambientales.",
+        "Estos servicios se caracterizan por la flexibilidad para cumplir con distintos requerimientos y necesidades del cliente, en distintas condiciones, ubicación geográfica y exigencias de los programas."
+      ],
+      "offerings": [
+        "Ensayos de áridos",
+        "Ensayos de hormigón",
+        "Ensayos de mecánica de suelos",
+        "Ensayos de shotcrete",
+        "Ensayos no destructivos para soldadura",
+        "Inspección de revestimientos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [
+        "altos estándares"
+      ],
+      "claim_flags": [],
+      "content_hash": "10d3ddaa32e5be6d",
+      "same_text_as": "WEB-119"
+    },
+    {
+      "id": "WEB-134",
+      "level": "servicio",
+      "path": "/servicios/inspeccion-tecnica-de-obra/aceros/inspeccion-de-estructuras-cilindros-y-estanques-metalicos",
+      "url": "https://www.idiem.cl/servicios/inspeccion-tecnica-de-obra/aceros/inspeccion-de-estructuras-cilindros-y-estanques-metalicos",
+      "parent_id": "WEB-028",
+      "title": "Inspección de estructuras cilindros y estanques metálicos",
+      "description": [
+        "Evaluación de la condición actual y control estructuras metálicas, cilindros, estanques, cañerías, equipos y componentes; mediante inspección y ensayos no destructivos a soldaduras, perfiles, componentes y elementos, de acuerdo a normativa nacional AWS, ASME, ASTM y API."
+      ],
+      "offerings": [
+        "Inspección visual",
+        "Inspección radiográfica",
+        "Inspección partículas magnéticas",
+        "Inspección por líquidos penetrantes",
+        "Inspección de fallas mediante ultrasonido"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "normativa"
+      ],
+      "content_hash": "fc2a7ed64f04bdd4"
+    },
+    {
+      "id": "WEB-135",
+      "level": "servicio",
+      "path": "/servicios/inspeccion-tecnica-de-obra/aceros/inspeccion-y-asesoria-en-soldadura",
+      "url": "https://www.idiem.cl/servicios/inspeccion-tecnica-de-obra/aceros/inspeccion-y-asesoria-en-soldadura",
+      "parent_id": "WEB-028",
+      "title": "Inspección y asesoría en soldadura",
+      "description": [
+        "Bajo conceptos de la normativa vigente se desarrollan asesoría de soldadura: Elaboración de procedimientos, calificación de procedimientos y calificación de soldadores. Proyectos de reparación de piezas, equipos y componentes mediante soldadura."
+      ],
+      "offerings": [
+        "Desarrollo de procedimientos de soldadura (WPS)",
+        "Registro de calificación de procedimiento (PQR)",
+        "Calificación de desempeño de soldadores (WPQ)",
+        "Proyectos de reparación de piezas, equipos y componentes mediante soldadura"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "normativa"
+      ],
+      "content_hash": "b4dffa251d8c3aaf"
+    },
+    {
+      "id": "WEB-136",
+      "level": "servicio",
+      "path": "/servicios/inspeccion-tecnica-de-obra/control-de-otros-materiales/inspeccion-de-pinturas",
+      "url": "https://www.idiem.cl/servicios/inspeccion-tecnica-de-obra/control-de-otros-materiales/inspeccion-de-pinturas",
+      "parent_id": "WEB-029",
+      "title": "Inspección de pinturas",
+      "description": [
+        "Inspección de pintura, barnices y productos afines; y pintura intumescente de base acuosa y base solvente."
+      ],
+      "offerings": [
+        "Medición de espesor de película seca mediante equipo electromagnético",
+        "Medición de espesor mediante equipo electromagnético",
+        "Inspección visual",
+        "Prueba de intumescencia",
+        "Prueba ácido clorhídrico"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "5a43ded68d838807",
+      "same_text_as": "WEB-108"
+    },
+    {
+      "id": "WEB-137",
+      "level": "servicio",
+      "path": "/servicios/inspeccion-tecnica-de-obra/inspeccion-de-obra/asesoria-a-la-inspeccion-tecnica",
+      "url": "https://www.idiem.cl/servicios/inspeccion-tecnica-de-obra/inspeccion-de-obra/asesoria-a-la-inspeccion-tecnica",
+      "parent_id": "WEB-030",
+      "title": "Asesoría a la inspección técnica",
+      "description": [
+        "Conjunto de servicios de asesoría que apoyan la ejecución, revisión y control de proyectos en etapa de estudios y ejecución."
+      ],
+      "offerings": [
+        "Asesoría a la inspección fiscal",
+        "Asesoría a la inspección técnica de obras",
+        "Asesoría a la inspección técnica de estudio",
+        "Asesoría a la inspección técnica de especialidades"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "4515b8ea54a7d15c",
+      "same_text_as": "WEB-085"
+    },
+    {
+      "id": "WEB-138",
+      "level": "servicio",
+      "path": "/servicios/inspeccion-tecnica-de-obra/inspeccion-de-obra/certificacion-de-proyectos-habitacionales",
+      "url": "https://www.idiem.cl/servicios/inspeccion-tecnica-de-obra/inspeccion-de-obra/certificacion-de-proyectos-habitacionales",
+      "parent_id": "WEB-030",
+      "title": "Certificación de proyectos habitacionales",
+      "description": [
+        "Esta certificación considera la revisión normativa del diseño de las distintas especialidades del proyecto y la inspección técnica IDIEM en terreno, con el objeto de supervisar que la obra se construya conforme a la documentación aprobada por IDIEM, además de un monitoreo permanente a la constructora mediante indicadores."
+      ],
+      "offerings": [
+        "Certificación de proyectos habitacionales"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "Certificación",
+        "certificación",
+        "normativa"
+      ],
+      "content_hash": "e5feb5dcaed6e3e5",
+      "same_text_as": "WEB-086"
+    },
+    {
+      "id": "WEB-139",
+      "level": "servicio",
+      "path": "/servicios/inspeccion-tecnica-de-obra/inspeccion-de-obra/inspeccion-de-impermeabilizacion",
+      "url": "https://www.idiem.cl/servicios/inspeccion-tecnica-de-obra/inspeccion-de-obra/inspeccion-de-impermeabilizacion",
+      "parent_id": "WEB-030",
+      "title": "Inspección de impermeabilización",
+      "description": [
+        "Consiste en la verificación de la certificación de materiales, la inspección durante el acopio, despliegue de rollos, control de partidas de máquina, inspección de la instalación, soldadura y los ensayos requeridos."
+      ],
+      "offerings": [
+        "Inspección de geosintéticos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "certificación"
+      ],
+      "content_hash": "f6610039ce1d695d"
+    },
+    {
+      "id": "WEB-140",
+      "level": "servicio",
+      "path": "/servicios/inspeccion-tecnica-de-obra/inspeccion-de-obra/ito-especialidades",
+      "url": "https://www.idiem.cl/servicios/inspeccion-tecnica-de-obra/inspeccion-de-obra/ito-especialidades",
+      "parent_id": "WEB-030",
+      "title": "ITO especialidades",
+      "description": [
+        "La inspección técnica de especialidades es desarrollada por equipo de profesionales multidisciplinarios para realizar el control técnico de la ejecución del proyecto para verificar que obras se realicen de acuerdo con los planos, especificaciones técnicas, bases de diseño y recomendaciones de los proveedores.",
+        "Las especialidades que componen este equipo son: electricidad, corrientes débiles, climatización, ventilación, extracción, presurización, gas combustible, agua potable, alcantarillado, agua lluvia, telecomunicaciones, ascensores, montacargas, escalas mecánicas, control centralizado."
+      ],
+      "offerings": [
+        "Inspección de especialidades"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "d72e924d41993f4d"
+    },
+    {
+      "id": "WEB-141",
+      "level": "servicio",
+      "path": "/servicios/inspeccion-tecnica-de-obra/inspeccion-de-obra/ito-obras-civiles",
+      "url": "https://www.idiem.cl/servicios/inspeccion-tecnica-de-obra/inspeccion-de-obra/ito-obras-civiles",
+      "parent_id": "WEB-030",
+      "title": "ITO obras civiles",
+      "description": [
+        "La Inspección técnica de obras (ITO) es el apoyo integral, durante todas o cada una de las etapas de planificación, diseño, administración, construcción y puesta en marcha de un proyecto.",
+        "El objetivo es controlar la calidad de la obra, costos del proyecto, cumplimiento de la programación, ruta crítica, estados de pagos ordinarios y adicionales, avance físico y financiero, obras adicionales y/o extraordinarias, gestión administrativa del contrato de construcción, términos de contrato y recepción final."
+      ],
+      "offerings": [
+        "Inspección de calidad",
+        "Inspección de calidad y administrativa",
+        "Revisión de vivienda terminada",
+        "Control de procesos constructivos",
+        "Asesoría en licitación de obra",
+        "Asesoría técnica en gestión de calidad",
+        "Auditorías al autocontrol",
+        "Gerenciamiento de proyectos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "b2d6efb471751bf2"
+    },
+    {
+      "id": "WEB-142",
+      "level": "servicio",
+      "path": "/servicios/inspeccion-tecnica-de-obra/inspeccion-de-obra/mediciones-electricas",
+      "url": "https://www.idiem.cl/servicios/inspeccion-tecnica-de-obra/inspeccion-de-obra/mediciones-electricas",
+      "parent_id": "WEB-030",
+      "title": "Mediciones eléctricas",
+      "description": [
+        "Verificar que la resistencia eléctrica de los pisos cumpla con lo indicado por la NCh4/2003 en sus artículos 9.0.6.4, 15.2.7 y 15.2.8"
+      ],
+      "offerings": [
+        "Medición de resistencia eléctrica de pisos conductivos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "22bafd09c0cc9e9b",
+      "same_text_as": "WEB-087"
+    },
+    {
+      "id": "WEB-143",
+      "level": "servicio",
+      "path": "/servicios/inspeccion-tecnica-de-obra/inspeccion-de-obra/servicios-asociados-a-post-venta-de-edificaciones",
+      "url": "https://www.idiem.cl/servicios/inspeccion-tecnica-de-obra/inspeccion-de-obra/servicios-asociados-a-post-venta-de-edificaciones",
+      "parent_id": "WEB-030",
+      "title": "Servicios asociados a post venta de edificaciones",
+      "description": [
+        "Verificar cumplimiento de protocolo de vivienda terminada y de las instalaciones de un edificio, mediante inspección visual y pruebas de funcionamiento."
+      ],
+      "offerings": [
+        "Recepción de vivienda terminada",
+        "Recepción final de instalaciones",
+        "Elaboración y seguimiento de planes de mantenimiento"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "300beb8a4607f0ee",
+      "same_text_as": "WEB-090"
+    },
+    {
+      "id": "WEB-144",
+      "level": "servicio",
+      "path": "/servicios/inspeccion-tecnica-de-obra/productividad/estudios-de-industrializacion",
+      "url": "https://www.idiem.cl/servicios/inspeccion-tecnica-de-obra/productividad/estudios-de-industrializacion",
+      "parent_id": "WEB-031",
+      "title": "Estudios de industrialización",
+      "description": [
+        "Estudios de ingeniería en etapas de diseño y construcción que buscan aumentar el nivel de industrialización de las obras, esto con el objetivo de mejorar los niveles de productividad de la obra y aumentar rendimientos."
+      ],
+      "offerings": [
+        "Diagnóstico de la empresa y plan estratégico de industrialización",
+        "Inspección técnica de elementos industrializados en fábrica",
+        "Auditoria de procesos constructivos",
+        "Revisión de proyectos con componentes industrializadas",
+        "Modelación BIM y coordinación 3D"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "dd99eba47584182f",
+      "same_text_as": "WEB-091"
+    },
+    {
+      "id": "WEB-145",
+      "level": "servicio",
+      "path": "/servicios/inspeccion-tecnica-de-obra/productividad/estudios-de-productividad",
+      "url": "https://www.idiem.cl/servicios/inspeccion-tecnica-de-obra/productividad/estudios-de-productividad",
+      "parent_id": "WEB-031",
+      "title": "Estudios de productividad",
+      "description": [
+        "Estudio integral que busca mejorar la productividad de los proyectos de construcción, abarcando las etapas de diseño, ejecución y posterior evaluación de resultados.",
+        "Se realiza un diagnóstico inicial a través de nuestro índice de productividad, el que permite conocer las oportunidades de mejora.",
+        "Las asesorías incluyen, evaluación de opciones de industrialización, acompañamiento durante la construcción, evaluación de desempeño y plan de mejoramiento, entre otros."
+      ],
+      "offerings": [
+        "Análisis de productividad temprana en etapas de diseño",
+        "Mediciones y controles de productividad durante la ejecución de la obra",
+        "Auditoria de procesos constructivos",
+        "Revisión de calidad en terreno",
+        "Estudios de pérdida de productividad en controversias contractuales",
+        "Estudios de impacto en plazo y costos",
+        "Modelación BIM y coordinación 3D",
+        "Evaluación y mapeo de oportunidades de productividad a través del índice de productividad IDIEM"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "6cced2330c3c8ab5",
+      "same_text_as": "WEB-092"
+    },
+    {
+      "id": "WEB-146",
+      "level": "servicio",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/aceros/control-de-calidad-de-productos-de-acero",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/aceros/control-de-calidad-de-productos-de-acero",
+      "parent_id": "WEB-032",
+      "title": "Control de calidad de productos de acero",
+      "description": [
+        "Informes de ensayo oficial y certificados de conformidad de acuerdo a la normativa y requisitos aplicables (físico mecánico, químicos, soldabilidad, tenacidad, dureza, entre otros) de diversos productos de acero: barras para hormigón armado, aceros de uso estructural en sus distintos formatos (planchas, perfiles de acero laminados, soldados o conformados), alambres, mallas electrosoldadas, parrillas, cubiertas, entre otros."
+      ],
+      "offerings": [
+        "Certificación de acero estructural según NCh203",
+        "Certificación barras de acero para hormigón armado según NCh204 y NCh3334",
+        "Certificación perfiles estructurales conformados según NCh3518 y NCh3576",
+        "Certificación de mallas electrosoldadas según NCh218",
+        "Certificación de alambres para uso en hormigón armado según NCh1173",
+        "Certificación enfierradura para uso en hormigón armado según NCh211",
+        "Alambre de grado AT56-50H para uso en hormigón armado según NCh1173",
+        "Mallas electrosoldadas de barra laminadas en caliente soldables para hormigón armado según NCh3335",
+        "Planchas lisas de acero recubiertas según NCh222",
+        "Planchas acanaladas onduladas de acero recubiertas según NCh223",
+        "Parrillas de piso y peldaños según NCh3572",
+        "Ensayos según diversas normas (NCh201, NCh200, NCh218, NCh1173, NCh220ASTME8/E8M)",
+        "Espectrometría de emisión óptica",
+        "Química para Aceros según ASTM E415",
+        "Caracterización de materiales metálicos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "Certificación",
+        "certificados",
+        "normas",
+        "normativa"
+      ],
+      "content_hash": "ff11abe8a6ec11aa",
+      "same_text_as": "WEB-100"
+    },
+    {
+      "id": "WEB-147",
+      "level": "servicio",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/control-de-otros-materiales/calibracion-fuerza-modo-compresion",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/control-de-otros-materiales/calibracion-fuerza-modo-compresion",
+      "parent_id": "WEB-033",
+      "title": "Calibración fuerza modo compresión",
+      "description": [
+        "Calibración de equipos desde 0.3 kN hasta 2700 kN."
+      ],
+      "offerings": [
+        "Anillos de carga",
+        "Celdas de carga",
+        "Maquinas en modo compresión",
+        "Gatos hidráulicos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "1aee8f2b0fd9617b",
+      "same_text_as": "WEB-101"
+    },
+    {
+      "id": "WEB-148",
+      "level": "servicio",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/control-de-otros-materiales/certificaciones-de-conformidad-modelo-iso-casco",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/control-de-otros-materiales/certificaciones-de-conformidad-modelo-iso-casco",
+      "parent_id": "WEB-033",
+      "title": "Certificaciones de conformidad modelo ISO-CASCO",
+      "description": [
+        "Certificación de materiales de construcción, productos y soluciones constructivas, a través de distintos modelos ISO/CASCO de certificación de conformidad. Idiem actúa como un tercero, avalando la elaboración de lotes de producción, entregando un certificado de conformidad según los requisitos de la norma establecida y un esquema de certificación definido. Todas las certificaciones incluyen informes de ensayos, los cuales nos permiten realizar el seguimiento respectivo a los productos a certificar."
+      ],
+      "offerings": [
+        "Modelo ISO CASCO 3: Ensayo de tipo seguido por una supervisión en planta.",
+        "Modelo ISO CASCO 5: Ensayo de tipo seguido por una supervisión en planta y de muestras tomadas en el comercio.",
+        "Modelo ISO CASCO 7: Ensayo por lotes"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "Certificaciones",
+        "certificaciones",
+        "certificación",
+        "Certificación",
+        "certificado",
+        "certificar",
+        "ISO",
+        "norma"
+      ],
+      "content_hash": "7548c5d8ee78b99a",
+      "same_text_as": "WEB-102"
+    },
+    {
+      "id": "WEB-149",
+      "level": "servicio",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/control-de-otros-materiales/ensayos-y-certificacion-de-elementos-prefabricados",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/control-de-otros-materiales/ensayos-y-certificacion-de-elementos-prefabricados",
+      "parent_id": "WEB-033",
+      "title": "Ensayos y certificación de elementos prefabricados",
+      "description": [
+        "Ensayos mecánicos de flexión, tracción y compresión, que permiten caracterizar los elementos prefabricados y en caso de ser necesario, certificarlos."
+      ],
+      "offerings": [
+        "Ensayos a soleras",
+        "Ensayos a solerillas",
+        "Ensayos a baldosas",
+        "Ensayos a adoquines",
+        "Ensayos a ladrillos",
+        "Ensayos a otros elementos prefabricados"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "certificación",
+        "certificarlos"
+      ],
+      "content_hash": "6512c7f1d4d5274d",
+      "same_text_as": "WEB-105"
+    },
+    {
+      "id": "WEB-150",
+      "level": "servicio",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/control-de-otros-materiales/ensayos-y-certificacion-de-materiales-polimericos",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/control-de-otros-materiales/ensayos-y-certificacion-de-materiales-polimericos",
+      "parent_id": "WEB-033",
+      "title": "Ensayos y certificación de materiales poliméricos",
+      "description": [
+        "Ensayos mecánicos y de comportamiento que permiten caracterizar productos y materiales poliméricos."
+      ],
+      "offerings": [
+        "Ensayos en tuberías y geomembranas",
+        "Ensayos mecánicos en plásticos",
+        "Ensayos mecánicos en elementos de caucho y resinas",
+        "Ensayos mecánicos en elementos cerámicos y de vidrio",
+        "Ensayos en tuberías",
+        "Ensayos a otros elementos poliméricos"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "certificación"
+      ],
+      "content_hash": "068503243fb187d1",
+      "same_text_as": "WEB-106"
+    },
+    {
+      "id": "WEB-151",
+      "level": "servicio",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/control-de-otros-materiales/otros-ensayos-especiales",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/control-de-otros-materiales/otros-ensayos-especiales",
+      "parent_id": "WEB-033",
+      "title": "Otros ensayos especiales",
+      "description": [
+        "Desarrollo de ensayos especiales o basados en estándares internaciones para analizar el comportamiento de nuevos materiales y productos."
+      ],
+      "offerings": [
+        "Ensayos especiales a otros materiales"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "565d198bb06c1cdf",
+      "same_text_as": "WEB-109"
+    },
+    {
+      "id": "WEB-152",
+      "level": "servicio",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/estructuras/ensayos-destructivos-y-no-destructivos-del-hormigon",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/estructuras/ensayos-destructivos-y-no-destructivos-del-hormigon",
+      "parent_id": "WEB-034",
+      "title": "Ensayos destructivos y no destructivos del hormigón",
+      "description": [
+        "Ensayos para determinar propiedades mecánicas del hormigón."
+      ],
+      "offerings": [
+        "Detección de espesor de elementos de hormigón y ubicación de armaduras con Georradar",
+        "Análisis de homogeneidad del hormigón a través de Martillo Schmidt",
+        "Ultrasonido",
+        "Potencial de corrosión de armaduras",
+        "Velocidad de corrosión de armaduras"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "f7406ae452d7b5f0",
+      "same_text_as": "WEB-110"
+    },
+    {
+      "id": "WEB-153",
+      "level": "servicio",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/geotecnia-y-mecanica-de-suelos/control-de-suelos-en-obra",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/geotecnia-y-mecanica-de-suelos/control-de-suelos-en-obra",
+      "parent_id": "WEB-035",
+      "title": "Control de suelos en obra",
+      "description": [
+        "Control de avance en obras de construcción, conforme a las especificaciones técnicas de diseño. Para esto se realiza un control de densidad in situ, que permite obtener el grado de compactación y su correspondiente cumplimiento con lo requerido por el proyecto."
+      ],
+      "offerings": [
+        "Caracterización básica de suelos",
+        "Densidad Máxima Compactada Seca",
+        "Densidad in situ mediante cono de arena o densímetro nuclear",
+        "Ensayo Porchet",
+        "Granulometría o caracterización granulométrica"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "aa1b73fa3b189b5b",
+      "same_text_as": "WEB-112"
+    },
+    {
+      "id": "WEB-154",
+      "level": "servicio",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/geotecnia-y-mecanica-de-suelos/ensayos-de-suelo-y-rocas",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/geotecnia-y-mecanica-de-suelos/ensayos-de-suelo-y-rocas",
+      "parent_id": "WEB-035",
+      "title": "Ensayos de suelo y rocas",
+      "description": [
+        "Ensayos geomecánicos en muestras de suelo y roca, tanto en laboratorio como en terreno.",
+        "Los ensayos de laboratorio entregan el comportamiento geomecánico esperado en muestras de suelo y roca, permitiendo replicar condiciones de terreno para su análisis."
+      ],
+      "offerings": [
+        "Análisis petrográficos en roca",
+        "Ensayos básicos en suelos",
+        "Ensayos de compresión Simple con medición de deformación axial y diametral en rocas",
+        "Ensayos edométricos y de permeabilidad en suelos",
+        "Ensayos de caracterización monótona y dinámica en suelo",
+        "Ensayos no destructivos en rocas",
+        "Ensayos de caracterización de materiales granulares gruesos (grandes partículas)"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "f8c0c34501f86f2e",
+      "same_text_as": "WEB-113"
+    },
+    {
+      "id": "WEB-155",
+      "level": "servicio",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/geotecnia-y-mecanica-de-suelos/instrumentacion-y-monitoreo-geotecnico",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/geotecnia-y-mecanica-de-suelos/instrumentacion-y-monitoreo-geotecnico",
+      "parent_id": "WEB-035",
+      "title": "Instrumentación y monitoreo geotécnico",
+      "description": [
+        "Instalación y monitoreo instrumental para mediciones de deformación, verticalidad, desplazamiento y otros parámetros geotécnicos relativos al comportamiento de la masa de suelo"
+      ],
+      "offerings": [
+        "Instalación de piezómetros (Casagrande y cuerda vibrante)",
+        "Instalación de asentímetros",
+        "Instalación de acelerómetros",
+        "Instalación de celdas de carga",
+        "Instalación de celdas de presión",
+        "Instalación de extensómetros",
+        "Mediciones de vibración",
+        "Mediciones de inclinometría"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "239841c4f1fca3bc",
+      "same_text_as": "WEB-065"
+    },
+    {
+      "id": "WEB-156",
+      "level": "servicio",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/geotecnia-y-mecanica-de-suelos/prospecciones-geotecnicas",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/geotecnia-y-mecanica-de-suelos/prospecciones-geotecnicas",
+      "parent_id": "WEB-035",
+      "title": "Prospecciones geotécnicas",
+      "description": [
+        "Exploraciones en suelo y ensayos in situ, para obtener parámetros geotécnicos y geomecánicos, necesarios para el desarrollo de un estudio de mecánica de suelo."
+      ],
+      "offerings": [
+        "Ensayos in-situ para la caracterización de suelo",
+        "Ensayos de carga en pilotes y estructuras",
+        "Ensayos de flujos (Lugeon, Lefranc)",
+        "Ensayos de infiltración (Porchet, doble anillo)",
+        "Exploración mediante calicatas mecanizadas y manuales",
+        "Exploración mediante sondajes diamantinos",
+        "Exploración mediante CPTU",
+        "Ensayos de veleta de corte",
+        "Ensayos de placa de carga",
+        "Ensayos ReMi, MASW, SASW y refracción sísmica",
+        "Ensayos Nakamura (frecuencia fundamental)",
+        "Ensayos presiométricos",
+        "Ensayos downhole",
+        "Ensayos de corte directo in-situ",
+        "Desarrollo de ensayos especiales"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "83f1c7739970fcd3",
+      "same_text_as": "WEB-131"
+    },
+    {
+      "id": "WEB-157",
+      "level": "servicio",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/tecnologia-del-hormigon/certificacion-y-ensayos-de-productos-de-hormigon",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/tecnologia-del-hormigon/certificacion-y-ensayos-de-productos-de-hormigon",
+      "parent_id": "WEB-036",
+      "title": "Certificación y ensayos de productos de hormigón",
+      "description": [
+        "Ensayos que se realizan tanto al hormigón fresco preparado en laboratorio como a muestras de hormigón endurecido, con el objetivo de determinar propiedades y características físicas y químicas del material, así como su desempeño mecánico."
+      ],
+      "offerings": [
+        "Caracterización de adhesivos cementicios",
+        "Caracterización de madurez del hormigón",
+        "Contenido de aire del hormigón fresco",
+        "Controles de temperaturas de hormigón",
+        "Controles de temperaturas del hormigón y madurez",
+        "Densidad aparente del hormigón fresco",
+        "Determinación de rendimiento del hormigón",
+        "Ensayos de durabilidad",
+        "Ensayos de hormigones autocompactantes",
+        "Ensayos de lechadas",
+        "Ensayos de uniformidad",
+        "Evaluación estadística del hormigón",
+        "Extracción de testigos de hormigón in situ",
+        "Muestreo de hormigón",
+        "Permeabilidad en terreno y laboratorio",
+        "Ensayo de impacto",
+        "Ensayo de abrasión"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "Certificación"
+      ],
+      "content_hash": "53f3e6a6697061f1",
+      "same_text_as": "WEB-121"
+    },
+    {
+      "id": "WEB-158",
+      "level": "servicio",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/tecnologia-del-hormigon/control-de-hormigones-en-obra",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/tecnologia-del-hormigon/control-de-hormigones-en-obra",
+      "parent_id": "WEB-036",
+      "title": "Control de hormigones en obra",
+      "description": [
+        "Ensayos para determinar la temperatura de colocación, docilidad y resistencia del hormigón de acuerdo a los requisitos especificados en la NCh170:2016 mediante la extracción de muestras y confección de probetas de hormigón fresco en obra."
+      ],
+      "offerings": [
+        "Extracción de muestras de hormigón fresco en obra",
+        "Determinación de resistencia a la compresión de probetas cilíndricas o cúbicas",
+        "Determinación de tracción por flexión de probetas prismáticas",
+        "Docilidad del hormigón fresco",
+        "Ensayos de permeabilidad",
+        "Madurez del hormigón",
+        "Densidad aparente del hormigón fresco",
+        "Contenido de aire del hormigón fresco",
+        "Control de temperatura del hormigón",
+        "Evaluación estadística del hormigón"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "8f5f6d0e6932b49f",
+      "same_text_as": "WEB-122"
+    },
+    {
+      "id": "WEB-159",
+      "level": "servicio",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/tecnologia-del-hormigon/ensayos-especiales",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/tecnologia-del-hormigon/ensayos-especiales",
+      "parent_id": "WEB-036",
+      "title": "Ensayos especiales",
+      "description": [
+        "Ensayos necesarios para evaluar y caracterizar los materiales que son utilizados en la confección de hormigones. En esta área se desarrollan ensayos rutinarios del control de calidad de las materias primas para la confección de hormigón y ensayos específicos de materiales para confeccionar hormigones especiales."
+      ],
+      "offerings": [
+        "Caracterización de cementos",
+        "Caracterización de adhesivos",
+        "Caracterización de adiciones cementicias",
+        "Caracterización de aditivos",
+        "Clasificación de aditivos para hormigón",
+        "Control de áridos para confección de hormigones",
+        "Ensayos de agua de amasado",
+        "Ensayos de aguas agresivas al hormigón",
+        "Ensayos especiales a cementos",
+        "Evaluación de la reactividad de áridos",
+        "Hormigones de prueba",
+        "Morteros de prueba"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "d2a7e0a2934d58ea",
+      "same_text_as": "WEB-124"
+    },
+    {
+      "id": "WEB-160",
+      "level": "servicio",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/tecnologia-del-hormigon/prospeccion-de-aridos",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/tecnologia-del-hormigon/prospeccion-de-aridos",
+      "parent_id": "WEB-036",
+      "title": "Prospección de áridos",
+      "description": [
+        "Evaluación de áridos para uso en morteros y hormigones."
+      ],
+      "offerings": [
+        "Evaluación de requisitos normativos para los áridos",
+        "Validación de curva granulométrica óptima para uso en hormigón"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "normativos"
+      ],
+      "content_hash": "338983df51aa59c9",
+      "same_text_as": "WEB-098"
+    },
+    {
+      "id": "WEB-161",
+      "level": "servicio",
+      "path": "/servicios/laboratorios-en-obra-o-fabrica/tecnologia-del-hormigon/tecnologia-del-shotcrete",
+      "url": "https://www.idiem.cl/servicios/laboratorios-en-obra-o-fabrica/tecnologia-del-hormigon/tecnologia-del-shotcrete",
+      "parent_id": "WEB-036",
+      "title": "Tecnología del shotcrete",
+      "description": [
+        "Ensayos de control para hormigón proyectado en obra."
+      ],
+      "offerings": [
+        "Control de resistencia a distintas edades",
+        "Ensayos para edad temprana, menor a 24 horas",
+        "Ensayos de resistencia residual para shotcrete con fibras",
+        "Determinación de contenido de fibras",
+        "Determinación de rebote",
+        "Calificación de equipo de operadores de shotcrete (pitoneros)",
+        "Calibración de bombas de hormigón y aditivo acelerante"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "be47706d2ae1de50",
+      "same_text_as": "WEB-099"
+    },
+    {
+      "id": "WEB-162",
+      "level": "servicio",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/estructuras/ensayos-destructivos-y-no-destructivos-del-hormigon",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/estructuras/ensayos-destructivos-y-no-destructivos-del-hormigon",
+      "parent_id": "WEB-037",
+      "title": "Ensayos destructivos y no destructivos del hormigón",
+      "description": [
+        "Ensayos para determinar propiedades mecánicas del hormigón."
+      ],
+      "offerings": [
+        "Detección de espesor de elementos de hormigón y ubicación de armaduras con Georradar",
+        "Análisis de homogeneidad del hormigón a través de Martillo Schmidt",
+        "Ultrasonido",
+        "Potencial de corrosión de armaduras",
+        "Velocidad de corrosión de armaduras"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "f7406ae452d7b5f0",
+      "same_text_as": "WEB-110"
+    },
+    {
+      "id": "WEB-163",
+      "level": "servicio",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/estructuras/instrumentacion-estructural-para-diagnostico-y-rehabilitacion",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/estructuras/instrumentacion-estructural-para-diagnostico-y-rehabilitacion",
+      "parent_id": "WEB-037",
+      "title": "Instrumentación estructural para diagnóstico y rehabilitación",
+      "description": [
+        "Monitoreo instrumental de estructuras para el análisis de tensiones, deformaciones y vibraciones operacionales y ambientales"
+      ],
+      "offerings": [
+        "Monitorio de tensiones operacionales, mediante strain gauge (esfuerzos estáticos y dinámicos)",
+        "Monitoreo de vibraciones operacionales, mediante acelerómetros (frecuencia y modos de vibrar)",
+        "Monitoreo de vibraciones ambientales, mediante acelerómetro (efecto de vibraciones de equipos rotatorios y tránsito en personas y estructuras)",
+        "Monitoreo de condiciones, de equipos rotatorios mediante acelerómetros (alineación)"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "d3afdef205c94c9d",
+      "same_text_as": "WEB-059"
+    },
+    {
+      "id": "WEB-164",
+      "level": "servicio",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/estructuras/levantamiento-de-condiciones-existentes-con-laser-3d",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/estructuras/levantamiento-de-condiciones-existentes-con-laser-3d",
+      "parent_id": "WEB-037",
+      "title": "Levantamiento de condiciones existentes con láser 3D",
+      "description": [
+        "El levantamiento de condiciones existentes o Modelo 3D se realiza mediante escáner láser y DRON. El servicio que permite elaborar, a partir de la nube de puntos de estructuras as-built, planimetría arquitectónica, medición de verticalidad, deformaciones, soluciones de levantamiento, reparación y/o rehabilitación de instalaciones."
+      ],
+      "offerings": [
+        "Levantamiento láser 3D",
+        "Levantamiento perfiles de túneles",
+        "Modelación BIM de túneles y modelación numérica Malla TIN"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "af05c44d160d2ae7",
+      "same_text_as": "WEB-060"
+    },
+    {
+      "id": "WEB-165",
+      "level": "servicio",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/estructuras/peritajes-de-estructuras-y-componentes-mecanicos",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/estructuras/peritajes-de-estructuras-y-componentes-mecanicos",
+      "parent_id": "WEB-037",
+      "title": "Peritajes de estructuras y componentes mecánicos",
+      "description": [
+        "Peritajes con el objeto de encontrar la causa más probable de falla de elementos estructurales de acero y componentes mecánicos de equipamiento industrial. Se realizan estudios de antecedentes, inspección técnica, caracterización de material y cálculo de solicitaciones."
+      ],
+      "offerings": [
+        "Peritaje de estructuras mecánicas",
+        "Análisis de fallas"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "c40ddcdd52828ba0"
+    },
+    {
+      "id": "WEB-166",
+      "level": "servicio",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/estructuras/peritajes-estructurales",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/estructuras/peritajes-estructurales",
+      "parent_id": "WEB-037",
+      "title": "Peritajes estructurales",
+      "description": [
+        "Estudios que permiten determinar las causas más probables y/o los factores que contribuyen a la falla del material, producto, componente y/o estructura."
+      ],
+      "offerings": [
+        "Análisis de falla",
+        "Análisis estructural avanzado",
+        "Estudios de amenazas sísmicas",
+        "Levantamiento geométrico as-built de estructuras",
+        "Peritajes de estructuras mecánicas",
+        "Peritajes y estudios de estructuras con anomalías y fallas"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "d41a5014b1e047a6"
+    },
+    {
+      "id": "WEB-167",
+      "level": "servicio",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/estructuras/salud-y-monitoreo-estructural",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/estructuras/salud-y-monitoreo-estructural",
+      "parent_id": "WEB-037",
+      "title": "Salud y monitoreo estructural",
+      "description": [
+        "El Monitoreo de Salud Estructural (SHM) es un área donde el objetivo principal es la verificación del estado o la salud de las estructuras con el fin de asegurar un desempeño adecuado y ahorro de costos de mantenimiento mediante una red de sensores adjunta a la estructura, monitoreo continuo y algoritmos."
+      ],
+      "offerings": [
+        "Monitoreo instrumental permanente en estructuras"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "2e4ba11b4c4a6dad",
+      "same_text_as": "WEB-062"
+    },
+    {
+      "id": "WEB-168",
+      "level": "servicio",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/geotecnia-y-mecanica-de-suelos/peritajes-geotecnicos",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/geotecnia-y-mecanica-de-suelos/peritajes-geotecnicos",
+      "parent_id": "WEB-038",
+      "title": "Peritajes geotécnicos",
+      "description": [
+        "Servicios de ingeniería geotécnica y geomensura, que permiten conocer las condiciones geológicas, así como las propiedades físico–mecánicas del suelo, necesarias para el cálculo y realización de proyectos."
+      ],
+      "offerings": [
+        "Caracterización geotécnica",
+        "Certificación de volúmenes",
+        "Control de inclinación en taludes y pilares (Inclinómetro)",
+        "Control de verticalidad",
+        "Análisis de estabilidad de taludes",
+        "Estudios de mecánica de suelos",
+        "Fundaciones superficiales y profundas",
+        "Geodesia satelital",
+        "Modelación numérica",
+        "Monitoreo de desplazamiento de estructuras",
+        "Nivelaciones de precisión sub-milimétrica",
+        "Obras de contención de tierra",
+        "Topografía clásica"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "Certificación"
+      ],
+      "content_hash": "0f990efa6d4efa70"
+    },
+    {
+      "id": "WEB-169",
+      "level": "servicio",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/ingenieria-contra-incendios/peritajes-de-causa-y-origen-de-incendios",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/ingenieria-contra-incendios/peritajes-de-causa-y-origen-de-incendios",
+      "parent_id": "WEB-039",
+      "title": "Peritajes de causa y origen de incendios",
+      "description": [
+        "La investigación de incendios y explosiones se basa en la norma NFPA 921 y determina causa, origen, formas de propagación del incendio u otras aristas asociadas a estos siniestros. Los peritajes establecen el nivel de daño en una estructura, su eventual recuperabilidad, o necesidad de reparación o demolición. Los objetivos específicos del estudio son determinar el origen probable del incendio y determinar los factores probables que incidieron en la causa."
+      ],
+      "offerings": [
+        "Peritajes de causa y origen de incendios"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [
+        "norma"
+      ],
+      "content_hash": "d19195a550e3175a"
+    },
+    {
+      "id": "WEB-170",
+      "level": "servicio",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/ingenieria-contractual/estudios-de-cronogramas-y-analisis-de-retrasos",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/ingenieria-contractual/estudios-de-cronogramas-y-analisis-de-retrasos",
+      "parent_id": "WEB-040",
+      "title": "Estudios de cronogramas y análisis de retrasos",
+      "description": [
+        "Análisis técnico al programa de obra en relación a los hechos controversiales. Estas asesorías consideran el análisis y cuantificación del impacto en plazo del programa, utilizando metodologías de Delay Analysis."
+      ],
+      "offerings": [
+        "Análisis de retrasos al programa de obra y su impacto en el plazo de la obra",
+        "Análisis al programa por alteraciones en la secuencia constructiva y su impacto en plazo"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "a9c6249e4e29cd11",
+      "same_text_as": "WEB-046"
+    },
+    {
+      "id": "WEB-171",
+      "level": "servicio",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/ingenieria-contractual/estudios-de-impacto-en-costo",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/ingenieria-contractual/estudios-de-impacto-en-costo",
+      "parent_id": "WEB-040",
+      "title": "Estudios de impacto en costo",
+      "description": [
+        "Análisis técnico de costos directos o indirectos, en relación a los hechos controversiales. Estas asesorías consideran el análisis y cuantificación de los mayores costos incurridos durante la ejecución de la obra."
+      ],
+      "offerings": [
+        "Análisis y cuantificación de sobrecostos directos e indirectos",
+        "Revisión de presupuestos de obras adicionales y/o extraordinarias",
+        "Análisis de compensación de gastos generales y/o utilidades por aumentos o disminuciones de obra",
+        "Cuantificación de multas",
+        "Cálculos de costos financieros"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "6a8e6dfc9a771aff",
+      "same_text_as": "WEB-047"
+    },
+    {
+      "id": "WEB-172",
+      "level": "servicio",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/ingenieria-contractual/estudios-de-perdida-de-productividad",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/ingenieria-contractual/estudios-de-perdida-de-productividad",
+      "parent_id": "WEB-040",
+      "title": "Estudios de pérdida de productividad",
+      "description": [
+        "Análisis del incremento de costos en la ejecución de la obra, producto de un cambio de las condiciones iniciales, no atribuibles al Contratista que le generó disminución en los rendimientos en relación a lo ofertado."
+      ],
+      "offerings": [
+        "Análisis forense de la pérdida de productividad"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "be51ad168f3c61b3",
+      "same_text_as": "WEB-048"
+    },
+    {
+      "id": "WEB-173",
+      "level": "servicio",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/ingenieria-contractual/estudios-de-pertinencia-de-situaciones",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/ingenieria-contractual/estudios-de-pertinencia-de-situaciones",
+      "parent_id": "WEB-040",
+      "title": "Estudios de pertinencia de situaciones",
+      "description": [
+        "Análisis contractual de la obra y de las interferencias o hechos controversiales para determinar si corresponde su compensación en costos y/o plazos de acuerdo con el marco contractual que lo regula."
+      ],
+      "offerings": [
+        "Pertinencia ante variaciones del proyecto",
+        "Pertinencia de obras adicionales y/o extraordinarias",
+        "Pertinencia de aplicabilidad de multas",
+        "Pertinencia de aplicabilidad de Término anticipado de contrato"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "3826c3c58d8acc9f",
+      "same_text_as": "WEB-049"
+    },
+    {
+      "id": "WEB-174",
+      "level": "servicio",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/ingenieria-contractual/estudios-tecnico-contractuales",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/ingenieria-contractual/estudios-tecnico-contractuales",
+      "parent_id": "WEB-040",
+      "title": "Estudios técnico-contractuales",
+      "description": [
+        "Análisis técnico del cumplimiento de las obligaciones de las partes, de acuerdo al marco contractual, con el objeto de analizar los hechos o situaciones controversiales que se han generado durante el transcurso de la obra y que pueden tener un impacto en los costos, plazos de la obra y pérdidas de productividad si correspondiere."
+      ],
+      "offerings": [
+        "Estudios de pertinencia de situaciones",
+        "Estudios de impacto en costo",
+        "Estudios de impacto en plazo",
+        "Estudios de pérdida de productividad"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "9284c1496bc02f98",
+      "same_text_as": "WEB-050"
+    },
+    {
+      "id": "WEB-175",
+      "level": "servicio",
+      "path": "/servicios/peritajes-y-analisis-de-fallas/ingenieria-contractual/peritajes-tecnico-contractuales",
+      "url": "https://www.idiem.cl/servicios/peritajes-y-analisis-de-fallas/ingenieria-contractual/peritajes-tecnico-contractuales",
+      "parent_id": "WEB-040",
+      "title": "Peritajes técnico-contractuales",
+      "description": [
+        "Peritaje solicitado en el marco de un juicio civil o arbitral, requerido por las Partes o por el Juez/Arbitro. Este servicio consiste en analizar y dar respuesta a los puntos de prueba requeridos, con base en la información presentada por las partes."
+      ],
+      "offerings": [
+        "Peritaje técnico contractual"
+      ],
+      "class": "VERIFY",
+      "promo_flags": [],
+      "claim_flags": [],
+      "content_hash": "3ec0ced00db3f87a",
+      "same_text_as": "WEB-051"
+    }
+  ]
+}

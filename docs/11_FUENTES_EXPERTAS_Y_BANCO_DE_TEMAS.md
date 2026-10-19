@@ -159,3 +159,34 @@ truncadas). Siguen pendientes por tema: incidentes con nombre (VERIFY) y cifras 
    (SAFE/VERIFY/INTERNAL/DO_NOT_PUBLISH).
 3. Proponer temas `TOP-0NN` enlazados a afirmaciones y, si aplica, a `knowledge_id` de 2A.2.
 4. Actualizar esta vista y correr `pytest tests/test_topic_bank.py`.
+
+## Servicios publicados en www.idiem.cl (`WEB-*`, extraídos el 19-10-2026)
+
+Registro en `config/topic_bank/web_services.json`, con el texto **literal** del sitio
+(https://www.idiem.cl/servicios) en tres niveles: categoría → área → servicio específico (descripción
+y prestaciones de "¿Qué tipo de servicio necesitas?"). Total: 7 categorías, 33 áreas, 135 servicios
+(el sitio repite áreas bajo varias categorías: 70 entradas tienen `same_text_as`; únicas: 105).
+
+| Categoría | Título | Áreas | Servicios |
+|---|---|---|---|
+| `WEB-001` | Asesoría contractual en controversias y claims | 1 | 11 |
+| `WEB-002` | Asesorías y estudios técnicos | 9 | 48 |
+| `WEB-003` | Ensayos de laboratorio | 8 | 28 |
+| `WEB-004` | Geotecnia y Prospecciones | 2 | 6 |
+| `WEB-005` | Inspección técnica de obra | 4 | 12 |
+| `WEB-006` | Laboratorios en obra o fábrica | 5 | 16 |
+| `WEB-007` | Peritajes y análisis de fallas | 4 | 14 |
+
+Reglas de uso:
+
+- **Todo `WEB-*` es VERIFY (MKT, 19-10-2026).** Sirve para entender el alcance de un servicio y buscar
+  ángulos; solo se cita como `auxiliary_id` (`WEB-xxx`) cuando MKT lo valida (`validated_by`,
+  `validated_on` en el JSON). 2A.2 sigue mandando: el sitio no crea capacidades técnicas nuevas ni
+  asigna célula (la decide `config/cell_rules.json`; Transporte sigue en `CONTENT_GAP`).
+- **`promo_flags`** marca superlativos del sitio (p. ej. "la mejor tecnología", "el único triaxial
+  gigante en Chile", "altos estándares"): **no pasan al copy** aunque el servicio esté validado.
+- **`claim_flags`** marca menciones de certificación, acreditación o normas: requieren respaldo en
+  2A.2 o validación puntual antes de afirmarse.
+- **Re-extracción:** `PYTHONPATH=src python -m idiem.web_services`. Conserva los IDs por ruta; si el
+  texto de un servicio cambió, borra su validación y lo devuelve a VERIFY. Correr después
+  `pytest tests/test_web_services.py` y revisar el diff antes de commitear.

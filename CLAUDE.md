@@ -146,3 +146,8 @@ Al planificar cada mes, revisar este banco junto a 2A.2. Capacidades IDIEM de la
 MKT (`validated_by`) se usan como auxiliary_id; incidentes con nombre (VERIFY) y cifras de proyectos
 (INTERNAL) no van al copy sin validación. **Nunca nombrar ni citar a los expositores ni las charlas de
 origen**: el foco es el tema.
+
+Servicios del sitio web (desde 19-10-2026): `config/topic_bank/web_services.json` (`WEB-*`, texto literal
+de https://www.idiem.cl/servicios; se re-extrae con `python -m idiem.web_services`). **Todos son VERIFY**:
+solo con `validated_by` de MKT se citan como auxiliary_id; los `promo_flags` (superlativos) nunca van al
+copy y los `claim_flags` (certificaciones/normas) necesitan respaldo. No asignan célula ni crean capacidades.
