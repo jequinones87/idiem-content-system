@@ -211,3 +211,8 @@ capacidades técnicas (la célula ICT no tiene conocimiento activo).
   sobre IDIEM (GR-04); la fuente de la lista (Stanford University y Elsevier) va en la gráfica — confirmada por MKT 15-10.
 - **2026-10-19** — #1 relaves: **el servicio IDIEM es la instrumentación del tranque PARA su monitoreo, no
   el monitoreo.** En copy y gráfica, IDIEM instrumenta/habilita el monitoreo a distancia; nunca "monitoreamos".
+- **2026-10-19** — **Elección de herramienta de video** (ver `CLAUDE.md` § Videos para LinkedIn): carrusel/post
+  aprobado → skill `video-carrusel-idiem` (sin cambios); formatos que esa skill no cubre (video grabado,
+  subtítulos, cifras/mapas animados, 9:16 o 16:9) → Remotion (repo privado `motion-graphics-ia`). Prueba:
+  el carrusel SIM portado a Remotion difiere < 0,1 % de píxeles del pipeline oficial. Remotion no se
+  publica hasta confirmar licencia; primer video de cada formato nuevo pasa por MKT.

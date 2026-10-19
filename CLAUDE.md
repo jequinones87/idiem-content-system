@@ -105,10 +105,37 @@ de sept 2026 — octubre tuvo CTA `contact` en 9/12 posts y ~4 arquetipos.
 - Memoria única = archivo mensual consolidado (no memorias paralelas).
 - Octubre 2026 cerrado manualmente: **no regenerar**.
 
-## Videos de carrusel (desde octubre 2026)
+## Videos para LinkedIn: qué herramienta usar (desde octubre 2026)
 
-Todo video de un carrusel/post se hace con la skill `.claude/skills/video-carrusel-idiem/` (leer su
-SKILL.md y seguir su pipeline y QA sin improvisar el método). Resumen en `docs/09_EDITORIAL_MEMORY.md`.
+Antes de hacer cualquier video, decidir la herramienta con esta regla (en orden; la primera que aplica manda):
+
+1. **Carrusel o post aprobado → video** (portada + láminas + cierre, 1080×1080): **siempre** la skill
+   `.claude/skills/video-carrusel-idiem/` (leer su SKILL.md y seguir su pipeline y QA sin improvisar el
+   método). Es el método aprobado por MKT. Remotion **no** se usa para esto, aunque pueda replicarlo.
+2. **Formatos que esa skill no cubre** → **Remotion** (repo privado `jequinones87/motion-graphics-ia`,
+   skills oficiales en `.claude/skills/remotion-*`; prueba de referencia en `idiem-sim/`). Si la sesión
+   no tiene ese repo, agregarlo (en sesiones cloud: herramienta `add_repo`, owner `jequinones87`,
+   repo `motion-graphics-ia`), clonarlo y leer sus skills antes de empezar. Úsalo para:
+   - video grabado (entrevistas, clips de faena o de laboratorio) con cortes, zócalos o intro/cierre de marca;
+   - subtítulos sincronizados con voz;
+   - cifras o gráficos animados, mapas de proyectos;
+   - formatos distintos de 1:1 (vertical 9:16, horizontal 16:9).
+3. **No calza en ninguno, o hay duda** → no elegir: preguntar a MKT (fail closed).
+
+Condiciones para usar Remotion (si falta una, el video queda en `DRAFT` y se informa el bloqueo):
+
+- **Licencia:** confirmar que IDIEM califica para la licencia gratuita de Remotion (persona natural,
+  empresa con fines de lucro de hasta 3 empleados u organización sin fines de lucro) o que existe licencia
+  de empresa. Mientras no se confirme, solo uso de evaluación: no publicar.
+- **Primer video de cada formato nuevo** requiere aprobación de MKT antes de repetirlo.
+- Rigen las mismas reglas de marca y de hechos que en la skill de carrusel: textos aprobados literales,
+  Montserrat incrustada, logo vectorial oficial, movimiento sobrio, sin IA generativa de video, render
+  cuadro a cuadro y QA visual antes de entregar. Lo que se diga o escriba en el video traza a
+  `knowledge_id`/`auxiliary_id` igual que un post.
+- Entrevistas: pendiente definir con MKT las reglas para lo que se dice en cámara; hasta entonces no se
+  producen.
+
+Resumen en `docs/09_EDITORIAL_MEMORY.md`.
 
 ## Fuentes expertas y banco de temas (desde octubre 2026)
 
