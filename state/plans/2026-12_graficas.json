@@ -8,25 +8,30 @@
       "photo": {
         "file": "p01.jpg",
         "source": "library",
-        "id": "PHO-0070",
-        "detalle": "profesional IDIEM inspeccionando un edificio dañado por sismo",
-        "drive": "https://drive.google.com/file/d/1pJtrYLgwbDiEvI7js8Fu2kQ-NIOMa47E/view",
-        "pos": "62% 45%"
+        "id": "PHO-0082",
+        "detalle": "construcción de hospital (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/1xVBaAfTdTCKZDRoHq-Ux0PvstaVG6XAD/view",
+        "pos": "62% 50%"
       },
       "side": "left",
       "svc": "Diagnóstico estructural hospitalario",
       "msg": "Que resista no basta:<br>que siga operando.",
       "base": "Hospitales · <b>diagnósticos estructurales y revisiones sísmicas</b>",
       "created": "02-12-2026",
-      "hist": []
+      "hist": [
+        {
+          "date": "19-10-2026",
+          "summary": "Foto → construccion_hospital_queilen (pedido MKT). Ya usada en sep–nov: se usa por decisión de MKT."
+        }
+      ]
     },
     "2": {
       "photo": {
         "file": "p02.jpg",
         "source": "library",
-        "id": "PHO-0103",
-        "detalle": "manejo de ripios en faena minera, vista aérea",
-        "drive": "https://drive.google.com/file/d/1cuKpb64RkZncnK0FFF-GjbzzJ_tMqRRX/view",
+        "id": "PHO-0054",
+        "detalle": "faena minera a rajo abierto (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/1k47H8j5hCCTS2wAT4NEIz2sIjB6qULNf/view",
         "pos": "50% 50%"
       },
       "carousel": {
@@ -61,23 +66,33 @@
         }
       },
       "created": "02-12-2026",
-      "hist": []
+      "hist": [
+        {
+          "date": "19-10-2026",
+          "summary": "Foto → generico_faena_minera (pedido MKT). Ya usada en sep–nov: se usa por decisión de MKT."
+        }
+      ]
     },
     "3": {
       "photo": {
         "file": "p03.jpg",
         "source": "library",
-        "id": "PHO-0012",
-        "detalle": "inspección de domo minero con escala de acceso",
-        "drive": "https://drive.google.com/file/d/16uGyWvnrpDdzaDOFCtjllg2MaaeK_XSd/view",
-        "pos": "40% 40%"
+        "id": "PHO-0103",
+        "detalle": "manejo de ripios en faena minera, vista aérea (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/1cuKpb64RkZncnK0FFF-GjbzzJ_tMqRRX/view",
+        "pos": "40% 50%"
       },
       "side": "right",
       "svc": "Integridad estructural minera",
       "msg": "Lo que sostiene<br>la operación.",
       "base": "Chancadores, molinos y correas · <b>gestión de vulnerabilidad e integridad</b>",
       "created": "02-12-2026",
-      "hist": []
+      "hist": [
+        {
+          "date": "19-10-2026",
+          "summary": "Foto → geotecnia_Manejo_de_Ripios_Mineria (pedido MKT)."
+        }
+      ]
     },
     "4": {
       "photo": {
@@ -126,7 +141,23 @@
       },
       "flag": "VERIFY: WEB-001 'imparcial e independiente' y WEB-042 'plazos/costos' (escena 4)",
       "created": "02-12-2026",
-      "hist": []
+      "hist": [
+        {
+          "date": "19-10-2026",
+          "summary": "Video MP4 producido con Remotion (38 s, 1080×1080, sin música): versión dinámica del guion (pedido MKT). QA técnico y visual OK."
+        },
+        {
+          "date": "19-10-2026",
+          "summary": "Pedido MKT: video dinámico y atractivo."
+        }
+      ],
+      "video": {
+        "file": "video/p04_controversias.mp4",
+        "published": "media/p04_controversias.mp4",
+        "seconds": 38.0,
+        "how": "motion graphics con Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-controversias</code>): línea de tiempo que se quiebra, dos versiones que chocan, evidencia que se ordena y cierre de marca; textos literales del guion",
+        "music": "sin música (no solicitada) · primer video de este formato: requiere aprobación de MKT antes de repetirlo"
+      }
     },
     "5": {
       "photo": {
@@ -329,17 +360,22 @@
       "photo": {
         "file": "p12.jpg",
         "source": "library",
-        "id": "PHO-0007",
-        "detalle": "inspección estructural de un muro de hormigón",
-        "drive": "https://drive.google.com/file/d/1ik65YPoHVmWAleF2Ujn8W0VYgIT9YwFw/view",
-        "pos": "35% 45%"
+        "id": "hospital_chiloe",
+        "detalle": "hospital, patio interior (foto elegida por MKT; aún no registrada en photo_manifest)",
+        "drive": "https://drive.google.com/file/d/1cadhrpC3qx3LMASsiNRaZB9UDRjFUIh8/view",
+        "pos": "50% 60%"
       },
       "side": "right",
       "svc": "Vulnerabilidad hospitalaria",
       "msg": "Un hospital<br>también envejece.",
       "base": "Infraestructura de salud · <b>diagnósticos estructurales y propuestas de refuerzo</b>",
       "created": "02-12-2026",
-      "hist": []
+      "hist": [
+        {
+          "date": "19-10-2026",
+          "summary": "Foto → hospital_chiloe (pedido MKT)."
+        }
+      ]
     },
     "13": {
       "photo": {
@@ -362,12 +398,12 @@
     },
     "14": {
       "photo": {
-        "file": "p14.jpg",
+        "file": "p14_video.jpg",
         "source": "library",
-        "id": "PHO-0072",
-        "detalle": "profesional IDIEM en terreno (Isla de Pascua)",
-        "drive": "https://drive.google.com/file/d/1iLwIm4TDYkqk4vO40Kbzn7ukKFhmbz8C/view",
-        "pos": "55% 45%"
+        "id": "Gemini_Generated_Image_kjtb6qkjtb6qkjtb",
+        "detalle": "árbol de Navidad, regalos y casco IDIEM — imagen generada con IA (elegida por MKT) · recorte para que el título no quede sobre el casco",
+        "drive": "https://drive.google.com/file/d/1oSbaNA3CRCZ1TpRj6sylgdv83mEOtt7s/view",
+        "pos": "50% 50%"
       },
       "carousel": {
         "portada": {
@@ -397,7 +433,24 @@
         "seconds": 24
       },
       "created": "02-12-2026",
-      "hist": []
+      "hist": [
+        {
+          "date": "19-10-2026",
+          "summary": "Video MP4 producido (22 s, 1080×1080, sin música) con luces que titilan y destellos (pedido MKT: dinámico y atractivo). QA técnico y visual OK."
+        },
+        {
+          "date": "19-10-2026",
+          "summary": "Foto → imagen navideña elegida por MKT (generada con IA, no foto de librería). Video dinámico y atractivo (pedido MKT)."
+        }
+      ],
+      "video": {
+        "file": "video/p14_navidad.mp4",
+        "published": "media/p14_navidad.mp4",
+        "preview_published": "media/p14_navidad_preview.html",
+        "seconds": 22.0,
+        "how": "skill <code>video-carrusel-idiem</code> (config <code>2026-12_p14_navidad.json</code>) con capa festiva nueva: luces del árbol que titilan y destellos dorados que suben",
+        "music": "sin música (no solicitada; se puede agregar con la skill y requiere aprobación auditiva)"
+      }
     },
     "15": {
       "photo": {
@@ -409,13 +462,18 @@
         "pos": "50% 55%"
       },
       "special": {
-        "kicker": "AÑO NUEVO 2027",
+        "kicker": "¡FELIZ AÑO NUEVO!",
         "title": "Gracias por<br>construir <span class=\"fpred\">con nosotros</span>.",
         "sub": "Ciencia e ingeniería al desarrollo de la infraestructura del país."
       },
       "trace": "Saludo institucional — <strong>no traza a knowledge_id</strong>; mensaje validado (ciencia e ingeniería al desarrollo de la infraestructura del país).",
       "created": "02-12-2026",
-      "hist": []
+      "hist": [
+        {
+          "date": "19-10-2026",
+          "summary": "Texto «AÑO NUEVO 2027» → «¡Feliz año nuevo!» (pedido MKT)."
+        }
+      ]
     }
   }
 }

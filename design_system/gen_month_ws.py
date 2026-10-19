@@ -251,16 +251,17 @@ def card(it: dict, uris: list[str], applied: str) -> str:
         trace += (f'<div class="tr"><span class="k">Verificar</span><span class="v">'
                   f'<span class="pending">⚠ {G.esc(flag)}</span></span></div>')
     trace += f'<div class="tr"><span class="k">Foto</span><span class="v">{foto}</span></div>'
-    vp = g.get("video_plan")  # video aún por producir: la tarjeta muestra el guion/carrusel base
+    vp = None if g.get("video") else g.get("video_plan")  # por producir: la tarjeta muestra el guion/carrusel base
     if vp:
         fmt_label = f'VIDEO · por producir (~{vp["seconds"]} s)'
         trace += (f'<div class="tr"><span class="k">Video</span><span class="v">MP4 1080×1080 · {G.esc(vp["tool"])}'
                   f'<br><span class="pending">{G.esc(vp["state"])}</span></span></div>')
     if g.get("video"):
         v = g["video"]
+        how = v.get("how") or ("mismos textos literales de las láminas, reconstruidos en capas "
+                               "con la skill <code>video-carrusel-idiem</code>")
         trace += (f'<div class="tr"><span class="k">Video</span><span class="v">MP4 1080×1080 · '
-                  f'{v["seconds"]:.1f} s · mismos textos literales de las láminas, reconstruidos en capas '
-                  f'con la skill <code>video-carrusel-idiem</code> · {G.esc(v["music"])}</span></div>')
+                  f'{v["seconds"]:.1f} s · {how} · {G.esc(v["music"])}</span></div>')
 
     video = g.get("video")  # formato de prueba: carrusel publicado como video MP4
     vtag = img_style = vbtn = ""
@@ -270,7 +271,7 @@ def card(it: dict, uris: list[str], applied: str) -> str:
                 f'src="{G.esc(video["published"])}"></video>')
         img_style = ' style="display:none"'
         vbtn = (f'<button class="btn ghost mp4" type="button" data-src="{G.esc(video["published"])}" '
-                f'data-name="idiem_{MESES[int(it["month"].split("-")[1]) - 1][:3]}_post{it["key"]}_musica.mp4">Descargar MP4</button>')
+                f'data-name="idiem_{MESES[int(it["month"].split("-")[1]) - 1][:3]}_post{it["key"]}{"_musica" if video.get("silent_published") else ""}.mp4">Descargar MP4</button>')
         if video.get("silent_published"):
             vbtn += (f'<button class="btn ghost mp4" type="button" data-src="{G.esc(video["silent_published"])}" '
                      f'data-name="idiem_{MESES[int(it["month"].split("-")[1]) - 1][:3]}_post{it["key"]}.mp4">MP4 sin música</button>')
@@ -318,7 +319,7 @@ def card(it: dict, uris: list[str], applied: str) -> str:
     <div class="chead"><span class="seq">{label}</span><span class="badge">{G.esc(badge)}</span>
       <span class="badge ghost">DRAFT</span><span class="sub">{G.esc(sub)}</span></div>
 
-    <label class="lab">Texto del post <span class="hint">— editable, se guarda en tu navegador</span>
+    <label class="lab">Texto del post <span class="hint">— editable, se sincroniza con el equipo</span>
       <span class="cc" data-cc>0 / 900</span>
       <button class="revert" type="button" data-field="copy" hidden>↺ volver a lo publicado</button></label>
     <textarea class="copy" data-cid="{cid}" spellcheck="false">{G.esc(it["copy"])}</textarea>

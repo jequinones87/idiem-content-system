@@ -461,3 +461,10 @@ programado al 19-10-2026).
 - **2026-10-19** — **Formato de entrega (usuario):** cada mes lleva **su propio artefacto workstation**; los posts
   nunca se entregan como texto en el chat. Diciembre: https://claude.ai/artifact/LQbvx2h518ZtzvDppGHc1m
   (generador `design_system/gen_month_ws.py`, ahora con varias piezas extra por mes y videos por producir).
+- **2026-10-19** — Ronda MKT diciembre (workstation): fotos #1 `construccion_hospital_queilen`, #2 `generico_faena_minera`,
+  #3 ripios, #12 `hospital_chiloe` (MKT puede reusar fotos de meses previos); #15 «AÑO NUEVO 2027» → «¡Feliz año nuevo!».
+  **Videos dinámicos y atractivos** (pedido MKT): #4 con Remotion (`motion-graphics-ia/idiem-controversias`, 38 s, primer
+  video de ese formato → aprobación MKT) y Navidad con la skill de carrusel + **capa festiva opcional** (`photo.sparkles`:
+  luces que titilan y destellos; solo cuando MKT la pide). Navidad usa una imagen **generada con IA** elegida por MKT: el
+  casco trae un logo "idiem™" que no es el vectorial oficial (pendiente confirmar con MKT).
+
