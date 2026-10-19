@@ -1,0 +1,2030 @@
+{
+ "version": 1,
+ "date": "2026-10-19",
+ "basis": [
+  "data/ 2A.2 (knowledge_items, auxiliary_evidence, reserva)",
+  "data/ext_2A3 (enrichment EXT-*, overrides OVR-*)",
+  "docs/09_EDITORIAL_MEMORY.md"
+ ],
+ "rules": [
+  "2A.2 prevalece (MKT 19-10-2026): se ha ido corrigiendo y validando con cada post. Si un servicio tiene evidencia, el copy usa el texto y la política del knowledge_id/EXT/AUX; nunca el texto del sitio.",
+  "Células: las de servicios respaldados salen de su evidencia 2A.2. Para lo nuevo, la célula es solo una propuesta [Inferencia] según config/cell_rules.json y la decide MKT al validar; nunca se mueve conocimiento entre células para cubrir cuota.",
+  "Todo lo que aporta el sitio (new_scope, servicios NUEVO/PARCIAL/SOLO_RESERVA, detalle de prestaciones) es VERIFY y está disponible para planificar y redactar, citado como WEB-xxx marcado VERIFY. Se valida cuando MKT aprueba el post que lo usa o corrige su información (MKT 19-10-2026).",
+  "Reserva 2A.2 (R0xxx): evidencia de brochure fuera de las células priorizadas; respeta su production_policy (WITH_MATIZ, USE_ONLY_WITH_AUDIT_CORRECTION, BLOCKED) aunque MKT asigne célula.",
+  "La memoria editorial manda sobre el sitio: formulaciones (soldadura, HDPE, Green Hospital, D.S. 38/2011), casos sensibles y restricciones sobre knowledge_id (p. ej. KB-IOM-019/020). Lo que el sitio aporta sobre esos temas entra en VERIFY, no como respaldo 2A.2.",
+  "Superlativos y rankings del sitio (promo_flags) no pasan al copy en ningún estado."
+ ],
+ "statuses": {
+  "RESPALDADO": "El núcleo del servicio ya está en una célula 2A.2/2A.3. Usar el knowledge_id; el sitio solo agrega detalle VERIFY.",
+  "PARCIAL": "2A.2 cubre parte; new_scope describe lo que agrega el sitio (VERIFY).",
+  "SOLO_RESERVA": "Hay evidencia 2A.2 pero en reserva (fuera de células priorizadas): MKT decide célula y se respeta la política de la reserva.",
+  "NUEVO": "Sin respaldo en 2A.2. Contenido nuevo a validar por MKT antes de usarse.",
+  "BLOQUEADO": "La memoria editorial o 2A.2 bloquea su uso; el sitio no lo desbloquea."
+ },
+ "entries": [
+  {
+   "web_id": "WEB-001",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-006",
+    "KB-IPR-010",
+    "KB-IPR-011",
+    "KB-IPR-012",
+    "KB-IPR-013",
+    "KB-IPR-014",
+    "KB-IHA-002",
+    "KB-IHA-003",
+    "KB-IHA-004",
+    "KB-IHA-005",
+    "KB-IHA-006",
+    "KB-IOM-021",
+    "KB-IOM-028",
+    "KB-IOM-038",
+    "KB-IOM-039",
+    "KB-IOM-040",
+    "KB-IOM-041",
+    "KB-IOM-042",
+    "EXT-0090",
+    "EXT-0091",
+    "EXT-0092"
+   ],
+   "reserve": [
+    "R0030",
+    "R0032"
+   ],
+   "related": [],
+   "new_scope": "Modalidades contractuales (EP, EPC, EPCM, BOT…) y detalle de verificaciones ante TAC.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-002",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0081",
+    "KB-IPR-009",
+    "KB-IPR-019",
+    "EXT-0110",
+    "EXT-0082",
+    "KB-IOM-004",
+    "KB-IOM-012"
+   ],
+   "reserve": [
+    "R0002",
+    "R0003",
+    "R0009",
+    "R0033"
+   ],
+   "related": [
+    "AUX-001"
+   ],
+   "new_scope": "Mitigación de riesgos naturales; revisión integral de especialidades (eléctrica, sanitaria, ascensores, climatización); activo digital sensorizado con alertas.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-003",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-IPR-024",
+    "EXT-0115",
+    "EXT-0116",
+    "EXT-0117",
+    "EXT-0118"
+   ],
+   "reserve": [
+    "R0008",
+    "R0017"
+   ],
+   "related": [],
+   "new_scope": "Certificación de cementos, aceros y hormigones como actividad general.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": [
+    "«gran parte de los insumos» es promocional (promo_flags)."
+   ]
+  },
+  {
+   "web_id": "WEB-004",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0082",
+    "KB-LMD-021",
+    "KB-LMD-006",
+    "KB-LMD-007",
+    "KB-LMD-008",
+    "KB-LMD-009"
+   ],
+   "reserve": [
+    "R0001"
+   ],
+   "related": [
+    "AUX-026"
+   ],
+   "new_scope": "Modelamiento numérico de obras mineras (estático y sísmico); ensayos geotécnicos especiales para diseño de tranques de relave.",
+   "proposed_cells": [
+    "INFRA OPERACIÓN MINERA",
+    "LAB MINERO DIGITAL"
+   ],
+   "cell_condition": "En minería decide la naturaleza del servicio: ensayo/inspección/control → LMD; integridad/diagnóstico/ingeniería → IOM.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-005",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-IPR-001"
+   ],
+   "reserve": [],
+   "related": [
+    "AUX-005"
+   ],
+   "new_scope": "ITO integral con plataforma virtual y firma digital; control técnico-administrativo (costos, ruta crítica, estados de pago); inspección en planta de prefabricados.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. Si se aplica a infraestructura de salud, va a IHA (prioridad sobre IPR).",
+   "conflicts": [
+    "Seguimiento de productividad con KPI: VERIFY (MKT 19-10-2026)."
+   ]
+  },
+  {
+   "web_id": "WEB-006",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-003",
+    "KB-IPR-004",
+    "KB-LMD-001",
+    "KB-LMD-002",
+    "KB-LMD-003",
+    "EXT-0060",
+    "EXT-0061",
+    "EXT-0062",
+    "EXT-0070"
+   ],
+   "reserve": [
+    "R0005",
+    "R0047"
+   ],
+   "related": [],
+   "new_scope": "Control de shotcrete en túneles mineros.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": [
+    "2A.2: los hormigones no entran en minería por el solo hecho de aplicarse a un proyecto minero. El shotcrete en túneles mineros no se asume LMD/IOM sin decisión de MKT."
+   ]
+  },
+  {
+   "web_id": "WEB-007",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-002",
+    "KB-IPR-022",
+    "KB-IOM-010",
+    "KB-IOM-011",
+    "KB-IOM-043",
+    "EXT-0010"
+   ],
+   "reserve": [
+    "R0026"
+   ],
+   "related": [],
+   "new_scope": "Peritaje de fallas en edificación (losas, revestimientos, instalaciones); método NFPA 921 en incendios.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": [
+    "R0026 se autodefine como «referente nacional»: superlativo, no usar."
+   ]
+  },
+  {
+   "web_id": "WEB-008",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-006",
+    "KB-IPR-010",
+    "KB-IPR-011",
+    "KB-IPR-012",
+    "KB-IPR-013",
+    "KB-IPR-014",
+    "KB-IHA-002",
+    "KB-IHA-003",
+    "KB-IHA-004",
+    "KB-IHA-005",
+    "KB-IHA-006",
+    "KB-IOM-021",
+    "KB-IOM-028",
+    "KB-IOM-038",
+    "KB-IOM-039",
+    "KB-IOM-040",
+    "KB-IOM-041",
+    "KB-IOM-042",
+    "EXT-0090",
+    "EXT-0091",
+    "EXT-0092"
+   ],
+   "reserve": [
+    "R0119"
+   ],
+   "related": [],
+   "new_scope": "Apoyo a árbitros y jueces en todas las etapas (licitación, ejecución, cierre).",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-009",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-IOM-004",
+    "KB-IOM-012",
+    "KB-IOM-013",
+    "KB-IOM-044",
+    "KB-IOM-046",
+    "EXT-0011",
+    "EXT-0082"
+   ],
+   "reserve": [
+    "R0009",
+    "R0021"
+   ],
+   "related": [
+    "AUX-007"
+   ],
+   "new_scope": "Control de avance digital de obra.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-010",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-022",
+    "KB-IOM-043",
+    "KB-IOM-044",
+    "KB-IOM-046",
+    "KB-IOM-055",
+    "EXT-0010",
+    "EXT-0011"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": [
+    "«la mejor tecnología» es promocional (promo_flags)."
+   ]
+  },
+  {
+   "web_id": "WEB-011",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-LMD-004",
+    "KB-LMD-005",
+    "KB-LMD-006",
+    "KB-LMD-007",
+    "KB-LMD-008",
+    "KB-LMD-009",
+    "KB-LMD-021",
+    "EXT-0030",
+    "EXT-0031",
+    "EXT-0122",
+    "EXT-0082"
+   ],
+   "reserve": [
+    "R0001"
+   ],
+   "related": [
+    "AUX-026"
+   ],
+   "new_scope": "Asesoría geotécnica para energía e inmobiliario.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": [
+    "«el único triaxial gigante en Chile» es claim bloqueado: KB-LMD-006/009 son USE_TECHNICAL_CORE_BLOCK_CLAIMS y AUX-031 DO_NOT_USE_AS_FACT."
+   ]
+  },
+  {
+   "web_id": "WEB-012",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-019",
+    "KB-IPR-020",
+    "KB-IOM-018",
+    "KB-IOM-026",
+    "EXT-0110",
+    "EXT-0111",
+    "EXT-0112"
+   ],
+   "reserve": [
+    "R0033"
+   ],
+   "related": [],
+   "new_scope": "Alcance a edificación comercial y residencial.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-014",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-IPR-001"
+   ],
+   "reserve": [],
+   "related": [
+    "AUX-005"
+   ],
+   "new_scope": "Inspección de obra del diseño a la operación en edificación y montaje industrial.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. Si se aplica a infraestructura de salud, va a IHA (prioridad sobre IPR).",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-015",
+   "status": "SOLO_RESERVA",
+   "evidence": [],
+   "reserve": [
+    "R0018"
+   ],
+   "related": [
+    "KB-IOM-019",
+    "KB-IOM-020"
+   ],
+   "new_scope": "Índice de productividad, industrialización, acompañamiento y plan de mejoramiento.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL",
+    "INFRA OPERACIÓN MINERA"
+   ],
+   "cell_condition": "La célula la define el proyecto.",
+   "conflicts": [
+    "Productividad: activo en VERIFY (MKT 19-10-2026). Se verifica y corrige cuando aparezca en un post. KB-IOM-019/020 mantienen la restricción de la memoria (05-10-2026): el copy no se apoya en ellos."
+   ]
+  },
+  {
+   "web_id": "WEB-016",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-IPR-009",
+    "KB-IPR-017",
+    "KB-IPR-018",
+    "EXT-0113",
+    "EXT-0114",
+    "KB-IHA-001",
+    "OVR-KB-IHA-001"
+   ],
+   "reserve": [
+    "R0265",
+    "R0266"
+   ],
+   "related": [],
+   "new_scope": "Certificación CVS y CEV; Catálogo Verde; análisis de ciclo de vida (ACV) como asesoría.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. Si se aplica a infraestructura de salud, va a IHA (prioridad sobre IPR).",
+   "conflicts": [
+    "Green Hospital: rige la memoria (certificación propia de IDIEM; no mencionar «Salud sin Daño»)."
+   ]
+  },
+  {
+   "web_id": "WEB-017",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-IOM-017",
+    "KB-IOM-025"
+   ],
+   "reserve": [
+    "R0004",
+    "R0005",
+    "R0006",
+    "R0007",
+    "R0042",
+    "R0043",
+    "R0044",
+    "R0047",
+    "R0048"
+   ],
+   "related": [],
+   "new_scope": "Tecnología del hormigón fuera de minería (asesoría general, prospecciones en terreno).",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": [
+    "2A.2: los hormigones no entran en minería por el solo hecho de aplicarse a un proyecto minero."
+   ]
+  },
+  {
+   "web_id": "WEB-018",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-IOM-027",
+    "KB-LMD-016",
+    "KB-LMD-017",
+    "KB-LMD-018",
+    "KB-LMD-019",
+    "KB-LMD-020",
+    "EXT-0005",
+    "EXT-0050",
+    "EXT-0051"
+   ],
+   "reserve": [
+    "R0017",
+    "R0023",
+    "R0071",
+    "R0072"
+   ],
+   "related": [],
+   "new_scope": "Control de calidad y determinación de propiedades del acero de construcción.",
+   "proposed_cells": [
+    "LAB MINERO DIGITAL",
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "En minería decide la naturaleza del servicio: ensayo/inspección/control → LMD; integridad/diagnóstico/ingeniería → IOM. Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": [
+    "«alta tecnología» y «todo de tipo» son promocionales (promo_flags).",
+    "R0073 (antigüedad NCh203) y R0074 («únicos en Sudamérica») están bloqueados en 2A.2."
+   ]
+  },
+  {
+   "web_id": "WEB-019",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0115",
+    "EXT-0117",
+    "EXT-0118"
+   ],
+   "reserve": [
+    "R0273"
+   ],
+   "related": [],
+   "new_scope": "Acreditación INN por área (prefabricados, incendios, higrotermia); ensayos para MMA, OGUC, MINVU, SERVIU.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": [
+    "Acreditaciones: EXT-0118 es USE_WITH_MATIZ (verificar vigencia); el detalle por área es VERIFY."
+   ]
+  },
+  {
+   "web_id": "WEB-022",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-IPR-019",
+    "KB-IPR-020",
+    "KB-IOM-018",
+    "KB-IOM-026",
+    "EXT-0110",
+    "EXT-0111",
+    "EXT-0112",
+    "EXT-0117"
+   ],
+   "reserve": [
+    "R0268"
+   ],
+   "related": [],
+   "new_scope": "Ensayos de laboratorio de fuego como oferta propia.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-024",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-IPR-003",
+    "KB-IPR-004",
+    "KB-LMD-001",
+    "KB-LMD-002",
+    "KB-LMD-003",
+    "EXT-0060",
+    "EXT-0061",
+    "EXT-0062",
+    "EXT-0070"
+   ],
+   "reserve": [
+    "R0095"
+   ],
+   "related": [],
+   "new_scope": "Laboratorios en fábrica.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "LAB MINERO DIGITAL"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. En minería decide la naturaleza del servicio: ensayo/inspección/control → LMD; integridad/diagnóstico/ingeniería → IOM.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-027",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-003",
+    "KB-IPR-004",
+    "KB-LMD-001",
+    "KB-LMD-002",
+    "KB-LMD-003",
+    "EXT-0060",
+    "EXT-0061",
+    "EXT-0062",
+    "EXT-0070"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": [
+    "«altos estándares» es promocional (promo_flags)."
+   ]
+  },
+  {
+   "web_id": "WEB-028",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-IOM-027",
+    "KB-LMD-016",
+    "KB-LMD-017",
+    "KB-LMD-018",
+    "KB-LMD-019",
+    "KB-LMD-020",
+    "EXT-0005",
+    "EXT-0050",
+    "EXT-0051"
+   ],
+   "reserve": [
+    "R0017",
+    "R0023",
+    "R0071",
+    "R0072"
+   ],
+   "related": [],
+   "new_scope": "Control de calidad y determinación de propiedades del acero de construcción.",
+   "proposed_cells": [
+    "LAB MINERO DIGITAL",
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "En minería decide la naturaleza del servicio: ensayo/inspección/control → LMD; integridad/diagnóstico/ingeniería → IOM. Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": [
+    "«alta tecnología» y «todo de tipo» son promocionales (promo_flags)."
+   ]
+  },
+  {
+   "web_id": "WEB-029",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0115",
+    "EXT-0117",
+    "EXT-0118"
+   ],
+   "reserve": [
+    "R0273"
+   ],
+   "related": [],
+   "new_scope": "Acreditación INN por área; ensayos para MMA, OGUC, MINVU, SERVIU.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": [
+    "Acreditaciones: EXT-0118 es USE_WITH_MATIZ."
+   ]
+  },
+  {
+   "web_id": "WEB-041",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-013",
+    "KB-IHA-005",
+    "KB-IOM-041"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Análisis por alteraciones en la secuencia constructiva.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-042",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-012",
+    "KB-IHA-004",
+    "KB-IOM-040",
+    "EXT-0090"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Detalle de análisis (pertinencia, plazo, costos) para la negociación.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-043",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0090"
+   ],
+   "reserve": [
+    "R0115"
+   ],
+   "related": [],
+   "new_scope": "Coherencia de documentos de licitación, validación de plazos, homologación de propuestas económicas.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL",
+    "INFRA OPERACIÓN MINERA"
+   ],
+   "cell_condition": "La célula la define el proyecto (público/salud/minero).",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-044",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-IPR-010",
+    "KB-IHA-002",
+    "KB-IOM-038",
+    "EXT-0090"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Pertinencia y presupuestos de obras adicionales, gastos generales, multas.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-045",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-IPR-010",
+    "KB-IHA-002",
+    "KB-IOM-038"
+   ],
+   "reserve": [
+    "R0031"
+   ],
+   "related": [],
+   "new_scope": "Auditoría de hitos, costos y calidad; estudio técnico ante pérdidas tributarias para el SII.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL",
+    "INFRA OPERACIÓN MINERA"
+   ],
+   "cell_condition": "La célula la define el proyecto.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-046",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-013",
+    "KB-IHA-005",
+    "KB-IOM-041"
+   ],
+   "reserve": [
+    "R0116"
+   ],
+   "related": [],
+   "new_scope": "",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-047",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0090",
+    "EXT-0091"
+   ],
+   "reserve": [
+    "R0116"
+   ],
+   "related": [],
+   "new_scope": "Cuantificación de sobrecostos, gastos generales, multas, costos financieros.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL",
+    "INFRA OPERACIÓN MINERA"
+   ],
+   "cell_condition": "La célula la define el proyecto.",
+   "conflicts": [
+    "R0116 es RESERVE_USE_ONLY_WITH_AUDIT_CORRECTION."
+   ]
+  },
+  {
+   "web_id": "WEB-048",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0090"
+   ],
+   "reserve": [
+    "R0116"
+   ],
+   "related": [],
+   "new_scope": "Análisis forense de pérdida de productividad en controversias.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL",
+    "INFRA OPERACIÓN MINERA"
+   ],
+   "cell_condition": "La célula la define el proyecto.",
+   "conflicts": [
+    "Productividad: activo en VERIFY (MKT 19-10-2026). Se verifica y corrige cuando aparezca en un post. KB-IOM-019/020 mantienen la restricción de la memoria (05-10-2026): el copy no se apoya en ellos."
+   ]
+  },
+  {
+   "web_id": "WEB-049",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-IPR-011",
+    "KB-IHA-003",
+    "KB-IOM-039",
+    "EXT-0091"
+   ],
+   "reserve": [
+    "R0116"
+   ],
+   "related": [],
+   "new_scope": "Pertinencia de multas y de término anticipado.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-050",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-006",
+    "EXT-0090",
+    "EXT-0091"
+   ],
+   "reserve": [
+    "R0116"
+   ],
+   "related": [],
+   "new_scope": "",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": [
+    "La prestación «Estudios de pérdida de productividad» va en VERIFY (MKT 19-10-2026)."
+   ]
+  },
+  {
+   "web_id": "WEB-051",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-006",
+    "EXT-0090"
+   ],
+   "reserve": [
+    "R0119"
+   ],
+   "related": [],
+   "new_scope": "",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-052",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [
+    "AUX-005"
+   ],
+   "new_scope": "Control de procesos constructivos en plataformas digitales; auditoría de autocontrol.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. Si se aplica a infraestructura de salud, va a IHA (prioridad sobre IPR).",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-053",
+   "status": "RESPALDADO",
+   "evidence": [
+    "EXT-0082",
+    "KB-IOM-004"
+   ],
+   "reserve": [
+    "R0009"
+   ],
+   "related": [],
+   "new_scope": "Familias BIM, ITO-BIM, validación normativa 3D.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-054",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IOM-003",
+    "KB-IOM-030",
+    "KB-IOM-031",
+    "KB-IOM-044",
+    "KB-IOM-046",
+    "EXT-0003",
+    "EXT-0011"
+   ],
+   "reserve": [
+    "R0021"
+   ],
+   "related": [],
+   "new_scope": "Aplicación fuera de minería.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-055",
+   "status": "SOLO_RESERVA",
+   "evidence": [],
+   "reserve": [
+    "R0021"
+   ],
+   "related": [
+    "AUX-007"
+   ],
+   "new_scope": "Modelación as-built BIM para gestión y mantenimiento.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. AUX-007 es STRUCTURAL_CONTEXT_ONLY: no prueba la capacidad (regla 7).",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-056",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Simulación 4D (BIM + tiempo) para seguimiento de avance.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-057",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Estudio de obras patrimoniales: levantamiento de daños y proyecto de reparación.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-058",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-005",
+    "KB-IPR-022",
+    "KB-IOM-034",
+    "KB-IOM-035",
+    "KB-IOM-058"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-059",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IOM-023",
+    "KB-IOM-055",
+    "KB-IOM-056",
+    "EXT-0002",
+    "EXT-0012"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Detalle de sensores (strain gauges, acelerómetros) fuera de minería.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-060",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IOM-044",
+    "KB-IOM-046",
+    "EXT-0011"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Perfiles y modelación BIM de túneles; malla TIN.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": [
+    "Túneles genéricos no son INFRA CRÍTICA TRANSPORTE (solo Metro/EFE)."
+   ]
+  },
+  {
+   "web_id": "WEB-061",
+   "status": "RESPALDADO",
+   "evidence": [
+    "EXT-0082"
+   ],
+   "reserve": [
+    "R0003"
+   ],
+   "related": [
+    "AUX-004"
+   ],
+   "new_scope": "Revisión de proyecto de cálculo según normativa chilena vigente.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-062",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IOM-008",
+    "KB-IOM-009",
+    "KB-IOM-055",
+    "KB-IOM-059",
+    "EXT-0012"
+   ],
+   "reserve": [
+    "R0022"
+   ],
+   "related": [],
+   "new_scope": "Aplicación fuera de minería.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-063",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IOM-024",
+    "KB-IOM-034",
+    "KB-IOM-035",
+    "KB-IOM-036",
+    "KB-IOM-037"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-064",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0082"
+   ],
+   "reserve": [
+    "R0001"
+   ],
+   "related": [],
+   "new_scope": "Fundaciones, estabilidad de taludes, recomendaciones para excavaciones, modelación numérica.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA OPERACIÓN MINERA"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. En minería decide la naturaleza del servicio: ensayo/inspección/control → LMD; integridad/diagnóstico/ingeniería → IOM.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-065",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IOM-001",
+    "KB-IOM-002"
+   ],
+   "reserve": [
+    "R0012",
+    "R0013",
+    "R0014"
+   ],
+   "related": [],
+   "new_scope": "Instrumentación geotécnica fuera de relaves (piezómetros, inclinómetros, celdas).",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-066",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0082"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Revisión de informes geotécnicos según NCh1508.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-067",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0082",
+    "KB-IPR-005"
+   ],
+   "reserve": [],
+   "related": [
+    "AUX-004"
+   ],
+   "new_scope": "Replanteo, geodesia, aerofotogrametría con dron, batimetría.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-068",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0110"
+   ],
+   "reserve": [
+    "R0033"
+   ],
+   "related": [],
+   "new_scope": "Revisión de proyectos para verificar cumplimiento normativo contra incendios.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. Si se aplica a infraestructura de salud, va a IHA (prioridad sobre IPR).",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-069",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0112"
+   ],
+   "reserve": [
+    "R0033"
+   ],
+   "related": [],
+   "new_scope": "Definición de requerimientos de diseño de sistemas pasivos y activos.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. Si se aplica a infraestructura de salud, va a IHA (prioridad sobre IPR).",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-070",
+   "status": "SOLO_RESERVA",
+   "evidence": [],
+   "reserve": [
+    "R0268"
+   ],
+   "related": [],
+   "new_scope": "Estudios de atmósferas explosivas (ATEX) y de carga de combustible.",
+   "proposed_cells": [
+    "INFRA OPERACIÓN MINERA"
+   ],
+   "cell_condition": "[Inferencia] uso industrial/minero; confirmar.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-071",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IOM-026",
+    "EXT-0111"
+   ],
+   "reserve": [
+    "R0269"
+   ],
+   "related": [],
+   "new_scope": "Aplicación fuera de minería.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-072",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0117"
+   ],
+   "reserve": [
+    "R0268"
+   ],
+   "related": [],
+   "new_scope": "Asimilación de soluciones constructivas y curvas de masividad según OGUC.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-073",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0112"
+   ],
+   "reserve": [
+    "R0268"
+   ],
+   "related": [],
+   "new_scope": "Simulación FDS/ANSYS de humos, ventilación en túneles, evacuación en hospitales, estadios y cárceles.",
+   "proposed_cells": [
+    "INFRA HOSPITALARIA Y ASISTENCIAL",
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Si se aplica a infraestructura de salud, va a IHA (prioridad sobre IPR). Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": [
+    "Túneles genéricos no son INFRA CRÍTICA TRANSPORTE."
+   ]
+  },
+  {
+   "web_id": "WEB-085",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-001"
+   ],
+   "reserve": [],
+   "related": [
+    "AUX-005"
+   ],
+   "new_scope": "Asesoría a la inspección técnica de estudio y de especialidades.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-086",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Certificación de proyectos habitacionales.",
+   "proposed_cells": [],
+   "cell_condition": "FUERA_DE_CELULAS: vivienda no entra en ninguna célula priorizada (2A.2).",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-087",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Medición de resistencia eléctrica de pisos conductivos (NCh4/2003).",
+   "proposed_cells": [
+    "INFRA HOSPITALARIA Y ASISTENCIAL"
+   ],
+   "cell_condition": "Célula confirmada por MKT (19-10-2026): aplica a salud. Disponible en VERIFY: sin respaldo en 2A.2, se valida al aprobar el post que lo use.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-088",
+   "status": "RESPALDADO",
+   "evidence": [
+    "EXT-0082"
+   ],
+   "reserve": [
+    "R0003"
+   ],
+   "related": [
+    "AUX-004"
+   ],
+   "new_scope": "",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-089",
+   "status": "RESPALDADO",
+   "evidence": [
+    "EXT-0082"
+   ],
+   "reserve": [
+    "R0003"
+   ],
+   "related": [
+    "AUX-004"
+   ],
+   "new_scope": "Revisión normativa en modelos BIM y reglamentación térmica.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-090",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Recepción de vivienda terminada e instalaciones; planes de mantenimiento de edificios.",
+   "proposed_cells": [],
+   "cell_condition": "FUERA_DE_CELULAS: postventa habitacional no entra en células priorizadas.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-091",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Estudios de industrialización de obras (diagnóstico, inspección en fábrica, BIM).",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": [
+    "Productividad: activo en VERIFY (MKT 19-10-2026). Se verifica y corrige cuando aparezca en un post. KB-IOM-019/020 mantienen la restricción de la memoria (05-10-2026): el copy no se apoya en ellos."
+   ]
+  },
+  {
+   "web_id": "WEB-092",
+   "status": "SOLO_RESERVA",
+   "evidence": [],
+   "reserve": [
+    "R0018"
+   ],
+   "related": [
+    "KB-IOM-019",
+    "KB-IOM-020"
+   ],
+   "new_scope": "Mediciones y controles de productividad.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL",
+    "INFRA OPERACIÓN MINERA"
+   ],
+   "cell_condition": "La célula la define el proyecto.",
+   "conflicts": [
+    "Productividad: activo en VERIFY (MKT 19-10-2026). Se verifica y corrige cuando aparezca en un post. KB-IOM-019/020 mantienen la restricción de la memoria (05-10-2026): el copy no se apoya en ellos."
+   ]
+  },
+  {
+   "web_id": "WEB-093",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-009",
+    "KB-IHA-001",
+    "OVR-KB-IHA-001"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "LEED con comisionamiento; CEV (asesoría y evaluación); CVS.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": [
+    "Green Hospital: rige la memoria (certificación propia de IDIEM; complementa ISO 50001; no mencionar «Salud sin Daño»)."
+   ]
+  },
+  {
+   "web_id": "WEB-094",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-IPR-021",
+    "EXT-0102"
+   ],
+   "reserve": [
+    "R0252"
+   ],
+   "related": [],
+   "new_scope": "Mediciones de temperatura, humedad y CO2; causas de humedades; cumplimiento OGUC/PDA.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. Si se aplica a infraestructura de salud, va a IHA (prioridad sobre IPR).",
+   "conflicts": [
+    "«altos estándares» es promocional (promo_flags)."
+   ]
+  },
+  {
+   "web_id": "WEB-095",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0114"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Auditorías energéticas, estudios tarifarios, implementación ISO 50001, modelamiento energético.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. Si se aplica a infraestructura de salud, va a IHA (prioridad sobre IPR).",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-096",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-IOM-025"
+   ],
+   "reserve": [
+    "R0006",
+    "R0045",
+    "R0046"
+   ],
+   "related": [],
+   "new_scope": "I+D de materiales en hormigón fuera de minería; durabilidad.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": [
+    "2A.2: los hormigones no entran en minería por el solo hecho de aplicarse a un proyecto minero."
+   ]
+  },
+  {
+   "web_id": "WEB-097",
+   "status": "SOLO_RESERVA",
+   "evidence": [],
+   "reserve": [
+    "R0004",
+    "R0042",
+    "R0043",
+    "R0047",
+    "R0048"
+   ],
+   "related": [],
+   "new_scope": "Ingeniería del hormigón: dosificaciones, especificaciones, hormigones especiales.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": [
+    "2A.2: los hormigones no entran en minería por el solo hecho de aplicarse a un proyecto minero."
+   ]
+  },
+  {
+   "web_id": "WEB-098",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [
+    "R0045"
+   ],
+   "new_scope": "Prospección de áridos: requisitos normativos y curva granulométrica.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-099",
+   "status": "SOLO_RESERVA",
+   "evidence": [],
+   "reserve": [
+    "R0005",
+    "R0047"
+   ],
+   "related": [],
+   "new_scope": "Ensayos de shotcrete y calificación de operadores.",
+   "proposed_cells": [
+    "LAB MINERO DIGITAL"
+   ],
+   "cell_condition": "[Inferencia] ensayo/control en túneles mineros → LMD, pero 2A.2: los hormigones no entran en minería por el solo hecho de aplicarse a un proyecto minero.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-100",
+   "status": "SOLO_RESERVA",
+   "evidence": [],
+   "reserve": [
+    "R0017",
+    "R0071",
+    "R0072"
+   ],
+   "related": [],
+   "new_scope": "Certificación de acero estructural, barras, perfiles y mallas (NCh203 y otras).",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": [
+    "R0073 (antigüedad acreditación) y R0074 («únicos en Sudamérica») bloqueados en 2A.2."
+   ]
+  },
+  {
+   "web_id": "WEB-101",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Calibración de equipos de fuerza (0,3 a 2700 kN).",
+   "proposed_cells": [],
+   "cell_condition": "FUERA_DE_CELULAS: servicio transversal de metrología; MKT decide.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-102",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0115"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Certificación de conformidad por modelos ISO/CASCO 3, 5 y 7.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": [
+    "Afirmación de certificación: requiere validación de vigencia."
+   ]
+  },
+  {
+   "web_id": "WEB-103",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Ensayo de carga transversal a barandas (OGUC 4.2.7).",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-104",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Ensayos higrotérmicos (transmitancia, vapor de agua, lluvia artificial, reflectividad).",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-105",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0117"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Ensayo y certificación de soleras, baldosas, adoquines, ladrillos.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-106",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-LMD-010",
+    "KB-LMD-011",
+    "KB-LMD-012",
+    "KB-LMD-015",
+    "KB-IOM-065",
+    "EXT-0020",
+    "EXT-0021"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Geomembranas, plásticos, caucho, resinas, cerámicos y vidrio.",
+   "proposed_cells": [
+    "LAB MINERO DIGITAL"
+   ],
+   "cell_condition": "En minería decide la naturaleza del servicio: ensayo/inspección/control → LMD; integridad/diagnóstico/ingeniería → IOM.",
+   "conflicts": [
+    "HDPE: rige la memoria («los ensayos verifican el cumplimiento del proyecto»)."
+   ]
+  },
+  {
+   "web_id": "WEB-107",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-021",
+    "EXT-0100",
+    "EXT-0101",
+    "EXT-0102"
+   ],
+   "reserve": [
+    "R0255"
+   ],
+   "related": [],
+   "new_scope": "Absorción sonora en laboratorio; barreras acústicas.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": [
+    "Norma de ruido: D.S. 38/2011 MMA (futuro D.D. 14/24), según memoria."
+   ]
+  },
+  {
+   "web_id": "WEB-108",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Inspección de pinturas y pintura intumescente (espesor, adherencia).",
+   "proposed_cells": [
+    "LAB MINERO DIGITAL",
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "En minería decide la naturaleza del servicio: ensayo/inspección/control → LMD; integridad/diagnóstico/ingeniería → IOM. Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-109",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Ensayos especiales según estándares internacionales.",
+   "proposed_cells": [],
+   "cell_condition": "Demasiado genérico para asignar célula.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-110",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0117"
+   ],
+   "reserve": [
+    "R0024",
+    "R0044"
+   ],
+   "related": [],
+   "new_scope": "Esclerometría, ultrasonido, potencial y velocidad de corrosión de armaduras.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-111",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [
+    "R0273"
+   ],
+   "new_scope": "Ensayos estructurales a anclajes, alzaprimas, columnas, vidrios.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-112",
+   "status": "RESPALDADO",
+   "evidence": [
+    "EXT-0116",
+    "KB-IPR-003"
+   ],
+   "reserve": [
+    "R0238"
+   ],
+   "related": [],
+   "new_scope": "",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-113",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-LMD-004",
+    "KB-LMD-005",
+    "EXT-0030",
+    "EXT-0122"
+   ],
+   "reserve": [],
+   "related": [
+    "AUX-026"
+   ],
+   "new_scope": "Ensayos de suelos (edométricos, dinámicos) y petrografía fuera de minería.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-114",
+   "status": "SOLO_RESERVA",
+   "evidence": [],
+   "reserve": [
+    "R0108",
+    "R0109",
+    "R0110"
+   ],
+   "related": [],
+   "new_scope": "Certificación de extintores, rociadores, puertas cortafuego.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. Si se aplica a infraestructura de salud, va a IHA (prioridad sobre IPR).",
+   "conflicts": [
+    "R0108 es RESERVE_USE_ONLY_WITH_AUDIT_CORRECTION."
+   ]
+  },
+  {
+   "web_id": "WEB-115",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0117"
+   ],
+   "reserve": [
+    "R0268"
+   ],
+   "related": [],
+   "new_scope": "Resistencia al fuego de puertas y ventanas; no combustibilidad; telas, plásticos.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-116",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Inspección de pintura intumescente y mortero ignífugo.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA OPERACIÓN MINERA"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. En minería decide la naturaleza del servicio: ensayo/inspección/control → LMD; integridad/diagnóstico/ingeniería → IOM.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-118",
+   "status": "SOLO_RESERVA",
+   "evidence": [],
+   "reserve": [
+    "R0095"
+   ],
+   "related": [],
+   "new_scope": "Laboratorios en fábrica (cemento, hormigón, acero, prefabricados).",
+   "proposed_cells": [],
+   "cell_condition": "MKT decide: fábricas no son una célula.",
+   "conflicts": [
+    "«altos estándares» es promocional (promo_flags)."
+   ]
+  },
+  {
+   "web_id": "WEB-119",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-003",
+    "KB-IPR-004",
+    "KB-LMD-001",
+    "KB-LMD-002",
+    "KB-LMD-003",
+    "EXT-0060",
+    "EXT-0061",
+    "EXT-0062",
+    "EXT-0070",
+    "KB-LMD-016"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": [
+    "«altos estándares» es promocional (promo_flags)."
+   ]
+  },
+  {
+   "web_id": "WEB-120",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Asesorías y peritajes de adhesivos cementicios (tracción directa).",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-121",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0116"
+   ],
+   "reserve": [
+    "R0015",
+    "R0016",
+    "R0091",
+    "R0092",
+    "R0093",
+    "R0094"
+   ],
+   "related": [],
+   "new_scope": "Ensayos de hormigón fresco y endurecido, contenido de aire, densidad.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-122",
+   "status": "RESPALDADO",
+   "evidence": [
+    "EXT-0116"
+   ],
+   "reserve": [
+    "R0239"
+   ],
+   "related": [],
+   "new_scope": "Referencia NCh170:2016.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-124",
+   "status": "SOLO_RESERVA",
+   "evidence": [],
+   "reserve": [
+    "R0008",
+    "R0046"
+   ],
+   "related": [],
+   "new_scope": "Caracterización de cementos, adiciones, aditivos y agua de amasado.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-125",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Caracterización y dosificación de morteros y aditivos.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-131",
+   "status": "PARCIAL",
+   "evidence": [
+    "EXT-0082",
+    "EXT-0117"
+   ],
+   "reserve": [
+    "R0243"
+   ],
+   "related": [],
+   "new_scope": "Sondajes, calicatas, ensayos Lugeon/Lefranc, carga en pilotes.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "LAB MINERO DIGITAL"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. En minería decide la naturaleza del servicio: ensayo/inspección/control → LMD; integridad/diagnóstico/ingeniería → IOM.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-134",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IOM-027",
+    "KB-LMD-016",
+    "KB-LMD-017",
+    "KB-LMD-018",
+    "KB-LMD-019",
+    "EXT-0050"
+   ],
+   "reserve": [
+    "R0023"
+   ],
+   "related": [],
+   "new_scope": "Cilindros, estanques y cañerías fuera de minería.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": [
+    "Soldaduras: se inspeccionan por muestreo según plan de inspección (memoria)."
+   ]
+  },
+  {
+   "web_id": "WEB-135",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-LMD-020",
+    "EXT-0051"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Reparación de piezas mediante soldadura.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": [
+    "Rige la memoria: se califica al soldador y al procedimiento, no la soldadura."
+   ]
+  },
+  {
+   "web_id": "WEB-139",
+   "status": "NUEVO",
+   "evidence": [],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Inspección de impermeabilización con geosintéticos.",
+   "proposed_cells": [
+    "LAB MINERO DIGITAL"
+   ],
+   "cell_condition": "[Inferencia] solo si es obra minera (p. ej. relaves); confirmar.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-140",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-IPR-001"
+   ],
+   "reserve": [],
+   "related": [
+    "AUX-005"
+   ],
+   "new_scope": "ITO de especialidades por equipos multidisciplinarios.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. Si se aplica a infraestructura de salud, va a IHA (prioridad sobre IPR).",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-141",
+   "status": "PARCIAL",
+   "evidence": [
+    "KB-IPR-001"
+   ],
+   "reserve": [],
+   "related": [
+    "AUX-005"
+   ],
+   "new_scope": "ITO integral: calidad, administración, licitación, gerenciamiento de proyectos.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. Si se aplica a infraestructura de salud, va a IHA (prioridad sobre IPR).",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-165",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-002",
+    "KB-IOM-010",
+    "KB-IOM-027",
+    "EXT-0005"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-166",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IPR-022",
+    "KB-IOM-043",
+    "EXT-0010"
+   ],
+   "reserve": [
+    "R0026"
+   ],
+   "related": [],
+   "new_scope": "Estudios de amenazas sísmicas; análisis estructural avanzado.",
+   "proposed_cells": [],
+   "cell_condition": "",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-168",
+   "status": "SOLO_RESERVA",
+   "evidence": [],
+   "reserve": [
+    "R0027"
+   ],
+   "related": [],
+   "new_scope": "Peritajes geotécnicos; certificación de volúmenes; geodesia satelital.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA OPERACIÓN MINERA"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. En minería decide la naturaleza del servicio: ensayo/inspección/control → LMD; integridad/diagnóstico/ingeniería → IOM.",
+   "conflicts": []
+  },
+  {
+   "web_id": "WEB-169",
+   "status": "RESPALDADO",
+   "evidence": [
+    "KB-IOM-011"
+   ],
+   "reserve": [],
+   "related": [],
+   "new_scope": "Método NFPA 921 y aplicación fuera de minería.",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Fuera de minería no hay knowledge_id: Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "conflicts": []
+  }
+ ],
+ "decisions": [
+  {
+   "date": "2026-10-19",
+   "by": "MKT",
+   "decision": "Productividad (área, estudios de productividad, pérdida de productividad en controversias, industrialización, KPI en ITO) NO se bloquea: queda activa en VERIFY y se verifica/corrige cuando aparezca en un post. Reemplaza la propuesta de bloqueo del mismo día.",
+   "applies_to": [
+    "WEB-005",
+    "WEB-015",
+    "WEB-048",
+    "WEB-050",
+    "WEB-091",
+    "WEB-092"
+   ]
+  },
+  {
+   "date": "2026-10-19",
+   "by": "MKT",
+   "decision": "Mediciones eléctricas de pisos conductivos (WEB-087): célula INFRA HOSPITALARIA Y ASISTENCIAL; disponible en VERIFY hasta que MKT valide el post que lo use o corrija la información.",
+   "applies_to": [
+    "WEB-087"
+   ]
+  },
+  {
+   "date": "2026-10-19",
+   "by": "MKT",
+   "decision": "Regla general: VERIFY = disponible para planificar y redactar (marcado); la validación ocurre al aprobar el post o con las correcciones de MKT.",
+   "applies_to": [
+    "*"
+   ]
+  }
+ ]
+}
