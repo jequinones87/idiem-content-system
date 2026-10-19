@@ -30,7 +30,7 @@
   `config/editorial_diversity.json`.
 - Un tema usado se marca en el JSON (`used_in`: mes y post).
 
-## Fuentes registradas (al 14-10-2026)
+## Fuentes registradas (al 14-10-2026; revisión completa 19-10-2026)
 
 | ID | Presentación | Expositor | Fecha | Célula |
 |---|---|---|---|---|
@@ -41,7 +41,12 @@
 | SRC-005 | Reglamento RIC en Salud (DS N°8) | Sergio Reygadas Veragua · Jefe de Proyectos Eléctricos, DES | s/f | IHA |
 | SRC-006 | Vulnerabilidad de incendio en infraestructura y faenas mineras | Diego Olave | 19-08-2026 | IOM |
 
-Notas: la lectura de SRC-004 llegó truncada al final (proceso AITO); se usa solo lo disponible.
+Notas:
+- **19-10-2026:** MKT volvió a compartir SRC-002 y SRC-003 (PDF) y SRC-004, 005 y 006 (Drive). No hay
+  fuentes nuevas: se releyeron completas y se sumaron 14 afirmaciones y 7 temas (TOP-023 a TOP-029).
+- SRC-006 se leyó completa: replica para minería el marco de SRC-001, por eso SRC-001#C01–C10 también
+  la citan. Agrega monitoreo en faena (temperaturas, vibración de polines) y criticidad (NCC 40).
+- SRC-004 sigue truncada al final, en el proceso AITO; el detalle del proceso (C07) queda en VERIFY.
 
 ### Ideas fuerza por fuente
 
@@ -60,6 +65,9 @@ Notas: la lectura de SRC-004 llegó truncada al final (proceso AITO); se usa sol
   - Minería: envolventes de FRP en electro-obtención, correas transportadoras y CAEX en truck shop.
 - Estadística NFPA: −66 % de incendios industriales en EE.UU. entre 1980 y 2021 (SAFE, citar).
 - Incidentes con nombre (Puerto Ventanas, CAEX, Lineage, Renca, Grenfell): **VERIFY**.
+- *Nuevo 19-10 (SRC-006 completa):* monitoreo en faena con temperaturas de subestaciones y equipos
+  mecánicos y vibración de polines (C04); la criticidad se define con NCC 40 o, si no hay criterio
+  claro, con la parte interesada (C05).
 
 **SRC-002 · Controversias hospitalarias**
 - Un hospital no es una obra convencional. Hay 7 fuentes de impacto, del Programa Médico
@@ -72,6 +80,10 @@ Notas: la lectura de SRC-004 llegó truncada al final (proceso AITO); se usa sol
   mínimas: CPM, línea base, as-built, curvas S, registro de cambios.
 - Cinco lecciones finales. Hoja de ruta de mitigación en 3 fases: servicio IDIEM vigente (validado).
 - Se cruza con la librería en ingeniería contractual de Salud: KB-IHA-002 a 005.
+- *Nuevo 19-10:* errores que nacen en el diseño y no conversan con la operación clínica (C11); obras
+  dentro de hospitales en operación: polvo, ruido, accesos y segregación clínica (C12); cuatro orígenes
+  de cambio: clínico, técnico, normativo y contractual (C13); mantenibilidad y permisos aprobados con
+  reservas (C14).
 
 **SRC-003 · Incendio en hospitales (Olave)**
 - Evacuación masiva vs. defensa en sitio. Vulnerabilidades de la OGUC (una sola zona vertical de
@@ -88,6 +100,12 @@ Notas: la lectura de SRC-004 llegó truncada al final (proceso AITO); se usa sol
   - la distribución eléctrica causa el 6 % de los incendios pero el 36 % de los daños;
   - la extinción automática estaba presente en el 47 % de los casos (1980-84) y en el 79 % (2006-10).
 - Casos San Borja Arriarán (2021) y Gustavo Fricke (2020): **VERIFY**.
+- *Nuevo 19-10:*
+  - NFPA: las residencias de ancianos concentran más heridos (C10); lecciones del siglo pasado:
+    control de carga combustible, compartimentación, rociadores y alerta temprana (C11).
+  - Riesgos y umbrales del DS 10 en calderas (C12); errores de diseño en bodegas SUSPEL (C13).
+  - Riesgos operativos en salas eléctricas: polvo, recalentamiento, arcos, barras saturadas (C14).
+  - Distanciamientos de los tanques criogénicos (C15).
 
 **SRC-004 · Vulnerabilidad estructural y elementos no estructurales en hospitales (Tapia)**
 - La vulnerabilidad se compara con el estado de salud de una persona. Se acumula con:
@@ -104,6 +122,8 @@ Notas: la lectura de SRC-004 llegó truncada al final (proceso AITO); se usa sol
   - revisiones sísmicas;
   - peritajes forenses;
   - **AITO** (Asesoría a la Inspección Técnica de Obra).
+- *Nuevo 19-10:* proceso AITO detección → RDI → revisión de la ITO → asesoría IDIEM → respuesta de la ITO
+  (C07, **VERIFY**: detalle nuevo del servicio).
 
 **SRC-005 · RIC en Salud (Reygadas)**
 - La transición la define la fecha y condición del permiso de edificación (oficios de la SEC).
@@ -113,12 +133,14 @@ Notas: la lectura de SRC-004 llegó truncada al final (proceso AITO); se usa sol
 - Sistemas de emergencia: de 4 a 3 grupos, con la **numeración invertida**. El Grupo 2 pasa a ser la
   máxima criticidad.
 - Sistema médico IT en pabellones (50 kΩ, 0,2 Ω, libro de mantenimiento).
+- *Nuevo 19-10:* cargas del Grupo 1 (hasta 15 s) y la obligación de identificar en la memoria a qué
+  sistema de emergencia se conecta cada circuito (C13).
 - "Los m² no definen la potencia": usar solo el mensaje agregado. Las cifras por hospital con nombre
   son **INTERNAL**.
 - Efecto "bola de nieve" y decisiones por etapa y por rol.
 - Cifras de casos (+86,1 %, 10–25 %, 8–12 meses): **INTERNAL**.
 
-## Banco de temas candidatos (22)
+## Banco de temas candidatos (29)
 
 | ID | Célula | Tema | Sugerencia (arquetipo · hook · formato) | Cuidado |
 |---|---|---|---|---|
@@ -144,9 +166,21 @@ Notas: la lectura de SRC-004 llegó truncada al final (proceso AITO); se usa sol
 | TOP-020 | IOM | La curva P-F: detectar el deterioro antes de la falla | data_implication · technical_claim · estático | — |
 | TOP-021 | IOM | Un estudio de riesgo también vence | risk_prevention · risk · estático | — |
 | TOP-022 | IOM | Estrategia contra incendios en 8 ejes desde el proyecto | process_result · process_step · carrusel | — |
+| TOP-023 | IHA | Construir dentro de un hospital que sigue atendiendo | project_challenge · scenario · estático | cercano a nov #4 |
+| TOP-024 | IHA | Clínico, técnico, normativo o contractual: de dónde vienen los cambios | technical_question · question · carrusel | cercano a nov #4 |
+| TOP-025 | IHA | Cuando el diseño de licitación no conversa con la operación clínica | risk_prevention · contrast · estático | — |
+| TOP-026 | IHA | Bodegas de sustancias peligrosas en hospitales: errores de diseño | risk_prevention · risk · carrusel | variar vs nov #6 |
+| TOP-027 | IHA | Lo que enseñaron los incendios hospitalarios del siglo pasado | evidence_learning · data_point · carrusel | citar NFPA |
+| TOP-028 | IHA | Salas eléctricas de un hospital: polvo, calor y arcos | data_implication · insight · estático | — |
+| TOP-029 | IOM | ¿Quién define qué es crítico? Criticidad en el análisis de riesgo | technical_question · question · estático | — |
 
 **Lectura para la planificación:** este material **repone la célula Salud (IHA)**, que quedó sin
-ítems frescos tras noviembre: 17 temas IHA y 5 IOM listos para diciembre en adelante. Validaciones de
+ítems frescos tras noviembre: 23 temas IHA y 6 IOM listos para diciembre en adelante.
+**Cercanía con noviembre (ventana de 2 meses):** los temas de controversias (TOP-004, 005, 008, 023,
+024) se parecen al #4 de noviembre (contractual en Salud); TOP-002 (AITO) se parece al #8 (asesoría a la
+inspección); y los de incendio hospitalario (TOP-009, 010, 011, 026) siguen al #6 (incendios). Para
+diciembre conviene priorizar: elementos no estructurales (TOP-001), vulnerabilidad estructural
+(TOP-003), RIC (TOP-012 a 017), salas eléctricas (TOP-028) e incendio en minería (TOP-018 a 022, 029). Validaciones de
 MKT cerradas el 14-10-2026 (consentimiento, servicios vigentes, autores, célula de industria, fuentes
 truncadas). Siguen pendientes por tema: incidentes con nombre (VERIFY) y cifras internas (INTERNAL).
 
