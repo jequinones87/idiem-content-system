@@ -450,12 +450,13 @@
     {
       "id": "SRC-004#C05",
       "kind": "idiem_capability",
-      "class": "SAFE",
+      "class": "DO_NOT_PUBLISH",
       "text": "AITO — Asesoría a la Inspección Técnica de Obra: apoyo especializado e independiente a la ITO del mandante para revisar, analizar y validar soluciones estructurales sísmicas o constructivas (RDI/FDI), aprobar cambios en instalación de ENE y resguardar el cumplimiento normativo y la seguridad sísmica.",
       "sources": [
         "SRC-004"
       ],
-      "validated_by": "MKT 2026-10-14 (servicio vigente)"
+      "validated_by": "MKT 2026-10-14 (servicio vigente)",
+      "blocked_reason": "MKT 19-10-2026: no publicar el tema de asesoría a la inspección técnica de obras (AITO)."
     },
     {
       "id": "SRC-004#C06",
@@ -696,11 +697,12 @@
     {
       "id": "SRC-004#C07",
       "kind": "idiem_capability",
-      "class": "VERIFY",
+      "class": "DO_NOT_PUBLISH",
       "sources": [
         "SRC-004"
       ],
-      "text": "Proceso AITO para resolver observaciones en obra: detección (contratista) → emisión de RDI → revisión de la ITO → asesoría técnica IDIEM → respuesta final de la ITO. La AITO vela por el cumplimiento de los criterios de diseño aprobados y apoya la resolución de imprevistos. (Detalle nuevo del servicio AITO ya validado en C05: confirmar con MKT antes de publicarlo.)"
+      "text": "Proceso AITO para resolver observaciones en obra: detección (contratista) → emisión de RDI → revisión de la ITO → asesoría técnica IDIEM → respuesta final de la ITO. La AITO vela por el cumplimiento de los criterios de diseño aprobados y apoya la resolución de imprevistos. (Detalle nuevo del servicio AITO ya validado en C05: confirmar con MKT antes de publicarlo.)",
+      "blocked_reason": "MKT 19-10-2026: no publicar el tema de asesoría a la inspección técnica de obras (AITO)."
     },
     {
       "id": "SRC-005#C13",
@@ -764,7 +766,8 @@
         "proceso AITO (C07) = VERIFY",
         "cercano a nov #8 (asesoría a la inspección): dejar ≥ 2 meses"
       ],
-      "status": "CANDIDATE"
+      "status": "DISCARDED",
+      "discarded_reason": "MKT 19-10-2026: no publicar el tema de asesoría a la inspección técnica de obras (AITO)."
     },
     {
       "id": "TOP-003",

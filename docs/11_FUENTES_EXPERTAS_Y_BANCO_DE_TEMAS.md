@@ -121,9 +121,8 @@ Notas:
   - diagnósticos estructurales y propuestas de refuerzo;
   - revisiones sísmicas;
   - peritajes forenses;
-  - **AITO** (Asesoría a la Inspección Técnica de Obra).
-- *Nuevo 19-10:* proceso AITO detección → RDI → revisión de la ITO → asesoría IDIEM → respuesta de la ITO
-  (C07, **VERIFY**: detalle nuevo del servicio).
+  - ~~AITO (Asesoría a la Inspección Técnica de Obra)~~ — **no publicar** (MKT 19-10-2026): C05 y C07
+    quedan en DO_NOT_PUBLISH y TOP-002 descartado.
 
 **SRC-005 · RIC en Salud (Reygadas)**
 - La transición la define la fecha y condición del permiso de edificación (oficios de la SEC).
@@ -140,12 +139,12 @@ Notas:
 - Efecto "bola de nieve" y decisiones por etapa y por rol.
 - Cifras de casos (+86,1 %, 10–25 %, 8–12 meses): **INTERNAL**.
 
-## Banco de temas candidatos (29)
+## Banco de temas candidatos (29; 1 descartado)
 
 | ID | Célula | Tema | Sugerencia (arquetipo · hook · formato) | Cuidado |
 |---|---|---|---|---|
 | TOP-001 | IHA | ¿Seguirá operativo después del terremoto? ENE en hospitales | technical_question · question · carrusel | — |
-| TOP-002 | IHA | AITO: asesoría independiente a la ITO en obras hospitalarias | process_result · process_step · carrusel | — |
+| ~~TOP-002~~ | IHA | ~~AITO: asesoría independiente a la ITO en obras hospitalarias~~ | — | **DESCARTADO (MKT 19-10): no publicar** |
 | TOP-003 | IHA | Hospitales que envejecen: cómo se acumula la vulnerabilidad | risk_prevention · insight · estático | — |
 | TOP-004 | IHA | Un hospital no es una obra convencional: 7 fuentes de controversia | evidence_learning · contrast · carrusel | — |
 | TOP-005 | IHA | Atraso, disrupción, aceleración, concurrencia: no son lo mismo | data_implication · insight · carrusel | — |
@@ -175,10 +174,10 @@ Notas:
 | TOP-029 | IOM | ¿Quién define qué es crítico? Criticidad en el análisis de riesgo | technical_question · question · estático | — |
 
 **Lectura para la planificación:** este material **repone la célula Salud (IHA)**, que quedó sin
-ítems frescos tras noviembre: 23 temas IHA y 6 IOM listos para diciembre en adelante.
+ítems frescos tras noviembre: 22 temas IHA vigentes (TOP-002 descartado) y 6 IOM listos para diciembre en adelante.
 **Cercanía con noviembre (ventana de 2 meses):** los temas de controversias (TOP-004, 005, 008, 023,
 024) se parecen al #4 de noviembre (contractual en Salud); TOP-002 (AITO) se parece al #8 (asesoría a la
-inspección); y los de incendio hospitalario (TOP-009, 010, 011, 026) siguen al #6 (incendios). Para
+inspección, hoy descartado); y los de incendio hospitalario (TOP-009, 010, 011, 026) siguen al #6 (incendios). Para
 diciembre conviene priorizar: elementos no estructurales (TOP-001), vulnerabilidad estructural
 (TOP-003), RIC (TOP-012 a 017), salas eléctricas (TOP-028) e incendio en minería (TOP-018 a 022, 029). Validaciones de
 MKT cerradas el 14-10-2026 (consentimiento, servicios vigentes, autores, célula de industria, fuentes

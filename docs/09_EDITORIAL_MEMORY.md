@@ -42,6 +42,8 @@ Estas nacen de correcciones del equipo. Son de aplicación obligatoria.
   donde es relator sí se puede comunicar.
 - Regla general: todo post que **nombre un proyecto o caso** se marca para que MKT valide su
   sensibilidad antes de redactar.
+- **Asesoría a la inspección técnica de obras (AITO):** **no publicar** este tema (MKT, 19-10-2026). Las
+  afirmaciones del servicio en el banco de temas quedan en `DO_NOT_PUBLISH` y su tema, descartado.
 - **Un caso/proyecto nombrado va en UN solo post por mes** (MKT, 01-10-2026). Si otro post toca el
   mismo servicio, se redacta como servicio genérico, sin repetir el caso. Ej.: nov-2026, el Aeropuerto
   AMB queda solo en el post de laboratorio en obra; el de incendios va sin mencionarlo.
@@ -102,7 +104,7 @@ como regla para **diciembre en adelante**. Se recorre **antes** de presentar la 
 3. Si una célula no tiene material fresco (hoy **Lab Minero Digital** y **Hospitalaria**), **pedir insumos**
    a MKT o hacer menos posts; no rellenar con versiones parecidas (09-04 · 05-10).
 4. Excluir lo bloqueado: control de productividad (KB-IOM-019/020), Centro Cultural GAM como caso,
-   contenidos de charlas de David Silva; no nombrar expositores ni charlas de origen (30-09 · 05-10 · 14-10).
+   contenidos de charlas de David Silva, asesoría a la inspección de obras (AITO); no nombrar expositores ni charlas de origen (30-09 · 05-10 · 14-10).
 5. Un caso/proyecto nombrado va en **un solo post por mes**, y todo post que nombre un caso se marca
    para que MKT valide su sensibilidad **antes** de redactar (30-09 · 01-10).
 
