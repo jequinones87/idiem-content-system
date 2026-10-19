@@ -124,9 +124,9 @@ Antes de hacer cualquier video, decidir la herramienta con esta regla (en orden;
 
 Condiciones para usar Remotion (si falta una, el video queda en `DRAFT` y se informa el bloqueo):
 
-- **Licencia:** confirmar que IDIEM califica para la licencia gratuita de Remotion (persona natural,
-  empresa con fines de lucro de hasta 3 empleados u organización sin fines de lucro) o que existe licencia
-  de empresa. Mientras no se confirme, solo uso de evaluación: no publicar.
+- **Licencia:** el usuario decidió el 19-10-2026 omitir la verificación de licencia de Remotion; no
+  bloquea la publicación. (Referencia: la licencia gratuita cubre personas naturales, empresas con fines
+  de lucro de hasta 3 empleados y organizaciones sin fines de lucro; ver `node_modules/remotion/LICENSE.md`.)
 - **Primer video de cada formato nuevo** requiere aprobación de MKT antes de repetirlo.
 - Rigen las mismas reglas de marca y de hechos que en la skill de carrusel: textos aprobados literales,
   Montserrat incrustada, logo vectorial oficial, movimiento sobrio, sin IA generativa de video, render

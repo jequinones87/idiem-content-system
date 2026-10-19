@@ -214,5 +214,6 @@ capacidades técnicas (la célula ICT no tiene conocimiento activo).
 - **2026-10-19** — **Elección de herramienta de video** (ver `CLAUDE.md` § Videos para LinkedIn): carrusel/post
   aprobado → skill `video-carrusel-idiem` (sin cambios); formatos que esa skill no cubre (video grabado,
   subtítulos, cifras/mapas animados, 9:16 o 16:9) → Remotion (repo privado `motion-graphics-ia`). Prueba:
-  el carrusel SIM portado a Remotion difiere < 0,1 % de píxeles del pipeline oficial. Remotion no se
-  publica hasta confirmar licencia; primer video de cada formato nuevo pasa por MKT.
+  el carrusel SIM portado a Remotion difiere < 0,1 % de píxeles del pipeline oficial. Primer video de
+  cada formato nuevo pasa por MKT. Verificación de licencia de Remotion omitida por decisión del usuario
+  (19-10-2026); no bloquea la publicación.
