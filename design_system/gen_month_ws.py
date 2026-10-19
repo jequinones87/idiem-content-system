@@ -73,12 +73,19 @@ def items(month: str) -> list[dict]:
                     "fact": d["copies"].get("fact_check", {}).get(k, ""),
                     "cid": f"PLAN-{p['knowledge_id']}-{p['seq']:02d}"})
     extras = d["plan"].get("extra") or []
-    ex = (extras[0] if isinstance(extras, list) and extras else extras) or {}
-    if "E" in d["copies"]["copies"]:
-        out.append({"key": "E", "seq": 0, "date": ex.get("date", f"{month}-26"), "plan": ex,
-                    "copy": d["copies"]["copies"]["E"], "gfx": d["gfx"]["posts"]["E"],
-                    "fact": d["copies"].get("fact_check", {}).get("E", ""),
-                    "cid": f"EFEM-{month}"})
+    extras = extras if isinstance(extras, list) else [extras]
+    for ex in extras:
+        # nov-2026: una sola pieza extra con clave "E"; desde dic-2026: clave = seq de la asignación
+        k = str(ex.get("seq")) if str(ex.get("seq")) in d["copies"]["copies"] else "E"
+        if k not in d["copies"]["copies"]:
+            continue
+        cid = f"EFEM-{month}" if k == "E" else f"EFEM-{month}-{int(k):02d}"
+        out.append({"key": k, "seq": 0, "date": ex.get("date", f"{month}-26"), "plan": ex,
+                    "copy": d["copies"]["copies"][k], "gfx": d["gfx"]["posts"][k],
+                    "fact": d["copies"].get("fact_check", {}).get(k, ""),
+                    "cid": cid, "extra": True})
+    for it in out:
+        it["month"] = month
     out.sort(key=lambda x: (x["date"], x["seq"]))
     return out
 
@@ -207,7 +214,7 @@ def _fecha(iso: str) -> str:
 def card(it: dict, uris: list[str], applied: str) -> str:
     p, g, cid = it["plan"], it["gfx"], it["cid"]
     is_car = "carousel" in g
-    is_special = "special" in g
+    is_special = bool(it.get("extra"))
     ph = g["photo"]
     if ph["source"] == "stock":
         foto = (f'Adobe Stock · <code>#{G.esc(ph["id"])}</code> ({G.esc(ph["detalle"])}) · licencia libre'
@@ -217,9 +224,18 @@ def card(it: dict, uris: list[str], applied: str) -> str:
                 f'<a href="{G.esc(ph["drive"])}" target="_blank" rel="noopener">ver en Drive</a>')
 
     if is_special:
-        badge, fmt_label, sub = "EFEMÉRIDE", "EFEMÉRIDE · INSTITUCIONAL", f'{_fecha(it["date"])} · Día Mundial del Transporte Sostenible'
+        kind = "SALUDO" if p.get("type") == "SALUDO" else "EFEMÉRIDE"
+        badge = kind
+        fmt_label = (f"CARRUSEL · {len(uris)} láminas" if is_car else f"{kind} · INSTITUCIONAL")
+        theme = p.get("theme") or "Día Mundial del Transporte Sostenible"
+        sub = f'{_fecha(it["date"])} · {theme}'
         trace = (f'<div class="tr"><span class="k">Ancla</span><span class="v"><code>{cid}</code></span></div>'
                  f'<div class="tr"><span class="k">Nota</span><span class="v">{g["trace"]}</span></div>')
+        if it["fact"]:
+            trace += f'<div class="tr"><span class="k">Evidencia</span><span class="v">{G.esc(it["fact"])}</span></div>'
+        if p.get("archetype") and p.get("hook_type"):
+            trace += (f'<div class="tr"><span class="k">Diversidad</span><span class="v">fuera del conteo · hook '
+                      f'<code>{p["hook_type"]}</code> · CTA <code>{p.get("cta_type", "")}</code></span></div>')
     else:
         badge = CELL_SHORT.get(p["cell"], p["cell"][:3])
         fmt_label = f"CARRUSEL · {len(uris)} láminas" if is_car else "STATIC"
@@ -235,6 +251,11 @@ def card(it: dict, uris: list[str], applied: str) -> str:
         trace += (f'<div class="tr"><span class="k">Verificar</span><span class="v">'
                   f'<span class="pending">⚠ {G.esc(flag)}</span></span></div>')
     trace += f'<div class="tr"><span class="k">Foto</span><span class="v">{foto}</span></div>'
+    vp = g.get("video_plan")  # video aún por producir: la tarjeta muestra el guion/carrusel base
+    if vp:
+        fmt_label = f'VIDEO · por producir (~{vp["seconds"]} s)'
+        trace += (f'<div class="tr"><span class="k">Video</span><span class="v">MP4 1080×1080 · {G.esc(vp["tool"])}'
+                  f'<br><span class="pending">{G.esc(vp["state"])}</span></span></div>')
     if g.get("video"):
         v = g["video"]
         trace += (f'<div class="tr"><span class="k">Video</span><span class="v">MP4 1080×1080 · '
@@ -249,10 +270,10 @@ def card(it: dict, uris: list[str], applied: str) -> str:
                 f'src="{G.esc(video["published"])}"></video>')
         img_style = ' style="display:none"'
         vbtn = (f'<button class="btn ghost mp4" type="button" data-src="{G.esc(video["published"])}" '
-                f'data-name="idiem_nov_post{it["key"]}_musica.mp4">Descargar MP4</button>')
+                f'data-name="idiem_{MESES[int(it["month"].split("-")[1]) - 1][:3]}_post{it["key"]}_musica.mp4">Descargar MP4</button>')
         if video.get("silent_published"):
             vbtn += (f'<button class="btn ghost mp4" type="button" data-src="{G.esc(video["silent_published"])}" '
-                     f'data-name="idiem_nov_post{it["key"]}.mp4">MP4 sin música</button>')
+                     f'data-name="idiem_{MESES[int(it["month"].split("-")[1]) - 1][:3]}_post{it["key"]}.mp4">MP4 sin música</button>')
         if video.get("preview_published"):
             vbtn += (f'<a class="btn ghost" href="{G.esc(video["preview_published"])}" target="_blank" '
                      f'rel="noopener">Ver animación (HTML)</a>')
@@ -263,16 +284,20 @@ def card(it: dict, uris: list[str], applied: str) -> str:
         strip = f'<div class="strip">{thumbs}</div>'
         if video:
             strip = f'<p class="striplab">Láminas del video (respaldo en carrusel PNG/PDF)</p>' + strip
+        elif vp:
+            strip = f'<p class="striplab">Guion / láminas base del video (se animan tras la aprobación)</p>' + strip
     # historial: cambios aplicados (graficas.json "hist", más reciente primero) + creación
     log = list(g.get("hist", [])) + [{"date": g.get("created", applied),
-                                      "summary": "Pieza y copy DRAFT creados según la tabla de asignación v3 aprobada por MKT."}]
+                                      "summary": "Pieza y copy DRAFT creados según la tabla de asignación aprobada por MKT."}]
     items_html = "".join(f'<li><span class="hd">{G.esc(e["date"])}</span><span class="hs">{G.esc(e["summary"])}</span></li>'
                          for e in log)
     applied = log[0]["date"]  # el chip muestra la última aplicación de ESTE post
     hist = (f'<details class="hist"><summary>Historial de cambios aplicados ({len(log)})</summary>'
             f'<ul class="histlist">{items_html}</ul></details>')
-    title = f"Nov · Post {it['key']} ({_fecha(it['date'])})" if not is_special else f"Nov · Efeméride ({_fecha(it['date'])})"
-    label = f"{int(it['key']):02d}" if it["key"].isdigit() else "★"
+    mes3 = MESES[int(it["month"].split("-")[1]) - 1][:3].capitalize()
+    title = (f"{mes3} · Post {it['key']} ({_fecha(it['date'])})" if not is_special
+             else f"{mes3} · {p.get('theme', 'Efeméride')} ({_fecha(it['date'])})")
+    label = "★" if is_special else f"{int(it['key']):02d}"
     return f'''<article class="post{" special" if is_special else ""}" data-seq="{it['key']}" data-cid="{cid}" data-car="{1 if is_car else 0}" data-status="publicado" data-edited-at="" data-edited-by="" data-caltitle="{G.esc(title)}">
   <script type="application/json" class="slides-data">{G.esc(json.dumps(uris))}</script>
   <div class="graphic">
@@ -337,12 +362,13 @@ def assemble(month: str, build: Path, out: Path, ws_url: str, applied: str) -> N
             for st in structure}
     y, m = month.split("-")
     mes = MESES[int(m) - 1]
-    n_posts = sum(1 for k in its if k.isdigit())
+    n_posts = sum(1 for it in its.values() if not it.get("extra"))
+    n_extra = sum(1 for it in its.values() if it.get("extra"))
     cfg = {"key": f"idiem_ws_{mes[:3]}{y}_v1", "wsUrl": ws_url, "exportMonth": month,
            "exportTag": f"{mes[:3]}{y}", "ccMax": 900}
     css = (ROOT / "workstation_shared" / "workstation_ui.css").read_text("utf-8")
     js = (ROOT / "workstation_shared" / "workstation_ui.js").read_text("utf-8")
-    extra = " + efeméride" if "E" in its else ""
+    extra = (" + efeméride" if n_extra == 1 else f" + {n_extra} piezas especiales") if n_extra else ""
     html = (ARTIFACT.replace("__MES__", mes.capitalize()).replace("__MESL__", mes)
             .replace("__N__", str(n_posts)).replace("__EXTRA__", extra).replace("__MONTH__", month)
             .replace("__CARDS__", "\n".join(cards)).replace("__STATE__", json.dumps(init))
@@ -368,7 +394,7 @@ __CSS__
 <div class="wrap">
   <p class="eyebrow"><span class="dot"></span>IDIEM · Design System · Workstation</p>
   <h1>__MES__ — <b>__N__ posts__EXTRA__</b></h1>
-  <p class="lede">Primer mes con la <strong>estrategia editorial y control de sesgos</strong>: cada post tiene asignados arquetipo, hook, CTA y pain point (ver <em>Diversidad</em> en la traza). Todos los textos están en <strong>DRAFT</strong> hasta tu aprobación. Cada post muestra su <strong>estado</strong> en la esquina de la gráfica; abajo tienes el texto editable, notas de imagen, el <strong>historial</strong> y <strong>↺ volver a lo publicado</strong>. Todo se <strong>sincroniza en vivo con el equipo</strong>: aprueba (<strong>✅ Aprobado para publicar</strong>), agenda la fecha (ya viene precargada según la grilla) y marca <strong>🔗 subido a LinkedIn</strong> (flujo: <b class="tpub">revisado → aprobado → agendado → subido</b>). Los posts con <strong>⚠ Verificar</strong> requieren validación antes de publicar.</p>
+  <p class="lede">Mes con la <strong>estrategia editorial y control de sesgos</strong>: cada post tiene asignados arquetipo, hook, CTA y pain point (ver <em>Diversidad</em> en la traza). Todos los textos están en <strong>DRAFT</strong> hasta tu aprobación. Cada post muestra su <strong>estado</strong> en la esquina de la gráfica; abajo tienes el texto editable, notas de imagen, el <strong>historial</strong> y <strong>↺ volver a lo publicado</strong>. Todo se <strong>sincroniza en vivo con el equipo</strong>: aprueba (<strong>✅ Aprobado para publicar</strong>), agenda la fecha (ya viene precargada según la grilla) y marca <strong>🔗 subido a LinkedIn</strong> (flujo: <b class="tpub">revisado → aprobado → agendado → subido</b>). Los posts con <strong>⚠ Verificar</strong> requieren validación antes de publicar.</p>
   <div class="bar">
     <input class="idfield" id="revName" type="text" placeholder="Tu nombre" autocomplete="name" spellcheck="false">
     <input class="idfield" id="revRole" type="text" placeholder="Especialidad / área (opcional)" spellcheck="false">
@@ -400,7 +426,7 @@ __CARDS__
   </div>
 
   <div class="foot">
-    <span>Plan: <code>state/plans/__MONTH___asignacion.json</code> (v3, aprobado MKT) · copies <code>__MONTH___copies.json</code> · gráficas <code>__MONTH___graficas.json</code>.</span>
+    <span>Plan: <code>state/plans/__MONTH___asignacion.json</code> (aprobado MKT) · copies <code>__MONTH___copies.json</code> · gráficas <code>__MONTH___graficas.json</code>.</span>
     <span>2A.2 = fuente de verdad · GR-04 sin superlativos · ≤ 900 caracteres · diversidad según <code>editorial_diversity.json</code>.</span>
     <span>Regeneración de imagen: la aplica Claude al recibir el export.</span>
   </div>

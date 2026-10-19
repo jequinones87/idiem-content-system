@@ -458,3 +458,6 @@ programado al 19-10-2026).
   VERIFY; se validan al aprobar el post que los usa o con las correcciones de MKT; (2) productividad **no se
   bloquea**: activa en VERIFY; (3) mediciones eléctricas de pisos conductivos (NCh4/2003) → célula Infra
   Hospitalaria, disponible en VERIFY.
+- **2026-10-19** — **Formato de entrega (usuario):** cada mes lleva **su propio artefacto workstation**; los posts
+  nunca se entregan como texto en el chat. Diciembre: https://claude.ai/artifact/LQbvx2h518ZtzvDppGHc1m
+  (generador `design_system/gen_month_ws.py`, ahora con varias piezas extra por mes y videos por producir).
