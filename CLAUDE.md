@@ -124,9 +124,9 @@ Antes de hacer cualquier video, decidir la herramienta con esta regla (en orden;
 
 Condiciones para usar Remotion (si falta una, el video queda en `DRAFT` y se informa el bloqueo):
 
-- **Licencia:** confirmar que IDIEM califica para la licencia gratuita de Remotion (persona natural,
-  empresa con fines de lucro de hasta 3 empleados u organización sin fines de lucro) o que existe licencia
-  de empresa. Mientras no se confirme, solo uso de evaluación: no publicar.
+- **Licencia:** el usuario decidió el 19-10-2026 omitir la verificación de licencia de Remotion; no
+  bloquea la publicación. (Referencia: la licencia gratuita cubre personas naturales, empresas con fines
+  de lucro de hasta 3 empleados y organizaciones sin fines de lucro; ver `node_modules/remotion/LICENSE.md`.)
 - **Primer video de cada formato nuevo** requiere aprobación de MKT antes de repetirlo.
 - Rigen las mismas reglas de marca y de hechos que en la skill de carrusel: textos aprobados literales,
   Montserrat incrustada, logo vectorial oficial, movimiento sobrio, sin IA generativa de video, render
@@ -146,3 +146,12 @@ Al planificar cada mes, revisar este banco junto a 2A.2. Capacidades IDIEM de la
 MKT (`validated_by`) se usan como auxiliary_id; incidentes con nombre (VERIFY) y cifras de proyectos
 (INTERNAL) no van al copy sin validación. **Nunca nombrar ni citar a los expositores ni las charlas de
 origen**: el foco es el tema.
+
+Servicios del sitio web (desde 19-10-2026): `config/topic_bank/web_services.json` (`WEB-*`, texto literal
+de https://www.idiem.cl/servicios; se re-extrae con `python -m idiem.web_services`). **Todos son VERIFY y están
+disponibles**: se planifican y redactan citados como `WEB-xxx` marcados VERIFY y se validan cuando MKT aprueba el
+post (o corrige la información); los `promo_flags` (superlativos) nunca van al
+copy y los `claim_flags` (certificaciones/normas) necesitan respaldo. No asignan célula ni crean capacidades.
+Cruce con 2A.2 en `config/topic_bank/web_crosswalk.json` (vista `docs/12_CRUCE_WEB_VS_2A2.md`): **2A.2 prevalece**
+(se ha corregido con cada post); servicio con `knowledge_id` → usar ese texto/política; lo NUEVO/PARCIAL del sitio es
+VERIFY y su célula es solo propuesta hasta que MKT valide.
