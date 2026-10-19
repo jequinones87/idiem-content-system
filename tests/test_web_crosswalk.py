@@ -65,6 +65,17 @@ def test_cells_come_from_2a2_evidence_not_from_site(kb):
 
 def test_editorial_memory_prevails(kb):
     # Control de productividad bloqueado por MKT aunque el sitio lo ofrezca.
-    assert BY_ID["WEB-015"]["status"] == BY_ID["WEB-092"]["status"] == "BLOQUEADO"
+    # Ampliado por MKT (19-10-2026) a pérdida de productividad en controversias e industrialización.
+    for wid in ("WEB-015", "WEB-092", "WEB-048", "WEB-091"):
+        assert BY_ID[wid]["status"] == "BLOQUEADO", wid
+        assert not BY_ID[wid]["proposed_cells"], wid
+    assert BY_ID["WEB-050"]["conflicts"], "prestación de pérdida de productividad sin alerta"
     # El claim «único triaxial gigante» del sitio queda marcado como bloqueado.
     assert any("triaxial" in c for c in BY_ID["WEB-011"]["conflicts"])
+
+
+def test_mkt_cell_decision_keeps_verify(kb):
+    # Pisos conductivos → salud (MKT 19-10-2026), pero sin respaldo 2A.2 sigue siendo NUEVO/VERIFY.
+    e = BY_ID["WEB-087"]
+    assert e["proposed_cells"] == ["INFRA HOSPITALARIA Y ASISTENCIAL"]
+    assert e["status"] == "NUEVO" and cells_2a2(kb, e) == []

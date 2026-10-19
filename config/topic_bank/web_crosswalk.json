@@ -12,6 +12,7 @@
   "Todo lo que aporta el sitio (new_scope, servicios NUEVO, detalle de prestaciones) es VERIFY: entra al banco para validarse cuando un post lo necesite; validado, se cita como auxiliary_id WEB-xxx.",
   "Reserva 2A.2 (R0xxx): evidencia de brochure fuera de las células priorizadas; respeta su production_policy (WITH_MATIZ, USE_ONLY_WITH_AUDIT_CORRECTION, BLOCKED) aunque MKT asigne célula.",
   "La memoria editorial manda sobre el sitio: bloqueos (control de productividad), formulaciones (soldadura, HDPE, Green Hospital, D.S. 38/2011) y casos sensibles.",
+  "Productividad bloqueada (MKT 19-10-2026): control/medición de productividad, estudios de pérdida de productividad en controversias e industrialización no van al copy, aunque aparezcan en el sitio o en la reserva (R0116 los enumera).",
   "Superlativos y rankings del sitio (promo_flags) no pasan al copy en ningún estado."
  ],
  "statuses": {
@@ -152,7 +153,7 @@
    ],
    "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. Si se aplica a infraestructura de salud, va a IHA (prioridad sobre IPR).",
    "conflicts": [
-    "Seguimiento de productividad con KPI: Memoria editorial (MKT 05-10-2026): control de productividad (KB-IOM-019/020) ⛔ no usar hasta nuevo aviso. El sitio no levanta ese bloqueo."
+    "Seguimiento de productividad con KPI: bloqueado (MKT 19-10-2026), no mencionarlo."
    ]
   },
   {
@@ -370,7 +371,7 @@
    "proposed_cells": [],
    "cell_condition": "",
    "conflicts": [
-    "Memoria editorial (MKT 05-10-2026): control de productividad (KB-IOM-019/020) ⛔ no usar hasta nuevo aviso. El sitio no levanta ese bloqueo."
+    "Memoria editorial (MKT 05-10-2026, ampliado 19-10-2026): todo servicio de productividad ⛔ no usar hasta nuevo aviso, incluidos estudios de pérdida de productividad en controversias e industrialización. El sitio no levanta ese bloqueo."
    ]
   },
   {
@@ -734,7 +735,7 @@
   },
   {
    "web_id": "WEB-048",
-   "status": "PARCIAL",
+   "status": "BLOQUEADO",
    "evidence": [
     "EXT-0090"
    ],
@@ -743,14 +744,10 @@
    ],
    "related": [],
    "new_scope": "Análisis forense de pérdida de productividad en controversias.",
-   "proposed_cells": [
-    "INFRA PÚBLICA RESILIENTE",
-    "INFRA HOSPITALARIA Y ASISTENCIAL",
-    "INFRA OPERACIÓN MINERA"
-   ],
-   "cell_condition": "La célula la define el proyecto.",
+   "proposed_cells": [],
+   "cell_condition": "",
    "conflicts": [
-    "Es pérdida de productividad en controversias contractuales, no el «control de productividad» bloqueado (KB-IOM-019/020). Confirmar con MKT que el bloqueo no alcanza a este servicio."
+    "Memoria editorial (MKT 05-10-2026, ampliado 19-10-2026): todo servicio de productividad ⛔ no usar hasta nuevo aviso, incluidos estudios de pérdida de productividad en controversias e industrialización. El sitio no levanta ese bloqueo."
    ]
   },
   {
@@ -786,7 +783,9 @@
    "new_scope": "",
    "proposed_cells": [],
    "cell_condition": "",
-   "conflicts": []
+   "conflicts": [
+    "La prestación «Estudios de pérdida de productividad» está bloqueada (MKT 19-10-2026): no mencionarla."
+   ]
   },
   {
    "web_id": "WEB-051",
@@ -1215,7 +1214,7 @@
    "proposed_cells": [
     "INFRA HOSPITALARIA Y ASISTENCIAL"
    ],
-   "cell_condition": "[Inferencia] solo si se aplica a recintos de salud; confirmar con MKT.",
+   "cell_condition": "Célula confirmada por MKT (19-10-2026): aplica a salud. Sigue VERIFY: no hay respaldo en 2A.2.",
    "conflicts": []
   },
   {
@@ -1265,17 +1264,15 @@
   },
   {
    "web_id": "WEB-091",
-   "status": "NUEVO",
+   "status": "BLOQUEADO",
    "evidence": [],
    "reserve": [],
    "related": [],
    "new_scope": "Estudios de industrialización de obras (diagnóstico, inspección en fábrica, BIM).",
-   "proposed_cells": [
-    "INFRA PÚBLICA RESILIENTE"
-   ],
-   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
+   "proposed_cells": [],
+   "cell_condition": "",
    "conflicts": [
-    "Está en el área Productividad: confirmar con MKT que el bloqueo de productividad no lo alcanza."
+    "Memoria editorial (MKT 05-10-2026, ampliado 19-10-2026): todo servicio de productividad ⛔ no usar hasta nuevo aviso, incluidos estudios de pérdida de productividad en controversias e industrialización. El sitio no levanta ese bloqueo."
    ]
   },
   {
@@ -1293,7 +1290,7 @@
    "proposed_cells": [],
    "cell_condition": "",
    "conflicts": [
-    "Memoria editorial (MKT 05-10-2026): control de productividad (KB-IOM-019/020) ⛔ no usar hasta nuevo aviso. El sitio no levanta ese bloqueo."
+    "Memoria editorial (MKT 05-10-2026, ampliado 19-10-2026): todo servicio de productividad ⛔ no usar hasta nuevo aviso, incluidos estudios de pérdida de productividad en controversias e industrialización. El sitio no levanta ese bloqueo."
    ]
   },
   {
@@ -1984,6 +1981,29 @@
    ],
    "cell_condition": "Fuera de minería no hay knowledge_id: Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
    "conflicts": []
+  }
+ ],
+ "decisions": [
+  {
+   "date": "2026-10-19",
+   "by": "MKT",
+   "decision": "El bloqueo de productividad alcanza a estudios de pérdida de productividad en controversias (WEB-048) e industrialización (WEB-091).",
+   "applies_to": [
+    "WEB-005",
+    "WEB-015",
+    "WEB-048",
+    "WEB-050",
+    "WEB-091",
+    "WEB-092"
+   ]
+  },
+  {
+   "date": "2026-10-19",
+   "by": "MKT",
+   "decision": "Mediciones eléctricas de pisos conductivos (WEB-087) aplican a salud: célula INFRA HOSPITALARIA Y ASISTENCIAL.",
+   "applies_to": [
+    "WEB-087"
+   ]
   }
  ]
 }
