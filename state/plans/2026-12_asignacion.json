@@ -3,7 +3,7 @@
   "status": "PROPUESTA v3 — respuestas MKT 19-10 aplicadas; los VERIFY se validan, bloquean o ajustan en la revisión de cada post",
   "rebalance_note": "12 posts base (pedido MKT) + 3 piezas fuera del conteo (Día Mundial del Suelo, Navidad en video, Año Nuevo). Minería 5 · Salud 5 · Pública 2. Lab Minero Digital entra solo vía la efeméride del suelo (geosintéticos, VERIFY). Salud se repone con el banco de temas (SRC-* validadas por MKT) y el cruce web (WEB-*, VERIFY = disponible, MKT 19-10-2026).",
   "inputs_reviewed": [
-    "state/consolidated/2026-10.json",
+    "content/archive/2026-10.json",
     "state/plans/2026-11_asignacion.json",
     "state/published_ledger.json",
     "origin/claude/inspiring-hopper-f45s0m: config/topic_bank/expert_sources.json (relectura 19-10, TOP-001..029, AITO DO_NOT_PUBLISH), docs/09 checklist ✅, config/efemerides.json (Navidad y Año Nuevo)",
