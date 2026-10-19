@@ -146,3 +146,12 @@ Al planificar cada mes, revisar este banco junto a 2A.2. Capacidades IDIEM de la
 MKT (`validated_by`) se usan como auxiliary_id; incidentes con nombre (VERIFY) y cifras de proyectos
 (INTERNAL) no van al copy sin validación. **Nunca nombrar ni citar a los expositores ni las charlas de
 origen**: el foco es el tema.
+
+Servicios del sitio web (desde 19-10-2026): `config/topic_bank/web_services.json` (`WEB-*`, texto literal
+de https://www.idiem.cl/servicios; se re-extrae con `python -m idiem.web_services`). **Todos son VERIFY y están
+disponibles**: se planifican y redactan citados como `WEB-xxx` marcados VERIFY y se validan cuando MKT aprueba el
+post (o corrige la información); los `promo_flags` (superlativos) nunca van al
+copy y los `claim_flags` (certificaciones/normas) necesitan respaldo. No asignan célula ni crean capacidades.
+Cruce con 2A.2 en `config/topic_bank/web_crosswalk.json` (vista `docs/12_CRUCE_WEB_VS_2A2.md`): **2A.2 prevalece**
+(se ha corregido con cada post); servicio con `knowledge_id` → usar ese texto/política; lo NUEVO/PARCIAL del sitio es
+VERIFY y su célula es solo propuesta hasta que MKT valide.
