@@ -192,3 +192,39 @@ truncadas). Siguen pendientes por tema: incidentes con nombre (VERIFY) y cifras 
    (SAFE/VERIFY/INTERNAL/DO_NOT_PUBLISH).
 3. Proponer temas `TOP-0NN` enlazados a afirmaciones y, si aplica, a `knowledge_id` de 2A.2.
 4. Actualizar esta vista y correr `pytest tests/test_topic_bank.py`.
+
+## Servicios publicados en www.idiem.cl (`WEB-*`, extraídos el 19-10-2026)
+
+Registro en `config/topic_bank/web_services.json`, con el texto **literal** del sitio
+(https://www.idiem.cl/servicios) en tres niveles: categoría → área → servicio específico (descripción
+y prestaciones de "¿Qué tipo de servicio necesitas?"). Total: 7 categorías, 33 áreas, 135 servicios
+(el sitio repite áreas bajo varias categorías: 70 entradas tienen `same_text_as`; únicas: 105).
+
+| Categoría | Título | Áreas | Servicios |
+|---|---|---|---|
+| `WEB-001` | Asesoría contractual en controversias y claims | 1 | 11 |
+| `WEB-002` | Asesorías y estudios técnicos | 9 | 48 |
+| `WEB-003` | Ensayos de laboratorio | 8 | 28 |
+| `WEB-004` | Geotecnia y Prospecciones | 2 | 6 |
+| `WEB-005` | Inspección técnica de obra | 4 | 12 |
+| `WEB-006` | Laboratorios en obra o fábrica | 5 | 16 |
+| `WEB-007` | Peritajes y análisis de fallas | 4 | 14 |
+
+Reglas de uso:
+
+- **Todo `WEB-*` es VERIFY y está disponible (MKT, 19-10-2026).** Se puede planificar y redactar con él,
+  citándolo como `WEB-xxx` marcado VERIFY en brief y copy. Se valida cuando MKT aprueba el post que lo usa
+  (`validated_by`, `validated_on` en el JSON) o se corrige según lo que MKT cambie en el post. 2A.2 sigue mandando: el sitio no crea capacidades técnicas nuevas ni
+  asigna célula (la decide `config/cell_rules.json`; Transporte sigue en `CONTENT_GAP`).
+- **`promo_flags`** marca superlativos del sitio (p. ej. "la mejor tecnología", "el único triaxial
+  gigante en Chile", "altos estándares"): **no pasan al copy** aunque el servicio esté validado.
+- **`claim_flags`** marca menciones de certificación, acreditación o normas: requieren respaldo en
+  2A.2 o validación puntual antes de afirmarse.
+- **Cruce con 2A.2 (19-10-2026):** `docs/12_CRUCE_WEB_VS_2A2.md` (generado desde
+  `config/topic_bank/web_crosswalk.json`). **2A.2 prevalece**: si el servicio tiene `knowledge_id`, se usa
+  ese texto y su política; el sitio solo aporta alcance nuevo (VERIFY). Estados: RESPALDADO 36, PARCIAL 40,
+  SOLO_RESERVA 11, NUEVO 18, BLOQUEADO 0 (productividad queda activa en VERIFY, MKT 19-10-2026).
+- **Re-extracción:** `PYTHONPATH=src python -m idiem.web_services`. Conserva los IDs por ruta; si el
+  texto de un servicio cambió, borra su validación y lo devuelve a VERIFY. Correr después
+  `pytest tests/test_web_services.py tests/test_web_crosswalk.py` y revisar el diff antes de commitear;
+  si aparecen servicios nuevos, cruzarlos en `web_crosswalk.json` y regenerar con `python -m idiem.web_crosswalk`.

@@ -59,7 +59,9 @@ Estas nacen de correcciones del equipo. Son de aplicación obligatoria.
 - **SIM (gestión de integridad estructural):** la secuencia es planificación → antecedentes → inspecciones
   → instrumentación/**monitoreo**. El **monitoreo siempre va al final**.
 - **Control de productividad (KB-IOM-019/020):** ⛔ no usar hasta nuevo aviso — MKT no tiene certeza del
-  servicio.
+  servicio. Los servicios de productividad del sitio web (área Productividad, pérdida de productividad en
+  controversias, industrialización) **sí están disponibles en VERIFY** (MKT, 19-10-2026): se verifican y
+  corrigen cuando aparezcan en un post, sin apoyarse en KB-IOM-019/020.
 - **HDPE:** los ensayos "verifican el cumplimiento del proyecto" (formulación preferida por MKT).
 
 ### Contenidos desde fuentes expertas (MKT, 14-10-2026)
@@ -445,3 +447,14 @@ programado al 19-10-2026).
   flexible** ("más o menos si es necesario"; el QA avisa y se registra el motivo); (2) saludos, efemérides y
   reconocimientos usan `institutional_or_occasion`, fuera del conteo de arquetipos; (3) las piezas nuevas se
   renderizan con **Montserrat incrustada** (`design_system/brand_fonts.py`, pesos 400–800).
+- **2026-10-19** — **Elección de herramienta de video** (ver `CLAUDE.md` § Videos para LinkedIn): carrusel/post
+  aprobado → skill `video-carrusel-idiem` (sin cambios); formatos que esa skill no cubre (video grabado,
+  subtítulos, cifras/mapas animados, 9:16 o 16:9) → Remotion (repo privado `motion-graphics-ia`). Prueba:
+  el carrusel SIM portado a Remotion difiere < 0,1 % de píxeles del pipeline oficial. Primer video de
+  cada formato nuevo pasa por MKT. Verificación de licencia de Remotion omitida por decisión del usuario
+  (19-10-2026); no bloquea la publicación.
+- **2026-10-19** — **Cruce sitio web vs 2A.2** (`docs/12_CRUCE_WEB_VS_2A2.md`): 2A.2 prevalece sobre el sitio.
+  MKT decide: (1) **VERIFY = disponible**: los servicios del sitio se pueden planificar y redactar marcados
+  VERIFY; se validan al aprobar el post que los usa o con las correcciones de MKT; (2) productividad **no se
+  bloquea**: activa en VERIFY; (3) mediciones eléctricas de pisos conductivos (NCh4/2003) → célula Infra
+  Hospitalaria, disponible en VERIFY.

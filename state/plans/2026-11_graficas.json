@@ -14,10 +14,14 @@
         "pos": "62% 50%"
       },
       "side": "left",
-      "svc": "Instrumentación de relaves",
+      "svc": "Instrumentación geotécnica de relaves",
       "msg": "Instrumentar para<br>vigilar sin pausa.",
       "base": "Tranques de relaves · <b>instrumentados para su monitoreo a distancia</b>",
       "hist": [
+        {
+          "date": "19-10-2026",
+          "summary": "Servicio de la pieza → «Instrumentación geotécnica de relaves» (pedido MKT)."
+        },
         {
           "date": "19-10-2026",
           "summary": "Foco en el servicio real: IDIEM instrumenta el tranque PARA su monitoreo (no presta el monitoreo). Copy (sobre la edición de MKT), servicio, titular «Instrumentar para vigilar sin pausa» y línea base ajustados (pedido MKT)."

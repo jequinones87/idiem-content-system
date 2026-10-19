@@ -141,10 +141,37 @@ de sept 2026 — octubre tuvo CTA `contact` en 9/12 posts y ~4 arquetipos.
   (Google Fonts no carga en el entorno de render; decisión MKT 19-10-2026). No volver a `<link>` de Google.
 - Octubre 2026 cerrado manualmente: **no regenerar**.
 
-## Videos de carrusel (desde octubre 2026)
+## Videos para LinkedIn: qué herramienta usar (desde octubre 2026)
 
-Todo video de un carrusel/post se hace con la skill `.claude/skills/video-carrusel-idiem/` (leer su
-SKILL.md y seguir su pipeline y QA sin improvisar el método). Resumen en `docs/09_EDITORIAL_MEMORY.md`.
+Antes de hacer cualquier video, decidir la herramienta con esta regla (en orden; la primera que aplica manda):
+
+1. **Carrusel o post aprobado → video** (portada + láminas + cierre, 1080×1080): **siempre** la skill
+   `.claude/skills/video-carrusel-idiem/` (leer su SKILL.md y seguir su pipeline y QA sin improvisar el
+   método). Es el método aprobado por MKT. Remotion **no** se usa para esto, aunque pueda replicarlo.
+2. **Formatos que esa skill no cubre** → **Remotion** (repo privado `jequinones87/motion-graphics-ia`,
+   skills oficiales en `.claude/skills/remotion-*`; prueba de referencia en `idiem-sim/`). Si la sesión
+   no tiene ese repo, agregarlo (en sesiones cloud: herramienta `add_repo`, owner `jequinones87`,
+   repo `motion-graphics-ia`), clonarlo y leer sus skills antes de empezar. Úsalo para:
+   - video grabado (entrevistas, clips de faena o de laboratorio) con cortes, zócalos o intro/cierre de marca;
+   - subtítulos sincronizados con voz;
+   - cifras o gráficos animados, mapas de proyectos;
+   - formatos distintos de 1:1 (vertical 9:16, horizontal 16:9).
+3. **No calza en ninguno, o hay duda** → no elegir: preguntar a MKT (fail closed).
+
+Condiciones para usar Remotion (si falta una, el video queda en `DRAFT` y se informa el bloqueo):
+
+- **Licencia:** el usuario decidió el 19-10-2026 omitir la verificación de licencia de Remotion; no
+  bloquea la publicación. (Referencia: la licencia gratuita cubre personas naturales, empresas con fines
+  de lucro de hasta 3 empleados y organizaciones sin fines de lucro; ver `node_modules/remotion/LICENSE.md`.)
+- **Primer video de cada formato nuevo** requiere aprobación de MKT antes de repetirlo.
+- Rigen las mismas reglas de marca y de hechos que en la skill de carrusel: textos aprobados literales,
+  Montserrat incrustada, logo vectorial oficial, movimiento sobrio, sin IA generativa de video, render
+  cuadro a cuadro y QA visual antes de entregar. Lo que se diga o escriba en el video traza a
+  `knowledge_id`/`auxiliary_id` igual que un post.
+- Entrevistas: pendiente definir con MKT las reglas para lo que se dice en cámara; hasta entonces no se
+  producen.
+
+Resumen en `docs/09_EDITORIAL_MEMORY.md`.
 
 ## Fuentes expertas y banco de temas (desde octubre 2026)
 
@@ -155,3 +182,12 @@ Al planificar cada mes, revisar este banco junto a 2A.2. Capacidades IDIEM de la
 MKT (`validated_by`) se usan como auxiliary_id; incidentes con nombre (VERIFY) y cifras de proyectos
 (INTERNAL) no van al copy sin validación. **Nunca nombrar ni citar a los expositores ni las charlas de
 origen**: el foco es el tema.
+
+Servicios del sitio web (desde 19-10-2026): `config/topic_bank/web_services.json` (`WEB-*`, texto literal
+de https://www.idiem.cl/servicios; se re-extrae con `python -m idiem.web_services`). **Todos son VERIFY y están
+disponibles**: se planifican y redactan citados como `WEB-xxx` marcados VERIFY y se validan cuando MKT aprueba el
+post (o corrige la información); los `promo_flags` (superlativos) nunca van al
+copy y los `claim_flags` (certificaciones/normas) necesitan respaldo. No asignan célula ni crean capacidades.
+Cruce con 2A.2 en `config/topic_bank/web_crosswalk.json` (vista `docs/12_CRUCE_WEB_VS_2A2.md`): **2A.2 prevalece**
+(se ha corregido con cada post); servicio con `knowledge_id` → usar ese texto/política; lo NUEVO/PARCIAL del sitio es
+VERIFY y su célula es solo propuesta hasta que MKT valide.
