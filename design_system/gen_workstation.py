@@ -23,51 +23,62 @@ import io
 import json
 from pathlib import Path
 import sys
+import tempfile
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
+import brand_fonts as BF             # noqa: E402  (Montserrat incrustada)
 import gen_month_grid as G          # noqa: E402
 import carousel as CAR              # noqa: E402
 from bundle_month import grid_style, resolve_photo  # noqa: E402
 
-BUILD_DEFAULT = Path("/tmp/claude-0/-home-user-idiem-content-system/"
-                     "1c5b178b-f8ee-5946-beb8-9cf3fffd70df/scratchpad/ws")
+BUILD_DEFAULT = Path(tempfile.gettempdir()) / "idiem_ws_build"
 
 # Sustitución liviana: el pick top del motor pesa 8.3 MB (no descargable por el
 # conector). Se usa su hermana de librería, misma célula/subtema, versión ~1080px.
+# seq -> foto de la librería de Drive de IDIEM elegida para cada pieza de octubre.
+# Se baja, reescala (~1200px lado corto, JPEG q86) y hornea en assets/month/2026-10/pNN.jpg.
+# 'orig' vacío = no es sustitución (es la foto elegida directamente).
+def _drive(fid): return f"https://drive.google.com/file/d/{fid}/view"
 PHOTO_SUB = {
-    6:  {"photo_id": "PHO-0044", "orig": "PHO-0061",
-         "fuente": "https://drive.google.com/file/d/1TMjf-mU8rJ-Ds-O2d1sP0ce9MHISjLUS/view",
-         "detalle": "vigas de acero · casco IDIEM"},
-    10: {"photo_id": "PHO-0013", "orig": "PHO-0040",
-         "fuente": "https://drive.google.com/file/d/14Ad1dRP_Dfipr-C88kGtBVJL24KDdMOS/view",
-         "detalle": "domo minero · dron"},
-    3:  {"photo_id": "PHO-0085", "orig": "PHO-0091",
-         "fuente": "https://drive.google.com/file/d/1xUlYXbYXjL1VpIvy_EewpWXAOSQtEWhQ/view",
-         "detalle": "casco IDIEM · tablet · revisión", "reason": "foto original pixelada (329px)"},
-    11: {"photo_id": "PHO-0095", "orig": "PHO-0004",
-         "fuente": "https://drive.google.com/file/d/13ZKXpQ0kMFr0j7TVW7Jl8CIrL3DGOanJ/view",
-         "detalle": "edificio en construcción (Costanera)", "reason": "cambio pedido"},
-    1:  {"photo_id": "PHO-0058", "orig": "Adobe Stock #212862972",
-         "fuente": "https://drive.google.com/file/d/1KnC9RDEQUNZMxWX28rphzN2EGLz1ZNOl/view",
-         "detalle": "ejecutivo con laptop · planos", "reason": "cambio pedido: foto de librería"},
-    7:  {"photo_id": "equipo_acustica_FA-1", "orig": "Adobe Stock #204006589",
-         "fuente": "https://drive.google.com/file/d/19uVCrI97li6szs65HJaT8FdOTe3lZZpK/view",
-         "detalle": "equipo de acústica en terreno (foto propia)", "reason": "cambio pedido: foto propia de faena"},
-    8:  {"photo_id": "Tuberia_HDPE_END_ACERO4", "orig": "Adobe Stock #1614411840",
-         "fuente": "https://drive.google.com/file/d/1sHwdzCXyJeneC35woSwz8DkT8qKH3fXp/view",
-         "detalle": "END en tubería HDPE (foto propia)", "reason": "cambio pedido: foto propia de faena"},
-    9:  {"photo_id": "generica_ejecutivos_casco_construccion", "orig": "Adobe Stock #212862972",
-         "fuente": "https://drive.google.com/file/d/1_eczAWE2nzda5yfFx_jV23xorWODv8cG/view",
-         "detalle": "ejecutivos con casco · apretón de manos en obra", "reason": "cambio pedido: foto de librería"},
+    1:  {"photo_id": "acuerdo_mineros", "fuente": _drive("1wetOIpMB7RZ9Tazv8c4ZsK89xm5zuwxP"),
+         "detalle": "apretón de manos en faena minera · acuerdo"},
+    2:  {"photo_id": "arquitectos_generico_2", "fuente": _drive("18MjBtsVGh4ul8taRUb-Lg2A_UHuoFZ8-"),
+         "detalle": "arquitectos sobre planos · maqueta eólica y cascos"},
+    3:  {"photo_id": "sondaje_relave", "fuente": _drive("1DEFFoyprsBz9EY4Sbs8wXn0vu3GnFoKK"),
+         "detalle": "sondaje geotécnico en faena · equipo en terreno"},
+    4:  {"photo_id": "ensayo_aceros1", "fuente": _drive("1amvDzSYHH5T_3-YLqilt4YpGWpzxdhMq"),
+         "detalle": "ensayo de aceros en laboratorio"},
+    5:  {"photo_id": "generico_construccion_edificio_obra", "fuente": _drive("1PRspVgdZFrutleVS3HC5vUndqh2TVp9Z"),
+         "detalle": "obra en altura · grúas torre y edificios en construcción"},
+    6:  {"photo_id": "Equipo_trixial_gigante", "fuente": _drive("1XVR_E9H7G9wKAj_k_KN_W6c_uHK3HlrC"),
+         "detalle": "equipo Triaxial para grandes partículas"},
+    7:  {"photo_id": "generico_modelado_estructura", "fuente": _drive("157A_fs0lXLIOawLs_D92Ze4C-cczSUFS"),
+         "detalle": "modelado 3D de estructura"},
+    8:  {"photo_id": "ensayo_aceros2", "fuente": _drive("1lMfLcWp2X8eON3uINy-ZRzOHCwt44TPF"),
+         "detalle": "técnico IDIEM mecanizando probeta metálica en laboratorio"},
+    9:  {"photo_id": "estructuras_peritajes_analisis_terreno", "fuente": _drive("1U0v0oaWq2nypfKT-REB9FC77Gxegu0Jg"),
+         "detalle": "análisis estructural en terreno"},
+    10: {"photo_id": "estructuras_peritajes_puente_cortez", "fuente": _drive("12TxaHcgX3d-VLIGN85eniQOD8Q3NewIT"),
+         "detalle": "peritaje Puente Cortés"},
+    11: {"photo_id": "sensor_hormigon", "fuente": _drive("135xOEtISPljHIvdNmiu6Om7jnSpGEPqu"),
+         "detalle": "sensor embebido en hormigón fresco · obra"},
+    12: {"photo_id": "generica_estructura_acero_low", "fuente": _drive("11yl7as2U1j192aqSwRUVnQwa7IbtwKxi"),
+         "detalle": "estructura de acero galvanizado · celosía"},
 }
+
+# seq -> lado del círculo rojo en la pieza estática. Por defecto "left" (41%);
+# "right" lo lleva a 59% para no tapar al sujeto de la foto. Post 3 (geólogo):
+# con la foto sondaje_relave, la maquinaria y el equipo quedan bajos y a la
+# derecha del encuadre; el anillo va a la izquierda para no taparlos y el texto
+# cae sobre el cielo (pedido MKT 2026-09-08).
+SIDE = {3: "left"}
 
 # Fotos Adobe Stock licenciadas (tier libre) para los posts sin foto de librería
 # adecuada (antes marcados Muapi). Descargadas, comprimidas a 1080px y usadas
 # localmente; foto real y trazable, sin depender de un CDN externo.
-STOCK_SUB = {
-    12: {"id": "340172893",  "detalle": "END por ultrasonido en soldadura"},
-}
+# Fotos Adobe Stock licenciadas. Sin stock este mes.
+STOCK_SUB = {}
 
 # Sello de certificación Green Hospital (propia de IDIEM), overlay esquina inf-der del post 5.
 GH_SEAL = ("data:image/png;base64," +
@@ -76,30 +87,81 @@ GH_SEAL = ("data:image/png;base64," +
 # seq -> historial de cambios que YO (Claude) apliqué y republiqué, más reciente
 # primero. Alimenta el chip de estado "publicado · fecha" y el bloque "Historial"
 # de cada post. Espeja la bitácora de docs/09_EDITORIAL_MEMORY.md.
+# seq -> historial de cambios aplicados y republicados (más reciente primero).
+# Espeja la bitácora de docs/09_EDITORIAL_MEMORY.md: sólo cambios ya aplicados
+# Y republicados (no pendientes). Se va sumando en cada ronda del equipo.
 APPLIED_LOG = {
-    1:  [{"date": "2026-08-28", "summary": "Copy reescrito (MKT) + foto laptop/planos"},
-         {"date": "2026-08-24", "summary": "Foto de acuerdo/ejecutivos (previa)"}],
-    2:  [{"date": "2026-08-28", "summary": "Carrusel reformulado: causa-origen, estructural/mecánico, estudio de riesgo"},
-         {"date": "2026-08-28", "summary": "Copy reescrito + orden de láminas (incendios → fallas)"}],
-    3:  [{"date": "2026-08-24", "summary": "Foto casco + tablet (se corrigió la pixelada)"}],
-    5:  [{"date": "2026-08-28", "summary": "Sello Green Hospital 50% más grande, detrás del círculo"},
-         {"date": "2026-08-28", "summary": "Sello Green Hospital más grande (¼ del lienzo), detrás del círculo"},
-         {"date": "2026-08-28", "summary": "Copy (sin Salud sin Daño, ISO 50001) + sello Green Hospital"}],
-    6:  [{"date": "2026-08-21", "summary": "Foto vigas de acero / casco IDIEM"}],
-    7:  [{"date": "2026-08-28", "summary": "Círculo movido a la derecha (se ve el equipo de acústica)"},
-         {"date": "2026-08-28", "summary": "Copy (estudio de impacto, D.D. 14/24) + foto propia de acústica"}],
-    8:  [{"date": "2026-08-28", "summary": "Foto propia de faena (tubería HDPE)"}],
-    9:  [{"date": "2026-08-28", "summary": "Reencuadre para que el círculo no tape la cara"},
-         {"date": "2026-08-28", "summary": "Foto → ejecutivos con casco, apretón de manos en obra (librería)"},
-         {"date": "2026-08-28", "summary": "Foto de acuerdo / apretón de manos"}],
-    10: [{"date": "2026-08-21", "summary": "Foto domo minero / dron"}],
-    11: [{"date": "2026-08-24", "summary": "Foto edificio en construcción (Costanera)"}],
-    12: [{"date": "2026-08-28", "summary": "Título de gráfica → “Detectar antes de fallar”"},
-         {"date": "2026-08-28", "summary": "Gráfica: soldaduras inspeccionadas por muestreo"}],
-    13: [{"date": "2026-08-28", "summary": "Foto → bandera chilena + camión minero (librería)"},
-         {"date": "2026-08-28", "summary": "Creación — saludo Fiestas Patrias"}],
+    1: [
+        {"date": "2026-09-24", "summary": "Copy con ajustes de MKT: \"inconsistencias durante la ejecución de la obra\" (antes \"diferencias por la programación\") y primera viñeta \"Diagnóstico contractual y de ejecución de la obra.\"."},
+        {"date": "2026-09-21", "summary": "Foto aplicada: acuerdo_mineros (apretón de manos en faena minera) — refuerza el ángulo de acuerdos/ingeniería contractual."},
+        {"date": "2026-09-21", "summary": "Post cambiado por completo (pedido de MKT): de \"control de productividad\" (KB-IOM-019) a \"Ingeniería contractual\" minera (KB-IOM-038); apoyo técnico en diagnóstico contractual, programación de obra y reclamos. Traza a KB-IOM-038/039/040/041/042."},
+        {"date": "2026-09-04", "summary": "Publicado: control de productividad en operación minera (subtema fresco, no usado en septiembre)."},
+    ],
+    2: [
+        {"date": "2026-09-21", "summary": "Foto cambiada a arquitectos_generico_2 (arquitectos sobre planos, maqueta eólica y cascos). Copy con ajustes de MKT: \"sin someter la calidad ni la funcionalidad\", cierre \"Ciencia e ingeniería se funden con la Arquitectura y el diseño…\" y CTA \"¿Tu proyecto quiere ser más sustentable?\"."},
+        {"date": "2026-09-04", "summary": "Gancho ajustado al Día Mundial de la Arquitectura (5-oct) por pedido de MKT."},
+        {"date": "2026-09-04", "summary": "Publicado: sustentabilidad y arquitectura en infraestructura pública."},
+    ],
+    3: [
+        {"date": "2026-09-08", "summary": "Foto cambiada a sondaje_relave; encuadre bajo + anillo a la izquierda para no tapar maquinaria ni personas (texto sobre el cielo, equipo despejado)."},
+        {"date": "2026-09-07", "summary": "Gráfica: título central \"Feliz día del Geólogo\" (se retira el kicker \"Día del Geólogo\")."},
+        {"date": "2026-09-04", "summary": "Foto cambiada a generica_geologo (Drive); anillo rojo movido a la derecha para no tapar a la persona."},
+        {"date": "2026-09-04", "summary": "Reescrito como saludo del Día del Geólogo (17-oct) + geotecnia, sin detallar otros servicios."},
+    ],
+    4: [
+        {"date": "2026-09-21", "summary": "Título de la gráfica y copy: \"confiabilidad de materiales\" pasa a \"calidad de materiales\" (pedido de MKT). Se mantiene el hashtag #Confiabilidad."},
+        {"date": "2026-09-04", "summary": "Reencuadrado a alto nivel (confiabilidad de materiales) para no repetir el ángulo de septiembre."},
+    ],
+    5: [
+        {"date": "2026-09-07", "summary": "Foto cambiada a obra en altura (generico_construccion_edificio_obra, Drive)."},
+        {"date": "2026-09-04", "summary": "Copy reemplazado por la versión editada por MKT (Tecnología de la Construcción)."},
+    ],
+    6: [
+        {"date": "2026-09-08", "summary": "Copy y lámina del carrusel actualizados (pilas ROM / tranques de relaves; materiales granulares gruesos fuera de laboratorios convencionales); recortado a ≤900."},
+        {"date": "2026-09-04", "summary": "Convertido en carrusel: Triaxial · suelos de partículas de gran tamaño."},
+    ],
+    7: [
+        {"date": "2026-09-21", "summary": "Gancho ajustado: \"…proyecto minero con información incompleta…\" (antes \"sobre\"), pedido de MKT."},
+        {"date": "2026-09-04", "summary": "Publicado: coordinación BIM en operación minera."},
+    ],
+    8: [
+        {"date": "2026-09-24", "summary": "Foto cambiada a ensayo_aceros2 (técnico IDIEM mecanizando una probeta metálica): la anterior era una maestranza de acero estructural y las fallas peritadas son de componentes mecánicos. La lámina 03 \"Pavimento en autopistas\" se reemplaza por \"Evidencia para decidir\" (frase ya aprobada del copy) y se retira la mención a pavimentos del copy, por no corresponder al mensaje (pedido de MKT)."},
+        {"date": "2026-09-04", "summary": "Reemplaza al post de incendios; convertido en carrusel de peritaje de componentes metálicos."},
+    ],
+    9: [
+        {"date": "2026-09-21", "summary": "Lámina 02 (slide 2): el cuerpo pasa a \"Verificamos el cumplimiento frente a marcos normativos aplicables.\" (antes \"marcos estructurales\") y el título se ajusta a \"Marcos normativos\" para mantener coherencia (pedido de MKT)."},
+        {"date": "2026-09-07", "summary": "Gancho reformulado: no dar a entender que se puede incumplir la norma (foco en detectar brechas)."},
+        {"date": "2026-09-04", "summary": "Convertido en carrusel: cumplimiento normativo."},
+    ],
+    10: [
+        {"date": "2026-09-21", "summary": "Copy: se agrega \"pruebas\" a los métodos y se retira la mención al estudio del Puente Cortés (pedido de MKT); queda más general."},
+        {"date": "2026-09-04", "summary": "Publicado: peritaje de puentes (caso Puente Cortés)."},
+    ],
+    11: [
+        {"date": "2026-09-08", "summary": "Foto cambiada a sensor_hormigon; encuadre que baja el sensor al centro-inferior del anillo para que el sensor amarillo quede dentro del área abierta y no lo tape el círculo rojo (texto arriba, equipo de obra al fondo)."},
+        {"date": "2026-09-04", "summary": "Publicado a alto nivel: tecnología e I+D del hormigón (evita repetir septiembre)."},
+    ],
+    12: [
+        {"date": "2026-09-21", "summary": "Carrusel: se suma una lámina de \"Instrumentación y monitoreo\" (seguimiento con sensores del comportamiento tras la intervención; traza a monitoreo de salud estructural IOM)."},
+        {"date": "2026-09-04", "summary": "Foto cambiada a generica_estructura_acero (versión comprimida del Drive)."},
+        {"date": "2026-09-04", "summary": "Convertido en carrusel: revisión integral de rehabilitación (4 etapas)."},
+    ],
+    13: [
+        {"date": "2026-09-21", "summary": "Foto: se aclara la mitad derecha (ruido_acustica_discotec, ocio nocturno) que se veía muy oscura —brillo/contraste/saturación levantados—; la mitad izquierda (obra) se mantiene igual (pedido de MKT)."},
+        {"date": "2026-09-21", "summary": "Portada: nuevo título \"Conoce las nuevas exigencias acústicas para la construcción y locales de ocio nocturno.\" (pedido de MKT). Foto de fondo DIVIDIDA en todas las láminas (cierre incluido): mitad izquierda generica_obra_construccion_edificio (obra) · mitad derecha ruido_acustica_discotec (ocio nocturno)."},
+        {"date": "2026-09-21", "summary": "Copy: gancho reformulado (\"la gestión de ruido… cuenta con herramientas más claras\"). Lámina 04 (Obras) pasa a foto propia generica_obra_construccion_edificio; portada y láminas 01/02 mantienen la escena de ocio nocturno."},
+        {"date": "2026-09-11", "summary": "Foto aplicada: ruido_acustica_discotec (local de ocio nocturno) como fondo de portada e intermedias; la lámina de cierre mantiene el campo de marca."},
+        {"date": "2026-09-11", "summary": "Post adicional creado como carrusel (hito de acústica / instrucción SMA). Copy recortado a los lineamientos (812 car.) y cifra de cobertura dejada en VERIFY."},
+    ],
 }
-NEW_POSTS = {13}  # posts creados nuevos (chip "nuevo")
+
+NEW_POSTS = {13}  # chip "★ nuevo": post recién sumado a la grilla
+
+# Estado "sembrado" en el ws-state embebido. En un mes nuevo va en False: el tablero
+# arranca limpio (nada aprobado/subido) y la DB del artefacto es la fuente de verdad
+# del estado compartido. Sólo se pone en True para "congelar" un mes ya cerrado como
+# fallback offline (fue el caso de septiembre 2026).
+SEED_ALL_DONE = False
 
 
 def _fmt_date(iso: str) -> str:
@@ -128,28 +190,56 @@ def history_html(seq: int) -> str:
 
 # Posts institucionales que NO vienen del motor (no trazan a knowledge_id). Se
 # arman aparte y se anexan después de los 12. Foto de fondo (estilo Plantilla 02).
-SPECIAL = [{
-    "seq": 13,
-    "content_id": "SALUDO-FIESTAS-PATRIAS-2026-09",
-    "cshort": "SALUDO",
-    "subtheme": "Fiestas Patrias · institucional",
-    "fmt": "SALUDO",
-    "photo": "p13.jpg",
-    "kicker": "FELICES FIESTAS PATRIAS",
-    "title": 'Presentes en la<br>historia de <span class="fpred">Chile</span>.',
-    "sub": "Aportamos ciencia e ingeniería al desarrollo de la infraestructura del país.",
-    "copy": {
-        "hook": "🇨🇱 Este 18 de septiembre celebramos a Chile y a las personas que lo construyen cada día.",
-        "body": ("A lo largo de nuestra historia, en IDIEM hemos acompañado el desarrollo de la "
-                 "infraestructura del país: aportando ciencia, ensayos e ingeniería al servicio de obras "
-                 "que sostienen la vida de las personas.\n\n"
-                 "Caminos, hospitales, edificios y faenas que ayudamos a hacer más seguros y confiables "
-                 "también son parte de la historia de Chile. 🏗️"),
-        "cta": "¡Felices Fiestas Patrias! 🇨🇱\n\n#IDIEM #FiestasPatrias #Chile #Ingeniería #Infraestructura",
+# Posts institucionales que NO trazan a knowledge_id (saludos). Octubre no lleva:
+# las 3 efemérides (Arquitectura, RRD, Geólogo) están DENTRO de los 12 y trazan a 2A.2.
+SPECIAL = [
+    # seq 13 · Post ADICIONAL (fuera del motor): hito institucional de acústica.
+    # NO traza a knowledge_id de 2A.2; se sustenta en fuentes oficiales aportadas por
+    # MKT. Es CARRUSEL (láminas en carousel.py SLIDES[13]) y va SIN foto por ahora.
+    {
+        "seq": 13,
+        "content_id": "PLAN-ACUSTICA-SMA-13",
+        "cshort": "ACÚS",
+        "fmt": "CARRUSEL",
+        "fmtbadge": "CARRUSEL · ACÚSTICA",
+        "subtheme": "Acústica · control de ruido (hito SMA)",
+        "editorial_angle": ("hito institucional — evidencia técnica de IDIEM que sustenta la nueva "
+                            "instrucción de la SMA (no traza a knowledge_id de 2A.2; fuentes oficiales aportadas por MKT)"),
+        "trace": ("Instrucción General SMA (Res. 2.163 exenta, 30-07-2026; D.O. N°44.522, 11-08-2026) · "
+                  "art. 21 D.S. N°14/2024 MMA (Norma de Emisión de Ruido para Fuentes Fijas) · "
+                  "doc. MMA «Medidas y recomendaciones para el control y gestión de ruido en locales de ocio "
+                  "nocturno» — consultoría pública adjudicada a IDIEM · FIA 2024 (XIII Congreso Iberoamericano "
+                  "de Acústica) — protocolo de gestión de ruido en 6 pasos. "
+                  "⚠ VERIFY (MKT): la cobertura «cerca de 150 obras» y toda cifra/plazo se dejaron FUERA del copy "
+                  "hasta validación; agregarlas sólo si MKT las confirma."),
+        "photo": {"source": "libreria_idiem",
+                  "photo_id": "split · generica_obra_construccion_edificio + ruido_acustica_discotec",
+                  "fuente": _drive("19RbuqrQknv1QWgQYetXtEgB1r08TCCr1"),
+                  "detalle": "foto dividida: izq. obra en construcción · der. local de ocio nocturno"},
+        "foto_html": ('Todas las láminas · <b>foto dividida</b>. Mitad izquierda: Librería '
+                      '<code>generica_obra_construccion_edificio</code> (obra en altura · grúa torre) · '
+                      '<a href="https://drive.google.com/file/d/19RbuqrQknv1QWgQYetXtEgB1r08TCCr1/view" '
+                      'target="_blank" rel="noopener">ver en Drive</a>'
+                      '<br>Mitad derecha: Librería <code>ruido_acustica_discotec</code> (local de ocio '
+                      'nocturno · pista y luces) · <a href="https://drive.google.com/file/d/10JPdH3YNhvOQnleu3LiMmAXV9RqDbNSP/view" '
+                      'target="_blank" rel="noopener">ver en Drive</a>'),
+        "copy": {
+            "hook": "🔊 La gestión de ruido de las obras y la vida nocturna ahora cuenta con herramientas más claras.",
+            "body": (
+                "La nueva Instrucción General de la SMA —asociada al D.S. N°14/2024— fija recomendaciones "
+                "para los Planes de Condiciones de Operación en faenas constructivas y locales de ocio nocturno.\n\n"
+                "En #IDIEM aportamos la base técnica que sustenta estas directrices:\n"
+                "* Ocio nocturno: los contenidos técnicos del documento del Ministerio del Medio Ambiente se "
+                "elaboraron en una consultoría pública adjudicada a IDIEM.\n"
+                "* Obras: nuestro protocolo de gestión de ruido (FIA 2024) ordena evaluación, mitigación y "
+                "monitoreo continuo en 6 pasos.\n\n"
+                "Investigación e ingeniería al servicio de mejores políticas públicas. ✅"),
+            "cta": ("Trabajemos juntos por un manejo responsable del ruido 👉 https://idiem.cl\n\n"
+                    "#IDIEM #Acústica #ControlDeRuido #MedioAmbiente #Construcción"),
+        },
     },
-    "trace": ("Saludo institucional — pieza conmemorativa que <strong>no traza a un knowledge_id</strong>. "
-              "Mensaje general, sin afirmaciones específicas de proyectos, fechas ni cifras."),
-}]
+]
+
 SPECIAL_BY_CID = {s["content_id"]: s for s in SPECIAL}
 
 FIESTAS_CSS = r'''
@@ -192,10 +282,9 @@ def mod_badge(seq: int) -> str:
     return '<span class="modbadge">sin cambios</span>'
 
 
+# Montserrat incrustada (brand_fonts): toda pieza renderizada desde dic-2026 (MKT 19-10-2026).
 PAGE = """<!doctype html><html lang="es"><head><meta charset="utf-8">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
+<style>""" + BF.FONT_CSS_FMT + """</style>
 <style>{style}{carcss}{fpcss}</style>
 <style>
   html,body{{margin:0;padding:0;background:#0a0c0d}}
@@ -212,12 +301,12 @@ def post_slides(seq: int, post) -> list[str]:
     finish = "photo" if photo_uri else G.finish_tag(seq, ps)[0]
     if seq in CAR.CAROUSEL_POSTS:
         # Carrusel: portada + intermedias + cierre, todo con foto de fondo (Plantilla 02).
-        return CAR.build_slides(seq, photo_uri, G.LOGO, G.SLOGAN)
-    # Estático: pieza Servicios (círculo rojo). Post 5 lleva sello Green Hospital;
-    # post 7 mueve el círculo a la derecha para dejar ver el equipo de acústica.
-    corner = GH_SEAL if seq == 5 else None
-    side = "right" if seq == 7 else "left"
-    return [G.canvas(seq, cshort, photo_uri, finish, corner_logo=corner, side=side)]
+        # photo_of permite una foto por lámina (pNN_sIDX.jpg); si no hay, usa la base.
+        return CAR.build_slides(seq, photo_uri, G.LOGO, G.SLOGAN,
+                                photo_of=lambda idx: resolve_photo(seq, idx))
+    # Estático: pieza Servicios (círculo rojo). El lado del anillo se ajusta por
+    # post en SIDE para no tapar al sujeto de la foto (default "left").
+    return [G.canvas(seq, cshort, photo_uri, finish, corner_logo=None, side=SIDE.get(seq, "left"))]
 
 
 def emit(month: str, build: Path) -> None:
@@ -225,9 +314,7 @@ def emit(month: str, build: Path) -> None:
     posts_dir = build / "slides"
     posts_dir.mkdir(exist_ok=True)
     kb = G.load_knowledge_base()
-    review = G.compose_month(kb, month, target_count=12)
-    for cid, c in G.COPY.items():
-        G.set_post_copy(review, cid, c)
+    review = G.compose_current(kb)
 
     style = grid_style()
     manifest, structure = [], []
@@ -243,17 +330,25 @@ def emit(month: str, build: Path) -> None:
             pngs.append(str(pp))
         structure.append({"seq": seq, "cid": post.content_id, "pngs": pngs})
 
-    # Posts institucionales (no del motor): se anexan después de los 12.
+    # Posts institucionales (no del motor): se anexan después de los 12. Pueden ser
+    # una sola lámina (saludo, estilo Plantilla 02) o un carrusel (láminas en carousel.py).
     for s in SPECIAL:
         seq = s["seq"]
         photo_uri = resolve_photo(seq)
-        html = PAGE.format(style=style, carcss=CAR.CAROUSEL_CSS, fpcss=FIESTAS_CSS,
-                           canvas=fiestas_html(photo_uri, s))
-        hp = posts_dir / f"p{seq:02d}_s0.html"
-        pp = posts_dir / f"p{seq:02d}_s0.png"
-        hp.write_text(html, encoding="utf-8")
-        manifest.append({"html": str(hp), "png": str(pp)})
-        structure.append({"seq": seq, "cid": s["content_id"], "pngs": [str(pp)]})
+        if seq in CAR.CAROUSEL_POSTS:
+            slides = CAR.build_slides(seq, photo_uri, G.LOGO, G.SLOGAN,
+                                      photo_of=lambda idx: resolve_photo(seq, idx))
+        else:
+            slides = [fiestas_html(photo_uri, s)]
+        pngs = []
+        for idx, canvas_html in enumerate(slides):
+            html = PAGE.format(style=style, carcss=CAR.CAROUSEL_CSS, fpcss=FIESTAS_CSS, canvas=canvas_html)
+            hp = posts_dir / f"p{seq:02d}_s{idx}.html"
+            pp = posts_dir / f"p{seq:02d}_s{idx}.png"
+            hp.write_text(html, encoding="utf-8")
+            manifest.append({"html": str(hp), "png": str(pp)})
+            pngs.append(str(pp))
+        structure.append({"seq": seq, "cid": s["content_id"], "pngs": pngs})
 
     (build / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False), "utf-8")
     (build / "structure.json").write_text(json.dumps(structure, ensure_ascii=False), "utf-8")
@@ -270,9 +365,7 @@ def jpeg_uri(png_path: str, q: int = 86) -> str:
 
 def build(month: str, build_dir: Path, out_path: Path) -> None:
     kb = G.load_knowledge_base()
-    review = G.compose_month(kb, month, target_count=12)
-    for cid, c in G.COPY.items():
-        G.set_post_copy(review, cid, c)
+    review = G.compose_current(kb)
     posts = {p.content_id: p for p in review.posts}
     structure = json.loads((build_dir / "structure.json").read_text("utf-8"))
 
@@ -285,15 +378,18 @@ def build(month: str, build_dir: Path, out_path: Path) -> None:
         else:
             cards.append(render_card(seq, posts[cid], uris))
 
-    page = ARTIFACT.replace("__CARDS__", "\n".join(cards))
-    css = (ROOT / "workstation_shared" / "workstation_ui.css").read_text(encoding="utf-8")
-    js = (ROOT / "workstation_shared" / "workstation_ui.js").read_text(encoding="utf-8")
-    cfg = json.dumps({"key": "idiem_ws_sep2026_v5",
-                      "wsUrl": "https://claude.ai/code/artifact/f9016145-d797-4a02-867e-1e478de62a6b",
-                      "exportMonth": "2026-09", "exportTag": "sep2026", "ccMax": 900}, ensure_ascii=False)
-    html = page.replace("__CSS__", css).replace("__JS__", js).replace("__CFG__", cfg)
+    html = ARTIFACT.replace("__CARDS__", "\n".join(cards))
+    if SEED_ALL_DONE:
+        seed = {st["cid"]: {"approved": True, "approvedAt": None,
+                            "posted": True, "postedAt": None}
+                for st in structure}
+        html = html.replace(
+            '<script id="ws-state" type="application/json">{}</script>',
+            '<script id="ws-state" type="application/json">'
+            + json.dumps(seed, ensure_ascii=False) + '</script>')
     out_path.write_text(html, encoding="utf-8")
-    print(f"build: {out_path} ({out_path.stat().st_size//1024} KB, {len(structure)} posts)")
+    print(f"build: {out_path} ({out_path.stat().st_size//1024} KB, {len(structure)} posts, "
+          f"seed={'all-done' if SEED_ALL_DONE else 'empty'})")
 
 
 def render_card(seq: int, post, uris: list[str]) -> str:
@@ -307,7 +403,7 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     n = len(uris)
     fmt_label = f"CARRUSEL · {n} láminas" if is_car else "STATIC"
 
-    c = G.COPY[post.content_id]
+    c = G.COPY[post.knowledge_id]  # COPY keyed por knowledge_id
     full_copy = f"{c['hook']}\n\n{c['body']}\n\n{c['cta']}"
 
     ev = gb.get("evidence_ids") or []
@@ -316,11 +412,12 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     src = ps.get("source")
     if seq in PHOTO_SUB:
         s = PHOTO_SUB[seq]
-        reason = s.get("reason", "original 8.3 MB, no descargable por el conector")
         foto = (f'Librería · <code>{s["photo_id"]}</code> ({G.esc(s["detalle"])}) · '
-                f'<a href="{G.esc(s["fuente"])}" target="_blank" rel="noopener">ver en Drive</a>'
-                f'<br><span class="muprompt">reemplaza a <code>{s["orig"]}</code> '
-                f'({G.esc(reason)})</span>')
+                f'<a href="{G.esc(s["fuente"])}" target="_blank" rel="noopener">ver en Drive</a>')
+        if s.get("orig"):
+            reason = s.get("reason", "")
+            foto += (f'<br><span class="muprompt">reemplaza a <code>{s["orig"]}</code>'
+                     + (f' ({G.esc(reason)})' if reason else '') + '</span>')
     elif seq in STOCK_SUB:
         s = STOCK_SUB[seq]
         foto = (f'Adobe Stock · <code>#{s["id"]}</code> ({G.esc(s["detalle"])}) · licencia libre'
@@ -343,7 +440,7 @@ def render_card(seq: int, post, uris: list[str]) -> str:
     # data de láminas para JS (idx -> uri en orden)
     slides_json = G.esc(json.dumps(uris))
 
-    return f'''<article class="post" data-seq="{seq}" data-cid="{G.esc(post.content_id)}" data-car="{"1" if is_car else "0"}" data-status="publicado" data-edited-at="" data-edited-by="" data-caltitle="Post {seq:02d}">
+    return f'''<article class="post" data-seq="{seq}" data-cid="{G.esc(post.content_id)}" data-car="{"1" if is_car else "0"}" data-status="publicado" data-edited-at="" data-edited-by="" data-caltitle="{G.esc(f"Post {seq:02d} · {subname}" if subname else f"Post {seq:02d}")}">
   <script type="application/json" class="slides-data">{slides_json}</script>
   <div class="graphic">
     <div class="gwrap">
@@ -408,15 +505,33 @@ def render_special_card(s: dict, uris: list[str]) -> str:
     c = s["copy"]
     full_copy = f"{c['hook']}\n\n{c['body']}\n\n{c['cta']}"
     slides_json = G.esc(json.dumps(uris))
-    foto = ('Librería · <code>generica_bandera_chile_mineria</code> (bandera chilena + camión minero) · '
-            '<a href="https://drive.google.com/file/d/18Vlym9diMd7rcuAbaWvFMapzAF491biH/view" target="_blank" rel="noopener">ver en Drive</a>'
-            '<br><span class="muprompt">pieza conmemorativa de Fiestas Patrias (reemplaza a La Moneda)</span>')
-    return f'''<article class="post special" data-seq="{seq}" data-cid="{G.esc(s["content_id"])}" data-car="0" data-status="publicado" data-edited-at="" data-edited-by="" data-caltitle="Post {seq:02d}">
+    is_car = seq in CAR.CAROUSEL_POSTS
+    n = len(uris)
+    fmt_label = f"CARRUSEL · {n} láminas" if is_car else "STATIC"
+    fmtbadge = s.get("fmtbadge", "SALUDO INSTITUCIONAL")
+
+    # Foto: cada special puede declarar su propia traza; si no, se toma como sin foto.
+    if s.get("foto_html"):
+        foto = s["foto_html"]
+    elif s.get("photo_note"):
+        foto = ('Sin foto por diseño (<code>needs_photo=false</code>)'
+                f'<br><span class="muprompt">{G.esc(s["photo_note"])}</span>')
+    else:
+        foto = 'Sin foto por diseño (<code>needs_photo=false</code>)'
+
+    strip = ""
+    if is_car:
+        thumbs = "".join(
+            f'<img class="thumb{" on" if i==0 else ""}" src="{u}" data-idx="{i}" alt="lámina {i+1}">'
+            for i, u in enumerate(uris))
+        strip = f'<div class="strip">{thumbs}</div>'
+
+    return f'''<article class="post special" data-seq="{seq}" data-cid="{G.esc(s["content_id"])}" data-car="{"1" if is_car else "0"}" data-status="publicado" data-edited-at="" data-edited-by="" data-caltitle="{G.esc(f'Post {seq:02d} · {s["subtheme"]}')}">
   <script type="application/json" class="slides-data">{slides_json}</script>
   <div class="graphic">
     <div class="gwrap">
       <img class="main" src="{uris[0]}" data-idx="0" alt="Post {seq:02d}">
-      <span class="fmtbadge">SALUDO · FIESTAS PATRIAS</span>
+      <span class="fmtbadge">{G.esc(fmtbadge)}</span>
       {status_chip(seq)}
       <div class="botleft">
         <span class="ap-badge" hidden>✅ Aprobado</span>
@@ -425,6 +540,7 @@ def render_special_card(s: dict, uris: list[str]) -> str:
       </div>
       <span class="zoomhint">clic para ampliar</span>
     </div>
+    {strip}
   </div>
   <div class="controls">
     <div class="chead"><span class="seq">{seq:02d}</span><span class="badge">{G.esc(s["cshort"])}</span>
@@ -470,19 +586,168 @@ def render_special_card(s: dict, uris: list[str]) -> str:
 </article>'''
 
 
-ARTIFACT = r'''<title>Workstation Septiembre IDIEM</title>
-<meta name="description" content="Plataforma de desarrollo de los 12 posts de septiembre de IDIEM: gráfica por post, texto editable, notas de imagen con regeneración, descarga PNG/PDF y revisión de carruseles.">
+ARTIFACT = r'''<title>Workstation Octubre IDIEM</title>
+<meta name="description" content="Plataforma de desarrollo de los 13 posts de octubre de IDIEM: gráfica por post, texto editable, notas de imagen con regeneración, descarga PNG/PDF y revisión de carruseles.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
 <style>
-[hidden]{display:none!important}
-__CSS__
+:root{
+  --red:#e1261d;--gray-blue:#666d72;--gray-dark:#2f3030;--gray-light:#efefef;
+  --ink:#22262a;--paper:#f2f2ef;--card:#ffffff;--line:rgba(47,48,48,.13);
+  --muted:#6a7075;--shadow:0 20px 50px -26px rgba(47,48,48,.42);--mono:"Montserrat",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ink:#eef0f0;--paper:#141617;--card:#1d2021;--gray-light:#282b2c;
+  --line:rgba(239,239,239,.14);--muted:#9aa1a5;--shadow:0 24px 64px -30px rgba(0,0,0,.78);
+}}
+:root[data-theme="dark"]{
+  --ink:#eef0f0;--paper:#141617;--card:#1d2021;--gray-light:#282b2c;
+  --line:rgba(239,239,239,.14);--muted:#9aa1a5;--shadow:0 24px 64px -30px rgba(0,0,0,.78);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--mono);background:var(--paper);color:var(--ink);line-height:1.5;
+  padding:clamp(18px,3.5vw,52px) clamp(14px,3.5vw,44px) 90px}
+.wrap{max-width:1180px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:.6em;font-size:.72rem;font-weight:700;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin:0 0 12px}
+.eyebrow .dot{width:.5em;height:.5em;border-radius:50%;background:var(--red)}
+h1{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:800;letter-spacing:-.02em;line-height:1.04;margin:0 0 .4rem}
+h1 b{color:var(--red)}
+.lede{font-size:clamp(1rem,1.6vw,1.13rem);color:var(--muted);max-width:74ch;margin:0 0 18px}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 26px}
+.bar .savehint{font-size:.76rem;color:var(--muted)}
+.syncstate{font-family:inherit;font-size:.74rem;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:100px;padding:6px 12px;display:inline-flex;align-items:center;gap:.4em;white-space:nowrap}
+.syncstate[data-mode="sync"]{color:#15803d;border-color:rgba(21,128,61,.4);background:rgba(21,128,61,.08)}
+.syncstate[data-mode="local"]{color:#c6780a;border-color:rgba(198,120,10,.4);background:rgba(198,120,10,.08)}
+.xbtn{font-family:inherit;font-size:.8rem;font-weight:700;color:#fff;background:var(--gray-dark);border:0;
+  padding:8px 16px;border-radius:100px;cursor:pointer}
+.xbtn.on{background:var(--red)}
+.idfield{font-family:inherit;font-size:.82rem;color:var(--ink);background:var(--card);border:1px solid var(--line);
+  border-radius:100px;padding:8px 14px;min-width:150px}
+.idfield:focus{outline:2px solid var(--red);outline-offset:1px}
+
+.grid{display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
+.post{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.post.flag{outline:2px solid var(--red);outline-offset:-2px}
+.graphic{padding:16px 16px 0}
+.gwrap{position:relative;border-radius:10px;overflow:hidden;cursor:zoom-in;box-shadow:0 8px 22px -12px rgba(0,0,0,.5)}
+.gwrap .main{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
+.fmtbadge{position:absolute;top:10px;left:10px;font-size:.66rem;font-weight:800;letter-spacing:.08em;color:#fff;background:rgba(0,0,0,.55);padding:4px 10px;border-radius:100px;backdrop-filter:blur(3px)}
+.zoomhint{position:absolute;bottom:10px;right:10px;font-size:.64rem;font-weight:700;color:#fff;background:rgba(0,0,0,.5);padding:4px 9px;border-radius:100px;opacity:0;transition:opacity .15s}
+.gwrap:hover .zoomhint{opacity:1}
+.modbadge{position:absolute;top:10px;right:10px;font-size:.6rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(0,0,0,.5);padding:4px 9px;border-radius:100px;backdrop-filter:blur(3px)}
+.modbadge.on{background:rgba(225,38,29,.92)}
+.modbadge.new{background:rgba(21,128,61,.95)}
+/* estado por post */
+.statuschip{position:absolute;top:10px;right:10px;font-size:.6rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(0,0,0,.55);padding:4px 9px;border-radius:100px;backdrop-filter:blur(3px);max-width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.statuschip.pub{background:rgba(45,50,52,.82)}
+.statuschip.pend{background:rgba(198,120,10,.95)}
+.statuschip.ready{background:rgba(225,38,29,.95)}
+/* badges de estado de publicación (esquina inf-izq, apilados) */
+.botleft{position:absolute;bottom:10px;left:10px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.ap-badge{font-size:.62rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(21,128,61,.95);padding:4px 10px;border-radius:100px;backdrop-filter:blur(3px);display:inline-flex;align-items:center;gap:.35em}
+.cal-badge{font-size:.62rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(124,58,237,.95);padding:4px 10px;border-radius:100px;backdrop-filter:blur(3px);display:inline-flex;align-items:center;gap:.35em}
+.li-badge{font-size:.62rem;font-weight:800;letter-spacing:.03em;color:#fff;background:rgba(10,102,194,.95);padding:4px 10px;border-radius:100px;backdrop-filter:blur(3px);display:inline-flex;align-items:center;gap:.35em}
+/* estado "aprobado para publicar" (independiente) */
+.post.approved{outline:2px solid rgba(21,128,61,.55);outline-offset:-2px}
+.btn.approve{background:transparent;color:#15803d;border-color:rgba(21,128,61,.5);font-weight:800}
+.btn.approve.on{background:#15803d;color:#fff;border-color:#15803d}
+/* estado de publicación en LinkedIn (gana el borde si además está subido) */
+.post.posted{outline:2px solid rgba(10,102,194,.55);outline-offset:-2px}
+.btn.linkedin{background:transparent;color:#0a66c2;border-color:rgba(10,102,194,.5);font-weight:800}
+.btn.linkedin.on{background:#0a66c2;color:#fff;border-color:#0a66c2}
+/* fecha de publicación + Google Calendar */
+.calrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:2px}
+.caldate,.caltime{font-family:inherit;font-size:.8rem;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:100px;padding:6px 12px}
+.caldate:focus,.caltime:focus{outline:2px solid var(--red);outline-offset:1px}
+.btn.cal{background:transparent;color:#7c3aed;border-color:rgba(124,58,237,.5);font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:.35em}
+.btn.cal:hover{background:rgba(124,58,237,.10)}
+.btn.cal.off{opacity:.45;pointer-events:none}
+.calclear{font-family:inherit;font-size:.64rem;font-weight:700;letter-spacing:0;text-transform:none;color:#7c3aed;background:transparent;border:0;cursor:pointer;padding:0;margin-left:auto}
+.libox{display:inline-flex;align-items:center;gap:.4em;font-size:.8rem;color:var(--muted)}
+.libox b{font-size:1rem;font-weight:800;color:#0a66c2}
+.litoggle{font-family:inherit;font-size:.74rem;font-weight:700;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:100px;padding:5px 12px;cursor:pointer}
+.litoggle.on{color:#fff;background:#0a66c2;border-color:#0a66c2}
+/* tablero */
+.dash{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:0 0 22px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.counts{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:.8rem;color:var(--muted)}
+.ct{display:inline-flex;align-items:center;gap:.4em}
+.ct b{font-size:1rem;font-weight:800;color:var(--ink)}
+.ct.pend b{color:#c6780a}.ct.ready b{color:var(--red)}.ct.appr b{color:#15803d}.ct.sched b{color:#7c3aed}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+.fchip{font-family:inherit;font-size:.74rem;font-weight:700;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:100px;padding:5px 12px;cursor:pointer}
+.fchip.on{color:#fff;background:var(--gray-dark);border-color:var(--gray-dark)}
+.jumpnext{font-family:inherit;font-size:.74rem;font-weight:700;color:var(--red);background:transparent;border:0;cursor:pointer;padding:5px 4px}
+.post.hide{display:none}
+/* controles de estado */
+.lab{display:flex;align-items:center;gap:8px}
+.revert{font-family:inherit;font-size:.64rem;font-weight:700;letter-spacing:0;text-transform:none;color:var(--red);background:transparent;border:0;cursor:pointer;padding:0;margin-left:auto}
+.editline{font-size:.72rem;color:var(--muted);min-height:1em;line-height:1.4}
+.editline .who{font-weight:700;color:var(--ink)}
+.btn.ready.on{background:#15803d;border-color:#15803d;color:#fff}
+.hist{margin-top:6px;border-top:1px dashed var(--line);padding-top:8px}
+.hist summary{font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);cursor:pointer}
+.histlist{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:5px}
+.histlist li{display:grid;grid-template-columns:74px 1fr;gap:10px;font-size:.75rem}
+.histlist .hd{font-weight:800;color:var(--red)}
+.histlist .hs{color:var(--ink)}
+.tpub{color:var(--gray-blue)}.tpend{color:#c6780a}.tready{color:var(--red)}
+.xbtn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.strip{display:flex;gap:6px;padding:10px 0 0;overflow-x:auto}
+.thumb{height:52px;width:52px;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent;flex:none;opacity:.7}
+.thumb.on{border-color:var(--red);opacity:1}
+
+.controls{padding:14px 18px 18px;display:flex;flex-direction:column;gap:10px}
+.chead{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.seq{font-size:1.1rem;font-weight:800;color:var(--red)}
+.badge{font-size:.66rem;font-weight:800;letter-spacing:.1em;color:#fff;background:var(--gray-dark);padding:3px 9px;border-radius:100px}
+.badge.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.sub{font-size:.82rem;font-weight:600;color:var(--muted)}
+.lab{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.lab .hint{font-weight:600;letter-spacing:0;text-transform:none;color:var(--muted);opacity:.8}
+.cc{margin-left:auto;font-size:.64rem;font-weight:800;letter-spacing:0;text-transform:none;color:var(--muted);white-space:nowrap}
+.cc.warn{color:#c6780a}
+.cc.over{color:var(--red)}
+textarea{font-family:inherit;width:100%;resize:vertical;border:1px solid var(--line);border-radius:10px;
+  background:var(--gray-light);color:var(--ink);padding:10px 12px;font-size:.86rem;line-height:1.55}
+textarea:focus{outline:2px solid var(--red);outline-offset:1px;background:var(--card)}
+textarea.copy{min-height:150px}
+textarea.imgnote{min-height:62px}
+.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:2px}
+.btn{font-family:inherit;font-size:.76rem;font-weight:700;border-radius:100px;padding:7px 14px;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.btn.regen{background:var(--red);color:#fff;border-color:var(--red)}
+.btn.regen.on{background:var(--gray-blue);border-color:var(--gray-blue)}
+.btn.ghost{background:transparent}
+.btn:disabled{opacity:.5;cursor:default}
+.trace{display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line);padding-top:10px;margin-top:4px}
+.tr{display:grid;grid-template-columns:74px 1fr;gap:10px;font-size:.77rem}
+.tr .k{font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+.tr .v{min-width:0;word-break:break-word}
+.tr a{color:var(--red);font-weight:600}
+code{font-family:inherit;font-weight:700;background:var(--gray-light);padding:1px 6px;border-radius:5px;font-size:.9em}
+.muprompt{color:var(--muted);font-size:.72rem;font-style:italic}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(6,8,9,.92);display:none;z-index:50;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:24px}
+.lb.on{display:flex}
+.lb img{max-width:min(90vw,860px);max-height:78vh;border-radius:8px;box-shadow:0 30px 80px -30px rgba(0,0,0,.8)}
+.lb .lbbar{display:flex;align-items:center;gap:18px;color:#fff;font-size:.85rem;font-weight:700}
+.lb .nav{font-family:inherit;font-size:1rem;font-weight:800;color:#fff;background:rgba(255,255,255,.14);border:0;width:44px;height:44px;border-radius:50%;cursor:pointer}
+.lb .nav:disabled{opacity:.3;cursor:default}
+.lb .close{position:absolute;top:18px;right:22px;font-size:1.4rem;color:#fff;background:none;border:0;cursor:pointer}
+.lb .count{min-width:60px;text-align:center}
+.foot{margin-top:32px;padding-top:18px;border-top:1px solid var(--line);font-size:.78rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--gray-dark);color:#fff;
+  padding:10px 18px;border-radius:100px;font-size:.82rem;font-weight:600;opacity:0;transition:opacity .2s;z-index:60;pointer-events:none}
+.toast.on{opacity:1}
 </style>
 
 <div class="wrap">
   <p class="eyebrow"><span class="dot"></span>IDIEM · Design System · Workstation</p>
-  <h1>Septiembre — <b>12 posts + saludo Fiestas Patrias</b></h1>
+  <h1>Octubre — <b>13 posts</b></h1>
   <p class="lede">Cada post muestra su <strong>estado</strong> en la esquina de la gráfica: <b class="tpub">publicado</b> (lo que ya apliqué), <b class="tpend">pendiente</b> (lo editaste, aún sin aplicar) o <b class="tready">listo para aplicar</b> (lo marcaste tú). Abajo tienes el texto editable, notas de imagen, el <strong>historial</strong> de lo aplicado, y <strong>↺ volver a lo publicado</strong>. Todo lo que marcas se <strong>sincroniza en vivo con el equipo</strong>: aprueba (<strong>✅ Aprobado para publicar</strong>), agenda la fecha, y marca <strong>🔗 subido a LinkedIn</strong> una vez publicado (flujo: <b class="tpub">revisado → aprobado → agendado → subido</b>). No necesitas guardar: se guarda solo.</p>
   <div class="bar">
     <input class="idfield" id="revName" type="text" placeholder="Tu nombre" autocomplete="name" spellcheck="false">
@@ -515,7 +780,7 @@ __CARDS__
   </div>
 
   <div class="foot">
-    <span>Motor: <code>compose_month(2026-09)</code> · copy validado con <code>ingest_draft</code>.</span>
+    <span>Motor: <code>compose_current(2026-10)</code> · copy validado con <code>ingest_draft</code>.</span>
     <span>2A.2 = fuente de verdad · GR-04 sin superlativos · NAME_ONLY.</span>
     <span>Regeneración de imagen: la aplica Claude (Muapi/librería) al recibir el export.</span>
   </div>
@@ -533,15 +798,460 @@ __CARDS__
 </div>
 <div class="toast" id="toast"></div>
 
-<script>window.WSCFG=__CFG__;</script>
 <script>
-__JS__
+(function(){
+  var KEY='idiem_ws_oct2026_v7';
+  function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function readJSON(s){try{return JSON.parse(s||'{}')||{};}catch(e){return {};}}
+  function mergeState(base,over){var out={},k;for(k in base)out[k]=base[k];
+    for(k in over){var a=out[k],b=over[k];if(!a){out[k]=b;continue;}
+      var ta=a&&a.editedAt?Date.parse(a.editedAt):0,tb=b&&b.editedAt?Date.parse(b.editedAt):0;
+      out[k]=(tb>=ta)?b:a;}return out;}
+  // Estado COMPARTIDO embebido (viaja entre dispositivos al "Guardar y compartir")
+  // fusionado con el borrador LOCAL de este navegador (gana el más reciente por post).
+  var _embed=readJSON((document.getElementById('ws-state')||{}).textContent);
+  var _local=readJSON(localStorage.getItem(KEY));
+  var store=mergeState(_embed,_local);
+  function persistLocal(){try{localStorage.setItem(KEY,JSON.stringify(store));}catch(e){}}
+  // ---- estado compartido en vivo (capacidad db del artefacto) ----
+  // La DB es la fuente de verdad cuando está disponible; localStorage queda como
+  // caché offline. persist() guarda local y agenda un push a la DB de los docs
+  // que cambiaron. Un onSnapshot repinta en vivo lo que cambie cualquier equipo.
+  var db=null, dbShadow={}, pushTimer=null;
+  function isPostKey(k){return k && k.charAt(0)!=='_';}
+  function schedulePush(){if(!db)return;clearTimeout(pushTimer);pushTimer=setTimeout(pushNow,400);}
+  function pushNow(){if(!db)return;
+    Object.keys(store).forEach(function(cid){
+      if(!isPostKey(cid))return;
+      var body=JSON.stringify(store[cid]||{});
+      if(body!==dbShadow[cid]){dbShadow[cid]=body;
+        try{db.doc('posts/'+cid).set(store[cid]||{}).catch(function(){});}catch(e){}}
+    });}
+  function persist(){persistLocal();schedulePush();}
+  function rec(cid){return (store[cid]=store[cid]||{});}
+  function syncIndicator(mode){var el=document.getElementById('syncState');if(!el)return;
+    el.setAttribute('data-mode',mode);
+    el.textContent = mode==='sync'?'🟢 Sincronizado con el equipo'
+      : mode==='local'?'🟡 Sin conexión · cambios locales' : 'Conectando…';}
+
+  function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');
+    clearTimeout(t._t);t._t=setTimeout(function(){t.classList.remove('on');},1900);}
+  function autosize(t){t.style.height='auto';t.style.height=(t.scrollHeight+2)+'px';}
+
+  // ---- helpers de estado ----
+  var revName=document.getElementById('revName');
+  function currentUser(){return (revName&&revName.value.trim())||'';}
+  function fmtWhen(iso){if(!iso)return '';var d=new Date(iso);if(isNaN(d))return '';
+    var D=('0'+d.getDate()).slice(-2),M=('0'+(d.getMonth()+1)).slice(-2);
+    var hh=('0'+d.getHours()).slice(-2),mm=('0'+d.getMinutes()).slice(-2);
+    var today=new Date();var same=d.toDateString()===today.toDateString();
+    return (same?'hoy':D+'-'+M)+' '+hh+':'+mm;}
+
+  function computeStatus(copyEl,noteEl,r){
+    var edited=(copyEl.value!==copyEl.defaultValue)||(noteEl.value.trim()!=='')||!!r.regen;
+    if(!edited)return 'publicado';
+    return r.ready?'listo':'pendiente';
+  }
+
+  // ---- per-post wiring ----
+  document.querySelectorAll('.post').forEach(function(post){
+    var cid=post.getAttribute('data-cid');
+    var slides=[];
+    try{slides=JSON.parse(post.querySelector('.slides-data').textContent)||[];}catch(e){}
+    var r=store[cid]||{};
+
+    var copy=post.querySelector('textarea.copy');
+    var note=post.querySelector('textarea.imgnote');
+    var cc=post.querySelector('[data-cc]');
+    var chip=post.querySelector('.statuschip');
+    var applied=chip?(chip.getAttribute('data-applied')||''):'';
+    var editline=post.querySelector('.editline');
+    var ready=post.querySelector('.btn.ready');
+    var regen=post.querySelector('.btn.regen');
+    var revs=post.querySelectorAll('.revert');
+
+    if(typeof r.copy==='string')copy.value=r.copy;
+    if(typeof r.note==='string')note.value=r.note;
+    autosize(copy);autosize(note);
+
+    function refresh(){
+      // contador de caracteres (regla MKT: máx 900; .length cuenta unidades UTF-16)
+      if(cc){var nch=copy.value.length;cc.textContent=nch+' / 900';
+        cc.classList.toggle('warn',nch>860&&nch<=900);cc.classList.toggle('over',nch>900);}
+      var st=computeStatus(copy,note,store[cid]||{});
+      post.setAttribute('data-status',st);
+      post.classList.toggle('flag',st!=='publicado');
+      // chip
+      if(chip){chip.className='statuschip '+(st==='publicado'?'pub':st==='listo'?'ready':'pend');
+        var when=fmtWhen((store[cid]||{}).editedAt);
+        chip.textContent = st==='publicado' ? (applied?('publicado · '+applied):'sin cambios')
+          : st==='listo' ? ('✓ listo'+(when?' · '+when:'')) : ('✎ pendiente'+(when?' · '+when:''));}
+      // editline + revert
+      var rr=store[cid]||{};
+      var parts=[];
+      if(copy.value!==copy.defaultValue)parts.push('el texto');
+      if(note.value.trim()!=='')parts.push('una nota de imagen');
+      if(rr.regen)parts.push('regeneración');
+      if(editline){
+        if(parts.length){var by=rr.editedBy?(' · por <span class="who">'+esc(rr.editedBy)+'</span>'):'';
+          editline.innerHTML='Editaste '+parts.join(', ')+' · '+(fmtWhen(rr.editedAt)||'sin fecha')+by;}
+        else editline.textContent='Sin cambios respecto a lo publicado.';
+      }
+      revs.forEach(function(b){var f=b.getAttribute('data-field');
+        b.hidden = f==='copy' ? (copy.value===copy.defaultValue) : (note.value.trim()==='');});
+      // ready button
+      if(ready){var on=!!rr.ready && st!=='publicado';
+        ready.classList.toggle('on',on);
+        ready.textContent=on?'✓ Listo (quitar marca)':'✓ Marcar listo para aplicar';
+        ready.disabled = (st==='publicado');}
+      // el evento de Calendar incluye el copy: refrescar su enlace si cambió
+      if(typeof paintCal==='function')paintCal();
+    }
+    function stamp(){var rc=rec(cid);rc.editedAt=new Date().toISOString();rc.editedBy=currentUser();}
+
+    copy.addEventListener('input',function(){rec(cid).copy=copy.value;stamp();persist();autosize(copy);refresh();updateDash();});
+    note.addEventListener('input',function(){rec(cid).note=note.value;stamp();persist();autosize(note);refresh();updateDash();});
+
+    function paintRegen(){var on=!!(store[cid]&&store[cid].regen);
+      regen.classList.toggle('on',on);
+      regen.textContent=on?'✓ Regeneración solicitada':'🔄 Solicitar regeneración';}
+    regen.addEventListener('click',function(){var cur=!!(store[cid]&&store[cid].regen);
+      rec(cid).regen=!cur;stamp();persist();paintRegen();refresh();updateDash();
+      toast(!cur?'Marcado para regenerar la imagen.':'Marca quitada.');});
+
+    ready.addEventListener('click',function(){var rc=rec(cid);rc.ready=!rc.ready;persist();refresh();updateDash();
+      toast(rc.ready?'Marcado como listo para aplicar.':'Marca de "listo" quitada.');});
+
+    // ---- estado "subido a LinkedIn" (independiente del estado de contenido) ----
+    var liBtn=post.querySelector('.btn.linkedin');
+    var liBadge=post.querySelector('.li-badge');
+    function paintLinked(){var r2=store[cid]||{};var on=!!r2.posted;
+      post.classList.toggle('posted',on);
+      if(liBtn){liBtn.classList.toggle('on',on);
+        liBtn.textContent=on?('✓ Subido a LinkedIn'+(r2.postedAt?(' · '+fmtWhen(r2.postedAt)):'')):'🔗 Marcar subido a LinkedIn';}
+      if(liBadge)liBadge.hidden=!on;}
+    paintLinked();
+    if(liBtn)liBtn.addEventListener('click',function(){var rc=rec(cid);rc.posted=!rc.posted;
+      rc.postedAt=rc.posted?new Date().toISOString():null;persist();paintLinked();updateDash();
+      toast(rc.posted?'Marcado como subido a LinkedIn.':'Marca de LinkedIn quitada.');});
+
+    // ---- estado "aprobado para publicar" (independiente: revisado → aprobado → subido) ----
+    var apBtn=post.querySelector('.btn.approve');
+    var apBadge=post.querySelector('.ap-badge');
+    function paintApproved(){var r2=store[cid]||{};var on=!!r2.approved;
+      post.classList.toggle('approved',on);
+      if(apBtn){apBtn.classList.toggle('on',on);
+        apBtn.textContent=on?('✓ Aprobado'+(r2.approvedAt?(' · '+fmtWhen(r2.approvedAt)):'')):'✅ Aprobar para publicar';}
+      if(apBadge)apBadge.hidden=!on;}
+    paintApproved();
+    if(apBtn)apBtn.addEventListener('click',function(){var rc=rec(cid);rc.approved=!rc.approved;
+      rc.approvedAt=rc.approved?new Date().toISOString():null;persist();paintApproved();updateDash();
+      toast(rc.approved?'Aprobado para publicar.':'Aprobación quitada.');});
+
+    // ---- fecha de publicación + Google Calendar (independiente) ----
+    // El artifact corre en un iframe sandbox y no puede llamar la API de Calendar;
+    // el botón es un enlace "TEMPLATE" que abre Google Calendar con el evento pre-llenado.
+    var calDate=post.querySelector('.caldate');
+    var calTime=post.querySelector('.caltime');
+    var calBtn=post.querySelector('.btn.cal');
+    var calBadge=post.querySelector('.cal-badge');
+    var calClear=post.querySelector('.calclear');
+    var calTitle=post.getAttribute('data-caltitle')||('Post '+post.getAttribute('data-seq'));
+    var WS_URL='https://claude.ai/code/artifact/f9016145-d797-4a02-867e-1e478de62a6b';
+    if(calDate&&typeof r.scheduledFor==='string')calDate.value=r.scheduledFor;
+    if(calTime&&typeof r.scheduledTime==='string'&&r.scheduledTime)calTime.value=r.scheduledTime;
+    function pad2(x){return ('0'+x).slice(-2);}
+    function fmtDM(iso){var p=(iso||'').split('-');return p.length===3?(p[2]+'-'+p[1]):'';}
+    function calURL(){
+      var d=calDate?calDate.value:''; if(!d)return null;
+      var t=(calTime&&calTime.value)||'09:00';
+      var hh=parseInt(t.split(':')[0],10); if(isNaN(hh))hh=9;
+      var mm=parseInt(t.split(':')[1],10); if(isNaN(mm))mm=0;
+      var ymd=d.replace(/-/g,'');
+      var start=ymd+'T'+pad2(hh)+pad2(mm)+'00';
+      var em=mm+30, eh=hh; if(em>=60){em-=60; eh=(hh+1)%24;}
+      var end=ymd+'T'+pad2(eh)+pad2(em)+'00';
+      var title='📢 Publicar en LinkedIn — '+calTitle;
+      var details=(copy.value||'')+'\n\n— Verifica la publicación y marca "subido a LinkedIn" en la workstation:\n'+WS_URL;
+      return 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+        +'&text='+encodeURIComponent(title)
+        +'&dates='+start+'/'+end
+        +'&ctz=America/Santiago'
+        +'&details='+encodeURIComponent(details);
+    }
+    function paintCal(){
+      if(!calBtn)return;
+      var d=calDate?calDate.value:'';
+      var url=calURL();
+      if(url){calBtn.setAttribute('href',url);calBtn.classList.remove('off');}
+      else{calBtn.removeAttribute('href');calBtn.classList.add('off');}
+      if(calBadge){if(d){calBadge.hidden=false;calBadge.textContent='📅 '+fmtDM(d);}else calBadge.hidden=true;}
+      if(calClear)calClear.hidden=!d;
+      post.classList.toggle('scheduled',!!d);
+    }
+    function saveCal(){var rc=rec(cid);var d=(calDate&&calDate.value)||'';
+      if(d){rc.scheduledFor=d;rc.scheduledTime=(calTime&&calTime.value)||'09:00';}
+      else{delete rc.scheduledFor;delete rc.scheduledTime;}
+      persist();paintCal();updateDash();}
+    if(calDate)calDate.addEventListener('change',function(){saveCal();
+      toast(calDate.value?('Agendado para el '+fmtDM(calDate.value)+' · abre el botón para crear el evento'):'Fecha quitada.');});
+    if(calTime)calTime.addEventListener('change',saveCal);
+    if(calClear)calClear.addEventListener('click',function(){if(calDate)calDate.value='';if(calTime)calTime.value='09:00';saveCal();toast('Fecha quitada.');});
+
+    revs.forEach(function(b){b.addEventListener('click',function(){
+      var f=b.getAttribute('data-field');
+      if(f==='copy'){copy.value=copy.defaultValue;rec(cid).copy=copy.defaultValue;autosize(copy);}
+      else{note.value='';rec(cid).note='';autosize(note);}
+      var rc=store[cid]||{};
+      if(copy.value===copy.defaultValue&&note.value.trim()===''&&!rc.regen){rc.ready=false;}
+      persist();refresh();updateDash();toast('Volviste a lo publicado.');});});
+
+    // selected slide index for PNG download / main preview
+    var curIdx=0;
+    var main=post.querySelector('.main');
+    post.querySelectorAll('.thumb').forEach(function(th){
+      th.addEventListener('click',function(){
+        curIdx=parseInt(th.getAttribute('data-idx'),10)||0;
+        main.src=slides[curIdx];
+        post.querySelectorAll('.thumb').forEach(function(x){x.classList.remove('on');});
+        th.classList.add('on');
+      });
+    });
+
+    post.querySelector('.gwrap').addEventListener('click',function(){openLB(slides,curIdx);});
+
+    post.querySelector('.btn.copybtn').addEventListener('click',function(){
+      var txt=copy.value;
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){toast('Texto copiado');},function(){toast('Texto copiado');});}
+      else{var ta=document.createElement('textarea');ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);toast('Texto copiado');}
+    });
+
+    post.querySelector('.btn.png').addEventListener('click',function(){downloadPNG(post,slides,curIdx);});
+    post.querySelector('.btn.pdf').addEventListener('click',function(){downloadPDF(post,slides);});
+
+    // Reaplica el estado (store[cid]) a los controles + repinta. Lo llama el
+    // onSnapshot de la DB para reflejar en vivo lo que cambie otro equipo.
+    // No pisa un campo de texto que se está editando (activeElement).
+    function applyState(){
+      var rr=store[cid]||{};
+      if(document.activeElement!==copy){
+        copy.value=(typeof rr.copy==='string')?rr.copy:copy.defaultValue;autosize(copy);}
+      if(document.activeElement!==note){
+        note.value=(typeof rr.note==='string')?rr.note:'';autosize(note);}
+      if(calDate&&document.activeElement!==calDate)calDate.value=rr.scheduledFor||'';
+      if(calTime&&document.activeElement!==calTime)calTime.value=rr.scheduledTime||'09:00';
+      paintRegen();paintApproved();paintLinked();paintCal();refresh();
+    }
+    applyState();
+    post._apply=applyState;
+  });
+
+  // ---- lightbox ----
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),
+      lbPrev=document.getElementById('lbPrev'),lbNext=document.getElementById('lbNext'),
+      lbCount=document.getElementById('lbCount'),lbClose=document.getElementById('lbClose');
+  var lbSlides=[],lbIdx=0;
+  function paintLB(){lbImg.src=lbSlides[lbIdx];lbCount.textContent=(lbIdx+1)+' / '+lbSlides.length;
+    lbPrev.disabled=lbIdx<=0;lbNext.disabled=lbIdx>=lbSlides.length-1;
+    lbPrev.style.visibility=lbNext.style.visibility=lbSlides.length>1?'visible':'hidden';}
+  function openLB(slides,idx){lbSlides=slides;lbIdx=idx||0;paintLB();lb.classList.add('on');}
+  function closeLB(){lb.classList.remove('on');
+    var box=document.getElementById('exportBox');
+    if(box){box.remove();lbImg.style.display='';lb.querySelector('.lbbar').style.display='';}}
+  lbPrev.addEventListener('click',function(){if(lbIdx>0){lbIdx--;paintLB();}});
+  lbNext.addEventListener('click',function(){if(lbIdx<lbSlides.length-1){lbIdx++;paintLB();}});
+  lbClose.addEventListener('click',closeLB);
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLB();});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;
+    if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')lbPrev.click();if(e.key==='ArrowRight')lbNext.click();});
+
+  // ---- downloads capability ----
+  var _dl=null,_dlTried=false;
+  async function downloads(){if(_dlTried)return _dl;_dlTried=true;
+    try{_dl=(window.claude&&claude.use)?await claude.use('downloads'):null;}catch(e){_dl=null;}return _dl;}
+
+  function dataURItoBytes(uri){var b64=uri.split(',')[1];var bin=atob(b64);
+    var n=bin.length,u=new Uint8Array(n);for(var i=0;i<n;i++)u[i]=bin.charCodeAt(i);return u;}
+
+  async function downloadPNG(post,slides,idx){
+    var dl=await downloads();
+    var seq=post.getAttribute('data-seq');
+    if(!dl){toast('Descarga no disponible en esta vista');return;}
+    try{
+      var bytes=dataURItoBytes(slides[idx]);         // JPEG bytes
+      // re-encode to PNG via canvas for a true .png
+      var img=new Image();img.src=slides[idx];await img.decode();
+      var cv=document.createElement('canvas');cv.width=img.naturalWidth;cv.height=img.naturalHeight;
+      cv.getContext('2d').drawImage(img,0,0);
+      var blob=await new Promise(function(res){cv.toBlob(res,'image/png');});
+      await dl.save({filename:'idiem_sep_post'+seq+(slides.length>1?('_lam'+(idx+1)):'')+'.png',data:blob});
+      toast('PNG guardado');
+    }catch(e){toast(errMsg(e));}
+  }
+
+  async function downloadPDF(post,slides){
+    var dl=await downloads();
+    var seq=post.getAttribute('data-seq');
+    if(!dl){toast('Descarga no disponible en esta vista');return;}
+    try{
+      var pages=slides.map(function(u){return dataURItoBytes(u);});
+      var pdf=buildImagePDF(pages,1080,1080);
+      await dl.save({filename:'idiem_sep_post'+seq+'.pdf',data:pdf});
+      toast('PDF guardado');
+    }catch(e){
+      if(e&&e.code==='extension_not_enabled'){toast('PDF no habilitado aquí — descarga PNG por lámina');}
+      else{toast(errMsg(e));}
+    }
+  }
+
+  function errMsg(e){var c=e&&e.code;
+    if(c==='declined')return 'Descarga cancelada';
+    if(c==='too_large')return 'Archivo muy grande';
+    if(c==='rate_limited')return 'Espera un momento y reintenta';
+    return 'No se pudo descargar';}
+
+  // ---- minimal image PDF (JPEG pages, DCTDecode) ----
+  function buildImagePDF(jpegs,w,h){
+    var enc=new TextEncoder();
+    var chunks=[],offset=0,offsets=[];
+    function put(x){var b=(typeof x==='string')?enc.encode(x):x;chunks.push(b);offset+=b.length;}
+    function obj(n){offsets[n]=offset;}
+    put('%PDF-1.4\n%\xE2\xE3\xCF\xD3\n');
+    var N=jpegs.length;
+    // object numbering: 1 catalog, 2 pages, then per page: pageObj, imgObj, contentObj
+    var pageIds=[],total=2+N*3;
+    obj(1);put('1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n');
+    var kids='';for(var i=0;i<N;i++){kids+=(3+i*3)+' 0 R ';}
+    obj(2);put('2 0 obj\n<< /Type /Pages /Count '+N+' /Kids ['+kids+'] >>\nendobj\n');
+    for(var p=0;p<N;p++){
+      var pageId=3+p*3,imgId=pageId+1,contId=pageId+2;
+      obj(pageId);
+      put(pageId+' 0 obj\n<< /Type /Page /Parent 2 0 R /MediaBox [0 0 '+w+' '+h+'] '+
+          '/Resources << /XObject << /Im0 '+imgId+' 0 R >> >> /Contents '+contId+' 0 R >>\nendobj\n');
+      obj(imgId);
+      put(imgId+' 0 obj\n<< /Type /XObject /Subtype /Image /Width '+w+' /Height '+h+
+          ' /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length '+jpegs[p].length+' >>\nstream\n');
+      put(jpegs[p]);put('\nendstream\nendobj\n');
+      var cs='q '+w+' 0 0 '+h+' 0 0 cm /Im0 Do Q\n';
+      obj(contId);
+      put(contId+' 0 obj\n<< /Length '+enc.encode(cs).length+' >>\nstream\n'+cs+'endstream\nendobj\n');
+    }
+    var xrefPos=offset;
+    var count=total+1;
+    put('xref\n0 '+count+'\n0000000000 65535 f \n');
+    for(var k=1;k<count;k++){var o=offsets[k]||0;put(('0000000000'+o).slice(-10)+' 00000 n \n');}
+    put('trailer\n<< /Size '+count+' /Root 1 0 R >>\nstartxref\n'+xrefPos+'\n%%EOF');
+    return new Blob(chunks,{type:'application/pdf'});
+  }
+
+  // ---- reviewer identity ----
+  var revRole=document.getElementById('revRole');
+  var rv=store._reviewer||{};
+  if(rv.name&&revName)revName.value=rv.name; if(rv.role&&revRole)revRole.value=rv.role;
+  function saveRev(){store._reviewer={name:revName.value.trim(),role:revRole.value.trim(),editedAt:new Date().toISOString()};persist();}
+  if(revName)revName.addEventListener('input',saveRev); if(revRole)revRole.addEventListener('input',saveRev);
+  function slug(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')
+    .replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,40)||'revisor';}
+
+  // ---- resumen + filtros (dashboard) ----
+  function setTxt(id,v){var e=document.getElementById(id);if(e)e.textContent=v;}
+  var curFilter='todos', hidePosted=false;
+  function applyFilter(){document.querySelectorAll('.post').forEach(function(p){
+    var st=p.getAttribute('data-status')||'publicado';
+    var byStatus=curFilter==='todos'||st===curFilter;
+    var byLinked=!hidePosted||!p.classList.contains('posted');
+    p.classList.toggle('hide', !(byStatus&&byLinked));});}
+  function updateDash(){var c={pendiente:0,listo:0,publicado:0},linked=0,approved=0,scheduled=0,total=0;
+    document.querySelectorAll('.post').forEach(function(p){var s=p.getAttribute('data-status')||'publicado';
+      if(c[s]==null)c[s]=0;c[s]++;total++;if(p.classList.contains('posted'))linked++;
+      if(p.classList.contains('approved'))approved++;
+      if(p.classList.contains('scheduled'))scheduled++;});
+    setTxt('nPend',c.pendiente);setTxt('nReady',c.listo);setTxt('nPub',c.publicado);
+    setTxt('nApproved',approved);setTxt('nApTotal',total);
+    setTxt('nSched',scheduled);setTxt('nSchTotal',total);
+    setTxt('nLinked',linked);setTxt('nTotal',total);applyFilter();}
+  var liToggle=document.getElementById('liToggle');
+  if(liToggle)liToggle.addEventListener('click',function(){hidePosted=!hidePosted;
+    this.classList.toggle('on',hidePosted);
+    this.textContent=hidePosted?'Mostrar todos':'Ocultar los ya subidos';applyFilter();});
+  var filters=document.getElementById('filters');
+  if(filters)filters.addEventListener('click',function(e){var b=e.target.closest('.fchip');if(!b)return;
+    curFilter=b.getAttribute('data-f');
+    this.querySelectorAll('.fchip').forEach(function(x){x.classList.toggle('on',x===b);});applyFilter();});
+  var jn=document.getElementById('jumpNext');
+  if(jn)jn.addEventListener('click',function(){
+    var t=document.querySelector('.post[data-status="pendiente"]')||document.querySelector('.post[data-status="listo"]');
+    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});else toast('No hay posts pendientes.');});
+
+  // "Guardar y compartir" quedó obsoleto: el estado se sincroniza en vivo por la
+  // DB del artefacto (ver más abajo). Se eliminó saveCloud/buildCleanHTML/artifactCap.
+
+  // ---- respaldo opcional: descargar JSON ----
+  var expBtn=document.querySelector('.xbtn.export');
+  if(expBtn)expBtn.addEventListener('click',async function(){
+    var out={reviewer:{name:(revName?revName.value.trim():'')||null,role:(revRole?revRole.value.trim():'')||null},
+      month:'2026-10',exported_at:new Date().toISOString(),posts:[]};
+    document.querySelectorAll('.post').forEach(function(post){
+      var stt=post.getAttribute('data-status');if(stt==='publicado')return;
+      var cid=post.getAttribute('data-cid'),r=store[cid]||{},ce=post.querySelector('textarea.copy');
+      out.posts.push({content_id:cid,seq:post.getAttribute('data-seq'),status:stt,
+        copy:(ce&&ce.value!==ce.defaultValue)?ce.value:null,
+        image_note:(r.note&&r.note.trim())?r.note:null,regenerate:!!r.regen,ready:!!r.ready,
+        edited_by:r.editedBy||null,edited_at:r.editedAt||null});
+    });
+    if(!out.posts.length){toast('No hay cambios que respaldar todavía');return;}
+    var json=JSON.stringify(out,null,2);
+    var fname='idiem_cambios_oct2026__'+slug(out.reviewer.name||'revisor')+'.json';
+    var dl=await downloads();
+    if(dl){try{await dl.save({filename:fname,data:json});toast('Respaldo descargado');return;}
+      catch(e){if(e&&e.code==='declined'){toast('Descarga cancelada');return;}}}
+    try{var blob=new Blob([json],{type:'application/json'});var url=URL.createObjectURL(blob);
+      var a=document.createElement('a');a.href=url;a.download=fname;document.body.appendChild(a);a.click();
+      setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(url);},1500);
+      toast('Respaldo descargado');return;}catch(e){}
+    var w=document.getElementById('lb');var box=document.createElement('div');
+    box.id='exportBox';box.style.cssText='display:flex;flex-direction:column;gap:10px;align-items:center';
+    var pre=document.createElement('textarea');pre.readOnly=true;pre.value=json;
+    pre.style.cssText='width:min(90vw,720px);height:54vh;font-family:monospace;font-size:12px;padding:10px;border-radius:8px';
+    var cp=document.createElement('button');cp.textContent='Copiar JSON';cp.className='xbtn';
+    cp.onclick=function(){pre.select();try{document.execCommand('copy');}catch(e){}toast('JSON copiado');};
+    box.appendChild(pre);box.appendChild(cp);
+    lbImg.style.display='none';w.querySelector('.lbbar').style.display='none';
+    w.insertBefore(box,w.querySelector('.close').nextSibling);w.classList.add('on');
+  });
+
+  updateDash();
+
+  // ---- conexión a la DB del artefacto (estado compartido en vivo) ----
+  function applyAll(){document.querySelectorAll('.post').forEach(function(p){
+    if(p._apply)p._apply();});updateDash();}
+  (async function(){
+    try{db=(window.claude&&claude.use)?await claude.use('db'):null;}catch(e){db=null;}
+    if(!db){syncIndicator('local');return;}   // sin DB: modo local (localStorage)
+    syncIndicator('sync');
+    try{
+      db.collection('posts').onSnapshot(function(snap){
+        var changed=false;
+        snap.docChanges().forEach(function(ch){
+          var cid=ch.doc.id;
+          var body=ch.type==='removed'?'{}':JSON.stringify(ch.doc.data()||{});
+          if(body===dbShadow[cid])return;              // eco de nuestra propia escritura
+          dbShadow[cid]=body;
+          store[cid]=ch.type==='removed'?{}:Object.assign({},ch.doc.data()||{});
+          changed=true;
+        });
+        if(changed){persistLocal();applyAll();}
+        syncIndicator('sync');
+      },function(err){syncIndicator('local');});
+    }catch(e){syncIndicator('local');}
+  })();
+})();
 </script>'''
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--month", default="2026-09")
+    ap.add_argument("--month", default="2026-10")
     ap.add_argument("--build", default=str(BUILD_DEFAULT))
     ap.add_argument("--emit", action="store_true")
     ap.add_argument("--assemble", action="store_true")

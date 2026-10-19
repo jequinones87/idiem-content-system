@@ -108,8 +108,9 @@ estructuras, servicios) **mientras escribe**, no solo en QA.
 ## 12. Longitud (regla única, ejecutable)
 
 Se elimina la contradicción anterior (110–170 palabras / 1–4 emojis vs 900 caracteres).
-**Regla vigente, validada en caracteres:** máximo **900 caracteres**, objetivo
-habitual **820–880**; emojis **1–2 por párrafo como máximo**. Vive solo en
+**Regla vigente, validada en caracteres:** referencia de **900 caracteres**, objetivo
+habitual **820–880**. **Desde el 19-10-2026 el tope es flexible** (MKT): se puede escribir más o
+menos si es necesario; el QA avisa sobre 900 y se registra el motivo (`length_override`); emojis **1–2 por párrafo como máximo**. Vive solo en
 `config/editorial_diversity.json` → `length`.
 
 **Excepción (MKT, 30-09-2026):** los posts de evento (webinars: inscripción, recordatorio,
@@ -167,24 +168,25 @@ Esto se suma — no reemplaza — a las reglas factuales de 2A.2 (GR-01…GR-14,
 
 ---
 
-## Estado de implementación en ESTE repo (al 30-09-2026)
+## Estado de implementación en ESTE repo (al 19-10-2026, tras integrar la rama de motores)
 
 | Concepto | Estado |
 |---|---|
 | Principios, arquetipos, hooks, CTA por intención, tono, longitud | **Integrado** como regla (este doc + `config/editorial_diversity.json` + CLAUDE.md) |
-| Contradicción de longitud/emojis | **Resuelta** (fuente única en caracteres) |
+| Contradicción de longitud/emojis | **Resuelta** (fuente única en caracteres; test exige que `editorial_style.json` y `editorial_diversity.json` coincidan) |
 | Estructura única / CTA fijos en memoria previa | **Corregido** (pasan a ser *un* arquetipo / ejemplos no default) |
-| `select_diverse` en el planner | **Pendiente (código)** — hoy el planner solo diversifica por subtema y el ledger por `knowledge_id` |
-| Editorial Fingerprint + archive | **Pendiente (código)** |
-| Novelty Engine | **Pendiente (código)** |
-| `recent_hooks` / `recent_ctas` (hook ≠ pain point) | **Pendiente (código)** — el bug no existe aquí porque el campo aún no existe; nacer separado |
-| Validador automático de caracteres | **Parcial** — contador en la workstation; falta validación en el pipeline |
-| Clasificación SAFE/VERIFY/INTERNAL/DO_NOT_PUBLISH | **Pendiente** — no hay Sales Intelligence ni brochures en este repo aún |
-| Octubre consolidado como memoria | **Pendiente** — los copies definitivos de octubre viven en el artefacto, no en el repo |
+| Editorial Fingerprint + archive | **Integrado** — `editorial_fingerprint.py` con taxonomía MKT; la asignación manda sobre la heurística |
+| Novelty Engine | **Integrado** — `editorial_novelty.py` (ventana = `recency.compare_against_months`) |
+| `recent_hooks` (hook ≠ pain point) | **Corregido** — el motor heredado poblaba `recent_hooks` con el pain point; ahora usa el gancho |
+| QA editorial de diversidad | **Integrado** — `editorial_qa.py` (límites MKT, consecutivos, eventos exentos del tope, excepciones de largo registradas) |
+| Validador automático de caracteres | **Integrado** en el QA editorial del archivo mensual |
+| `select_diverse` en el planner / drafter con asignaciones como restricción | **Parcial** — `select_diverse` existe en el motor; la tabla de asignación se sigue armando y aprobando con MKT antes de redactar |
+| Clasificación SAFE/VERIFY/INTERNAL/DO_NOT_PUBLISH | **Integrado** para Sales Intelligence (`knowledge/sales_intelligence/`, `docs/12_SALES_INTELLIGENCE.md`) y fuentes expertas (`config/topic_bank/`) |
+| Octubre consolidado como memoria | **Hecho** — `content/archive/2026-10.json` (copy definitivo + huellas); noviembre en `content/archive/2026-11.json` |
 
 ## Cómo lo aplico al redactar (checklist operativo, desde noviembre)
 
-Mientras el código no exista, **lo aplico manualmente en cada grilla**:
+La asignación sigue siendo **manual y previa** (el motor verifica; no decide por MKT):
 
 1. Antes de escribir, armo la **tabla de asignación** del mes: por post, arquetipo ·
    hook_type · cta_type · pain point · claim, respetando los límites de
@@ -194,4 +196,5 @@ Mientras el código no exista, **lo aplico manualmente en cada grilla**:
 3. Redacto cada post **con su arquetipo/hook/CTA asignados como restricción**.
 4. Valido: ≤ 900 caracteres, 1–2 emojis/párrafo, CTA no repetido textual, no todos
    con "En #IDIEM" en el mismo lugar.
-5. Registro la huella de cada post en el consolidado del mes.
+5. Registro la huella de cada post en el archivo del mes (`content/archive/AAAA-MM.json`, vía
+   `design_system/archive_month_plan.py`) y corro `python -m idiem.editorial_qa --month AAAA-MM`.
