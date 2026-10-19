@@ -58,6 +58,8 @@ Build a deterministic, auditable content-planning and drafting system for IDIEM 
 ## Editorial memory (aprendizajes del equipo)
 
 Antes de escribir o corregir cualquier copy/pieza, lee `docs/09_EDITORIAL_MEMORY.md`.
+Al planificar **cada mes**, recorre su **checklist de aprendizajes** (sección ✅) antes de
+mostrar la grilla a MKT; ningún post se programa con un `VERIFY` abierto.
 Ahí se acumulan las correcciones de tono, estilo y hechos que el equipo valida; son de
 aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
 

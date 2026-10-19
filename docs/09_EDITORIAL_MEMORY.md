@@ -88,6 +88,56 @@ CTA repetidas ~5 veces cada una). Regla vigente: **`docs/10_ESTRATEGIA_EDITORIAL
 - Octubre **no se regenera** (cerrado manualmente); su versión definitiva debe
   consolidarse como memoria.
 
+## ✅ Checklist de aprendizajes para planificar cada mes (desde diciembre 2026)
+
+Destilado de las rondas MKT de septiembre a noviembre 2026 (detalle y fechas en la bitácora). Octubre y
+noviembre ya están publicados/programados y **no se retocan**; lo que sigue es lo que esos meses dejaron
+como regla para **diciembre en adelante**. Se recorre **antes** de presentar la grilla a MKT.
+
+**A. Antes de proponer temas**
+1. Archivar el mes anterior en `content/archive/` y leer los **2 meses previos**: no repetir
+   `knowledge_id`, subtema, claim, pain point, gancho ni CTA (09-04 · 30-09).
+2. Revisar `config/efemerides.json` (incluye saludos de Navidad y Año Nuevo), el banco de temas
+   (`config/topic_bank/`) y Sales Intelligence (`knowledge/sales_intelligence/`).
+3. Si una célula no tiene material fresco (hoy **Lab Minero Digital** y **Hospitalaria**), **pedir insumos**
+   a MKT o hacer menos posts; no rellenar con versiones parecidas (09-04 · 05-10).
+4. Excluir lo bloqueado: control de productividad (KB-IOM-019/020), Centro Cultural GAM como caso,
+   contenidos de charlas de David Silva; no nombrar expositores ni charlas de origen (30-09 · 05-10 · 14-10).
+5. Un caso/proyecto nombrado va en **un solo post por mes**, y todo post que nombre un caso se marca
+   para que MKT valide su sensibilidad **antes** de redactar (30-09 · 01-10).
+
+**B. Tabla de asignación (antes de redactar, la aprueba MKT)**
+6. Por post: arquetipo · hook_type · cta_type · pain point · claim, con los límites de
+   `config/editorial_diversity.json` (6–8 arquetipos, sin repetir en posts consecutivos, `contact` no es
+   default). Después correr `python -m idiem.editorial_qa --month AAAA-MM`.
+
+**C. Al redactar el copy**
+7. Explicar **por qué** importa (la necesidad del cliente), no solo nombrar el servicio (relaves, 05-10).
+8. Nombrar el servicio **exacto** que presta IDIEM, sin ampliarlo: IDIEM **instrumenta** el tranque para su
+   monitoreo, no "monitorea" (19-10); en SIM el monitoreo va al final (05-10); HDPE: los ensayos
+   "verifican el cumplimiento del proyecto"; la soldadura se inspecciona y se califica al soldador.
+9. En cumplimiento normativo, hablar de **detectar brechas**; nunca insinuar que la norma se puede saltar (09-07).
+10. Ítems `NAME_ONLY_DO_NOT_EXPAND` o con poco detalle en 2A.2 van a alto nivel, sin inventar ensayos ni
+    cifras (09-04). Sin superlativos ni rankings (Triaxial, 09-03).
+11. **Las ediciones de MKT son "oro":** se respetan literal. Pero **después de cada edición se vuelve a medir
+    el largo**: el #4 de noviembre quedó en 1083 caracteres tras la edición final y se publicó así. Si una
+    edición supera 900, avisar a MKT **antes de programar** (no recortar por cuenta propia).
+
+**D. Al diseñar la pieza**
+12. Bajadas de carrusel con valor (por qué importa · qué aporta IDIEM · qué gana el cliente), no
+    repetir el título (01-10).
+13. La foto debe mostrar **el objeto real del servicio** (peritaje de componentes → piezas o ensayos
+    mecánicos, no estructura ni pavimento; 09-24). Fotos de la librería de Drive; no repetir una foto usada
+    en los **3 meses previos** (el QA lo avisa); anillo rojo al lado contrario de la cara (09-04); al dividir
+    una foto, igualar la exposición de ambas mitades (09-21). Sin siglas de célula en la pieza.
+14. Videos: solo con la skill `video-carrusel-idiem` (el método propio fue rechazado, 13-10).
+
+**E. Antes de programar**
+15. **Ningún post se programa con un `VERIFY` abierto.** El #8 de noviembre quedó programado con la vigencia
+    de ISO 9001:2015 sin confirmar; desde diciembre, el VERIFY se cierra con MKT o el dato sale del copy.
+16. Workstation con el historial de cambios poblado en cada ronda (09-04); cada ronda MKT se registra en la
+    bitácora y, al cerrar el mes, se archiva con estados (`design_system/archive_month_plan.py`).
+
 ## Estilo y tono del copy (voz de marca, según ediciones aprobadas por MKT)
 
 El equipo de MKT (Kike) es la autoridad de tono. Patrones observados en sus reescrituras
