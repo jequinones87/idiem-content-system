@@ -187,6 +187,11 @@ Reglas de uso:
   gigante en Chile", "altos estándares"): **no pasan al copy** aunque el servicio esté validado.
 - **`claim_flags`** marca menciones de certificación, acreditación o normas: requieren respaldo en
   2A.2 o validación puntual antes de afirmarse.
+- **Cruce con 2A.2 (19-10-2026):** `docs/12_CRUCE_WEB_VS_2A2.md` (generado desde
+  `config/topic_bank/web_crosswalk.json`). **2A.2 prevalece**: si el servicio tiene `knowledge_id`, se usa
+  ese texto y su política; el sitio solo aporta alcance nuevo (VERIFY). Estados: RESPALDADO 36, PARCIAL 40,
+  SOLO_RESERVA 9, NUEVO 18, BLOQUEADO 2 (control de productividad, memoria MKT).
 - **Re-extracción:** `PYTHONPATH=src python -m idiem.web_services`. Conserva los IDs por ruta; si el
   texto de un servicio cambió, borra su validación y lo devuelve a VERIFY. Correr después
-  `pytest tests/test_web_services.py` y revisar el diff antes de commitear.
+  `pytest tests/test_web_services.py tests/test_web_crosswalk.py` y revisar el diff antes de commitear;
+  si aparecen servicios nuevos, cruzarlos en `web_crosswalk.json` y regenerar con `python -m idiem.web_crosswalk`.

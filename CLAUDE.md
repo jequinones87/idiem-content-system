@@ -151,3 +151,6 @@ Servicios del sitio web (desde 19-10-2026): `config/topic_bank/web_services.json
 de https://www.idiem.cl/servicios; se re-extrae con `python -m idiem.web_services`). **Todos son VERIFY**:
 solo con `validated_by` de MKT se citan como auxiliary_id; los `promo_flags` (superlativos) nunca van al
 copy y los `claim_flags` (certificaciones/normas) necesitan respaldo. No asignan célula ni crean capacidades.
+Cruce con 2A.2 en `config/topic_bank/web_crosswalk.json` (vista `docs/12_CRUCE_WEB_VS_2A2.md`): **2A.2 prevalece**
+(se ha corregido con cada post); servicio con `knowledge_id` → usar ese texto/política; lo NUEVO/PARCIAL del sitio es
+VERIFY y su célula es solo propuesta hasta que MKT valide.
