@@ -209,3 +209,5 @@ capacidades técnicas (la célula ICT no tiene conocimiento activo).
   pieza institucional fuera de grilla, no traza a knowledge_id. Plantilla `design_system/gen_post_reconocimiento.py`
   (data en `config/especiales/`). Los rankings de terceros sobre personas se informan tal cual, sin superlativos
   sobre IDIEM (GR-04); la fuente de la lista (Stanford University y Elsevier) va en la gráfica — confirmada por MKT 15-10.
+- **2026-10-19** — #1 relaves: **el servicio IDIEM es la instrumentación del tranque PARA su monitoreo, no
+  el monitoreo.** En copy y gráfica, IDIEM instrumenta/habilita el monitoreo a distancia; nunca "monitoreamos".

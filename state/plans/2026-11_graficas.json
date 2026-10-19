@@ -14,10 +14,14 @@
         "pos": "62% 50%"
       },
       "side": "left",
-      "svc": "Monitoreo de relaves",
-      "msg": "Una vigilancia<br>que no termina.",
-      "base": "Instrumentación · <b>monitoreo permanente a distancia</b>",
+      "svc": "Instrumentación de relaves",
+      "msg": "Instrumentar para<br>vigilar sin pausa.",
+      "base": "Tranques de relaves · <b>instrumentados para su monitoreo a distancia</b>",
       "hist": [
+        {
+          "date": "19-10-2026",
+          "summary": "Foco en el servicio real: IDIEM instrumenta el tranque PARA su monitoreo (no presta el monitoreo). Copy (sobre la edición de MKT), servicio, titular «Instrumentar para vigilar sin pausa» y línea base ajustados (pedido MKT)."
+        },
         {
           "date": "05-10-2026",
           "summary": "Copy profundizado: control 24/7, infraestructura que crece y razones del monitoreo + titular de pieza «Una vigilancia que no termina» (pedido MKT)."
