@@ -31,16 +31,7 @@ from gen_webinar_card import (  # noqa: E402
 
 # Montserrat oficial incrustada (Google Fonts no carga en el entorno de render: sin esto
 # el navegador usa una fuente de reemplazo). Archivos de la skill video-carrusel-idiem.
-_FONTS = ROOT / ".claude" / "skills" / "video-carrusel-idiem" / "assets"
-
-
-def _ff(weight: int, fname: str) -> str:
-    b = base64.b64encode((_FONTS / fname).read_bytes()).decode()
-    return (f'@font-face{{font-family:"Montserrat";font-weight:{weight};font-style:normal;'
-            f'src:url(data:font/woff2;base64,{b}) format("woff2")}}')
-
-
-FONT_CSS = _ff(400, "montserrat-400.woff2") + _ff(700, "montserrat-700.woff2")
+from brand_fonts import FONT_CSS  # noqa: E402  (Montserrat 400-800 incrustada)
 
 CSS = r"""
 *{box-sizing:border-box}

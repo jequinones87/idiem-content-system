@@ -1,0 +1,1040 @@
+{
+  "month": "2026-11",
+  "generated_at": "2026-10-19T12:31:20.727129+00:00",
+  "published": false,
+  "count": 12,
+  "dedup_index": {
+    "knowledge_ids": [
+      "KB-IHA-004",
+      "KB-IOM-001",
+      "KB-IOM-012",
+      "KB-IOM-016",
+      "KB-IOM-053",
+      "KB-IOM-061",
+      "KB-IOM-062",
+      "KB-IPR-001",
+      "KB-IPR-003",
+      "KB-IPR-019",
+      "KB-LMD-013"
+    ],
+    "subthemes": [
+      "Apoyo técnico para lograr acuerdos en obras de salud",
+      "Asesoría a Inspección Fiscal con sistema ISO 9001:2015",
+      "Día del Transporte Sostenible",
+      "HDPE: control de la fabricación al montaje",
+      "Ingeniería contra incendios en edificación (servicio)",
+      "Laboratorio en obra: caso nuevo terminal Aeropuerto AMB",
+      "Modelamiento digital de estructuras",
+      "Monitoreo remoto de depósitos de relaves",
+      "Plan de mantenimiento estructural para la vida útil",
+      "Programa SIM de gestión de integridad estructural",
+      "Revisión de cumplimiento normativo en la operación minera",
+      "Vulnerabilidad de torres de transmisión y subestaciones"
+    ],
+    "cells": {
+      "IOM": 6,
+      "IPR": 3,
+      "IHA": 1,
+      "LMD": 1
+    },
+    "angles": [
+      {
+        "seq": 1,
+        "cell": "IOM",
+        "subtheme": "Monitoreo remoto de depósitos de relaves",
+        "angle": "Monitoreo remoto de depósitos de relaves"
+      },
+      {
+        "seq": 2,
+        "cell": "IPR",
+        "subtheme": "Laboratorio en obra: caso nuevo terminal Aeropuerto AMB",
+        "angle": "Laboratorio en obra: caso nuevo terminal Aeropuerto AMB"
+      },
+      {
+        "seq": 3,
+        "cell": "IOM",
+        "subtheme": "Vulnerabilidad de torres de transmisión y subestaciones",
+        "angle": "Vulnerabilidad de torres de transmisión y subestaciones"
+      },
+      {
+        "seq": 4,
+        "cell": "IHA",
+        "subtheme": "Apoyo técnico para lograr acuerdos en obras de salud",
+        "angle": "Apoyo técnico para lograr acuerdos en obras de salud"
+      },
+      {
+        "seq": 5,
+        "cell": "IOM",
+        "subtheme": "Programa SIM de gestión de integridad estructural",
+        "angle": "Programa SIM de gestión de integridad estructural"
+      },
+      {
+        "seq": 6,
+        "cell": "IPR",
+        "subtheme": "Ingeniería contra incendios en edificación (servicio)",
+        "angle": "Ingeniería contra incendios en edificación (servicio)"
+      },
+      {
+        "seq": 7,
+        "cell": "IOM",
+        "subtheme": "Modelamiento digital de estructuras",
+        "angle": "Modelamiento digital de estructuras"
+      },
+      {
+        "seq": 8,
+        "cell": "IPR",
+        "subtheme": "Asesoría a Inspección Fiscal con sistema ISO 9001:2015",
+        "angle": "Asesoría a Inspección Fiscal con sistema ISO 9001:2015"
+      },
+      {
+        "seq": 9,
+        "cell": "IOM",
+        "subtheme": "Revisión de cumplimiento normativo en la operación minera",
+        "angle": "Revisión de cumplimiento normativo en la operación minera"
+      },
+      {
+        "seq": 10,
+        "cell": "LMD",
+        "subtheme": "HDPE: control de la fabricación al montaje",
+        "angle": "HDPE: control de la fabricación al montaje"
+      },
+      {
+        "seq": 11,
+        "cell": "IOM",
+        "subtheme": "Plan de mantenimiento estructural para la vida útil",
+        "angle": "Plan de mantenimiento estructural para la vida útil"
+      },
+      {
+        "seq": 13,
+        "cell": "",
+        "subtheme": "Día del Transporte Sostenible",
+        "angle": "efeméride institucional: Día del Transporte Sostenible (no traza a knowledge_id)"
+      }
+    ]
+  },
+  "fingerprint_index": {
+    "archetypes": {
+      "risk_prevention": 2,
+      "evidence_learning": 1,
+      "technical_question": 1,
+      "problem_impact_capability": 2,
+      "process_result": 2,
+      "project_challenge": 1,
+      "capability_application": 1,
+      "data_implication": 1,
+      "institutional_or_occasion": 1
+    },
+    "cta_types": {
+      "technical_conversation": 3,
+      "knowledge": 3,
+      "deep_dive": 2,
+      "commercial_contact": 2,
+      "service_discovery": 2
+    },
+    "hook_types": {
+      "scenario": 2,
+      "insight": 2,
+      "question": 1,
+      "contrast": 2,
+      "process_step": 2,
+      "technical_claim": 2,
+      "risk": 1
+    },
+    "pain_categories": {
+      "safety": 1,
+      "quality_assurance": 2,
+      "risk_of_failure": 2,
+      "delays": 2,
+      "reliability": 1,
+      "continuity": 2,
+      "compliance_gap": 1,
+      "other": 1
+    },
+    "visual_themes": {
+      "aerial": 2,
+      "infrastructure": 3,
+      "equipment": 1,
+      "laboratory": 1,
+      "graphic": 1,
+      "people": 1,
+      "field": 1
+    }
+  },
+  "posts": [
+    {
+      "seq": 1,
+      "content_id": "PLAN-KB-IOM-001-01",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "cell_short": "IOM",
+      "subtheme": "Monitoreo remoto de depósitos de relaves",
+      "editorial_angle": "Monitoreo remoto de depósitos de relaves",
+      "format": "STATIC",
+      "date": "2026-11-02",
+      "knowledge_id": "KB-IOM-001",
+      "evidence_ids": [
+        "KB-IOM-001",
+        "KB-IOM-002"
+      ],
+      "graphic": {
+        "svc": "Instrumentación de relaves",
+        "msg": "Instrumentar para<br>vigilar sin pausa.",
+        "baseline": "Tranques de relaves · <b>instrumentados para su monitoreo a distancia</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "tranque_caren4",
+        "fuente": "https://drive.google.com/file/d/1NFb94U5FJbBw8W_mMJRrQ3Zk2ozt04no/view",
+        "detalle": "tranque de relaves · vista aérea del muro (foto elegida por MKT)"
+      },
+      "copy": {
+        "hook": "🌙 Es de madrugada en la faena. Nadie está frente al tranque de relaves, pero la estructura sigue trabajando.",
+        "body": "Un depósito de relaves es una infraestructura crítica: su seguridad no admite pausas y requiere control las 24 horas.\n\nPara que ese control sea posible a distancia, el depósito tiene que estar instrumentado:\n* La estructura evoluciona con cada etapa de crecimiento.\n* Los cambios relevantes no siempre se ven a simple vista.\n* Los instrumentos entregan los datos para detectarlos a tiempo.\n\nEn #IDIEM desarrollamos proyectos de instrumentación de tranques de relaves que habilitan su monitoreo a distancia, para evaluar y resguardar de manera permanente su seguridad. 📡",
+        "cta": "🔎 ¿Evaluando instrumentar un depósito? Conversemos: https://idiem.cl\n\n#IDIEM #Minería #Relaves #Geotecnia #Instrumentación #Seguridad",
+        "full": "🌙 Es de madrugada en la faena. Nadie está frente al tranque de relaves, pero la estructura sigue trabajando.\n\nUn depósito de relaves es una infraestructura crítica: su seguridad no admite pausas y requiere control las 24 horas.\n\nPara que ese control sea posible a distancia, el depósito tiene que estar instrumentado:\n* La estructura evoluciona con cada etapa de crecimiento.\n* Los cambios relevantes no siempre se ven a simple vista.\n* Los instrumentos entregan los datos para detectarlos a tiempo.\n\nEn #IDIEM desarrollamos proyectos de instrumentación de tranques de relaves que habilitan su monitoreo a distancia, para evaluar y resguardar de manera permanente su seguridad. 📡\n\n🔎 ¿Evaluando instrumentar un depósito? Conversemos: https://idiem.cl\n\n#IDIEM #Minería #Relaves #Geotecnia #Instrumentación #Seguridad",
+        "chars": 814
+      },
+      "assignment": {
+        "archetype": "risk_prevention",
+        "hook_type": "scenario",
+        "cta_type": "technical_conversation",
+        "pain_point": "cambios en un relave que no se ven a simple vista",
+        "claim": "instrumentación y monitoreo remoto de depósitos de relaves"
+      },
+      "flags": [],
+      "status": "PROGRAMADO",
+      "posted": false,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IOM-001-01",
+        "service": "Instrumentación de relaves",
+        "subtheme": "Monitoreo remoto de depósitos de relaves",
+        "primary_claim": "instrumentación y monitoreo remoto de depósitos de relaves",
+        "pain_point": "cambios en un relave que no se ven a simple vista",
+        "pain_category": "safety",
+        "angle": "Monitoreo remoto de depósitos de relaves",
+        "hook_type": "scenario",
+        "editorial_archetype": "risk_prevention",
+        "cta_type": "technical_conversation",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-IOM-001",
+          "KB-IOM-002"
+        ],
+        "knowledge_id": "KB-IOM-001",
+        "photo_id": "tranque_caren4",
+        "visual_theme": "aerial",
+        "hook": "Es de madrugada en la faena.",
+        "assigned_fields": [
+          "hook_type",
+          "cta_type",
+          "archetype",
+          "pain_point",
+          "claim"
+        ]
+      }
+    },
+    {
+      "seq": 2,
+      "content_id": "PLAN-KB-IPR-003-02",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "cell_short": "IPR",
+      "subtheme": "Laboratorio en obra: caso nuevo terminal Aeropuerto AMB",
+      "editorial_angle": "Laboratorio en obra: caso nuevo terminal Aeropuerto AMB",
+      "format": "CAROUSEL",
+      "date": "2026-11-04",
+      "knowledge_id": "KB-IPR-003",
+      "evidence_ids": [
+        "EXT-0070",
+        "KB-IPR-003",
+        "KB-IPR-004"
+      ],
+      "graphic": {
+        "svc": "",
+        "msg": "",
+        "baseline": ""
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "aeroporto_stgo",
+        "fuente": "https://drive.google.com/file/d/1yHNdw2coWC3bbJn-jRSVoxxagushQGIG/view",
+        "detalle": "nuevo terminal internacional Aeropuerto AMB · vista aérea (foto elegida por MKT)"
+      },
+      "copy": {
+        "hook": "🏗️ En una obra de gran escala, el laboratorio no tiene por qué estar lejos de la obra: puede estar dentro de ella.",
+        "body": "En el nuevo terminal internacional del Aeropuerto Arturo Merino Benítez, IDIEM instaló un laboratorio en obra para realizar estudios, ensayos y diagnósticos de estructuras, hormigones y aceros.\n\n¿Qué muestra una experiencia así? Que cuando el laboratorio está junto a los frentes de trabajo, los ensayos ocurren en el mismo lugar donde se toman las decisiones de la obra. 🧪\n\nNuestro servicio de laboratorio en obra considera instalaciones, personal y equipamiento, para todo tipo de infraestructura, tanto pública como privada.",
+        "cta": "¿Dónde se ensaya hoy lo que se construye en tu proyecto: dentro de la obra o lejos de ella?\n\n#IDIEM #LaboratorioEnObra #Infraestructura #Construcción #Calidad #Ensayos",
+        "full": "🏗️ En una obra de gran escala, el laboratorio no tiene por qué estar lejos de la obra: puede estar dentro de ella.\n\nEn el nuevo terminal internacional del Aeropuerto Arturo Merino Benítez, IDIEM instaló un laboratorio en obra para realizar estudios, ensayos y diagnósticos de estructuras, hormigones y aceros.\n\n¿Qué muestra una experiencia así? Que cuando el laboratorio está junto a los frentes de trabajo, los ensayos ocurren en el mismo lugar donde se toman las decisiones de la obra. 🧪\n\nNuestro servicio de laboratorio en obra considera instalaciones, personal y equipamiento, para todo tipo de infraestructura, tanto pública como privada.\n\n¿Dónde se ensaya hoy lo que se construye en tu proyecto: dentro de la obra o lejos de ella?\n\n#IDIEM #LaboratorioEnObra #Infraestructura #Construcción #Calidad #Ensayos",
+        "chars": 812
+      },
+      "assignment": {
+        "archetype": "evidence_learning",
+        "hook_type": "insight",
+        "cta_type": "knowledge",
+        "pain_point": "en una obra de gran escala el hormigón no se puede controlar a distancia",
+        "claim": "laboratorio instalado en obra en el nuevo terminal internacional del AMB con estudios, ensayos y diagnósticos de estructuras, hormigones y aceros"
+      },
+      "flags": [
+        "pedido MKT: post orientado a hormigones",
+        "AMB aprobado como caso por MKT (también en #6: separados 9 días, servicios distintos)",
+        "absorbe el tema 'laboratorio permanente en obra' (KB-IPR-004 como apoyo) para no repetir servicio en el mes",
+        "no repetir la lista de ensayos del post 11 de septiembre: foco en el caso y en el control en obra"
+      ],
+      "status": "PROGRAMADO",
+      "posted": false,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IPR-003-02",
+        "service": "",
+        "subtheme": "Laboratorio en obra: caso nuevo terminal Aeropuerto AMB",
+        "primary_claim": "laboratorio instalado en obra en el nuevo terminal internacional del AMB con estudios, ensayos y diagnósticos de estructuras, hormigones y aceros",
+        "pain_point": "en una obra de gran escala el hormigón no se puede controlar a distancia",
+        "pain_category": "quality_assurance",
+        "angle": "Laboratorio en obra: caso nuevo terminal Aeropuerto AMB",
+        "hook_type": "insight",
+        "editorial_archetype": "evidence_learning",
+        "cta_type": "knowledge",
+        "format": "CAROUSEL",
+        "evidence_ids": [
+          "EXT-0070",
+          "KB-IPR-003",
+          "KB-IPR-004"
+        ],
+        "knowledge_id": "KB-IPR-003",
+        "photo_id": "aeroporto_stgo",
+        "visual_theme": "aerial",
+        "hook": "En una obra de gran escala, el laboratorio no tiene por qué estar lejos de la obra: puede estar dentro de ella.",
+        "assigned_fields": [
+          "hook_type",
+          "cta_type",
+          "archetype",
+          "pain_point",
+          "claim"
+        ]
+      }
+    },
+    {
+      "seq": 3,
+      "content_id": "PLAN-KB-IOM-053-03",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "cell_short": "IOM",
+      "subtheme": "Vulnerabilidad de torres de transmisión y subestaciones",
+      "editorial_angle": "Vulnerabilidad de torres de transmisión y subestaciones",
+      "format": "STATIC",
+      "date": "2026-11-06",
+      "knowledge_id": "KB-IOM-053",
+      "evidence_ids": [
+        "EXT-0010",
+        "EXT-0011",
+        "KB-IOM-053"
+      ],
+      "graphic": {
+        "svc": "Integridad estructural",
+        "msg": "Torres y<br>subestaciones.",
+        "baseline": "Inspección visual · aérea · <b>termográfica</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "PHO-0041",
+        "fuente": "https://drive.google.com/file/d/1cqacewO07jjzAcPe7V6aWuq4C5J6xPSm/view",
+        "detalle": "torre de alta tensión · levantamiento"
+      },
+      "copy": {
+        "hook": "⚡ ¿Qué tan expuesta está la energía que alimenta tu faena?",
+        "body": "Las torres de transmisión y las subestaciones sostienen la operación minera. Trabajan a la intemperie y enfrentan las mismas amenazas que cualquier estructura: corrosión, deformaciones y fisuras. ¿Están dentro de tu plan de integridad?\n\nLa respuesta pasa por gestionar su vulnerabilidad e integridad estructural. La infraestructura eléctrica es una de las familias de activos mineros que abordamos, con inspecciones especializadas y levantamiento de información en terreno mediante inspección visual, aérea y termográfica. 🛰️",
+        "cta": "Profundiza en cómo abordamos la integridad de los activos mineros en https://idiem.cl\n\n#IDIEM #Minería #InfraestructuraEléctrica #IntegridadEstructural #Ingeniería",
+        "full": "⚡ ¿Qué tan expuesta está la energía que alimenta tu faena?\n\nLas torres de transmisión y las subestaciones sostienen la operación minera. Trabajan a la intemperie y enfrentan las mismas amenazas que cualquier estructura: corrosión, deformaciones y fisuras. ¿Están dentro de tu plan de integridad?\n\nLa respuesta pasa por gestionar su vulnerabilidad e integridad estructural. La infraestructura eléctrica es una de las familias de activos mineros que abordamos, con inspecciones especializadas y levantamiento de información en terreno mediante inspección visual, aérea y termográfica. 🛰️\n\nProfundiza en cómo abordamos la integridad de los activos mineros en https://idiem.cl\n\n#IDIEM #Minería #InfraestructuraEléctrica #IntegridadEstructural #Ingeniería",
+        "chars": 750
+      },
+      "assignment": {
+        "archetype": "technical_question",
+        "hook_type": "question",
+        "cta_type": "deep_dive",
+        "pain_point": "la energía de la faena depende de estructuras expuestas",
+        "claim": "gestión de vulnerabilidad e integridad aplicada a infraestructura eléctrica"
+      },
+      "flags": [
+        "USE_AUDITED_CORRECTION"
+      ],
+      "status": "PROGRAMADO",
+      "posted": false,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IOM-053-03",
+        "service": "Integridad estructural",
+        "subtheme": "Vulnerabilidad de torres de transmisión y subestaciones",
+        "primary_claim": "gestión de vulnerabilidad e integridad aplicada a infraestructura eléctrica",
+        "pain_point": "la energía de la faena depende de estructuras expuestas",
+        "pain_category": "risk_of_failure",
+        "angle": "Vulnerabilidad de torres de transmisión y subestaciones",
+        "hook_type": "question",
+        "editorial_archetype": "technical_question",
+        "cta_type": "deep_dive",
+        "format": "STATIC",
+        "evidence_ids": [
+          "EXT-0010",
+          "EXT-0011",
+          "KB-IOM-053"
+        ],
+        "knowledge_id": "KB-IOM-053",
+        "photo_id": "PHO-0041",
+        "visual_theme": null,
+        "hook": "¿Qué tan expuesta está la energía que alimenta tu faena?",
+        "assigned_fields": [
+          "hook_type",
+          "cta_type",
+          "archetype",
+          "pain_point",
+          "claim"
+        ]
+      }
+    },
+    {
+      "seq": 4,
+      "content_id": "PLAN-KB-IHA-004-04",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "cell_short": "IHA",
+      "subtheme": "Apoyo técnico para lograr acuerdos en obras de salud",
+      "editorial_angle": "Apoyo técnico para lograr acuerdos en obras de salud",
+      "format": "STATIC",
+      "date": "2026-11-09",
+      "knowledge_id": "KB-IHA-004",
+      "evidence_ids": [
+        "KB-IHA-002",
+        "KB-IHA-003",
+        "KB-IHA-004"
+      ],
+      "graphic": {
+        "svc": "Ingeniería contractual",
+        "msg": "Una base técnica<br>para acordar.",
+        "baseline": "Sector Salud · acuerdos · <b>prefactibilidad de reclamos</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "PHO-0067",
+        "fuente": "https://drive.google.com/file/d/145Rtu5NfO2uLDK0WWNLPn1ZIqjHTEQ6D/view",
+        "detalle": "generica_hospital · edificio hospitalario (foto elegida por MKT)"
+      },
+      "copy": {
+        "hook": "⚖️ ¿Tu proyecto de infraestructura hospitalaria enfrenta una diferencia contractual?",
+        "body": "No todas las diferencias tienen que convertirse en una disputa.\n\nEn proyectos de infraestructura hospitalaria, resolver oportunamente una diferencia puede ser clave para evitar impactos en plazos, costos y continuidad del proyecto.\n\nEn IDIEM, nuestra División Ingeniería Contractual entrega apoyo técnico especializado para analizar y abordar estas situaciones antes de que escalen, aportando una base técnica objetiva para facilitar la toma de decisiones y la búsqueda de acuerdos.🏥\n\nApoyamos a nuestros clientes mediante:\n\n✔️ Diagnóstico contractual.\n✔️ Análisis de prefactibilidad de reclamos.\n✔️ Evaluación de impactos técnicos, de plazo y costos.\n✔️ Apoyo técnico para la búsqueda de acuerdos.\n\nUna diferencia abordada a tiempo puede evitar una controversia.",
+        "cta": "📩Si en tu proyecto de salud existe una situación que requiere análisis técnico, contacta a nuestro equipo de Ingeniería Contractual en https://idiem.cl\n\n#IDIEM #Salud #IngenieríaContractual #InfraestructuraHospitalaria #Construcción",
+        "full": "⚖️ ¿Tu proyecto de infraestructura hospitalaria enfrenta una diferencia contractual?\n\nNo todas las diferencias tienen que convertirse en una disputa.\n\nEn proyectos de infraestructura hospitalaria, resolver oportunamente una diferencia puede ser clave para evitar impactos en plazos, costos y continuidad del proyecto.\n\nEn IDIEM, nuestra División Ingeniería Contractual entrega apoyo técnico especializado para analizar y abordar estas situaciones antes de que escalen, aportando una base técnica objetiva para facilitar la toma de decisiones y la búsqueda de acuerdos.🏥\n\nApoyamos a nuestros clientes mediante:\n\n✔️ Diagnóstico contractual.\n✔️ Análisis de prefactibilidad de reclamos.\n✔️ Evaluación de impactos técnicos, de plazo y costos.\n✔️ Apoyo técnico para la búsqueda de acuerdos.\n\nUna diferencia abordada a tiempo puede evitar una controversia.\n\n📩Si en tu proyecto de salud existe una situación que requiere análisis técnico, contacta a nuestro equipo de Ingeniería Contractual en https://idiem.cl\n\n#IDIEM #Salud #IngenieríaContractual #InfraestructuraHospitalaria #Construcción",
+        "chars": 1083
+      },
+      "assignment": {
+        "archetype": "problem_impact_capability",
+        "hook_type": "contrast",
+        "cta_type": "commercial_contact",
+        "pain_point": "diferencias contractuales que escalan en obras de salud",
+        "claim": "apoyo técnico para lograr acuerdos"
+      },
+      "flags": [
+        "USE_AUDITED_CORRECTION",
+        "reuso de célula: ángulo 'acuerdo' ≠ programación/término (sep)"
+      ],
+      "status": "PUBLICADO",
+      "posted": true,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IHA-004-04",
+        "service": "Ingeniería contractual",
+        "subtheme": "Apoyo técnico para lograr acuerdos en obras de salud",
+        "primary_claim": "apoyo técnico para lograr acuerdos",
+        "pain_point": "diferencias contractuales que escalan en obras de salud",
+        "pain_category": "delays",
+        "angle": "Apoyo técnico para lograr acuerdos en obras de salud",
+        "hook_type": "contrast",
+        "editorial_archetype": "problem_impact_capability",
+        "cta_type": "commercial_contact",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-IHA-002",
+          "KB-IHA-003",
+          "KB-IHA-004"
+        ],
+        "knowledge_id": "KB-IHA-004",
+        "photo_id": "PHO-0067",
+        "visual_theme": "infrastructure",
+        "hook": "¿Tu proyecto de infraestructura hospitalaria enfrenta una diferencia contractual?",
+        "assigned_fields": [
+          "hook_type",
+          "cta_type",
+          "archetype",
+          "pain_point",
+          "claim"
+        ]
+      },
+      "length_override": "copy final de MKT, aprobado y publicado (19-10-2026)"
+    },
+    {
+      "seq": 5,
+      "content_id": "PLAN-KB-IOM-061-05",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "cell_short": "IOM",
+      "subtheme": "Programa SIM de gestión de integridad estructural",
+      "editorial_angle": "Programa SIM de gestión de integridad estructural",
+      "format": "CAROUSEL",
+      "date": "2026-11-11",
+      "knowledge_id": "KB-IOM-061",
+      "evidence_ids": [
+        "KB-IOM-061"
+      ],
+      "graphic": {
+        "svc": "",
+        "msg": "",
+        "baseline": ""
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "PHO-0042",
+        "fuente": "https://drive.google.com/file/d/1h0O5lel8VmbdeYVhJ0C4lHMIfUQ5iqMk/view",
+        "detalle": "dron de inspección con profesionales en terreno"
+      },
+      "copy": {
+        "hook": "🗂️ Primero se planifica. ",
+        "body": "Se revisan los antecedentes, se inspecciona, se instrumenta y luego se monitorea. Así opera la gestión de la integridad estructural cuando deja de ser una suma de acciones aisladas.\n\nEn activos mineros, la información sobre el estado de las estructuras suele quedar repartida entre inspecciones, registros y mediciones. El valor aparece cuando todo eso se ordena en un solo proceso.\n\nEsa es la lógica del programa SIM (Structural Integrity Management) que aplicamos en infraestructura minera: planificación, análisis de antecedentes, inspecciones y monitoreo continuo (sensores trabajando en conjunto). ⚙️",
+        "cta": "Conoce el alcance de la gestión de integridad estructural en https://idiem.cl\n\n#IDIEM #Minería #IntegridadEstructural #SIM #Mantenimiento",
+        "full": "🗂️ Primero se planifica. \n\nSe revisan los antecedentes, se inspecciona, se instrumenta y luego se monitorea. Así opera la gestión de la integridad estructural cuando deja de ser una suma de acciones aisladas.\n\nEn activos mineros, la información sobre el estado de las estructuras suele quedar repartida entre inspecciones, registros y mediciones. El valor aparece cuando todo eso se ordena en un solo proceso.\n\nEsa es la lógica del programa SIM (Structural Integrity Management) que aplicamos en infraestructura minera: planificación, análisis de antecedentes, inspecciones y monitoreo continuo (sensores trabajando en conjunto). ⚙️\n\nConoce el alcance de la gestión de integridad estructural en https://idiem.cl\n\n#IDIEM #Minería #IntegridadEstructural #SIM #Mantenimiento",
+        "chars": 771
+      },
+      "assignment": {
+        "archetype": "process_result",
+        "hook_type": "process_step",
+        "cta_type": "service_discovery",
+        "pain_point": "integridad gestionada sin sistema: información dispersa",
+        "claim": "SIM como programa de gestión de integridad"
+      },
+      "flags": [
+        "USE_WITH_MATIZ: conservar matiz"
+      ],
+      "status": "PROGRAMADO",
+      "posted": false,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IOM-061-05",
+        "service": "",
+        "subtheme": "Programa SIM de gestión de integridad estructural",
+        "primary_claim": "SIM como programa de gestión de integridad",
+        "pain_point": "integridad gestionada sin sistema: información dispersa",
+        "pain_category": "reliability",
+        "angle": "Programa SIM de gestión de integridad estructural",
+        "hook_type": "process_step",
+        "editorial_archetype": "process_result",
+        "cta_type": "service_discovery",
+        "format": "CAROUSEL",
+        "evidence_ids": [
+          "KB-IOM-061"
+        ],
+        "knowledge_id": "KB-IOM-061",
+        "photo_id": "PHO-0042",
+        "visual_theme": "equipment",
+        "hook": "Primero se planifica.",
+        "assigned_fields": [
+          "hook_type",
+          "cta_type",
+          "archetype",
+          "pain_point",
+          "claim"
+        ]
+      }
+    },
+    {
+      "seq": 6,
+      "content_id": "PLAN-KB-IPR-019-06",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "cell_short": "IPR",
+      "subtheme": "Ingeniería contra incendios en edificación (servicio)",
+      "editorial_angle": "Ingeniería contra incendios en edificación (servicio)",
+      "format": "STATIC",
+      "date": "2026-11-13",
+      "knowledge_id": "KB-IPR-019",
+      "evidence_ids": [
+        "EXT-0111",
+        "EXT-0112",
+        "KB-IPR-019"
+      ],
+      "graphic": {
+        "svc": "Ingeniería contra incendios",
+        "msg": "Seguridad que se<br>define antes.",
+        "baseline": "Análisis · simulaciones · <b>ensayos específicos</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "PHO-0073",
+        "fuente": "https://drive.google.com/file/d/1NvR0W4hVMrO8IzpQ70SizhF6XZ_n3pcz/view",
+        "detalle": "ensayo de humos fríos en laboratorio de incendio"
+      },
+      "copy": {
+        "hook": "🔥 La seguridad contra incendios de un edificio se define mucho antes de su operación: en el análisis y los estudios de ingeniería.",
+        "body": "Un edificio con alto flujo de personas y usos diversos exige entender cómo se comportaría frente a un incendio y cómo proteger a las personas, la infraestructura y los equipos.\n\nEn #IDIEM realizamos asesorías y estudios de prevención y protección contra incendios, con análisis, simulaciones y ensayos específicos. La gestión del riesgo considera factores como las características constructivas, la compartimentación, los procesos, los servicios, los protocolos de gestión y los sistemas de protección. 🛡️",
+        "cta": "¿Tu proyecto requiere un análisis de riesgo de incendio? Hablemos con nuestros especialistas en https://idiem.cl\n\n#IDIEM #IngenieríaContraIncendios #Infraestructura #Seguridad",
+        "full": "🔥 La seguridad contra incendios de un edificio se define mucho antes de su operación: en el análisis y los estudios de ingeniería.\n\nUn edificio con alto flujo de personas y usos diversos exige entender cómo se comportaría frente a un incendio y cómo proteger a las personas, la infraestructura y los equipos.\n\nEn #IDIEM realizamos asesorías y estudios de prevención y protección contra incendios, con análisis, simulaciones y ensayos específicos. La gestión del riesgo considera factores como las características constructivas, la compartimentación, los procesos, los servicios, los protocolos de gestión y los sistemas de protección. 🛡️\n\n¿Tu proyecto requiere un análisis de riesgo de incendio? Hablemos con nuestros especialistas en https://idiem.cl\n\n#IDIEM #IngenieríaContraIncendios #Infraestructura #Seguridad",
+        "chars": 814
+      },
+      "assignment": {
+        "archetype": "project_challenge",
+        "hook_type": "technical_claim",
+        "cta_type": "technical_conversation",
+        "pain_point": "en un edificio de alta afluencia la seguridad contra incendio se define en el diseño",
+        "claim": "asesoría y estudios de ingeniería contra incendios (AMB)"
+      },
+      "flags": [
+        "USE_WITH_MATIZ: conservar matiz"
+      ],
+      "status": "PROGRAMADO",
+      "posted": false,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IPR-019-06",
+        "service": "Ingeniería contra incendios",
+        "subtheme": "Ingeniería contra incendios en edificación (servicio)",
+        "primary_claim": "asesoría y estudios de ingeniería contra incendios (AMB)",
+        "pain_point": "en un edificio de alta afluencia la seguridad contra incendio se define en el diseño",
+        "pain_category": "continuity",
+        "angle": "Ingeniería contra incendios en edificación (servicio)",
+        "hook_type": "technical_claim",
+        "editorial_archetype": "project_challenge",
+        "cta_type": "technical_conversation",
+        "format": "STATIC",
+        "evidence_ids": [
+          "EXT-0111",
+          "EXT-0112",
+          "KB-IPR-019"
+        ],
+        "knowledge_id": "KB-IPR-019",
+        "photo_id": "PHO-0073",
+        "visual_theme": "laboratory",
+        "hook": "La seguridad contra incendios de un edificio se define mucho antes de su operación: en el análisis y los estudios de ingeniería.",
+        "assigned_fields": [
+          "hook_type",
+          "cta_type",
+          "archetype",
+          "pain_point",
+          "claim"
+        ]
+      }
+    },
+    {
+      "seq": 7,
+      "content_id": "PLAN-KB-IOM-012-07",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "cell_short": "IOM",
+      "subtheme": "Modelamiento digital de estructuras",
+      "editorial_angle": "Modelamiento digital de estructuras",
+      "format": "STATIC",
+      "date": "2026-11-18",
+      "knowledge_id": "KB-IOM-012",
+      "evidence_ids": [
+        "EXT-0003",
+        "EXT-0004",
+        "KB-IOM-012"
+      ],
+      "graphic": {
+        "svc": "Modelamiento digital",
+        "msg": "Las estructuras<br>como están hoy.",
+        "baseline": "Levantamiento de condiciones · <b>modelamiento digital</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "modelado_bim",
+        "fuente": "https://drive.google.com/file/d/1i7u8LwD7WuVAf8cFj8wPO1lqq4iYkvAi/view",
+        "detalle": "modelo BIM de estructura (foto elegida por MKT)"
+      },
+      "copy": {
+        "hook": "📐 Modelamiento digital de estructuras: cuando el plano dice una cosa y la planta, otra.",
+        "body": "En instalaciones mineras con años de operación, las estructuras acumulan modificaciones, reparaciones y ampliaciones que no siempre llegan a los planos. Intervenir sobre información desactualizada es asumir un riesgo en cada decisión.\n\nPor eso nuestros servicios a la operación minera integran el levantamiento de condiciones existentes —geometría, materialidad y estado— y el modelamiento digital de estructuras, junto a la revisión integral de proyectos de rehabilitación. 💻",
+        "cta": "Revisa en https://idiem.cl cómo abordamos el levantamiento y el modelamiento en faena.\n\n#IDIEM #Minería #ModelamientoDigital #Estructuras #Ingeniería",
+        "full": "📐 Modelamiento digital de estructuras: cuando el plano dice una cosa y la planta, otra.\n\nEn instalaciones mineras con años de operación, las estructuras acumulan modificaciones, reparaciones y ampliaciones que no siempre llegan a los planos. Intervenir sobre información desactualizada es asumir un riesgo en cada decisión.\n\nPor eso nuestros servicios a la operación minera integran el levantamiento de condiciones existentes —geometría, materialidad y estado— y el modelamiento digital de estructuras, junto a la revisión integral de proyectos de rehabilitación. 💻\n\nRevisa en https://idiem.cl cómo abordamos el levantamiento y el modelamiento en faena.\n\n#IDIEM #Minería #ModelamientoDigital #Estructuras #Ingeniería",
+        "chars": 716
+      },
+      "assignment": {
+        "archetype": "capability_application",
+        "hook_type": "contrast",
+        "cta_type": "deep_dive",
+        "pain_point": "planos que ya no representan lo construido",
+        "claim": "modelamiento digital de estructuras en instalaciones mineras"
+      },
+      "flags": [],
+      "status": "PROGRAMADO",
+      "posted": false,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IOM-012-07",
+        "service": "Modelamiento digital",
+        "subtheme": "Modelamiento digital de estructuras",
+        "primary_claim": "modelamiento digital de estructuras en instalaciones mineras",
+        "pain_point": "planos que ya no representan lo construido",
+        "pain_category": "continuity",
+        "angle": "Modelamiento digital de estructuras",
+        "hook_type": "contrast",
+        "editorial_archetype": "capability_application",
+        "cta_type": "deep_dive",
+        "format": "STATIC",
+        "evidence_ids": [
+          "EXT-0003",
+          "EXT-0004",
+          "KB-IOM-012"
+        ],
+        "knowledge_id": "KB-IOM-012",
+        "photo_id": "modelado_bim",
+        "visual_theme": "graphic",
+        "hook": "Modelamiento digital de estructuras: cuando el plano dice una cosa y la planta, otra.",
+        "assigned_fields": [
+          "hook_type",
+          "cta_type",
+          "archetype",
+          "pain_point",
+          "claim"
+        ]
+      }
+    },
+    {
+      "seq": 8,
+      "content_id": "PLAN-KB-IPR-001-08",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "cell_short": "IPR",
+      "subtheme": "Asesoría a Inspección Fiscal con sistema ISO 9001:2015",
+      "editorial_angle": "Asesoría a Inspección Fiscal con sistema ISO 9001:2015",
+      "format": "STATIC",
+      "date": "2026-11-20",
+      "knowledge_id": "KB-IPR-001",
+      "evidence_ids": [
+        "KB-IPR-001"
+      ],
+      "graphic": {
+        "svc": "Asesoría a Inspección Fiscal",
+        "msg": "Calidad en<br>los informes.",
+        "baseline": "Inspección técnica · <b>ISO 9001:2015</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "PHO-0088",
+        "fuente": "https://drive.google.com/file/d/1LeD87VrUVQn4iH7NesS_AY8Ovobar6zz/view",
+        "detalle": "profesional IDIEM revisando planos en obra"
+      },
+      "copy": {
+        "hook": "📋 Un informe de inspección técnica sin un proceso controlado detrás puede convertirse en el punto débil de una obra.",
+        "body": "La Inspección Fiscal toma decisiones a partir de lo que registran esos informes. Si su elaboración no sigue un método controlado y verificable, cualquier inconsistencia puede escalar a observaciones, retrasos o controversias.\n\nEn #IDIEM asesoramos a la Inspección Fiscal en la inspección técnica y la supervisión de obras y equipamiento, con un sistema de gestión de calidad certificado ISO 9001:2015 aplicado a la elaboración de esos informes. ✅",
+        "cta": "¿Necesitas reforzar la calidad de la inspección técnica en tu obra? Escríbenos y coordinamos una reunión en https://idiem.cl\n\n#IDIEM #InspecciónTécnica #ISO9001 #Construcción #Calidad",
+        "full": "📋 Un informe de inspección técnica sin un proceso controlado detrás puede convertirse en el punto débil de una obra.\n\nLa Inspección Fiscal toma decisiones a partir de lo que registran esos informes. Si su elaboración no sigue un método controlado y verificable, cualquier inconsistencia puede escalar a observaciones, retrasos o controversias.\n\nEn #IDIEM asesoramos a la Inspección Fiscal en la inspección técnica y la supervisión de obras y equipamiento, con un sistema de gestión de calidad certificado ISO 9001:2015 aplicado a la elaboración de esos informes. ✅\n\n¿Necesitas reforzar la calidad de la inspección técnica en tu obra? Escríbenos y coordinamos una reunión en https://idiem.cl\n\n#IDIEM #InspecciónTécnica #ISO9001 #Construcción #Calidad",
+        "chars": 749
+      },
+      "assignment": {
+        "archetype": "problem_impact_capability",
+        "hook_type": "risk",
+        "cta_type": "commercial_contact",
+        "pain_point": "informes de inspección técnica sin un sistema de calidad detrás",
+        "claim": "sistema de gestión de calidad ISO 9001:2015 para elaborar informes de inspección técnica"
+      },
+      "flags": [
+        "USE_AUDITED_CORRECTION: NO decir 'obra pública' (retirado por auditoría)"
+      ],
+      "status": "PROGRAMADO",
+      "posted": false,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IPR-001-08",
+        "service": "Asesoría a Inspección Fiscal",
+        "subtheme": "Asesoría a Inspección Fiscal con sistema ISO 9001:2015",
+        "primary_claim": "sistema de gestión de calidad ISO 9001:2015 para elaborar informes de inspección técnica",
+        "pain_point": "informes de inspección técnica sin un sistema de calidad detrás",
+        "pain_category": "delays",
+        "angle": "Asesoría a Inspección Fiscal con sistema ISO 9001:2015",
+        "hook_type": "risk",
+        "editorial_archetype": "problem_impact_capability",
+        "cta_type": "commercial_contact",
+        "format": "STATIC",
+        "evidence_ids": [
+          "KB-IPR-001"
+        ],
+        "knowledge_id": "KB-IPR-001",
+        "photo_id": "PHO-0088",
+        "visual_theme": "people",
+        "hook": "Un informe de inspección técnica sin un proceso controlado detrás puede convertirse en el punto débil de una obra.",
+        "assigned_fields": [
+          "hook_type",
+          "cta_type",
+          "archetype",
+          "pain_point",
+          "claim"
+        ]
+      }
+    },
+    {
+      "seq": 9,
+      "content_id": "PLAN-KB-IOM-016-09",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "cell_short": "IOM",
+      "subtheme": "Revisión de cumplimiento normativo en la operación minera",
+      "editorial_angle": "Revisión de cumplimiento normativo en la operación minera",
+      "format": "STATIC",
+      "date": "2026-11-23",
+      "knowledge_id": "KB-IOM-016",
+      "evidence_ids": [
+        "EXT-0006",
+        "KB-IOM-016"
+      ],
+      "graphic": {
+        "svc": "Cumplimiento normativo",
+        "msg": "Priorizar con<br>evidencia.",
+        "baseline": "Estructural · incendios · <b>especialidades</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "PHO-0054",
+        "fuente": "https://drive.google.com/file/d/1k47H8j5hCCTS2wAT4NEIz2sIjB6qULNf/view",
+        "detalle": "faena minera a rajo abierto"
+      },
+      "copy": {
+        "hook": "📊 Una brecha que no se cuantifica difícilmente se puede priorizar.",
+        "body": "En una operación minera conviven estándares de seguridad, controles de fatalidad, normas corporativas y normas de diseño. Saber que existe una condición subestándar no basta: para decidir hay que conocer cuántas hay, dónde están y qué tan relevantes son frente a esos marcos.\n\nPor eso, entre nuestros servicios a la operación minera, realizamos revisiones de cumplimiento normativo en los ámbitos estructural, de incendios y de especialidades: identificamos, cuantificamos y evaluamos brechas o condiciones subestándar según los estándares y normas aplicables. 📋\n\nCon esa información, la priorización deja de ser intuitiva y se sostiene en evidencia técnica.",
+        "cta": "¿Con qué criterios se priorizan hoy las brechas normativas en tu operación?\n\n#IDIEM #Minería #CumplimientoNormativo #Seguridad #Ingeniería",
+        "full": "📊 Una brecha que no se cuantifica difícilmente se puede priorizar.\n\nEn una operación minera conviven estándares de seguridad, controles de fatalidad, normas corporativas y normas de diseño. Saber que existe una condición subestándar no basta: para decidir hay que conocer cuántas hay, dónde están y qué tan relevantes son frente a esos marcos.\n\nPor eso, entre nuestros servicios a la operación minera, realizamos revisiones de cumplimiento normativo en los ámbitos estructural, de incendios y de especialidades: identificamos, cuantificamos y evaluamos brechas o condiciones subestándar según los estándares y normas aplicables. 📋\n\nCon esa información, la priorización deja de ser intuitiva y se sostiene en evidencia técnica.\n\n¿Con qué criterios se priorizan hoy las brechas normativas en tu operación?\n\n#IDIEM #Minería #CumplimientoNormativo #Seguridad #Ingeniería",
+        "chars": 866
+      },
+      "assignment": {
+        "archetype": "data_implication",
+        "hook_type": "insight",
+        "cta_type": "knowledge",
+        "pain_point": "brechas normativas sin cuantificar que no se pueden priorizar",
+        "claim": "identificación, cuantificación y evaluación de brechas según estándares y normas aplicables"
+      },
+      "flags": [],
+      "status": "PROGRAMADO",
+      "posted": false,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IOM-016-09",
+        "service": "Cumplimiento normativo",
+        "subtheme": "Revisión de cumplimiento normativo en la operación minera",
+        "primary_claim": "identificación, cuantificación y evaluación de brechas según estándares y normas aplicables",
+        "pain_point": "brechas normativas sin cuantificar que no se pueden priorizar",
+        "pain_category": "compliance_gap",
+        "angle": "Revisión de cumplimiento normativo en la operación minera",
+        "hook_type": "insight",
+        "editorial_archetype": "data_implication",
+        "cta_type": "knowledge",
+        "format": "STATIC",
+        "evidence_ids": [
+          "EXT-0006",
+          "KB-IOM-016"
+        ],
+        "knowledge_id": "KB-IOM-016",
+        "photo_id": "PHO-0054",
+        "visual_theme": "field",
+        "hook": "Una brecha que no se cuantifica difícilmente se puede priorizar.",
+        "assigned_fields": [
+          "hook_type",
+          "cta_type",
+          "archetype",
+          "pain_point",
+          "claim"
+        ]
+      }
+    },
+    {
+      "seq": 10,
+      "content_id": "PLAN-KB-LMD-013-10",
+      "cell": "LAB MINERO DIGITAL",
+      "cell_short": "LMD",
+      "subtheme": "HDPE: control de la fabricación al montaje",
+      "editorial_angle": "HDPE: control de la fabricación al montaje",
+      "format": "CAROUSEL",
+      "date": "2026-11-25",
+      "knowledge_id": "KB-LMD-013",
+      "evidence_ids": [
+        "EXT-0041",
+        "KB-LMD-010",
+        "KB-LMD-013"
+      ],
+      "graphic": {
+        "svc": "",
+        "msg": "",
+        "baseline": ""
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "Tuberia_HDPE_END_ACERO1",
+        "fuente": "https://drive.google.com/file/d/1S61AUi0KE5jzgOvIu5JSlYIkw84oj27X/view",
+        "detalle": "tubería HDPE en faena (foto elegida por MKT)"
+      },
+      "copy": {
+        "hook": "🔧 De la fabricación al montaje, una línea HDPE pasa por varias etapas antes de conducir el primer fluido. En cualquiera de ellas puede aparecer un defecto.",
+        "body": "Las uniones soldadas de tuberías HDPE son elementos críticos en los procesos mineros. Por eso su calidad no se resuelve con un solo control al final, sino a lo largo de todo el recorrido.\n\nControlamos la calidad de líneas HDPE desde la fabricación hasta el montaje, con ensayos destructivos y no destructivos, cobertura nacional y proyectos de diversa complejidad. 🧪",
+        "cta": "¿Qué incluye este control en cada etapa? Te lo contamos en https://idiem.cl\n\n#IDIEM #Minería #HDPE #Ensayos #ControlDeCalidad",
+        "full": "🔧 De la fabricación al montaje, una línea HDPE pasa por varias etapas antes de conducir el primer fluido. En cualquiera de ellas puede aparecer un defecto.\n\nLas uniones soldadas de tuberías HDPE son elementos críticos en los procesos mineros. Por eso su calidad no se resuelve con un solo control al final, sino a lo largo de todo el recorrido.\n\nControlamos la calidad de líneas HDPE desde la fabricación hasta el montaje, con ensayos destructivos y no destructivos, cobertura nacional y proyectos de diversa complejidad. 🧪\n\n¿Qué incluye este control en cada etapa? Te lo contamos en https://idiem.cl\n\n#IDIEM #Minería #HDPE #Ensayos #ControlDeCalidad",
+        "chars": 650
+      },
+      "assignment": {
+        "archetype": "process_result",
+        "hook_type": "process_step",
+        "cta_type": "service_discovery",
+        "pain_point": "la calidad de una línea HDPE se juega en cada etapa, no solo en el ensayo",
+        "claim": "cobertura de control desde la fabricación hasta el montaje"
+      },
+      "flags": [
+        "reuso con ángulo nuevo (ER-16): sep abordó ensayos de uniones"
+      ],
+      "status": "PROGRAMADO",
+      "posted": false,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-LMD-013-10",
+        "service": "",
+        "subtheme": "HDPE: control de la fabricación al montaje",
+        "primary_claim": "cobertura de control desde la fabricación hasta el montaje",
+        "pain_point": "la calidad de una línea HDPE se juega en cada etapa, no solo en el ensayo",
+        "pain_category": "quality_assurance",
+        "angle": "HDPE: control de la fabricación al montaje",
+        "hook_type": "process_step",
+        "editorial_archetype": "process_result",
+        "cta_type": "service_discovery",
+        "format": "CAROUSEL",
+        "evidence_ids": [
+          "EXT-0041",
+          "KB-LMD-010",
+          "KB-LMD-013"
+        ],
+        "knowledge_id": "KB-LMD-013",
+        "photo_id": "Tuberia_HDPE_END_ACERO1",
+        "visual_theme": "infrastructure",
+        "hook": "De la fabricación al montaje, una línea HDPE pasa por varias etapas antes de conducir el primer fluido.",
+        "assigned_fields": [
+          "hook_type",
+          "cta_type",
+          "archetype",
+          "pain_point",
+          "claim"
+        ]
+      }
+    },
+    {
+      "seq": 11,
+      "content_id": "PLAN-KB-IOM-062-11",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "cell_short": "IOM",
+      "subtheme": "Plan de mantenimiento estructural para la vida útil",
+      "editorial_angle": "Plan de mantenimiento estructural para la vida útil",
+      "format": "STATIC",
+      "date": "2026-11-27",
+      "knowledge_id": "KB-IOM-062",
+      "evidence_ids": [
+        "EXT-0014",
+        "KB-IOM-062"
+      ],
+      "graphic": {
+        "svc": "Planes de mantenimiento",
+        "msg": "Prolongar la<br>vida útil.",
+        "baseline": "Activos mineros · <b>normativas y buenas prácticas</b>"
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "estructura_andamio_minera",
+        "fuente": "https://drive.google.com/file/d/1tY9VZc5shDLNaNXtQLVOBg1lvxcUrIiL/view",
+        "detalle": "estructura minera con andamiaje"
+      },
+      "copy": {
+        "hook": "🏗️ La vida útil de un activo no depende solo de cómo fue diseñado, sino de cómo se mantiene.",
+        "body": "Cuando el mantenimiento estructural se limita a reaccionar frente a las fallas, cada intervención llega tarde y el desgaste se acumula. Un plan permite anticiparse: definir qué revisar, cuándo hacerlo y con qué criterio.\n\nElaboramos y desarrollamos planes de mantenimiento estructural para activos mineros, basados en normativas y buenas prácticas, con el objetivo de prolongar su vida útil. 🛠️",
+        "cta": "¿Cómo se define hoy qué mantener y cuándo en tus activos? Revisémoslo juntos en https://idiem.cl\n\n#IDIEM #Minería #Mantenimiento #IntegridadEstructural #Confiabilidad",
+        "full": "🏗️ La vida útil de un activo no depende solo de cómo fue diseñado, sino de cómo se mantiene.\n\nCuando el mantenimiento estructural se limita a reaccionar frente a las fallas, cada intervención llega tarde y el desgaste se acumula. Un plan permite anticiparse: definir qué revisar, cuándo hacerlo y con qué criterio.\n\nElaboramos y desarrollamos planes de mantenimiento estructural para activos mineros, basados en normativas y buenas prácticas, con el objetivo de prolongar su vida útil. 🛠️\n\n¿Cómo se define hoy qué mantener y cuándo en tus activos? Revisémoslo juntos en https://idiem.cl\n\n#IDIEM #Minería #Mantenimiento #IntegridadEstructural #Confiabilidad",
+        "chars": 656
+      },
+      "assignment": {
+        "archetype": "risk_prevention",
+        "hook_type": "technical_claim",
+        "cta_type": "technical_conversation",
+        "pain_point": "el mantenimiento reactivo acorta la vida útil",
+        "claim": "plan de mantenimiento estructural para vida útil de activos"
+      },
+      "flags": [],
+      "status": "PROGRAMADO",
+      "posted": false,
+      "editorial_fingerprint": {
+        "content_id": "PLAN-KB-IOM-062-11",
+        "service": "Planes de mantenimiento",
+        "subtheme": "Plan de mantenimiento estructural para la vida útil",
+        "primary_claim": "plan de mantenimiento estructural para vida útil de activos",
+        "pain_point": "el mantenimiento reactivo acorta la vida útil",
+        "pain_category": "risk_of_failure",
+        "angle": "Plan de mantenimiento estructural para la vida útil",
+        "hook_type": "technical_claim",
+        "editorial_archetype": "risk_prevention",
+        "cta_type": "technical_conversation",
+        "format": "STATIC",
+        "evidence_ids": [
+          "EXT-0014",
+          "KB-IOM-062"
+        ],
+        "knowledge_id": "KB-IOM-062",
+        "photo_id": "estructura_andamio_minera",
+        "visual_theme": "infrastructure",
+        "hook": "La vida útil de un activo no depende solo de cómo fue diseñado, sino de cómo se mantiene.",
+        "assigned_fields": [
+          "hook_type",
+          "cta_type",
+          "archetype",
+          "pain_point",
+          "claim"
+        ]
+      }
+    },
+    {
+      "seq": 13,
+      "content_id": "EFEM-2026-11",
+      "cell": null,
+      "cell_short": "",
+      "subtheme": "Día del Transporte Sostenible",
+      "editorial_angle": "efeméride institucional: Día del Transporte Sostenible (no traza a knowledge_id)",
+      "format": "EFEMERIDE",
+      "date": "2026-11-26",
+      "knowledge_id": null,
+      "evidence_ids": [],
+      "graphic": {
+        "kicker": "26 DE NOVIEMBRE · DÍA MUNDIAL DEL TRANSPORTE SOSTENIBLE",
+        "title": "Infraestructura que<br>nos <span class=\"fpred\">conecta</span>.",
+        "sub": "Aportamos ciencia e ingeniería al desarrollo de la infraestructura del país."
+      },
+      "photo": {
+        "source": "libreria_idiem",
+        "photo_id": "metro_stgo",
+        "fuente": "https://drive.google.com/file/d/1yA70oPQA5PHDBnB-SkShfsNOOoCMMJxD/view",
+        "detalle": "tren de metro en estación (foto elegida por MKT)"
+      },
+      "copy": {
+        "hook": "🚆 Hoy, en el Día Mundial del Transporte Sostenible, pensamos en la infraestructura que hace posible movernos: vías, puentes, estaciones y terminales que conectan a las personas con su trabajo, sus estudios y sus afectos.",
+        "body": "Un transporte más sostenible también depende de que esa infraestructura sea segura, durable y bien cuidada en el tiempo. 🌎\n\nDesde la ciencia y la ingeniería, en IDIEM seguimos aportando al desarrollo de la infraestructura del país.",
+        "cta": "¿Qué cambio en la forma de movernos te parece más necesario?\n\n#IDIEM #TransporteSostenible #Infraestructura #Movilidad #Ingeniería",
+        "full": "🚆 Hoy, en el Día Mundial del Transporte Sostenible, pensamos en la infraestructura que hace posible movernos: vías, puentes, estaciones y terminales que conectan a las personas con su trabajo, sus estudios y sus afectos.\n\nUn transporte más sostenible también depende de que esa infraestructura sea segura, durable y bien cuidada en el tiempo. 🌎\n\nDesde la ciencia y la ingeniería, en IDIEM seguimos aportando al desarrollo de la infraestructura del país.\n\n¿Qué cambio en la forma de movernos te parece más necesario?\n\n#IDIEM #TransporteSostenible #Infraestructura #Movilidad #Ingeniería",
+        "chars": 585
+      },
+      "assignment": {
+        "archetype": "institutional_or_occasion",
+        "hook_type": "scenario",
+        "cta_type": "knowledge"
+      },
+      "flags": [
+        "sin claims técnicos ni capacidades (CONTENT_GAP)"
+      ],
+      "status": "PROGRAMADO",
+      "posted": false,
+      "editorial_fingerprint": {
+        "content_id": "EFEM-2026-11",
+        "service": "",
+        "subtheme": "Día del Transporte Sostenible",
+        "primary_claim": "Infraestructura que nos conecta .",
+        "pain_point": "Un transporte más sostenible también depende de que esa infraestructura sea segura, durable y bien cuidada en el tiempo.",
+        "pain_category": "other",
+        "angle": "efeméride institucional: Día del Transporte Sostenible (no traza a knowledge_id)",
+        "hook_type": "scenario",
+        "editorial_archetype": "institutional_or_occasion",
+        "cta_type": "knowledge",
+        "format": "EFEMERIDE",
+        "evidence_ids": [],
+        "knowledge_id": null,
+        "photo_id": "metro_stgo",
+        "visual_theme": null,
+        "hook": "Hoy, en el Día Mundial del Transporte Sostenible, pensamos en la infraestructura que hace posible movernos: vías, puentes, estaciones y term",
+        "assigned_fields": [
+          "hook_type",
+          "cta_type",
+          "archetype"
+        ]
+      }
+    }
+  ],
+  "publication_note": "publicado ×1, programado ×11",
+  "verify_before_publish": [
+    "#8 vigencia de la certificación ISO 9001:2015"
+  ]
+}

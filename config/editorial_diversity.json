@@ -1,6 +1,6 @@
 {
-  "_comment": "Fuente ÚNICA y ejecutable de diversidad editorial y longitud. Doc: docs/10_ESTRATEGIA_EDITORIAL_Y_SESGOS.md. Aplica desde la grilla de noviembre 2026. Límites numéricos (limits_per_month, recency) APROBADOS por MKT el 30-09-2026.",
-  "version": "1.0",
+  "_comment": "Parámetros del motor de código (fingerprint/novelty/QA/coverage). cooldown y similarity son técnicos y ajustables; los límites de diversidad espejan limits_per_month.",
+  "version": "1.1",
   "effective_from_month": "2026-11",
   "origin": "Auditoría del sistema 7-8 sept 2026 (handoff MKT integrado 30-09-2026)",
   "length": {
@@ -15,7 +15,9 @@
         "applies_to": "posts de evento (webinars, inscripciones, día del evento) que llevan URL de inscripción o acceso",
         "rule": "Exentos del máximo de 900 caracteres (decisión MKT 30-09-2026). Contador de referencia: 1300. Mantener el texto lo más breve posible."
       }
-    }
+    },
+    "max_is_hard": false,
+    "flexibility": "Referencia de MKT, flexible (decisión MKT 19-10-2026): se puede escribir más o menos si es necesario. Superar 900 no bloquea: el QA lo marca como aviso y debe quedar el motivo (length_override)."
   },
   "archetypes": [
     {
@@ -182,7 +184,7 @@
     "archive_fingerprint"
   ],
   "memory_source": {
-    "single_source": "archivo mensual consolidado (copies definitivos del mes)",
+    "single_source": "content/archive/AAAA-MM.json (archivo mensual consolidado: copies definitivos del mes)",
     "derive_from_it": [
       "fingerprints",
       "estadísticas",
@@ -192,7 +194,8 @@
       "QA"
     ],
     "rule": "No mantener memorias manuales paralelas que puedan divergir.",
-    "division": "docs/09_EDITORIAL_MEMORY.md guarda SOLO reglas y correcciones del equipo (hechos, tono validado). Hooks, CTAs, pain points, arquetipos y estadísticas recientes se derivan del archivo mensual consolidado. Aprobado por MKT 30-09-2026."
+    "division": "docs/09_EDITORIAL_MEMORY.md guarda SOLO reglas y correcciones del equipo (hechos, tono validado). Hooks, CTAs, pain points, arquetipos y estadísticas recientes se derivan del archivo mensual consolidado. Aprobado por MKT 30-09-2026.",
+    "derived_index": "state/published_ledger.json se reconstruye desde content/archive (idiem.ledger.build_ledger_from_archive)"
   },
   "source_hierarchy": [
     "reglas oficiales de células",
@@ -216,5 +219,96 @@
     "el conocimiento técnico aporta valor antes del componente comercial",
     "no parecer una secuencia de avisos publicitarios"
   ],
-  "october_2026": "Cerrado por edición manual y programado; NO se regenera. Pendiente consolidarlo como memoria (copies definitivos, CTAs, enfoques, fingerprints, archive, QA)."
+  "october_2026": "Cerrado por edición manual y programado; NO se regenera. Consolidado en content/archive/2026-10.json (copy definitivo de la workstation + huellas asignadas).",
+  "non_editorial_archetypes": {
+    "ids": [
+      "institutional_or_occasion"
+    ],
+    "rule": "Saludos, efemérides institucionales y reconocimientos: se registran con este id y NO cuentan para los límites de arquetipos del mes. Confirmado por MKT el 19-10-2026."
+  },
+  "heuristic_taxonomy_map": {
+    "_comment": "El motor clasifica por heurística con etiquetas internas; este mapa las traduce a la taxonomía MKT. Solo se usa cuando el post NO trae asignación explícita (la tabla de asignación manda). Ajustable sin tocar código.",
+    "hook_type": {
+      "risk": "risk",
+      "consequence": "risk",
+      "question": "question",
+      "insight": "insight",
+      "opportunity": "insight",
+      "statistic": "data_point",
+      "misconception": "contrast",
+      "explanation": "technical_claim",
+      "checklist": "process_step",
+      "case": "scenario"
+    },
+    "cta_type": {
+      "contact": "commercial_contact",
+      "conversation": "technical_conversation",
+      "learn_more": "deep_dive",
+      "visit_service": "service_discovery",
+      "save_reference": "download",
+      "self_assessment": "knowledge",
+      "question": "knowledge",
+      "no_cta": "knowledge",
+      "event": "event"
+    },
+    "archetype": {
+      "problem_solution": "problem_impact_capability",
+      "technical_insight": "data_implication",
+      "explainer": "technical_question",
+      "sector_question": "technical_question",
+      "case_or_experience": "evidence_learning",
+      "method_or_evidence": "process_result",
+      "checklist": "process_result",
+      "institutional_or_occasion": "institutional_or_occasion"
+    }
+  },
+  "cooldown": {
+    "knowledge_id_months": 3,
+    "subtheme_months": 2,
+    "same_photo_months": 3
+  },
+  "history_window_months": 2,
+  "month_target_posts": 12,
+  "candidate_pool_multiplier": 2.5,
+  "diversity": {
+    "min_distinct_archetypes": 6,
+    "max_same_archetype": 2,
+    "max_same_cta_type": 3,
+    "max_same_hook_type": 3,
+    "max_same_pain_point": 3,
+    "max_same_subtheme": 2,
+    "min_distinct_subthemes": 6,
+    "max_same_visual_theme": 4,
+    "_comment": "min_distinct_archetypes / max_same_archetype / max_same_cta_type / max_same_hook_type = limits_per_month (MKT 30-09-2026). El resto son umbrales técnicos del motor."
+  },
+  "similarity": {
+    "_comment": "Similitud local determinista (Jaccard de tokens normalizados) en [0,1]. >= umbral => near-duplicate.",
+    "exact": 1.0,
+    "near_duplicate_hook": 0.6,
+    "near_duplicate_claim": 0.62,
+    "near_duplicate_copy": 0.72,
+    "near_duplicate_pain": 0.7
+  },
+  "novelty_weights": {
+    "_comment": "Peso de cada dimensión al puntuar la novedad editorial de una pieza vs el historial (0 penaliza, mayor peso = más castigo por repetir).",
+    "knowledge_id": 3.0,
+    "subtheme": 2.0,
+    "primary_claim": 2.5,
+    "pain_point": 2.0,
+    "hook_type": 1.5,
+    "editorial_archetype": 2.0,
+    "cta_type": 1.5,
+    "visual_theme": 1.0,
+    "copy_similarity": 2.5
+  },
+  "novelty_bands": {
+    "_comment": "Corte del score normalizado [0,1] (1 = totalmente novedoso).",
+    "high": 0.75,
+    "medium": 0.5
+  },
+  "coverage": {
+    "_comment": "Umbrales de temas frescos por célula para el reporte de cobertura.",
+    "low_max": 4,
+    "medium_max": 15
+  }
 }
