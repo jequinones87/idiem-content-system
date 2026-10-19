@@ -178,6 +178,15 @@ class MonthlyPlanner:
             for it in self.kb.items_in_cell(cell)
             if it.knowledge_id not in recent
         ]
+        # Opt-in author order: when a pick_order is provided (e.g. MONTH_PICKS),
+        # order the cell's items by that explicit list so the seq mapping is
+        # stable and controlled by the editorial curation instead of the
+        # evidence-score heuristic. Items outside the list keep the default
+        # order after the listed ones. Default (no pick_order) is unchanged.
+        pick_order = getattr(self, "_pick_order", None)
+        if pick_order:
+            rank = {kid: i for i, kid in enumerate(pick_order)}
+            return sorted(items, key=lambda it: (rank.get(it.knowledge_id, len(rank)), it.knowledge_id))
         # Spread by subtheme/capability so the first-N slice varies the topic
         # instead of clustering into the largest service or theme (Fase A+D),
         # preferring the best-evidenced item as each subtheme's representative.
@@ -192,12 +201,16 @@ class MonthlyPlanner:
         weights: dict | None = None,
         campaign_priorities: dict | None = None,
         recent_history: list[str] | None = None,
+        pick_order: list[str] | None = None,
     ) -> MonthlyPlan:
         target = target_count or int(self.config["default_target_count"])
         cadence = cadence_per_week or self.config.get("cadence_per_week", "2-3")
         weights = dict(weights or self.config["cell_weights"])
         allow_rebalance = bool(self.config.get("allow_rebalance", False))
         recent = set(recent_history or [])
+        # Author-controlled per-cell ordering (opt-in). Kept on the instance so
+        # every _candidates() call in this plan honors it. None -> default order.
+        self._pick_order = list(pick_order) if pick_order else None
 
         # Optional campaign priorities multiply base weights (configurable intent,
         # never overrides factual coverage).

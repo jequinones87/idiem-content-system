@@ -78,6 +78,28 @@ aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
   geología, suelos, integridad estructural) pueden trazar a knowledge_id; **Transporte
   Sostenible (26-nov) NO** — la célula INFRA CRÍTICA TRANSPORTE es CONTENT_GAP, así que va
   como institucional general sin afirmar capacidades técnicas.
+- **Memoria de contenidos mensual (NO repetir):** el archivo mensual consolidado ÚNICO es
+  `content/archive/AAAA-MM.json` + `.md` (sep/oct: `design_system/archive_month.py`; desde nov:
+  `design_system/archive_month_plan.py`, que lee `state/plans/`). `state/published_ledger.json` es un
+  índice derivado (`idiem.ledger.build_ledger_from_archive`), no una memoria aparte. Antes de armar
+  un mes nuevo: (1) **archiva el mes anterior** si aún no está; (2) **lee los archivos previos** y no
+  repitas `knowledge_id`, subtemas, claims, pain points, ganchos ni CTAs recientes; (3) **actualiza
+  hechos** si cambiaron. Si 2A.2 no tiene material fresco, preferir **menos posts sólidos** o pedir
+  insumos antes que rellenar (fail closed).
+- **Workstation — historial de cambios OBLIGATORIO** (MKT 2026-09-04): cada tarjeta muestra el bloque
+  "Historial de cambios aplicados (N)" y se actualiza en cada ronda aplicada y republicada.
+- **Fotos siempre desde la librería de Drive de IDIEM.** Archivos > ~6 MB fallan al descargar por el
+  conector; pedir a MKT una versión comprimida (≤ 5 MB, idealmente ~2 MB). El anillo rojo de la pieza
+  estática es configurable por post (`SIDE`): moverlo al lado contrario a la cara/sujeto.
+- **Sales Intelligence (capa complementaria).** Al idear/redactar, consulta también
+  `knowledge/sales_intelligence/` vía `idiem.sales_intelligence` (ver `docs/12_SALES_INTELLIGENCE.md`):
+  dolores, necesidades, propuestas de valor, ángulos y casos por célula/segmento. **Precedencia:**
+  reglas oficiales de células > editoriales > servicios/brochures > Sales Intelligence > casos >
+  fuentes externas. NO clasifica servicios ni redefine células. Estados: `SAFE` alimenta copy;
+  `VERIFY` requiere validación humana antes de publicar (cifras, %, fechas, proyectos, coberturas,
+  certificaciones, 24/7, plazos, legal); `INTERNAL` es solo razonamiento; `DO_NOT_PUBLISH` nunca llega
+  al copy final. Metro/EFE son subsegmentos de Transporte (sigue siendo CONTENT_GAP técnico);
+  Operación Minera y Lab Minero Digital permanecen separados.
 
 ## Diversidad editorial y control de sesgos (OBLIGATORIO desde noviembre 2026)
 
@@ -102,7 +124,14 @@ de sept 2026 — octubre tuvo CTA `contact` en 9/12 posts y ~4 arquetipos.
 - Datos de fuentes: jerarquía células → reglas editoriales → brochures → Sales
   Intelligence → casos; clasificar `SAFE` / `VERIFY` / `INTERNAL` / `DO_NOT_PUBLISH`
   (`VERIFY` se valida antes; `DO_NOT_PUBLISH` nunca llega al copy).
-- Memoria única = archivo mensual consolidado (no memorias paralelas).
+- Memoria única = archivo mensual consolidado `content/archive/AAAA-MM.json` (no memorias paralelas).
+- **Motor de diversidad (código):** huella editorial (`editorial_fingerprint`), novedad vs historial
+  (`editorial_novelty`), QA editorial (`editorial_qa`, PASS/WARNING/FAIL) y cobertura
+  (`content_coverage`); ver `docs/13_MOTOR_DIVERSIDAD_EDITORIAL.md`. Usa la **taxonomía aprobada por
+  MKT** (arquetipos, `hook_type`, `cta_type` de `editorial_diversity.json`); las asignaciones de la
+  tabla previa mandan sobre la clasificación heurística. Ante conflicto, **FACTUALIDAD > DIVERSIDAD**.
+- **Longitud — fuente ejecutable:** `config/editorial_style.json → length` (en caracteres: `max_chars`
+  900, objetivo 820–880), espejo de `editorial_diversity.json → length`; un test exige que coincidan.
 - Octubre 2026 cerrado manualmente: **no regenerar**.
 
 ## Videos de carrusel (desde octubre 2026)

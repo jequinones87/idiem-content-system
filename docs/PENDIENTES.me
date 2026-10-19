@@ -1,37 +1,54 @@
 # PENDIENTES.me — IDIEM Content System (punto de retomada)
 
-> Contexto para continuar en un chat nuevo. Última actualización: 2026-10-05.
+> Contexto para continuar en un chat nuevo. Última actualización: 2026-10-19.
 > Leer primero: `CLAUDE.md` → `docs/10_ESTRATEGIA_EDITORIAL_Y_SESGOS.md` →
 > `docs/09_EDITORIAL_MEMORY.md`.
 
 ## Repo y rama
-- Repo `jequinones87/idiem-content-system` · rama `claude/file-reading-nsposu` · sin PR salvo pedido.
+- Repo `jequinones87/idiem-content-system` · rama de trabajo `claude/inspiring-hopper-f45s0m` · sin PR salvo pedido.
+- `main` está vacía (solo el commit inicial). El trabajo vive en ramas `claude/*`.
+- **19-10-2026: integrada la rama `claude/idiem-editorial-updates-5osizu`** (sep-24): Sales Intelligence
+  (`knowledge/sales_intelligence/`, `docs/12_SALES_INTELLIGENCE.md`), motor de diversidad
+  (fingerprint/novelty/QA/coverage, `docs/13_MOTOR_DIVERSIDAD_EDITORIAL.md`), CI y la memoria de sept/oct.
+  Esa rama ya no aporta nada nuevo; no seguir trabajando en ella.
+
+## Memoria única (desde 19-10-2026)
+- Archivo mensual consolidado = `content/archive/AAAA-MM.json` (+ `.md` y `.editorial_qa.md`).
+  `state/consolidated/` quedó absorbido; `state/published_ledger.json` se reconstruye desde el archivo.
+- Taxonomía única = la de MKT (`config/editorial_diversity.json`). La heurística del motor se traduce con
+  `heuristic_taxonomy_map`; la tabla de asignación manda.
 
 ## Estado actual
 - **Septiembre**: publicado. Workstation: https://claude.ai/code/artifact/f9016145-d797-4a02-867e-1e478de62a6b
-- **Octubre**: cerrado por edición manual y **programado**. NO regenerar.
-  Workstation: https://claude.ai/artifact/9XbzZUmBKE3Kgy2wa7BU94
-- **Webinar acero: reprogramado al miércoles 21-oct, 09:30** (antes 14-oct; MKT 05-10-2026). Gráficas con
-  fecha actualizadas; víspera → 20-oct y post del evento → 21-oct. 5 posts en workstation con sync en vivo (db):
-  https://claude.ai/artifact/9VHLEeZ2WYm2pUwyhb4FkA · generador `design_system/gen_webinar_workstation.py`.
-  Zoom solo en el post del día del evento.
-- **Noviembre**: 11 posts + efeméride (26-nov) en **DRAFT**, en revisión MKT. Workstation (db + downloads):
-  https://claude.ai/artifact/BnifYwYQhXMhPv4cCCXhG3 · generador data-driven `design_system/gen_month_ws.py`
-  (lee `state/plans/2026-11_{asignacion,copies,graficas}.json`). Fotos en `design_system/assets/month_2026-11/`.
-- **Workstations** mensual y webinar usan los módulos compartidos
-  `design_system/workstation_shared/workstation_ui.{css,js}` (estándar octubre, config por `window.WSCFG`).
+- **Octubre**: cerrado por edición manual y **programado**. NO regenerar (el archivador ya no sobrescribe
+  sin `--force`). Workstation: https://claude.ai/artifact/9XbzZUmBKE3Kgy2wa7BU94
+- **Webinar acero: miércoles 21-oct, 09:30**; víspera 20-oct. 5 posts programados:
+  https://claude.ai/artifact/9VHLEeZ2WYm2pUwyhb4FkA · posts de evento exentos del tope de 900.
+- **Noviembre**: **12 piezas programadas** (11 + efeméride 26-nov). **#4 (contractual Salud) PUBLICADO**
+  con el copy final de MKT (19-10-2026). Archivo: `content/archive/2026-11.json`. Workstation:
+  https://claude.ai/artifact/BnifYwYQhXMhPv4cCCXhG3 · generador `design_system/gen_month_ws.py`.
+- Post especial Massone (14-10, institucional, fuera de grilla): aprobado por MKT.
 
 ## Pendientes inmediatos
-1. ✅ Webinar acero: ajustes MKT aplicados (posts 2 y 4) y 5 posts programados. Posts de evento
-   exentos del tope de 900 caracteres.
-2. ✅ Octubre consolidado como memoria: `state/consolidated/2026-10.json` (copies definitivos +
-   huella editorial). Ledger de publicados sep+oct en `state/published_ledger.json`.
-3. **Noviembre**: asignación v3 aprobada; copies + gráficas DRAFT en workstation. Pendiente: revisión MKT,
-   VERIFY #8 (vigencia ISO 9001:2015). #9 reemplazado por cumplimiento normativo (KB-IOM-016). Al publicar: ledger +
-   consolidado `state/consolidated/2026-11.json`.
-   Lab Minero Digital y Hospitalaria quedaron sin ítems frescos: pedir insumos nuevos antes de diciembre.
-4. Fotos de librería > ~7 MB no bajan por el conector de Drive (correa CMDIC, espesador, ciudad Santiago,
-   obra línea de metro): pedir a MKT versiones livianas (~2 MB) para próximos meses.
+1. ⚠️ **#8 noviembre (20-nov) está programado con el VERIFY abierto**: vigencia de la certificación
+   ISO 9001:2015 (GR-13). Confirmar con MKT antes del 20-nov.
+2. **#4 noviembre: 1083 caracteres** (> 900). Es el copy final de MKT, registrado como excepción
+   (`length_override`). Confirmar con MKT si el tope de 900 sigue siendo regla dura.
+3. QA de noviembre avisa: foto `estructura_andamio_minera` reutilizada dentro de 3 meses (ya usada en sep).
+4. Al cerrar noviembre: re-archivar con estados finales
+   (`python design_system/archive_month_plan.py --month 2026-11 --default-status PUBLICADO --length-override "4=..."`)
+   y reconstruir el ledger.
+5. Diciembre: pedir insumos nuevos para **Lab Minero Digital** y **Hospitalaria** (sin ítems frescos);
+   efeméride 5-dic Día Mundial del Suelo (puede trazar a knowledge_id); revisar banco de temas y
+   Sales Intelligence (ahora integrada).
+6. Fotos de librería > ~6–7 MB no bajan por el conector de Drive: pedir versiones ~2 MB.
+7. Confirmar con MKT el id `institutional_or_occasion` para saludos/efemérides (no cuenta en los límites
+   de arquetipos). Se agregó en la integración; no estaba en la lista aprobada el 30-09.
+8. Las huellas de octubre (`assignment`) son heurísticas de Claude (30-09), no validadas por MKT.
+
+## Problemas técnicos conocidos
+- `design_system/gen_webinar_workstation.py` apunta a un scratchpad de una sesión antigua (`wslides`):
+  no se puede regenerar el workstation del webinar en un entorno nuevo. No afecta lo ya programado.
 
 ## Banco de temas (14-10-2026)
 - 6 fuentes expertas + 22 temas (17 IHA, 5 IOM) en `docs/11_FUENTES_EXPERTAS_Y_BANCO_DE_TEMAS.md`.
@@ -44,17 +61,17 @@ fuente de reemplazo, no con Montserrat. El banner de evento del webinar ya incru
 (`.claude/skills/video-carrusel-idiem/assets/montserrat-*.woff2`). Pendiente: decidir con MKT si se
 re-renderizan las piezas aún no publicadas con Montserrat incrustada (cambia levemente el aspecto).
 
-## Backlog de implementación (auditoría de sesgos — antes/durante noviembre)
-Hoy la diversidad es solo taxonómica (planner por subtema + ledger por knowledge_id).
-Mientras no exista el código, la asignación se hace **a mano** (tabla de asignación previa a redactar).
-- [ ] `select_diverse` integrado al **planner**: asigna arquetipo, hook_type, cta_type, ángulo, enfoque.
-- [ ] El **drafter** recibe esas asignaciones como restricciones (hoy recibe solo `editorial_style`).
-- [ ] **Editorial Fingerprint** + **archive** mensual consolidado (fuente única de memoria).
-- [ ] **Novelty Engine** (proximidad multidimensional contra la ventana de recencia).
-- [ ] `recent_hooks` / `recent_ctas` derivados del consolidado — **hook ≠ pain point**.
-- [ ] Validador de **caracteres** en el pipeline (≤ 900; hoy solo el contador de la workstation).
-- [ ] QA editorial de diversidad (temática, narrativa, hooks, comercial, conceptual, textual).
-- [ ] Clasificación de datos `SAFE/VERIFY/INTERNAL/DO_NOT_PUBLISH` cuando entren brochures / Sales Intelligence.
+## Backlog de implementación (auditoría de sesgos)
+La asignación se hace **a mano** (tabla previa a redactar, aprobada por MKT); el motor verifica.
+- [ ] `select_diverse` integrado al **planner** como propuesta de asignación (existe en el motor; la
+      tabla sigue siendo manual y aprobada por MKT).
+- [ ] El **drafter** recibe las asignaciones de la tabla como restricciones.
+- [x] **Editorial Fingerprint** + **archive** mensual consolidado (fuente única de memoria) — 19-10.
+- [x] **Novelty Engine** — 19-10 (rama integrada).
+- [x] `recent_hooks` separado de `pain_point` — 19-10 (corregido el bug heredado).
+- [x] Validador de **caracteres** en el QA editorial — 19-10 (eventos exentos; excepciones registradas).
+- [x] QA editorial de diversidad (límites MKT + consecutivos) — 19-10.
+- [x] Clasificación `SAFE/VERIFY/INTERNAL/DO_NOT_PUBLISH` en Sales Intelligence — rama integrada.
 - [x] Assets de bootstrap del pipeline mensual → `design_system/brand_assets.py` (desde los SVG versionados).
 
 ## Reglas que no se negocian (resumen)
