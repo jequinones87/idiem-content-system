@@ -1,0 +1,313 @@
+{
+  "month": "2026-12",
+  "status": "PROPUESTA v1 — pendiente OK de MKT antes de redactar",
+  "rebalance_note": "10 posts base + 3 piezas extra (Día Mundial del Suelo, Navidad en video, Año Nuevo). Minería 4 · Salud 4 · Pública 2 (+ efeméride). LAB MINERO DIGITAL sin ítems 2A.2 frescos (todos usados sep-nov): CONTENT_GAP este mes. Salud se repone con el banco de temas (SRC-* validadas por MKT 14-10-2026).",
+  "compared_against": [
+    "state/consolidated/2026-10.json",
+    "state/plans/2026-11_asignacion.json",
+    "state/published_ledger.json"
+  ],
+  "diversity_check": {
+    "basis": "10 posts base (las 3 piezas extra se revisan solo por consecutividad; los dos saludos seguidos con CTA knowledge se aceptan por ser institucionales)",
+    "errors": [],
+    "distinct_archetypes": 8,
+    "archetypes": {
+      "problem_impact_capability": 2,
+      "technical_question": 2,
+      "project_challenge": 1,
+      "process_result": 1,
+      "risk_prevention": 1,
+      "capability_application": 1,
+      "evidence_learning": 1,
+      "data_implication": 1
+    },
+    "hooks": {
+      "contrast": 2,
+      "question": 2,
+      "scenario": 1,
+      "process_step": 1,
+      "risk": 1,
+      "technical_claim": 2,
+      "insight": 1
+    },
+    "ctas": {
+      "deep_dive": 3,
+      "technical_conversation": 2,
+      "service_discovery": 2,
+      "commercial_contact": 2,
+      "knowledge": 1
+    }
+  },
+  "posts": [
+    {
+      "seq": 1,
+      "date": "2026-12-02",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "knowledge_id": "KB-IOM-026",
+      "auxiliary_ids": ["SRC-001#C04", "SRC-001#C05", "SRC-001#C07"],
+      "topic_id": "TOP-018 + TOP-021",
+      "format": "CAROUSEL",
+      "theme": "Tres niveles de análisis de riesgo de incendio en la operación minera",
+      "archetype": "problem_impact_capability",
+      "hook_type": "contrast",
+      "cta_type": "deep_dive",
+      "pain_point": "un análisis de riesgo de incendio que solo revisa la norma o que quedó desactualizado frente a cambios en la operación",
+      "main_claim": "ingeniería y evaluación de riesgos de incendios en infraestructura de operación minera",
+      "flags": [
+        "USE_AUDITED_CORRECTION",
+        "niveles simple/medio/avanzado = criterio del especialista (SAFE); no nombrar expositor ni charla",
+        "sin incidentes con nombre (VERIFY)"
+      ]
+    },
+    {
+      "seq": 2,
+      "date": "2026-12-04",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "knowledge_id": null,
+      "auxiliary_ids": ["SRC-004#C04", "SRC-004#C06", "SRC-004#C03"],
+      "topic_id": "TOP-001",
+      "format": "STATIC",
+      "theme": "¿Seguirá operativo después del terremoto? Elementos no estructurales en hospitales",
+      "archetype": "technical_question",
+      "hook_type": "question",
+      "cta_type": "technical_conversation",
+      "pain_point": "una estructura que resiste el sismo no garantiza que el hospital siga funcionando",
+      "main_claim": "diagnósticos estructurales y revisiones sísmicas para infraestructura hospitalaria",
+      "flags": [
+        "capacidad desde SRC-004#C03 (validada MKT 14-10-2026); célula IHA sin ítems 2A.2 frescos"
+      ]
+    },
+    {
+      "seq": 3,
+      "date": "2026-12-07",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "knowledge_id": "KB-IOM-052",
+      "auxiliary_ids": [],
+      "format": "STATIC",
+      "theme": "Integridad de equipos estáticos y de soporte: chancadores, molinos y correas",
+      "archetype": "project_challenge",
+      "hook_type": "scenario",
+      "cta_type": "service_discovery",
+      "pain_point": "equipos que operan sin pausa y cuya estructura de soporte se deteriora sin que se vea",
+      "main_claim": "gestión de vulnerabilidad e integridad estructural aplicada a chancadores, molinos y correas",
+      "flags": [
+        "USE_AUDITED_CORRECTION",
+        "misma familia de servicio que nov #3 (infraestructura eléctrica): activo y pain point distintos"
+      ]
+    },
+    {
+      "seq": 4,
+      "date": "2026-12-09",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "knowledge_id": "KB-IPR-006",
+      "auxiliary_ids": [],
+      "format": "STATIC",
+      "theme": "Peritajes técnicos para resolver controversias contractuales",
+      "archetype": "problem_impact_capability",
+      "hook_type": "contrast",
+      "cta_type": "commercial_contact",
+      "pain_point": "una controversia contractual que se discute con opiniones y no con evidencia técnica",
+      "main_claim": "estudios técnicos y peritajes para la resolución de controversias en contratos de ingeniería, construcción, EPC y BOT, públicos y privados",
+      "flags": [
+        "NO generalizar a 'Sistema de concesiones' (nota 2A.2)",
+        "CTA comercial: no usar fórmulas sobreusadas"
+      ]
+    },
+    {
+      "seq": 5,
+      "date": "2026-12-11",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "knowledge_id": null,
+      "auxiliary_ids": ["SRC-004#C05", "SRC-004#C06"],
+      "topic_id": "TOP-002",
+      "format": "CAROUSEL",
+      "theme": "AITO: asesoría independiente a la ITO en obras hospitalarias",
+      "archetype": "process_result",
+      "hook_type": "process_step",
+      "cta_type": "technical_conversation",
+      "pain_point": "cambios en obra (anclajes, ductos, cambios de uso) que se aprueban sin una revisión experta",
+      "main_claim": "AITO: revisar, analizar y validar soluciones estructurales sísmicas o constructivas (RDI/FDI) y cambios en elementos no estructurales",
+      "flags": [
+        "separado 1 semana de #2 (misma fuente SRC-004, servicio distinto)"
+      ]
+    },
+    {
+      "seq": 6,
+      "date": "2026-12-14",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "knowledge_id": "KB-IOM-064",
+      "auxiliary_ids": ["KB-IOM-005", "KB-IOM-022"],
+      "format": "STATIC",
+      "theme": "Impacto acústico en proyectos mineros: de la construcción al abandono",
+      "archetype": "risk_prevention",
+      "hook_type": "risk",
+      "cta_type": "commercial_contact",
+      "pain_point": "el ruido de un proyecto minero cambia en cada etapa y puede afectar su entorno",
+      "main_claim": "estudios de impacto acústico con modelos de propagación y mapas de ruido para proyectos mineros, en construcción, operación, ampliación y abandono",
+      "flags": [
+        "KB-IOM-022 USE_WITH_MATIZ: solo nombrar el modelo, sin ampliar alcance",
+        "norma: D.S. 38/2011 MMA (futuro D.D. 14/24) solo si aplica",
+        "acústica ya en sep y oct (edificación/IPR): aquí aplicación minera"
+      ]
+    },
+    {
+      "seq": 7,
+      "date": "2026-12-16",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "knowledge_id": "KB-IHA-005",
+      "auxiliary_ids": ["SRC-002#C08", "SRC-002#C10"],
+      "topic_id": "TOP-007",
+      "format": "CAROUSEL",
+      "theme": "Planificar la puesta en marcha de un hospital desde el diseño",
+      "archetype": "capability_application",
+      "hook_type": "technical_claim",
+      "cta_type": "deep_dive",
+      "pain_point": "fallas en pruebas integradas (HVAC, gases medicinales, respaldo eléctrico) que aparecen al final de la obra",
+      "main_claim": "hoja de ruta de mitigación en 3 fases (diseño y licitación, ejecución, puesta en marcha)",
+      "flags": [
+        "USE_AUDITED_CORRECTION (KB-IHA-005)",
+        "reuso de célula: ángulo puesta en marcha ≠ programación (sep) y acuerdos (nov)"
+      ]
+    },
+    {
+      "seq": 8,
+      "date": "2026-12-18",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "knowledge_id": "KB-IPR-022",
+      "auxiliary_ids": [],
+      "format": "STATIC",
+      "theme": "Caso Puente Viejo Cautín: evaluación estructural y peritaje",
+      "archetype": "evidence_learning",
+      "hook_type": "insight",
+      "cta_type": "knowledge",
+      "pain_point": "infraestructura existente cuya condición real se desconoce",
+      "main_claim": "servicios de evaluación estructural / peritajes en el Puente Viejo Cautín",
+      "status": "EXPERT_INPUT_REQUIRED",
+      "flags": [
+        "evidencia 2A.2 mínima: solo nombra el caso y el servicio; sin detalle no hay aprendizaje que contar",
+        "proyecto nombrado: MKT valida sensibilidad",
+        "puentes ya en oct (capacidad de carga): ángulo distinto",
+        "respaldo si no hay insumo: KB-IOM-027 (inspección de estructuras de acero y peritajes de falla) o TOP-019 (incendio en faena)"
+      ]
+    },
+    {
+      "seq": 9,
+      "date": "2026-12-21",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "knowledge_id": "KB-IOM-023",
+      "auxiliary_ids": ["SRC-003#C09", "SRC-006#C01", "SRC-001#C10"],
+      "topic_id": "TOP-020",
+      "format": "STATIC",
+      "theme": "La curva P-F: detectar el deterioro antes de la falla",
+      "archetype": "data_implication",
+      "hook_type": "technical_claim",
+      "cta_type": "service_discovery",
+      "pain_point": "esperar la falla para actuar en activos críticos",
+      "main_claim": "monitoreo preventivo de activos críticos (instrumentación, vibraciones)",
+      "flags": [
+        "USE_AUDITED_CORRECTION: decir 'preventivo', NUNCA 'predictivo'",
+        "monitoreo ya en nov (relaves, SIM): foco en el concepto P-F y sus límites (pocos datos de falla)"
+      ]
+    },
+    {
+      "seq": 10,
+      "date": "2026-12-23",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "knowledge_id": null,
+      "auxiliary_ids": ["SRC-005#C05", "SRC-005#C04"],
+      "topic_id": "TOP-012",
+      "format": "CAROUSEL",
+      "theme": "RIC en salud: el Grupo 2 es ahora la máxima criticidad",
+      "archetype": "technical_question",
+      "hook_type": "question",
+      "cta_type": "deep_dive",
+      "pain_point": "leer el RIC con la numeración de la norma antigua y clasificar mal un sistema de emergencia",
+      "main_claim": "cambio de 4 a 3 grupos de sistemas de emergencia, con numeración invertida",
+      "status": "EXPERT_INPUT_REQUIRED",
+      "flags": [
+        "SRC-005 no trae capacidad IDIEM validada en ingeniería eléctrica/RIC: sin validación de MKT el post es solo educativo (sin 'En IDIEM…')",
+        "verificar vigencia de oficios SEC (GR-13)",
+        "respaldo: TOP-005 (atraso, disrupción, aceleración y concurrencia)"
+      ]
+    }
+  ],
+  "extra": [
+    {
+      "seq": 11,
+      "date": "2026-12-05",
+      "type": "EFEMERIDE",
+      "theme": "Día Mundial del Suelo",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "knowledge_id": null,
+      "auxiliary_ids": ["EXT-0116", "EXT-0082"],
+      "format": "STATIC",
+      "archetype": "process_result",
+      "hook_type": "insight",
+      "cta_type": "deep_dive",
+      "pain_point": "el suelo es el primer material de la obra y el que menos se ve",
+      "main_claim": "ensayos de control de obras en suelos (densidad, clasificación, granulometría, humedad, Proctor, CBR, infiltración) y mecánica de suelos",
+      "flags": [
+        "cae sábado: publicar sáb 5 o vie 4 según criterio MKT",
+        "no repetir la lista de ensayos del post 11 de septiembre: foco en por qué se controla el suelo"
+      ]
+    },
+    {
+      "seq": 12,
+      "date": "2026-12-24",
+      "type": "SALUDO",
+      "theme": "Navidad",
+      "cell": "institucional",
+      "knowledge_id": null,
+      "format": "VIDEO",
+      "delivery": "VIDEO_MP4 1080×1080 con la skill video-carrusel-idiem (carrusel institucional corto: portada + 2 láminas + cierre, aprobado antes por MKT)",
+      "archetype": "institucional",
+      "hook_type": "scenario",
+      "cta_type": "knowledge",
+      "flags": [
+        "no traza a knowledge_id: sin proyectos, cifras ni fechas",
+        "música solo si MKT la pide; requiere aprobación auditiva",
+        "sin IA generativa de video; Montserrat incrustada; logo vectorial"
+      ]
+    },
+    {
+      "seq": 13,
+      "date": "2026-12-31",
+      "type": "SALUDO",
+      "theme": "Año Nuevo",
+      "cell": "institucional",
+      "knowledge_id": null,
+      "format": "STATIC",
+      "archetype": "institucional",
+      "hook_type": "insight",
+      "cta_type": "knowledge",
+      "flags": [
+        "no traza a knowledge_id: sin balance del año con cifras ni proyectos no respaldados"
+      ]
+    }
+  ],
+  "content_gaps": [
+    {
+      "cell": "LAB MINERO DIGITAL",
+      "status": "CONTENT_GAP",
+      "reason": "Los 21 ítems KB-LMD de 2A.2 ya se usaron entre sep y nov; no hay temas LMD en el banco de fuentes expertas."
+    },
+    {
+      "cell": "INFRA CRÍTICA TRANSPORTE",
+      "status": "CONTENT_GAP",
+      "reason": "Sin conocimiento técnico activo (Metro/EFE)."
+    },
+    {
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "status": "EXPERT_INPUT_REQUIRED",
+      "reason": "Temas de incendio en hospitales (TOP-009/010/011): la capacidad de ingeniería contra incendios en 2A.2 está en IPR/IOM, no en Salud. No se traslada entre células sin validación de MKT."
+    }
+  ],
+  "backup_items": [
+    "KB-IOM-027 Inspección de estructuras de acero y peritajes de falla",
+    "TOP-019 Correas, CAEX y envolventes: riesgo de incendio en faena (KB-IOM-018)",
+    "TOP-005 Atraso, disrupción, aceleración, concurrencia (KB-IHA-002/005 + SRC-002)",
+    "TOP-003 Hospitales que envejecen (SRC-004)",
+    "KB-IPR-007 Soporte ante el Panel Técnico de Concesiones (verificar vigencia GR-13)"
+  ],
+  "mkt_decisions": []
+}
