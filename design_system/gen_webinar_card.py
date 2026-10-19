@@ -19,6 +19,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 AST = ROOT / "design_system" / "assets"
 sys.path.insert(0, str(ROOT / "src"))
+sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent))
+import brand_fonts as BF  # noqa: E402  (Montserrat incrustada)
 from idiem.webinar import build_webinar_plan, load_brief  # noqa: E402
 
 RELATOR_PHOTO = {
@@ -207,9 +209,7 @@ def main() -> None:
     plan = build_webinar_plan(load_brief(brief_path))
     html = f"""<!doctype html><html lang="es"><head><meta charset="utf-8">
 <title>Webinar IDIEM</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap">
+<style>{BF.FONT_CSS}</style>
 <style>{CSS}</style></head>
 <body><div class="export">{card(plan["sesiones"][idx], variant)}</div>
 <script>{FIT_JS}</script></body></html>"""

@@ -108,8 +108,9 @@ estructuras, servicios) **mientras escribe**, no solo en QA.
 ## 12. Longitud (regla única, ejecutable)
 
 Se elimina la contradicción anterior (110–170 palabras / 1–4 emojis vs 900 caracteres).
-**Regla vigente, validada en caracteres:** máximo **900 caracteres**, objetivo
-habitual **820–880**; emojis **1–2 por párrafo como máximo**. Vive solo en
+**Regla vigente, validada en caracteres:** referencia de **900 caracteres**, objetivo
+habitual **820–880**. **Desde el 19-10-2026 el tope es flexible** (MKT): se puede escribir más o
+menos si es necesario; el QA avisa sobre 900 y se registra el motivo (`length_override`); emojis **1–2 por párrafo como máximo**. Vive solo en
 `config/editorial_diversity.json` → `length`.
 
 **Excepción (MKT, 30-09-2026):** los posts de evento (webinars: inscripción, recordatorio,

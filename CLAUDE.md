@@ -120,7 +120,8 @@ de sept 2026 — octubre tuvo CTA `contact` en 9/12 posts y ~4 arquetipos.
 - **CTA por intención**; `contact` **no** es default; no repetir textual un CTA reciente.
 - **Hook ≠ pain point**: registrarlos por separado.
 - Narrativa desde la necesidad del cliente; valor técnico antes que lo comercial.
-- **Longitud única: ≤ 900 caracteres (objetivo 820–880), máx. 1–2 emojis por párrafo.**
+- **Longitud: referencia 900 caracteres (objetivo 820–880), flexible desde 19-10-2026 (MKT): si se
+  supera, registrar el motivo (`length_override`); máx. 1–2 emojis por párrafo.**
   Excepción: posts de evento (webinars) llevan URL y quedan exentos del tope (ref. 1300).
 - Límites de diversidad de `editorial_diversity.json`: **aprobados por MKT** (30-09-2026).
 - Datos de fuentes: jerarquía células → reglas editoriales → brochures → Sales
@@ -134,6 +135,10 @@ de sept 2026 — octubre tuvo CTA `contact` en 9/12 posts y ~4 arquetipos.
   tabla previa mandan sobre la clasificación heurística. Ante conflicto, **FACTUALIDAD > DIVERSIDAD**.
 - **Longitud — fuente ejecutable:** `config/editorial_style.json → length` (en caracteres: `max_chars`
   900, objetivo 820–880), espejo de `editorial_diversity.json → length`; un test exige que coincidan.
+- Saludos, efemérides institucionales y reconocimientos usan el arquetipo `institutional_or_occasion`,
+  que **no cuenta** en los límites (confirmado por MKT 19-10-2026).
+- **Tipografía:** toda pieza renderizada incrusta Montserrat 400–800 vía `design_system/brand_fonts.py`
+  (Google Fonts no carga en el entorno de render; decisión MKT 19-10-2026). No volver a `<link>` de Google.
 - Octubre 2026 cerrado manualmente: **no regenerar**.
 
 ## Videos de carrusel (desde octubre 2026)

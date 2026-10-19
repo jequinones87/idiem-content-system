@@ -3,6 +3,8 @@ matching the agency reference layout (photo top + red kicker + gancho; gray pane
 with Webinar title, relator, and red date/time card). Data-driven from the brief."""
 import base64, json, sys, datetime
 sys.path.insert(0, "/home/user/idiem-content-system/src")
+sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parent))
+import brand_fonts as BF  # noqa: E402  (Montserrat incrustada)
 from idiem.webinar import build_webinar_plan, load_brief
 from idiem.loader import CONFIG_DIR
 
@@ -91,9 +93,7 @@ ciclo_cards = "\n".join(card(s) for s in plan["sesiones"])
 
 HTML = f"""<title>Plantilla Webinar</title>
 <meta name="description" content="Paso 3 del Design System IDIEM: la plantilla de Webinar (insumo externo) con el layout oficial de la agencia — foto temática + bloque rojo + gancho, y panel gris con relator y tarjeta de fecha. Estático para un webinar; se agregan slides para un ciclo, cambiando la foto superior por tema.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap">
+<style>{BF.FONT_CSS}</style>
 <style>
   :root{{--red:#e1261d;--gray-blue:#666d72;--gray-light:#efefef;--gray-dark:#2f3030;
     --ink:#22262a;--paper:#f6f6f4;--card:#fff;--line:rgba(47,48,48,.12);--muted:#6a7075;

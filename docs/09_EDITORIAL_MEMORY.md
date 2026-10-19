@@ -84,7 +84,7 @@ CTA repetidas ~5 veces cada una). Regla vigente: **`docs/10_ESTRATEGIA_EDITORIAL
   evento, descarga, descubrimiento). **`contact` NO es default.** No repetir textual.
 - Narrativa **desde la necesidad del cliente**, valor técnico **antes** que lo comercial;
   no todo post termina en venta explícita.
-- **Longitud: ≤ 900 caracteres (objetivo 820–880), 1–2 emojis por párrafo máximo.**
+- **Longitud: referencia 900 caracteres, flexible desde 19-10-2026 (objetivo 820–880), 1–2 emojis por párrafo máximo.**
 - Octubre **no se regenera** (cerrado manualmente); su versión definitiva debe
   consolidarse como memoria.
 
@@ -119,9 +119,9 @@ como regla para **diciembre en adelante**. Se recorre **antes** de presentar la 
 9. En cumplimiento normativo, hablar de **detectar brechas**; nunca insinuar que la norma se puede saltar (09-07).
 10. Ítems `NAME_ONLY_DO_NOT_EXPAND` o con poco detalle en 2A.2 van a alto nivel, sin inventar ensayos ni
     cifras (09-04). Sin superlativos ni rankings (Triaxial, 09-03).
-11. **Las ediciones de MKT son "oro":** se respetan literal. Pero **después de cada edición se vuelve a medir
-    el largo**: el #4 de noviembre quedó en 1083 caracteres tras la edición final y se publicó así. Si una
-    edición supera 900, avisar a MKT **antes de programar** (no recortar por cuenta propia).
+11. **Las ediciones de MKT son "oro":** se respetan literal. El largo de 900 es **referencia flexible**
+    (MKT 19-10-2026): se puede escribir más o menos si el contenido lo necesita. Si un copy pasa de 900,
+    se deja anotado el motivo (`length_override`) para que el QA lo registre; no recortar textos de MKT.
 
 **D. Al diseñar la pieza**
 12. Bajadas de carrusel con valor (por qué importa · qué aporta IDIEM · qué gana el cliente), no
@@ -143,9 +143,10 @@ como regla para **diciembre en adelante**. Se recorre **antes** de presentar la 
 El equipo de MKT (Kike) es la autoridad de tono. Patrones observados en sus reescrituras
 (**válidos como voz, NO como plantilla fija** — ver sección anterior):
 
-- **Largo máximo: 900 caracteres (REGLA DURA, MKT 2026-08-31).** Cuenta el copy completo (gancho +
-  desarrollo + CTA + hashtags, incluidos emojis y saltos). Si excede, recortar antes de aprobar.
-  Objetivo 820–880 (MKT 30-09-2026). Excepción: posts de evento con URL (ver `config/editorial_diversity.json`).
+- **Largo: referencia de 900 caracteres, flexible** (fijado como regla dura el 2026-08-31; **flexible desde
+  el 2026-10-19**, MKT: "podemos hacer más o menos caracteres si es necesario"). Cuenta el copy completo
+  (gancho + desarrollo + CTA + hashtags, incluidos emojis y saltos). Objetivo 820–880 (MKT 30-09-2026);
+  si se supera 900, registrar el motivo. Excepción: posts de evento con URL (ver `config/editorial_diversity.json`).
 - **Estructura** *(solo arquetipo `problem_impact_capability`, no default)*: gancho →
   problema/contexto → solución **"En #IDIEM ..."** → cierre de valor ✅ → CTA → hashtags.
   Los demás arquetipos ordenan el relato distinto.
@@ -438,3 +439,7 @@ programado al 19-10-2026).
   con el copy final de MKT (1083 caracteres: excepción al tope registrada, pendiente confirmar con MKT si el
   tope de 900 sigue siendo regla dura). Integración de ramas: memoria única en `content/archive/` y taxonomía
   única de MKT en el motor de diversidad (ver `docs/13_MOTOR_DIVERSIDAD_EDITORIAL.md`).
+- **2026-10-19** — Decisiones MKT para todos los meses: (1) el largo de 900 caracteres pasa a ser **referencia
+  flexible** ("más o menos si es necesario"; el QA avisa y se registra el motivo); (2) saludos, efemérides y
+  reconocimientos usan `institutional_or_occasion`, fuera del conteo de arquetipos; (3) las piezas nuevas se
+  renderizan con **Montserrat incrustada** (`design_system/brand_fonts.py`, pesos 400–800).

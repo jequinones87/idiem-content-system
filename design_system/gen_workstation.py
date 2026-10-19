@@ -27,6 +27,7 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
+import brand_fonts as BF             # noqa: E402  (Montserrat incrustada)
 import gen_month_grid as G          # noqa: E402
 import carousel as CAR              # noqa: E402
 from bundle_month import grid_style, resolve_photo  # noqa: E402
@@ -281,10 +282,9 @@ def mod_badge(seq: int) -> str:
     return '<span class="modbadge">sin cambios</span>'
 
 
+# Montserrat incrustada (brand_fonts): toda pieza renderizada desde dic-2026 (MKT 19-10-2026).
 PAGE = """<!doctype html><html lang="es"><head><meta charset="utf-8">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap">
+<style>""" + BF.FONT_CSS_FMT + """</style>
 <style>{style}{carcss}{fpcss}</style>
 <style>
   html,body{{margin:0;padding:0;background:#0a0c0d}}

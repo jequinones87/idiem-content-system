@@ -20,6 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "design_system"))
+import brand_fonts as BF  # noqa: E402  (Montserrat incrustada)
 
 from gen_webinar_card import (  # noqa: E402
     AST, CSS, ESLOGAN, FIT_JS, IC_CAL, IC_CLK, LOGO, FOTO_POS,
@@ -70,10 +71,7 @@ RELEVANCIA = (
 
 def _head(title: str, extra: str = "") -> str:
     return (f'<!doctype html><html lang="es"><head><meta charset="utf-8"><title>{title}</title>'
-            '<link rel="preconnect" href="https://fonts.googleapis.com">'
-            '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-            '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,'
-            'wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap">'
+            f'<style>{BF.FONT_CSS}</style>'
             f'<style>{CSS}{CONTENT_CSS}{extra}</style></head><body>')
 
 

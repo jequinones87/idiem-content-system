@@ -16,7 +16,7 @@ from archive_month_plan import evidence_from_fact_check  # noqa: E402
 def test_length_rule_is_identical_in_both_configs():
     style = load_editorial_style()["length"]
     div = json.loads((REPO / "config" / "editorial_diversity.json").read_text(encoding="utf-8"))["length"]
-    for k in ("unit", "max_chars", "target_chars_min", "target_chars_max"):
+    for k in ("unit", "max_chars", "target_chars_min", "target_chars_max", "max_is_hard"):
         assert style[k] == div[k], k
 
 
@@ -62,3 +62,17 @@ def test_blocked_productivity_items_never_in_archive_evidence():
         a = json.loads((REPO / "content" / "archive" / f"{m}.json").read_text(encoding="utf-8"))
         for p in a["posts"]:
             assert not {"KB-IOM-019", "KB-IOM-020"} & set(p["evidence_ids"]), p["content_id"]
+
+
+def test_rendered_pieces_embed_montserrat():
+    sys.path.insert(0, str(REPO / "design_system"))
+    import brand_fonts as BF
+    import gen_workstation as GW
+    page = GW.PAGE.format(style="", carcss="", fpcss="", canvas="")
+    assert "fonts.googleapis" not in page
+    for w in BF.WEIGHTS:
+        assert f"font-weight:{w}" in page
+    html = '<head><link rel="preconnect" href="https://fonts.googleapis.com">\n' \
+           '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat"></head>'
+    out = BF.embed(html)
+    assert "googleapis" not in out and out.count("@font-face") == len(BF.WEIGHTS)

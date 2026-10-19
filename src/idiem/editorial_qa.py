@@ -88,8 +88,12 @@ def check_piece(post: dict, *, style: dict | None = None) -> list[Finding]:
     elif chars > hard_max and post.get("length_override"):
         out.append(Finding(WARNING, "char_limit_override",
                            f"{cid}: {chars} > {hard_max} caracteres; excepción registrada: {post['length_override']}."))
-    elif chars > hard_max:
+    elif chars > hard_max and length.get("max_is_hard", True):
         out.append(Finding(FAIL, "char_limit", f"{cid}: {chars} > {hard_max} caracteres (tope duro)."))
+    elif chars > hard_max:
+        # Tope flexible (MKT 19-10-2026): avisa y pide registrar el motivo (length_override).
+        out.append(Finding(WARNING, "char_over_reference",
+                           f"{cid}: {chars} > {hard_max} caracteres (referencia); registrar el motivo."))
     elif chars > pref_max:
         out.append(Finding(WARNING, "char_len", f"{cid}: {chars} car. sobre el rango preferido ({pref_max})."))
 

@@ -41,8 +41,9 @@ def _diverse_month(n=12):
 
 # --- por pieza ---------------------------------------------------------------
 def test_check_piece_flags_over_limit():
+    # tope flexible (MKT 19-10-2026): sobre 900 se marca, sin bloquear
     findings = check_piece(_post("X", chars=950))
-    assert any(f.level == FAIL and f.code == "char_limit" for f in findings)
+    assert any(f.level == WARNING and f.code == "char_over_reference" for f in findings)
 
 
 def test_every_copy_under_character_limit_october():
@@ -123,10 +124,18 @@ def test_november_archive_respects_mkt_limits():
     assert over and all(f.level == WARNING for f in over)
 
 
-def test_length_override_requires_reason():
+def test_length_over_reference_warns_and_records_reason():
     from idiem.editorial_qa import check_piece
     post = _post("X", chars=1000)
-    assert any(f.level == FAIL and f.code == "char_limit" for f in check_piece(post))
+    # MKT 19-10-2026: el tope de 900 es referencia flexible -> aviso, no bloqueo
+    fs = check_piece(post)
+    assert any(f.level == WARNING and f.code == "char_over_reference" for f in fs)
+    assert not any(f.level == FAIL for f in fs)
+    # con un config de tope duro, vuelve a bloquear (regla configurable)
+    from idiem.loader import load_editorial_style
+    hard = load_editorial_style()
+    hard["length"] = dict(hard["length"], max_is_hard=True)
+    assert any(f.level == FAIL and f.code == "char_limit" for f in check_piece(post, style=hard))
     post["length_override"] = "aprobado por MKT"
     fs = check_piece(post)
     assert any(f.level == WARNING and f.code == "char_limit_override" for f in fs)

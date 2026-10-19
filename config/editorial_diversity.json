@@ -15,7 +15,9 @@
         "applies_to": "posts de evento (webinars, inscripciones, día del evento) que llevan URL de inscripción o acceso",
         "rule": "Exentos del máximo de 900 caracteres (decisión MKT 30-09-2026). Contador de referencia: 1300. Mantener el texto lo más breve posible."
       }
-    }
+    },
+    "max_is_hard": false,
+    "flexibility": "Referencia de MKT, flexible (decisión MKT 19-10-2026): se puede escribir más o menos si es necesario. Superar 900 no bloquea: el QA lo marca como aviso y debe quedar el motivo (length_override)."
   },
   "archetypes": [
     {
@@ -222,7 +224,7 @@
     "ids": [
       "institutional_or_occasion"
     ],
-    "rule": "Saludos, efemérides institucionales y reconocimientos: se registran con este id y NO cuentan para los límites de arquetipos del mes."
+    "rule": "Saludos, efemérides institucionales y reconocimientos: se registran con este id y NO cuentan para los límites de arquetipos del mes. Confirmado por MKT el 19-10-2026."
   },
   "heuristic_taxonomy_map": {
     "_comment": "El motor clasifica por heurística con etiquetas internas; este mapa las traduce a la taxonomía MKT. Solo se usa cuando el post NO trae asignación explícita (la tabla de asignación manda). Ajustable sin tocar código.",

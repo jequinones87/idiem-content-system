@@ -35,12 +35,10 @@ checklist obligatorio en `docs/09_EDITORIAL_MEMORY.md` (sección ✅).
 1. **Planificar diciembre** con el checklist: archivo sep–nov, efeméride **5-dic Día Mundial del Suelo**
    (puede trazar a knowledge_id), saludos de Navidad/Año Nuevo (institucionales), banco de temas y Sales
    Intelligence.
-2. Pedir a MKT insumos nuevos para **Lab Minero Digital** y **Hospitalaria** (sin ítems frescos).
-3. Preguntas abiertas para MKT (afectan a todos los meses):
-   - ¿El tope de 900 caracteres admite excepciones cuando la edición final es de MKT? (caso #4 nov).
-   - ¿Se confirma `institutional_or_occasion` para saludos/efemérides, fuera del conteo de arquetipos?
-   - ¿Las piezas nuevas se renderizan con Montserrat incrustada? Hoy los generadores usan Google Fonts,
-     que no carga en el entorno de render (cambia levemente el aspecto respecto de sep–nov).
+2. **Lab Minero Digital** sigue sin ítems frescos: pedir insumos a MKT. **Hospitalaria** ya tiene 17 temas
+   candidatos en el banco (SRC-002 a 005) e **incendio en minería** 5 (SRC-006): usarlos para diciembre.
+3. ✅ Decisiones MKT 19-10-2026: largo de 900 = referencia flexible (QA avisa y pide motivo);
+   `institutional_or_occasion` confirmado; piezas nuevas con Montserrat incrustada (`brand_fonts.py`).
 4. Fotos de librería > ~6–7 MB no bajan por el conector de Drive: pedir versiones ~2 MB.
 5. Al cerrar noviembre (fin de mes), re-archivar con estados finales y reconstruir el ledger (solo registro,
    sin cambiar contenidos).
@@ -55,11 +53,10 @@ checklist obligatorio en `docs/09_EDITORIAL_MEMORY.md` (sección ✅).
   Validaciones MKT cerradas: consentimiento OK (sin nombrar expositores), servicios vigentes, autores no
   relevantes, industria → IOM, fuentes truncadas = usar lo disponible. Listo para planificar diciembre.
 
-## Hallazgo 14-10-2026: tipografía en piezas renderizadas
-Google Fonts NO carga en el entorno de render: las piezas de sep/oct/nov y webinar se rasterizaron con
-fuente de reemplazo, no con Montserrat. El banner de evento del webinar ya incrusta Montserrat
-(`.claude/skills/video-carrusel-idiem/assets/montserrat-*.woff2`). Pendiente: decidir con MKT si se
-re-renderizan las piezas aún no publicadas con Montserrat incrustada (cambia levemente el aspecto).
+## Tipografía (resuelto 19-10-2026)
+Las piezas de sep/oct/nov se rasterizaron con fuente de reemplazo (Google Fonts no carga en el render).
+Desde diciembre toda pieza incrusta Montserrat 400–800 (`design_system/brand_fonts.py`, decisión MKT);
+verificado renderizando una lámina de noviembre. Sep–nov no se re-renderizan.
 
 ## Backlog de implementación (auditoría de sesgos)
 La asignación se hace **a mano** (tabla previa a redactar, aprobada por MKT); el motor verifica.
