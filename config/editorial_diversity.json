@@ -1,0 +1,314 @@
+{
+  "_comment": "Parámetros del motor de código (fingerprint/novelty/QA/coverage). cooldown y similarity son técnicos y ajustables; los límites de diversidad espejan limits_per_month.",
+  "version": "1.1",
+  "effective_from_month": "2026-11",
+  "origin": "Auditoría del sistema 7-8 sept 2026 (handoff MKT integrado 30-09-2026)",
+  "length": {
+    "unit": "characters",
+    "max_chars": 900,
+    "target_chars_min": 820,
+    "target_chars_max": 880,
+    "emojis_per_paragraph_max": 2,
+    "note": "Reemplaza 110-170 palabras / 1-4 emojis por párrafo (reglas contradictorias eliminadas). Validar SIEMPRE en caracteres.",
+    "exceptions": {
+      "event_posts": {
+        "applies_to": "posts de evento (webinars, inscripciones, día del evento) que llevan URL de inscripción o acceso",
+        "rule": "Exentos del máximo de 900 caracteres (decisión MKT 30-09-2026). Contador de referencia: 1300. Mantener el texto lo más breve posible."
+      }
+    },
+    "max_is_hard": false,
+    "flexibility": "Referencia de MKT, flexible (decisión MKT 19-10-2026): se puede escribir más o menos si es necesario. Superar 900 no bloquea: el QA lo marca como aviso y debe quedar el motivo (length_override)."
+  },
+  "archetypes": [
+    {
+      "id": "problem_impact_capability",
+      "logic": "problema del cliente → impacto → capacidad",
+      "opens_with_service": false
+    },
+    {
+      "id": "risk_prevention",
+      "logic": "riesgo → prevención / gestión",
+      "opens_with_service": false
+    },
+    {
+      "id": "technical_question",
+      "logic": "pregunta técnica → explicación",
+      "opens_with_service": false
+    },
+    {
+      "id": "data_implication",
+      "logic": "dato / insight → implicancia",
+      "opens_with_service": false
+    },
+    {
+      "id": "process_result",
+      "logic": "proceso → resultado",
+      "opens_with_service": false
+    },
+    {
+      "id": "project_challenge",
+      "logic": "desafío de proyecto → solución técnica",
+      "opens_with_service": false
+    },
+    {
+      "id": "evidence_learning",
+      "logic": "evidencia / caso → aprendizaje",
+      "opens_with_service": false,
+      "requires": "relación textual proyecto/caso (ER-12, ER-13)"
+    },
+    {
+      "id": "capability_application",
+      "logic": "capacidad técnica → aplicación concreta",
+      "opens_with_service": true
+    }
+  ],
+  "hook_types": [
+    {
+      "id": "question",
+      "desc": "pregunta directa al lector"
+    },
+    {
+      "id": "risk",
+      "desc": "riesgo o consecuencia"
+    },
+    {
+      "id": "insight",
+      "desc": "observación técnica no obvia"
+    },
+    {
+      "id": "data_point",
+      "desc": "cifra o dato (solo con contexto y vigencia, ER-10)"
+    },
+    {
+      "id": "technical_claim",
+      "desc": "afirmación técnica respaldada"
+    },
+    {
+      "id": "scenario",
+      "desc": "escena concreta de obra/operación"
+    },
+    {
+      "id": "contrast",
+      "desc": "creencia común vs criterio técnico"
+    },
+    {
+      "id": "process_step",
+      "desc": "abre desde un paso del proceso"
+    }
+  ],
+  "hook_is_not_pain_point": "hook_type y pain_point son atributos distintos: registrarlos por separado (bug detectado: recent_hooks se poblaba con pain_point).",
+  "cta_types": [
+    {
+      "id": "commercial_contact",
+      "intent": "contacto comercial",
+      "default": false
+    },
+    {
+      "id": "technical_conversation",
+      "intent": "conversación técnica con un especialista"
+    },
+    {
+      "id": "deep_dive",
+      "intent": "profundización (conocer más del tema)"
+    },
+    {
+      "id": "knowledge",
+      "intent": "conocimiento, sin venta explícita (cierre reflexivo o pregunta abierta)"
+    },
+    {
+      "id": "event",
+      "intent": "evento / webinar / inscripción"
+    },
+    {
+      "id": "download",
+      "intent": "descarga de un recurso"
+    },
+    {
+      "id": "service_discovery",
+      "intent": "descubrir el alcance de un servicio"
+    }
+  ],
+  "cta_rules": [
+    "Elegir primero el cta_type según el objetivo del post; redactar después.",
+    "commercial_contact NO es el default.",
+    "No repetir textualmente una formulación de CTA usada en la ventana de recencia.",
+    "No todo post debe terminar en venta explícita."
+  ],
+  "overused_cta_formulas": [
+    "Contáctanos y conversemos sobre tu caso",
+    "Contáctanos a través de nuestros canales oficiales"
+  ],
+  "limits_per_month": {
+    "_basis": "grilla de 12 posts; aprobado por MKT 30-09-2026",
+    "min_distinct_archetypes": 6,
+    "max_posts_per_archetype": 2,
+    "max_posts_per_hook_type": 3,
+    "max_posts_per_cta_type": 3,
+    "max_consecutive_same_archetype": 1,
+    "max_consecutive_same_hook_type": 1,
+    "max_consecutive_same_cta_type": 1
+  },
+  "recency": {
+    "_basis": "aprobado por MKT 30-09-2026",
+    "compare_against_months": 2,
+    "no_verbatim_cta_within_months": 2,
+    "no_same_pain_point_plus_claim_within_months": 2
+  },
+  "fingerprint_fields": [
+    "cell",
+    "service_capability",
+    "theme",
+    "pain_point",
+    "main_claim",
+    "focus",
+    "archetype",
+    "hook_type",
+    "cta_type",
+    "structure"
+  ],
+  "novelty": {
+    "rule": "Comparación multidimensional contra los posts de la ventana de recencia. Si coincide en arquetipo + hook_type + cta_type (+ estructura) con un post reciente, es BAJA NOVEDAD aunque el servicio sea distinto: reasignar ANTES de redactar.",
+    "stage": "preventivo (planner/select_diverse) + verificación post-draft; QA es la última barrera, no la principal"
+  },
+  "pipeline": [
+    "planner",
+    "read_recent_history",
+    "select_diverse",
+    "assign_archetype",
+    "assign_hook_type",
+    "assign_cta_type",
+    "select_topic_knowledge",
+    "drafter (recibe asignaciones como restricciones)",
+    "novelty_check",
+    "qa",
+    "archive_fingerprint"
+  ],
+  "memory_source": {
+    "single_source": "content/archive/AAAA-MM.json (archivo mensual consolidado: copies definitivos del mes)",
+    "derive_from_it": [
+      "fingerprints",
+      "estadísticas",
+      "recent_hooks",
+      "recent_ctas",
+      "temas recientes",
+      "QA"
+    ],
+    "rule": "No mantener memorias manuales paralelas que puedan divergir.",
+    "division": "docs/09_EDITORIAL_MEMORY.md guarda SOLO reglas y correcciones del equipo (hechos, tono validado). Hooks, CTAs, pain points, arquetipos y estadísticas recientes se derivan del archivo mensual consolidado. Aprobado por MKT 30-09-2026.",
+    "derived_index": "state/published_ledger.json se reconstruye desde content/archive (idiem.ledger.build_ledger_from_archive)"
+  },
+  "source_hierarchy": [
+    "reglas oficiales de células",
+    "reglas editoriales",
+    "brochures",
+    "Sales Intelligence (complementa, no reemplaza)",
+    "casos / evidencias"
+  ],
+  "data_classification": {
+    "SAFE": "publicable",
+    "VERIFY": "validar antes de publicar",
+    "INTERNAL": "uso interno, no va al copy",
+    "DO_NOT_PUBLISH": "nunca llega al copy final"
+  },
+  "tone": [
+    "institucional",
+    "técnico",
+    "profesional",
+    "editorial",
+    "comprensible para público no necesariamente especialista",
+    "el conocimiento técnico aporta valor antes del componente comercial",
+    "no parecer una secuencia de avisos publicitarios"
+  ],
+  "october_2026": "Cerrado por edición manual y programado; NO se regenera. Consolidado en content/archive/2026-10.json (copy definitivo de la workstation + huellas asignadas).",
+  "non_editorial_archetypes": {
+    "ids": [
+      "institutional_or_occasion"
+    ],
+    "rule": "Saludos, efemérides institucionales y reconocimientos: se registran con este id y NO cuentan para los límites de arquetipos del mes. Confirmado por MKT el 19-10-2026."
+  },
+  "heuristic_taxonomy_map": {
+    "_comment": "El motor clasifica por heurística con etiquetas internas; este mapa las traduce a la taxonomía MKT. Solo se usa cuando el post NO trae asignación explícita (la tabla de asignación manda). Ajustable sin tocar código.",
+    "hook_type": {
+      "risk": "risk",
+      "consequence": "risk",
+      "question": "question",
+      "insight": "insight",
+      "opportunity": "insight",
+      "statistic": "data_point",
+      "misconception": "contrast",
+      "explanation": "technical_claim",
+      "checklist": "process_step",
+      "case": "scenario"
+    },
+    "cta_type": {
+      "contact": "commercial_contact",
+      "conversation": "technical_conversation",
+      "learn_more": "deep_dive",
+      "visit_service": "service_discovery",
+      "save_reference": "download",
+      "self_assessment": "knowledge",
+      "question": "knowledge",
+      "no_cta": "knowledge",
+      "event": "event"
+    },
+    "archetype": {
+      "problem_solution": "problem_impact_capability",
+      "technical_insight": "data_implication",
+      "explainer": "technical_question",
+      "sector_question": "technical_question",
+      "case_or_experience": "evidence_learning",
+      "method_or_evidence": "process_result",
+      "checklist": "process_result",
+      "institutional_or_occasion": "institutional_or_occasion"
+    }
+  },
+  "cooldown": {
+    "knowledge_id_months": 3,
+    "subtheme_months": 2,
+    "same_photo_months": 3
+  },
+  "history_window_months": 2,
+  "month_target_posts": 12,
+  "candidate_pool_multiplier": 2.5,
+  "diversity": {
+    "min_distinct_archetypes": 6,
+    "max_same_archetype": 2,
+    "max_same_cta_type": 3,
+    "max_same_hook_type": 3,
+    "max_same_pain_point": 3,
+    "max_same_subtheme": 2,
+    "min_distinct_subthemes": 6,
+    "max_same_visual_theme": 4,
+    "_comment": "min_distinct_archetypes / max_same_archetype / max_same_cta_type / max_same_hook_type = limits_per_month (MKT 30-09-2026). El resto son umbrales técnicos del motor."
+  },
+  "similarity": {
+    "_comment": "Similitud local determinista (Jaccard de tokens normalizados) en [0,1]. >= umbral => near-duplicate.",
+    "exact": 1.0,
+    "near_duplicate_hook": 0.6,
+    "near_duplicate_claim": 0.62,
+    "near_duplicate_copy": 0.72,
+    "near_duplicate_pain": 0.7
+  },
+  "novelty_weights": {
+    "_comment": "Peso de cada dimensión al puntuar la novedad editorial de una pieza vs el historial (0 penaliza, mayor peso = más castigo por repetir).",
+    "knowledge_id": 3.0,
+    "subtheme": 2.0,
+    "primary_claim": 2.5,
+    "pain_point": 2.0,
+    "hook_type": 1.5,
+    "editorial_archetype": 2.0,
+    "cta_type": 1.5,
+    "visual_theme": 1.0,
+    "copy_similarity": 2.5
+  },
+  "novelty_bands": {
+    "_comment": "Corte del score normalizado [0,1] (1 = totalmente novedoso).",
+    "high": 0.75,
+    "medium": 0.5
+  },
+  "coverage": {
+    "_comment": "Umbrales de temas frescos por célula para el reporte de cobertura.",
+    "low_max": 4,
+    "medium_max": 15
+  }
+}

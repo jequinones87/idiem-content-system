@@ -1,0 +1,1251 @@
+{
+  "version": 3,
+  "updated": "2026-10-19",
+  "description": "Banco de fuentes expertas (presentaciones/webinars de especialistas IDIEM) y temas candidatos para contenidos. Complementa la librería 2A.2 SIN reemplazarla: data/ sigue siendo la fuente canónica. Se amplía cada vez que MKT comparte material nuevo.",
+  "rules": {
+    "hierarchy": "2A.2 (knowledge_id) manda. Las fuentes SRC-* son evidencia auxiliar candidata: una afirmación de capacidad IDIEM que solo esté en una SRC-* es VERIFY hasta que MKT la valide; validada, se cita como auxiliary_id (SRC-xxx#Cyy).",
+    "classification": {
+      "SAFE": "Contenido conceptual/normativo/metodológico del especialista o estadística pública con su fuente citada. Puede ir al copy citando la fuente cuando es de terceros.",
+      "VERIFY": "Capacidades IDIEM nuevas (fuera de 2A.2), incidentes públicos con nombre de institución, datos agregados de proyectos. Validar con MKT/especialista antes de redactar.",
+      "INTERNAL": "Referencias internas, cifras de casos o proyectos con nombre: sirven para entender el tema, NO van al copy salvo autorización explícita.",
+      "DO_NOT_PUBLISH": "Nunca llega al copy."
+    },
+    "speaker_consent": "Consentimiento de los expositores CONFIRMADO por MKT (14-10-2026). Regla: los contenidos NUNCA nombran ni citan a los expositores ni las charlas/webinars de origen; el foco es el tema. Los campos speaker/role son solo trazabilidad interna.",
+    "sensitivity": "Todo tema que nombre un proyecto, hospital, cliente o incidente se marca para validación de sensibilidad de MKT (regla 30-09-2026).",
+    "authors": "Los autores no se consideran para contenido (MKT 14-10-2026): lo importante son los temas.",
+    "validated_capabilities": "MKT confirmó (14-10-2026) que los servicios declarados en las fuentes son vigentes: las afirmaciones idiem_capability con validated_by se usan como auxiliary_id (SRC-xxx#Cyy) en briefs y copies.",
+    "truncated_sources": "Si una fuente llegó truncada, se usa solo el contenido disponible (MKT 14-10-2026)."
+  },
+  "sources": [
+    {
+      "id": "SRC-001",
+      "title": "Vulnerabilidad de incendio en industria (Infraestructura Crítica en Operación Industrial)",
+      "type": "webinar_ppt",
+      "speaker": "Diego Olave",
+      "role": "Jefe de Unidad Ingeniería contra incendios de IDIEM",
+      "date": "2026-09-01",
+      "drive": "https://docs.google.com/presentation/d/1xMmQaEQ1nXafHCgtrtlvchsN72rAS-Ca/edit",
+      "cells": [
+        "INFRA OPERACIÓN MINERA"
+      ],
+      "cell_note": "Industria → célula Minería (IOM), decisión MKT 14-10-2026."
+    },
+    {
+      "id": "SRC-002",
+      "title": "Desafíos técnicos y contractuales en infraestructura hospitalaria: controversias, impacto en plazo-costo y mitigación técnica",
+      "type": "webinar_pdf",
+      "speaker": null,
+      "role": null,
+      "date": "2026-07-28",
+      "drive": "https://drive.google.com/file/d/1wScEkhdXLp532BH6aCOpsNlGb0bA2SQf/view",
+      "cells": [
+        "INFRA HOSPITALARIA Y ASISTENCIAL"
+      ],
+      "cell_note": "Autor no relevante para contenido (MKT). PDF completo revisado el 19-10-2026."
+    },
+    {
+      "id": "SRC-003",
+      "title": "Vulnerabilidades en caso de incendios en infraestructura hospitalaria",
+      "type": "webinar_ppt",
+      "speaker": "Diego Olave",
+      "role": "Jefe de Unidad Ingeniería contra incendios de IDIEM",
+      "date": "2026-07-21",
+      "drive": "https://docs.google.com/presentation/d/1-HEm6Ni-ru_New-3X4w2Vd2O4Y-tc5J9/edit",
+      "cells": [
+        "INFRA HOSPITALARIA Y ASISTENCIAL"
+      ],
+      "cell_note": "PDF completo revisado el 19-10-2026."
+    },
+    {
+      "id": "SRC-004",
+      "title": "Vulnerabilidad estructural en infraestructura con signos de vida avanzada y vulnerabilidad sísmica en Elementos No Estructurales",
+      "type": "webinar_ppt",
+      "speaker": "Sergio Tapia Pérez",
+      "role": "Jefe de Proyectos, División Estructuras Peritajes IDIEM",
+      "date": "2026-07-14",
+      "drive": "https://docs.google.com/presentation/d/1vFn9XaWVUiECIcbK5vd2n48wOoolQdqT/edit",
+      "cells": [
+        "INFRA HOSPITALARIA Y ASISTENCIAL"
+      ],
+      "cell_note": "Releída el 19-10-2026 desde Drive: llega hasta el proceso AITO de resolución de observaciones; el final sigue truncado. Se usa solo lo disponible."
+    },
+    {
+      "id": "SRC-005",
+      "title": "Reglamento RIC en Salud: el desafío de integrar ajustes críticos en el diseño y la ejecución de proyectos (DS N°8)",
+      "type": "webinar_ppt",
+      "speaker": "Sergio Reygadas Veragua",
+      "role": "Ingeniero Civil Eléctrico, Jefe de Proyectos Eléctricos, División de Especialidades (DES) IDIEM",
+      "date": null,
+      "drive": "https://docs.google.com/presentation/d/1A-6dRh89kxMzJyDyf8NFwJNwAPUEJD5V/edit",
+      "cells": [
+        "INFRA HOSPITALARIA Y ASISTENCIAL"
+      ],
+      "cell_note": "Sin fecha en el archivo."
+    },
+    {
+      "id": "SRC-006",
+      "title": "Vulnerabilidad de incendio en infraestructura y faenas mineras (Infraestructura Crítica en Operación Minera)",
+      "type": "webinar_ppt",
+      "speaker": "Diego Olave",
+      "role": "Jefe de Unidad Ingeniería contra incendios de IDIEM",
+      "date": "2026-08-19",
+      "drive": "https://docs.google.com/presentation/d/1SjHYyjyB_we1JZchAoxMMVPqA_GpG6vI/edit",
+      "cells": [
+        "INFRA OPERACIÓN MINERA"
+      ],
+      "cell_note": "Leída completa el 19-10-2026 desde Drive. Replica para minería el marco de SRC-001 (por eso SRC-001#C01–C10 citan también a SRC-006) y agrega ejemplos de monitoreo y criticidad propios de faena."
+    }
+  ],
+  "claims": [
+    {
+      "id": "SRC-001#C01",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Los activos de una industria son susceptibles de falla durante su vida útil; muchas de esas deficiencias se traducen en incendios que afectan extensas zonas de producción si no hay medidas de mitigación y protección adecuadas.",
+      "sources": [
+        "SRC-001",
+        "SRC-006"
+      ]
+    },
+    {
+      "id": "SRC-001#C02",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Factores que elevan la relevancia del riesgo de incendio: compromiso con la seguridad, continuidad operacional, incremento de incidentes en el mundo, industria que envejece, gestión de activos, levantamiento de amenazas, desviaciones normativas que se traducen en vulnerabilidades y planes de mantención actualizados.",
+      "sources": [
+        "SRC-001",
+        "SRC-003",
+        "SRC-006"
+      ]
+    },
+    {
+      "id": "SRC-001#C03",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Conceptos clave de un análisis de riesgo: criticidad de los procesos y sus interrelaciones, conocimiento del proceso y escenarios de falla; debe hacerlo un equipo multidisciplinario.",
+      "sources": [
+        "SRC-001",
+        "SRC-003",
+        "SRC-006"
+      ]
+    },
+    {
+      "id": "SRC-001#C04",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Tres niveles de análisis de riesgo (criterio del especialista): simple (solo normativo, checklist), medio (normativo + vulnerabilidades) y avanzado (vulnerabilidades de procesos, interrelaciones y consecuencias operacionales, con posibilidad de estimar costos como la pérdida diaria por detención).",
+      "sources": [
+        "SRC-001",
+        "SRC-006"
+      ]
+    },
+    {
+      "id": "SRC-001#C05",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Brechas frecuentes en análisis de riesgo: falta de conocimiento acabado del proceso, ausencia de revisión por pares, estudios sin plazo de validez pese a cambios en la operación (p. ej., compartimentación), falta de criterio multidisciplinario y exceso de confianza en que basta cumplir la norma y que los sistemas de extinción funcionarán a toda prueba.",
+      "sources": [
+        "SRC-001",
+        "SRC-006"
+      ]
+    },
+    {
+      "id": "SRC-001#C06",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Caso base: partir garantizando la seguridad de los operarios según la normativa aplicable (NFPA, OGUC, criterios corporativos), luego análisis centrado en protección de vidas y escenarios de incendio; si el recinto es automatizado, se redefine el caso base. Cualquier consecuencia en las personas afecta la continuidad operacional.",
+      "sources": [
+        "SRC-001",
+        "SRC-006"
+      ]
+    },
+    {
+      "id": "SRC-001#C07",
+      "kind": "normative",
+      "class": "SAFE",
+      "text": "Horizonte del análisis: en etapa de proyecto la NCC 40 establece procedimientos de evaluación de riesgos en ingeniería básica y de detalle, base para la etapa operacional; en operación, la frecuencia de los estudios se acuerda según la dinámica de los procesos.",
+      "sources": [
+        "SRC-001",
+        "SRC-006"
+      ]
+    },
+    {
+      "id": "SRC-001#C08",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Análisis vs. evaluación del riesgo de incendio: el análisis estima cualitativa (experiencia del analista) o cuantitativamente (modelación, menor sesgo) la magnitud del riesgo; la evaluación usa esos resultados para decidir medidas de reducción, comparando con metas de riesgo. Dificultades: confiabilidad de sistemas, falta de bases de datos de fallas, sesgo de modelaciones; se recomienda revisión por tercera parte.",
+      "sources": [
+        "SRC-001",
+        "SRC-006"
+      ]
+    },
+    {
+      "id": "SRC-001#C09",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Estrategia de seguridad contra incendios en 7–8 ejes: evacuación, propagación interior (compartimentación), protección estructural (resistencia al fuego), propagación exterior (fachadas), facilidades para bomberos, protección activa/pasiva y detección, continuidad de la operación/protección del contenido y riesgo externo hacia comunidades adyacentes; se concibe desde la etapa de proyecto.",
+      "sources": [
+        "SRC-001",
+        "SRC-003",
+        "SRC-006"
+      ]
+    },
+    {
+      "id": "SRC-001#C10",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "El monitoreo apoya la gestión de activos: detectar tempranamente fallas potenciales, mapear el estado de las instalaciones, reducir paradas inesperadas y ajustar planes de mantención (ej.: levantamiento de temperaturas en subestaciones eléctricas).",
+      "sources": [
+        "SRC-001",
+        "SRC-006"
+      ]
+    },
+    {
+      "id": "SRC-001#C11",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Casos tipo de aplicación en industria: patio de transformadores cercano a plantas (distanciamiento según NFPA 850), frigoríficos con aislación térmica combustible en la envolvente, plantas con oficinas no compartimentadas o acopio exterior de combustibles, y estructuras reticuladas donde la duración real del incendio podría superar la estimada según OGUC.",
+      "sources": [
+        "SRC-001"
+      ]
+    },
+    {
+      "id": "SRC-001#C12",
+      "kind": "third_party_stat",
+      "class": "SAFE",
+      "cite": "NFPA (nfpa.org)",
+      "text": "EE.UU.: los incendios en propiedades industriales bajaron de 114.500 (1980) a 38.738 (2021), −66 %; la categoría de equipos con mayor participación es distribución eléctrica, iluminación y transferencia de energía.",
+      "sources": [
+        "SRC-001"
+      ]
+    },
+    {
+      "id": "SRC-001#C13",
+      "kind": "public_incident",
+      "class": "VERIFY",
+      "text": "Ejemplos citados: incendio frigorífico Lineage (Los Ángeles, EE.UU., 2026, latimes.com) y bodega de neumáticos en Renca (Chile, 2020, emol.com).",
+      "sources": [
+        "SRC-001"
+      ]
+    },
+    {
+      "id": "SRC-002#C01",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Un hospital no es una obra convencional: siete fuentes de impacto — diseño/alcance y Programa Médico Arquitectónico (PMA); coordinación de especialidades; permisos y revisión; condiciones de terreno e interferencias; modificaciones y cambios de estándar; plazo, productividad y mayores costos; comisionamiento, equipamiento y puesta en marcha.",
+      "sources": [
+        "SRC-002"
+      ]
+    },
+    {
+      "id": "SRC-002#C02",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Ejemplo sala de imagenología: blindaje de plomo en muros y puertas, sala de comando con vidrio plomado, salas de no menos de 16 m², puertas de 1,2 m, losas reforzadas, climatización independiente y redes de oxígeno y aspiración empotradas.",
+      "sources": [
+        "SRC-002"
+      ]
+    },
+    {
+      "id": "SRC-002#C03",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Coordinación de especialidades: cielos técnicos saturados, shafts insuficientes, equipos médicos definidos tarde, redes eléctricas/HVAC/gases clínicos superpuestas; mitigación: BIM/MEP + revisión de constructibilidad + matriz de interfaces + aprobación oportuna del equipamiento.",
+      "sources": [
+        "SRC-002"
+      ]
+    },
+    {
+      "id": "SRC-002#C04",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Permisos: tratarlos como ruta crítica contractual con responsables, fechas, dependencias, criterios de aceptación y registro de observaciones (riesgos: observaciones extemporáneas, criterios contradictorios, autoridad sanitaria incorporada tarde).",
+      "sources": [
+        "SRC-002"
+      ]
+    },
+    {
+      "id": "SRC-002#C05",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Pregunta clave ante condiciones de terreno: qué información existía al ofertar, quién asumió el riesgo, qué condición se materializó y cómo afectó realmente la ruta crítica.",
+      "sources": [
+        "SRC-002"
+      ]
+    },
+    {
+      "id": "SRC-002#C06",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Ejecutar cambios sin orden formal, valorización o análisis de plazo deja el reclamo como una discusión retrospectiva difícil de probar.",
+      "sources": [
+        "SRC-002"
+      ]
+    },
+    {
+      "id": "SRC-002#C07",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Distinguir atraso, disrupción, pérdida de productividad, aceleración y concurrencia; herramientas mínimas: programa CPM, línea base aprobada, actualizaciones contemporáneas, as-built, curvas S, matriz de restricciones, registro de cambios y evidencia documental.",
+      "sources": [
+        "SRC-002"
+      ]
+    },
+    {
+      "id": "SRC-002#C08",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Puesta en marcha: fallas en pruebas integradas (balanceo HVAC, presiones diferenciales, gases medicinales, respaldo eléctrico/UPS, equipamiento médico, autorización sanitaria); mitigación: planificar la puesta en marcha desde el diseño.",
+      "sources": [
+        "SRC-002"
+      ]
+    },
+    {
+      "id": "SRC-002#C09",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Cinco lecciones: no tratar hospitales como obras convencionales; validar PMA, alcance y constructibilidad antes de comprometer plazo y precio; gestionar MEP, equipamiento y permisos como ruta crítica; documentar cambios e impactos en tiempo real; planificar comisionamiento y autorización sanitaria desde etapas tempranas.",
+      "sources": [
+        "SRC-002"
+      ]
+    },
+    {
+      "id": "SRC-002#C10",
+      "kind": "idiem_capability",
+      "class": "SAFE",
+      "text": "Hoja de ruta de mitigación en 3 fases (diseño y licitación; ejecución; puesta en marcha) con revisión del PMA, análisis de constructibilidad, coordinación BIM/MEP, control de programa/costos/calidad y verificación de puesta en marcha — enfoque/servicio IDIEM vigente (validado por MKT).",
+      "sources": [
+        "SRC-002"
+      ],
+      "related_kb": [
+        "KB-IHA-002",
+        "KB-IHA-003",
+        "KB-IHA-004",
+        "KB-IHA-005"
+      ],
+      "validated_by": "MKT 2026-10-14 (servicio vigente)"
+    },
+    {
+      "id": "SRC-003#C01",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "En hospitales, la falla de activos puede tener consecuencias catastróficas en la seguridad de las personas y la continuidad operacional; muchas de esas deficiencias se traducen en incendios.",
+      "sources": [
+        "SRC-003"
+      ]
+    },
+    {
+      "id": "SRC-003#C02",
+      "kind": "third_party_stat",
+      "class": "SAFE",
+      "cite": "NFPA research (2011-2015)",
+      "text": "EE.UU., propiedades de atención médica: ~5.750 incendios/año; promedio anual 2 muertes de civiles, 157 heridos y US$ 50,4 MM en pérdidas; el fuego superó la habitación de origen solo en el 4 %; cocina = 66 % de los incendios pero 3 % de los daños; distribución eléctrica e iluminación = 6 % de los incendios pero 36 % de los daños.",
+      "sources": [
+        "SRC-003"
+      ]
+    },
+    {
+      "id": "SRC-003#C03",
+      "kind": "third_party_stat",
+      "class": "SAFE",
+      "cite": "NFPA Hospital or Hospice Fires Fact Sheet",
+      "text": "Extinción automática presente en 47 % de los incendios hospitalarios (1980-84) vs. 79 % (2006-10), con rociadores en 64 %.",
+      "sources": [
+        "SRC-003"
+      ]
+    },
+    {
+      "id": "SRC-003#C04",
+      "kind": "public_incident",
+      "class": "VERIFY",
+      "text": "Casos nacionales citados: Hospital San Borja Arriarán (2021; evacuación de ~200 pacientes complejos; afectó calderas e instalaciones eléctricas) y Hospital Gustavo Fricke (2020; amago en piso mecánico).",
+      "sources": [
+        "SRC-003"
+      ]
+    },
+    {
+      "id": "SRC-003#C05",
+      "kind": "normative",
+      "class": "SAFE",
+      "text": "Evacuación hospitalaria: evacuación masiva vs. defensa en sitio; vulnerabilidades: OGUC (Art. 4.3.7, una sola zona vertical de seguridad), NFPA 101 (barreras cortahumo; uso de ascensores en emergencia con presurización y compartimentación); enfoque por escenarios apoyado en modelación de humos (FDS).",
+      "sources": [
+        "SRC-003"
+      ]
+    },
+    {
+      "id": "SRC-003#C06",
+      "kind": "normative",
+      "class": "SAFE",
+      "text": "Resistencia al fuego (tiempo en minutos según NCh 935/1) vs. reacción al fuego (inicio y propagación según ensayos ASTM o similares, en revestimientos y aislación).",
+      "sources": [
+        "SRC-003"
+      ]
+    },
+    {
+      "id": "SRC-003#C07",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Continuidad operacional hospitalaria: tanques criogénicos (sobrepresión, shock térmico, fugas; distanciamientos seguros, ref. TC-MIE-AP10), salas de calderas (DS 10: incombustibles, muros RF-60, no sobre/bajo recintos habitados), bodegas SUSPEL (DS 43), salas eléctricas (RIC N°2 compartimentación F-120; RIC N°13 transformadores en aceite).",
+      "sources": [
+        "SRC-003"
+      ]
+    },
+    {
+      "id": "SRC-003#C08",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Riesgos en detección y extinción: sectores sin detección, detectores desactivados en mantención/remodelación, rociadores no adecuados al riesgo (NFPA 13), presión insuficiente, cambios de uso, sellos ausentes o combustibles en recintos con agentes limpios, bomba eléctrica sin protección.",
+      "sources": [
+        "SRC-003"
+      ]
+    },
+    {
+      "id": "SRC-003#C09",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Curva P-F (industria 4.0): P es el momento en que se detectan señales de deterioro antes de la falla; F, la falla. El monitoreo es aliado de la gestión del mantenimiento.",
+      "sources": [
+        "SRC-003",
+        "SRC-006"
+      ]
+    },
+    {
+      "id": "SRC-004#C01",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "La vulnerabilidad de un hospital es la facilidad con que puede dejar de cumplir su función por deterioro, deficiencias constructivas o un sismo (analogía: el estado de salud de una persona frente a la misma enfermedad).",
+      "sources": [
+        "SRC-004"
+      ]
+    },
+    {
+      "id": "SRC-004#C02",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Con los años: materiales que se deterioran (humedad, corrosión de armaduras, pérdida de sección en acero, fatiga, carbonatación, fisuración), ampliaciones sin verificación estructural rigurosa, equipamiento más pesado, y sismos importantes cada ~15–20 años sin reparaciones que restituyan la resistencia original.",
+      "sources": [
+        "SRC-004"
+      ]
+    },
+    {
+      "id": "SRC-004#C03",
+      "kind": "idiem_capability",
+      "class": "SAFE",
+      "text": "Servicio de diagnósticos estructurales para infraestructura hospitalaria: estado de conservación, levantamiento de daños, materialidad y dimensional (planos actualizados); análisis estructurales sísmicos y estáticos; propuestas de refuerzo de conceptual a detalle; estudios para equipos nuevos en losas/techos, ampliaciones, deformaciones/grietas/napas; revisiones sísmicas de hospitales nuevos con o sin aislación; peritajes forenses.",
+      "sources": [
+        "SRC-004"
+      ],
+      "related_kb": [],
+      "validated_by": "MKT 2026-10-14 (servicio vigente)"
+    },
+    {
+      "id": "SRC-004#C04",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "La pregunta ya no es si un hospital resistirá un terremoto, sino si seguirá operativo después de uno. Elementos No Estructurales (ENE): cielos falsos, tabiques, fachadas, muros cortina, ascensores; ENE funcionales: equipos médicos, climatización, redes de agua, gases y electricidad. Áreas como cirugía, laboratorio, imagenología y diálisis no pueden perder funcionalidad.",
+      "sources": [
+        "SRC-004"
+      ]
+    },
+    {
+      "id": "SRC-004#C05",
+      "kind": "idiem_capability",
+      "class": "DO_NOT_PUBLISH",
+      "text": "AITO — Asesoría a la Inspección Técnica de Obra: apoyo especializado e independiente a la ITO del mandante para revisar, analizar y validar soluciones estructurales sísmicas o constructivas (RDI/FDI), aprobar cambios en instalación de ENE y resguardar el cumplimiento normativo y la seguridad sísmica.",
+      "sources": [
+        "SRC-004"
+      ],
+      "validated_by": "MKT 2026-10-14 (servicio vigente)",
+      "blocked_reason": "MKT 19-10-2026: no publicar el tema de asesoría a la inspección técnica de obras (AITO)."
+    },
+    {
+      "id": "SRC-004#C06",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Problemas frecuentes en obras hospitalarias: anclaje de equipos pesados, soporte sísmico de ductos/cañerías/motores (interferencias, anclajes en losas postensadas), anclajes de fachadas ventiladas, suspensión de cielos falsos, guías y anclajes de ascensores, modificaciones de obra, soluciones ante fallas de ejecución, cambios de uso y nuevas cargas.",
+      "sources": [
+        "SRC-004"
+      ]
+    },
+    {
+      "id": "SRC-005#C01",
+      "kind": "normative",
+      "class": "SAFE",
+      "text": "RIC (DS N°8): pliegos publicados el 12-ene-2021 (Res. Ex. N°33.877 SEC) y vigentes desde el 12-jul-2021 (+180 días, Art. 24); la SEC fue aclarando la transición con oficios (permisos previos, MOP sin permiso, proyectos por etapas: inicio de obras al 31-dic-2026 sigue NCh 4/2003). Lo que define el marco aplicable es la fecha y condición del permiso de edificación.",
+      "sources": [
+        "SRC-005"
+      ]
+    },
+    {
+      "id": "SRC-005#C02",
+      "kind": "normative",
+      "class": "SAFE",
+      "text": "El DS N°8 reemplazó una norma integrada por 19 pliegos técnicos (de 175 a 478 páginas): más trazabilidad, especialización y verificación por materia.",
+      "sources": [
+        "SRC-005"
+      ]
+    },
+    {
+      "id": "SRC-005#C03",
+      "kind": "normative",
+      "class": "SAFE",
+      "text": "Cinco cambios prácticos: más foco en seguridad eléctrica (contactos, fallas, incendio, humo; más diferenciales); impacto en infraestructura física (tableros, espacios, shafts, sellos cortafuego); diseño pensado en ampliaciones; diseño más trazable (alimentadores, corte, caída de tensión, puesta a tierra, selectividad); de instalar a verificar y operar.",
+      "sources": [
+        "SRC-005"
+      ]
+    },
+    {
+      "id": "SRC-005#C04",
+      "kind": "normative",
+      "class": "SAFE",
+      "text": "RIC N°11 define el alcance de centros asistenciales: todo recinto de cuidado de la salud cuyas funciones no deben suspenderse (clínicas, dentales, enfermerías, atención primaria, hospitales). 'Hospital' no es el único criterio de aplicabilidad.",
+      "sources": [
+        "SRC-005"
+      ]
+    },
+    {
+      "id": "SRC-005#C05",
+      "kind": "normative",
+      "class": "SAFE",
+      "text": "Sistemas de emergencia: de 4 grupos (NCh 4/2003) a 3 (RIC N°08) y la numeración se invierte: en el RIC el Grupo 2 es la máxima criticidad (sin interrupción), en la NCh lo era el Grupo 0. Pabellones, UCI, coronarias, partos, recuperación, neonatología, angiografía pasan a Grupo 2. La clasificación define la arquitectura eléctrica del hospital.",
+      "sources": [
+        "SRC-005"
+      ]
+    },
+    {
+      "id": "SRC-005#C06",
+      "kind": "normative",
+      "class": "SAFE",
+      "text": "Sistema médico IT en pabellones: transformador 0,5–10 kVA y máx. 250 V con monitoreo de carga y temperatura; vigilante de aislación con alarma bajo 50 kΩ; equipotencialidad máx. 0,2 Ω; libro de mantenimiento por quirófano, pruebas cada 12 y 36 meses. IT no significa 'sin tierra'.",
+      "sources": [
+        "SRC-005"
+      ]
+    },
+    {
+      "id": "SRC-005#C07",
+      "kind": "project_data",
+      "class": "INTERNAL",
+      "text": "Demanda de diseño de hospitales reales con nombre (Antofagasta, Félix Bulnes, Chillán, Puerto Montt, Ñuble, Provincia Cordillera, Sótero del Río) entre 26 y 44 W/m². Usar solo el mensaje agregado: a superficies similares la intensidad eléctrica varía de forma importante; no se puede cerrar la infraestructura con un ratio único de W/m² (agregado = VERIFY).",
+      "sources": [
+        "SRC-005"
+      ]
+    },
+    {
+      "id": "SRC-005#C08",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "La potencia eléctrica no se define solo desde lo eléctrico: arquitectura, climatización (suele ser la mayor carga), equipamiento médico, procesos de apoyo (esterilización, cocina, lavandería, imagenología) y continuidad/eficiencia. Coordinación constante, no un hito.",
+      "sources": [
+        "SRC-005"
+      ]
+    },
+    {
+      "id": "SRC-005#C09",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Efecto 'bola de nieve': una exigencia puntual (diferencial en todo circuito de iluminación) agranda tableros, salas, arquitectura, rutas, obra y plazo; la misma observación no cuesta lo mismo en diseño que en obra o recepción.",
+      "sources": [
+        "SRC-005"
+      ]
+    },
+    {
+      "id": "SRC-005#C10",
+      "kind": "internal_reference",
+      "class": "INTERNAL",
+      "text": "Casos de referencia: potencia +86,1 % entre etapa previa e ingeniería de detalle (no causado por el RIC); corregir tarde puede comprometer 10–25 % del costo de la especialidad eléctrica; 8–12 meses estimados para incorporar requisitos en un hospital de referencia. Son referencias internas/casos específicos: no publicar cifras sin autorización.",
+      "sources": [
+        "SRC-005"
+      ]
+    },
+    {
+      "id": "SRC-005#C11",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Decisiones por etapa: anteproyecto (marco aplicable, cargas críticas, continuidad), diseño coordinado (potencia, respaldo, espacios, rutas), construcción (cambios controlados, trazabilidad), puesta en servicio (pruebas, evidencia, TE1). Roles: mandante define qué no puede fallar; proyectistas transforman la necesidad en solución; constructora ejecuta, controla y evidencia.",
+      "sources": [
+        "SRC-005"
+      ]
+    },
+    {
+      "id": "SRC-005#C12",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "El RIC cambia la lógica: de instalar según criterio a demostrar con evidencia; su costo se paga barato temprano y caro tarde.",
+      "sources": [
+        "SRC-005"
+      ]
+    },
+    {
+      "id": "SRC-006#C01",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Monitoreo predictivo en minería y sus dificultades: requiere muchos datos de equipos que hayan fallado, los datos disponibles rara vez incluyen fallas y es difícil obtener información de fabricantes. Ejemplos: temperaturas en subestaciones y equipos mecánicos, monitoreo de polines por análisis de vibraciones de la estructura.",
+      "sources": [
+        "SRC-006"
+      ]
+    },
+    {
+      "id": "SRC-006#C02",
+      "kind": "concept",
+      "class": "SAFE",
+      "text": "Casos tipo de aplicación en minería: plantas de electro-obtención con placas de FRP en la envolvente, correas transportadoras (sistemas de extinción) y camiones CAEX en truck shop (sistemas de extinción).",
+      "sources": [
+        "SRC-006"
+      ]
+    },
+    {
+      "id": "SRC-006#C03",
+      "kind": "public_incident",
+      "class": "VERIFY",
+      "text": "Incidentes citados: correa transportadora en Puerto Ventanas (2022), camión CAEX (2025) y Torre Grenfell (2017) como ejemplo de envolvente combustible.",
+      "sources": [
+        "SRC-006"
+      ]
+    },
+    {
+      "id": "SRC-002#C11",
+      "kind": "concept",
+      "class": "SAFE",
+      "sources": [
+        "SRC-002"
+      ],
+      "text": "Impactos desde el diseño y el Programa Médico Arquitectónico: inmadurez del diseño de licitación, ambigüedad en superficies y recintos críticos, criterios de diseño que no conversan con la operación clínica y cambios funcionales durante el proyecto definitivo o la obra."
+    },
+    {
+      "id": "SRC-002#C12",
+      "kind": "concept",
+      "class": "SAFE",
+      "sources": [
+        "SRC-002"
+      ],
+      "text": "Obras en recintos hospitalarios existentes o en operación: restricciones de acceso, continuidad, polvo, ruido y segregación clínica; además, interferencias con servicios existentes, diferencias entre antecedentes de licitación y terreno, y hallazgos arqueológicos o restricciones ambientales."
+    },
+    {
+      "id": "SRC-002#C13",
+      "kind": "concept",
+      "class": "SAFE",
+      "sources": [
+        "SRC-002"
+      ],
+      "text": "Los cambios en una obra hospitalaria tienen cuatro orígenes: clínico (nuevos flujos, recintos, capacidades o equipamiento), técnico (rediseños por interferencias, constructibilidad, suelos, MEP o seguridad), normativo (autoridad sanitaria, accesibilidad, incendio, eficiencia) y contractual (órdenes, precios nuevos, reservas y valorización)."
+    },
+    {
+      "id": "SRC-002#C14",
+      "kind": "concept",
+      "class": "SAFE",
+      "sources": [
+        "SRC-002"
+      ],
+      "text": "Otros focos de controversia: accesibilidad de mantenimiento no resuelta en la coordinación de especialidades; permisos sectoriales no secuenciados y documentos aprobados parcialmente o con reservas."
+    },
+    {
+      "id": "SRC-003#C10",
+      "kind": "third_party_stat",
+      "class": "SAFE",
+      "sources": [
+        "SRC-003"
+      ],
+      "cite": "NFPA research (2011-2015)",
+      "text": "En EE.UU. (2011-2015), los incendios en residencias de ancianos representaron una proporción más alta de heridos civiles dentro de las propiedades de atención médica."
+    },
+    {
+      "id": "SRC-003#C11",
+      "kind": "third_party_stat",
+      "class": "SAFE",
+      "sources": [
+        "SRC-003"
+      ],
+      "cite": "NFPA Hospital or Hospice Fires Fact Sheet",
+      "text": "Características de los incendios hospitalarios en EE.UU. durante el siglo pasado: ausencia de control de la carga de combustible, falta de compartimentación, falta de rociadores y uso limitado de sistemas de notificación para alertar al personal y a bomberos en las primeras etapas."
+    },
+    {
+      "id": "SRC-003#C12",
+      "kind": "normative",
+      "class": "SAFE",
+      "sources": [
+        "SRC-003"
+      ],
+      "text": "Sala de calderas: riesgos de explosión por fuga de gas, incendio por daño en el quemador y explosión por falla mecánica. El DS 10 exige (con superficie de calefacción ≥ 5 m² y presión manométrica ≥ 2,5 kg/cm²) material incombustible con cubierta liviana, muros RF-60 y no ubicarla sobre o bajo recintos habitados o de trabajo."
+    },
+    {
+      "id": "SRC-003#C13",
+      "kind": "normative",
+      "class": "SAFE",
+      "sources": [
+        "SRC-003"
+      ],
+      "text": "Bodegas de sustancias peligrosas (SUSPEL) en hospitales — errores frecuentes: no considerar las restricciones del DS 43 en el diseño, subestimar la cantidad almacenada y la ventilación, no compartimentar bien muros perimetrales y puertas, y omitir la cubierta liviana exigida en ciertas condiciones de almacenamiento."
+    },
+    {
+      "id": "SRC-003#C14",
+      "kind": "concept",
+      "class": "SAFE",
+      "sources": [
+        "SRC-003"
+      ],
+      "text": "Riesgos de incendio en salas eléctricas (transformadores y generadores): falta de mantención preventiva, polvo acumulado, elementos recalentados, arcos eléctricos en barras de conexión, barras saturadas y ausencia de compartimentación entre generadores dentro de la sala."
+    },
+    {
+      "id": "SRC-003#C15",
+      "kind": "concept",
+      "class": "SAFE",
+      "sources": [
+        "SRC-003"
+      ],
+      "text": "Tanques criogénicos: distanciamientos seguros respecto de elementos combustibles, recintos con alta carga combustible, líneas de gas, salas eléctricas, tanques de combustible y áreas de ingreso de camiones."
+    },
+    {
+      "id": "SRC-004#C07",
+      "kind": "idiem_capability",
+      "class": "DO_NOT_PUBLISH",
+      "sources": [
+        "SRC-004"
+      ],
+      "text": "Proceso AITO para resolver observaciones en obra: detección (contratista) → emisión de RDI → revisión de la ITO → asesoría técnica IDIEM → respuesta final de la ITO. La AITO vela por el cumplimiento de los criterios de diseño aprobados y apoya la resolución de imprevistos. (Detalle nuevo del servicio AITO ya validado en C05: confirmar con MKT antes de publicarlo.)",
+      "blocked_reason": "MKT 19-10-2026: no publicar el tema de asesoría a la inspección técnica de obras (AITO)."
+    },
+    {
+      "id": "SRC-005#C13",
+      "kind": "normative",
+      "class": "SAFE",
+      "sources": [
+        "SRC-005"
+      ],
+      "text": "RIC N°11 — Grupo 1 (hasta 15 s): urgencia, bombas de vacío central, comunicaciones, llamado de enfermería, radiocomunicaciones y luces de emergencia. La memoria del proyecto debe identificar circuitos, cargas y recintos, e indicar a qué sistema de emergencia se conecta cada uno."
+    },
+    {
+      "id": "SRC-006#C04",
+      "kind": "concept",
+      "class": "SAFE",
+      "sources": [
+        "SRC-006"
+      ],
+      "text": "Monitoreo predictivo aplicado en faena: levantamiento de temperaturas de operación en subestaciones eléctricas y en equipos mecánicos, y monitoreo de polines mediante análisis de vibraciones de la estructura."
+    },
+    {
+      "id": "SRC-006#C05",
+      "kind": "normative",
+      "class": "SAFE",
+      "sources": [
+        "SRC-006",
+        "SRC-003"
+      ],
+      "text": "Definir la criticidad es el punto de partida del análisis de riesgo: la NCC 40 entrega ejemplos de criticidad para la industria minera; si no hay un criterio claro, se define con la parte interesada a partir de las interrelaciones entre procesos."
+    }
+  ],
+  "topics": [
+    {
+      "id": "TOP-001",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "¿Seguirá operativo después del terremoto? Elementos no estructurales en hospitales",
+      "claims": [
+        "SRC-004#C04",
+        "SRC-004#C06"
+      ],
+      "angle": "La resistencia de la estructura no garantiza la operación: cielos, ductos, equipos y redes deciden si el hospital funciona post-sismo.",
+      "archetype_hint": "technical_question",
+      "hook_hint": "question",
+      "format_hint": "CAROUSEL",
+      "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-002",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "AITO: asesoría independiente a la ITO en obras hospitalarias",
+      "claims": [
+        "SRC-004#C05",
+        "SRC-004#C06",
+        "SRC-004#C07"
+      ],
+      "angle": "Las RDI/FDI de anclajes, ductos y cambios de uso necesitan una revisión experta antes de aprobar.",
+      "archetype_hint": "process_result",
+      "hook_hint": "process_step",
+      "format_hint": "CAROUSEL",
+      "flags": [
+        "proceso AITO (C07) = VERIFY",
+        "cercano a nov #8 (asesoría a la inspección): dejar ≥ 2 meses"
+      ],
+      "status": "DISCARDED",
+      "discarded_reason": "MKT 19-10-2026: no publicar el tema de asesoría a la inspección técnica de obras (AITO)."
+    },
+    {
+      "id": "TOP-003",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "Hospitales que envejecen: cómo se acumula la vulnerabilidad estructural",
+      "claims": [
+        "SRC-004#C01",
+        "SRC-004#C02",
+        "SRC-004#C03"
+      ],
+      "angle": "Cada ampliación, equipo pesado o sismo sin reparación suma; la analogía del estado de salud.",
+      "archetype_hint": "risk_prevention",
+      "hook_hint": "insight",
+      "format_hint": "STATIC",
+      "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-004",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "Un hospital no es una obra convencional: 7 fuentes de controversia",
+      "claims": [
+        "SRC-002#C01",
+        "SRC-002#C09"
+      ],
+      "angle": "Mapa de dónde nacen los impactos de plazo y costo en obras de salud.",
+      "archetype_hint": "evidence_learning",
+      "hook_hint": "contrast",
+      "format_hint": "CAROUSEL",
+      "related_kb": [
+        "KB-IHA-002",
+        "KB-IHA-003",
+        "KB-IHA-004",
+        "KB-IHA-005"
+      ],
+      "flags": [
+        "cercano a nov #4 (contractual Salud): dejar ≥ 2 meses"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-005",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "Atraso, disrupción, aceleración, concurrencia: no son lo mismo",
+      "claims": [
+        "SRC-002#C06",
+        "SRC-002#C07"
+      ],
+      "angle": "Distinguir el tipo de impacto y documentarlo a tiempo define si un reclamo se puede probar.",
+      "archetype_hint": "data_implication",
+      "hook_hint": "insight",
+      "format_hint": "CAROUSEL",
+      "related_kb": [
+        "KB-IHA-003",
+        "KB-IHA-005"
+      ],
+      "flags": [
+        "cercano a nov #4 (contractual Salud): dejar ≥ 2 meses"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-006",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "La sala de imagenología como ejemplo de complejidad hospitalaria",
+      "claims": [
+        "SRC-002#C02",
+        "SRC-002#C03"
+      ],
+      "angle": "Blindaje, losas, climatización y gases en un solo recinto: por qué la coordinación temprana importa.",
+      "archetype_hint": "project_challenge",
+      "hook_hint": "scenario",
+      "format_hint": "STATIC",
+      "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-007",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "Planificar la puesta en marcha desde el diseño",
+      "claims": [
+        "SRC-002#C08"
+      ],
+      "angle": "Las pruebas integradas fallan cuando el comisionamiento se piensa al final.",
+      "archetype_hint": "risk_prevention",
+      "hook_hint": "risk",
+      "format_hint": "STATIC",
+      "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-008",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "Permisos y aprobaciones como ruta crítica contractual",
+      "claims": [
+        "SRC-002#C04",
+        "SRC-002#C05"
+      ],
+      "angle": "Responsables, fechas, dependencias y registro de observaciones.",
+      "archetype_hint": "problem_impact_capability",
+      "hook_hint": "contrast",
+      "format_hint": "STATIC",
+      "related_kb": [
+        "KB-IHA-005"
+      ],
+      "flags": [
+        "cercano a nov #4 (contractual Salud): dejar ≥ 2 meses"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-009",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "Evacuar o defender en sitio: el dilema de la seguridad contra incendios en hospitales",
+      "claims": [
+        "SRC-003#C05",
+        "SRC-003#C01"
+      ],
+      "angle": "Los pacientes no siempre pueden evacuar: compartimentación, ascensores y escenarios de humo.",
+      "archetype_hint": "technical_question",
+      "hook_hint": "question",
+      "format_hint": "CAROUSEL",
+      "related_kb": [
+        "KB-IPR-019"
+      ],
+      "flags": [
+        "casos nacionales con nombre = VERIFY",
+        "nov #6 fue incendios (genérico): variar ángulo y arquetipo"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-010",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "Pocos incendios eléctricos, gran parte del daño (dato NFPA)",
+      "claims": [
+        "SRC-003#C02",
+        "SRC-003#C03"
+      ],
+      "angle": "Distribución eléctrica: 6 % de los incendios, 36 % de los daños; el rol de la extinción automática.",
+      "archetype_hint": "data_implication",
+      "hook_hint": "data_point",
+      "format_hint": "STATIC",
+      "flags": [
+        "citar NFPA como fuente",
+        "nov #6 fue incendios (genérico): variar ángulo y arquetipo"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-011",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "Recintos que sostienen la operación: calderas, tanques criogénicos, salas eléctricas",
+      "claims": [
+        "SRC-003#C07",
+        "SRC-003#C08",
+        "SRC-003#C12",
+        "SRC-003#C15"
+      ],
+      "angle": "La continuidad del hospital también depende de los recintos que el paciente no ve.",
+      "archetype_hint": "capability_application",
+      "hook_hint": "scenario",
+      "format_hint": "CAROUSEL",
+      "flags": [
+        "nov #6 fue incendios (genérico): variar ángulo y arquetipo"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-012",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "RIC en salud: el Grupo 2 es ahora la máxima criticidad",
+      "claims": [
+        "SRC-005#C05",
+        "SRC-005#C04",
+        "SRC-005#C13"
+      ],
+      "angle": "La numeración de los sistemas de emergencia se invierte: no asumir equivalencias.",
+      "archetype_hint": "technical_question",
+      "hook_hint": "technical_claim",
+      "format_hint": "CAROUSEL",
+      "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-013",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "La 'bola de nieve' de una exigencia eléctrica tardía",
+      "claims": [
+        "SRC-005#C09",
+        "SRC-005#C12"
+      ],
+      "angle": "Un diferencial más por circuito puede terminar cambiando la arquitectura y el plazo.",
+      "archetype_hint": "process_result",
+      "hook_hint": "process_step",
+      "format_hint": "CAROUSEL",
+      "flags": [
+        "cifras de casos = INTERNAL: no publicar"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-014",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "Los m² no definen la potencia de un hospital",
+      "claims": [
+        "SRC-005#C07",
+        "SRC-005#C08"
+      ],
+      "angle": "A superficies similares la demanda eléctrica varía de forma importante: cerrar temprano climatización y equipamiento.",
+      "archetype_hint": "data_implication",
+      "hook_hint": "insight",
+      "format_hint": "STATIC",
+      "flags": [
+        "sin nombres de hospitales ni cifras por proyecto (INTERNAL)"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-015",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "Sistema médico IT en pabellones: de instalar a demostrar",
+      "claims": [
+        "SRC-005#C06"
+      ],
+      "angle": "Monitoreo, equipotencialidad y registro de mantenimiento protegen al paciente durante toda la operación.",
+      "archetype_hint": "capability_application",
+      "hook_hint": "technical_claim",
+      "format_hint": "STATIC",
+      "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-016",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "¿Mi proyecto se rige por el RIC? La fecha del permiso manda",
+      "claims": [
+        "SRC-005#C01",
+        "SRC-005#C02"
+      ],
+      "angle": "Zonas grises de la transición y oficios de la SEC.",
+      "archetype_hint": "evidence_learning",
+      "hook_hint": "question",
+      "format_hint": "CAROUSEL",
+      "flags": [
+        "verificar vigencia de oficios al publicar (GR-13)"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-017",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "Quién decide qué: mandante, proyectista y constructora",
+      "claims": [
+        "SRC-005#C11"
+      ],
+      "angle": "La coordinación no es que todos decidan todo; el reproceso aparece cuando una decisión cruza etapas sin responsable.",
+      "archetype_hint": "problem_impact_capability",
+      "hook_hint": "contrast",
+      "format_hint": "CAROUSEL",
+      "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-018",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "title": "Tres niveles de análisis de riesgo de incendio (y por qué el checklist no basta)",
+      "claims": [
+        "SRC-001#C04",
+        "SRC-001#C05"
+      ],
+      "angle": "Del cumplimiento normativo al análisis de consecuencias operacionales.",
+      "archetype_hint": "evidence_learning",
+      "hook_hint": "contrast",
+      "format_hint": "CAROUSEL",
+      "related_kb": [
+        "KB-IOM-018",
+        "KB-IOM-026"
+      ],
+      "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-019",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "title": "Correas, CAEX y envolventes: dónde se concentra el riesgo de incendio en faena",
+      "claims": [
+        "SRC-006#C02",
+        "SRC-001#C09"
+      ],
+      "angle": "Casos tipo para pensar la estrategia contra incendios desde el proyecto.",
+      "archetype_hint": "project_challenge",
+      "hook_hint": "scenario",
+      "format_hint": "CAROUSEL",
+      "related_kb": [
+        "KB-IOM-018",
+        "KB-IOM-026"
+      ],
+      "flags": [
+        "incidentes con nombre = VERIFY"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-020",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "title": "La curva P-F: detectar el deterioro antes de la falla",
+      "claims": [
+        "SRC-003#C09",
+        "SRC-006#C01",
+        "SRC-001#C10",
+        "SRC-006#C04"
+      ],
+      "angle": "El monitoreo predictivo y sus límites reales (pocos datos de fallas).",
+      "archetype_hint": "data_implication",
+      "hook_hint": "technical_claim",
+      "format_hint": "STATIC",
+      "related_kb": [
+        "KB-IOM-057",
+        "KB-IOM-060",
+        "KB-IOM-023"
+      ],
+      "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-021",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "title": "Un estudio de riesgo también vence: revisión por pares y plazo de validez",
+      "claims": [
+        "SRC-001#C05",
+        "SRC-001#C07",
+        "SRC-001#C08"
+      ],
+      "angle": "La operación cambia (compartimentación, procesos) y el estudio debe actualizarse.",
+      "archetype_hint": "risk_prevention",
+      "hook_hint": "risk",
+      "format_hint": "STATIC",
+      "related_kb": [
+        "KB-IOM-026"
+      ],
+      "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-022",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "title": "Estrategia contra incendios en 8 ejes, desde la etapa de proyecto",
+      "claims": [
+        "SRC-001#C09",
+        "SRC-001#C11",
+        "SRC-001#C12"
+      ],
+      "angle": "Evacuación, compartimentación, resistencia al fuego, fachadas, bomberos, sistemas, continuidad y riesgo externo.",
+      "archetype_hint": "process_result",
+      "hook_hint": "process_step",
+      "format_hint": "CAROUSEL",
+      "related_kb": [
+        "KB-IPR-019"
+      ],
+      "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-023",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "Construir dentro de un hospital que sigue atendiendo",
+      "claims": [
+        "SRC-002#C12",
+        "SRC-002#C05"
+      ],
+      "angle": "Polvo, ruido, accesos y segregación clínica: la obra convive con pacientes, y eso se planifica antes de ofertar.",
+      "archetype_hint": "project_challenge",
+      "hook_hint": "scenario",
+      "format_hint": "STATIC",
+      "flags": [
+        "cercano a nov #4 (contractual Salud): dejar ≥ 2 meses"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-024",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "Clínico, técnico, normativo o contractual: de dónde vienen los cambios en una obra hospitalaria",
+      "claims": [
+        "SRC-002#C13",
+        "SRC-002#C06"
+      ],
+      "angle": "Clasificar el origen del cambio es el primer paso para gestionarlo y documentarlo a tiempo.",
+      "archetype_hint": "technical_question",
+      "hook_hint": "question",
+      "format_hint": "CAROUSEL",
+      "flags": [
+        "cercano a nov #4 (contractual Salud): dejar ≥ 2 meses"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-025",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "Cuando el diseño de licitación no conversa con la operación clínica",
+      "claims": [
+        "SRC-002#C11",
+        "SRC-002#C09"
+      ],
+      "angle": "Validar el Programa Médico Arquitectónico antes de comprometer plazo y precio evita controversias que nacen en el papel.",
+      "archetype_hint": "risk_prevention",
+      "hook_hint": "contrast",
+      "format_hint": "STATIC",
+      "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-026",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "Bodegas de sustancias peligrosas en hospitales: errores de diseño que se pagan en operación",
+      "claims": [
+        "SRC-003#C13"
+      ],
+      "angle": "DS 43, ventilación, compartimentación y cubierta: lo que conviene resolver en el diseño y no en la recepción.",
+      "archetype_hint": "risk_prevention",
+      "hook_hint": "risk",
+      "format_hint": "CAROUSEL",
+      "flags": [
+        "nov #6 fue incendios (genérico): variar ángulo y arquetipo"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-027",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "Lo que enseñaron los incendios hospitalarios del siglo pasado",
+      "claims": [
+        "SRC-003#C11",
+        "SRC-003#C03"
+      ],
+      "angle": "Control de carga combustible, compartimentación, rociadores y alerta temprana: de las lecciones a la estrategia actual.",
+      "archetype_hint": "evidence_learning",
+      "hook_hint": "data_point",
+      "format_hint": "CAROUSEL",
+      "flags": [
+        "citar NFPA como fuente"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-028",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "title": "Salas eléctricas de un hospital: polvo, calor y arcos que no se ven",
+      "claims": [
+        "SRC-003#C14",
+        "SRC-005#C03"
+      ],
+      "angle": "La mantención preventiva y la compartimentación (RIC) protegen la continuidad del respaldo eléctrico.",
+      "archetype_hint": "data_implication",
+      "hook_hint": "insight",
+      "format_hint": "STATIC",
+      "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-029",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "title": "¿Quién define qué es crítico? La criticidad como punto de partida del análisis de riesgo",
+      "claims": [
+        "SRC-006#C05",
+        "SRC-001#C03"
+      ],
+      "angle": "Sin un criterio de criticidad acordado, el análisis de riesgo de incendio parte cojo.",
+      "archetype_hint": "technical_question",
+      "hook_hint": "question",
+      "format_hint": "STATIC",
+      "related_kb": [
+        "KB-IOM-018",
+        "KB-IOM-026"
+      ],
+      "flags": [],
+      "status": "CANDIDATE"
+    }
+  ]
+}

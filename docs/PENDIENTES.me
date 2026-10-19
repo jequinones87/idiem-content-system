@@ -1,0 +1,78 @@
+# PENDIENTES.me — IDIEM Content System (punto de retomada)
+
+> Contexto para continuar en un chat nuevo. Última actualización: 2026-10-19.
+> Leer primero: `CLAUDE.md` → `docs/10_ESTRATEGIA_EDITORIAL_Y_SESGOS.md` →
+> `docs/09_EDITORIAL_MEMORY.md`.
+
+## Repo y rama
+- Repo `jequinones87/idiem-content-system` · rama de trabajo `claude/inspiring-hopper-f45s0m` · sin PR salvo pedido.
+- `main` está vacía (solo el commit inicial). El trabajo vive en ramas `claude/*`.
+- **19-10-2026: integrada la rama `claude/idiem-editorial-updates-5osizu`** (sep-24): Sales Intelligence
+  (`knowledge/sales_intelligence/`, `docs/12_SALES_INTELLIGENCE.md`), motor de diversidad
+  (fingerprint/novelty/QA/coverage, `docs/13_MOTOR_DIVERSIDAD_EDITORIAL.md`), CI y la memoria de sept/oct.
+  Esa rama ya no aporta nada nuevo; no seguir trabajando en ella.
+
+## Memoria única (desde 19-10-2026)
+- Archivo mensual consolidado = `content/archive/AAAA-MM.json` (+ `.md` y `.editorial_qa.md`).
+  `state/consolidated/` quedó absorbido; `state/published_ledger.json` se reconstruye desde el archivo.
+- Taxonomía única = la de MKT (`config/editorial_diversity.json`). La heurística del motor se traduce con
+  `heuristic_taxonomy_map`; la tabla de asignación manda.
+
+## Estado actual
+- **Septiembre**: publicado. Workstation: https://claude.ai/code/artifact/f9016145-d797-4a02-867e-1e478de62a6b
+- **Octubre**: cerrado por edición manual y **programado**. NO regenerar (el archivador ya no sobrescribe
+  sin `--force`). Workstation: https://claude.ai/artifact/9XbzZUmBKE3Kgy2wa7BU94
+- **Webinar acero: miércoles 21-oct, 09:30**; víspera 20-oct. 5 posts programados:
+  https://claude.ai/artifact/9VHLEeZ2WYm2pUwyhb4FkA · posts de evento exentos del tope de 900.
+- **Noviembre**: **12 piezas programadas** (11 + efeméride 26-nov). **#4 (contractual Salud) PUBLICADO**
+  con el copy final de MKT (19-10-2026). Archivo: `content/archive/2026-11.json`. Workstation:
+  https://claude.ai/artifact/BnifYwYQhXMhPv4cCCXhG3 · generador `design_system/gen_month_ws.py`.
+- Post especial Massone (14-10, institucional, fuera de grilla): aprobado por MKT.
+
+## Pendientes inmediatos (de cara a diciembre)
+Octubre y noviembre están publicados/programados: **no se retocan**. Sus aprendizajes quedaron como
+checklist obligatorio en `docs/09_EDITORIAL_MEMORY.md` (sección ✅).
+1. **Planificar diciembre** con el checklist: archivo sep–nov, efeméride **5-dic Día Mundial del Suelo**
+   (puede trazar a knowledge_id), saludos de Navidad/Año Nuevo (institucionales), banco de temas y Sales
+   Intelligence.
+2. **Lab Minero Digital** sigue sin ítems frescos: pedir insumos a MKT. **Hospitalaria** ya tiene 17 temas
+   candidatos en el banco (SRC-002 a 005) e **incendio en minería** 5 (SRC-006): usarlos para diciembre.
+3. ✅ Decisiones MKT 19-10-2026: largo de 900 = referencia flexible (QA avisa y pide motivo);
+   `institutional_or_occasion` confirmado; piezas nuevas con Montserrat incrustada (`brand_fonts.py`).
+4. Fotos de librería > ~6–7 MB no bajan por el conector de Drive: pedir versiones ~2 MB.
+5. Al cerrar noviembre (fin de mes), re-archivar con estados finales y reconstruir el ledger (solo registro,
+   sin cambiar contenidos).
+
+## Problemas técnicos conocidos
+- `design_system/gen_webinar_workstation.py` apunta a un scratchpad de una sesión antigua (`wslides`):
+  no se puede regenerar en un entorno nuevo. **Para el próximo webinar** hay que versionar sus láminas en
+  el repo (como `brand_assets.py`) antes de reutilizarlo.
+
+## Banco de temas (14-10-2026)
+- 6 fuentes expertas + 22 temas (17 IHA, 5 IOM) en `docs/11_FUENTES_EXPERTAS_Y_BANCO_DE_TEMAS.md`.
+  Validaciones MKT cerradas: consentimiento OK (sin nombrar expositores), servicios vigentes, autores no
+  relevantes, industria → IOM, fuentes truncadas = usar lo disponible. Listo para planificar diciembre.
+
+## Tipografía (resuelto 19-10-2026)
+Las piezas de sep/oct/nov se rasterizaron con fuente de reemplazo (Google Fonts no carga en el render).
+Desde diciembre toda pieza incrusta Montserrat 400–800 (`design_system/brand_fonts.py`, decisión MKT);
+verificado renderizando una lámina de noviembre. Sep–nov no se re-renderizan.
+
+## Backlog de implementación (auditoría de sesgos)
+La asignación se hace **a mano** (tabla previa a redactar, aprobada por MKT); el motor verifica.
+- [ ] `select_diverse` integrado al **planner** como propuesta de asignación (existe en el motor; la
+      tabla sigue siendo manual y aprobada por MKT).
+- [ ] El **drafter** recibe las asignaciones de la tabla como restricciones.
+- [x] **Editorial Fingerprint** + **archive** mensual consolidado (fuente única de memoria) — 19-10.
+- [x] **Novelty Engine** — 19-10 (rama integrada).
+- [x] `recent_hooks` separado de `pain_point` — 19-10 (corregido el bug heredado).
+- [x] Validador de **caracteres** en el QA editorial — 19-10 (eventos exentos; excepciones registradas).
+- [x] QA editorial de diversidad (límites MKT + consecutivos) — 19-10.
+- [x] Clasificación `SAFE/VERIFY/INTERNAL/DO_NOT_PUBLISH` en Sales Intelligence — rama integrada.
+- [x] Assets de bootstrap del pipeline mensual → `design_system/brand_assets.py` (desde los SVG versionados).
+
+## Reglas que no se negocian (resumen)
+Ver `CLAUDE.md`. 2A.2 es la única fuente factual; fail closed (CONTENT_GAP / EXPERT_INPUT_REQUIRED);
+Green Hospital propia (sin "Salud sin Daño", + ISO 50001); soldadura se inspecciona por muestreo y
+se califica al soldador; D.S. 38/2011 MMA (futuro D.D. 14/24); Transporte = CONTENT_GAP;
+efemérides en `config/efemerides.json`; diversidad editorial según doc 10.

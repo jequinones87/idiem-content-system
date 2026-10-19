@@ -1,0 +1,410 @@
+{
+  "metadata": {
+    "project": "IDIEM — reglas editoriales y de generación",
+    "version": "2A.2",
+    "date": "2026-08-17",
+    "source_base": "04_base_produccion_IDIEM_2A2.json",
+    "scope": "Reglas para convertir la base factual 2A.2 en briefs y borradores de contenido LinkedIn. No define el sistema visual."
+  },
+  "rule_layers": {
+    "source_grounded_rules": [
+      {
+        "rule_id": "GR-01",
+        "rule": "Para contenido de una célula, recuperar primero conocimiento técnico de esa misma célula; no importar relaciones de otra célula por similitud temática."
+      },
+      {
+        "rule_id": "GR-02",
+        "rule": "La evidencia verificada y la política de uso del registro son obligatorias. No agregar especificidad, metodología, resultados, clientes o aplicaciones que no estén respaldados."
+      },
+      {
+        "rule_id": "GR-03",
+        "rule": "Los registros NAME_ONLY_DO_NOT_EXPAND sólo pueden nombrarse; no explicar qué hacen ni equipararlos a otros servicios."
+      },
+      {
+        "rule_id": "GR-04",
+        "rule": "Los registros USE_TECHNICAL_CORE_BLOCK_CLAIMS permiten usar el núcleo técnico, pero bloquean rankings, exclusividades, superlativos y claims mundiales asociados."
+      },
+      {
+        "rule_id": "GR-05",
+        "rule": "Los elementos de evidencia auxiliar no crean servicios ni capacidades. Sólo complementan un contenido cuando su propia política lo permite."
+      },
+      {
+        "rule_id": "GR-06",
+        "rule": "Los CLAIM_BLOQUEADO y los registros que requieren validación externa no se publican como hechos sin una validación posterior."
+      },
+      {
+        "rule_id": "GR-07",
+        "rule": "La reserva SIN_CELULA_PRIORIZADA queda inactiva para la generación de contenidos de las cinco células; no es información descartada."
+      },
+      {
+        "rule_id": "GR-08",
+        "rule": "Las relaciones EXCLUDED_DO_NOT_USE nunca deben usarse como evidencia ni como base de un claim."
+      },
+      {
+        "rule_id": "GR-09",
+        "rule": "En minería, mandante/contratista no decide la célula. Ingeniería, integridad, diagnóstico, confiabilidad y continuidad pertenecen a INFRA OPERACIÓN MINERA; laboratorio, ensayo, inspección, control y evidencia pertenecen a LAB MINERO DIGITAL."
+      },
+      {
+        "rule_id": "GR-10",
+        "rule": "“Digital” no es requisito técnico de LAB MINERO DIGITAL. BIM, monitoreo remoto, plataformas o analítica no migran a Lab por el solo hecho de ser digitales."
+      },
+      {
+        "rule_id": "GR-11",
+        "rule": "Triaxial Gigante se considera siempre asociado a proyectos mineros, según decisión explícita del usuario en 2A.2."
+      },
+      {
+        "rule_id": "GR-12",
+        "rule": "Infra Hospitalaria tiene prioridad sobre Infra Pública cuando el proyecto es de salud; Infra Crítica Transporte se limita a Metro/EFE."
+      },
+      {
+        "rule_id": "GR-13",
+        "rule": "Vigencias normativas/jurídicas, acreditaciones, rankings, cifras relativas y cobertura actual deben verificarse antes de publicación cuando el registro lo indique."
+      },
+      {
+        "rule_id": "GR-14",
+        "rule": "No contar documentos relacionados/duplicados como evidencia independiente adicional. Usar document_group e independent_source para controlar el peso de la evidencia."
+      }
+    ],
+    "proposed_editorial_rules": [
+      {
+        "id": "ER-01",
+        "category": "principio_editorial",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "Cada pieza debe partir de un problema, decisión, riesgo, necesidad técnica o evidencia relevante para la célula; evitar partir sólo desde el nombre comercial de un servicio."
+      },
+      {
+        "id": "ER-02",
+        "category": "tono",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "Usar un tono técnico, sobrio, experto e institucional. Evitar lenguaje de venta agresivo, grandilocuencia, urgencia artificial y afirmaciones no respaldadas."
+      },
+      {
+        "id": "ER-03",
+        "category": "tono",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "Priorizar claridad sobre jerga. Cuando un término técnico sea necesario, explicarlo sólo si la base lo permite; si no, mantener el término sin desarrollar."
+      },
+      {
+        "id": "ER-04",
+        "category": "estructura",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "La estructura recomendada de una pieza es: contexto/problema → evidencia o explicación técnica respaldada → implicancia para el proyecto/operación → cierre/CTA sobrio."
+      },
+      {
+        "id": "ER-05",
+        "category": "estructura",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "No es obligatorio mencionar IDIEM en la apertura. La marca puede aparecer después de haber establecido el problema o valor técnico."
+      },
+      {
+        "id": "ER-06",
+        "category": "seleccion_tema",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "Preferir un único foco técnico por pieza. Combinar varios servicios sólo cuando la base demuestre una relación clara entre ellos dentro del mismo problema o proyecto."
+      },
+      {
+        "id": "ER-07",
+        "category": "seleccion_tema",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "No importar conocimiento técnico desde otra célula para completar una pauta. Si una célula carece de evidencia suficiente, registrar CONTENT_GAP o solicitar insumo experto."
+      },
+      {
+        "id": "ER-08",
+        "category": "formatos",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "Usar imagen estática para una idea principal, dato o mensaje breve; usar carrusel cuando la evidencia permita desarrollar una secuencia de 3 o más ideas relacionadas sin rellenar con contenido genérico."
+      },
+      {
+        "id": "ER-09",
+        "category": "claims",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "Evitar superlativos, rankings, exclusividades, promesas absolutas y formulaciones de garantía salvo validación externa específica y vigente."
+      },
+      {
+        "id": "ER-10",
+        "category": "cifras",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "Una cifra sólo puede publicarse cuando la evidencia incluya su contexto suficiente y no exista una restricción de vigencia. Cifras relativas como 'últimos X años' requieren fecha de corte antes de reutilizarse."
+      },
+      {
+        "id": "ER-11",
+        "category": "normativa",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "Normas, acreditaciones, mecanismos legales, convenios y referencias regulatorias deben verificarse en su vigencia antes de convertirse en mensaje público cuando la base lo indique."
+      },
+      {
+        "id": "ER-12",
+        "category": "casos_proyectos",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "Un proyecto o cliente sólo puede nombrarse cuando la relación documental lo identifica textualmente. Una fotografía, inferencia visual o similitud sectorial no basta."
+      },
+      {
+        "id": "ER-13",
+        "category": "casos_proyectos",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "No atribuir resultados, impactos, ahorros, reducción de riesgo o desempeño a un proyecto salvo que esos resultados estén expresamente respaldados."
+      },
+      {
+        "id": "ER-14",
+        "category": "evidencia_auxiliar",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "Beneficios, credenciales, cobertura, atributos diferenciadores y evidencia sectorial pueden complementar una pieza, pero nunca reemplazar el núcleo técnico ni transformarse en una capacidad."
+      },
+      {
+        "id": "ER-15",
+        "category": "cta",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "Usar CTA de baja fricción y coherente con el contenido: conocer el servicio, conversar con un especialista, revisar una solución o solicitar información. Evitar CTA que prometan resultados no respaldados."
+      },
+      {
+        "id": "ER-16",
+        "category": "repeticion",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "No repetir el mismo knowledge_id como eje principal en piezas consecutivas. La repetición sólo se permite si cambia claramente el problema, aplicación, etapa del ciclo de vida o audiencia."
+      },
+      {
+        "id": "ER-17",
+        "category": "aprobacion",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "Toda pieza generada por IA queda en estado DRAFT hasta pasar control factual y aprobación humana. Los especialistas validan contenidos técnicos puntuales cuando el tema requiera conocimiento no contenido en la base."
+      },
+      {
+        "id": "ER-18",
+        "category": "actualidad",
+        "status": "PROPUESTA_EDITORIAL",
+        "rule": "Temas de actualidad, cambios normativos, tendencias sectoriales o coyuntura no deben generarse sólo desde esta biblioteca histórica; requieren una fuente externa vigente o insumo experto."
+      }
+    ]
+  },
+  "cell_editorial_guidance": {
+    "INFRA PÚBLICA RESILIENTE": {
+      "positioning": "Infraestructura pública que sostiene conectividad, acceso y resiliencia territorial; respaldo técnico al servicio del país.",
+      "preferred_angles": [
+        "decisiones técnicas a lo largo del ciclo de vida de infraestructura pública",
+        "control, inspección, diagnóstico y soporte técnico de obras públicas",
+        "condición, desempeño y continuidad de infraestructura pública",
+        "evidencia de experiencia pública cuando esté textualmente respaldada"
+      ],
+      "avoid": [
+        "usar 'resiliente' como requisito técnico obligatorio",
+        "absorber proyectos de salud o Metro/EFE",
+        "presentar la Ley 21.094 como servicio técnico"
+      ]
+    },
+    "INFRA HOSPITALARIA Y ASISTENCIAL": {
+      "positioning": "Infraestructura destinada a la salud y al cuidado de las personas; habitabilidad, confiabilidad y continuidad.",
+      "preferred_angles": [
+        "desafíos técnicos de infraestructura sanitaria",
+        "continuidad y confiabilidad de instalaciones de salud",
+        "servicios transversales sólo cuando la aplicación hospitalaria esté respaldada"
+      ],
+      "avoid": [
+        "ampliar GREEN HOSPITAL más allá de su alcance documentado",
+        "crear prestaciones hospitalarias a partir de experiencia sectorial general",
+        "extender la célula a infraestructura social no sanitaria"
+      ]
+    },
+    "INFRA CRÍTICA TRANSPORTE": {
+      "positioning": "Infraestructura de Metro y EFE y sus sistemas directamente asociados.",
+      "preferred_angles": [
+        "contenido sectorial o institucional respaldado específicamente por Metro/EFE",
+        "insumos técnicos nuevos validados por especialistas para ampliar la biblioteca"
+      ],
+      "avoid": [
+        "usar puentes, autopistas, aeropuertos, puertos o túneles genéricos como Transporte",
+        "inventar servicios técnicos para compensar la ausencia actual de knowledge_items"
+      ],
+      "content_gap_rule": "La base 2A.2 contiene 0 knowledge_items técnicos activos para esta célula. No generar piezas técnicas autónomas desde la biblioteca actual; marcar CONTENT_GAP hasta incorporar evidencia técnica específica Metro/EFE."
+    },
+    "INFRA OPERACIÓN MINERA": {
+      "positioning": "Continuidad operacional, integridad, confiabilidad, diagnóstico, ingeniería y soporte técnico de activos e infraestructura minera.",
+      "preferred_angles": [
+        "activos que no pueden detenerse",
+        "integridad y condición de infraestructura y equipos",
+        "diagnóstico, monitoreo, mantenimiento y rehabilitación",
+        "ingeniería y soporte técnico en operación y CAPEX minero"
+      ],
+      "avoid": [
+        "clasificar por mandante versus contratista",
+        "mover servicios a Lab por contener BIM, sensores, plataformas o analítica",
+        "presentar ensayos autónomos como ingeniería de continuidad"
+      ]
+    },
+    "LAB MINERO DIGITAL": {
+      "positioning": "Laboratorio, ensayo, inspección, control técnico y generación de evidencia para proyectos y obras mineras.",
+      "preferred_angles": [
+        "evidencia y control técnico desde terreno",
+        "ensayos y caracterización de materiales",
+        "control de uniones HDPE",
+        "END e inspección de soldaduras",
+        "trazabilidad y acceso a resultados como atributos complementarios"
+      ],
+      "avoid": [
+        "usar 'digital' como requisito de entrada",
+        "convertir ingeniería de integridad/continuidad en Lab",
+        "usar claims mundiales o superlativos del Triaxial o laboratorios sin validación"
+      ]
+    }
+  },
+  "content_types": [
+    {
+      "type": "TECHNICAL_INSIGHT",
+      "purpose": "Explicar un problema, criterio o desafío técnico respaldado por uno o más knowledge_items.",
+      "minimum_evidence": "1 knowledge_item activo",
+      "expert_input": "Opcional; obligatorio si se agregan recomendaciones no presentes en la base."
+    },
+    {
+      "type": "SERVICE_EXPLAINER",
+      "purpose": "Explicar qué hace un servicio/capacidad y en qué aplicación documentada participa.",
+      "minimum_evidence": "1 knowledge_item con service/capability y evidencia suficiente",
+      "expert_input": "No necesario si el alcance se mantiene dentro de la base."
+    },
+    {
+      "type": "PROJECT_EVIDENCE",
+      "purpose": "Mostrar experiencia o aplicación concreta en un proyecto/sector identificado.",
+      "minimum_evidence": "Relación textual que identifique proyecto/aplicación; no evidencia sólo fotográfica.",
+      "expert_input": "Necesario si se quieren agregar resultados o contexto no documentado."
+    },
+    {
+      "type": "VALUE_ATTRIBUTE",
+      "purpose": "Reforzar un diferenciador, beneficio, cobertura o credencial permitida.",
+      "minimum_evidence": "auxiliary_evidence con política compatible",
+      "expert_input": "Puede requerir validación de vigencia."
+    },
+    {
+      "type": "EXPERT_INPUT_REQUIRED",
+      "purpose": "Contenido sobre tendencia, opinión técnica, actualización normativa o tema estratégico no cubierto por la biblioteca.",
+      "minimum_evidence": "Insumo especialista y/o fuente externa vigente",
+      "expert_input": "Obligatorio."
+    }
+  ],
+  "generation_workflow": [
+    {
+      "step": 1,
+      "name": "SELECT_CELL",
+      "instruction": "Definir célula objetivo antes de buscar contenido."
+    },
+    {
+      "step": 2,
+      "name": "RETRIEVE",
+      "instruction": "Recuperar knowledge_items de la célula y, sólo como complemento, auxiliary_evidence permitido."
+    },
+    {
+      "step": 3,
+      "name": "CHECK_POLICY",
+      "instruction": "Leer generation_policy, usage_instruction, notas y fuentes de cada ítem."
+    },
+    {
+      "step": 4,
+      "name": "CHOOSE_ANGLE",
+      "instruction": "Elegir un único foco editorial y un content_type compatible con la evidencia."
+    },
+    {
+      "step": 5,
+      "name": "BUILD_FACT_SHEET",
+      "instruction": "Separar antes de redactar: hechos permitidos, matices obligatorios, claims bloqueados y vacíos."
+    },
+    {
+      "step": 6,
+      "name": "DRAFT",
+      "instruction": "Redactar sólo desde el fact sheet y las reglas editoriales."
+    },
+    {
+      "step": 7,
+      "name": "FACT_CHECK",
+      "instruction": "Comprobar cada afirmación concreta contra knowledge_id, relation_id o auxiliary_id."
+    },
+    {
+      "step": 8,
+      "name": "EDITORIAL_CHECK",
+      "instruction": "Revisar claridad, foco, tono, repetición, CTA y formato."
+    },
+    {
+      "step": 9,
+      "name": "HUMAN_APPROVAL",
+      "instruction": "Mantener DRAFT hasta aprobación humana; derivar al especialista cuando corresponda."
+    }
+  ],
+  "approval_states": {
+    "DRAFT": "Generado pero aún no aprobado.",
+    "FACT_CHECKED": "Todas las afirmaciones concretas tienen trazabilidad y respetan políticas.",
+    "EXPERT_REVIEW": "Requiere o está en revisión por especialista.",
+    "APPROVED": "Aprobado para producción/diseño.",
+    "BLOCKED": "No publicar hasta resolver una restricción factual, vigencia o contradicción.",
+    "CONTENT_GAP": "La célula/tema no dispone de evidencia suficiente en la biblioteca actual."
+  },
+  "qa_checks": [
+    "¿La pieza tiene una célula definida?",
+    "¿El eje principal está respaldado por knowledge_id(s) de esa misma célula?",
+    "¿Cada afirmación técnica respeta generation_policy y usage_instruction?",
+    "¿Se evitó ampliar términos NAME_ONLY_DO_NOT_EXPAND?",
+    "¿Se bloquearon rankings, superlativos y claims cuando corresponde?",
+    "¿Las cifras tienen contexto y vigencia suficiente?",
+    "¿Los proyectos/clientes nombrados están textualmente identificados en la evidencia?",
+    "¿Se evitó atribuir resultados o impactos no documentados?",
+    "¿La evidencia auxiliar se usa sólo como complemento?",
+    "¿El contenido evita importar conocimiento desde otra célula?",
+    "¿El CTA es sobrio y no promete resultados no respaldados?",
+    "¿Si faltó evidencia, se marcó CONTENT_GAP o EXPERT_INPUT_REQUIRED en vez de rellenar?",
+    "¿La pieza permanece DRAFT hasta aprobación humana?"
+  ],
+  "content_brief_schema": {
+    "content_id": "string",
+    "status": "DRAFT | FACT_CHECKED | EXPERT_REVIEW | APPROVED | BLOCKED | CONTENT_GAP",
+    "cell": "una de las cinco células",
+    "content_type": "TECHNICAL_INSIGHT | SERVICE_EXPLAINER | PROJECT_EVIDENCE | VALUE_ATTRIBUTE | EXPERT_INPUT_REQUIRED",
+    "audience": "string o null",
+    "objective": "string",
+    "editorial_angle": "string",
+    "core_problem_or_question": "string",
+    "knowledge_ids": [
+      "KB-..."
+    ],
+    "auxiliary_ids": [
+      "AUX-..."
+    ],
+    "allowed_facts": [
+      "string"
+    ],
+    "mandatory_matices": [
+      "string"
+    ],
+    "blocked_claims": [
+      "string"
+    ],
+    "content_gaps": [
+      "string"
+    ],
+    "expert_input_required": false,
+    "expert_input_request": "string o null",
+    "recommended_format": "STATIC | CAROUSEL",
+    "draft_copy": {
+      "hook": "string",
+      "body": "string",
+      "cta": "string"
+    },
+    "visual_brief": {
+      "main_message": "string",
+      "supporting_points": [
+        "string"
+      ],
+      "evidence_to_visualize": [
+        "string"
+      ]
+    },
+    "traceability": {
+      "relation_ids": [
+        "R0000"
+      ],
+      "document_ids": [
+        "DOC-00"
+      ]
+    },
+    "qa": {
+      "fact_check_passed": false,
+      "editorial_check_passed": false,
+      "human_approval": false,
+      "notes": []
+    }
+  }
+}

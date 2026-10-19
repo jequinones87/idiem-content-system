@@ -1,0 +1,193 @@
+# CLAUDE.md — IDIEM Content System
+
+## Mission
+
+Build a deterministic, auditable content-planning and drafting system for IDIEM LinkedIn using the supplied 2A.2 knowledge package.
+
+## Non-negotiable rules
+
+1. The supplied IDIEM library is the factual source of truth.
+2. Do not use general model knowledge to fill factual gaps about IDIEM services, projects, clients, methods, results, accreditations, rankings, legal mechanisms or current capabilities.
+3. Every concrete IDIEM claim in a brief/draft must trace to:
+   - one or more `knowledge_id`, or
+   - an allowed `auxiliary_id`.
+4. Always enforce `generation_policy` and `usage_instruction`.
+5. `NAME_ONLY_DO_NOT_EXPAND` means exactly that: the term may be named, not explained.
+6. `USE_TECHNICAL_CORE_BLOCK_CLAIMS` allows the technical core but blocks the attached rankings/superlatives/claims.
+7. Never turn auxiliary evidence into a technical capability.
+8. Never use excluded relations as evidence.
+9. Never move knowledge across cells merely to satisfy a content quota.
+10. When evidence is insufficient, return `CONTENT_GAP` or `EXPERT_INPUT_REQUIRED`.
+11. Keep cell rules external/configurable. The team is validating definitions in parallel, so future cell adjustments must not require code rewrites.
+12. Do not implement publishing or design automation in the first milestone.
+13. Preserve auditability: never mutate canonical source files in `data/`.
+
+## Cell rules that must be enforced
+
+- `INFRA HOSPITALARIA Y ASISTENCIAL` takes priority over Infra Pública when the project is health infrastructure.
+- `INFRA CRÍTICA TRANSPORTE` is restricted to Metro/EFE. The current library has zero active technical knowledge items for this cell; treat technical content as `CONTENT_GAP`.
+- In mining, client type does not determine the cell.
+  - integrity / diagnosis / engineering / reliability / continuity -> `INFRA OPERACIÓN MINERA`
+  - laboratory / testing / inspection / technical control / evidence -> `LAB MINERO DIGITAL`
+- “Digital” does not determine Lab Minero Digital.
+- Triaxial Gigante is treated as mining-related per explicit 2A.2 decision.
+
+## Required output sequence for every content item
+
+1. select cell
+2. retrieve evidence
+3. enforce policies
+4. create fact sheet
+5. choose editorial angle
+6. build structured brief
+7. run factual QA
+8. draft copy
+9. run editorial QA
+10. leave status as `DRAFT` until human approval
+
+## Engineering expectations
+
+- Prefer simple, explicit data transformations.
+- Add tests for policy enforcement and coverage.
+- Fail closed, not open.
+- Use schemas for structured outputs.
+- Log reasons for every blocked or gap state.
+- Do not duplicate the knowledge base into prompt text when structured retrieval is available.
+- Keep future visual/assets integration behind an interface.
+
+## Editorial memory (aprendizajes del equipo)
+
+Antes de escribir o corregir cualquier copy/pieza, lee `docs/09_EDITORIAL_MEMORY.md`.
+Al planificar **cada mes**, recorre su **checklist de aprendizajes** (sección ✅) antes de
+mostrar la grilla a MKT; ningún post se programa con un `VERIFY` abierto.
+Ahí se acumulan las correcciones de tono, estilo y hechos que el equipo valida; son de
+aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
+
+- **Green Hospital es certificación PROPIA de IDIEM.** NO mencionar a "Salud sin Daño".
+  Se complementa con ISO 50001.
+- **Soldaduras (END):** la soldadura se **inspecciona** (por muestreo, según plan de
+  inspección), no "cada soldadura verificada". Se **califica al soldador** y al
+  procedimiento, NO la soldadura.
+- **Acústica:** norma D.S. 38/2011 MMA (futuro D.D. 14/24).
+- **Voz de marca:** técnica, institucional, sobria, comprensible para no especialistas; sin
+  superlativos. La secuencia gancho → problema → "En #IDIEM…" → ✅ → CTA es **un** arquetipo,
+  no la plantilla por defecto (ver sección siguiente).
+- **Saludos institucionales** (Fiestas Patrias, etc.) NO trazan a knowledge_id: mensaje
+  general, sin proyectos/fechas/cifras no respaldadas por 2A.2.
+- **Efemérides del sector:** al armar la grilla de CADA mes, revisa `config/efemerides.json`
+  y suma la pieza conmemorativa si el mes cae en una fecha clave (adicional a los 12 posts,
+  como el saludo de Fiestas Patrias). Las que tienen respaldo técnico en 2A.2 (arquitectura,
+  geología, suelos, integridad estructural) pueden trazar a knowledge_id; **Transporte
+  Sostenible (26-nov) NO** — la célula INFRA CRÍTICA TRANSPORTE es CONTENT_GAP, así que va
+  como institucional general sin afirmar capacidades técnicas.
+- **Memoria de contenidos mensual (NO repetir):** el archivo mensual consolidado ÚNICO es
+  `content/archive/AAAA-MM.json` + `.md` (sep/oct: `design_system/archive_month.py`; desde nov:
+  `design_system/archive_month_plan.py`, que lee `state/plans/`). `state/published_ledger.json` es un
+  índice derivado (`idiem.ledger.build_ledger_from_archive`), no una memoria aparte. Antes de armar
+  un mes nuevo: (1) **archiva el mes anterior** si aún no está; (2) **lee los archivos previos** y no
+  repitas `knowledge_id`, subtemas, claims, pain points, ganchos ni CTAs recientes; (3) **actualiza
+  hechos** si cambiaron. Si 2A.2 no tiene material fresco, preferir **menos posts sólidos** o pedir
+  insumos antes que rellenar (fail closed).
+- **Workstation — historial de cambios OBLIGATORIO** (MKT 2026-09-04): cada tarjeta muestra el bloque
+  "Historial de cambios aplicados (N)" y se actualiza en cada ronda aplicada y republicada.
+- **Fotos siempre desde la librería de Drive de IDIEM.** Archivos > ~6 MB fallan al descargar por el
+  conector; pedir a MKT una versión comprimida (≤ 5 MB, idealmente ~2 MB). El anillo rojo de la pieza
+  estática es configurable por post (`SIDE`): moverlo al lado contrario a la cara/sujeto.
+- **Sales Intelligence (capa complementaria).** Al idear/redactar, consulta también
+  `knowledge/sales_intelligence/` vía `idiem.sales_intelligence` (ver `docs/12_SALES_INTELLIGENCE.md`):
+  dolores, necesidades, propuestas de valor, ángulos y casos por célula/segmento. **Precedencia:**
+  reglas oficiales de células > editoriales > servicios/brochures > Sales Intelligence > casos >
+  fuentes externas. NO clasifica servicios ni redefine células. Estados: `SAFE` alimenta copy;
+  `VERIFY` requiere validación humana antes de publicar (cifras, %, fechas, proyectos, coberturas,
+  certificaciones, 24/7, plazos, legal); `INTERNAL` es solo razonamiento; `DO_NOT_PUBLISH` nunca llega
+  al copy final. Metro/EFE son subsegmentos de Transporte (sigue siendo CONTENT_GAP técnico);
+  Operación Minera y Lab Minero Digital permanecen separados.
+
+## Diversidad editorial y control de sesgos (OBLIGATORIO desde noviembre 2026)
+
+Fuente: `docs/10_ESTRATEGIA_EDITORIAL_Y_SESGOS.md` + `config/editorial_diversity.json`
+(mandan sobre `config/editorial_style.*` y sobre la memoria editorial). Origen: auditoría
+de sept 2026 — octubre tuvo CTA `contact` en 9/12 posts y ~4 arquetipos.
+
+- La unidad de diversidad **no es el tema**: es tema + argumento + pain point + claim +
+  **arquetipo** + **hook_type** + **cta_type** + estructura. Pregunta obligatoria:
+  *"¿ya contamos algo parecido de esta misma manera?"*.
+- **La diversidad se decide ANTES de redactar.** Para cada grilla mensual, primero armar y
+  mostrar a MKT la **tabla de asignación** (por post: arquetipo, hook_type, cta_type, pain
+  point, claim) respetando los límites de `editorial_diversity.json`; después redactar con
+  esas asignaciones como restricción. QA es la última barrera, no el mecanismo principal.
+- 6–8 arquetipos por mes; no repetir arquetipo/hook_type/cta_type en posts consecutivos.
+- **CTA por intención**; `contact` **no** es default; no repetir textual un CTA reciente.
+- **Hook ≠ pain point**: registrarlos por separado.
+- Narrativa desde la necesidad del cliente; valor técnico antes que lo comercial.
+- **Longitud: referencia 900 caracteres (objetivo 820–880), flexible desde 19-10-2026 (MKT): si se
+  supera, registrar el motivo (`length_override`); máx. 1–2 emojis por párrafo.**
+  Excepción: posts de evento (webinars) llevan URL y quedan exentos del tope (ref. 1300).
+- Límites de diversidad de `editorial_diversity.json`: **aprobados por MKT** (30-09-2026).
+- Datos de fuentes: jerarquía células → reglas editoriales → brochures → Sales
+  Intelligence → casos; clasificar `SAFE` / `VERIFY` / `INTERNAL` / `DO_NOT_PUBLISH`
+  (`VERIFY` se valida antes; `DO_NOT_PUBLISH` nunca llega al copy).
+- Memoria única = archivo mensual consolidado `content/archive/AAAA-MM.json` (no memorias paralelas).
+- **Motor de diversidad (código):** huella editorial (`editorial_fingerprint`), novedad vs historial
+  (`editorial_novelty`), QA editorial (`editorial_qa`, PASS/WARNING/FAIL) y cobertura
+  (`content_coverage`); ver `docs/13_MOTOR_DIVERSIDAD_EDITORIAL.md`. Usa la **taxonomía aprobada por
+  MKT** (arquetipos, `hook_type`, `cta_type` de `editorial_diversity.json`); las asignaciones de la
+  tabla previa mandan sobre la clasificación heurística. Ante conflicto, **FACTUALIDAD > DIVERSIDAD**.
+- **Longitud — fuente ejecutable:** `config/editorial_style.json → length` (en caracteres: `max_chars`
+  900, objetivo 820–880), espejo de `editorial_diversity.json → length`; un test exige que coincidan.
+- Saludos, efemérides institucionales y reconocimientos usan el arquetipo `institutional_or_occasion`,
+  que **no cuenta** en los límites (confirmado por MKT 19-10-2026).
+- **Tipografía:** toda pieza renderizada incrusta Montserrat 400–800 vía `design_system/brand_fonts.py`
+  (Google Fonts no carga en el entorno de render; decisión MKT 19-10-2026). No volver a `<link>` de Google.
+- Octubre 2026 cerrado manualmente: **no regenerar**.
+
+## Videos para LinkedIn: qué herramienta usar (desde octubre 2026)
+
+Antes de hacer cualquier video, decidir la herramienta con esta regla (en orden; la primera que aplica manda):
+
+1. **Carrusel o post aprobado → video** (portada + láminas + cierre, 1080×1080): **siempre** la skill
+   `.claude/skills/video-carrusel-idiem/` (leer su SKILL.md y seguir su pipeline y QA sin improvisar el
+   método). Es el método aprobado por MKT. Remotion **no** se usa para esto, aunque pueda replicarlo.
+2. **Formatos que esa skill no cubre** → **Remotion** (repo privado `jequinones87/motion-graphics-ia`,
+   skills oficiales en `.claude/skills/remotion-*`; prueba de referencia en `idiem-sim/`). Si la sesión
+   no tiene ese repo, agregarlo (en sesiones cloud: herramienta `add_repo`, owner `jequinones87`,
+   repo `motion-graphics-ia`), clonarlo y leer sus skills antes de empezar. Úsalo para:
+   - video grabado (entrevistas, clips de faena o de laboratorio) con cortes, zócalos o intro/cierre de marca;
+   - subtítulos sincronizados con voz;
+   - cifras o gráficos animados, mapas de proyectos;
+   - formatos distintos de 1:1 (vertical 9:16, horizontal 16:9).
+3. **No calza en ninguno, o hay duda** → no elegir: preguntar a MKT (fail closed).
+
+Condiciones para usar Remotion (si falta una, el video queda en `DRAFT` y se informa el bloqueo):
+
+- **Licencia:** el usuario decidió el 19-10-2026 omitir la verificación de licencia de Remotion; no
+  bloquea la publicación. (Referencia: la licencia gratuita cubre personas naturales, empresas con fines
+  de lucro de hasta 3 empleados y organizaciones sin fines de lucro; ver `node_modules/remotion/LICENSE.md`.)
+- **Primer video de cada formato nuevo** requiere aprobación de MKT antes de repetirlo.
+- Rigen las mismas reglas de marca y de hechos que en la skill de carrusel: textos aprobados literales,
+  Montserrat incrustada, logo vectorial oficial, movimiento sobrio, sin IA generativa de video, render
+  cuadro a cuadro y QA visual antes de entregar. Lo que se diga o escriba en el video traza a
+  `knowledge_id`/`auxiliary_id` igual que un post.
+- Entrevistas: pendiente definir con MKT las reglas para lo que se dice en cámara; hasta entonces no se
+  producen.
+
+Resumen en `docs/09_EDITORIAL_MEMORY.md`.
+
+## Fuentes expertas y banco de temas (desde octubre 2026)
+
+MKT comparte presentaciones de especialistas IDIEM como insumo. Se registran en
+`config/topic_bank/expert_sources.json` (fuentes `SRC-*`, afirmaciones clasificadas
+SAFE/VERIFY/INTERNAL, temas `TOP-*`) con vista legible en `docs/11_FUENTES_EXPERTAS_Y_BANCO_DE_TEMAS.md`.
+Al planificar cada mes, revisar este banco junto a 2A.2. Capacidades IDIEM de las `SRC-*` validadas por
+MKT (`validated_by`) se usan como auxiliary_id; incidentes con nombre (VERIFY) y cifras de proyectos
+(INTERNAL) no van al copy sin validación. **Nunca nombrar ni citar a los expositores ni las charlas de
+origen**: el foco es el tema.
+
+Servicios del sitio web (desde 19-10-2026): `config/topic_bank/web_services.json` (`WEB-*`, texto literal
+de https://www.idiem.cl/servicios; se re-extrae con `python -m idiem.web_services`). **Todos son VERIFY y están
+disponibles**: se planifican y redactan citados como `WEB-xxx` marcados VERIFY y se validan cuando MKT aprueba el
+post (o corrige la información); los `promo_flags` (superlativos) nunca van al
+copy y los `claim_flags` (certificaciones/normas) necesitan respaldo. No asignan célula ni crean capacidades.
+Cruce con 2A.2 en `config/topic_bank/web_crosswalk.json` (vista `docs/12_CRUCE_WEB_VS_2A2.md`): **2A.2 prevalece**
+(se ha corregido con cada post); servicio con `knowledge_id` → usar ese texto/política; lo NUEVO/PARCIAL del sitio es
+VERIFY y su célula es solo propuesta hasta que MKT valide.
