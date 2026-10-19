@@ -113,7 +113,9 @@ Antes de hacer cualquier video, decidir la herramienta con esta regla (en orden;
    `.claude/skills/video-carrusel-idiem/` (leer su SKILL.md y seguir su pipeline y QA sin improvisar el
    método). Es el método aprobado por MKT. Remotion **no** se usa para esto, aunque pueda replicarlo.
 2. **Formatos que esa skill no cubre** → **Remotion** (repo privado `jequinones87/motion-graphics-ia`,
-   skills oficiales en `.claude/skills/remotion-*`; prueba de referencia en `idiem-sim/`):
+   skills oficiales en `.claude/skills/remotion-*`; prueba de referencia en `idiem-sim/`). Si la sesión
+   no tiene ese repo, agregarlo (en sesiones cloud: herramienta `add_repo`, owner `jequinones87`,
+   repo `motion-graphics-ia`), clonarlo y leer sus skills antes de empezar. Úsalo para:
    - video grabado (entrevistas, clips de faena o de laboratorio) con cortes, zócalos o intro/cierre de marca;
    - subtítulos sincronizados con voz;
    - cifras o gráficos animados, mapas de proyectos;
