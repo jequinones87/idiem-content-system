@@ -467,4 +467,8 @@ programado al 19-10-2026).
   video de ese formato → aprobación MKT) y Navidad con la skill de carrusel + **capa festiva opcional** (`photo.sparkles`:
   luces que titilan y destellos; solo cuando MKT la pide). Navidad usa una imagen **generada con IA** elegida por MKT: el
   casco trae un logo "idiem™" que no es el vectorial oficial (pendiente confirmar con MKT).
+- **2026-10-19** — Ronda MKT videos (2): **"quiebra" no se usa** en contenidos de controversias (suena a quiebra de la
+  empresa): en el #4 pasó a «El plan se rompe». Videos **más dinámicos y con cortes más rápidos** (#4: 38 → 28 s;
+  Navidad: 22 → 16 s, rehecho en Remotion con autorización de MKT) y **música chill house** (Navidad con toque navideño:
+  `music.py --xmas`). Música requiere aprobación auditiva.
 

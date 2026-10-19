@@ -111,7 +111,7 @@
         "intermedias": [
           {
             "icon": "route",
-            "title": "El contrato <span class=\"c2rb\">se quiebra</span>",
+            "title": "El plan <span class=\"c2rb\">se rompe</span>",
             "body": "Cambio de obra · Atraso · Mayor costo"
           },
           {
@@ -144,6 +144,10 @@
       "hist": [
         {
           "date": "19-10-2026",
+          "summary": "Ronda MKT: más dinámico (barridos entre escenas), cortes más rápidos (38 → 28 s), «se quiebra» → «se rompe» (no sugiere quiebra de empresa), música chill house. MP4 con y sin música."
+        },
+        {
+          "date": "19-10-2026",
           "summary": "Video MP4 producido con Remotion (38 s, 1080×1080, sin música): versión dinámica del guion (pedido MKT). QA técnico y visual OK."
         },
         {
@@ -152,11 +156,12 @@
         }
       ],
       "video": {
-        "file": "video/p04_controversias.mp4",
-        "published": "media/p04_controversias.mp4",
-        "seconds": 38.0,
-        "how": "motion graphics con Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-controversias</code>): línea de tiempo que se quiebra, dos versiones que chocan, evidencia que se ordena y cierre de marca; textos literales del guion",
-        "music": "sin música (no solicitada) · primer video de este formato: requiere aprobación de MKT antes de repetirlo"
+        "file": "video/p04_controversias_musica.mp4",
+        "published": "media/p04_controversias_musica.mp4",
+        "seconds": 28.0,
+        "how": "motion graphics con Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-controversias</code>): barridos rojos entre escenas, línea de tiempo que se rompe, dos versiones que chocan, evidencia que se ordena y cierre de marca",
+        "music": "música chill house original (music.py de la skill, 120 BPM, −17 LUFS) — requiere aprobación auditiva de MKT · primer video de este formato: requiere aprobación de MKT",
+        "silent_published": "media/p04_controversias.mp4"
       }
     },
     "5": {
@@ -436,6 +441,10 @@
       "hist": [
         {
           "date": "19-10-2026",
+          "summary": "Ronda MKT: rehecho en Remotion (autorizado), más dinámico y visual, cortes más rápidos (22 → 16 s), música chill house con toque navideño. MP4 con y sin música."
+        },
+        {
+          "date": "19-10-2026",
           "summary": "Video MP4 producido (22 s, 1080×1080, sin música) con luces que titilan y destellos (pedido MKT: dinámico y atractivo). QA técnico y visual OK."
         },
         {
@@ -444,12 +453,12 @@
         }
       ],
       "video": {
-        "file": "video/p14_navidad.mp4",
-        "published": "media/p14_navidad.mp4",
-        "preview_published": "media/p14_navidad_preview.html",
-        "seconds": 22.0,
-        "how": "skill <code>video-carrusel-idiem</code> (config <code>2026-12_p14_navidad.json</code>) con capa festiva nueva: luces del árbol que titilan y destellos dorados que suben",
-        "music": "sin música (no solicitada; se puede agregar con la skill y requiere aprobación auditiva)"
+        "file": "video/p14_navidad_musica.mp4",
+        "published": "media/p14_navidad_musica.mp4",
+        "silent_published": "media/p14_navidad.mp4",
+        "seconds": 16.0,
+        "how": "Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-navidad</code>, autorizado por MKT): cámara que cambia de encuadre en cada lámina, luces que titilan, destellos dorados y destello de luz en cada corte",
+        "music": "música chill house original con toque navideño (cascabeles y celesta; music.py --xmas, −17 LUFS) — requiere aprobación auditiva de MKT"
       }
     },
     "15": {

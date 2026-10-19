@@ -169,8 +169,8 @@
   "videos": {
     "4": {
       "tool": "Remotion (CLAUDE.md regla 2: diagramas animados)",
-      "format": "1080×1080 · 30–40 s · sin voz · Montserrat incrustada · logo vectorial",
-      "status": "GUION DRAFT — primer video de este formato: requiere aprobación MKT",
+      "format": "1080×1080 · 28 s · Montserrat incrustada · logo vectorial · música chill house original",
+      "status": "VIDEO DRAFT — ronda MKT 19-10 aplicada (más dinámico, cortes más rápidos, música, «se quiebra» → «se rompe»)",
       "scenes": [
         {
           "t": "0–4 s",
@@ -182,8 +182,9 @@
         },
         {
           "t": "4–11 s",
-          "visual": "Línea de tiempo horizontal que avanza y se quiebra en tres puntos, cada uno con un ícono trazo a trazo.",
+          "visual": "Título «El plan se rompe»; línea de tiempo que avanza y se rompe en tres puntos.",
           "text": [
+            "El plan se rompe",
             "Cambio de obra",
             "Atraso",
             "Mayor costo"
