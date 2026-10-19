@@ -57,8 +57,9 @@ Estas nacen de correcciones del equipo. Son de aplicación obligatoria.
 - **SIM (gestión de integridad estructural):** la secuencia es planificación → antecedentes → inspecciones
   → instrumentación/**monitoreo**. El **monitoreo siempre va al final**.
 - **Control de productividad (KB-IOM-019/020):** ⛔ no usar hasta nuevo aviso — MKT no tiene certeza del
-  servicio. **Ampliado (MKT, 19-10-2026):** el bloqueo incluye **estudios de pérdida de productividad** en
-  controversias contractuales e **industrialización** de obras, aunque el sitio web los ofrezca.
+  servicio. Los servicios de productividad del sitio web (área Productividad, pérdida de productividad en
+  controversias, industrialización) **sí están disponibles en VERIFY** (MKT, 19-10-2026): se verifican y
+  corrigen cuando aparezcan en un post, sin apoyarse en KB-IOM-019/020.
 - **HDPE:** los ensayos "verifican el cumplimiento del proyecto" (formulación preferida por MKT).
 
 ### Contenidos desde fuentes expertas (MKT, 14-10-2026)
@@ -218,6 +219,7 @@ capacidades técnicas (la célula ICT no tiene conocimiento activo).
   el carrusel SIM portado a Remotion difiere < 0,1 % de píxeles del pipeline oficial. Remotion no se
   publica hasta confirmar licencia; primer video de cada formato nuevo pasa por MKT.
 - **2026-10-19** — **Cruce sitio web vs 2A.2** (`docs/12_CRUCE_WEB_VS_2A2.md`): 2A.2 prevalece sobre el sitio.
-  MKT confirma: (1) el bloqueo de productividad alcanza a pérdida de productividad en controversias e
-  industrialización; (2) mediciones eléctricas de pisos conductivos (NCh4/2003) → célula Infra Hospitalaria
-  (sigue VERIFY: sin respaldo en 2A.2).
+  MKT decide: (1) **VERIFY = disponible**: los servicios del sitio se pueden planificar y redactar marcados
+  VERIFY; se validan al aprobar el post que los usa o con las correcciones de MKT; (2) productividad **no se
+  bloquea**: activa en VERIFY; (3) mediciones eléctricas de pisos conductivos (NCh4/2003) → célula Infra
+  Hospitalaria, disponible en VERIFY.

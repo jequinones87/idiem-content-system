@@ -164,9 +164,9 @@ def render(crosswalk: dict, registry: dict, kb: KnowledgeBase) -> str:
 
     sections = [
         ("RESPALDADO", "Servicios ya respaldados en 2A.2 (usar el knowledge_id; el sitio solo aporta detalle VERIFY)"),
-        ("PARCIAL", "Respaldo parcial (núcleo en 2A.2; lo nuevo del sitio queda VERIFY)"),
+        ("PARCIAL", "Respaldo parcial (núcleo en 2A.2; lo nuevo del sitio está disponible en VERIFY)"),
         ("SOLO_RESERVA", "Con evidencia 2A.2 fuera de las células priorizadas (MKT decide célula)"),
-        ("NUEVO", "Contenido nuevo, sin respaldo en 2A.2 (cola de validación MKT)"),
+        ("NUEVO", "Contenido nuevo, sin respaldo en 2A.2 (disponible en VERIFY; se valida con el post)"),
         ("BLOQUEADO", "Bloqueados por la memoria editorial"),
     ]
     for status, title in sections:

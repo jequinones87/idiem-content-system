@@ -179,9 +179,9 @@ y prestaciones de "¿Qué tipo de servicio necesitas?"). Total: 7 categorías, 3
 
 Reglas de uso:
 
-- **Todo `WEB-*` es VERIFY (MKT, 19-10-2026).** Sirve para entender el alcance de un servicio y buscar
-  ángulos; solo se cita como `auxiliary_id` (`WEB-xxx`) cuando MKT lo valida (`validated_by`,
-  `validated_on` en el JSON). 2A.2 sigue mandando: el sitio no crea capacidades técnicas nuevas ni
+- **Todo `WEB-*` es VERIFY y está disponible (MKT, 19-10-2026).** Se puede planificar y redactar con él,
+  citándolo como `WEB-xxx` marcado VERIFY en brief y copy. Se valida cuando MKT aprueba el post que lo usa
+  (`validated_by`, `validated_on` en el JSON) o se corrige según lo que MKT cambie en el post. 2A.2 sigue mandando: el sitio no crea capacidades técnicas nuevas ni
   asigna célula (la decide `config/cell_rules.json`; Transporte sigue en `CONTENT_GAP`).
 - **`promo_flags`** marca superlativos del sitio (p. ej. "la mejor tecnología", "el único triaxial
   gigante en Chile", "altos estándares"): **no pasan al copy** aunque el servicio esté validado.
@@ -189,8 +189,8 @@ Reglas de uso:
   2A.2 o validación puntual antes de afirmarse.
 - **Cruce con 2A.2 (19-10-2026):** `docs/12_CRUCE_WEB_VS_2A2.md` (generado desde
   `config/topic_bank/web_crosswalk.json`). **2A.2 prevalece**: si el servicio tiene `knowledge_id`, se usa
-  ese texto y su política; el sitio solo aporta alcance nuevo (VERIFY). Estados: RESPALDADO 36, PARCIAL 39,
-  SOLO_RESERVA 9, NUEVO 17, BLOQUEADO 4 (todo lo de productividad, memoria MKT 19-10-2026).
+  ese texto y su política; el sitio solo aporta alcance nuevo (VERIFY). Estados: RESPALDADO 36, PARCIAL 40,
+  SOLO_RESERVA 11, NUEVO 18, BLOQUEADO 0 (productividad queda activa en VERIFY, MKT 19-10-2026).
 - **Re-extracción:** `PYTHONPATH=src python -m idiem.web_services`. Conserva los IDs por ruta; si el
   texto de un servicio cambió, borra su validación y lo devuelve a VERIFY. Correr después
   `pytest tests/test_web_services.py tests/test_web_crosswalk.py` y revisar el diff antes de commitear;

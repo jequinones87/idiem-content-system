@@ -220,7 +220,7 @@ def crawl(cache: Path | None = None) -> list[dict]:
 
 RULES = {
     "hierarchy": "2A.2 (knowledge_id) manda. www.idiem.cl es evidencia auxiliar CANDIDATA; no se copia a data/ ni crea capacidades técnicas nuevas (CLAUDE.md reglas 1, 2 y 7).",
-    "classification": "Todo servicio WEB-* entra como VERIFY (MKT 19-10-2026). Solo con validated_by se cita como auxiliary_id (WEB-xxx) en briefs y copies.",
+    "classification": "Todo servicio WEB-* entra como VERIFY (MKT 19-10-2026). VERIFY = disponible: se puede planificar y redactar con él, citándolo como WEB-xxx marcado VERIFY en brief y copy. Se valida al aprobar MKT el post que lo usa (validated_by/validated_on) o se corrige su información según lo que MKT cambie en el post; la corrección va a la memoria editorial.",
     "promo_flags": "Los textos en promo_flags son promocionales/superlativos: no pasan al copy aunque el servicio esté validado (voz de marca sin superlativos).",
     "claim_flags": "Menciones de certificación, acreditación o normas: requieren respaldo en 2A.2 o validación específica antes de afirmarse.",
     "cells": "El sitio no asigna célula. La célula se decide con config/cell_rules.json al usar el servicio; nunca se mueve conocimiento entre células para cubrir cuota (regla 9). Transporte sigue en CONTENT_GAP.",

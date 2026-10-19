@@ -38,7 +38,7 @@ def _broken(**changes):
     ({"web_id": "WEB-058", "evidence": ["KB-XXX-999"]}, "evidencia inexistente"),
     ({"web_id": "WEB-058", "reserve": ["R0076"]}, "relación excluida"),
     ({"web_id": "WEB-097", "evidence": ["KB-IPR-003"]}, "SOLO_RESERVA debe tener solo reserva"),
-    ({"web_id": "WEB-015", "conflicts": []}, "BLOQUEADO sin motivo"),
+    ({"web_id": "WEB-056", "status": "BLOQUEADO", "conflicts": []}, "BLOQUEADO sin motivo"),
     ({"web_id": "WEB-064", "new_scope": ""}, "PARCIAL sin new_scope"),
     ({"web_id": "WEB-057", "proposed_cells": ["INFRA INVENTADA"]}, "célula propuesta desconocida"),
 ])
@@ -64,18 +64,19 @@ def test_cells_come_from_2a2_evidence_not_from_site(kb):
 
 
 def test_editorial_memory_prevails(kb):
-    # Control de productividad bloqueado por MKT aunque el sitio lo ofrezca.
-    # Ampliado por MKT (19-10-2026) a pérdida de productividad en controversias e industrialización.
+    # Productividad activa en VERIFY (MKT 19-10-2026), pero sin apoyarse en KB-IOM-019/020,
+    # que siguen con la restricción de la memoria editorial (05-10-2026).
     for wid in ("WEB-015", "WEB-092", "WEB-048", "WEB-091"):
-        assert BY_ID[wid]["status"] == "BLOQUEADO", wid
-        assert not BY_ID[wid]["proposed_cells"], wid
-    assert BY_ID["WEB-050"]["conflicts"], "prestación de pérdida de productividad sin alerta"
+        e = BY_ID[wid]
+        assert e["status"] != "BLOQUEADO", wid
+        assert not {"KB-IOM-019", "KB-IOM-020"} & set(e["evidence"]), wid
+        assert any("VERIFY" in c for c in e["conflicts"]), wid
     # El claim «único triaxial gigante» del sitio queda marcado como bloqueado.
     assert any("triaxial" in c for c in BY_ID["WEB-011"]["conflicts"])
 
 
 def test_mkt_cell_decision_keeps_verify(kb):
-    # Pisos conductivos → salud (MKT 19-10-2026), pero sin respaldo 2A.2 sigue siendo NUEVO/VERIFY.
+    # Pisos conductivos → salud (MKT 19-10-2026); disponible, pero sin respaldo 2A.2 sigue NUEVO/VERIFY.
     e = BY_ID["WEB-087"]
     assert e["proposed_cells"] == ["INFRA HOSPITALARIA Y ASISTENCIAL"]
     assert e["status"] == "NUEVO" and cells_2a2(kb, e) == []

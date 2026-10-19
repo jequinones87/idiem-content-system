@@ -9,10 +9,9 @@
  "rules": [
   "2A.2 prevalece (MKT 19-10-2026): se ha ido corrigiendo y validando con cada post. Si un servicio tiene evidencia, el copy usa el texto y la política del knowledge_id/EXT/AUX; nunca el texto del sitio.",
   "Células: las de servicios respaldados salen de su evidencia 2A.2. Para lo nuevo, la célula es solo una propuesta [Inferencia] según config/cell_rules.json y la decide MKT al validar; nunca se mueve conocimiento entre células para cubrir cuota.",
-  "Todo lo que aporta el sitio (new_scope, servicios NUEVO, detalle de prestaciones) es VERIFY: entra al banco para validarse cuando un post lo necesite; validado, se cita como auxiliary_id WEB-xxx.",
+  "Todo lo que aporta el sitio (new_scope, servicios NUEVO/PARCIAL/SOLO_RESERVA, detalle de prestaciones) es VERIFY y está disponible para planificar y redactar, citado como WEB-xxx marcado VERIFY. Se valida cuando MKT aprueba el post que lo usa o corrige su información (MKT 19-10-2026).",
   "Reserva 2A.2 (R0xxx): evidencia de brochure fuera de las células priorizadas; respeta su production_policy (WITH_MATIZ, USE_ONLY_WITH_AUDIT_CORRECTION, BLOCKED) aunque MKT asigne célula.",
-  "La memoria editorial manda sobre el sitio: bloqueos (control de productividad), formulaciones (soldadura, HDPE, Green Hospital, D.S. 38/2011) y casos sensibles.",
-  "Productividad bloqueada (MKT 19-10-2026): control/medición de productividad, estudios de pérdida de productividad en controversias e industrialización no van al copy, aunque aparezcan en el sitio o en la reserva (R0116 los enumera).",
+  "La memoria editorial manda sobre el sitio: formulaciones (soldadura, HDPE, Green Hospital, D.S. 38/2011), casos sensibles y restricciones sobre knowledge_id (p. ej. KB-IOM-019/020). Lo que el sitio aporta sobre esos temas entra en VERIFY, no como respaldo 2A.2.",
   "Superlativos y rankings del sitio (promo_flags) no pasan al copy en ningún estado."
  ],
  "statuses": {
@@ -153,7 +152,7 @@
    ],
    "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR. Si se aplica a infraestructura de salud, va a IHA (prioridad sobre IPR).",
    "conflicts": [
-    "Seguimiento de productividad con KPI: bloqueado (MKT 19-10-2026), no mencionarlo."
+    "Seguimiento de productividad con KPI: VERIFY (MKT 19-10-2026)."
    ]
   },
   {
@@ -358,20 +357,24 @@
   },
   {
    "web_id": "WEB-015",
-   "status": "BLOQUEADO",
-   "evidence": [
-    "KB-IOM-019",
-    "KB-IOM-020"
-   ],
+   "status": "SOLO_RESERVA",
+   "evidence": [],
    "reserve": [
     "R0018"
    ],
-   "related": [],
+   "related": [
+    "KB-IOM-019",
+    "KB-IOM-020"
+   ],
    "new_scope": "Índice de productividad, industrialización, acompañamiento y plan de mejoramiento.",
-   "proposed_cells": [],
-   "cell_condition": "",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL",
+    "INFRA OPERACIÓN MINERA"
+   ],
+   "cell_condition": "La célula la define el proyecto.",
    "conflicts": [
-    "Memoria editorial (MKT 05-10-2026, ampliado 19-10-2026): todo servicio de productividad ⛔ no usar hasta nuevo aviso, incluidos estudios de pérdida de productividad en controversias e industrialización. El sitio no levanta ese bloqueo."
+    "Productividad: activo en VERIFY (MKT 19-10-2026). Se verifica y corrige cuando aparezca en un post. KB-IOM-019/020 mantienen la restricción de la memoria (05-10-2026): el copy no se apoya en ellos."
    ]
   },
   {
@@ -735,7 +738,7 @@
   },
   {
    "web_id": "WEB-048",
-   "status": "BLOQUEADO",
+   "status": "PARCIAL",
    "evidence": [
     "EXT-0090"
    ],
@@ -744,10 +747,14 @@
    ],
    "related": [],
    "new_scope": "Análisis forense de pérdida de productividad en controversias.",
-   "proposed_cells": [],
-   "cell_condition": "",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL",
+    "INFRA OPERACIÓN MINERA"
+   ],
+   "cell_condition": "La célula la define el proyecto.",
    "conflicts": [
-    "Memoria editorial (MKT 05-10-2026, ampliado 19-10-2026): todo servicio de productividad ⛔ no usar hasta nuevo aviso, incluidos estudios de pérdida de productividad en controversias e industrialización. El sitio no levanta ese bloqueo."
+    "Productividad: activo en VERIFY (MKT 19-10-2026). Se verifica y corrige cuando aparezca en un post. KB-IOM-019/020 mantienen la restricción de la memoria (05-10-2026): el copy no se apoya en ellos."
    ]
   },
   {
@@ -784,7 +791,7 @@
    "proposed_cells": [],
    "cell_condition": "",
    "conflicts": [
-    "La prestación «Estudios de pérdida de productividad» está bloqueada (MKT 19-10-2026): no mencionarla."
+    "La prestación «Estudios de pérdida de productividad» va en VERIFY (MKT 19-10-2026)."
    ]
   },
   {
@@ -1214,7 +1221,7 @@
    "proposed_cells": [
     "INFRA HOSPITALARIA Y ASISTENCIAL"
    ],
-   "cell_condition": "Célula confirmada por MKT (19-10-2026): aplica a salud. Sigue VERIFY: no hay respaldo en 2A.2.",
+   "cell_condition": "Célula confirmada por MKT (19-10-2026): aplica a salud. Disponible en VERIFY: sin respaldo en 2A.2, se valida al aprobar el post que lo use.",
    "conflicts": []
   },
   {
@@ -1264,33 +1271,39 @@
   },
   {
    "web_id": "WEB-091",
-   "status": "BLOQUEADO",
+   "status": "NUEVO",
    "evidence": [],
    "reserve": [],
    "related": [],
    "new_scope": "Estudios de industrialización de obras (diagnóstico, inspección en fábrica, BIM).",
-   "proposed_cells": [],
-   "cell_condition": "",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE"
+   ],
+   "cell_condition": "Solo con aplicación explícita a proyecto público (MOP, MINVU, SERVIU, municipios, GORE); vivienda/inmobiliario privado no entra en IPR.",
    "conflicts": [
-    "Memoria editorial (MKT 05-10-2026, ampliado 19-10-2026): todo servicio de productividad ⛔ no usar hasta nuevo aviso, incluidos estudios de pérdida de productividad en controversias e industrialización. El sitio no levanta ese bloqueo."
+    "Productividad: activo en VERIFY (MKT 19-10-2026). Se verifica y corrige cuando aparezca en un post. KB-IOM-019/020 mantienen la restricción de la memoria (05-10-2026): el copy no se apoya en ellos."
    ]
   },
   {
    "web_id": "WEB-092",
-   "status": "BLOQUEADO",
-   "evidence": [
-    "KB-IOM-019",
-    "KB-IOM-020"
-   ],
+   "status": "SOLO_RESERVA",
+   "evidence": [],
    "reserve": [
     "R0018"
    ],
-   "related": [],
+   "related": [
+    "KB-IOM-019",
+    "KB-IOM-020"
+   ],
    "new_scope": "Mediciones y controles de productividad.",
-   "proposed_cells": [],
-   "cell_condition": "",
+   "proposed_cells": [
+    "INFRA PÚBLICA RESILIENTE",
+    "INFRA HOSPITALARIA Y ASISTENCIAL",
+    "INFRA OPERACIÓN MINERA"
+   ],
+   "cell_condition": "La célula la define el proyecto.",
    "conflicts": [
-    "Memoria editorial (MKT 05-10-2026, ampliado 19-10-2026): todo servicio de productividad ⛔ no usar hasta nuevo aviso, incluidos estudios de pérdida de productividad en controversias e industrialización. El sitio no levanta ese bloqueo."
+    "Productividad: activo en VERIFY (MKT 19-10-2026). Se verifica y corrige cuando aparezca en un post. KB-IOM-019/020 mantienen la restricción de la memoria (05-10-2026): el copy no se apoya en ellos."
    ]
   },
   {
@@ -1987,7 +2000,7 @@
   {
    "date": "2026-10-19",
    "by": "MKT",
-   "decision": "El bloqueo de productividad alcanza a estudios de pérdida de productividad en controversias (WEB-048) e industrialización (WEB-091).",
+   "decision": "Productividad (área, estudios de productividad, pérdida de productividad en controversias, industrialización, KPI en ITO) NO se bloquea: queda activa en VERIFY y se verifica/corrige cuando aparezca en un post. Reemplaza la propuesta de bloqueo del mismo día.",
    "applies_to": [
     "WEB-005",
     "WEB-015",
@@ -2000,9 +2013,17 @@
   {
    "date": "2026-10-19",
    "by": "MKT",
-   "decision": "Mediciones eléctricas de pisos conductivos (WEB-087) aplican a salud: célula INFRA HOSPITALARIA Y ASISTENCIAL.",
+   "decision": "Mediciones eléctricas de pisos conductivos (WEB-087): célula INFRA HOSPITALARIA Y ASISTENCIAL; disponible en VERIFY hasta que MKT valide el post que lo use o corrija la información.",
    "applies_to": [
     "WEB-087"
+   ]
+  },
+  {
+   "date": "2026-10-19",
+   "by": "MKT",
+   "decision": "Regla general: VERIFY = disponible para planificar y redactar (marcado); la validación ocurre al aprobar el post o con las correcciones de MKT.",
+   "applies_to": [
+    "*"
    ]
   }
  ]
