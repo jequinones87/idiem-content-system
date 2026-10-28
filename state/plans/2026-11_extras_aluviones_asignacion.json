@@ -19,9 +19,9 @@
       ],
       "topic": "TOP-035",
       "format": "VIDEO",
-      "theme": "Un aluvión no es solo agua: crecida vs. aluvión y zonificación de la amenaza",
+      "theme": "Prevenir empieza por conocer la amenaza: crecida líquida o flujo detrítico y zonificación",
       "archetype": "technical_question",
-      "hook_type": "contrast",
+      "hook_type": "technical_claim",
       "cta_type": "deep_dive",
       "pain_point": "confundir crecida con aluvión al evaluar y mitigar una quebrada",
       "main_claim": "la amenaza aluvional se zonifica cruzando intensidad del flujo y probabilidad",
@@ -43,7 +43,7 @@
       ],
       "topic": "TOP-036",
       "format": "CARRUSEL",
-      "theme": "Gestión del riesgo aluvional en 5 etapas: del diagnóstico a la obra",
+      "theme": "¿Dónde mitigar antes de la próxima lluvia? Gestión del riesgo aluvional en 5 etapas",
       "archetype": "project_challenge",
       "hook_type": "question",
       "cta_type": "service_discovery",
@@ -57,7 +57,7 @@
   ],
   "extra": [],
   "grid_check": {
-    "note": "Insertados entre posts de la grilla v3 sin repetir arquetipo/hook/CTA con los vecinos (11-02 risk_prevention/scenario/technical_conversation · 11-04 evidence_learning/insight/knowledge; 11-18 capability_application/contrast/deep_dive · 11-20 problem_impact_capability/risk/commercial_contact). Conteos del mes con extras: technical_question 2, project_challenge 2; deep_dive 3, service_discovery 3 (en el tope de 3)."
+    "note": "Insertados entre posts de la grilla v3 sin repetir arquetipo/hook/CTA con los vecinos (11-02 risk_prevention/scenario/technical_conversation · 11-04 evidence_learning/insight/knowledge; 11-18 capability_application/contrast/deep_dive · 11-20 problem_impact_capability/risk/commercial_contact). Conteos del mes con extras: technical_question 2, project_challenge 2; deep_dive 3, service_discovery 3 (en el tope de 3). Ajuste 28-10: extra A pasa a hook technical_claim (nov: 3/3, sin repetir con vecinos 11-02 scenario y 11-04 insight)."
   },
   "verify_before_publish": [
     "Fotos de la presentación SRC-008: confirmar derechos de uso y consentimiento de las personas visibles (contension2: 3 personas; contension3: trabajadores)",

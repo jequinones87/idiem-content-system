@@ -230,7 +230,7 @@
       "seq": "2026-11-EXTRA-A",
       "date": "2026-11-03",
       "type": "EXTRA_CONTINGENCIA",
-      "theme": "Un aluvión no es solo agua: crecida vs. aluvión y zonificación de la amenaza",
+      "theme": "Prevenir empieza por conocer la amenaza: crecida líquida o flujo detrítico y zonificación",
       "cell": "INFRA PÚBLICA RESILIENTE",
       "knowledge_id": null,
       "auxiliary_ids": [
@@ -241,7 +241,7 @@
         "SRC-009#C01"
       ],
       "archetype": "technical_question",
-      "hook_type": "contrast",
+      "hook_type": "technical_claim",
       "cta_type": "deep_dive",
       "format": "VIDEO (Remotion, motion-graphics-ia/idiem-aluviones, 26 s, con música)",
       "flags": [
@@ -253,7 +253,7 @@
       "seq": "2026-11-EXTRA-B",
       "date": "2026-11-19",
       "type": "EXTRA_CONTINGENCIA",
-      "theme": "Gestión del riesgo aluvional en 5 etapas: del diagnóstico a la obra",
+      "theme": "¿Dónde mitigar antes de la próxima lluvia? Gestión del riesgo aluvional en 5 etapas",
       "cell": "INFRA PÚBLICA RESILIENTE",
       "knowledge_id": null,
       "auxiliary_ids": [

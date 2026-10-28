@@ -17,13 +17,13 @@
       "carousel": {
         "portada": {
           "kicker": "AMENAZA ALUVIONAL",
-          "title": "Un aluvión no es solo <span class=\"c2rt\">agua</span>."
+          "title": "Prevenir empieza por <span class=\"c2rt\">conocer</span> la amenaza."
         },
         "intermedias": [
           {
             "icon": "droplets",
-            "title": "Crecida <span class=\"c2rb\">≠</span> aluvión",
-            "body": "Crecida: agua que desborda el cauce. Aluvión: agua + sedimentos + rocas."
+            "title": "Crecida líquida o <span class=\"c2rb\">flujo detrítico</span>",
+            "body": "Crecida líquida: agua que desborda el cauce. Flujo detrítico: agua + sedimentos + rocas."
           },
           {
             "icon": "layers",
@@ -58,6 +58,10 @@
       "hist": [
         {
           "date": "28-10-2026",
+          "summary": "MKT 28-10-2026: títulos reformulados con foco en prevención: título «Un aluvión no es solo agua» → «Prevenir empieza por conocer la amenaza»; escena 2 «Crecida ≠ aluvión» → «Crecida líquida o flujo detrítico» (terminología de la fuente); primera línea y párrafo 2 del copy; hook contrast → technical_claim."
+        },
+        {
+          "date": "28-10-2026",
           "summary": "MKT: en la escena del ciclo del servicio, «En IDIEM, todo el ciclo» → «En IDIEM acompañamos el ciclo completo» (video re-renderizado y lámina de respaldo 04)."
         },
         {
@@ -78,7 +82,7 @@
       "carousel": {
         "portada": {
           "kicker": "GESTIÓN DEL RIESGO ALUVIONAL",
-          "title": "¿Qué quebrada <span class=\"c2rt\">intervenir</span> primero?"
+          "title": "¿Dónde <span class=\"c2rt\">mitigar</span> antes de la próxima lluvia?"
         },
         "intermedias": [
           {
@@ -114,6 +118,10 @@
       "flag": "Foto de la presentación SRC-008: confirmar derechos de uso y consentimiento de las tres personas visibles",
       "created": "28-10-2026",
       "hist": [
+        {
+          "date": "28-10-2026",
+          "summary": "MKT 28-10-2026: títulos reformulados con foco en prevención: portada «¿Qué quebrada intervenir primero?» → «¿Dónde mitigar antes de la próxima lluvia?» y primera línea del copy. Párrafo 2 condensado para no repetir la pregunta del gancho (≤ 900 caracteres)."
+        },
         {
           "date": "28-10-2026",
           "summary": "MKT: carrusel rehecho con la Plantilla 02 estándar (misma foto en todas las láminas, velo, número, ícono, barra roja y cierre de marca), igual que los otros carruseles."
