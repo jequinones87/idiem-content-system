@@ -80,3 +80,14 @@ def test_aito_is_not_publishable():
     assert claims["SRC-004#C05"]["class"] == "DO_NOT_PUBLISH"
     assert claims["SRC-004#C07"]["class"] == "DO_NOT_PUBLISH"
     assert {t["id"]: t for t in BANK["topics"]}["TOP-002"]["status"] == "DISCARDED"
+
+
+def test_ley_universidades_not_publishable():
+    # MKT 28-10-2026: para RRSS no se toca la Ley 21.094
+    claims = {c["id"]: c for c in BANK["claims"]}
+    for n in (8, 9, 10, 11, 12, 14):
+        assert claims[f"SRC-007#C{n:02d}"]["class"] == "DO_NOT_PUBLISH"
+    assert {t["id"]: t for t in BANK["topics"]}["TOP-034"]["status"] == "DISCARDED"
+    for c in BANK["claims"]:
+        if c["class"] == "SAFE":
+            assert "21.094" not in c["text"], c["id"]

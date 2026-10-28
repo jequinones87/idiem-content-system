@@ -157,14 +157,17 @@ Notas:
 - Proyectos en curso con nombre (C04–C07: Araucanía DGOP-DOH, Biobío DGA, Magallanes DGA, Quebrada de
   Macul): **SAFE — MKT autorizó nombrar proyectos y mandantes** (28-10-2026). Mantener fechas y alcances
   literales.
-- **Ley 21.094** (C08–C12, C14): ya está en 2A.2 como AUX-010…AUX-016 (`CHECK_VALIDITY_BEFORE_USE`).
-  Es **mecanismo de contratación, no servicio técnico**. Todo lo legal es VERIFY contra fuente oficial.
-  El resumen del Dictamen CGR 002767/2019 **no viene en el archivo** (fuente truncada).
-- **INTERNAL:** plazo de toma de razón "1 mes (?)" (la propia fuente duda) y la lista de 16 organismos con
-  convenios (C13, C15). **DO_NOT_PUBLISH:** "líder en Chile", "referentes", "socio técnico para todo el
-  ciclo" (C17). Cifras institucionales 800+ / 450.000 / 540 / 13 divisiones: VERIFY (C16).
+- **Ley 21.094** (C08–C12, C14): **DO_NOT_PUBLISH — para RRSS no se aborda la Ley de Universidades**
+  (MKT, 28-10-2026). Lo mismo aplica a AUX-010…AUX-016 de 2A.2: quedan bloqueados por
+  `config/cell_rules.json → blocked_auxiliary_types` y el bloqueo se registra en la ficha de hechos.
+  El dato de que el caso Araucanía se contrató por Ley 21.094 tampoco va al copy.
+- **INTERNAL:** plazo de toma de razón "1 mes (?)" y la lista de 16 organismos con convenios (C13, C15).
+  **DO_NOT_PUBLISH:** "líder en Chile", "referentes", "socio técnico para todo el ciclo" (C17). MKT
+  confirmó mantenerlos fuera del copy (28-10-2026).
+- **Cifras institucionales vigentes (MKT, 28-10-2026):** 800+ ingenieros y técnicos, 450.000 ensayos al año,
+  540 estudios de ingeniería al año, 13 divisiones, Facultad de Ingeniería de la U. de Chile (C16, SAFE).
 
-## Banco de temas candidatos (34; 1 descartado)
+## Banco de temas candidatos (34; 2 descartados)
 
 | ID | Célula | Tema | Sugerencia (arquetipo · hook · formato) | Cuidado |
 |---|---|---|---|---|
@@ -201,7 +204,7 @@ Notas:
 | TOP-031 | IPR | Aluviones: del mapa de amenaza a la obra de mitigación | risk_prevention · risk · carrusel | — |
 | TOP-032 | IPR | ¿Cuánta agua subterránea hay realmente? Hidrogeología y modelación | technical_question · question · estático | — |
 | TOP-033 | IPR | Planificar el agua por cuenca | data_implication · insight · estático | — (nombres autorizados) |
-| TOP-034 | IPR | Convenios con universidades estatales (Ley 21.094, art. 37) | capability_application · contrast · carrusel | legal VERIFY; mecanismo, no servicio; sin plazo ni lista de organismos |
+| ~~TOP-034~~ | IPR | ~~Convenios con universidades estatales (Ley 21.094, art. 37)~~ | — | **DESCARTADO (MKT 28-10): la Ley de Universidades no se aborda en RRSS** |
 
 **Lectura para la planificación:** este material **repone la célula Salud (IHA)**, que quedó sin
 ítems frescos tras noviembre: 22 temas IHA vigentes (TOP-002 descartado) y 6 IOM listos para diciembre en adelante.

@@ -790,9 +790,10 @@
       "sources": [
         "SRC-007"
       ],
-      "text": "Trabajo en curso: evaluación y soluciones de sistemas de potabilización de agua en postas y escuelas rurales, Región de la Araucanía (2025-2027). Convenio DGOP-DOH-IDIEM, Programa Infraestructura para el Buen Vivir. Contratado por Ley 21.094 o transferencia de recursos.",
+      "text": "Trabajo en curso: evaluación y soluciones de sistemas de potabilización de agua en postas y escuelas rurales, Región de la Araucanía (2025-2027). Convenio DGOP-DOH-IDIEM, Programa Infraestructura para el Buen Vivir.",
       "sensitivity": "nombres autorizados por MKT 28-10-2026; mantener fechas y alcances literales de la fuente",
-      "validated_by": "MKT 2026-10-28 (se pueden nombrar proyecto y mandante)"
+      "validated_by": "MKT 2026-10-28 (se pueden nombrar proyecto y mandante)",
+      "note": "La fuente indica que se contrató por Ley 21.094 o transferencia de recursos: ese dato NO va al copy (Ley de Universidades fuera de RRSS, MKT 28-10-2026)."
     },
     {
       "id": "SRC-007#C05",
@@ -830,7 +831,7 @@
     {
       "id": "SRC-007#C08",
       "kind": "normative",
-      "class": "VERIFY",
+      "class": "DO_NOT_PUBLISH",
       "sources": [
         "SRC-007"
       ],
@@ -838,12 +839,13 @@
       "related_aux": [
         "AUX-010"
       ],
-      "note": "Legal = VERIFY (Sales Intelligence CONTENT_RULES): contrastar con texto oficial vigente."
+      "note": "Legal = VERIFY (Sales Intelligence CONTENT_RULES): contrastar con texto oficial vigente.",
+      "blocked_reason": "MKT 28-10-2026: para RRSS no se aborda la Ley 21.094 (Ley de Universidades)."
     },
     {
       "id": "SRC-007#C09",
       "kind": "normative",
-      "class": "VERIFY",
+      "class": "DO_NOT_PUBLISH",
       "sources": [
         "SRC-007"
       ],
@@ -853,36 +855,40 @@
         "AUX-015",
         "AUX-016"
       ],
-      "note": "Mecanismo de contratación, nunca servicio técnico (regla de célula IPR)."
+      "note": "Mecanismo de contratación, nunca servicio técnico (regla de célula IPR).",
+      "blocked_reason": "MKT 28-10-2026: para RRSS no se aborda la Ley 21.094 (Ley de Universidades)."
     },
     {
       "id": "SRC-007#C10",
       "kind": "normative",
-      "class": "VERIFY",
+      "class": "DO_NOT_PUBLISH",
       "sources": [
         "SRC-007"
       ],
       "text": "Según la presentación, el art. 37 no restringe monto ni plazo de los contratos.",
-      "note": "Interpretación de la presentación; verificar con fuente oficial/jurídica antes de publicar. Se matiza con C12 (control de legalidad sobre 10.000 UTM)."
+      "note": "Interpretación de la presentación; verificar con fuente oficial/jurídica antes de publicar. Se matiza con C12 (control de legalidad sobre 10.000 UTM).",
+      "blocked_reason": "MKT 28-10-2026: para RRSS no se aborda la Ley 21.094 (Ley de Universidades)."
     },
     {
       "id": "SRC-007#C11",
       "kind": "normative",
-      "class": "VERIFY",
+      "class": "DO_NOT_PUBLISH",
       "sources": [
         "SRC-007"
       ],
       "text": "Dictamen 002767 de 2019 de la CGR fijó la interpretación y alcance del art. 37 a solicitud de un organismo público.",
-      "note": "FUENTE TRUNCADA: la lámina no trae el resumen del dictamen. Usar solo la existencia del dictamen, nunca su contenido."
+      "note": "FUENTE TRUNCADA: la lámina no trae el resumen del dictamen. Usar solo la existencia del dictamen, nunca su contenido.",
+      "blocked_reason": "MKT 28-10-2026: para RRSS no se aborda la Ley 21.094 (Ley de Universidades)."
     },
     {
       "id": "SRC-007#C12",
       "kind": "normative",
-      "class": "VERIFY",
+      "class": "DO_NOT_PUBLISH",
       "sources": [
         "SRC-007"
       ],
-      "text": "Resolución 16 de 2020 de la CGR: los contratos de prestación de servicios bajo el art. 37 sobre 10.000 UTM deben pasar por control de legalidad (toma de razón) ante la Contraloría."
+      "text": "Resolución 16 de 2020 de la CGR: los contratos de prestación de servicios bajo el art. 37 sobre 10.000 UTM deben pasar por control de legalidad (toma de razón) ante la Contraloría.",
+      "blocked_reason": "MKT 28-10-2026: para RRSS no se aborda la Ley 21.094 (Ley de Universidades)."
     },
     {
       "id": "SRC-007#C13",
@@ -892,12 +898,13 @@
         "SRC-007"
       ],
       "text": "Flujo de contratación: solicitud de cotización → propuesta técnico-económica IDIEM → contrato bajo Ley 21.094 (bajo 10.000 UTM: directo; sobre 10.000 UTM: toma de razón en Contraloría) → convenio formalizado. Plazo aproximado de toma de razón: '1 mes (?)'.",
-      "note": "La propia fuente marca el plazo con '(?)': no publicar el plazo. El flujo sin plazo podría pasar a VERIFY si MKT lo pide."
+      "note": "La propia fuente marca el plazo con '(?)': no publicar el plazo. El flujo sin plazo podría pasar a VERIFY si MKT lo pide.",
+      "confirmed_by": "MKT 2026-10-28 (se mantiene fuera del copy)"
     },
     {
       "id": "SRC-007#C14",
       "kind": "concept",
-      "class": "VERIFY",
+      "class": "DO_NOT_PUBLISH",
       "sources": [
         "SRC-007"
       ],
@@ -906,7 +913,8 @@
         "AUX-013",
         "AUX-014"
       ],
-      "note": "Beneficio comercial/administrativo: no presentarlo como servicio técnico; AUX-014 tiene CORRECCION_NECESARIA en 2A.2."
+      "note": "Beneficio comercial/administrativo: no presentarlo como servicio técnico; AUX-014 tiene CORRECCION_NECESARIA en 2A.2.",
+      "blocked_reason": "MKT 28-10-2026: para RRSS no se aborda la Ley 21.094 (Ley de Universidades)."
     },
     {
       "id": "SRC-007#C15",
@@ -916,17 +924,19 @@
         "SRC-007"
       ],
       "text": "Organismos con convenios ya celebrados bajo art. 37 (16): Gendarmería, Dipreca, U. de O'Higgins, SSMSO (8), MINVU, MOP-Arq-DOH, Servicio de Salud Chiloé, Servicio de Salud Osorno, Hospital Tisné, FACh, municipalidades de Lo Barnechea, Santiago, San Rosendo, Caldera, San Clemente y Copiapó.",
-      "note": "Clientes con nombre: no van al copy sin autorización explícita."
+      "note": "Clientes con nombre: no van al copy sin autorización explícita.",
+      "confirmed_by": "MKT 2026-10-28 (se mantiene fuera del copy)"
     },
     {
       "id": "SRC-007#C16",
       "kind": "project_data",
-      "class": "VERIFY",
+      "class": "SAFE",
       "sources": [
         "SRC-007"
       ],
       "text": "Cifras institucionales de la presentación: 800+ ingenieros y técnicos; 450.000 ensayos al año; 540 estudios de ingeniería al año; 13 divisiones; pertenencia a la Facultad de Ingeniería de la Universidad de Chile.",
-      "note": "Cifras = VERIFY (vigencia). No están en 2A.2."
+      "note": "Cifras confirmadas vigentes por MKT; revisar de nuevo si cambian. Sin superlativos (C17).",
+      "validated_by": "MKT 2026-10-28 (cifras vigentes)"
     },
     {
       "id": "SRC-007#C17",
@@ -936,7 +946,8 @@
         "SRC-007"
       ],
       "text": "Formulaciones promocionales de la presentación: 'líder en Chile', 'Referentes en el sector construcción', 'socio técnico para todo el ciclo'.",
-      "blocked_reason": "Superlativos/promesas: la voz de marca prohíbe superlativos (CLAUDE.md, editorial memory)."
+      "blocked_reason": "Superlativos/promesas: la voz de marca prohíbe superlativos (CLAUDE.md, editorial memory).",
+      "confirmed_by": "MKT 2026-10-28 (se mantiene fuera del copy)"
     }
   ],
   "topics": [
@@ -1536,7 +1547,8 @@
         "cruza AUX-010…AUX-016 (CHECK_VALIDITY_BEFORE_USE)",
         "no publicar plazo '1 mes (?)' ni lista de organismos (INTERNAL)"
       ],
-      "status": "CANDIDATE"
+      "status": "DISCARDED",
+      "discarded_reason": "MKT 28-10-2026: para RRSS no se aborda la Ley 21.094 (Ley de Universidades)."
     }
   ]
 }

@@ -72,12 +72,23 @@ class RetrievalEngine:
     def __init__(self, kb: KnowledgeBase) -> None:
         self.kb = kb
 
+    def _blocked_aux_types(self) -> dict:
+        """Auxiliary types blocked for content by config (``cell_rules.json``)."""
+        cfg = self.kb.cell_rules.get("blocked_auxiliary_types", {})
+        return {k: v for k, v in cfg.items() if not k.startswith("_")}
+
+    def _blocked_auxiliary(self, cell: str) -> list[tuple[AuxiliaryEvidence, str]]:
+        """Same-cell auxiliary evidence excluded by config, with its reason."""
+        blocked = self._blocked_aux_types()
+        return [(a, blocked[a.type]) for a in self.kb.auxiliary_in_cell(cell) if a.type in blocked]
+
     def _compatible_auxiliary(self, cell: str) -> list[AuxiliaryEvidence]:
         """Same-cell auxiliary evidence whose own policy permits use (GR-05)."""
+        blocked = self._blocked_aux_types()
         return [
             a
             for a in self.kb.auxiliary_in_cell(cell)
-            if policies.auxiliary_is_usable(a.production_policy)
+            if policies.auxiliary_is_usable(a.production_policy) and a.type not in blocked
         ]
 
     def retrieve(self, query: RetrievalQuery) -> list[RetrievalHit]:

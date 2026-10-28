@@ -76,10 +76,12 @@ Estas nacen de correcciones del equipo. Son de aplicación obligatoria.
   y escuelas rurales de la Araucanía (no es infraestructura hospitalaria).
 - **Se pueden nombrar** proyectos y mandantes de SRC-007 (DGA, DOH/DGOP, Araucanía, Biobío, Magallanes,
   Quebrada de Macul), con fechas y alcances literales.
-- Siguen en VERIFY: lo legal y las cifras institucionales (800+, 450.000 ensayos, 540 estudios).
-- **Ley 21.094 = mecanismo de contratación, nunca servicio técnico.** Lo legal (art. 37, Ley 19.886,
-  dictámenes y resoluciones CGR, montos UTM) se revisa contra fuente oficial vigente antes de publicar.
+- **Ley 21.094 (Ley de Universidades): NO se aborda en RRSS** (MKT, 28-10-2026). Tampoco art. 37, Ley
+  19.886, dictámenes/resoluciones CGR ni montos UTM. Aplica también a AUX-010…AUX-016 de 2A.2 (bloqueados
+  en `config/cell_rules.json`).
 - No publicar el plazo "1 mes (?)" ni la lista de organismos con convenio; sin superlativos ("líder").
+- Cifras institucionales vigentes (MKT, 28-10-2026): 800+ ingenieros y técnicos, 450.000 ensayos/año,
+  540 estudios de ingeniería/año.
 
 ### Ingeniería contractual (célula IHA)
 - Ámbitos que IDIEM atiende de forma explícita en el sector Salud: **análisis de
@@ -476,3 +478,7 @@ programado al 19-10-2026).
   Célula IPR solo propuesta; capacidades hídricas en VERIFY hasta validación de MKT.
 - **2026-10-28** — MKT valida SRC-007: servicios de Aguas vigentes y comunicables (C01–C03 SAFE), célula
   IPR confirmada y nombres de proyectos/mandantes autorizados (C04–C07 SAFE). Ley 21.094 sigue VERIFY.
+- **2026-10-28** — MKT: la **Ley de Universidades (21.094) no se toca en RRSS** → SRC-007#C08–C12/C14
+  DO_NOT_PUBLISH, TOP-034 descartado y evidencia auxiliar `MECANISMO_CONTRATACION` (AUX-010…016) bloqueada
+  por config. Cifras institucionales (800+, 450.000, 540) confirmadas vigentes. Plazo "1 mes (?)", lista de
+  organismos y superlativos se mantienen fuera del copy.

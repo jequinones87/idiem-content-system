@@ -204,6 +204,9 @@ def build_fact_sheet(
                 f"({aux.production_policy}, GR-13)."
             )
 
+    for aux, reason in engine._blocked_auxiliary(cell):
+        sheet.blocked_claims.append(f"[{aux.auxiliary_id}] Bloqueado por config: {reason}")
+
     # 4b) 2A.3 evidence enrichment for the services present (same cell only).
     # ``used_enrichment_ids`` de-duplicates enrichment across a month: a given
     # 2A.3 record (e.g. the ISO/HSEC certification line) surfaces at most once,

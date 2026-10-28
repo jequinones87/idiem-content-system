@@ -180,7 +180,8 @@ MKT comparte presentaciones de especialistas IDIEM como insumo. Se registran en
 SAFE/VERIFY/INTERNAL, temas `TOP-*`) con vista legible en `docs/11_FUENTES_EXPERTAS_Y_BANCO_DE_TEMAS.md`.
 Al planificar cada mes, revisar este banco junto a 2A.2. Capacidades IDIEM de las `SRC-*` validadas por
 MKT (`validated_by`) se usan como auxiliary_id; incidentes con nombre (VERIFY) y cifras de proyectos
-(INTERNAL) no van al copy sin validación. **Nunca nombrar ni citar a los expositores ni las charlas de
+(INTERNAL) no van al copy sin validación. **La Ley 21.094 (Ley de Universidades) no se aborda en RRSS**
+(MKT 28-10-2026; bloqueada en `config/cell_rules.json → blocked_auxiliary_types`). **Nunca nombrar ni citar a los expositores ni las charlas de
 origen**: el foco es el tema.
 
 Servicios del sitio web (desde 19-10-2026): `config/topic_bank/web_services.json` (`WEB-*`, texto literal

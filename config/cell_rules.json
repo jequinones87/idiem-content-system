@@ -69,5 +69,9 @@
   "notes": [
     "GR-10: 'Digital' (BIM, monitoreo remoto, plataformas, analitica) NO migra a Lab por si solo.",
     "GR-11: Triaxial Gigante siempre asociado a proyectos mineros por decision explicita 2A.2."
-  ]
+  ],
+  "blocked_auxiliary_types": {
+    "_comment": "Tipos de evidencia auxiliar que NO se usan en contenidos para RRSS. Se excluyen de la evidencia compatible y la razón queda registrada en blocked_claims. Ajustable sin tocar código (regla 11).",
+    "MECANISMO_CONTRATACION": "MKT 28-10-2026: para RRSS no se aborda la Ley 21.094 (Ley de Universidades) ni mecanismos de contratación."
+  }
 }
