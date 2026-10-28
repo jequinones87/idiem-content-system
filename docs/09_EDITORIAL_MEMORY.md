@@ -68,6 +68,14 @@ Estas nacen de correcciones del equipo. Son de aplicación obligatoria.
 - Los posts basados en charlas/presentaciones de especialistas **no nombran ni citan al expositor ni a la
   charla**: el foco es el tema. Ver `docs/11_FUENTES_EXPERTAS_Y_BANCO_DE_TEMAS.md`.
 
+### Aluviones y mitigación aluvional (SRC-007/008, usuario 28-10-2026)
+- Servicio a promover como **extra de noviembre 2026** por la contingencia de lluvias y aluviones.
+- En 2A.2 solo existe como reserva (R0001/R0002, `RESERVE_FACTUAL`, fuera de las células priorizadas):
+  **sin knowledge_id activo**. Célula IPR = propuesta; capacidades VERIFY hasta validación de MKT.
+- Proyectos con nombre (Camiña/Tarapacá, Plan Atacama, Huasco, Macul, Mosco) = INTERNAL.
+- Tono: sin usar la emergencia ni sus víctimas como gancho; sin insinuar participación de IDIEM en
+  eventos recientes; sin superlativos.
+
 ### Ingeniería contractual (célula IHA)
 - Ámbitos que IDIEM atiende de forma explícita en el sector Salud: **análisis de
   programación**, **análisis ante término anticipado de contrato**, respaldo técnico

@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updated": "2026-10-19",
+  "updated": "2026-10-28",
   "description": "Banco de fuentes expertas (presentaciones/webinars de especialistas IDIEM) y temas candidatos para contenidos. Complementa la librería 2A.2 SIN reemplazarla: data/ sigue siendo la fuente canónica. Se amplía cada vez que MKT comparte material nuevo.",
   "rules": {
     "hierarchy": "2A.2 (knowledge_id) manda. Las fuentes SRC-* son evidencia auxiliar candidata: una afirmación de capacidad IDIEM que solo esté en una SRC-* es VERIFY hasta que MKT la valide; validada, se cita como auxiliary_id (SRC-xxx#Cyy).",
@@ -94,6 +94,32 @@
         "INFRA OPERACIÓN MINERA"
       ],
       "cell_note": "Leída completa el 19-10-2026 desde Drive. Replica para minería el marco de SRC-001 (por eso SRC-001#C01–C10 citan también a SRC-006) y agrega ejemplos de monitoreo y criticidad propios de faena."
+    },
+    {
+      "id": "SRC-007",
+      "title": "Estudios de Aluviones y Obras de Mitigación Aluvional (MOP-DOH · Defensas Fluviales y Control Aluvional / Riesgo de Desastres)",
+      "type": "service_ppt",
+      "speaker": null,
+      "role": null,
+      "date": "2026-06",
+      "drive": "https://docs.google.com/presentation/d/111hf4uoErKYrTPuf9tj7kVbTsuZyEITn/edit",
+      "cells": [
+        "INFRA PÚBLICA RESILIENTE"
+      ],
+      "cell_note": "Leída completa el 28-10-2026 desde Drive (Quebradas.pptx, 16 láminas). Célula PROPUESTA, pendiente de MKT: el mandante es MOP-DOH (Infra Pública), pero en 2A.2 el servicio equivalente (R0002 'mitigación de riesgos naturales', R0001 'peligros naturales') está como RESERVE_FACTUAL / FUERA_DE_CELULAS_PRIORIZADAS, sin knowledge_id activo. No se mueve conocimiento entre células (regla 9): hasta que MKT valide, las capacidades quedan VERIFY."
+    },
+    {
+      "id": "SRC-008",
+      "title": "Oferta integral IDIEM · Defensas Fluviales y Control Aluvional / Riesgo de Desastres (síntesis 'para kike')",
+      "type": "summary_ppt",
+      "speaker": null,
+      "role": null,
+      "date": "2026-10-28",
+      "drive": "https://docs.google.com/presentation/d/111hf4uoErKYrTPuf9tj7kVbTsuZyEITn/edit",
+      "cells": [
+        "INFRA PÚBLICA RESILIENTE"
+      ],
+      "cell_note": "Lámina única subida por el usuario al chat (para_kike.pptx), síntesis de SRC-007; no tiene enlace propio en Drive, el campo drive apunta a la fuente completa. Insumo base para los posts extra de noviembre 2026 (contingencia de lluvias/aluviones)."
     }
   ],
   "claims": [
@@ -731,6 +757,128 @@
         "SRC-003"
       ],
       "text": "Definir la criticidad es el punto de partida del análisis de riesgo: la NCC 40 entrega ejemplos de criticidad para la industria minera; si no hay un criterio claro, se define con la parte interesada a partir de las interrelaciones entre procesos."
+    },
+    {
+      "id": "SRC-008#C01",
+      "kind": "idiem_capability",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-008",
+        "SRC-007"
+      ],
+      "text": "Oferta integral IDIEM para gestión del riesgo aluvional, de diagnóstico a transferencia técnica, en 5 etapas: (1) Diagnóstico: catastro de infraestructura y viviendas, identificación de sectores expuestos; (2) Estudios básicos y de terreno: hidrología, geología y geomorfología, susceptibilidad de generación de aluviones, topografía, mecánica de suelos y geotecnia, geofísica; (3) Modelación numérica de crecidas líquidas y aluviones bajo escenarios de cambio climático; (4) Zonificación de la amenaza: mapas de amenaza por aluvión y crecidas para definir medidas de mitigación, apoyar la planificación territorial y la coordinación ante emergencias; (5) Diseño de obras de mitigación: alternativas, presupuestos, evaluación económica y TdR.",
+      "pending_validation": "Usuario 28-10-2026: 'servicio de IDIEM' a promover; falta confirmación explícita de MKT de vigencia y célula (regla validated_capabilities)."
+    },
+    {
+      "id": "SRC-008#C02",
+      "kind": "idiem_capability",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-008"
+      ],
+      "text": "Posicionamiento declarado: IDIEM como socio técnico para todo el ciclo de gestión del riesgo aluvional — estudiar, priorizar, diseñar, validar y transferir capacidades al MOP.",
+      "pending_validation": "Usuario 28-10-2026: 'servicio de IDIEM' a promover; falta confirmación explícita de MKT de vigencia y célula (regla validated_capabilities)."
+    },
+    {
+      "id": "SRC-007#C01",
+      "kind": "idiem_capability",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Oferta de servicios: estudios de consultoría especializada en evaluación de amenazas por crecidas líquidas (inundaciones) y flujos detríticos (aluviones), identificando zonas potencialmente afectadas y desarrollando alternativas de mitigación hasta nivel de factibilidad.",
+      "pending_validation": "Usuario 28-10-2026: 'servicio de IDIEM' a promover; falta confirmación explícita de MKT de vigencia y célula (regla validated_capabilities)."
+    },
+    {
+      "id": "SRC-007#C02",
+      "kind": "idiem_capability",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Asesoría para la actualización y mejora continua del Manual de Quebradas para el Estudio de Aluviones, según avances del estado del arte y la experiencia nacional.",
+      "pending_validation": "Usuario 28-10-2026: 'servicio de IDIEM' a promover; falta confirmación explícita de MKT de vigencia y célula (regla validated_capabilities)."
+    },
+    {
+      "id": "SRC-007#C03",
+      "kind": "concept",
+      "class": "SAFE",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "La amenaza aluvional se zonifica cruzando la intensidad del flujo (altura h y producto h·v) con su probabilidad de ocurrencia (alta, media, baja), distinguiendo inundación (crecida líquida) de aluvión (flujo detrítico); el resultado son zonas de amenaza alta, media, baja y muy baja."
+    },
+    {
+      "id": "SRC-007#C04",
+      "kind": "concept",
+      "class": "SAFE",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "La susceptibilidad de generación de aluviones combina factores condicionantes: geología/geotecnia (unidad geológica, características del suelo/roca), geomorfología (pendientes, redes de drenaje, SPI), cobertura vegetal, acumulación de nieve o vertientes, factor antrópico y eventos anteriores; su ponderación cambia según zona (clima árido, mixto, lluvioso, zonas volcánicas)."
+    },
+    {
+      "id": "SRC-007#C05",
+      "kind": "concept",
+      "class": "SAFE",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "El aluvión de diseño se construye a partir del hidrograma de crecida (hidrología) y del volumen de sedimentos disponibles al ápice de la quebrada, que en conjunto definen el hidrograma del aluvión (pulso)."
+    },
+    {
+      "id": "SRC-007#C06",
+      "kind": "concept",
+      "class": "SAFE",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Un aluvión no es solo agua: los procesos que se evalúan en una quebrada incluyen flujo de detritos, deslizamiento superficial y caída de rocas, y las obras se definen en función del mapa de peligro de cada proceso."
+    },
+    {
+      "id": "SRC-007#C07",
+      "kind": "concept",
+      "class": "SAFE",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Las estrategias de mitigación aluvional pueden combinar barreras dinámicas para retener sólidos en la parte alta de la quebrada, soluciones basadas en la naturaleza (SBN) para reducir el material arrastrable y obras de desvío y retención en el sector medio, considerando cambio climático."
+    },
+    {
+      "id": "SRC-007#C08",
+      "kind": "normative",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Ponderaciones (%) de la matriz de susceptibilidad y umbrales de intensidad (p. ej. h ≥ 2 m o h·v ≥ 2 m²/s alta para inundación; h ≥ 1,0 m o h·v ≥ 1,0 m²/s alta para aluvión) provienen del Manual de Quebradas en marcha blanca (no es aún Norma Técnica MOP): no citar cifras sin validación."
+    },
+    {
+      "id": "SRC-007#C09",
+      "kind": "public_incident",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Plan Nacional de Quebradas surge como respuesta a la catástrofe del 25 de marzo de 2015 (Antofagasta, Atacama y Coquimbo); pilares: política/normativa/institucionalidad, planificación y coordinación de emergencias. Manual de Quebradas para el Estudio de Aluviones (4 volúmenes) producto de PNQ-Fase 1; próxima marcha blanca y difusión para proponerlo como Norma Técnica del MOP."
+    },
+    {
+      "id": "SRC-007#C10",
+      "kind": "project_data",
+      "class": "INTERNAL",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Experiencia para MOP-DOH: diagnóstico de riesgo en quebradas laterales de Camiña y Tarapacá post-evento marzo 2012 (2013; 27 quebradas); Plan Atacama DOH post-25M 2015 (7 cuencas); diseño de obras fluviales y de control aluvional en cuencas de los ríos El Carmen (17 quebradas) y El Tránsito (28 quebradas), Huasco; PNQ-Fase 1 (8 etapas, Manual de Quebradas)."
+    },
+    {
+      "id": "SRC-007#C11",
+      "kind": "project_data",
+      "class": "INTERNAL",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Estudios en ejecución / nuevas iniciativas: actualización de estrategias de mitigación aluvional en quebrada de Macul (Peñalolén y La Florida; barreras dinámicas, SBN); marcha blanca y difusión del Manual de Quebradas; diagnóstico de mitigación y control de crecidas del río Mosco (Villa O'Higgins; terreno con topografía, mecánica de suelos, geología y glaciología; evaluación con criterios MDSyF)."
     }
   ],
   "topics": [
@@ -1245,6 +1393,69 @@
         "KB-IOM-026"
       ],
       "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-030",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "title": "Un aluvión no es una crecida: por qué la amenaza se zonifica distinto",
+      "claims": [
+        "SRC-007#C03",
+        "SRC-007#C06",
+        "SRC-008#C01"
+      ],
+      "angle": "Cuando la lluvia baja por una quebrada no trae solo agua: arrastra sedimentos y rocas. Entender esa diferencia cambia dónde y cómo se protege.",
+      "archetype_hint": "evidence_learning",
+      "hook_hint": "contrast",
+      "format_hint": "CAROUSEL",
+      "related_kb": [],
+      "flags": [
+        "contingencia lluvias/aluviones oct-2026: tono sobrio, sin aprovechar tragedias ni citar eventos con víctimas",
+        "célula propuesta (2A.2 R0002 RESERVE_FACTUAL)",
+        "capacidades VERIFY"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-031",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "title": "Del diagnóstico a la obra: el ciclo de gestión del riesgo aluvional en 5 etapas",
+      "claims": [
+        "SRC-008#C01",
+        "SRC-008#C02",
+        "SRC-007#C05",
+        "SRC-007#C07"
+      ],
+      "angle": "Después de la emergencia viene la pregunta de fondo: qué quebradas priorizar y qué obra conviene. Responderla exige una secuencia técnica, no una reacción.",
+      "archetype_hint": "process_result",
+      "hook_hint": "question",
+      "format_hint": "CAROUSEL",
+      "related_kb": [],
+      "flags": [
+        "contingencia lluvias/aluviones oct-2026",
+        "célula propuesta (2A.2 R0002 RESERVE_FACTUAL)",
+        "capacidades VERIFY",
+        "proyectos con nombre (C10/C11) INTERNAL: no al copy sin autorización"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-032",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "title": "¿Qué hace que una quebrada sea más propensa a generar aluviones?",
+      "claims": [
+        "SRC-007#C04",
+        "SRC-007#C05"
+      ],
+      "angle": "Pendiente, suelo, drenaje, nieve, intervención humana y eventos previos: la susceptibilidad se lee en el territorio antes de la lluvia.",
+      "archetype_hint": "technical_question",
+      "hook_hint": "question",
+      "format_hint": "STATIC",
+      "related_kb": [],
+      "flags": [
+        "célula propuesta",
+        "sin cifras de ponderación (C08 VERIFY)"
+      ],
       "status": "CANDIDATE"
     }
   ]
