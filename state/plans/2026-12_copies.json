@@ -1,0 +1,269 @@
+{
+  "month": "2026-12",
+  "status": "DRAFT — pendiente de revisión MKT",
+  "note": "Claves 1–12 = posts base; 13 = Día del Suelo, 14 = Navidad (video), 15 = Año Nuevo (seq de la asignación).",
+  "copies": {
+    "1": "🏥 ¿Basta con que la estructura de un hospital resista un terremoto?\n\nLa pregunta de fondo es si seguirá operativo después del sismo. Cielos falsos, tabiques, fachadas, ascensores, equipos médicos, climatización y redes de agua, gases y electricidad son elementos no estructurales. Si fallan, áreas como cirugía, laboratorio, imagenología o diálisis pueden dejar de funcionar aunque la estructura siga en pie.\n\nAnclajes de equipos pesados, soportes sísmicos de ductos y cambios de uso con nuevas cargas son problemas frecuentes en obras hospitalarias. 🔍\n\nEn #IDIEM realizamos diagnósticos estructurales y revisiones sísmicas para infraestructura hospitalaria: estado de conservación, análisis sísmicos y estáticos, y propuestas de refuerzo.\n\n🩺 ¿Cómo respondería tu recinto de salud? Conversemos con nuestros especialistas en https://idiem.cl\n\n#IDIEM #Salud #Hospitales #IngenieríaSísmica #Resiliencia",
+    "2": "🔥 Cumplir la norma es el punto de partida de un análisis de riesgo de incendio, no la meta.\n\nEn una operación minera, un incendio puede afectar extensas zonas de producción. Por eso el análisis se puede abordar en tres niveles:\n* Simple: verificación normativa.\n* Medio: norma más vulnerabilidades de la instalación.\n* Avanzado: procesos, interrelaciones y consecuencias operacionales, como la pérdida diaria por detención.\n\nUn estudio también pierde vigencia cuando la operación cambia, y gana solidez con revisión por pares y criterio multidisciplinario. 📋\n\nEn #IDIEM desarrollamos ingeniería y evaluación de riesgos de incendios para infraestructura de operación minera.\n\n👉 Revisa en el carrusel qué mira cada nivel y profundiza en https://idiem.cl\n\n#IDIEM #Minería #Incendios #GestiónDeRiesgos #ContinuidadOperacional",
+    "3": "⚙️ Un chancador trabaja turno tras turno. El molino y las correas, también. Lo que pocas veces se mira es la estructura que los sostiene.\n\nEn equipos estáticos y de soporte, el desafío es conocer la condición real de esa estructura antes de que un daño obligue a intervenir con la operación encima.\n\nEn #IDIEM aplicamos gestión de vulnerabilidad e integridad estructural a chancadores, molinos y correas. Partimos con levantamiento de información técnica en terreno, mediante inspección visual, aérea y termográfica, y modelos 3D con escáner láser y dron. 🛰️\n\nCon esa base se evalúa el estado de cada estructura de soporte.\n\n🔗 Descubre qué incluye este servicio y en qué activos mineros se aplica: https://idiem.cl\n\n#IDIEM #Minería #IntegridadEstructural #Chancado #Mantenimiento",
+    "4": "⚖️ En una controversia contractual, dos versiones pueden ser igual de convincentes. Lo que las ordena es la evidencia técnica.\n\nUn cambio de obra, un atraso o un mayor costo escalan cuando cada parte lo explica solo desde su propia mirada. Un estudio técnico imparcial e independiente ayuda a que las partes alcancen un correcto entendimiento de lo que está en discusión.\n\nEn #IDIEM realizamos estudios técnicos y peritajes para la resolución de controversias en contratos de ingeniería, construcción, EPC, BOT y otros, tanto públicos como privados. 📑\n\nEn el video, el recorrido de una controversia: del desacuerdo a una base técnica común. ▶️\n\n📩 ¿Tu contrato tiene una diferencia abierta? Cuéntanos el caso en https://idiem.cl\n\n#IDIEM #IngenieríaContractual #Peritajes #Construcción #Contratos",
+    "5": "⏱️ Un hospital puede estar terminado y, aun así, no estar listo para recibir pacientes.\n\nLas fallas en pruebas integradas aparecen en la puesta en marcha: balanceo de climatización, presiones diferenciales, gases medicinales, respaldo eléctrico, equipamiento médico y autorización sanitaria. La mitigación empieza mucho antes: planificar la puesta en marcha desde el diseño. 🏥\n\nEn #IDIEM acompañamos proyectos de salud con una hoja de ruta en tres fases (diseño y licitación, ejecución y puesta en marcha). Incluye revisión del Programa Médico Arquitectónico, análisis de constructibilidad, coordinación BIM/MEP, control de programa, costos y calidad, y verificación de puesta en marcha. ✅\n\n👉 En el carrusel, qué se juega en cada fase. Más en https://idiem.cl\n\n#IDIEM #Salud #Hospitales #PuestaEnMarcha #GestiónDeProyectos",
+    "6": "🔊 El ruido de un proyecto minero no es uno solo: cambia en la construcción, la operación, las ampliaciones y el abandono.\n\nCada etapa es distinta, por eso su impacto acústico se evalúa en cada una de ellas.\n\nEn #IDIEM realizamos estudios de impacto acústico para proyectos mineros en todas esas etapas, con modelo de propagación de ruido y mapas de ruido. También hacemos monitoreo de cumplimiento normativo, con estaciones de monitoreo continuo de ruido, considerando la norma de emisión vigente (D.S. 38/2011 MMA). 📈\n\nAsí, el proyecto cuenta con información técnica para gestionar su relación con el entorno.\n\n🔗 Revisa qué incluye un estudio de impacto acústico para minería en https://idiem.cl\n\n#IDIEM #Minería #Acústica #Ruido #MedioAmbiente",
+    "7": "⚡ En un hospital, la instalación eléctrica ya no basta con hacerla bien: hay que demostrar que cumple.\n\nEse es el cambio de fondo del RIC (DS N°8): pasar de instalar según criterio a demostrar con evidencia. En salud pesa más, porque en el RIC el Grupo 2 de los sistemas de emergencia es el de máxima criticidad, sin interrupción, y ahí quedan pabellones, UCI y neonatología, entre otros.\n\nEn #IDIEM revisamos proyectos de especialidades, incluida la eléctrica, para verificar el cumplimiento de la normativa vigente y de las bases técnicas del mandante. También realizamos mediciones eléctricas en obra, como la verificación de la resistencia eléctrica de los pisos. 🔍\n\n🩺 ¿Tu proyecto de salud se rige por el RIC? Agenda una conversación técnica con nuestro equipo en https://idiem.cl\n\n#IDIEM #Salud #Hospitales #RIC #IngenieríaEléctrica",
+    "8": "📉 Entre la primera señal de deterioro y la falla de un activo hay un intervalo. Aprovecharlo depende de detectarlo a tiempo.\n\nEs la lógica de la curva P-F: P es el momento en que aparecen señales de deterioro; F, la falla. El monitoreo ayuda a detectar fallas potenciales, mapear el estado de las instalaciones y ajustar los planes de mantención.\n\nTiene un límite que conviene conocer: los modelos que buscan anticipar fallas necesitan datos de equipos que hayan fallado, y esos datos rara vez están disponibles. 📊\n\nEn #IDIEM realizamos monitoreo preventivo de activos críticos mineros, mediante instrumentación y análisis de vibraciones, y evaluación de salud estructural.\n\n🔗 Conoce cómo se aplica el monitoreo preventivo en activos mineros: https://idiem.cl\n\n#IDIEM #Minería #Mantenimiento #MonitoreoEstructural #ActivosCríticos",
+    "9": "📐 Antes de la primera excavación, un proyecto ya puede traer inconsistencias. Revisarlo es el primer paso de una obra pública bien encaminada.\n\nArquitectura, estructura y especialidades deben cumplir la normativa y, además, conversar entre sí. Detectar una inconsistencia en el papel es más simple que resolverla con la obra en marcha.\n\nEn #IDIEM apoyamos a mandantes públicos con revisión de proyectos y validación normativa de arquitectura, estructura y especialidades, coordinación BIM, mecánica de suelos y topografía. ✅\n\nEl resultado es una revisión técnica y documental del proyecto antes de licitar o construir.\n\n📩 ¿Tu institución prepara un proyecto para licitar? Solicita una revisión técnica en https://idiem.cl\n\n#IDIEM #InfraestructuraPública #BIM #RevisiónDeProyectos #Construcción",
+    "10": "🔥 ¿Qué pasa en un incendio cuando los pacientes no pueden evacuar por sí mismos?\n\nEn un hospital, la respuesta no siempre es evacuar a todos. Hay dos estrategias: la evacuación masiva y la defensa en sitio, que mantiene a los pacientes protegidos dentro del edificio.\n\nElegir depende de cómo se comportaría el humo: barreras cortahumo, zonas verticales de seguridad y el uso de ascensores en emergencia son parte del análisis, que se apoya en escenarios con modelación de humos. 💨\n\nEn #IDIEM realizamos estudios de simulación de humos y evacuación de personas para recintos de gran carga ocupacional, como hospitales, con escenarios de incendio de distinta severidad y ubicación.\n\nEn tu recinto, ¿está definido qué estrategia aplica en cada sector?\n\n#IDIEM #Salud #Hospitales #SeguridadContraIncendios #Evacuación",
+    "11": "🏗️ En una planta minera, las estructuras de acero sostienen la operación día y noche. Muchas veces nadie las revisa hasta que muestran un daño.\n\nInspeccionarlas permite evaluar fisuras, deformaciones y corrosión cuando todavía hay margen para decidir. Y cuando un elemento mecánico falla, el peritaje de falla busca su causa con base técnica.\n\nEn #IDIEM realizamos inspección de estructuras de acero y peritajes de falla en elementos mecánicos para la operación minera, con inspecciones estructurales especializadas. 🔩\n\nEs información de terreno para decidir con base técnica.\n\n¿Cuándo fue la última inspección de las estructuras de acero de tu planta? Coordina una conversación con nuestro equipo en https://idiem.cl\n\n#IDIEM #Minería #EstructurasDeAcero #Inspección #Seguridad",
+    "12": "🩺 La vulnerabilidad de un hospital se parece al estado de salud de una persona: frente al mismo sismo, no todos responden igual.\n\nCon los años se suman factores: materiales que se deterioran (humedad, corrosión de armaduras, fisuración), ampliaciones sin una verificación estructural rigurosa, equipos cada vez más pesados y sismos importantes cada 15 a 20 años sin reparaciones que restituyan la resistencia original.\n\nLa implicancia: un recinto puede verse en buen estado y haber perdido capacidad para cumplir su función. 📊\n\nEn #IDIEM realizamos diagnósticos estructurales para infraestructura hospitalaria: estado de conservación, levantamiento de daños, planos actualizados y propuestas de refuerzo, de lo conceptual al detalle.\n\n👉 Más sobre diagnóstico estructural en salud en https://idiem.cl\n\n#IDIEM #Salud #Hospitales #DiagnósticoEstructural #VidaÚtil",
+    "13": "🌍 Hoy es el Día Mundial del Suelo. En minería, el suelo también es la base de los depósitos y tranques de relaves que acompañan a la operación.\n\nCuidar ese suelo empieza por conocerlo. Caracterizar sus materiales con ensayos geotécnicos permite diseñar un tranque sobre información confiable, y la gestión de su seguridad estructural acompaña al depósito mientras crece. ⛏️\n\nEn #IDIEM realizamos ensayos geotécnicos para el diseño de tranques de relave, y gestionamos la vulnerabilidad e integridad estructural de depósitos y relaves en la industria minera.\n\nConocer el terreno es también una forma de cuidarlo. 🌱\n\nEn este Día del Suelo, una pregunta abierta: ¿cuánto sabemos del terreno sobre el que construimos?\n\n#IDIEM #DíaMundialDelSuelo #Minería #Geotecnia #Relaves",
+    "14": "🎄 Detrás de cada proyecto hay personas: equipos que ensayan, inspeccionan y estudian, y clientes que confían en la ingeniería para construir mejor.\n\nEn esta Navidad agradecemos a nuestros equipos, clientes y colaboradores por el camino compartido este año.\n\nLes deseamos una Navidad en paz, junto a quienes más quieren. ✨\n\n¡Felices fiestas de parte de todo IDIEM!\n\n#IDIEM #Navidad #FelicesFiestas #Ingeniería",
+    "15": "🎆 Termina un año de ensayos, inspecciones, estudios y conversaciones técnicas con quienes construyen y operan la infraestructura.\n\nGracias a nuestros equipos, clientes y colaboradores por cada desafío compartido en 2026.\n\nPara 2027 renovamos nuestro compromiso de aportar ciencia e ingeniería al desarrollo de la infraestructura del país. 🇨🇱\n\n¡Feliz Año Nuevo!\n\n#IDIEM #AñoNuevo #Ingeniería #Infraestructura"
+  },
+  "carousels": {
+    "2": {
+      "portada": {
+        "kicker": "RIESGO DE INCENDIO EN MINERÍA",
+        "title": "¿Basta con <span class=\"c2rt\">cumplir</span> la norma?"
+      },
+      "intermedias": [
+        {
+          "icon": "clipboard-check",
+          "title": "Nivel <span class=\"c2rb\">simple</span>",
+          "body": "Verifica el cumplimiento normativo con una lista de chequeo. Es la base del análisis, pero por sí sola no muestra cómo un incendio afectaría la operación."
+        },
+        {
+          "icon": "search",
+          "title": "Nivel <span class=\"c2rb\">medio</span>",
+          "body": "Suma a la verificación normativa el análisis de vulnerabilidades de la instalación: los puntos débiles que la norma por sí sola no revela."
+        },
+        {
+          "icon": "git-branch",
+          "title": "Nivel <span class=\"c2rb\">avanzado</span>",
+          "body": "Analiza procesos, interrelaciones y consecuencias operacionales, con la posibilidad de estimar costos como la pérdida diaria por detención."
+        },
+        {
+          "icon": "calendar-clock",
+          "title": "Un estudio <span class=\"c2rb\">también vence</span>",
+          "body": "Si la operación cambia, el análisis debe actualizarse. La revisión por pares y el criterio multidisciplinario le dan solidez."
+        }
+      ],
+      "cierre": {
+        "bajada": "En IDIEM desarrollamos ingeniería y evaluación de riesgos de incendios para infraestructura de operación minera."
+      }
+    },
+    "5": {
+      "portada": {
+        "kicker": "INFRAESTRUCTURA HOSPITALARIA",
+        "title": "Terminar no es lo mismo que <span class=\"c2rt\">abrir</span>."
+      },
+      "intermedias": [
+        {
+          "icon": "file-text",
+          "title": "Diseño y <span class=\"c2rb\">licitación</span>",
+          "body": "Revisar el Programa Médico Arquitectónico y la constructibilidad antes de licitar ayuda a anticipar problemas que nacen en el papel."
+        },
+        {
+          "icon": "layers",
+          "title": "<span class=\"c2rb\">Ejecución</span>",
+          "body": "Coordinación BIM/MEP y control de programa, costos y calidad para que lo construido responda a lo diseñado."
+        },
+        {
+          "icon": "activity",
+          "title": "Pruebas <span class=\"c2rb\">integradas</span>",
+          "body": "Climatización, presiones diferenciales, gases medicinales y respaldo eléctrico se prueban en conjunto: ahí aparecen las fallas que no se planificaron."
+        },
+        {
+          "icon": "check-circle",
+          "title": "Puesta en <span class=\"c2rb\">marcha</span>",
+          "body": "Su verificación cierra la hoja de ruta, y se planifica desde el diseño, no al final de la obra."
+        }
+      ],
+      "cierre": {
+        "bajada": "En IDIEM acompañamos proyectos de salud en tres fases: diseño y licitación, ejecución y puesta en marcha."
+      }
+    },
+    "7": {
+      "portada": {
+        "kicker": "INSTALACIONES ELÉCTRICAS EN SALUD",
+        "title": "Instalar ya no basta: hay que <span class=\"c2rt\">demostrar</span>."
+      },
+      "intermedias": [
+        {
+          "icon": "file-check",
+          "title": "De instalar a <span class=\"c2rb\">demostrar</span>",
+          "body": "El RIC (DS N°8) pide un diseño más trazable: alimentadores, corte, caída de tensión, puesta a tierra y selectividad quedan justificados."
+        },
+        {
+          "icon": "zap",
+          "title": "Grupo 2: máxima <span class=\"c2rb\">criticidad</span>",
+          "body": "En el RIC la numeración se invierte: el Grupo 2 es el de máxima criticidad, sin interrupción. Pabellones, UCI, partos y neonatología pasan a ese grupo."
+        },
+        {
+          "icon": "building",
+          "title": "No solo <span class=\"c2rb\">hospitales</span>",
+          "body": "El RIC N°11 alcanza a todo recinto de salud cuyas funciones no deben suspenderse: clínicas, centros dentales, atención primaria y hospitales."
+        },
+        {
+          "icon": "gauge",
+          "title": "Revisión y <span class=\"c2rb\">mediciones</span>",
+          "body": "En IDIEM revisamos el proyecto eléctrico frente a la normativa y las bases técnicas del mandante, y realizamos mediciones eléctricas en obra."
+        }
+      ],
+      "cierre": {
+        "bajada": "Revisión de proyectos de especialidades y mediciones eléctricas para recintos de salud."
+      }
+    },
+    "10": {
+      "portada": {
+        "kicker": "SEGURIDAD CONTRA INCENDIOS EN SALUD",
+        "title": "¿Evacuar o <span class=\"c2rt\">defender</span> en sitio?"
+      },
+      "intermedias": [
+        {
+          "icon": "users",
+          "title": "Dos <span class=\"c2rb\">estrategias</span>",
+          "body": "En un hospital, la evacuación masiva no siempre es la primera respuesta: la defensa en sitio mantiene a los pacientes protegidos dentro del edificio."
+        },
+        {
+          "icon": "shield",
+          "title": "Barreras <span class=\"c2rb\">cortahumo</span>",
+          "body": "Compartimentar con barreras cortahumo es parte de lo que permite proteger a los pacientes en su sector."
+        },
+        {
+          "icon": "arrow-up-down",
+          "title": "Ascensores <span class=\"c2rb\">en emergencia</span>",
+          "body": "Usarlos exige presurización y compartimentación. Contar con una sola zona vertical de seguridad es una vulnerabilidad a revisar."
+        },
+        {
+          "icon": "wind",
+          "title": "Escenarios <span class=\"c2rb\">de humo</span>",
+          "body": "La modelación de humos (FDS) permite comparar escenarios de incendio con distinta severidad y ubicación antes de decidir la estrategia."
+        }
+      ],
+      "cierre": {
+        "bajada": "En IDIEM realizamos estudios de simulación de humos y evacuación de personas para recintos como hospitales."
+      }
+    },
+    "14": {
+      "portada": {
+        "kicker": "NAVIDAD 2026",
+        "title": "Felices <span class=\"c2rt\">fiestas</span>"
+      },
+      "intermedias": [
+        {
+          "icon": "users",
+          "title": "Gracias a nuestros <span class=\"c2rb\">equipos</span>",
+          "body": "Por el trabajo de cada día en laboratorios, obras y faenas."
+        },
+        {
+          "icon": "handshake",
+          "title": "Gracias a nuestros <span class=\"c2rb\">clientes</span>",
+          "body": "Por confiar en la ingeniería para construir una infraestructura más segura."
+        }
+      ],
+      "cierre": {
+        "bajada": "Les deseamos una Navidad en paz, junto a quienes más quieren."
+      }
+    }
+  },
+  "videos": {
+    "4": {
+      "tool": "Remotion (CLAUDE.md regla 2: diagramas animados)",
+      "format": "1080×1080 · 28 s · Montserrat incrustada · logo vectorial · música chill house original",
+      "status": "VIDEO DRAFT — ronda MKT 19-10 aplicada (más dinámico, cortes más rápidos, música, «se quiebra» → «se rompe»)",
+      "scenes": [
+        {
+          "t": "0–4 s",
+          "visual": "Fondo oscuro de marca; dos bloques de texto entran desde lados opuestos.",
+          "text": [
+            "Dos versiones.",
+            "Un mismo contrato."
+          ]
+        },
+        {
+          "t": "4–11 s",
+          "visual": "Título «El plan se rompe»; línea de tiempo que avanza y se rompe en tres puntos.",
+          "text": [
+            "El plan se rompe",
+            "Cambio de obra",
+            "Atraso",
+            "Mayor costo"
+          ]
+        },
+        {
+          "t": "11–17 s",
+          "visual": "La pantalla se divide: dos columnas (Versión A / Versión B) que chocan en el centro.",
+          "text": [
+            "Cada parte lo explica desde su propia mirada."
+          ]
+        },
+        {
+          "t": "17–26 s",
+          "visual": "Las piezas de ambas columnas se ordenan en una sola grilla, que se alinea al centro.",
+          "text": [
+            "Estudio técnico imparcial e independiente",
+            "Plazos · Costos · Antecedentes del contrato"
+          ]
+        },
+        {
+          "t": "26–31 s",
+          "visual": "La grilla se convierte en una línea continua.",
+          "text": [
+            "Una base técnica común."
+          ]
+        },
+        {
+          "t": "31–37 s",
+          "visual": "Cierre de marca que termina sobre el logo.",
+          "text": [
+            "Estudios técnicos y peritajes para la resolución de controversias contractuales",
+            "Contratos de ingeniería, construcción, EPC y BOT · públicos y privados"
+          ]
+        }
+      ],
+      "trace": "KB-IPR-006 literal (escenas 6) · WEB-001 VERIFY ('imparcial e independiente', escena 4) · WEB-042 VERIFY (plazo/costos, escena 4)"
+    }
+  },
+  "fact_check": {
+    "1": "SRC-004#C04 (ENE, áreas que no pueden perder funcionalidad) + SRC-004#C06 (problemas frecuentes en obras hospitalarias) + SRC-004#C03 (diagnósticos y revisiones sísmicas, servicio validado MKT 14-10). Sin AITO (DO_NOT_PUBLISH).",
+    "2": "KB-IOM-026 + EXT-0005 (ingeniería y evaluación de riesgos de incendios, minería) + SRC-001#C01 (extensas zonas de producción), SRC-001#C04 (tres niveles), SRC-001#C05 (vigencia, revisión por pares, criterio multidisciplinario). Sin expositor ni incidentes con nombre.",
+    "3": "KB-IOM-052 (chancadores, molinos y correas) + EXT-0011 (levantamiento visual, aéreo, termográfico, modelos 3D con escáner láser y dron). [Inferencia] 'antes de que un daño obligue a intervenir' = encuadre del pain point.",
+    "4": "KB-IPR-006 literal (estudios técnicos y peritajes; contratos de ingeniería, construcción, EPC, BOT y otros; públicos y privados) + WEB-001 VERIFY ('imparcial e independiente', 'correcto entendimiento'). Sin 'Sistema de concesiones'.",
+    "5": "SRC-002#C08 (fallas en pruebas integradas; planificar desde el diseño) + SRC-002#C10 (hoja de ruta 3 fases, servicio validado MKT 14-10). Sin enfoque contractual.",
+    "6": "KB-IOM-064 (etapas construcción, operación, ampliación y abandono) + KB-IOM-005 (mapas de ruido) + KB-IOM-022 solo nombrado (USE_WITH_MATIZ) + EXT-0103 (monitoreo de cumplimiento normativo y estaciones de monitoreo continuo). Norma D.S. 38/2011 MMA según memoria editorial.",
+    "7": "SRC-005#C12 (de instalar a demostrar), SRC-005#C05 (Grupo 2 máxima criticidad; pabellones, UCI, neonatología), SRC-005#C03 (diseño trazable, lámina 1), SRC-005#C04 (RIC N°11, lámina 3). Servicios: WEB-088 VERIFY (revisión de proyectos de especialidades, electricidad) + WEB-087 VERIFY (medición de resistencia eléctrica de pisos) + Sales Intelligence salud SAFE (revisión de diseños, mediciones). Norma = RIC (MKT 19-10), NO NCh4/2003; sin artículo para la medición de pisos.",
+    "8": "KB-IOM-023 + EXT-0002 (monitoreo PREVENTIVO de activos críticos: instrumentación, vibraciones, salud estructural) + SRC-003#C09 (curva P-F) + SRC-001#C10 (beneficios del monitoreo) + SRC-006#C01 (límite: pocos datos de falla). Nunca 'predictivo' como servicio IDIEM.",
+    "9": "EXT-0082 literal (revisión de proyectos y validación normativa de arquitectura, estructura y especialidades; coordinación BIM; mecánica de suelos; topografía; mandantes públicos) + WEB-088 VERIFY ('revisión técnica y documental'). [Inferencia] 'más simple en el papel que con la obra en marcha' = contexto general.",
+    "10": "SRC-003#C05 (evacuación masiva vs defensa en sitio; OGUC una sola zona vertical; NFPA 101 barreras cortahumo y ascensores; modelación de humos FDS) + WEB-073 VERIFY (simulación de humos y evacuación en hospitales, escenarios de distinta severidad y ubicación) + KB-IPR-019 (USE_WITH_MATIZ). [Inferencia] definición de defensa en sitio ('protegidos dentro del edificio'). Sin casos nacionales con nombre.",
+    "11": "KB-IOM-027 + EXT-0005 (inspección de estructuras de acero y peritajes de falla en elementos mecánicos) + EXT-0010 (fisuras, deformaciones y corrosión).",
+    "12": "SRC-004#C01 (analogía del estado de salud), SRC-004#C02 (factores de deterioro; sismos cada ~15–20 años) + SRC-004#C03 (diagnósticos estructurales, servicio validado MKT 14-10). [Inferencia] 'puede verse en buen estado y haber perdido capacidad' = implicancia del dato.",
+    "13": "KB-IOM-045 (seguridad estructural en depósitos y relaves, servicio padre: gestión de vulnerabilidad e integridad) + WEB-004 VERIFY (ensayos geotécnicos para diseño de tranques de relave). Crecimiento del depósito = memoria MKT 05-10. [Inferencia] vínculo con cuidado del suelo = encuadre editorial; sin remediación ni cierre; sin Triaxial ni superlativos.",
+    "14": "Institucional (Navidad): sin knowledge_id, proyectos ni cifras.",
+    "15": "Institucional (Año Nuevo): sin knowledge_id; mensaje validado 'ciencia e ingeniería al desarrollo de la infraestructura del país'."
+  },
+  "verify_before_publish": [
+    "#4 WEB-001 'imparcial e independiente' y WEB-042 'plazos/costos' (guion del video)",
+    "#7 servicios del sitio: revisión de proyecto eléctrico (WEB-088) y mediciones de resistencia de pisos (WEB-087) en salud",
+    "#9 'revisión técnica y documental' (WEB-088)",
+    "#10 simulación de humos y evacuación aplicada a hospitales (WEB-073)",
+    "#13 ensayos geotécnicos para diseño de tranques de relave (WEB-004)",
+    "#6 mención de D.S. 38/2011 MMA en monitoreo minero"
+  ],
+  "chars": {
+    "1": 899,
+    "2": 821,
+    "3": 779,
+    "4": 794,
+    "5": 822,
+    "6": 745,
+    "7": 838,
+    "8": 830,
+    "9": 793,
+    "10": 813,
+    "11": 777,
+    "12": 860,
+    "13": 770,
+    "14": 408,
+    "15": 407
+  }
+}

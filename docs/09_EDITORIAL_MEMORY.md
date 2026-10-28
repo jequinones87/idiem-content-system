@@ -470,6 +470,19 @@ programado al 19-10-2026).
   VERIFY; se validan al aprobar el post que los usa o con las correcciones de MKT; (2) productividad **no se
   bloquea**: activa en VERIFY; (3) mediciones eléctricas de pisos conductivos (NCh4/2003) → célula Infra
   Hospitalaria, disponible en VERIFY.
+- **2026-10-19** — **Formato de entrega (usuario):** cada mes lleva **su propio artefacto workstation**; los posts
+  nunca se entregan como texto en el chat. Diciembre: https://claude.ai/artifact/LQbvx2h518ZtzvDppGHc1m
+  (generador `design_system/gen_month_ws.py`, ahora con varias piezas extra por mes y videos por producir).
+- **2026-10-19** — Ronda MKT diciembre (workstation): fotos #1 `construccion_hospital_queilen`, #2 `generico_faena_minera`,
+  #3 ripios, #12 `hospital_chiloe` (MKT puede reusar fotos de meses previos); #15 «AÑO NUEVO 2027» → «¡Feliz año nuevo!».
+  **Videos dinámicos y atractivos** (pedido MKT): #4 con Remotion (`motion-graphics-ia/idiem-controversias`, 38 s, primer
+  video de ese formato → aprobación MKT) y Navidad con la skill de carrusel + **capa festiva opcional** (`photo.sparkles`:
+  luces que titilan y destellos; solo cuando MKT la pide). Navidad usa una imagen **generada con IA** elegida por MKT: el
+  casco trae un logo "idiem™" que no es el vectorial oficial (pendiente confirmar con MKT).
+- **2026-10-19** — Ronda MKT videos (2): **"quiebra" no se usa** en contenidos de controversias (suena a quiebra de la
+  empresa): en el #4 pasó a «El plan se rompe». Videos **más dinámicos y con cortes más rápidos** (#4: 38 → 28 s;
+  Navidad: 22 → 16 s, rehecho en Remotion con autorización de MKT) y **música chill house** (Navidad con toque navideño:
+  `music.py --xmas`). Música requiere aprobación auditiva.
 - **2026-10-28** — Extras noviembre por contingencia de aluviones (SRC-008/009, célula IPR validada por MKT):
   extra A (3-nov) **video en Remotion** (`motion-graphics-ia/idiem-aluviones`, 26 s, música chill house) y extra B
   (19-nov) carrusel. Pedidos MKT: (1) video **más gráfico que texto y con cortes más rápidos**, en Remotion, con el

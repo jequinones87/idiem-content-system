@@ -88,8 +88,14 @@ aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
   repitas `knowledge_id`, subtemas, claims, pain points, ganchos ni CTAs recientes; (3) **actualiza
   hechos** si cambiaron. Si 2A.2 no tiene material fresco, preferir **menos posts sólidos** o pedir
   insumos antes que rellenar (fail closed).
-- **Workstation SIEMPRE** (MKT 2026-10-28): todo post o juego de posts (también extras fuera de grilla) se entrega en
-  un workstation con los mismos botones y funciones de oct/nov/dic (`design_system/gen_month_ws.py`; extras con `--set`).
+- **Formato de entrega — UNA WORKSTATION POR MES (OBLIGATORIO, usuario 19-10-2026):** las propuestas de
+  posts de cada mes se entregan **siempre** como su propio artefacto workstation (como sep, oct, nov y dic), con
+  gráfica por pieza, copy editable, traza, historial y botones (listo para aplicar, aprobar, LinkedIn,
+  regeneración, PNG/PDF, agenda). **Nunca** entregar los copies como texto en el chat. Generador:
+  `design_system/gen_month_ws.py` (lee `state/plans/AAAA-MM_{asignacion,copies,graficas}.json`; capacidades
+  `db` + `downloads`; pasar `--ws-url` con la URL propia del mes). URLs por mes en `docs/PENDIENTES.me`.
+- **También los extras** (MKT 2026-10-28): todo post o juego de posts fuera de grilla se entrega en
+  un workstation propio con los mismos botones y funciones de oct/nov/dic (`design_system/gen_month_ws.py`; extras con `--set`).
   Carruseles siempre con la Plantilla 02 estándar, sin variantes de diseño por post.
 - **Workstation — historial de cambios OBLIGATORIO** (MKT 2026-09-04): cada tarjeta muestra el bloque
   "Historial de cambios aplicados (N)" y se actualiza en cada ronda aplicada y republicada.

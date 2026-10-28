@@ -31,6 +31,8 @@ def main():
     ap.add_argument("outdir")
     ap.add_argument("--lufs", type=float, default=-17.0)
     ap.add_argument("--seed", type=int, default=7)
+    ap.add_argument("--xmas", action="store_true",
+                    help="toque navideño: cascabeles en el groove y celesta arpegiada (solo si MKT lo pide)")
     a = ap.parse_args()
     out = pathlib.Path(a.outdir)
     tl = json.loads((out / "timeline.json").read_text())
@@ -178,9 +180,35 @@ def main():
         o = np.stack([signal.fftconvolve(x[:, c], ir[:, c])[:N] for c in range(2)], axis=1)
         p = int(pre * SR); return np.vstack([np.zeros((p, 2)), o[:-p]])
 
+    # toque navideño opcional: cascabeles (ruido metálico en corcheas) + celesta (campana FM) arpegiada
+    xm = buf()
+    if a.xmas:
+        def jingle():
+            n = int(0.16 * SR); t = np.arange(n) / SR; x = np.zeros(n)
+            for fr in (5200, 6900, 8300, 9700):
+                x += np.sin(2 * np.pi * fr * t + rng.uniform(0, 6.28)) * np.exp(-t / 0.05)
+            return filt(x * 0.25 + rng.standard_normal(n) * np.exp(-t / 0.02) * 0.6, 'highpass', 4500)
+        tt = T_IN + BEAT / 2; i = 0
+        while tt < T_OUT - 1e-6:
+            place(xm, jingle() * (1.0 if i % 2 else 0.6), tt, 0.8, 1.0); tt += BEAT / 2; i += 1
+        def celesta(m, vel):
+            n = int(1.6 * SR); t = np.arange(n) / SR; fr = mtof(m)
+            x = np.sin(2 * np.pi * fr * t + 0.9 * np.exp(-t / 0.3) * np.sin(2 * np.pi * fr * 3.5 * t))
+            x += 0.3 * np.sin(2 * np.pi * fr * 2.76 * t) * np.exp(-t / 0.25)
+            env = np.exp(-t / 0.55); env[:132] *= np.linspace(0, 1, 132)
+            return x * env * vel
+        for bi, name in enumerate(bars):
+            b0 = bi * BAR; notes = sorted(CH[name][1])
+            seq = [notes[0] + 12, notes[2] + 12, notes[3] + 12, notes[1] + 24]
+            for j, mn in enumerate(seq * 2):
+                tt = b0 + j * BEAT / 2
+                if tt < DUR - 0.5:
+                    pan = 0.3 + 0.4 * (j % 2)
+                    place(xm, celesta(mn, 0.55 if groove(tt) else 0.35), tt, math.cos(pan * math.pi / 2), math.sin(pan * math.pi / 2))
+
     G = dict(kick=0.52, bass=0.40, pad=0.05, keys=0.17, hats=0.11, shk=0.05, clap=0.12, fx=0.035)
-    dry = kick * G['kick'] + bass * G['bass'] + pad * G['pad'] + keys * G['keys'] + hats * G['hats'] + shk * G['shk'] + clap * G['clap'] + fx * G['fx']
-    send = pad * G['pad'] * 0.5 + keys * G['keys'] * 0.6 + clap * G['clap'] * 0.8 + hats * G['hats'] * 0.15 + fx * G['fx'] * 0.9
+    dry = kick * G['kick'] + bass * G['bass'] + pad * G['pad'] + keys * G['keys'] + hats * G['hats'] + shk * G['shk'] + clap * G['clap'] + fx * G['fx'] + xm * 0.11
+    send = pad * G['pad'] * 0.5 + keys * G['keys'] * 0.6 + clap * G['clap'] * 0.8 + hats * G['hats'] * 0.15 + fx * G['fx'] * 0.9 + xm * 0.11 * 0.7
     mix = filt(dry + reverb(send) * 0.5, 'highpass', 28)
     g = np.clip(t_all / 0.25, 0, 1) * np.clip((DUR - t_all) / 1.6, 0, 1) ** 1.5
     mix = np.tanh((mix * g[:, None])[:int(DUR * SR)] * 1.15) / 1.15
