@@ -1,0 +1,38 @@
+{
+  "name": "IDIEM · Aluvión no es solo agua · 3 nov (extra)",
+  "photo": {
+    "file": "../../design_system/assets/month_2026-11/extra_aluvion_png_video.jpg",
+    "focus": "38% 58%",
+    "zoom": 1.10
+  },
+  "cover": {
+    "eyebrow": "AMENAZA ALUVIONAL",
+    "title": "Un aluvión no es\nsolo *agua*."
+  },
+  "steps": [
+    {
+      "icon": "droplets",
+      "title": ["Crecida: [agua]"],
+      "body": ["Una crecida líquida desborda el cauce", "e inunda las zonas bajas."]
+    },
+    {
+      "icon": "mountain",
+      "title": ["Aluvión: [agua y]", "[sedimentos]"],
+      "body": ["La quebrada arrastra sedimentos,", "detritos y rocas junto con el agua."]
+    },
+    {
+      "icon": "layers",
+      "title": ["Se zonifica [distinto]"],
+      "body": ["La amenaza cruza la intensidad del flujo", "(altura y velocidad) con la probabilidad", "de que ocurra."]
+    },
+    {
+      "icon": "map-pin",
+      "title": ["Mapas para [decidir]"],
+      "body": ["Los mapas de amenaza orientan las obras", "de mitigación, la planificación territorial", "y la coordinación ante emergencias."]
+    }
+  ],
+  "closing": {
+    "body": ["En IDIEM acompañamos el ciclo completo:", "diagnóstico, estudios de terreno,", "modelación, zonificación y diseño", "de obras de mitigación."],
+    "url": "idiem.cl"
+  }
+}

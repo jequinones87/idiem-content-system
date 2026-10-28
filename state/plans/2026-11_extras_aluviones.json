@@ -1,0 +1,91 @@
+{
+  "month": "2026-11",
+  "status": "DRAFT — pendiente aprobación MKT",
+  "origin": "Extras por contingencia de lluvias y aluviones (oct-2026). Pedido MKT 28-10-2026: tono educativo y explicativo, no explícitamente comercial, que muestre el servicio y apunte a concretar reuniones; muy visual y con poco texto.",
+  "evidence_note": "Sin knowledge_id: en 2A.2 el servicio solo existe como RESERVE_FACTUAL (R0001/R0002). Servicio vigente y célula IPR confirmados por MKT 28-10-2026; se traza a auxiliary_id SRC-007/SRC-008 (config/topic_bank/expert_sources.json). Sin proyectos con nombre ni Manual de Quebradas (MKT 28-10-2026).",
+  "posts": [
+    {
+      "id": "2026-11-EXTRA-A",
+      "date": "2026-11-03",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "topic": "TOP-030",
+      "format": "VIDEO (carrusel animado 1080×1080, MP4 con música, skill video-carrusel-idiem)",
+      "theme": "Un aluvión no es solo agua: crecida vs. aluvión y zonificación de la amenaza",
+      "editorial_fingerprint": {
+        "editorial_archetype": "technical_question",
+        "hook_type": "contrast",
+        "cta_type": "deep_dive",
+        "pain_category": "confundir crecida con aluvión al evaluar y mitigar una quebrada",
+        "primary_claim": "la amenaza aluvional se zonifica cruzando intensidad del flujo y probabilidad"
+      },
+      "auxiliary_ids": [
+        "SRC-007#C01",
+        "SRC-007#C03",
+        "SRC-007#C05",
+        "SRC-007#C06",
+        "SRC-008#C01"
+      ],
+      "photo": {
+        "file": "design_system/assets/month_2026-11/extra_aluvion_png.jpg",
+        "origin": "Drive MKT, aluvion2.png (id 1pBqawfjbS6SyFk_yqm2P0NJ9N2thN4Mi), foto de la presentación SRC-007; 608×720 ampliada a 1080"
+      },
+      "video_config": "state/plans/2026-11_extras_aluviones_videoA.json",
+      "copy": {
+        "text": "🌧️ No todo lo que baja por una quebrada después de una lluvia intensa es agua.\n\nUna crecida desborda el cauce e inunda las zonas bajas. Un aluvión, en cambio, arrastra sedimentos, detritos y rocas junto con el agua. Por eso no se estudian ni se mitigan de la misma forma.\n\nLa amenaza se zonifica cruzando la intensidad del flujo (su altura y velocidad) con la probabilidad de que ocurra. Con esos mapas se definen obras de mitigación, se apoya la planificación territorial y se coordina la respuesta ante emergencias.\n\nEn #IDIEM acompañamos ese ciclo completo: diagnóstico, estudios de terreno, modelación de crecidas y aluviones con escenarios de cambio climático, zonificación de la amenaza y diseño de obras de mitigación. 🏔️\n\n¿Quieres profundizar en cómo se evalúa una quebrada? Escríbenos y lo conversamos.\n\n#IDIEM #Aluviones #GestiónDelRiesgo #InfraestructuraResiliente",
+        "chars": 875
+      },
+      "fact_check": {
+        "crecida desborda el cauce e inunda": "SRC-007#C01 (crecidas líquidas = inundaciones)",
+        "aluvión arrastra sedimentos, detritos y rocas": "SRC-007#C05/C06 (flujos detríticos; flujo de detritos, caída de rocas)",
+        "zonificación intensidad (altura y velocidad) × probabilidad": "SRC-007#C03 (h y h·v)",
+        "mapas → obras, planificación territorial, emergencias": "SRC-008#C01 etapa 4",
+        "ciclo completo IDIEM": "SRC-008#C01 (validado MKT 28-10)",
+        "'después de una lluvia intensa'": "contexto general, sin citar eventos"
+      }
+    },
+    {
+      "id": "2026-11-EXTRA-B",
+      "date": "2026-11-19",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "topic": "TOP-031",
+      "format": "CARRUSEL (portada + 5 etapas + cierre)",
+      "theme": "Gestión del riesgo aluvional en 5 etapas: del diagnóstico a la obra",
+      "editorial_fingerprint": {
+        "editorial_archetype": "project_challenge",
+        "hook_type": "question",
+        "cta_type": "service_discovery",
+        "pain_category": "decidir qué quebrada intervenir primero y con qué obra",
+        "primary_claim": "oferta integral IDIEM en 5 etapas para la gestión del riesgo aluvional"
+      },
+      "auxiliary_ids": [
+        "SRC-008#C01",
+        "SRC-008#C02",
+        "SRC-007#C01"
+      ],
+      "photos": [
+        "extra_contension2.jpg (Drive contension2.jpg)",
+        "extra_aluvion_jpg.jpg (Drive aluvion2.jpg)",
+        "extra_contension3.jpg (Drive contension3.jpg)",
+        "extra_aluvion_png.jpg (Drive aluvion2.png)"
+      ],
+      "generator": "design_system/gen_extra_aluviones.py",
+      "copy": {
+        "text": "¿Qué quebrada intervenir primero y con qué obra? 🏔️\n\nPasada la emergencia, la pregunta de fondo es dónde invertir y qué solución conviene. Responderla exige una secuencia técnica, no una reacción.\n\nAsí abordamos en #IDIEM la gestión del riesgo aluvional:\n1. Diagnóstico: catastro de infraestructura y viviendas, y sectores expuestos.\n2. Estudios de terreno: hidrología, geología, topografía, geotecnia y geofísica.\n3. Modelación numérica de crecidas y aluviones con cambio climático.\n4. Zonificación de la amenaza para planificar y coordinar emergencias.\n5. Diseño de obras de mitigación, con presupuestos, evaluación económica y términos de referencia.\n\nEstudiar, priorizar, diseñar y validar: un socio técnico en todo el ciclo. 🛡️\n\nSi tu institución está evaluando quebradas o cauces, coordinemos una reunión para revisar el alcance.\n\n#IDIEM #GestiónDelRiesgo #Aluviones #InfraestructuraPública",
+        "chars": 896
+      },
+      "fact_check": {
+        "5 etapas y su contenido": "SRC-008#C01 literal (estudios de terreno resumidos: se omiten geomorfología y mecánica de suelos en el copy, no se agrega nada)",
+        "estudiar, priorizar, diseñar y validar; socio técnico": "SRC-008#C02 (se omite 'transferir capacidades al MOP' para no nombrar mandante)",
+        "'Pasada la emergencia'": "contexto general, sin citar eventos"
+      }
+    }
+  ],
+  "grid_check": {
+    "note": "Insertados entre posts de la grilla v3 sin repetir arquetipo/hook/CTA con los vecinos (11-02 risk_prevention/scenario/technical_conversation · 11-04 evidence_learning/insight/knowledge; 11-18 capability_application/contrast/deep_dive · 11-20 problem_impact_capability/risk/commercial_contact). Conteos del mes con extras: technical_question 2, project_challenge 2; deep_dive 3, service_discovery 3 (en el tope de 3)."
+  },
+  "verify_before_publish": [
+    "Fotos de la presentación SRC-007: confirmar derechos de uso y consentimiento de las personas visibles (contension2: 3 personas; contension3: trabajadores)",
+    "contension3 muestra una ciudad reconocible al fondo y aluvion2.jpg un poblado real afectado: confirmar que no identifican proyectos que no se nombran",
+    "Música del video: requiere aprobación auditiva de una persona"
+  ]
+}
