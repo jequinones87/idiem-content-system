@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "updated": "2026-10-19",
+  "version": 4,
+  "updated": "2026-10-28",
   "description": "Banco de fuentes expertas (presentaciones/webinars de especialistas IDIEM) y temas candidatos para contenidos. Complementa la librería 2A.2 SIN reemplazarla: data/ sigue siendo la fuente canónica. Se amplía cada vez que MKT comparte material nuevo.",
   "rules": {
     "hierarchy": "2A.2 (knowledge_id) manda. Las fuentes SRC-* son evidencia auxiliar candidata: una afirmación de capacidad IDIEM que solo esté en una SRC-* es VERIFY hasta que MKT la valide; validada, se cita como auxiliary_id (SRC-xxx#Cyy).",
@@ -94,6 +94,20 @@
         "INFRA OPERACIÓN MINERA"
       ],
       "cell_note": "Leída completa el 19-10-2026 desde Drive. Replica para minería el marco de SRC-001 (por eso SRC-001#C01–C10 citan también a SRC-006) y agrega ejemplos de monitoreo y criticidad propios de faena."
+    },
+    {
+      "id": "SRC-007",
+      "title": "División de Aguas | Servicios para MOP–DOH y Ley 21.094",
+      "type": "commercial_ppt",
+      "speaker": null,
+      "role": null,
+      "date": "2026-08",
+      "drive": null,
+      "local_copy": "knowledge/expert_sources/SRC-007_division_aguas_ley_21094.md",
+      "cells": [
+        "INFRA PÚBLICA RESILIENTE"
+      ],
+      "cell_note": "Célula PROPUESTA (pendiente MKT): obras hidráulicas MOP-DOH/DGA → IPR (Sales Intelligence: Obras Hidráulicas en MOP). Caso Araucanía sirve agua a postas y escuelas rurales: el proyecto es de suministro de agua (no es infraestructura hospitalaria), pero MKT debe confirmarlo. Presentación comercial recibida por subida directa el 28-10-2026 (no está en Drive). 2A.2 no contiene la División de Aguas: TODA capacidad hídrica es nueva (VERIFY). Ley 21.094 ya existe en 2A.2 como AUX-010…AUX-016 (CHECK_VALIDITY_BEFORE_USE) y es mecanismo de contratación, NO servicio técnico."
     }
   ],
   "claims": [
@@ -731,6 +745,189 @@
         "SRC-003"
       ],
       "text": "Definir la criticidad es el punto de partida del análisis de riesgo: la NCC 40 entrega ejemplos de criticidad para la industria minera; si no hay un criterio claro, se define con la parte interesada a partir de las interrelaciones entre procesos."
+    },
+    {
+      "id": "SRC-007#C01",
+      "kind": "idiem_capability",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Servicios de la División de Aguas: (1) caracterización de recursos hídricos (gabinete y terreno); (2) diagnóstico de infraestructura de suministro de agua; (3) estudios hidrogeológicos para disponibilidad de agua subterránea; (4) modelación hidrológica, hidrogeológica y de recursos hídricos; (5) ingeniería de detalle de sistemas de suministro de agua rural. Incluye trabajo de terreno, mediciones y supervisión técnica.",
+      "related_kb": [],
+      "note": "No está en 2A.2. Pendiente validated_by de MKT."
+    },
+    {
+      "id": "SRC-007#C02",
+      "kind": "idiem_capability",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Oferta integral en defensas fluviales y control aluvional / riesgo de desastres (MOP-DOH), en 5 etapas: diagnóstico (catastro de infraestructura y viviendas, sectores expuestos); estudios básicos y de terreno (hidrología, geología y geomorfología, susceptibilidad de aluviones, topografía, mecánica de suelos y geotecnia, geofísica); modelación numérica de crecidas líquidas y aluviones bajo escenarios de cambio climático; zonificación de la amenaza (mapas para mitigación, planificación territorial y coordinación ante emergencias); diseño de obras de mitigación (alternativas, presupuestos, evaluación económica y TdR).",
+      "related_kb": [],
+      "note": "La lámina dice 'socio técnico para todo el ciclo': no usar esa formulación como promesa. 'Transferir capacidades al MOP' también VERIFY."
+    },
+    {
+      "id": "SRC-007#C03",
+      "kind": "idiem_capability",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Metodología aplicada en agua potable rural (Programa Infraestructura para el Buen Vivir): diagnóstico físico, social y legal → análisis de alternativas → ingeniería de detalle de soluciones → perforación de pozos (incluida prueba de bombeo).",
+      "related_kb": []
+    },
+    {
+      "id": "SRC-007#C04",
+      "kind": "project_data",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Trabajo en curso: evaluación y soluciones de sistemas de potabilización de agua en postas y escuelas rurales, Región de la Araucanía (2025-2027). Convenio DGOP-DOH-IDIEM, Programa Infraestructura para el Buen Vivir. Contratado por Ley 21.094 o transferencia de recursos.",
+      "sensitivity": "proyecto y mandante con nombre: validar con MKT"
+    },
+    {
+      "id": "SRC-007#C05",
+      "kind": "project_data",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Trabajo en curso: análisis de la cuenca del Biobío para la formulación del plan estratégico de recursos hídricos (2026-2027), DGA.",
+      "sensitivity": "proyecto y mandante con nombre: validar con MKT"
+    },
+    {
+      "id": "SRC-007#C06",
+      "kind": "project_data",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Trabajo en curso: análisis de recursos hídricos de cuencas de la Región de Magallanes y de la Antártica Chilena (2026-2027), DGA.",
+      "sensitivity": "proyecto y mandante con nombre: validar con MKT"
+    },
+    {
+      "id": "SRC-007#C07",
+      "kind": "project_data",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Trabajo en curso: actualización de las estrategias de mitigación contra aluviones en zona alta y media de la Quebrada de Macul (Peñalolén y La Florida, RM).",
+      "sensitivity": "proyecto y territorio con nombre: validar con MKT; sin año ni mandante en la fuente"
+    },
+    {
+      "id": "SRC-007#C08",
+      "kind": "normative",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Ley 21.094 sobre Universidades Estatales (2018): busca 'establecer un marco jurídico que permita a las Universidades del Estado fortalecer sus estándares de calidad académica y de gestión institucional, y que contribuyan de forma permanente en el desarrollo integral del país'.",
+      "related_aux": [
+        "AUX-010"
+      ],
+      "note": "Legal = VERIFY (Sales Intelligence CONTENT_RULES): contrastar con texto oficial vigente."
+    },
+    {
+      "id": "SRC-007#C09",
+      "kind": "normative",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Art. 37 inciso 1° Ley 21.094: quedan excluidos de la Ley 19.886 los convenios que celebren las universidades del Estado con organismos públicos de la Administración del Estado y los que celebren entre sí. Según la presentación, permite convenios de prestación de servicios entre organismos públicos y la Universidad de Chile sin aplicar la ley de compras públicas.",
+      "related_aux": [
+        "AUX-010",
+        "AUX-015",
+        "AUX-016"
+      ],
+      "note": "Mecanismo de contratación, nunca servicio técnico (regla de célula IPR)."
+    },
+    {
+      "id": "SRC-007#C10",
+      "kind": "normative",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Según la presentación, el art. 37 no restringe monto ni plazo de los contratos.",
+      "note": "Interpretación de la presentación; verificar con fuente oficial/jurídica antes de publicar. Se matiza con C12 (control de legalidad sobre 10.000 UTM)."
+    },
+    {
+      "id": "SRC-007#C11",
+      "kind": "normative",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Dictamen 002767 de 2019 de la CGR fijó la interpretación y alcance del art. 37 a solicitud de un organismo público.",
+      "note": "FUENTE TRUNCADA: la lámina no trae el resumen del dictamen. Usar solo la existencia del dictamen, nunca su contenido."
+    },
+    {
+      "id": "SRC-007#C12",
+      "kind": "normative",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Resolución 16 de 2020 de la CGR: los contratos de prestación de servicios bajo el art. 37 sobre 10.000 UTM deben pasar por control de legalidad (toma de razón) ante la Contraloría."
+    },
+    {
+      "id": "SRC-007#C13",
+      "kind": "internal_reference",
+      "class": "INTERNAL",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Flujo de contratación: solicitud de cotización → propuesta técnico-económica IDIEM → contrato bajo Ley 21.094 (bajo 10.000 UTM: directo; sobre 10.000 UTM: toma de razón en Contraloría) → convenio formalizado. Plazo aproximado de toma de razón: '1 mes (?)'.",
+      "note": "La propia fuente marca el plazo con '(?)': no publicar el plazo. El flujo sin plazo podría pasar a VERIFY si MKT lo pide."
+    },
+    {
+      "id": "SRC-007#C14",
+      "kind": "concept",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Beneficios declarados de los convenios bajo Ley 21.094: plazo de contratación, eficiencia en los recursos del proceso de compra, menor riesgo de declarar desierto el proceso, recursos del Estado.",
+      "related_aux": [
+        "AUX-013",
+        "AUX-014"
+      ],
+      "note": "Beneficio comercial/administrativo: no presentarlo como servicio técnico; AUX-014 tiene CORRECCION_NECESARIA en 2A.2."
+    },
+    {
+      "id": "SRC-007#C15",
+      "kind": "internal_reference",
+      "class": "INTERNAL",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Organismos con convenios ya celebrados bajo art. 37 (16): Gendarmería, Dipreca, U. de O'Higgins, SSMSO (8), MINVU, MOP-Arq-DOH, Servicio de Salud Chiloé, Servicio de Salud Osorno, Hospital Tisné, FACh, municipalidades de Lo Barnechea, Santiago, San Rosendo, Caldera, San Clemente y Copiapó.",
+      "note": "Clientes con nombre: no van al copy sin autorización explícita."
+    },
+    {
+      "id": "SRC-007#C16",
+      "kind": "project_data",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Cifras institucionales de la presentación: 800+ ingenieros y técnicos; 450.000 ensayos al año; 540 estudios de ingeniería al año; 13 divisiones; pertenencia a la Facultad de Ingeniería de la Universidad de Chile.",
+      "note": "Cifras = VERIFY (vigencia). No están en 2A.2."
+    },
+    {
+      "id": "SRC-007#C17",
+      "kind": "internal_reference",
+      "class": "DO_NOT_PUBLISH",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Formulaciones promocionales de la presentación: 'líder en Chile', 'Referentes en el sector construcción', 'socio técnico para todo el ciclo'.",
+      "blocked_reason": "Superlativos/promesas: la voz de marca prohíbe superlativos (CLAUDE.md, editorial memory)."
     }
   ],
   "topics": [
@@ -1245,6 +1442,104 @@
         "KB-IOM-026"
       ],
       "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-030",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "title": "Agua potable rural: antes de diseñar, diagnosticar lo físico, lo social y lo legal",
+      "claims": [
+        "SRC-007#C03",
+        "SRC-007#C01"
+      ],
+      "angle": "Una solución de agua rural no parte por la ingeniería: parte por entender el sistema, la comunidad y la situación legal.",
+      "archetype_hint": "process_result",
+      "hook_hint": "process_step",
+      "format_hint": "CAROUSEL",
+      "related_kb": [],
+      "flags": [
+        "capacidad hídrica nueva fuera de 2A.2 = VERIFY hasta validación MKT",
+        "célula IPR propuesta: confirmar con MKT"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-031",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "title": "Aluviones: del mapa de amenaza a la obra de mitigación",
+      "claims": [
+        "SRC-007#C02"
+      ],
+      "angle": "Sin modelación y zonificación de la amenaza, las obras de mitigación se diseñan a ciegas; el cambio climático cambia los escenarios.",
+      "archetype_hint": "risk_prevention",
+      "hook_hint": "risk",
+      "format_hint": "CAROUSEL",
+      "related_kb": [],
+      "flags": [
+        "capacidad hídrica nueva fuera de 2A.2 = VERIFY hasta validación MKT",
+        "célula IPR propuesta: confirmar con MKT"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-032",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "title": "¿Cuánta agua subterránea hay realmente? Estudios hidrogeológicos y modelación",
+      "claims": [
+        "SRC-007#C01"
+      ],
+      "angle": "La disponibilidad de agua subterránea se estudia y modela antes de perforar o planificar.",
+      "archetype_hint": "technical_question",
+      "hook_hint": "question",
+      "format_hint": "STATIC",
+      "related_kb": [],
+      "flags": [
+        "capacidad hídrica nueva fuera de 2A.2 = VERIFY hasta validación MKT",
+        "célula IPR propuesta: confirmar con MKT"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-033",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "title": "Planificar el agua por cuenca",
+      "claims": [
+        "SRC-007#C01",
+        "SRC-007#C05",
+        "SRC-007#C06"
+      ],
+      "angle": "La gestión hídrica se decide a escala de cuenca, no de obra aislada.",
+      "archetype_hint": "data_implication",
+      "hook_hint": "insight",
+      "format_hint": "STATIC",
+      "related_kb": [],
+      "flags": [
+        "capacidad hídrica nueva fuera de 2A.2 = VERIFY hasta validación MKT",
+        "célula IPR propuesta: confirmar con MKT",
+        "proyectos y mandantes con nombre (DGA, Biobío, Magallanes) = VERIFY + sensibilidad MKT"
+      ],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-034",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "title": "Convenios entre organismos públicos y universidades estatales (Ley 21.094, art. 37)",
+      "claims": [
+        "SRC-007#C09",
+        "SRC-007#C12",
+        "SRC-007#C14"
+      ],
+      "angle": "Explicar el mecanismo de contratación como facilidad administrativa, sin presentarlo como servicio técnico.",
+      "archetype_hint": "capability_application",
+      "hook_hint": "contrast",
+      "format_hint": "CAROUSEL",
+      "related_kb": [],
+      "flags": [
+        "legal = VERIFY: revisar contra fuente oficial vigente (CONTENT_RULES)",
+        "Ley 21.094 es mecanismo, NO servicio técnico (regla célula IPR)",
+        "cruza AUX-010…AUX-016 (CHECK_VALIDITY_BEFORE_USE)",
+        "no publicar plazo '1 mes (?)' ni lista de organismos (INTERNAL)"
+      ],
       "status": "CANDIDATE"
     }
   ]

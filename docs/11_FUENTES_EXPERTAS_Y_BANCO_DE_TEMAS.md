@@ -40,6 +40,7 @@
 | SRC-004 | Vulnerabilidad estructural (vida avanzada) y sísmica en Elementos No Estructurales | Sergio Tapia Pérez · Jefe de Proyectos, Div. Estructuras Peritajes | 14-07-2026 | IHA |
 | SRC-005 | Reglamento RIC en Salud (DS N°8) | Sergio Reygadas Veragua · Jefe de Proyectos Eléctricos, DES | s/f | IHA |
 | SRC-006 | Vulnerabilidad de incendio en infraestructura y faenas mineras | Diego Olave | 19-08-2026 | IOM |
+| SRC-007 | División de Aguas: servicios MOP–DOH y Ley 21.094 (presentación comercial) | *(sin expositor)* | 08-2026 | IPR (**propuesta**, validar MKT) |
 
 Notas:
 - **19-10-2026:** MKT volvió a compartir SRC-002 y SRC-003 (PDF) y SRC-004, 005 y 006 (Drive). No hay
@@ -139,7 +140,28 @@ Notas:
 - Efecto "bola de nieve" y decisiones por etapa y por rol.
 - Cifras de casos (+86,1 %, 10–25 %, 8–12 meses): **INTERNAL**.
 
-## Banco de temas candidatos (29; 1 descartado)
+**SRC-007 · División de Aguas y Ley 21.094 (recibida 28-10-2026)**
+- Llegó por subida directa (no está en Drive). Transcripción literal en
+  `knowledge/expert_sources/SRC-007_division_aguas_ley_21094.md`; el PPTX (~21 MB) no se versiona.
+- **2A.2 no tiene la División de Aguas.** Todas las capacidades hídricas son nuevas → **VERIFY** hasta que
+  MKT las valide (`validated_by`). Sales Intelligence (MOP → Obras Hidráulicas) solo da el ángulo.
+- Servicios declarados (C01): caracterización de recursos hídricos; diagnóstico de infraestructura de
+  suministro de agua; estudios hidrogeológicos (agua subterránea); modelación hidrológica e
+  hidrogeológica; ingeniería de detalle de agua rural.
+- Riesgo aluvional en 5 etapas (C02): diagnóstico → estudios básicos y de terreno → modelación de
+  crecidas y aluviones con cambio climático → zonificación de la amenaza → diseño de obras de mitigación.
+- Agua potable rural (C03): diagnóstico físico, social y legal → alternativas → ingeniería de detalle →
+  perforación de pozos con prueba de bombeo.
+- Proyectos en curso con nombre (C04–C07: Araucanía DGOP-DOH, Biobío DGA, Magallanes DGA, Quebrada de
+  Macul): **VERIFY + sensibilidad MKT**.
+- **Ley 21.094** (C08–C12, C14): ya está en 2A.2 como AUX-010…AUX-016 (`CHECK_VALIDITY_BEFORE_USE`).
+  Es **mecanismo de contratación, no servicio técnico**. Todo lo legal es VERIFY contra fuente oficial.
+  El resumen del Dictamen CGR 002767/2019 **no viene en el archivo** (fuente truncada).
+- **INTERNAL:** plazo de toma de razón "1 mes (?)" (la propia fuente duda) y la lista de 16 organismos con
+  convenios (C13, C15). **DO_NOT_PUBLISH:** "líder en Chile", "referentes", "socio técnico para todo el
+  ciclo" (C17). Cifras institucionales 800+ / 450.000 / 540 / 13 divisiones: VERIFY (C16).
+
+## Banco de temas candidatos (34; 1 descartado)
 
 | ID | Célula | Tema | Sugerencia (arquetipo · hook · formato) | Cuidado |
 |---|---|---|---|---|
@@ -172,6 +194,13 @@ Notas:
 | TOP-027 | IHA | Lo que enseñaron los incendios hospitalarios del siglo pasado | evidence_learning · data_point · carrusel | citar NFPA |
 | TOP-028 | IHA | Salas eléctricas de un hospital: polvo, calor y arcos | data_implication · insight · estático | — |
 | TOP-029 | IOM | ¿Quién define qué es crítico? Criticidad en el análisis de riesgo | technical_question · question · estático | — |
+| TOP-030 | IPR* | Agua potable rural: diagnosticar lo físico, lo social y lo legal antes de diseñar | process_result · process_step · carrusel | capacidad nueva = VERIFY |
+| TOP-031 | IPR* | Aluviones: del mapa de amenaza a la obra de mitigación | risk_prevention · risk · carrusel | capacidad nueva = VERIFY |
+| TOP-032 | IPR* | ¿Cuánta agua subterránea hay realmente? Hidrogeología y modelación | technical_question · question · estático | capacidad nueva = VERIFY |
+| TOP-033 | IPR* | Planificar el agua por cuenca | data_implication · insight · estático | proyectos DGA con nombre = VERIFY + sensibilidad |
+| TOP-034 | IPR* | Convenios con universidades estatales (Ley 21.094, art. 37) | capability_application · contrast · carrusel | legal VERIFY; mecanismo, no servicio; sin plazo ni lista de organismos |
+
+\* IPR propuesta para SRC-007: confirmar con MKT (el caso Araucanía abastece postas rurales).
 
 **Lectura para la planificación:** este material **repone la célula Salud (IHA)**, que quedó sin
 ítems frescos tras noviembre: 22 temas IHA vigentes (TOP-002 descartado) y 6 IOM listos para diciembre en adelante.

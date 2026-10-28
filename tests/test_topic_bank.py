@@ -25,7 +25,11 @@ def test_ids_unique():
 def test_sources_have_trace():
     for s in BANK["sources"]:
         assert re.fullmatch(r"SRC-\d{3}", s["id"])
-        assert s["drive"].startswith("https://"), s["id"]
+        # trazabilidad: enlace de Drive o, si llegó por subida directa, transcripción en el repo
+        if s.get("drive"):
+            assert s["drive"].startswith("https://"), s["id"]
+        else:
+            assert s.get("local_copy") and (ROOT / s["local_copy"]).is_file(), s["id"]
         assert set(s["cells"]) <= CELLS, s["id"]
 
 
