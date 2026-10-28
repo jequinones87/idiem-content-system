@@ -37,7 +37,7 @@
           },
           {
             "icon": "shield-check",
-            "title": "En IDIEM, <span class=\"c2rb\">todo el ciclo</span>",
+            "title": "En IDIEM acompañamos el <span class=\"c2rb\">ciclo completo</span>",
             "body": "Diagnóstico · Terreno · Modelación · Zonificación · Obras"
           }
         ],
@@ -56,6 +56,10 @@
       "flag": "Foto de la presentación SRC-008: confirmar derechos de uso",
       "created": "28-10-2026",
       "hist": [
+        {
+          "date": "28-10-2026",
+          "summary": "MKT: en la escena del ciclo del servicio, «En IDIEM, todo el ciclo» → «En IDIEM acompañamos el ciclo completo» (video re-renderizado y lámina de respaldo 04)."
+        },
         {
           "date": "28-10-2026",
           "summary": "MKT: video en Remotion, más gráfico que texto y con cortes más rápidos (34 → 26 s); workstation propio para los extras."
