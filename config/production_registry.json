@@ -1,0 +1,25 @@
+{
+  "_comment": "Registro ÚNICO de lo producido y de los métodos vigentes. Lo leen docs/14_PLAYBOOK_PRODUCCION.md, `python -m idiem.preflight` y tests/test_production_registry.py. Actualizarlo en el mismo commit en que se publica un workstation nuevo o se aprueba un método nuevo.",
+  "version": 1,
+  "updated": "2026-10-28",
+  "integration": {
+    "branch": "claude/file-reading-nsposu",
+    "note": "Rama de integración de facto (los PR #2–#6 apuntan a ella; el PR #1 la lleva a `main`, que sigue vacía). Toda rama de trabajo nueva parte de aquí y vuelve a ella por PR. Antes de producir, `python -m idiem.preflight` lista las ramas con trabajo que todavía no está integrado."
+  },
+  "workstations": [
+    {"id": "2026-09", "period": "2026-09", "kind": "month", "url": "https://claude.ai/code/artifact/f9016145-d797-4a02-867e-1e478de62a6b", "generator": "design_system/gen_workstation.py", "data": null, "status": "PUBLICADO"},
+    {"id": "2026-10", "period": "2026-10", "kind": "month", "url": "https://claude.ai/artifact/9XbzZUmBKE3Kgy2wa7BU94", "generator": "design_system/gen_workstation.py", "data": null, "status": "PROGRAMADO · cerrado, no regenerar"},
+    {"id": "2026-10_webinar_acero", "period": "2026-10", "kind": "webinar", "url": "https://claude.ai/artifact/9VHLEeZ2WYm2pUwyhb4FkA", "generator": "design_system/gen_webinar_workstation.py", "data": null, "status": "PROGRAMADO"},
+    {"id": "2026-11", "period": "2026-11", "kind": "month", "url": "https://claude.ai/artifact/BnifYwYQhXMhPv4cCCXhG3", "generator": "design_system/gen_month_ws.py", "data": "2026-11", "status": "PROGRAMADO · no retocar"},
+    {"id": "2026-11_extras_aluviones", "period": "2026-11", "kind": "extras", "url": "https://claude.ai/artifact/R1rcK8fijy8f6HLMnjVBAB", "generator": "design_system/gen_month_ws.py --set 2026-11_extras_aluviones", "data": "2026-11_extras_aluviones", "status": "DRAFT · en revisión MKT"},
+    {"id": "2026-12", "period": "2026-12", "kind": "month", "url": "https://claude.ai/artifact/LQbvx2h518ZtzvDppGHc1m", "generator": "design_system/gen_month_ws.py", "data": "2026-12", "status": "DRAFT · en revisión MKT"}
+  ],
+  "methods": {
+    "static": {"template": "Plantilla 01 Servicios (foto + anillo rojo + mensaje)", "code": "design_system/gen_month_ws.py → static_canvas", "data_keys": ["svc", "msg", "base"]},
+    "carousel": {"template": "Plantilla 02 (misma foto en todas las láminas; portada con degradado; intermedias con velo, número rojo, ícono PNG, barra roja, título con caja roja y bajada; cierre de marca sin foto)", "code": "design_system/gen_month_ws.py → carousel_slides + carousel.CAROUSEL_CSS", "data_keys": {"portada": ["kicker", "title"], "intermedias": ["icon", "title", "body"], "cierre": ["bajada"]}, "icons": "design_system/assets/icon_<nombre>.png (320 px, trazo blanco estilo Lucide)", "rule": "Sin variantes de diseño por post (MKT 28-10-2026)."},
+    "special": {"template": "Pieza conmemorativa / saludo (foto + velo + kicker + título)", "code": "design_system/gen_month_ws.py → special_canvas", "data_keys": ["kicker", "title", "sub"]},
+    "video_carousel": {"tool": "skill .claude/skills/video-carrusel-idiem", "when": "carrusel o post aprobado → video en capas, sin pedido de más gráfica", "reference": "SIM 11-nov (2026-11 post 5)"},
+    "video_graphic": {"tool": "Remotion · repo jequinones87/motion-graphics-ia", "when": "MKT pide un video más gráfico que texto o con cortes rápidos, o un formato que la skill no cubre", "reference": "idiem-controversias (2026-12 post 4, 28 s): escenas de ~4 s, barridos rojos entre escenas, íconos trazo a trazo, cierre de marca sobre el logo", "projects": ["idiem-sim", "idiem-controversias", "idiem-navidad", "idiem-aluviones"], "music": ".claude/skills/video-carrusel-idiem/scripts/music.py (120 BPM, −17 LUFS; requiere aprobación auditiva)"},
+    "delivery": {"rule": "Todo post o juego de posts se entrega en un workstation (mes, extras o webinar) con los botones compartidos de design_system/workstation_shared; nunca solo como texto en el chat.", "capabilities": {"db": {}, "user": {}, "downloads": true}}
+  }
+}

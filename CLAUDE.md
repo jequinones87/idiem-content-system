@@ -55,6 +55,20 @@ Build a deterministic, auditable content-planning and drafting system for IDIEM 
 - Do not duplicate the knowledge base into prompt text when structured retrieval is available.
 - Keep future visual/assets integration behind an interface.
 
+## Antes de producir cualquier pieza (OBLIGATORIO desde 28-10-2026)
+
+Vale para grillas mensuales, extras, videos y pedidos sueltos. Método vigente por formato:
+`docs/14_PLAYBOOK_PRODUCCION.md` + `config/production_registry.json`.
+
+1. **Ramas:** `PYTHONPATH=src python -m idiem.preflight` (el hook de inicio de sesión muestra el resumen). Si
+   lista ramas con trabajo no integrado, fusionarlas en la rama de trabajo (o preguntar) **antes** de proponer:
+   ahí viven decisiones de MKT que no se ven desde otra rama. Rama de integración: `claude/file-reading-nsposu`.
+2. **Lo ya hecho:** abrir el workstation y los `state/plans/*_{asignacion,copies,graficas}.json` de los 2 últimos
+   meses y **reutilizar** sus plantillas, generadores y videos de referencia; nada de variantes nuevas sin MKT.
+3. **IDs:** fuentes `SRC-*` y temas `TOP-*` con el siguiente ID libre que informa el preflight (cuenta todas las ramas).
+4. **Entrega:** siempre un workstation registrado en `config/production_registry.json` (los tests fallan si falta).
+5. Si el pedido no calza con ningún método del playbook: preguntar a MKT (fail closed).
+
 ## Editorial memory (aprendizajes del equipo)
 
 Antes de escribir o corregir cualquier copy/pieza, lee `docs/09_EDITORIAL_MEMORY.md`.
