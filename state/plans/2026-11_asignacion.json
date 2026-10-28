@@ -234,18 +234,18 @@
       "cell": "INFRA PÚBLICA RESILIENTE",
       "knowledge_id": null,
       "auxiliary_ids": [
-        "SRC-007#C01",
-        "SRC-007#C03",
-        "SRC-007#C05",
-        "SRC-007#C06",
-        "SRC-008#C01"
+        "SRC-008#C01",
+        "SRC-008#C03",
+        "SRC-008#C05",
+        "SRC-008#C06",
+        "SRC-009#C01"
       ],
       "archetype": "technical_question",
       "hook_type": "contrast",
       "cta_type": "deep_dive",
-      "format": "VIDEO (carrusel animado 1080×1080, MP4 con música, skill video-carrusel-idiem)",
+      "format": "VIDEO (Remotion, motion-graphics-ia/idiem-aluviones, 26 s, con música)",
       "flags": [
-        "detalle en state/plans/2026-11_extras_aluviones.json",
+        "detalle en state/plans/2026-11_extras_aluviones_{asignacion,copies,graficas}.json (workstation propio)",
         "DRAFT"
       ]
     },
@@ -257,16 +257,16 @@
       "cell": "INFRA PÚBLICA RESILIENTE",
       "knowledge_id": null,
       "auxiliary_ids": [
-        "SRC-008#C01",
-        "SRC-008#C02",
-        "SRC-007#C01"
+        "SRC-009#C01",
+        "SRC-009#C02",
+        "SRC-008#C01"
       ],
       "archetype": "project_challenge",
       "hook_type": "question",
       "cta_type": "service_discovery",
       "format": "CARRUSEL (portada + 5 etapas + cierre)",
       "flags": [
-        "detalle en state/plans/2026-11_extras_aluviones.json",
+        "detalle en state/plans/2026-11_extras_aluviones_{asignacion,copies,graficas}.json (workstation propio)",
         "DRAFT"
       ]
     }

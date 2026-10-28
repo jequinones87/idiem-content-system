@@ -88,6 +88,9 @@ aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
   repitas `knowledge_id`, subtemas, claims, pain points, ganchos ni CTAs recientes; (3) **actualiza
   hechos** si cambiaron. Si 2A.2 no tiene material fresco, preferir **menos posts sólidos** o pedir
   insumos antes que rellenar (fail closed).
+- **Workstation SIEMPRE** (MKT 2026-10-28): todo post o juego de posts (también extras fuera de grilla) se entrega en
+  un workstation con los mismos botones y funciones de oct/nov/dic (`design_system/gen_month_ws.py`; extras con `--set`).
+  Carruseles siempre con la Plantilla 02 estándar, sin variantes de diseño por post.
 - **Workstation — historial de cambios OBLIGATORIO** (MKT 2026-09-04): cada tarjeta muestra el bloque
   "Historial de cambios aplicados (N)" y se actualiza en cada ronda aplicada y republicada.
 - **Fotos siempre desde la librería de Drive de IDIEM.** Archivos > ~6 MB fallan al descargar por el
@@ -156,6 +159,8 @@ Antes de hacer cualquier video, decidir la herramienta con esta regla (en orden;
    - subtítulos sincronizados con voz;
    - cifras o gráficos animados, mapas de proyectos;
    - formatos distintos de 1:1 (vertical 9:16, horizontal 16:9).
+   - cuando MKT pide un video **más gráfico que texto** o con cortes rápidos, aunque parta de un carrusel o post
+     (MKT 28-10-2026, extra de aluviones; referencia: video #4 de diciembre, `idiem-controversias`).
 3. **No calza en ninguno, o hay duda** → no elegir: preguntar a MKT (fail closed).
 
 Condiciones para usar Remotion (si falta una, el video queda en `DRAFT` y se informa el bloqueo):

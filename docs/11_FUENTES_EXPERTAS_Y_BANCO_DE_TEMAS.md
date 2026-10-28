@@ -40,17 +40,17 @@
 | SRC-004 | Vulnerabilidad estructural (vida avanzada) y sísmica en Elementos No Estructurales | Sergio Tapia Pérez · Jefe de Proyectos, Div. Estructuras Peritajes | 14-07-2026 | IHA |
 | SRC-005 | Reglamento RIC en Salud (DS N°8) | Sergio Reygadas Veragua · Jefe de Proyectos Eléctricos, DES | s/f | IHA |
 | SRC-006 | Vulnerabilidad de incendio en infraestructura y faenas mineras | Diego Olave | 19-08-2026 | IOM |
-| SRC-007 | Estudios de Aluviones y Obras de Mitigación Aluvional (MOP-DOH) — presentación completa del servicio | *(sin expositor)* | 06-2026 | IPR (validada MKT 28-10) |
-| SRC-008 | Oferta integral IDIEM · Defensas Fluviales y Control Aluvional (síntesis de SRC-007, "para kike") | *(sin expositor)* | 28-10-2026 | IPR (validada MKT 28-10) |
+| SRC-008 | Estudios de Aluviones y Obras de Mitigación Aluvional (MOP-DOH) — presentación completa del servicio | *(sin expositor)* | 06-2026 | IPR (validada MKT 28-10) |
+| SRC-009 | Oferta integral IDIEM · Defensas Fluviales y Control Aluvional (síntesis de SRC-008, "para kike") | *(sin expositor)* | 28-10-2026 | IPR (validada MKT 28-10) |
 
 Notas:
 - **19-10-2026:** MKT volvió a compartir SRC-002 y SRC-003 (PDF) y SRC-004, 005 y 006 (Drive). No hay
   fuentes nuevas: se releyeron completas y se sumaron 14 afirmaciones y 7 temas (TOP-023 a TOP-029).
 - SRC-006 se leyó completa: replica para minería el marco de SRC-001, por eso SRC-001#C01–C10 también
   la citan. Agrega monitoreo en faena (temperaturas, vibración de polines) y criticidad (NCC 40).
-- **28-10-2026:** el usuario compartió SRC-007 (Drive, leída completa, 16 láminas) y SRC-008 (lámina
-  única subida al chat). Se sumaron 13 afirmaciones (SRC-007#C01–C11, SRC-008#C01–C02) y 3 temas
-  (TOP-030 a TOP-032). **Célula propuesta, no validada:** el servicio equivalente en 2A.2 (R0002
+- **28-10-2026:** el usuario compartió SRC-008 (Drive, leída completa, 16 láminas) y SRC-009 (lámina
+  única subida al chat). Se sumaron 13 afirmaciones (SRC-008#C01–C11, SRC-009#C01–C02) y 3 temas
+  (TOP-035 a TOP-037; TOP-030–034 quedan reservados para la rama de División de Aguas). **Célula propuesta, no validada:** el servicio equivalente en 2A.2 (R0002
   "mitigación de riesgos naturales", R0001 "peligros naturales") está como `RESERVE_FACTUAL` fuera de
   las células priorizadas y **no tiene knowledge_id activo**; las capacidades quedan VERIFY hasta que MKT
   confirme vigencia y célula.
@@ -132,13 +132,13 @@ Notas:
   - ~~AITO (Asesoría a la Inspección Técnica de Obra)~~ — **no publicar** (MKT 19-10-2026): C05 y C07
     quedan en DO_NOT_PUBLISH y TOP-002 descartado.
 
-**SRC-007 / SRC-008 · Aluviones y mitigación aluvional (MOP-DOH)**
-- Oferta en 5 etapas (SRC-008#C01, **VERIFY**): diagnóstico (catastro, sectores expuestos) → estudios
+**SRC-008 / SRC-009 · Aluviones y mitigación aluvional (MOP-DOH)**
+- Oferta en 5 etapas (SRC-009#C01, **VERIFY**): diagnóstico (catastro, sectores expuestos) → estudios
   básicos y de terreno (hidrología, geología, geomorfología, susceptibilidad, topografía, mecánica de
   suelos, geotecnia, geofísica) → modelación numérica de crecidas y aluviones con cambio climático →
   zonificación de la amenaza → diseño de obras de mitigación (alternativas, presupuestos, evaluación
   económica, TdR). Posicionamiento: socio técnico del ciclo completo (C02, **VERIFY**).
-- Oferta formal (SRC-007#C01–C02, **VERIFY**): evaluación de amenaza por crecidas líquidas y flujos
+- Oferta formal (SRC-008#C01–C02, **VERIFY**): evaluación de amenaza por crecidas líquidas y flujos
   detríticos hasta factibilidad; asesoría de mejora continua del Manual de Quebradas.
 - Conceptos **SAFE**: zonificación = intensidad (h, h·v) × probabilidad, inundación ≠ aluvión (C03);
   factores de susceptibilidad y su peso según zona climática (C04); aluvión de diseño = hidrograma de
@@ -203,9 +203,9 @@ Notas:
 | TOP-027 | IHA | Lo que enseñaron los incendios hospitalarios del siglo pasado | evidence_learning · data_point · carrusel | citar NFPA |
 | TOP-028 | IHA | Salas eléctricas de un hospital: polvo, calor y arcos | data_implication · insight · estático | — |
 | TOP-029 | IOM | ¿Quién define qué es crítico? Criticidad en el análisis de riesgo | technical_question · question · estático | — |
-| TOP-030 | IPR | Un aluvión no es una crecida: por qué la amenaza se zonifica distinto | evidence_learning · contrast · carrusel | célula propuesta; capacidades VERIFY; contingencia |
-| TOP-031 | IPR | Del diagnóstico a la obra: ciclo de gestión del riesgo aluvional en 5 etapas | process_result · question · carrusel | ídem; proyectos con nombre INTERNAL |
-| TOP-032 | IPR | ¿Qué hace que una quebrada sea más propensa a generar aluviones? | technical_question · question · estático | sin cifras de ponderación (C08) |
+| TOP-035 | IPR | Un aluvión no es una crecida: por qué la amenaza se zonifica distinto | evidence_learning · contrast · carrusel | célula propuesta; capacidades VERIFY; contingencia |
+| TOP-036 | IPR | Del diagnóstico a la obra: ciclo de gestión del riesgo aluvional en 5 etapas | process_result · question · carrusel | ídem; proyectos con nombre INTERNAL |
+| TOP-037 | IPR | ¿Qué hace que una quebrada sea más propensa a generar aluviones? | technical_question · question · estático | sin cifras de ponderación (C08) |
 
 **Lectura para la planificación:** este material **repone la célula Salud (IHA)**, que quedó sin
 ítems frescos tras noviembre: 22 temas IHA vigentes (TOP-002 descartado) y 6 IOM listos para diciembre en adelante.

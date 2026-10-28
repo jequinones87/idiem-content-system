@@ -68,11 +68,11 @@ Estas nacen de correcciones del equipo. Son de aplicación obligatoria.
 - Los posts basados en charlas/presentaciones de especialistas **no nombran ni citan al expositor ni a la
   charla**: el foco es el tema. Ver `docs/11_FUENTES_EXPERTAS_Y_BANCO_DE_TEMAS.md`.
 
-### Aluviones y mitigación aluvional (SRC-007/008, usuario 28-10-2026)
+### Aluviones y mitigación aluvional (SRC-008/008, usuario 28-10-2026)
 - Servicio a promover como **extra de noviembre 2026** por la contingencia de lluvias y aluviones.
 - En 2A.2 solo existe como reserva (R0001/R0002, `RESERVE_FACTUAL`, fuera de las células priorizadas):
   **sin knowledge_id activo**. MKT (28-10-2026) confirmó: servicio vigente, célula **IPR**; se cita como
-  auxiliary_id SRC-007/008.
+  auxiliary_id SRC-008/008.
 - **No nombrar proyectos** (Camiña/Tarapacá, Plan Atacama, Huasco, Macul, Mosco) ni el Manual de Quebradas
   (MKT 28-10-2026). Tampoco usar imágenes que los identifiquen.
 - Enfoque MKT: educativo y explicativo, no explícitamente comercial, pero que muestre el servicio y
@@ -470,3 +470,11 @@ programado al 19-10-2026).
   VERIFY; se validan al aprobar el post que los usa o con las correcciones de MKT; (2) productividad **no se
   bloquea**: activa en VERIFY; (3) mediciones eléctricas de pisos conductivos (NCh4/2003) → célula Infra
   Hospitalaria, disponible en VERIFY.
+- **2026-10-28** — Extras noviembre por contingencia de aluviones (SRC-008/009, célula IPR validada por MKT):
+  extra A (3-nov) **video en Remotion** (`motion-graphics-ia/idiem-aluviones`, 26 s, música chill house) y extra B
+  (19-nov) carrusel. Pedidos MKT: (1) video **más gráfico que texto y con cortes más rápidos**, en Remotion, con el
+  video #4 de diciembre como referencia; (2) **siempre un workstation** para los posts, con los mismos botones y
+  funciones que oct/nov/dic (extras: https://claude.ai/artifact/R1rcK8fijy8f6HLMnjVBAB, `gen_month_ws.py --set`);
+  (3) **carruseles con la Plantilla 02 estándar** (misma foto en todas las láminas, velo, número rojo, ícono, barra roja,
+  título con caja roja, cierre de marca): no inventar variantes de diseño por post.
+
