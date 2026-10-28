@@ -69,8 +69,14 @@ Estas nacen de correcciones del equipo. Son de aplicación obligatoria.
   charla**: el foco es el tema. Ver `docs/11_FUENTES_EXPERTAS_Y_BANCO_DE_TEMAS.md`.
 
 ### División de Aguas y Ley 21.094 (SRC-007, recibida 28-10-2026)
-- Recursos hídricos, agua potable rural y riesgo aluvional **no están en 2A.2**: todo es VERIFY hasta que
-  MKT valide los servicios. No inventar alcances fuera de lo literal de SRC-007.
+- Recursos hídricos, agua potable rural y riesgo aluvional **no están en 2A.2**, pero MKT confirmó
+  (28-10-2026) que los servicios están vigentes y se pueden comunicar: se citan como `SRC-007#C01–C03`.
+  No inventar alcances fuera de lo literal de SRC-007.
+- **Célula:** aguas con foco en **INFRA PÚBLICA RESILIENTE** (MKT, 28-10-2026), incluido el caso de postas
+  y escuelas rurales de la Araucanía (no es infraestructura hospitalaria).
+- **Se pueden nombrar** proyectos y mandantes de SRC-007 (DGA, DOH/DGOP, Araucanía, Biobío, Magallanes,
+  Quebrada de Macul), con fechas y alcances literales.
+- Siguen en VERIFY: lo legal y las cifras institucionales (800+, 450.000 ensayos, 540 estudios).
 - **Ley 21.094 = mecanismo de contratación, nunca servicio técnico.** Lo legal (art. 37, Ley 19.886,
   dictámenes y resoluciones CGR, montos UTM) se revisa contra fuente oficial vigente antes de publicar.
 - No publicar el plazo "1 mes (?)" ni la lista de organismos con convenio; sin superlativos ("líder").
@@ -468,3 +474,5 @@ programado al 19-10-2026).
 - **2026-10-28** — **Nueva fuente SRC-007** (División de Aguas, servicios MOP–DOH y Ley 21.094): 17
   afirmaciones (C01–C17) y 5 temas candidatos (TOP-030 a TOP-034) en `config/topic_bank/expert_sources.json`.
   Célula IPR solo propuesta; capacidades hídricas en VERIFY hasta validación de MKT.
+- **2026-10-28** — MKT valida SRC-007: servicios de Aguas vigentes y comunicables (C01–C03 SAFE), célula
+  IPR confirmada y nombres de proyectos/mandantes autorizados (C04–C07 SAFE). Ley 21.094 sigue VERIFY.

@@ -40,7 +40,7 @@
 | SRC-004 | Vulnerabilidad estructural (vida avanzada) y sísmica en Elementos No Estructurales | Sergio Tapia Pérez · Jefe de Proyectos, Div. Estructuras Peritajes | 14-07-2026 | IHA |
 | SRC-005 | Reglamento RIC en Salud (DS N°8) | Sergio Reygadas Veragua · Jefe de Proyectos Eléctricos, DES | s/f | IHA |
 | SRC-006 | Vulnerabilidad de incendio en infraestructura y faenas mineras | Diego Olave | 19-08-2026 | IOM |
-| SRC-007 | División de Aguas: servicios MOP–DOH y Ley 21.094 (presentación comercial) | *(sin expositor)* | 08-2026 | IPR (**propuesta**, validar MKT) |
+| SRC-007 | División de Aguas: servicios MOP–DOH y Ley 21.094 (presentación comercial) | *(sin expositor)* | 08-2026 | IPR (confirmada MKT 28-10) |
 
 Notas:
 - **19-10-2026:** MKT volvió a compartir SRC-002 y SRC-003 (PDF) y SRC-004, 005 y 006 (Drive). No hay
@@ -143,8 +143,10 @@ Notas:
 **SRC-007 · División de Aguas y Ley 21.094 (recibida 28-10-2026)**
 - Llegó por subida directa (no está en Drive). Transcripción literal en
   `knowledge/expert_sources/SRC-007_division_aguas_ley_21094.md`; el PPTX (~21 MB) no se versiona.
-- **2A.2 no tiene la División de Aguas.** Todas las capacidades hídricas son nuevas → **VERIFY** hasta que
-  MKT las valide (`validated_by`). Sales Intelligence (MOP → Obras Hidráulicas) solo da el ángulo.
+- **2A.2 no tiene la División de Aguas.** MKT confirmó (28-10-2026) que sus servicios están **vigentes y
+  se pueden comunicar**: C01–C03 son SAFE y se citan como `auxiliary_id` (SRC-007#Cxx).
+- **Célula confirmada por MKT:** aguas, con foco en **INFRA PÚBLICA RESILIENTE** (también el caso
+  Araucanía, aunque abastezca postas rurales).
 - Servicios declarados (C01): caracterización de recursos hídricos; diagnóstico de infraestructura de
   suministro de agua; estudios hidrogeológicos (agua subterránea); modelación hidrológica e
   hidrogeológica; ingeniería de detalle de agua rural.
@@ -153,7 +155,8 @@ Notas:
 - Agua potable rural (C03): diagnóstico físico, social y legal → alternativas → ingeniería de detalle →
   perforación de pozos con prueba de bombeo.
 - Proyectos en curso con nombre (C04–C07: Araucanía DGOP-DOH, Biobío DGA, Magallanes DGA, Quebrada de
-  Macul): **VERIFY + sensibilidad MKT**.
+  Macul): **SAFE — MKT autorizó nombrar proyectos y mandantes** (28-10-2026). Mantener fechas y alcances
+  literales.
 - **Ley 21.094** (C08–C12, C14): ya está en 2A.2 como AUX-010…AUX-016 (`CHECK_VALIDITY_BEFORE_USE`).
   Es **mecanismo de contratación, no servicio técnico**. Todo lo legal es VERIFY contra fuente oficial.
   El resumen del Dictamen CGR 002767/2019 **no viene en el archivo** (fuente truncada).
@@ -194,13 +197,11 @@ Notas:
 | TOP-027 | IHA | Lo que enseñaron los incendios hospitalarios del siglo pasado | evidence_learning · data_point · carrusel | citar NFPA |
 | TOP-028 | IHA | Salas eléctricas de un hospital: polvo, calor y arcos | data_implication · insight · estático | — |
 | TOP-029 | IOM | ¿Quién define qué es crítico? Criticidad en el análisis de riesgo | technical_question · question · estático | — |
-| TOP-030 | IPR* | Agua potable rural: diagnosticar lo físico, lo social y lo legal antes de diseñar | process_result · process_step · carrusel | capacidad nueva = VERIFY |
-| TOP-031 | IPR* | Aluviones: del mapa de amenaza a la obra de mitigación | risk_prevention · risk · carrusel | capacidad nueva = VERIFY |
-| TOP-032 | IPR* | ¿Cuánta agua subterránea hay realmente? Hidrogeología y modelación | technical_question · question · estático | capacidad nueva = VERIFY |
-| TOP-033 | IPR* | Planificar el agua por cuenca | data_implication · insight · estático | proyectos DGA con nombre = VERIFY + sensibilidad |
-| TOP-034 | IPR* | Convenios con universidades estatales (Ley 21.094, art. 37) | capability_application · contrast · carrusel | legal VERIFY; mecanismo, no servicio; sin plazo ni lista de organismos |
-
-\* IPR propuesta para SRC-007: confirmar con MKT (el caso Araucanía abastece postas rurales).
+| TOP-030 | IPR | Agua potable rural: diagnosticar lo físico, lo social y lo legal antes de diseñar | process_result · process_step · carrusel | — |
+| TOP-031 | IPR | Aluviones: del mapa de amenaza a la obra de mitigación | risk_prevention · risk · carrusel | — |
+| TOP-032 | IPR | ¿Cuánta agua subterránea hay realmente? Hidrogeología y modelación | technical_question · question · estático | — |
+| TOP-033 | IPR | Planificar el agua por cuenca | data_implication · insight · estático | — (nombres autorizados) |
+| TOP-034 | IPR | Convenios con universidades estatales (Ley 21.094, art. 37) | capability_application · contrast · carrusel | legal VERIFY; mecanismo, no servicio; sin plazo ni lista de organismos |
 
 **Lectura para la planificación:** este material **repone la célula Salud (IHA)**, que quedó sin
 ítems frescos tras noviembre: 22 temas IHA vigentes (TOP-002 descartado) y 6 IOM listos para diciembre en adelante.

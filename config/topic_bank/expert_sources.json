@@ -13,8 +13,9 @@
     "speaker_consent": "Consentimiento de los expositores CONFIRMADO por MKT (14-10-2026). Regla: los contenidos NUNCA nombran ni citan a los expositores ni las charlas/webinars de origen; el foco es el tema. Los campos speaker/role son solo trazabilidad interna.",
     "sensitivity": "Todo tema que nombre un proyecto, hospital, cliente o incidente se marca para validación de sensibilidad de MKT (regla 30-09-2026).",
     "authors": "Los autores no se consideran para contenido (MKT 14-10-2026): lo importante son los temas.",
-    "validated_capabilities": "MKT confirmó (14-10-2026) que los servicios declarados en las fuentes son vigentes: las afirmaciones idiem_capability con validated_by se usan como auxiliary_id (SRC-xxx#Cyy) en briefs y copies.",
-    "truncated_sources": "Si una fuente llegó truncada, se usa solo el contenido disponible (MKT 14-10-2026)."
+    "validated_capabilities": "MKT confirmó (14-10-2026) que los servicios declarados en las fuentes son vigentes: las afirmaciones idiem_capability con validated_by se usan como auxiliary_id (SRC-xxx#Cyy) en briefs y copies. MKT confirmó (28-10-2026) que los servicios de SRC-007 (División de Aguas) son vigentes y comunicables.",
+    "truncated_sources": "Si una fuente llegó truncada, se usa solo el contenido disponible (MKT 14-10-2026).",
+    "validated_projects": "Una afirmación project_data con validated_by (autorización explícita de MKT para nombrar proyecto y mandante) puede ser SAFE. Primer caso: SRC-007#C04–C07 (MKT 28-10-2026)."
   },
   "sources": [
     {
@@ -107,7 +108,7 @@
       "cells": [
         "INFRA PÚBLICA RESILIENTE"
       ],
-      "cell_note": "Célula PROPUESTA (pendiente MKT): obras hidráulicas MOP-DOH/DGA → IPR (Sales Intelligence: Obras Hidráulicas en MOP). Caso Araucanía sirve agua a postas y escuelas rurales: el proyecto es de suministro de agua (no es infraestructura hospitalaria), pero MKT debe confirmarlo. Presentación comercial recibida por subida directa el 28-10-2026 (no está en Drive). 2A.2 no contiene la División de Aguas: TODA capacidad hídrica es nueva (VERIFY). Ley 21.094 ya existe en 2A.2 como AUX-010…AUX-016 (CHECK_VALIDITY_BEFORE_USE) y es mecanismo de contratación, NO servicio técnico."
+      "cell_note": "Célula CONFIRMADA por MKT (28-10-2026): proyectos de aguas con foco en INFRA PÚBLICA RESILIENTE (incluido el caso Araucanía, aunque abastezca postas rurales: no es infraestructura hospitalaria). Presentación comercial recibida por subida directa el 28-10-2026 (sin enlace de Drive; transcripción en local_copy). 2A.2 no contiene la División de Aguas: sus servicios se usan como auxiliary_id SRC-007#Cxx validados por MKT. Ley 21.094 ya existe en 2A.2 como AUX-010…AUX-016 (CHECK_VALIDITY_BEFORE_USE) y es mecanismo de contratación, NO servicio técnico."
     }
   ],
   "claims": [
@@ -749,74 +750,82 @@
     {
       "id": "SRC-007#C01",
       "kind": "idiem_capability",
-      "class": "VERIFY",
+      "class": "SAFE",
       "sources": [
         "SRC-007"
       ],
       "text": "Servicios de la División de Aguas: (1) caracterización de recursos hídricos (gabinete y terreno); (2) diagnóstico de infraestructura de suministro de agua; (3) estudios hidrogeológicos para disponibilidad de agua subterránea; (4) modelación hidrológica, hidrogeológica y de recursos hídricos; (5) ingeniería de detalle de sistemas de suministro de agua rural. Incluye trabajo de terreno, mediciones y supervisión técnica.",
       "related_kb": [],
-      "note": "No está en 2A.2. Pendiente validated_by de MKT."
+      "note": "No está en 2A.2: se cita como auxiliary_id SRC-007#C01.",
+      "validated_by": "MKT 2026-10-28 (servicio vigente y comunicable)"
     },
     {
       "id": "SRC-007#C02",
       "kind": "idiem_capability",
-      "class": "VERIFY",
+      "class": "SAFE",
       "sources": [
         "SRC-007"
       ],
       "text": "Oferta integral en defensas fluviales y control aluvional / riesgo de desastres (MOP-DOH), en 5 etapas: diagnóstico (catastro de infraestructura y viviendas, sectores expuestos); estudios básicos y de terreno (hidrología, geología y geomorfología, susceptibilidad de aluviones, topografía, mecánica de suelos y geotecnia, geofísica); modelación numérica de crecidas líquidas y aluviones bajo escenarios de cambio climático; zonificación de la amenaza (mapas para mitigación, planificación territorial y coordinación ante emergencias); diseño de obras de mitigación (alternativas, presupuestos, evaluación económica y TdR).",
       "related_kb": [],
-      "note": "La lámina dice 'socio técnico para todo el ciclo': no usar esa formulación como promesa. 'Transferir capacidades al MOP' también VERIFY."
+      "note": "No está en 2A.2: se cita como auxiliary_id SRC-007#C02. No usar 'socio técnico para todo el ciclo' (C17).",
+      "validated_by": "MKT 2026-10-28 (servicio vigente y comunicable)"
     },
     {
       "id": "SRC-007#C03",
       "kind": "idiem_capability",
-      "class": "VERIFY",
+      "class": "SAFE",
       "sources": [
         "SRC-007"
       ],
       "text": "Metodología aplicada en agua potable rural (Programa Infraestructura para el Buen Vivir): diagnóstico físico, social y legal → análisis de alternativas → ingeniería de detalle de soluciones → perforación de pozos (incluida prueba de bombeo).",
-      "related_kb": []
+      "related_kb": [],
+      "validated_by": "MKT 2026-10-28 (servicio vigente y comunicable)",
+      "note": "No está en 2A.2: se cita como auxiliary_id SRC-007#C03."
     },
     {
       "id": "SRC-007#C04",
       "kind": "project_data",
-      "class": "VERIFY",
+      "class": "SAFE",
       "sources": [
         "SRC-007"
       ],
       "text": "Trabajo en curso: evaluación y soluciones de sistemas de potabilización de agua en postas y escuelas rurales, Región de la Araucanía (2025-2027). Convenio DGOP-DOH-IDIEM, Programa Infraestructura para el Buen Vivir. Contratado por Ley 21.094 o transferencia de recursos.",
-      "sensitivity": "proyecto y mandante con nombre: validar con MKT"
+      "sensitivity": "nombres autorizados por MKT 28-10-2026; mantener fechas y alcances literales de la fuente",
+      "validated_by": "MKT 2026-10-28 (se pueden nombrar proyecto y mandante)"
     },
     {
       "id": "SRC-007#C05",
       "kind": "project_data",
-      "class": "VERIFY",
+      "class": "SAFE",
       "sources": [
         "SRC-007"
       ],
       "text": "Trabajo en curso: análisis de la cuenca del Biobío para la formulación del plan estratégico de recursos hídricos (2026-2027), DGA.",
-      "sensitivity": "proyecto y mandante con nombre: validar con MKT"
+      "sensitivity": "nombres autorizados por MKT 28-10-2026; mantener fechas y alcances literales de la fuente",
+      "validated_by": "MKT 2026-10-28 (se pueden nombrar proyecto y mandante)"
     },
     {
       "id": "SRC-007#C06",
       "kind": "project_data",
-      "class": "VERIFY",
+      "class": "SAFE",
       "sources": [
         "SRC-007"
       ],
       "text": "Trabajo en curso: análisis de recursos hídricos de cuencas de la Región de Magallanes y de la Antártica Chilena (2026-2027), DGA.",
-      "sensitivity": "proyecto y mandante con nombre: validar con MKT"
+      "sensitivity": "nombres autorizados por MKT 28-10-2026; mantener fechas y alcances literales de la fuente",
+      "validated_by": "MKT 2026-10-28 (se pueden nombrar proyecto y mandante)"
     },
     {
       "id": "SRC-007#C07",
       "kind": "project_data",
-      "class": "VERIFY",
+      "class": "SAFE",
       "sources": [
         "SRC-007"
       ],
       "text": "Trabajo en curso: actualización de las estrategias de mitigación contra aluviones en zona alta y media de la Quebrada de Macul (Peñalolén y La Florida, RM).",
-      "sensitivity": "proyecto y territorio con nombre: validar con MKT; sin año ni mandante en la fuente"
+      "sensitivity": "nombres autorizados por MKT 28-10-2026; mantener fechas y alcances literales de la fuente",
+      "validated_by": "MKT 2026-10-28 (se pueden nombrar proyecto y mandante)"
     },
     {
       "id": "SRC-007#C08",
@@ -1457,10 +1466,7 @@
       "hook_hint": "process_step",
       "format_hint": "CAROUSEL",
       "related_kb": [],
-      "flags": [
-        "capacidad hídrica nueva fuera de 2A.2 = VERIFY hasta validación MKT",
-        "célula IPR propuesta: confirmar con MKT"
-      ],
+      "flags": [],
       "status": "CANDIDATE"
     },
     {
@@ -1475,10 +1481,7 @@
       "hook_hint": "risk",
       "format_hint": "CAROUSEL",
       "related_kb": [],
-      "flags": [
-        "capacidad hídrica nueva fuera de 2A.2 = VERIFY hasta validación MKT",
-        "célula IPR propuesta: confirmar con MKT"
-      ],
+      "flags": [],
       "status": "CANDIDATE"
     },
     {
@@ -1493,10 +1496,7 @@
       "hook_hint": "question",
       "format_hint": "STATIC",
       "related_kb": [],
-      "flags": [
-        "capacidad hídrica nueva fuera de 2A.2 = VERIFY hasta validación MKT",
-        "célula IPR propuesta: confirmar con MKT"
-      ],
+      "flags": [],
       "status": "CANDIDATE"
     },
     {
@@ -1513,11 +1513,7 @@
       "hook_hint": "insight",
       "format_hint": "STATIC",
       "related_kb": [],
-      "flags": [
-        "capacidad hídrica nueva fuera de 2A.2 = VERIFY hasta validación MKT",
-        "célula IPR propuesta: confirmar con MKT",
-        "proyectos y mandantes con nombre (DGA, Biobío, Magallanes) = VERIFY + sensibilidad MKT"
-      ],
+      "flags": [],
       "status": "CANDIDATE"
     },
     {

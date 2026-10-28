@@ -39,8 +39,11 @@ def test_claims_classified_and_linked():
         assert c["class"] in CLASSES and c["kind"] in KINDS, c["id"]
         assert set(c["sources"]) <= src, c["id"]
         # fail closed: capacidades IDIEM nuevas, incidentes con nombre y datos de proyecto nunca SAFE
-        if c["kind"] in {"public_incident", "project_data", "internal_reference"}:
+        if c["kind"] in {"public_incident", "internal_reference"}:
             assert c["class"] != "SAFE", f"{c['id']} no puede ser SAFE"
+        # proyectos con nombre: SAFE solo con autorización explícita de MKT (validated_by)
+        if c["kind"] == "project_data" and c["class"] == "SAFE":
+            assert c.get("validated_by"), f"{c['id']}: proyecto SAFE sin autorización de MKT"
         if c["kind"] == "idiem_capability" and c["class"] == "SAFE":
             assert c.get("validated_by"), f"{c['id']}: capacidad SAFE sin validación de MKT"
         if c["kind"] == "third_party_stat":
