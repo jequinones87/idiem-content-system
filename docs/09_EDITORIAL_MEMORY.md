@@ -71,8 +71,12 @@ Estas nacen de correcciones del equipo. Son de aplicación obligatoria.
 ### Aluviones y mitigación aluvional (SRC-007/008, usuario 28-10-2026)
 - Servicio a promover como **extra de noviembre 2026** por la contingencia de lluvias y aluviones.
 - En 2A.2 solo existe como reserva (R0001/R0002, `RESERVE_FACTUAL`, fuera de las células priorizadas):
-  **sin knowledge_id activo**. Célula IPR = propuesta; capacidades VERIFY hasta validación de MKT.
-- Proyectos con nombre (Camiña/Tarapacá, Plan Atacama, Huasco, Macul, Mosco) = INTERNAL.
+  **sin knowledge_id activo**. MKT (28-10-2026) confirmó: servicio vigente, célula **IPR**; se cita como
+  auxiliary_id SRC-007/008.
+- **No nombrar proyectos** (Camiña/Tarapacá, Plan Atacama, Huasco, Macul, Mosco) ni el Manual de Quebradas
+  (MKT 28-10-2026). Tampoco usar imágenes que los identifiquen.
+- Enfoque MKT: educativo y explicativo, no explícitamente comercial, pero que muestre el servicio y
+  apunte a concretar reuniones.
 - Tono: sin usar la emergencia ni sus víctimas como gancho; sin insinuar participación de IDIEM en
   eventos recientes; sin superlativos.
 

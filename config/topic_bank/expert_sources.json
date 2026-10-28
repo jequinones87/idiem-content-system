@@ -106,7 +106,7 @@
       "cells": [
         "INFRA PÚBLICA RESILIENTE"
       ],
-      "cell_note": "Leída completa el 28-10-2026 desde Drive (Quebradas.pptx, 16 láminas). Célula PROPUESTA, pendiente de MKT: el mandante es MOP-DOH (Infra Pública), pero en 2A.2 el servicio equivalente (R0002 'mitigación de riesgos naturales', R0001 'peligros naturales') está como RESERVE_FACTUAL / FUERA_DE_CELULAS_PRIORIZADAS, sin knowledge_id activo. No se mueve conocimiento entre células (regla 9): hasta que MKT valide, las capacidades quedan VERIFY."
+      "cell_note": "Leída completa el 28-10-2026 desde Drive (Quebradas.pptx, 16 láminas). Célula INFRA PÚBLICA RESILIENTE y vigencia del servicio confirmadas por MKT (28-10-2026). En 2A.2 solo existe como reserva (R0001/R0002 RESERVE_FACTUAL); se usa como auxiliary_id SRC-xxx#Cyy, sin modificar data/."
     },
     {
       "id": "SRC-008",
@@ -761,43 +761,43 @@
     {
       "id": "SRC-008#C01",
       "kind": "idiem_capability",
-      "class": "VERIFY",
+      "class": "SAFE",
       "sources": [
         "SRC-008",
         "SRC-007"
       ],
       "text": "Oferta integral IDIEM para gestión del riesgo aluvional, de diagnóstico a transferencia técnica, en 5 etapas: (1) Diagnóstico: catastro de infraestructura y viviendas, identificación de sectores expuestos; (2) Estudios básicos y de terreno: hidrología, geología y geomorfología, susceptibilidad de generación de aluviones, topografía, mecánica de suelos y geotecnia, geofísica; (3) Modelación numérica de crecidas líquidas y aluviones bajo escenarios de cambio climático; (4) Zonificación de la amenaza: mapas de amenaza por aluvión y crecidas para definir medidas de mitigación, apoyar la planificación territorial y la coordinación ante emergencias; (5) Diseño de obras de mitigación: alternativas, presupuestos, evaluación económica y TdR.",
-      "pending_validation": "Usuario 28-10-2026: 'servicio de IDIEM' a promover; falta confirmación explícita de MKT de vigencia y célula (regla validated_capabilities)."
+      "validated_by": "MKT 2026-10-28 (servicio vigente, célula IPR)"
     },
     {
       "id": "SRC-008#C02",
       "kind": "idiem_capability",
-      "class": "VERIFY",
+      "class": "SAFE",
       "sources": [
         "SRC-008"
       ],
       "text": "Posicionamiento declarado: IDIEM como socio técnico para todo el ciclo de gestión del riesgo aluvional — estudiar, priorizar, diseñar, validar y transferir capacidades al MOP.",
-      "pending_validation": "Usuario 28-10-2026: 'servicio de IDIEM' a promover; falta confirmación explícita de MKT de vigencia y célula (regla validated_capabilities)."
+      "validated_by": "MKT 2026-10-28 (servicio vigente, célula IPR)"
     },
     {
       "id": "SRC-007#C01",
       "kind": "idiem_capability",
-      "class": "VERIFY",
+      "class": "SAFE",
       "sources": [
         "SRC-007"
       ],
       "text": "Oferta de servicios: estudios de consultoría especializada en evaluación de amenazas por crecidas líquidas (inundaciones) y flujos detríticos (aluviones), identificando zonas potencialmente afectadas y desarrollando alternativas de mitigación hasta nivel de factibilidad.",
-      "pending_validation": "Usuario 28-10-2026: 'servicio de IDIEM' a promover; falta confirmación explícita de MKT de vigencia y célula (regla validated_capabilities)."
+      "validated_by": "MKT 2026-10-28 (servicio vigente, célula IPR)"
     },
     {
       "id": "SRC-007#C02",
       "kind": "idiem_capability",
-      "class": "VERIFY",
+      "class": "SAFE",
       "sources": [
         "SRC-007"
       ],
       "text": "Asesoría para la actualización y mejora continua del Manual de Quebradas para el Estudio de Aluviones, según avances del estado del arte y la experiencia nacional.",
-      "pending_validation": "Usuario 28-10-2026: 'servicio de IDIEM' a promover; falta confirmación explícita de MKT de vigencia y célula (regla validated_capabilities)."
+      "validated_by": "MKT 2026-10-28 (servicio vigente, célula IPR)"
     },
     {
       "id": "SRC-007#C03",
@@ -851,7 +851,8 @@
       "sources": [
         "SRC-007"
       ],
-      "text": "Ponderaciones (%) de la matriz de susceptibilidad y umbrales de intensidad (p. ej. h ≥ 2 m o h·v ≥ 2 m²/s alta para inundación; h ≥ 1,0 m o h·v ≥ 1,0 m²/s alta para aluvión) provienen del Manual de Quebradas en marcha blanca (no es aún Norma Técnica MOP): no citar cifras sin validación."
+      "text": "Ponderaciones (%) de la matriz de susceptibilidad y umbrales de intensidad (p. ej. h ≥ 2 m o h·v ≥ 2 m²/s alta para inundación; h ≥ 1,0 m o h·v ≥ 1,0 m²/s alta para aluvión) provienen del Manual de Quebradas en marcha blanca (no es aún Norma Técnica MOP): no citar cifras sin validación.",
+      "note": "MKT 28-10-2026: no usar (Manual de Quebradas y proyectos no se nombran)."
     },
     {
       "id": "SRC-007#C09",
@@ -860,25 +861,28 @@
       "sources": [
         "SRC-007"
       ],
-      "text": "Plan Nacional de Quebradas surge como respuesta a la catástrofe del 25 de marzo de 2015 (Antofagasta, Atacama y Coquimbo); pilares: política/normativa/institucionalidad, planificación y coordinación de emergencias. Manual de Quebradas para el Estudio de Aluviones (4 volúmenes) producto de PNQ-Fase 1; próxima marcha blanca y difusión para proponerlo como Norma Técnica del MOP."
+      "text": "Plan Nacional de Quebradas surge como respuesta a la catástrofe del 25 de marzo de 2015 (Antofagasta, Atacama y Coquimbo); pilares: política/normativa/institucionalidad, planificación y coordinación de emergencias. Manual de Quebradas para el Estudio de Aluviones (4 volúmenes) producto de PNQ-Fase 1; próxima marcha blanca y difusión para proponerlo como Norma Técnica del MOP.",
+      "note": "MKT 28-10-2026: no usar (Manual de Quebradas y proyectos no se nombran)."
     },
     {
       "id": "SRC-007#C10",
       "kind": "project_data",
-      "class": "INTERNAL",
+      "class": "DO_NOT_PUBLISH",
       "sources": [
         "SRC-007"
       ],
-      "text": "Experiencia para MOP-DOH: diagnóstico de riesgo en quebradas laterales de Camiña y Tarapacá post-evento marzo 2012 (2013; 27 quebradas); Plan Atacama DOH post-25M 2015 (7 cuencas); diseño de obras fluviales y de control aluvional en cuencas de los ríos El Carmen (17 quebradas) y El Tránsito (28 quebradas), Huasco; PNQ-Fase 1 (8 etapas, Manual de Quebradas)."
+      "text": "Experiencia para MOP-DOH: diagnóstico de riesgo en quebradas laterales de Camiña y Tarapacá post-evento marzo 2012 (2013; 27 quebradas); Plan Atacama DOH post-25M 2015 (7 cuencas); diseño de obras fluviales y de control aluvional en cuencas de los ríos El Carmen (17 quebradas) y El Tránsito (28 quebradas), Huasco; PNQ-Fase 1 (8 etapas, Manual de Quebradas).",
+      "blocked_reason": "MKT 28-10-2026: no considerar proyectos con nombre ni autorizar su mención."
     },
     {
       "id": "SRC-007#C11",
       "kind": "project_data",
-      "class": "INTERNAL",
+      "class": "DO_NOT_PUBLISH",
       "sources": [
         "SRC-007"
       ],
-      "text": "Estudios en ejecución / nuevas iniciativas: actualización de estrategias de mitigación aluvional en quebrada de Macul (Peñalolén y La Florida; barreras dinámicas, SBN); marcha blanca y difusión del Manual de Quebradas; diagnóstico de mitigación y control de crecidas del río Mosco (Villa O'Higgins; terreno con topografía, mecánica de suelos, geología y glaciología; evaluación con criterios MDSyF)."
+      "text": "Estudios en ejecución / nuevas iniciativas: actualización de estrategias de mitigación aluvional en quebrada de Macul (Peñalolén y La Florida; barreras dinámicas, SBN); marcha blanca y difusión del Manual de Quebradas; diagnóstico de mitigación y control de crecidas del río Mosco (Villa O'Higgins; terreno con topografía, mecánica de suelos, geología y glaciología; evaluación con criterios MDSyF).",
+      "blocked_reason": "MKT 28-10-2026: no considerar proyectos con nombre ni autorizar su mención."
     }
   ],
   "topics": [
@@ -1407,14 +1411,15 @@
       "angle": "Cuando la lluvia baja por una quebrada no trae solo agua: arrastra sedimentos y rocas. Entender esa diferencia cambia dónde y cómo se protege.",
       "archetype_hint": "evidence_learning",
       "hook_hint": "contrast",
-      "format_hint": "CAROUSEL",
+      "format_hint": "VIDEO",
       "related_kb": [],
       "flags": [
         "contingencia lluvias/aluviones oct-2026: tono sobrio, sin aprovechar tragedias ni citar eventos con víctimas",
-        "célula propuesta (2A.2 R0002 RESERVE_FACTUAL)",
-        "capacidades VERIFY"
+        "MKT 28-10: tono educativo/explicativo, no explícitamente comercial, pero debe mostrar el servicio y orientar a reuniones",
+        "sin proyectos con nombre ni Manual de Quebradas"
       ],
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "planned": "2026-11 extra A (03-nov), video"
     },
     {
       "id": "TOP-031",
@@ -1433,11 +1438,11 @@
       "related_kb": [],
       "flags": [
         "contingencia lluvias/aluviones oct-2026",
-        "célula propuesta (2A.2 R0002 RESERVE_FACTUAL)",
-        "capacidades VERIFY",
-        "proyectos con nombre (C10/C11) INTERNAL: no al copy sin autorización"
+        "MKT 28-10: tono educativo/explicativo, no explícitamente comercial, pero debe mostrar el servicio y orientar a reuniones",
+        "sin proyectos con nombre ni Manual de Quebradas"
       ],
-      "status": "CANDIDATE"
+      "status": "CANDIDATE",
+      "planned": "2026-11 extra B (19-nov), carrusel"
     },
     {
       "id": "TOP-032",
@@ -1453,8 +1458,9 @@
       "format_hint": "STATIC",
       "related_kb": [],
       "flags": [
-        "célula propuesta",
-        "sin cifras de ponderación (C08 VERIFY)"
+        "sin cifras de ponderación (C08 VERIFY)",
+        "MKT 28-10: tono educativo/explicativo, no explícitamente comercial, pero debe mostrar el servicio y orientar a reuniones",
+        "sin proyectos con nombre ni Manual de Quebradas"
       ],
       "status": "CANDIDATE"
     }

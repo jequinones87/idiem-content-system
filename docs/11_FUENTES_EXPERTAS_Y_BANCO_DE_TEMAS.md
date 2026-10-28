@@ -40,8 +40,8 @@
 | SRC-004 | Vulnerabilidad estructural (vida avanzada) y sísmica en Elementos No Estructurales | Sergio Tapia Pérez · Jefe de Proyectos, Div. Estructuras Peritajes | 14-07-2026 | IHA |
 | SRC-005 | Reglamento RIC en Salud (DS N°8) | Sergio Reygadas Veragua · Jefe de Proyectos Eléctricos, DES | s/f | IHA |
 | SRC-006 | Vulnerabilidad de incendio en infraestructura y faenas mineras | Diego Olave | 19-08-2026 | IOM |
-| SRC-007 | Estudios de Aluviones y Obras de Mitigación Aluvional (MOP-DOH) — presentación completa del servicio | *(sin expositor)* | 06-2026 | IPR **(propuesta)** |
-| SRC-008 | Oferta integral IDIEM · Defensas Fluviales y Control Aluvional (síntesis de SRC-007, "para kike") | *(sin expositor)* | 28-10-2026 | IPR **(propuesta)** |
+| SRC-007 | Estudios de Aluviones y Obras de Mitigación Aluvional (MOP-DOH) — presentación completa del servicio | *(sin expositor)* | 06-2026 | IPR (validada MKT 28-10) |
+| SRC-008 | Oferta integral IDIEM · Defensas Fluviales y Control Aluvional (síntesis de SRC-007, "para kike") | *(sin expositor)* | 28-10-2026 | IPR (validada MKT 28-10) |
 
 Notas:
 - **19-10-2026:** MKT volvió a compartir SRC-002 y SRC-003 (PDF) y SRC-004, 005 y 006 (Drive). No hay
@@ -148,6 +148,10 @@ Notas:
   25M 2015 y Manual como futura Norma Técnica MOP (C09).
 - **INTERNAL:** proyectos con nombre y cifras (Camiña/Tarapacá, Plan Atacama, El Carmen/El Tránsito,
   Macul, río Mosco) (C10–C11).
+- **MKT 28-10-2026:** servicio vigente y célula IPR confirmados → capacidades C01/C02 (ambas fuentes)
+  pasan a SAFE con `validated_by`. Proyectos con nombre (C10–C11) → DO_NOT_PUBLISH; Manual de
+  Quebradas y Plan Nacional (C08–C09) no se usan. Tono educativo y explicativo, no explícitamente
+  comercial, pero mostrando el servicio y orientado a concretar reuniones. Extra A = video; extra B = carrusel.
 - Contingencia de lluvias y aluviones de octubre 2026: tono sobrio; no usar eventos con víctimas como
   gancho ni sugerir que IDIEM participó en ellos.
 
@@ -199,9 +203,9 @@ Notas:
 | TOP-027 | IHA | Lo que enseñaron los incendios hospitalarios del siglo pasado | evidence_learning · data_point · carrusel | citar NFPA |
 | TOP-028 | IHA | Salas eléctricas de un hospital: polvo, calor y arcos | data_implication · insight · estático | — |
 | TOP-029 | IOM | ¿Quién define qué es crítico? Criticidad en el análisis de riesgo | technical_question · question · estático | — |
-| TOP-030 | IPR (prop.) | Un aluvión no es una crecida: por qué la amenaza se zonifica distinto | evidence_learning · contrast · carrusel | célula propuesta; capacidades VERIFY; contingencia |
-| TOP-031 | IPR (prop.) | Del diagnóstico a la obra: ciclo de gestión del riesgo aluvional en 5 etapas | process_result · question · carrusel | ídem; proyectos con nombre INTERNAL |
-| TOP-032 | IPR (prop.) | ¿Qué hace que una quebrada sea más propensa a generar aluviones? | technical_question · question · estático | sin cifras de ponderación (C08) |
+| TOP-030 | IPR | Un aluvión no es una crecida: por qué la amenaza se zonifica distinto | evidence_learning · contrast · carrusel | célula propuesta; capacidades VERIFY; contingencia |
+| TOP-031 | IPR | Del diagnóstico a la obra: ciclo de gestión del riesgo aluvional en 5 etapas | process_result · question · carrusel | ídem; proyectos con nombre INTERNAL |
+| TOP-032 | IPR | ¿Qué hace que una quebrada sea más propensa a generar aluviones? | technical_question · question · estático | sin cifras de ponderación (C08) |
 
 **Lectura para la planificación:** este material **repone la célula Salud (IHA)**, que quedó sin
 ítems frescos tras noviembre: 22 temas IHA vigentes (TOP-002 descartado) y 6 IOM listos para diciembre en adelante.
