@@ -43,11 +43,11 @@
       ],
       "topic": "TOP-036",
       "format": "CARRUSEL",
-      "theme": "¿Dónde mitigar antes de la próxima lluvia? Gestión del riesgo aluvional en 5 etapas",
+      "theme": "¿Dónde podría bajar el próximo aluvión? Gestión del riesgo aluvional en 5 etapas",
       "archetype": "project_challenge",
       "hook_type": "question",
       "cta_type": "service_discovery",
-      "pain_point": "decidir qué quebrada intervenir primero y con qué obra",
+      "pain_point": "no saber de antemano qué sectores quedarían expuestos a un aluvión",
       "main_claim": "oferta integral IDIEM en 5 etapas para la gestión del riesgo aluvional",
       "flags": [
         "sin knowledge_id: 2A.2 solo tiene el servicio como RESERVE_FACTUAL (R0001/R0002)",

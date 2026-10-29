@@ -4,23 +4,23 @@
   "status": "DRAFT",
   "copies": {
     "1": "🌧️ Prevenir empieza por conocer la amenaza.\n\nEn una quebrada, la amenaza puede ser una crecida líquida, que desborda el cauce e inunda las zonas bajas, o un flujo detrítico (aluvión), que arrastra sedimentos, detritos y rocas junto con el agua. Cada una se evalúa con sus propios criterios.\n\nLa amenaza se zonifica cruzando la intensidad del flujo (su altura y velocidad) con la probabilidad de que ocurra. Con esos mapas se definen obras de mitigación, se apoya la planificación territorial y se coordina la respuesta ante emergencias.\n\nEn #IDIEM acompañamos ese ciclo completo: diagnóstico, estudios de terreno, modelación de crecidas y aluviones con escenarios de cambio climático, zonificación de la amenaza y diseño de obras de mitigación. 🏔️\n\n¿Quieres profundizar en cómo se evalúa una quebrada? Escríbenos y lo conversamos.\n\n#IDIEM #Aluviones #GestiónDelRiesgo #InfraestructuraResiliente",
-    "2": "¿Dónde mitigar antes de la próxima lluvia y con qué obra? 🏔️\n\nResponder esa pregunta exige una secuencia técnica, no una reacción a la emergencia.\n\nAsí abordamos en #IDIEM la gestión del riesgo aluvional:\n1. Diagnóstico: catastro de infraestructura y viviendas, y sectores expuestos.\n2. Estudios de terreno: hidrología, geología, topografía, geotecnia y geofísica.\n3. Modelación numérica de crecidas y aluviones con cambio climático.\n4. Zonificación de la amenaza para planificar y coordinar emergencias.\n5. Diseño de obras de mitigación, con presupuestos, evaluación económica y términos de referencia.\n\nEstudiar, priorizar, diseñar y validar: un socio técnico en todo el ciclo. 🛡️\n\nSi tu institución está evaluando quebradas o cauces, coordinemos una reunión para revisar el alcance.\n\n#IDIEM #GestiónDelRiesgo #Aluviones #InfraestructuraPública"
+    "2": "¿Dónde podría bajar el próximo aluvión? 🏔️\n\nAnticiparlo es la base de la prevención: se mapea el territorio y se simulan crecidas y aluviones para identificar los sectores expuestos antes de que llueva.\n\nAsí abordamos en #IDIEM la gestión del riesgo aluvional:\n1. Diagnóstico: catastro de infraestructura y viviendas, y sectores expuestos.\n2. Estudios de terreno: hidrología, geología, topografía, geotecnia y geofísica.\n3. Modelación de crecidas y aluviones con cambio climático.\n4. Zonificación de la amenaza para planificar y coordinar emergencias.\n5. Diseño de obras de mitigación, con presupuestos, evaluación económica y términos de referencia.\n\nEstudiar, priorizar, diseñar y validar: un socio técnico en todo el ciclo. 🛡️\n\nSi tu institución está evaluando quebradas o cauces, coordinemos una reunión para revisar el alcance.\n\n#IDIEM #GestiónDelRiesgo #Aluviones #InfraestructuraPública"
   },
   "chars": {
     "1": 894,
-    "2": 846
+    "2": 893
   },
   "fact_check": {
     "1": "crecida líquida desborda el cauce e inunda → SRC-008#C01 (crecidas líquidas = inundaciones); flujo detrítico (aluvión) arrastra sedimentos, detritos y rocas; crecida líquida e inundación → SRC-008#C05/C06 (flujos detríticos; flujo de detritos, caída de rocas); zonificación intensidad (altura y velocidad) × probabilidad → SRC-008#C03 (h y h·v); mapas → obras, planificación territorial, emergencias → SRC-009#C01 etapa 4; ciclo completo IDIEM → SRC-009#C01 (validado MKT 28-10); 'después de una lluvia intensa' → contexto general, sin citar eventos; 'Prevenir empieza por conocer la amenaza' → SRC-009#C01 (la evaluación de la amenaza es la primera etapa); 'cada una se evalúa con sus propios criterios' → SRC-008#C03 (zonificación distingue inundación de aluvión)",
-    "2": "5 etapas y su contenido → SRC-009#C01 literal (estudios de terreno resumidos: se omiten geomorfología y mecánica de suelos en el copy, no se agrega nada); estudiar, priorizar, diseñar y validar; socio técnico → SRC-009#C02 (se omite 'transferir capacidades al MOP' para no nombrar mandante); 'Pasada la emergencia' → contexto general, sin citar eventos"
+    "2": "5 etapas y su contenido → SRC-009#C01 literal (estudios de terreno resumidos: se omiten geomorfología y mecánica de suelos en el copy, no se agrega nada); estudiar, priorizar, diseñar y validar; socio técnico → SRC-009#C02 (se omite 'transferir capacidades al MOP' para no nombrar mandante); 'Pasada la emergencia' → contexto general, sin citar eventos; 'se mapea el territorio y se simulan crecidas y aluviones para identificar los sectores expuestos' → SRC-009#C01 (catastro e identificación de sectores expuestos; modelación numérica de crecidas y aluviones; zonificación de la amenaza)"
   },
   "videos": {
     "1": {
       "tool": "Remotion (motion-graphics-ia/idiem-aluviones)",
-      "format": "1080×1080 · 26 s · Montserrat incrustada · logo vectorial · música chill house original",
+      "format": "1080×1080 · 32 s · Montserrat incrustada · logo vectorial · música chill house original",
       "scenes": [
         {
-          "t": "0–3 s",
+          "t": "0–3,5 s",
           "visual": "Foto del aluvión; título palabra a palabra.",
           "text": [
             "AMENAZA ALUVIONAL",
@@ -29,7 +29,7 @@
           ]
         },
         {
-          "t": "3–7,5 s",
+          "t": "3,5–9 s",
           "visual": "Dos cauces animados: el de la crecida líquida solo con agua; el del flujo detrítico arrastra bloques rojos.",
           "text": [
             "Crecida líquida o",
@@ -39,7 +39,7 @@
           ]
         },
         {
-          "t": "7,5–11,5 s",
+          "t": "9–14,5 s",
           "visual": "Matriz 3×3 que se llena: más intensidad y más probabilidad = más rojo (cualitativa, sin umbrales).",
           "text": [
             "Intensidad × probabilidad",
@@ -51,17 +51,20 @@
           ]
         },
         {
-          "t": "11,5–15,5 s",
-          "visual": "Cauce que se dibuja y zonas de amenaza que se abren; tres etiquetas rojas.",
+          "t": "14,5–20 s",
+          "visual": "Territorio en cuadrícula (vista en planta): se dibuja el cauce y las celdas se colorean según la amenaza (alta, media, baja); leyenda y tres etiquetas rojas.",
           "text": [
             "Mapas para decidir",
+            "Alta",
+            "Media",
+            "Baja",
             "Obras de mitigación",
             "Planificación territorial",
             "Emergencias"
           ]
         },
         {
-          "t": "15,5–20 s",
+          "t": "20–25,5 s",
           "visual": "Cinco íconos en línea que se encienden en secuencia.",
           "text": [
             "En IDIEM acompañamos",
@@ -74,7 +77,7 @@
           ]
         },
         {
-          "t": "20–26 s",
+          "t": "25,5–32 s",
           "visual": "Cierre de marca: eslogan, barra, bajada, logo, idiem.cl.",
           "text": [
             "Diagnóstico, estudios de terreno,",
