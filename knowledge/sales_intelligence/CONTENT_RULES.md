@@ -91,6 +91,8 @@ Antes de publicar un caso:
 
 Toda referencia a Ley 21.094, Ley 19.886, dictámenes CGR, mecanismos de contratación, plazos o límites debe revisarse contra fuente oficial vigente antes de publicarse.
 
+**MKT 28-10-2026:** para RRSS **no se aborda la Ley 21.094 (Ley de Universidades)** ni mecanismos de contratación: tratarlo como DO_NOT_PUBLISH en copy de LinkedIn.
+
 ## 7. Placeholders
 
 Excluir automáticamente:

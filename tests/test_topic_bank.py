@@ -25,7 +25,11 @@ def test_ids_unique():
 def test_sources_have_trace():
     for s in BANK["sources"]:
         assert re.fullmatch(r"SRC-\d{3}", s["id"])
-        assert s["drive"].startswith("https://"), s["id"]
+        # trazabilidad: enlace de Drive o, si llegó por subida directa, transcripción en el repo
+        if s.get("drive"):
+            assert s["drive"].startswith("https://"), s["id"]
+        else:
+            assert s.get("local_copy") and (ROOT / s["local_copy"]).is_file(), s["id"]
         assert set(s["cells"]) <= CELLS, s["id"]
 
 
@@ -35,8 +39,11 @@ def test_claims_classified_and_linked():
         assert c["class"] in CLASSES and c["kind"] in KINDS, c["id"]
         assert set(c["sources"]) <= src, c["id"]
         # fail closed: capacidades IDIEM nuevas, incidentes con nombre y datos de proyecto nunca SAFE
-        if c["kind"] in {"public_incident", "project_data", "internal_reference"}:
+        if c["kind"] in {"public_incident", "internal_reference"}:
             assert c["class"] != "SAFE", f"{c['id']} no puede ser SAFE"
+        # proyectos con nombre: SAFE solo con autorización explícita de MKT (validated_by)
+        if c["kind"] == "project_data" and c["class"] == "SAFE":
+            assert c.get("validated_by"), f"{c['id']}: proyecto SAFE sin autorización de MKT"
         if c["kind"] == "idiem_capability" and c["class"] == "SAFE":
             assert c.get("validated_by"), f"{c['id']}: capacidad SAFE sin validación de MKT"
         if c["kind"] == "third_party_stat":
@@ -73,3 +80,14 @@ def test_aito_is_not_publishable():
     assert claims["SRC-004#C05"]["class"] == "DO_NOT_PUBLISH"
     assert claims["SRC-004#C07"]["class"] == "DO_NOT_PUBLISH"
     assert {t["id"]: t for t in BANK["topics"]}["TOP-002"]["status"] == "DISCARDED"
+
+
+def test_ley_universidades_not_publishable():
+    # MKT 28-10-2026: para RRSS no se toca la Ley 21.094
+    claims = {c["id"]: c for c in BANK["claims"]}
+    for n in (8, 9, 10, 11, 12, 14):
+        assert claims[f"SRC-007#C{n:02d}"]["class"] == "DO_NOT_PUBLISH"
+    assert {t["id"]: t for t in BANK["topics"]}["TOP-034"]["status"] == "DISCARDED"
+    for c in BANK["claims"]:
+        if c["class"] == "SAFE":
+            assert "21.094" not in c["text"], c["id"]

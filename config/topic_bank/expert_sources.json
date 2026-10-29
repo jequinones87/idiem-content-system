@@ -1,6 +1,6 @@
 {
-  "version": 3,
-  "updated": "2026-10-19",
+  "version": 4,
+  "updated": "2026-10-28",
   "description": "Banco de fuentes expertas (presentaciones/webinars de especialistas IDIEM) y temas candidatos para contenidos. Complementa la librería 2A.2 SIN reemplazarla: data/ sigue siendo la fuente canónica. Se amplía cada vez que MKT comparte material nuevo.",
   "rules": {
     "hierarchy": "2A.2 (knowledge_id) manda. Las fuentes SRC-* son evidencia auxiliar candidata: una afirmación de capacidad IDIEM que solo esté en una SRC-* es VERIFY hasta que MKT la valide; validada, se cita como auxiliary_id (SRC-xxx#Cyy).",
@@ -13,8 +13,9 @@
     "speaker_consent": "Consentimiento de los expositores CONFIRMADO por MKT (14-10-2026). Regla: los contenidos NUNCA nombran ni citan a los expositores ni las charlas/webinars de origen; el foco es el tema. Los campos speaker/role son solo trazabilidad interna.",
     "sensitivity": "Todo tema que nombre un proyecto, hospital, cliente o incidente se marca para validación de sensibilidad de MKT (regla 30-09-2026).",
     "authors": "Los autores no se consideran para contenido (MKT 14-10-2026): lo importante son los temas.",
-    "validated_capabilities": "MKT confirmó (14-10-2026) que los servicios declarados en las fuentes son vigentes: las afirmaciones idiem_capability con validated_by se usan como auxiliary_id (SRC-xxx#Cyy) en briefs y copies.",
-    "truncated_sources": "Si una fuente llegó truncada, se usa solo el contenido disponible (MKT 14-10-2026)."
+    "validated_capabilities": "MKT confirmó (14-10-2026) que los servicios declarados en las fuentes son vigentes: las afirmaciones idiem_capability con validated_by se usan como auxiliary_id (SRC-xxx#Cyy) en briefs y copies. MKT confirmó (28-10-2026) que los servicios de SRC-007 (División de Aguas) son vigentes y comunicables.",
+    "truncated_sources": "Si una fuente llegó truncada, se usa solo el contenido disponible (MKT 14-10-2026).",
+    "validated_projects": "Una afirmación project_data con validated_by (autorización explícita de MKT para nombrar proyecto y mandante) puede ser SAFE. Primer caso: SRC-007#C04–C07 (MKT 28-10-2026)."
   },
   "sources": [
     {
@@ -94,6 +95,46 @@
         "INFRA OPERACIÓN MINERA"
       ],
       "cell_note": "Leída completa el 19-10-2026 desde Drive. Replica para minería el marco de SRC-001 (por eso SRC-001#C01–C10 citan también a SRC-006) y agrega ejemplos de monitoreo y criticidad propios de faena."
+    },
+    {
+      "id": "SRC-007",
+      "title": "División de Aguas | Servicios para MOP–DOH y Ley 21.094",
+      "type": "commercial_ppt",
+      "speaker": null,
+      "role": null,
+      "date": "2026-08",
+      "drive": null,
+      "local_copy": "knowledge/expert_sources/SRC-007_division_aguas_ley_21094.md",
+      "cells": [
+        "INFRA PÚBLICA RESILIENTE"
+      ],
+      "cell_note": "Célula CONFIRMADA por MKT (28-10-2026): proyectos de aguas con foco en INFRA PÚBLICA RESILIENTE (incluido el caso Araucanía, aunque abastezca postas rurales: no es infraestructura hospitalaria). Presentación comercial recibida por subida directa el 28-10-2026 (sin enlace de Drive; transcripción en local_copy). 2A.2 no contiene la División de Aguas: sus servicios se usan como auxiliary_id SRC-007#Cxx validados por MKT. Ley 21.094 ya existe en 2A.2 como AUX-010…AUX-016 (CHECK_VALIDITY_BEFORE_USE) y es mecanismo de contratación, NO servicio técnico."
+    },
+    {
+      "id": "SRC-008",
+      "title": "Estudios de Aluviones y Obras de Mitigación Aluvional (MOP-DOH · Defensas Fluviales y Control Aluvional / Riesgo de Desastres)",
+      "type": "service_ppt",
+      "speaker": null,
+      "role": null,
+      "date": "2026-06",
+      "drive": "https://docs.google.com/presentation/d/111hf4uoErKYrTPuf9tj7kVbTsuZyEITn/edit",
+      "cells": [
+        "INFRA PÚBLICA RESILIENTE"
+      ],
+      "cell_note": "Leída completa el 28-10-2026 desde Drive (Quebradas.pptx, 16 láminas). Célula INFRA PÚBLICA RESILIENTE y vigencia del servicio confirmadas por MKT (28-10-2026). En 2A.2 solo existe como reserva (R0001/R0002 RESERVE_FACTUAL); se usa como auxiliary_id SRC-xxx#Cyy, sin modificar data/."
+    },
+    {
+      "id": "SRC-009",
+      "title": "Oferta integral IDIEM · Defensas Fluviales y Control Aluvional / Riesgo de Desastres (síntesis 'para kike')",
+      "type": "summary_ppt",
+      "speaker": null,
+      "role": null,
+      "date": "2026-10-28",
+      "drive": "https://docs.google.com/presentation/d/111hf4uoErKYrTPuf9tj7kVbTsuZyEITn/edit",
+      "cells": [
+        "INFRA PÚBLICA RESILIENTE"
+      ],
+      "cell_note": "Lámina única subida por el usuario al chat (para_kike.pptx), síntesis de SRC-008; no tiene enlace propio en Drive, el campo drive apunta a la fuente completa. Insumo base para los posts extra de noviembre 2026 (contingencia de lluvias/aluviones)."
     }
   ],
   "claims": [
@@ -731,6 +772,334 @@
         "SRC-003"
       ],
       "text": "Definir la criticidad es el punto de partida del análisis de riesgo: la NCC 40 entrega ejemplos de criticidad para la industria minera; si no hay un criterio claro, se define con la parte interesada a partir de las interrelaciones entre procesos."
+    },
+    {
+      "id": "SRC-007#C01",
+      "kind": "idiem_capability",
+      "class": "SAFE",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Servicios de la División de Aguas: (1) caracterización de recursos hídricos (gabinete y terreno); (2) diagnóstico de infraestructura de suministro de agua; (3) estudios hidrogeológicos para disponibilidad de agua subterránea; (4) modelación hidrológica, hidrogeológica y de recursos hídricos; (5) ingeniería de detalle de sistemas de suministro de agua rural. Incluye trabajo de terreno, mediciones y supervisión técnica.",
+      "related_kb": [],
+      "note": "No está en 2A.2: se cita como auxiliary_id SRC-007#C01.",
+      "validated_by": "MKT 2026-10-28 (servicio vigente y comunicable)"
+    },
+    {
+      "id": "SRC-007#C02",
+      "kind": "idiem_capability",
+      "class": "SAFE",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Oferta integral en defensas fluviales y control aluvional / riesgo de desastres (MOP-DOH), en 5 etapas: diagnóstico (catastro de infraestructura y viviendas, sectores expuestos); estudios básicos y de terreno (hidrología, geología y geomorfología, susceptibilidad de aluviones, topografía, mecánica de suelos y geotecnia, geofísica); modelación numérica de crecidas líquidas y aluviones bajo escenarios de cambio climático; zonificación de la amenaza (mapas para mitigación, planificación territorial y coordinación ante emergencias); diseño de obras de mitigación (alternativas, presupuestos, evaluación económica y TdR).",
+      "related_kb": [],
+      "note": "No está en 2A.2: se cita como auxiliary_id SRC-007#C02. No usar 'socio técnico para todo el ciclo' (C17).",
+      "validated_by": "MKT 2026-10-28 (servicio vigente y comunicable)"
+    },
+    {
+      "id": "SRC-007#C03",
+      "kind": "idiem_capability",
+      "class": "SAFE",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Metodología aplicada en agua potable rural (Programa Infraestructura para el Buen Vivir): diagnóstico físico, social y legal → análisis de alternativas → ingeniería de detalle de soluciones → perforación de pozos (incluida prueba de bombeo).",
+      "related_kb": [],
+      "validated_by": "MKT 2026-10-28 (servicio vigente y comunicable)",
+      "note": "No está en 2A.2: se cita como auxiliary_id SRC-007#C03."
+    },
+    {
+      "id": "SRC-007#C04",
+      "kind": "project_data",
+      "class": "SAFE",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Trabajo en curso: evaluación y soluciones de sistemas de potabilización de agua en postas y escuelas rurales, Región de la Araucanía (2025-2027). Convenio DGOP-DOH-IDIEM, Programa Infraestructura para el Buen Vivir.",
+      "sensitivity": "nombres autorizados por MKT 28-10-2026; mantener fechas y alcances literales de la fuente",
+      "validated_by": "MKT 2026-10-28 (se pueden nombrar proyecto y mandante)",
+      "note": "La fuente indica que se contrató por Ley 21.094 o transferencia de recursos: ese dato NO va al copy (Ley de Universidades fuera de RRSS, MKT 28-10-2026)."
+    },
+    {
+      "id": "SRC-007#C05",
+      "kind": "project_data",
+      "class": "SAFE",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Trabajo en curso: análisis de la cuenca del Biobío para la formulación del plan estratégico de recursos hídricos (2026-2027), DGA.",
+      "sensitivity": "nombres autorizados por MKT 28-10-2026; mantener fechas y alcances literales de la fuente",
+      "validated_by": "MKT 2026-10-28 (se pueden nombrar proyecto y mandante)"
+    },
+    {
+      "id": "SRC-007#C06",
+      "kind": "project_data",
+      "class": "SAFE",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Trabajo en curso: análisis de recursos hídricos de cuencas de la Región de Magallanes y de la Antártica Chilena (2026-2027), DGA.",
+      "sensitivity": "nombres autorizados por MKT 28-10-2026; mantener fechas y alcances literales de la fuente",
+      "validated_by": "MKT 2026-10-28 (se pueden nombrar proyecto y mandante)"
+    },
+    {
+      "id": "SRC-007#C07",
+      "kind": "project_data",
+      "class": "SAFE",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Trabajo en curso: actualización de las estrategias de mitigación contra aluviones en zona alta y media de la Quebrada de Macul (Peñalolén y La Florida, RM).",
+      "sensitivity": "nombres autorizados por MKT 28-10-2026; mantener fechas y alcances literales de la fuente",
+      "validated_by": "MKT 2026-10-28 (se pueden nombrar proyecto y mandante)"
+    },
+    {
+      "id": "SRC-007#C08",
+      "kind": "normative",
+      "class": "DO_NOT_PUBLISH",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Ley 21.094 sobre Universidades Estatales (2018): busca 'establecer un marco jurídico que permita a las Universidades del Estado fortalecer sus estándares de calidad académica y de gestión institucional, y que contribuyan de forma permanente en el desarrollo integral del país'.",
+      "related_aux": [
+        "AUX-010"
+      ],
+      "note": "Legal = VERIFY (Sales Intelligence CONTENT_RULES): contrastar con texto oficial vigente.",
+      "blocked_reason": "MKT 28-10-2026: para RRSS no se aborda la Ley 21.094 (Ley de Universidades)."
+    },
+    {
+      "id": "SRC-007#C09",
+      "kind": "normative",
+      "class": "DO_NOT_PUBLISH",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Art. 37 inciso 1° Ley 21.094: quedan excluidos de la Ley 19.886 los convenios que celebren las universidades del Estado con organismos públicos de la Administración del Estado y los que celebren entre sí. Según la presentación, permite convenios de prestación de servicios entre organismos públicos y la Universidad de Chile sin aplicar la ley de compras públicas.",
+      "related_aux": [
+        "AUX-010",
+        "AUX-015",
+        "AUX-016"
+      ],
+      "note": "Mecanismo de contratación, nunca servicio técnico (regla de célula IPR).",
+      "blocked_reason": "MKT 28-10-2026: para RRSS no se aborda la Ley 21.094 (Ley de Universidades)."
+    },
+    {
+      "id": "SRC-007#C10",
+      "kind": "normative",
+      "class": "DO_NOT_PUBLISH",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Según la presentación, el art. 37 no restringe monto ni plazo de los contratos.",
+      "note": "Interpretación de la presentación; verificar con fuente oficial/jurídica antes de publicar. Se matiza con C12 (control de legalidad sobre 10.000 UTM).",
+      "blocked_reason": "MKT 28-10-2026: para RRSS no se aborda la Ley 21.094 (Ley de Universidades)."
+    },
+    {
+      "id": "SRC-007#C11",
+      "kind": "normative",
+      "class": "DO_NOT_PUBLISH",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Dictamen 002767 de 2019 de la CGR fijó la interpretación y alcance del art. 37 a solicitud de un organismo público.",
+      "note": "FUENTE TRUNCADA: la lámina no trae el resumen del dictamen. Usar solo la existencia del dictamen, nunca su contenido.",
+      "blocked_reason": "MKT 28-10-2026: para RRSS no se aborda la Ley 21.094 (Ley de Universidades)."
+    },
+    {
+      "id": "SRC-007#C12",
+      "kind": "normative",
+      "class": "DO_NOT_PUBLISH",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Resolución 16 de 2020 de la CGR: los contratos de prestación de servicios bajo el art. 37 sobre 10.000 UTM deben pasar por control de legalidad (toma de razón) ante la Contraloría.",
+      "blocked_reason": "MKT 28-10-2026: para RRSS no se aborda la Ley 21.094 (Ley de Universidades)."
+    },
+    {
+      "id": "SRC-007#C13",
+      "kind": "internal_reference",
+      "class": "INTERNAL",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Flujo de contratación: solicitud de cotización → propuesta técnico-económica IDIEM → contrato bajo Ley 21.094 (bajo 10.000 UTM: directo; sobre 10.000 UTM: toma de razón en Contraloría) → convenio formalizado. Plazo aproximado de toma de razón: '1 mes (?)'.",
+      "note": "La propia fuente marca el plazo con '(?)': no publicar el plazo. El flujo sin plazo podría pasar a VERIFY si MKT lo pide.",
+      "confirmed_by": "MKT 2026-10-28 (se mantiene fuera del copy)"
+    },
+    {
+      "id": "SRC-007#C14",
+      "kind": "concept",
+      "class": "DO_NOT_PUBLISH",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Beneficios declarados de los convenios bajo Ley 21.094: plazo de contratación, eficiencia en los recursos del proceso de compra, menor riesgo de declarar desierto el proceso, recursos del Estado.",
+      "related_aux": [
+        "AUX-013",
+        "AUX-014"
+      ],
+      "note": "Beneficio comercial/administrativo: no presentarlo como servicio técnico; AUX-014 tiene CORRECCION_NECESARIA en 2A.2.",
+      "blocked_reason": "MKT 28-10-2026: para RRSS no se aborda la Ley 21.094 (Ley de Universidades)."
+    },
+    {
+      "id": "SRC-007#C15",
+      "kind": "internal_reference",
+      "class": "INTERNAL",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Organismos con convenios ya celebrados bajo art. 37 (16): Gendarmería, Dipreca, U. de O'Higgins, SSMSO (8), MINVU, MOP-Arq-DOH, Servicio de Salud Chiloé, Servicio de Salud Osorno, Hospital Tisné, FACh, municipalidades de Lo Barnechea, Santiago, San Rosendo, Caldera, San Clemente y Copiapó.",
+      "note": "Clientes con nombre: no van al copy sin autorización explícita.",
+      "confirmed_by": "MKT 2026-10-28 (se mantiene fuera del copy)"
+    },
+    {
+      "id": "SRC-007#C16",
+      "kind": "project_data",
+      "class": "SAFE",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Cifras institucionales de la presentación: 800+ ingenieros y técnicos; 450.000 ensayos al año; 540 estudios de ingeniería al año; 13 divisiones; pertenencia a la Facultad de Ingeniería de la Universidad de Chile.",
+      "note": "Cifras confirmadas vigentes por MKT; revisar de nuevo si cambian. Sin superlativos (C17).",
+      "validated_by": "MKT 2026-10-28 (cifras vigentes)"
+    },
+    {
+      "id": "SRC-007#C17",
+      "kind": "internal_reference",
+      "class": "DO_NOT_PUBLISH",
+      "sources": [
+        "SRC-007"
+      ],
+      "text": "Formulaciones promocionales de la presentación: 'líder en Chile', 'Referentes en el sector construcción', 'socio técnico para todo el ciclo'.",
+      "blocked_reason": "Superlativos/promesas: la voz de marca prohíbe superlativos (CLAUDE.md, editorial memory).",
+      "confirmed_by": "MKT 2026-10-28 (se mantiene fuera del copy)"
+    },
+    {
+      "id": "SRC-009#C01",
+      "kind": "idiem_capability",
+      "class": "SAFE",
+      "sources": [
+        "SRC-009",
+        "SRC-008"
+      ],
+      "text": "Oferta integral IDIEM para gestión del riesgo aluvional, de diagnóstico a transferencia técnica, en 5 etapas: (1) Diagnóstico: catastro de infraestructura y viviendas, identificación de sectores expuestos; (2) Estudios básicos y de terreno: hidrología, geología y geomorfología, susceptibilidad de generación de aluviones, topografía, mecánica de suelos y geotecnia, geofísica; (3) Modelación numérica de crecidas líquidas y aluviones bajo escenarios de cambio climático; (4) Zonificación de la amenaza: mapas de amenaza por aluvión y crecidas para definir medidas de mitigación, apoyar la planificación territorial y la coordinación ante emergencias; (5) Diseño de obras de mitigación: alternativas, presupuestos, evaluación económica y TdR.",
+      "validated_by": "MKT 2026-10-28 (servicio vigente, célula IPR)"
+    },
+    {
+      "id": "SRC-009#C02",
+      "kind": "idiem_capability",
+      "class": "SAFE",
+      "sources": [
+        "SRC-009"
+      ],
+      "text": "Posicionamiento declarado: IDIEM como socio técnico para todo el ciclo de gestión del riesgo aluvional — estudiar, priorizar, diseñar, validar y transferir capacidades al MOP.",
+      "validated_by": "MKT 2026-10-28 (servicio vigente, célula IPR)"
+    },
+    {
+      "id": "SRC-008#C01",
+      "kind": "idiem_capability",
+      "class": "SAFE",
+      "sources": [
+        "SRC-008"
+      ],
+      "text": "Oferta de servicios: estudios de consultoría especializada en evaluación de amenazas por crecidas líquidas (inundaciones) y flujos detríticos (aluviones), identificando zonas potencialmente afectadas y desarrollando alternativas de mitigación hasta nivel de factibilidad.",
+      "validated_by": "MKT 2026-10-28 (servicio vigente, célula IPR)"
+    },
+    {
+      "id": "SRC-008#C02",
+      "kind": "idiem_capability",
+      "class": "SAFE",
+      "sources": [
+        "SRC-008"
+      ],
+      "text": "Asesoría para la actualización y mejora continua del Manual de Quebradas para el Estudio de Aluviones, según avances del estado del arte y la experiencia nacional.",
+      "validated_by": "MKT 2026-10-28 (servicio vigente, célula IPR)"
+    },
+    {
+      "id": "SRC-008#C03",
+      "kind": "concept",
+      "class": "SAFE",
+      "sources": [
+        "SRC-008"
+      ],
+      "text": "La amenaza aluvional se zonifica cruzando la intensidad del flujo (altura h y producto h·v) con su probabilidad de ocurrencia (alta, media, baja), distinguiendo inundación (crecida líquida) de aluvión (flujo detrítico); el resultado son zonas de amenaza alta, media, baja y muy baja."
+    },
+    {
+      "id": "SRC-008#C04",
+      "kind": "concept",
+      "class": "SAFE",
+      "sources": [
+        "SRC-008"
+      ],
+      "text": "La susceptibilidad de generación de aluviones combina factores condicionantes: geología/geotecnia (unidad geológica, características del suelo/roca), geomorfología (pendientes, redes de drenaje, SPI), cobertura vegetal, acumulación de nieve o vertientes, factor antrópico y eventos anteriores; su ponderación cambia según zona (clima árido, mixto, lluvioso, zonas volcánicas)."
+    },
+    {
+      "id": "SRC-008#C05",
+      "kind": "concept",
+      "class": "SAFE",
+      "sources": [
+        "SRC-008"
+      ],
+      "text": "El aluvión de diseño se construye a partir del hidrograma de crecida (hidrología) y del volumen de sedimentos disponibles al ápice de la quebrada, que en conjunto definen el hidrograma del aluvión (pulso)."
+    },
+    {
+      "id": "SRC-008#C06",
+      "kind": "concept",
+      "class": "SAFE",
+      "sources": [
+        "SRC-008"
+      ],
+      "text": "Un aluvión no es solo agua: los procesos que se evalúan en una quebrada incluyen flujo de detritos, deslizamiento superficial y caída de rocas, y las obras se definen en función del mapa de peligro de cada proceso."
+    },
+    {
+      "id": "SRC-008#C07",
+      "kind": "concept",
+      "class": "SAFE",
+      "sources": [
+        "SRC-008"
+      ],
+      "text": "Las estrategias de mitigación aluvional pueden combinar barreras dinámicas para retener sólidos en la parte alta de la quebrada, soluciones basadas en la naturaleza (SBN) para reducir el material arrastrable y obras de desvío y retención en el sector medio, considerando cambio climático."
+    },
+    {
+      "id": "SRC-008#C08",
+      "kind": "normative",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-008"
+      ],
+      "text": "Ponderaciones (%) de la matriz de susceptibilidad y umbrales de intensidad (p. ej. h ≥ 2 m o h·v ≥ 2 m²/s alta para inundación; h ≥ 1,0 m o h·v ≥ 1,0 m²/s alta para aluvión) provienen del Manual de Quebradas en marcha blanca (no es aún Norma Técnica MOP): no citar cifras sin validación.",
+      "note": "MKT 28-10-2026: no usar (Manual de Quebradas y proyectos no se nombran)."
+    },
+    {
+      "id": "SRC-008#C09",
+      "kind": "public_incident",
+      "class": "VERIFY",
+      "sources": [
+        "SRC-008"
+      ],
+      "text": "Plan Nacional de Quebradas surge como respuesta a la catástrofe del 25 de marzo de 2015 (Antofagasta, Atacama y Coquimbo); pilares: política/normativa/institucionalidad, planificación y coordinación de emergencias. Manual de Quebradas para el Estudio de Aluviones (4 volúmenes) producto de PNQ-Fase 1; próxima marcha blanca y difusión para proponerlo como Norma Técnica del MOP.",
+      "note": "MKT 28-10-2026: no usar (Manual de Quebradas y proyectos no se nombran)."
+    },
+    {
+      "id": "SRC-008#C10",
+      "kind": "project_data",
+      "class": "DO_NOT_PUBLISH",
+      "sources": [
+        "SRC-008"
+      ],
+      "text": "Experiencia para MOP-DOH: diagnóstico de riesgo en quebradas laterales de Camiña y Tarapacá post-evento marzo 2012 (2013; 27 quebradas); Plan Atacama DOH post-25M 2015 (7 cuencas); diseño de obras fluviales y de control aluvional en cuencas de los ríos El Carmen (17 quebradas) y El Tránsito (28 quebradas), Huasco; PNQ-Fase 1 (8 etapas, Manual de Quebradas).",
+      "blocked_reason": "MKT 28-10-2026: no considerar proyectos con nombre ni autorizar su mención."
+    },
+    {
+      "id": "SRC-008#C11",
+      "kind": "project_data",
+      "class": "DO_NOT_PUBLISH",
+      "sources": [
+        "SRC-008"
+      ],
+      "text": "Estudios en ejecución / nuevas iniciativas: actualización de estrategias de mitigación aluvional en quebrada de Macul (Peñalolén y La Florida; barreras dinámicas, SBN); marcha blanca y difusión del Manual de Quebradas; diagnóstico de mitigación y control de crecidas del río Mosco (Villa O'Higgins; terreno con topografía, mecánica de suelos, geología y glaciología; evaluación con criterios MDSyF).",
+      "blocked_reason": "MKT 28-10-2026: no considerar proyectos con nombre ni autorizar su mención."
     }
   ],
   "topics": [
@@ -1245,6 +1614,157 @@
         "KB-IOM-026"
       ],
       "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-030",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "title": "Agua potable rural: antes de diseñar, diagnosticar lo físico, lo social y lo legal",
+      "claims": [
+        "SRC-007#C03",
+        "SRC-007#C01"
+      ],
+      "angle": "Una solución de agua rural no parte por la ingeniería: parte por entender el sistema, la comunidad y la situación legal.",
+      "archetype_hint": "process_result",
+      "hook_hint": "process_step",
+      "format_hint": "CAROUSEL",
+      "related_kb": [],
+      "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-031",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "title": "Aluviones: del mapa de amenaza a la obra de mitigación",
+      "claims": [
+        "SRC-007#C02"
+      ],
+      "angle": "Sin modelación y zonificación de la amenaza, las obras de mitigación se diseñan a ciegas; el cambio climático cambia los escenarios.",
+      "archetype_hint": "risk_prevention",
+      "hook_hint": "risk",
+      "format_hint": "CAROUSEL",
+      "related_kb": [],
+      "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-032",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "title": "¿Cuánta agua subterránea hay realmente? Estudios hidrogeológicos y modelación",
+      "claims": [
+        "SRC-007#C01"
+      ],
+      "angle": "La disponibilidad de agua subterránea se estudia y modela antes de perforar o planificar.",
+      "archetype_hint": "technical_question",
+      "hook_hint": "question",
+      "format_hint": "STATIC",
+      "related_kb": [],
+      "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-033",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "title": "Planificar el agua por cuenca",
+      "claims": [
+        "SRC-007#C01",
+        "SRC-007#C05",
+        "SRC-007#C06"
+      ],
+      "angle": "La gestión hídrica se decide a escala de cuenca, no de obra aislada.",
+      "archetype_hint": "data_implication",
+      "hook_hint": "insight",
+      "format_hint": "STATIC",
+      "related_kb": [],
+      "flags": [],
+      "status": "CANDIDATE"
+    },
+    {
+      "id": "TOP-034",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "title": "Convenios entre organismos públicos y universidades estatales (Ley 21.094, art. 37)",
+      "claims": [
+        "SRC-007#C09",
+        "SRC-007#C12",
+        "SRC-007#C14"
+      ],
+      "angle": "Explicar el mecanismo de contratación como facilidad administrativa, sin presentarlo como servicio técnico.",
+      "archetype_hint": "capability_application",
+      "hook_hint": "contrast",
+      "format_hint": "CAROUSEL",
+      "related_kb": [],
+      "flags": [
+        "legal = VERIFY: revisar contra fuente oficial vigente (CONTENT_RULES)",
+        "Ley 21.094 es mecanismo, NO servicio técnico (regla célula IPR)",
+        "cruza AUX-010…AUX-016 (CHECK_VALIDITY_BEFORE_USE)",
+        "no publicar plazo '1 mes (?)' ni lista de organismos (INTERNAL)"
+      ],
+      "status": "DISCARDED",
+      "discarded_reason": "MKT 28-10-2026: para RRSS no se aborda la Ley 21.094 (Ley de Universidades)."
+    },
+    {
+      "id": "TOP-035",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "title": "Un aluvión no es una crecida: por qué la amenaza se zonifica distinto",
+      "claims": [
+        "SRC-008#C03",
+        "SRC-008#C06",
+        "SRC-009#C01"
+      ],
+      "angle": "Cuando la lluvia baja por una quebrada no trae solo agua: arrastra sedimentos y rocas. Entender esa diferencia cambia dónde y cómo se protege.",
+      "archetype_hint": "evidence_learning",
+      "hook_hint": "contrast",
+      "format_hint": "VIDEO",
+      "related_kb": [],
+      "flags": [
+        "contingencia lluvias/aluviones oct-2026: tono sobrio, sin aprovechar tragedias ni citar eventos con víctimas",
+        "MKT 28-10: tono educativo/explicativo, no explícitamente comercial, pero debe mostrar el servicio y orientar a reuniones",
+        "sin proyectos con nombre ni Manual de Quebradas"
+      ],
+      "status": "CANDIDATE",
+      "planned": "2026-11 extra A (03-nov), video"
+    },
+    {
+      "id": "TOP-036",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "title": "Del diagnóstico a la obra: el ciclo de gestión del riesgo aluvional en 5 etapas",
+      "claims": [
+        "SRC-009#C01",
+        "SRC-009#C02",
+        "SRC-008#C05",
+        "SRC-008#C07"
+      ],
+      "angle": "Después de la emergencia viene la pregunta de fondo: qué quebradas priorizar y qué obra conviene. Responderla exige una secuencia técnica, no una reacción.",
+      "archetype_hint": "process_result",
+      "hook_hint": "question",
+      "format_hint": "CAROUSEL",
+      "related_kb": [],
+      "flags": [
+        "contingencia lluvias/aluviones oct-2026",
+        "MKT 28-10: tono educativo/explicativo, no explícitamente comercial, pero debe mostrar el servicio y orientar a reuniones",
+        "sin proyectos con nombre ni Manual de Quebradas"
+      ],
+      "status": "CANDIDATE",
+      "planned": "2026-11 extra B (19-nov), carrusel"
+    },
+    {
+      "id": "TOP-037",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "title": "¿Qué hace que una quebrada sea más propensa a generar aluviones?",
+      "claims": [
+        "SRC-008#C04",
+        "SRC-008#C05"
+      ],
+      "angle": "Pendiente, suelo, drenaje, nieve, intervención humana y eventos previos: la susceptibilidad se lee en el territorio antes de la lluvia.",
+      "archetype_hint": "technical_question",
+      "hook_hint": "question",
+      "format_hint": "STATIC",
+      "related_kb": [],
+      "flags": [
+        "sin cifras de ponderación (C08 VERIFY)",
+        "MKT 28-10: tono educativo/explicativo, no explícitamente comercial, pero debe mostrar el servicio y orientar a reuniones",
+        "sin proyectos con nombre ni Manual de Quebradas"
+      ],
       "status": "CANDIDATE"
     }
   ]

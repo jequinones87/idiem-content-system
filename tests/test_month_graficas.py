@@ -52,7 +52,13 @@ def test_every_planned_post_has_a_piece_and_photo(month):
 def test_carousel_format_matches_plan(month):
     g, plan, _ = _load(month)
     for p in plan["posts"]:
-        is_car = "carousel" in g["posts"][str(p["seq"])]
+        post = g["posts"][str(p["seq"])]
+        is_car = "carousel" in post
+        has_video = "video_plan" in post or "video" in post
+        if p["format"] == "VIDEO":
+            # un post VIDEO declara su video; sus láminas (si las hay) son el storyboard
+            assert has_video, f"post {p['seq']}: formato VIDEO sin video_plan/video"
+            continue
         assert is_car == (p["format"] == "CAROUSEL"), f"post {p['seq']}: formato no coincide"
 
 

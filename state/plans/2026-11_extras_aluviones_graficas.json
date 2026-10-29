@@ -1,0 +1,140 @@
+{
+  "month": "2026-11",
+  "set": "2026-11_extras_aluviones",
+  "status": "DRAFT — pendiente de revisión MKT",
+  "photo_dir": "design_system/assets/month_2026-11",
+  "note": "Extras por contingencia de lluvias y aluviones. Plantilla 02 (carrusel con foto de fondo) igual que el resto de los carruseles; el post 1 se publica como video Remotion y sus láminas quedan de respaldo. Fotos: carpeta de Drive de MKT (presentación SRC-008).",
+  "posts": {
+    "1": {
+      "photo": {
+        "file": "extra_aluvion_png.jpg",
+        "source": "library",
+        "id": "aluvion2.png",
+        "detalle": "flujo aluvional que baja por una quebrada hasta el mar · foto de la presentación SRC-008, 608 px ampliada",
+        "drive": "https://drive.google.com/file/d/1pBqawfjbS6SyFk_yqm2P0NJ9N2thN4Mi/view",
+        "pos": "40% 55%"
+      },
+      "carousel": {
+        "portada": {
+          "kicker": "AMENAZA ALUVIONAL",
+          "title": "Prevenir empieza por <span class=\"c2rt\">conocer</span> la amenaza."
+        },
+        "intermedias": [
+          {
+            "icon": "droplets",
+            "title": "Crecida líquida o <span class=\"c2rb\">flujo detrítico</span>",
+            "body": "Crecida líquida: agua que desborda el cauce. Flujo detrítico: agua + sedimentos + rocas."
+          },
+          {
+            "icon": "layers",
+            "title": "Intensidad <span class=\"c2rb\">×</span> probabilidad",
+            "body": "Intensidad: altura y velocidad del flujo. Probabilidad de que ocurra."
+          },
+          {
+            "icon": "map-pin",
+            "title": "Mapas para <span class=\"c2rb\">decidir</span>",
+            "body": "Obras de mitigación · Planificación territorial · Emergencias"
+          },
+          {
+            "icon": "shield-check",
+            "title": "En IDIEM acompañamos el <span class=\"c2rb\">ciclo completo</span>",
+            "body": "Diagnóstico · Terreno · Modelación · Zonificación · Obras"
+          }
+        ],
+        "cierre": {
+          "bajada": "Diagnóstico, estudios de terreno, modelación, zonificación y diseño de obras de mitigación."
+        }
+      },
+      "video": {
+        "file": "video/extraA_aluvion_musica.mp4",
+        "published": "media/extraA_aluvion_musica.mp4",
+        "silent_published": "media/extraA_aluvion.mp4",
+        "seconds": 32.0,
+        "how": "motion graphics con Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-aluviones</code>): barridos rojos entre escenas, cauces animados (agua vs. agua con bloques), matriz intensidad × probabilidad, mapa de amenaza en cuadrícula y ciclo del servicio",
+        "music": "música chill house original (music.py de la skill, 120 BPM, −17 LUFS) — requiere aprobación auditiva de MKT"
+      },
+      "flag": "Foto de la presentación SRC-008: confirmar derechos de uso",
+      "created": "28-10-2026",
+      "hist": [
+        {
+          "date": "29-10-2026",
+          "summary": "Notas del workstation (29-10): más tiempo entre escenas (26 → 32 s; escenas de ~5,5 s) y nuevo gráfico en «Mapas para decidir»: territorio en cuadrícula con el cauce y celdas por nivel de amenaza (reemplaza las zonas ovaladas)."
+        },
+        {
+          "date": "28-10-2026",
+          "summary": "MKT 28-10-2026: títulos reformulados con foco en prevención: título «Un aluvión no es solo agua» → «Prevenir empieza por conocer la amenaza»; escena 2 «Crecida ≠ aluvión» → «Crecida líquida o flujo detrítico» (terminología de la fuente); primera línea y párrafo 2 del copy; hook contrast → technical_claim."
+        },
+        {
+          "date": "28-10-2026",
+          "summary": "MKT: en la escena del ciclo del servicio, «En IDIEM, todo el ciclo» → «En IDIEM acompañamos el ciclo completo» (video re-renderizado y lámina de respaldo 04)."
+        },
+        {
+          "date": "28-10-2026",
+          "summary": "MKT: video en Remotion, más gráfico que texto y con cortes más rápidos (34 → 26 s); workstation propio para los extras."
+        }
+      ]
+    },
+    "2": {
+      "photo": {
+        "file": "extra_contension2.jpg",
+        "source": "library",
+        "id": "contension2.jpg",
+        "detalle": "barrera dinámica de contención en una quebrada, con tres personas · foto de la presentación SRC-008",
+        "drive": "https://drive.google.com/file/d/1y50USNfjC3O9NzDFdat6OP8VmwVJ6ZbB/view",
+        "pos": "55% 45%"
+      },
+      "carousel": {
+        "portada": {
+          "kicker": "GESTIÓN DEL RIESGO ALUVIONAL",
+          "title": "¿Dónde podría bajar el próximo <span class=\"c2rt\">aluvión</span>?"
+        },
+        "intermedias": [
+          {
+            "icon": "search",
+            "title": "<span class=\"c2rb\">Diagnóstico</span>",
+            "body": "Catastro de infraestructura y viviendas para identificar los sectores expuestos."
+          },
+          {
+            "icon": "mountain",
+            "title": "Estudios de <span class=\"c2rb\">terreno</span>",
+            "body": "Hidrología, geología, geomorfología, topografía, mecánica de suelos, geotecnia y geofísica."
+          },
+          {
+            "icon": "activity",
+            "title": "<span class=\"c2rb\">Modelación</span> numérica",
+            "body": "Crecidas y aluviones modelados bajo escenarios de cambio climático."
+          },
+          {
+            "icon": "map-pin",
+            "title": "Zonificación de la <span class=\"c2rb\">amenaza</span>",
+            "body": "Mapas para planificar el territorio y coordinar la respuesta ante emergencias."
+          },
+          {
+            "icon": "shield-check",
+            "title": "Obras de <span class=\"c2rb\">mitigación</span>",
+            "body": "Alternativas, presupuestos, evaluación económica y términos de referencia."
+          }
+        ],
+        "cierre": {
+          "bajada": "Estudiar, priorizar, diseñar y validar: un socio técnico para todo el ciclo del riesgo aluvional."
+        }
+      },
+      "flag": "Foto de la presentación SRC-008: confirmar derechos de uso y consentimiento de las tres personas visibles",
+      "created": "28-10-2026",
+      "hist": [
+        {
+          "date": "29-10-2026",
+          "summary": "Notas del workstation (29-10): «¿Dónde mitigar…?» → «¿Dónde podría bajar el próximo aluvión?» (foco en anticipar dónde puede ocurrir); párrafo 2: mapear el territorio y simular crecidas y aluviones para identificar sectores expuestos antes de que llueva. Ítem 3 sin «numérica» para quedar bajo 900 caracteres (la lámina 03 conserva «Modelación numérica»)."
+        },
+        {
+          "date": "28-10-2026",
+          "summary": "MKT 28-10-2026: títulos reformulados con foco en prevención: portada «¿Qué quebrada intervenir primero?» → «¿Dónde mitigar antes de la próxima lluvia?» y primera línea del copy. Párrafo 2 condensado para no repetir la pregunta del gancho (≤ 900 caracteres)."
+        },
+        {
+          "date": "28-10-2026",
+          "summary": "MKT: carrusel rehecho con la Plantilla 02 estándar (misma foto en todas las láminas, velo, número, ícono, barra roja y cierre de marca), igual que los otros carruseles."
+        }
+      ]
+    }
+  }
+}

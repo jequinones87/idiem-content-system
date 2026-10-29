@@ -1,0 +1,488 @@
+{
+  "month": "2026-12",
+  "status": "DRAFT — pendiente de revisión MKT",
+  "note": "Capa visual de diciembre (Plantilla 01 Servicios / Plantilla 02 carrusel / pieza conmemorativa). Textos de pieza trazan a 2026-12_copies.json; sin siglas de célula; sin superlativos. Fotos de la librería de Drive no usadas en sep–nov.",
+  "photo_dir": "design_system/assets/month_2026-12",
+  "posts": {
+    "1": {
+      "photo": {
+        "file": "p01.jpg",
+        "source": "library",
+        "id": "PHO-0082",
+        "detalle": "construcción de hospital (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/1xVBaAfTdTCKZDRoHq-Ux0PvstaVG6XAD/view",
+        "pos": "62% 50%"
+      },
+      "side": "left",
+      "svc": "Diagnóstico estructural hospitalario",
+      "msg": "Que resista no basta:<br>que siga operando.",
+      "base": "Hospitales · <b>diagnósticos estructurales y revisiones sísmicas</b>",
+      "created": "02-12-2026",
+      "hist": [
+        {
+          "date": "19-10-2026",
+          "summary": "Foto → construccion_hospital_queilen (pedido MKT). Ya usada en sep–nov: se usa por decisión de MKT."
+        }
+      ]
+    },
+    "2": {
+      "photo": {
+        "file": "p02.jpg",
+        "source": "library",
+        "id": "PHO-0054",
+        "detalle": "faena minera a rajo abierto (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/1k47H8j5hCCTS2wAT4NEIz2sIjB6qULNf/view",
+        "pos": "50% 50%"
+      },
+      "carousel": {
+        "portada": {
+          "kicker": "RIESGO DE INCENDIO EN MINERÍA",
+          "title": "¿Basta con <span class=\"c2rt\">cumplir</span> la norma?"
+        },
+        "intermedias": [
+          {
+            "icon": "clipboard-check",
+            "title": "Nivel <span class=\"c2rb\">simple</span>",
+            "body": "Verifica el cumplimiento normativo con una lista de chequeo. Es la base del análisis, pero por sí sola no muestra cómo un incendio afectaría la operación."
+          },
+          {
+            "icon": "search",
+            "title": "Nivel <span class=\"c2rb\">medio</span>",
+            "body": "Suma a la verificación normativa el análisis de vulnerabilidades de la instalación: los puntos débiles que la norma por sí sola no revela."
+          },
+          {
+            "icon": "route",
+            "title": "Nivel <span class=\"c2rb\">avanzado</span>",
+            "body": "Analiza procesos, interrelaciones y consecuencias operacionales, con la posibilidad de estimar costos como la pérdida diaria por detención."
+          },
+          {
+            "icon": "history",
+            "title": "Un estudio <span class=\"c2rb\">también vence</span>",
+            "body": "Si la operación cambia, el análisis debe actualizarse. La revisión por pares y el criterio multidisciplinario le dan solidez."
+          }
+        ],
+        "cierre": {
+          "bajada": "En IDIEM desarrollamos ingeniería y evaluación de riesgos de incendios para infraestructura de operación minera."
+        }
+      },
+      "created": "02-12-2026",
+      "hist": [
+        {
+          "date": "19-10-2026",
+          "summary": "Foto → generico_faena_minera (pedido MKT). Ya usada en sep–nov: se usa por decisión de MKT."
+        }
+      ]
+    },
+    "3": {
+      "photo": {
+        "file": "p03.jpg",
+        "source": "library",
+        "id": "PHO-0103",
+        "detalle": "manejo de ripios en faena minera, vista aérea (foto elegida por MKT)",
+        "drive": "https://drive.google.com/file/d/1cuKpb64RkZncnK0FFF-GjbzzJ_tMqRRX/view",
+        "pos": "40% 50%"
+      },
+      "side": "right",
+      "svc": "Integridad estructural minera",
+      "msg": "Lo que sostiene<br>la operación.",
+      "base": "Chancadores, molinos y correas · <b>gestión de vulnerabilidad e integridad</b>",
+      "created": "02-12-2026",
+      "hist": [
+        {
+          "date": "19-10-2026",
+          "summary": "Foto → geotecnia_Manejo_de_Ripios_Mineria (pedido MKT)."
+        }
+      ]
+    },
+    "4": {
+      "photo": {
+        "file": "p04.jpg",
+        "source": "library",
+        "id": "PHO-0053",
+        "detalle": "planos y anotaciones de ingeniería sobre escritorio",
+        "drive": "https://drive.google.com/file/d/106O9BRW4nnxHT17zRJB_fwVQ_Bs3SLt1/view",
+        "pos": "50% 50%"
+      },
+      "carousel": {
+        "portada": {
+          "kicker": "VIDEO · CONTROVERSIAS CONTRACTUALES",
+          "title": "Dos versiones.<br>Un mismo <span class=\"c2rt\">contrato</span>."
+        },
+        "intermedias": [
+          {
+            "icon": "route",
+            "title": "El plan <span class=\"c2rb\">se rompe</span>",
+            "body": "Cambio de obra · Atraso · Mayor costo"
+          },
+          {
+            "icon": "users",
+            "title": "Dos <span class=\"c2rb\">miradas</span>",
+            "body": "Cada parte lo explica desde su propia mirada."
+          },
+          {
+            "icon": "file-check",
+            "title": "Estudio <span class=\"c2rb\">técnico</span>",
+            "body": "Estudio técnico imparcial e independiente. Plazos · Costos · Antecedentes del contrato"
+          },
+          {
+            "icon": "layers",
+            "title": "Base técnica <span class=\"c2rb\">común</span>",
+            "body": "Una base técnica común."
+          }
+        ],
+        "cierre": {
+          "bajada": "Estudios técnicos y peritajes para la resolución de controversias contractuales. Contratos de ingeniería, construcción, EPC y BOT · públicos y privados."
+        }
+      },
+      "video_plan": {
+        "tool": "Remotion (CLAUDE.md regla 2: diagramas animados; formato que la skill de carrusel no cubre)",
+        "state": "GUION + STORYBOARD — se anima tras la aprobación de MKT (primer video de este formato)",
+        "seconds": 37
+      },
+      "flag": "VERIFY: WEB-001 'imparcial e independiente' y WEB-042 'plazos/costos' (escena 4)",
+      "created": "02-12-2026",
+      "hist": [
+        {
+          "date": "19-10-2026",
+          "summary": "Ronda MKT: más dinámico (barridos entre escenas), cortes más rápidos (38 → 28 s), «se quiebra» → «se rompe» (no sugiere quiebra de empresa), música chill house. MP4 con y sin música."
+        },
+        {
+          "date": "19-10-2026",
+          "summary": "Video MP4 producido con Remotion (38 s, 1080×1080, sin música): versión dinámica del guion (pedido MKT). QA técnico y visual OK."
+        },
+        {
+          "date": "19-10-2026",
+          "summary": "Pedido MKT: video dinámico y atractivo."
+        }
+      ],
+      "video": {
+        "file": "video/p04_controversias_musica.mp4",
+        "published": "media/p04_controversias_musica.mp4",
+        "seconds": 28.0,
+        "how": "motion graphics con Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-controversias</code>): barridos rojos entre escenas, línea de tiempo que se rompe, dos versiones que chocan, evidencia que se ordena y cierre de marca",
+        "music": "música chill house original (music.py de la skill, 120 BPM, −17 LUFS) — requiere aprobación auditiva de MKT · primer video de este formato: requiere aprobación de MKT",
+        "silent_published": "media/p04_controversias.mp4"
+      }
+    },
+    "5": {
+      "photo": {
+        "file": "p05.jpg",
+        "source": "library",
+        "id": "PHO-0083",
+        "detalle": "profesional IDIEM revisando instalaciones de especialidades (estanques y tuberías)",
+        "drive": "https://drive.google.com/file/d/1Q7ZxEb4AqzCJEHKWEckegB1zwsgy67HK/view",
+        "pos": "40% 50%"
+      },
+      "carousel": {
+        "portada": {
+          "kicker": "INFRAESTRUCTURA HOSPITALARIA",
+          "title": "Terminar no es lo mismo que <span class=\"c2rt\">abrir</span>."
+        },
+        "intermedias": [
+          {
+            "icon": "file-check",
+            "title": "Diseño y <span class=\"c2rb\">licitación</span>",
+            "body": "Revisar el Programa Médico Arquitectónico y la constructibilidad antes de licitar ayuda a anticipar problemas que nacen en el papel."
+          },
+          {
+            "icon": "layers",
+            "title": "<span class=\"c2rb\">Ejecución</span>",
+            "body": "Coordinación BIM/MEP y control de programa, costos y calidad para que lo construido responda a lo diseñado."
+          },
+          {
+            "icon": "activity",
+            "title": "Pruebas <span class=\"c2rb\">integradas</span>",
+            "body": "Climatización, presiones diferenciales, gases medicinales y respaldo eléctrico se prueban en conjunto: ahí aparecen las fallas que no se planificaron."
+          },
+          {
+            "icon": "circle-check",
+            "title": "Puesta en <span class=\"c2rb\">marcha</span>",
+            "body": "Su verificación cierra la hoja de ruta, y se planifica desde el diseño, no al final de la obra."
+          }
+        ],
+        "cierre": {
+          "bajada": "En IDIEM acompañamos proyectos de salud en tres fases: diseño y licitación, ejecución y puesta en marcha."
+        }
+      },
+      "created": "02-12-2026",
+      "hist": []
+    },
+    "6": {
+      "photo": {
+        "file": "p06.jpg",
+        "source": "library",
+        "id": "PHO-0079",
+        "detalle": "faena minera a rajo abierto",
+        "drive": "https://drive.google.com/file/d/177kbqbkGi1A6SbVnM5c6IWagQkebLtlv/view",
+        "pos": "50% 50%"
+      },
+      "side": "left",
+      "svc": "Impacto acústico en minería",
+      "msg": "El ruido cambia<br>en cada etapa.",
+      "base": "Construcción · operación · ampliación · abandono · <b>estudios de impacto acústico</b>",
+      "flag": "VERIFY: mención del D.S. 38/2011 MMA aplicada a monitoreo minero",
+      "created": "02-12-2026",
+      "hist": []
+    },
+    "7": {
+      "photo": {
+        "file": "p07.jpg",
+        "source": "library",
+        "id": "PHO-0085",
+        "detalle": "casco IDIEM y tablet",
+        "drive": "https://drive.google.com/file/d/1xUlYXbYXjL1VpIvy_EewpWXAOSQtEWhQ/view",
+        "pos": "50% 50%"
+      },
+      "carousel": {
+        "portada": {
+          "kicker": "INSTALACIONES ELÉCTRICAS EN SALUD",
+          "title": "Instalar ya no basta: hay que <span class=\"c2rt\">demostrar</span>."
+        },
+        "intermedias": [
+          {
+            "icon": "file-check",
+            "title": "De instalar a <span class=\"c2rb\">demostrar</span>",
+            "body": "El RIC (DS N°8) pide un diseño más trazable: alimentadores, corte, caída de tensión, puesta a tierra y selectividad quedan justificados."
+          },
+          {
+            "icon": "shield-check",
+            "title": "Grupo 2: máxima <span class=\"c2rb\">criticidad</span>",
+            "body": "En el RIC la numeración se invierte: el Grupo 2 es el de máxima criticidad, sin interrupción. Pabellones, UCI, partos y neonatología pasan a ese grupo."
+          },
+          {
+            "icon": "building-2",
+            "title": "No solo <span class=\"c2rb\">hospitales</span>",
+            "body": "El RIC N°11 alcanza a todo recinto de salud cuyas funciones no deben suspenderse: clínicas, centros dentales, atención primaria y hospitales."
+          },
+          {
+            "icon": "gauge",
+            "title": "Revisión y <span class=\"c2rb\">mediciones</span>",
+            "body": "En IDIEM revisamos el proyecto eléctrico frente a la normativa y las bases técnicas del mandante, y realizamos mediciones eléctricas en obra."
+          }
+        ],
+        "cierre": {
+          "bajada": "Revisión de proyectos de especialidades y mediciones eléctricas para recintos de salud."
+        }
+      },
+      "flag": "VERIFY: servicios del sitio WEB-088 (revisión de proyecto eléctrico) y WEB-087 (medición de resistencia de pisos) en salud; norma = RIC, sin artículo",
+      "created": "02-12-2026",
+      "hist": []
+    },
+    "8": {
+      "photo": {
+        "file": "p08.jpg",
+        "source": "library",
+        "id": "PHO-0097",
+        "detalle": "profesional IDIEM en terreno",
+        "drive": "https://drive.google.com/file/d/1B6eQJMaQe1R1rKSqPowBjUcvcZ3ReCrC/view",
+        "pos": "62% 45%"
+      },
+      "side": "left",
+      "svc": "Monitoreo preventivo",
+      "msg": "Detectar antes<br>de la falla.",
+      "base": "Activos críticos mineros · <b>instrumentación y análisis de vibraciones</b>",
+      "created": "02-12-2026",
+      "hist": []
+    },
+    "9": {
+      "photo": {
+        "file": "p09.jpg",
+        "source": "library",
+        "id": "PHO-0064",
+        "detalle": "modelo BIM de un edificio",
+        "drive": "https://drive.google.com/file/d/1wwOTAnuDsvoG6aawb1awhdb6hYA2-lFe/view",
+        "pos": "60% 50%"
+      },
+      "side": "left",
+      "svc": "Revisión de proyectos",
+      "msg": "Revisar antes<br>de construir.",
+      "base": "Mandantes públicos · <b>validación normativa y coordinación BIM</b>",
+      "flag": "VERIFY: 'revisión técnica y documental' (WEB-088)",
+      "created": "02-12-2026",
+      "hist": []
+    },
+    "10": {
+      "photo": {
+        "file": "p10.jpg",
+        "source": "library",
+        "id": "PHO-0056",
+        "detalle": "incendio nocturno en una edificación",
+        "drive": "https://drive.google.com/file/d/1VNlYNac3Wf4sc2ZqFdiwUfsbtYRjJbvQ/view",
+        "pos": "50% 50%"
+      },
+      "carousel": {
+        "portada": {
+          "kicker": "SEGURIDAD CONTRA INCENDIOS EN SALUD",
+          "title": "¿Evacuar o <span class=\"c2rt\">defender</span> en sitio?"
+        },
+        "intermedias": [
+          {
+            "icon": "users",
+            "title": "Dos <span class=\"c2rb\">estrategias</span>",
+            "body": "En un hospital, la evacuación masiva no siempre es la primera respuesta: la defensa en sitio mantiene a los pacientes protegidos dentro del edificio."
+          },
+          {
+            "icon": "shield-check",
+            "title": "Barreras <span class=\"c2rb\">cortahumo</span>",
+            "body": "Compartimentar con barreras cortahumo es parte de lo que permite proteger a los pacientes en su sector."
+          },
+          {
+            "icon": "building-2",
+            "title": "Ascensores <span class=\"c2rb\">en emergencia</span>",
+            "body": "Usarlos exige presurización y compartimentación. Contar con una sola zona vertical de seguridad es una vulnerabilidad a revisar."
+          },
+          {
+            "icon": "flame",
+            "title": "Escenarios <span class=\"c2rb\">de humo</span>",
+            "body": "La modelación de humos (FDS) permite comparar escenarios de incendio con distinta severidad y ubicación antes de decidir la estrategia."
+          }
+        ],
+        "cierre": {
+          "bajada": "En IDIEM realizamos estudios de simulación de humos y evacuación de personas para recintos como hospitales."
+        }
+      },
+      "flag": "VERIFY: simulación de humos y evacuación aplicada a hospitales (WEB-073)",
+      "created": "02-12-2026",
+      "hist": []
+    },
+    "11": {
+      "photo": {
+        "file": "p11.jpg",
+        "source": "library",
+        "id": "PHO-0046",
+        "detalle": "planta de estructuras de acero",
+        "drive": "https://drive.google.com/file/d/125lUuUu3UFValyUGDY0afuRLuGns98Bh/view",
+        "pos": "45% 55%"
+      },
+      "side": "right",
+      "svc": "Inspección de estructuras de acero",
+      "msg": "Revisar el acero<br>a tiempo.",
+      "base": "Operación minera · <b>inspección y peritajes de falla</b>",
+      "created": "02-12-2026",
+      "hist": []
+    },
+    "12": {
+      "photo": {
+        "file": "p12.jpg",
+        "source": "library",
+        "id": "hospital_chiloe",
+        "detalle": "hospital, patio interior (foto elegida por MKT; aún no registrada en photo_manifest)",
+        "drive": "https://drive.google.com/file/d/1cadhrpC3qx3LMASsiNRaZB9UDRjFUIh8/view",
+        "pos": "50% 60%"
+      },
+      "side": "right",
+      "svc": "Vulnerabilidad hospitalaria",
+      "msg": "Un hospital<br>también envejece.",
+      "base": "Infraestructura de salud · <b>diagnósticos estructurales y propuestas de refuerzo</b>",
+      "created": "02-12-2026",
+      "hist": [
+        {
+          "date": "19-10-2026",
+          "summary": "Foto → hospital_chiloe (pedido MKT)."
+        }
+      ]
+    },
+    "13": {
+      "photo": {
+        "file": "p13.jpg",
+        "source": "library",
+        "id": "PHO-0099",
+        "detalle": "tranque de relaves, vista del muro",
+        "drive": "https://drive.google.com/file/d/1mRrEu66GubxiIdd0SgFAvwK_kgFM3Bjj/view",
+        "pos": "50% 50%"
+      },
+      "special": {
+        "kicker": "5 DE DICIEMBRE · DÍA MUNDIAL DEL SUELO",
+        "title": "Conocer el suelo<br>es <span class=\"fpred\">cuidarlo</span>.",
+        "sub": "En minería, el suelo es la base de depósitos y tranques de relaves."
+      },
+      "trace": "Efeméride con respaldo técnico: KB-IOM-045 + WEB-004 (VERIFY). Sin remediación ni cierre de faenas; sin Triaxial.",
+      "flag": "VERIFY: ensayos geotécnicos para diseño de tranques de relave (WEB-004)",
+      "created": "02-12-2026",
+      "hist": []
+    },
+    "14": {
+      "photo": {
+        "file": "p14_video.jpg",
+        "source": "library",
+        "id": "Gemini_Generated_Image_kjtb6qkjtb6qkjtb",
+        "detalle": "árbol de Navidad, regalos y casco IDIEM — imagen generada con IA (elegida por MKT) · recorte para que el título no quede sobre el casco",
+        "drive": "https://drive.google.com/file/d/1oSbaNA3CRCZ1TpRj6sylgdv83mEOtt7s/view",
+        "pos": "50% 50%"
+      },
+      "carousel": {
+        "portada": {
+          "kicker": "NAVIDAD 2026",
+          "title": "Felices <span class=\"c2rt\">fiestas</span>"
+        },
+        "intermedias": [
+          {
+            "icon": "users",
+            "title": "Gracias a nuestros <span class=\"c2rb\">equipos</span>",
+            "body": "Por el trabajo de cada día en laboratorios, obras y faenas."
+          },
+          {
+            "icon": "hard-hat",
+            "title": "Gracias a nuestros <span class=\"c2rb\">clientes</span>",
+            "body": "Por confiar en la ingeniería para construir una infraestructura más segura."
+          }
+        ],
+        "cierre": {
+          "bajada": "Les deseamos una Navidad en paz, junto a quienes más quieren."
+        }
+      },
+      "trace": "Saludo institucional — <strong>no traza a knowledge_id</strong>; sin proyectos, cifras ni fechas.",
+      "video_plan": {
+        "tool": "skill video-carrusel-idiem (1080×1080, carrusel → video en capas)",
+        "state": "CARRUSEL DRAFT — se convierte a MP4 tras la aprobación de los textos",
+        "seconds": 24
+      },
+      "created": "02-12-2026",
+      "hist": [
+        {
+          "date": "19-10-2026",
+          "summary": "Ronda MKT: rehecho en Remotion (autorizado), más dinámico y visual, cortes más rápidos (22 → 16 s), música chill house con toque navideño. MP4 con y sin música."
+        },
+        {
+          "date": "19-10-2026",
+          "summary": "Video MP4 producido (22 s, 1080×1080, sin música) con luces que titilan y destellos (pedido MKT: dinámico y atractivo). QA técnico y visual OK."
+        },
+        {
+          "date": "19-10-2026",
+          "summary": "Foto → imagen navideña elegida por MKT (generada con IA, no foto de librería). Video dinámico y atractivo (pedido MKT)."
+        }
+      ],
+      "video": {
+        "file": "video/p14_navidad_musica.mp4",
+        "published": "media/p14_navidad_musica.mp4",
+        "silent_published": "media/p14_navidad.mp4",
+        "seconds": 16.0,
+        "how": "Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-navidad</code>, autorizado por MKT): cámara que cambia de encuadre en cada lámina, luces que titilan, destellos dorados y destello de luz en cada corte",
+        "music": "música chill house original con toque navideño (cascabeles y celesta; music.py --xmas, −17 LUFS) — requiere aprobación auditiva de MKT"
+      }
+    },
+    "15": {
+      "photo": {
+        "file": "p15.jpg",
+        "source": "library",
+        "id": "PHO-0094",
+        "detalle": "camioneta IDIEM en el norte de Chile (Mano del Desierto)",
+        "drive": "https://drive.google.com/file/d/1YgW2r-LFY-UPqXGjIP2_dk63QHLuMoCZ/view",
+        "pos": "50% 55%"
+      },
+      "special": {
+        "kicker": "¡FELIZ AÑO NUEVO!",
+        "title": "Gracias por<br>construir <span class=\"fpred\">con nosotros</span>.",
+        "sub": "Ciencia e ingeniería al desarrollo de la infraestructura del país."
+      },
+      "trace": "Saludo institucional — <strong>no traza a knowledge_id</strong>; mensaje validado (ciencia e ingeniería al desarrollo de la infraestructura del país).",
+      "created": "02-12-2026",
+      "hist": [
+        {
+          "date": "19-10-2026",
+          "summary": "Texto «AÑO NUEVO 2027» → «¡Feliz año nuevo!» (pedido MKT)."
+        }
+      ]
+    }
+  }
+}

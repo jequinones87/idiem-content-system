@@ -68,6 +68,36 @@ Estas nacen de correcciones del equipo. Son de aplicación obligatoria.
 - Los posts basados en charlas/presentaciones de especialistas **no nombran ni citan al expositor ni a la
   charla**: el foco es el tema. Ver `docs/11_FUENTES_EXPERTAS_Y_BANCO_DE_TEMAS.md`.
 
+### División de Aguas y Ley 21.094 (SRC-007, recibida 28-10-2026)
+- Recursos hídricos, agua potable rural y riesgo aluvional **no están en 2A.2**, pero MKT confirmó
+  (28-10-2026) que los servicios están vigentes y se pueden comunicar: se citan como `SRC-007#C01–C03`.
+  No inventar alcances fuera de lo literal de SRC-007.
+- **Célula:** aguas con foco en **INFRA PÚBLICA RESILIENTE** (MKT, 28-10-2026), incluido el caso de postas
+  y escuelas rurales de la Araucanía (no es infraestructura hospitalaria).
+- **Se pueden nombrar** proyectos y mandantes de SRC-007 (DGA, DOH/DGOP, Araucanía, Biobío, Magallanes,
+  Quebrada de Macul), con fechas y alcances literales.
+- **Ley 21.094 (Ley de Universidades): NO se aborda en RRSS** (MKT, 28-10-2026). Tampoco art. 37, Ley
+  19.886, dictámenes/resoluciones CGR ni montos UTM. Aplica también a AUX-010…AUX-016 de 2A.2 (bloqueados
+  en `config/cell_rules.json`).
+- No publicar el plazo "1 mes (?)" ni la lista de organismos con convenio; sin superlativos ("líder").
+- Cifras institucionales vigentes (MKT, 28-10-2026): 800+ ingenieros y técnicos, 450.000 ensayos/año,
+  540 estudios de ingeniería/año.
+
+### Aluviones y mitigación aluvional (SRC-008/009, usuario 28-10-2026)
+> Ojo: la fuente SRC-007 (División de Aguas) autoriza nombrar Quebrada de Macul **en sus contenidos**; para los
+> extras de aluviones basados en SRC-008/009 el usuario pidió **no nombrar proyectos** (28-10-2026). Si un post
+> mezcla ambas fuentes, preguntar a MKT antes de nombrar.
+- Servicio a promover como **extra de noviembre 2026** por la contingencia de lluvias y aluviones.
+- En 2A.2 solo existe como reserva (R0001/R0002, `RESERVE_FACTUAL`, fuera de las células priorizadas):
+  **sin knowledge_id activo**. MKT (28-10-2026) confirmó: servicio vigente, célula **IPR**; se cita como
+  auxiliary_id SRC-008/009.
+- **No nombrar proyectos** (Camiña/Tarapacá, Plan Atacama, Huasco, Macul, Mosco) ni el Manual de Quebradas
+  (MKT 28-10-2026). Tampoco usar imágenes que los identifiquen.
+- Enfoque MKT: educativo y explicativo, no explícitamente comercial, pero que muestre el servicio y
+  apunte a concretar reuniones.
+- Tono: sin usar la emergencia ni sus víctimas como gancho; sin insinuar participación de IDIEM en
+  eventos recientes; sin superlativos.
+
 ### Ingeniería contractual (célula IHA)
 - Ámbitos que IDIEM atiende de forma explícita en el sector Salud: **análisis de
   programación**, **análisis ante término anticipado de contrato**, respaldo técnico
@@ -458,3 +488,32 @@ programado al 19-10-2026).
   VERIFY; se validan al aprobar el post que los usa o con las correcciones de MKT; (2) productividad **no se
   bloquea**: activa en VERIFY; (3) mediciones eléctricas de pisos conductivos (NCh4/2003) → célula Infra
   Hospitalaria, disponible en VERIFY.
+- **2026-10-19** — **Formato de entrega (usuario):** cada mes lleva **su propio artefacto workstation**; los posts
+  nunca se entregan como texto en el chat. Diciembre: https://claude.ai/artifact/LQbvx2h518ZtzvDppGHc1m
+  (generador `design_system/gen_month_ws.py`, ahora con varias piezas extra por mes y videos por producir).
+- **2026-10-19** — Ronda MKT diciembre (workstation): fotos #1 `construccion_hospital_queilen`, #2 `generico_faena_minera`,
+  #3 ripios, #12 `hospital_chiloe` (MKT puede reusar fotos de meses previos); #15 «AÑO NUEVO 2027» → «¡Feliz año nuevo!».
+  **Videos dinámicos y atractivos** (pedido MKT): #4 con Remotion (`motion-graphics-ia/idiem-controversias`, 38 s, primer
+  video de ese formato → aprobación MKT) y Navidad con la skill de carrusel + **capa festiva opcional** (`photo.sparkles`:
+  luces que titilan y destellos; solo cuando MKT la pide). Navidad usa una imagen **generada con IA** elegida por MKT: el
+  casco trae un logo "idiem™" que no es el vectorial oficial (pendiente confirmar con MKT).
+- **2026-10-19** — Ronda MKT videos (2): **"quiebra" no se usa** en contenidos de controversias (suena a quiebra de la
+  empresa): en el #4 pasó a «El plan se rompe». Videos **más dinámicos y con cortes más rápidos** (#4: 38 → 28 s;
+  Navidad: 22 → 16 s, rehecho en Remotion con autorización de MKT) y **música chill house** (Navidad con toque navideño:
+  `music.py --xmas`). Música requiere aprobación auditiva.
+- **2026-10-28** — Extras noviembre por contingencia de aluviones (SRC-008/009, célula IPR validada por MKT):
+  extra A (3-nov) **video en Remotion** (`motion-graphics-ia/idiem-aluviones`, 26 s, música chill house) y extra B
+  (19-nov) carrusel. Pedidos MKT: (1) video **más gráfico que texto y con cortes más rápidos**, en Remotion, con el
+  video #4 de diciembre como referencia; (2) **siempre un workstation** para los posts, con los mismos botones y
+  funciones que oct/nov/dic (extras: https://claude.ai/artifact/R1rcK8fijy8f6HLMnjVBAB, `gen_month_ws.py --set`);
+  (3) **carruseles con la Plantilla 02 estándar** (misma foto en todas las láminas, velo, número rojo, ícono, barra roja,
+  título con caja roja, cierre de marca): no inventar variantes de diseño por post.
+- **2026-10-28** — **Nueva fuente SRC-007** (División de Aguas, servicios MOP–DOH y Ley 21.094): 17
+  afirmaciones (C01–C17) y 5 temas candidatos (TOP-030 a TOP-034) en `config/topic_bank/expert_sources.json`.
+  Célula IPR solo propuesta; capacidades hídricas en VERIFY hasta validación de MKT.
+- **2026-10-28** — MKT valida SRC-007: servicios de Aguas vigentes y comunicables (C01–C03 SAFE), célula
+  IPR confirmada y nombres de proyectos/mandantes autorizados (C04–C07 SAFE). Ley 21.094 sigue VERIFY.
+- **2026-10-28** — MKT: la **Ley de Universidades (21.094) no se toca en RRSS** → SRC-007#C08–C12/C14
+  DO_NOT_PUBLISH, TOP-034 descartado y evidencia auxiliar `MECANISMO_CONTRATACION` (AUX-010…016) bloqueada
+  por config. Cifras institucionales (800+, 450.000, 540) confirmadas vigentes. Plazo "1 mes (?)", lista de
+  organismos y superlativos se mantienen fuera del copy.
