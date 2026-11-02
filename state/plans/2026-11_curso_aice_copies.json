@@ -1,0 +1,22 @@
+{
+  "month": "2026-11",
+  "set": "2026-11_curso_aice",
+  "status": "DRAFT",
+  "copies": {
+    "1": "📐 La actualización de la NCh433 (Diseño sísmico de edificios) y de la NCh430 (Hormigón armado – Requisitos de diseño y cálculo) cambia criterios y exigencias del diseño estructural de edificios en Chile.\n\nPara revisar esos cambios y sus implicancias en la práctica profesional, la Asociación de Ingenieros Civiles Estructurales (AICE) dictará el curso «Diseño Sísmico de Edificios de Hormigón Armado: Actualización Normativa NCh433 y NCh430».\n\nLeonardo Massone, director de #IDIEM y Profesor Titular del Departamento de Ingeniería Civil de la Universidad de Chile, será profesor del curso. Ha participado en el desarrollo de normativa nacional e internacional, incluido un comité del ACI 318 y la NCh430. 🎓\n\n🗓️ Cinco sesiones, entre el 19 de noviembre y el 4 de diciembre: tres online y dos presenciales.\nDirigido a ingenieros estructurales y de proyectos, revisores, académicos y profesionales del diseño de edificios de hormigón armado.\n\nRevisa el programa e inscríbete aquí 👉 https://aice.cl/web/calendario/diseno-sismico-de-edificios-de-hormigon-armado-actualizacion-nch433-y-nch430/\n\n#IDIEM #AICE #NCh433 #NCh430 #DiseñoSísmico #HormigónArmado #IngenieríaEstructural",
+    "2": "⏳ Este jueves 19 de noviembre comienza el curso «Diseño Sísmico de Edificios de Hormigón Armado: Actualización Normativa NCh433 y NCh430», organizado por la Asociación de Ingenieros Civiles Estructurales (AICE).\n\nEl programa combina dos componentes:\n📘 Teórica y conceptual: los fundamentos técnicos de las nuevas disposiciones, sus diferencias con las versiones anteriores y su impacto en las metodologías de análisis y diseño.\n🏗️ Práctica: aplicaciones de diseño estructural de edificios de hormigón armado con los criterios actualizados.\n\nLeonardo Massone, director de #IDIEM, será profesor del curso. Es Ingeniero Civil de la Universidad de Chile, Magíster y Doctor en Ingeniería Civil de la Universidad de California, Los Ángeles (UCLA), y autor de más de 70 publicaciones científicas indexadas.\n\nLas tres primeras sesiones son online; las dos últimas, presenciales, el viernes 4 de diciembre.\n\nDetalles e inscripción 👉 https://aice.cl/web/calendario/diseno-sismico-de-edificios-de-hormigon-armado-actualizacion-nch433-y-nch430/\n\n#IDIEM #AICE #NCh433 #NCh430 #DiseñoSísmico #IngenieríaEstructural"
+  },
+  "chars": {
+    "1": 1171,
+    "2": 1100
+  },
+  "fact_check": {
+    "1": "Normas, objetivo y dirigido a → texto AICE; cargos de Massone (director de IDIEM; Profesor Titular Depto. Ing. Civil U. de Chile) y participación en normativa (comité ACI 318, NCh430) → bio AICE; 5 sesiones 19-11 a 04-12, 3 online + 2 presenciales → texto AICE. Sin precios ni lugar (pedido MKT). Se omite «destacada trayectoria» (GR-04, sin superlativos).",
+    "2": "Fecha de inicio, componentes teórica y práctica → texto AICE; formación (U. de Chile, Magíster y Doctor UCLA) y >70 publicaciones indexadas → bio AICE; sesiones 4 y 5 presenciales el 04-12 → texto AICE. Sin precios ni lugar (pedido MKT)."
+  },
+  "source": "Texto del curso entregado por MKT (02-11-2026), publicado por AICE: https://aice.cl/web/calendario/diseno-sismico-de-edificios-de-hormigon-armado-actualizacion-nch433-y-nch430/",
+  "verify_before_publish": [
+    "Confirmar fechas de publicación (propuestas: 5-nov y 17-nov)",
+    "Confirmar si hay otros profesores en el curso: el texto solo nombra a Leonardo Massone, por eso el copy dice «será profesor del curso» y no «el profesor»"
+  ]
+}

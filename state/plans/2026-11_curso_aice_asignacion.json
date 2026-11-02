@@ -1,0 +1,42 @@
+{
+  "month": "2026-11",
+  "set": "2026-11_curso_aice",
+  "status": "DRAFT — pendiente aprobación MKT",
+  "origin": "Pedido MKT 02-11-2026: promover la participación de Leonardo Massone (director de IDIEM) como profesor del curso AICE de actualización NCh433/NCh430; sin precios; con link de inscripción; foto «07 LEONARDO MASSONE 02.jpg» de Drive.",
+  "evidence_note": "Pieza institucional / de evento: no traza a knowledge_id. Hechos del curso y bio tomados del texto oficial de AICE entregado por MKT; Texto del curso entregado por MKT (02-11-2026), publicado por AICE: https://aice.cl/web/calendario/diseno-sismico-de-edificios-de-hormigon-armado-actualizacion-nch433-y-nch430/",
+  "posts": [],
+  "extra": [
+    {
+      "seq": 1,
+      "date": "2026-11-05",
+      "type": "EVENTO",
+      "theme": "Curso AICE NCh433 y NCh430: Leonardo Massone, profesor del curso",
+      "cell": "institucional (evento externo)",
+      "knowledge_id": null,
+      "archetype": "institutional_or_occasion",
+      "hook_type": "technical_claim",
+      "cta_type": "event",
+      "format": "ESTÁTICO (pieza con persona)",
+      "flags": [
+        "fecha propuesta: confirmar con MKT",
+        "post de evento con URL: exento del tope de 900 (ref. 1300)"
+      ]
+    },
+    {
+      "seq": 2,
+      "date": "2026-11-17",
+      "type": "EVENTO",
+      "theme": "Comienza el curso AICE NCh433 y NCh430 (19-nov): qué abordará",
+      "cell": "institucional (evento externo)",
+      "knowledge_id": null,
+      "archetype": "institutional_or_occasion",
+      "hook_type": "scenario",
+      "cta_type": "event",
+      "format": "ESTÁTICO (pieza con persona)",
+      "flags": [
+        "fecha propuesta: confirmar con MKT",
+        "post de evento con URL: exento del tope de 900 (ref. 1300)"
+      ]
+    }
+  ]
+}

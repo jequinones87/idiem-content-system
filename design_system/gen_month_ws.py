@@ -38,6 +38,7 @@ import carousel as CAR              # noqa: E402  (CSS Plantilla 02)
 import gen_workstation as GW        # noqa: E402  (CSS pieza conmemorativa + PAGE)
 from bundle_month import grid_style  # noqa: E402
 from brand_assets import LOGO, RING, SLOGAN  # noqa: E402
+import gen_post_reconocimiento as REC  # noqa: E402  (pieza con persona: reconocimiento / evento)
 
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
          "septiembre", "octubre", "noviembre", "diciembre"]
@@ -188,6 +189,13 @@ def emit(month: str, build: Path) -> None:
     for it in items(month):
         g = it["gfx"]
         uri = photo_uri(month, g)
+        if "person" in g:
+            # Pieza con persona (plantilla de reconocimiento, aprobada por MKT 15-10-2026): HTML propio con .export
+            hp, pp = sl / f"p{it['key']}_s0.html", sl / f"p{it['key']}_s0.png"
+            hp.write_text(REC.render(g["person"]), encoding="utf-8")
+            manifest.append({"html": str(hp), "png": str(pp)})
+            structure.append({"key": it["key"], "pngs": [str(pp)]})
+            continue
         if "carousel" in g:
             canv = carousel_slides(g, uri)
         elif "special" in g:
@@ -235,7 +243,7 @@ def card(it: dict, uris: list[str], applied: str) -> str:
                 f'<a href="{G.esc(ph["drive"])}" target="_blank" rel="noopener">ver en Drive</a>')
 
     if is_special:
-        kind = "SALUDO" if p.get("type") == "SALUDO" else "EFEMÉRIDE"
+        kind = p.get("type") if p.get("type") in ("SALUDO", "EVENTO") else "EFEMÉRIDE"
         badge = kind
         fmt_label = (f"CARRUSEL · {len(uris)} láminas" if is_car else f"{kind} · INSTITUCIONAL")
         theme = p.get("theme") or "Día Mundial del Transporte Sostenible"
@@ -383,9 +391,14 @@ def assemble(month: str, build: Path, out: Path, ws_url: str, applied: str) -> N
     js = (ROOT / "workstation_shared" / "workstation_ui.js").read_text("utf-8")
     extra = (" + efeméride" if n_extra == 1 else f" + {n_extra} piezas especiales") if n_extra else ""
     extra += f" {LABEL}" if LABEL else ""
+    if n_posts == 0:  # juego solo de piezas especiales (p. ej. evento): «2 piezas · curso AICE»
+        art_n, extra = f"{n_extra}", (f" {LABEL}" if LABEL else "")
+    else:
+        art_n = str(n_posts)
     art = ARTIFACT.replace("<title>Workstation __MES__ IDIEM</title>", f"<title>{TITLE}</title>") if TITLE else ARTIFACT
     html = (art.replace("__MES__", mes.capitalize()).replace("__MESL__", mes)
-            .replace("__N__", str(n_posts)).replace("__EXTRA__", extra).replace("__MONTH__", month)
+            .replace("Los __N__ posts", f"Las {art_n} piezas" if n_posts == 0 else "Los __N__ posts")
+            .replace("__N__ posts", f"{art_n} {'piezas' if n_posts == 0 else 'posts'}").replace("__N__", art_n).replace("__EXTRA__", extra).replace("__MONTH__", month)
             .replace("__CARDS__", "\n".join(cards)).replace("__PLAN__", _pfx(month)).replace("__STATE__", json.dumps(init))
             .replace("__CSS__", css).replace("__JS__", js).replace("__CFG__", json.dumps(cfg)))
     out.write_text(html, encoding="utf-8")

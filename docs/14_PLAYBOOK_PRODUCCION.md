@@ -23,6 +23,7 @@
 |---|---|---|---|
 | Post estático | Plantilla 01 Servicios (foto + anillo rojo + mensaje; anillo al lado contrario del sujeto) | `gen_month_ws.py → static_canvas` · `graficas.posts[k].{svc,msg,base}` | posts estáticos de nov/dic |
 | Carrusel | **Plantilla 02**: misma foto en todas las láminas; portada con degradado (kicker + título con palabra roja); intermedias con velo, número rojo, ícono PNG, barra roja, título con caja roja y bajada; cierre de marca sin foto | `gen_month_ws.py → carousel_slides` + `carousel.CAROUSEL_CSS` · `graficas.posts[k].carousel.{portada,intermedias,cierre}` · íconos `design_system/assets/icon_<nombre>.png` | carruseles de nov/dic |
+| Pieza con persona (reconocimiento, evento con un profesional de IDIEM) | panel gris + retrato a la derecha (cifra o dato grande, nombre y cargo, listas, fuente) | `gen_post_reconocimiento.py` · `graficas.posts[k].person` | Top 2% Massone (oct), curso AICE (nov) |
 | Pieza conmemorativa / saludo | foto + velo + kicker + título + bajada | `gen_month_ws.py → special_canvas` | efemérides nov/dic |
 | Video de carrusel (en capas) | skill `.claude/skills/video-carrusel-idiem` | config JSON → build → render → QA | SIM 11-nov |
 | Video gráfico (más gráfico que texto, cortes rápidos, formatos no 1:1) | **Remotion** en `jequinones87/motion-graphics-ia` (un proyecto por video) | escenas de ~4 s, barridos rojos entre escenas, íconos trazo a trazo, cierre sobre el logo; música con `music.py` | `idiem-controversias` (dic #4), `idiem-aluviones` (extra nov A) |

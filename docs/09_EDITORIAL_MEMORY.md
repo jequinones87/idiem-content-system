@@ -522,4 +522,7 @@ programado al 19-10-2026).
   tipo «integridad estructural a estructuras…» (#3); en **suelos**, hablar del **tipo de suelo** y su comportamiento
   (#13); en saludos, **«colaboradores»** en vez de «equipos»; Navidad = pieza **conmemorativa del año** (montaje con fotos
   de la librería ya publicadas, sin cifras). #1: título «Diagnóstico de vulnerabilidad sísmica de elementos secundarios».
-
+- **2026-11-02** — Curso AICE «Diseño Sísmico de Edificios de Hormigón Armado: Actualización NCh433 y NCh430» (19-11 al
+  04-12): 2 piezas de evento (anuncio + inicio) con Leonardo Massone como profesor; **sin precios** (pedido MKT); link de
+  inscripción de AICE; datos del texto oficial del curso entregado por MKT; sin «destacada trayectoria» (GR-04). Plantilla
+  de pieza con persona (la del Top 2%). Workstation: https://claude.ai/artifact/LigrxSyBN5xrf4qukG4f6Z

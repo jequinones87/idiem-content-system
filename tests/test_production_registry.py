@@ -56,6 +56,11 @@ def test_pieces_follow_current_templates(path):
                 assert (ROOT / "design_system" / "assets" / f"icon_{sl['icon']}.png").exists(), \
                     f"{path.name}#{k}: ícono icon_{sl['icon']}.png no existe"
                 assert 'class="c2rb"' in sl["title"], f"{path.name}#{k}: título sin caja roja (Plantilla 02)"
+        elif "person" in p:
+            pr = p["person"]
+            assert {"kicker", "cifra", "lead", "nombre", "cargo", "listas", "fuente_txt"} <= set(pr), \
+                f"{path.name}#{k}: pieza con persona incompleta"
+            assert (ROOT / pr["foto"]).exists(), f"{path.name}#{k}: falta la foto de la persona"
         elif "special" not in p:
             assert {"svc", "msg", "base"} <= set(p), f"{path.name}#{k}: estático fuera de la Plantilla 01"
         if "video" in p:
