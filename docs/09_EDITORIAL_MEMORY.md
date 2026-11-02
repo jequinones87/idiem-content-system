@@ -471,4 +471,9 @@ programado al 19-10-2026).
   empresa): en el #4 pasó a «El plan se rompe». Videos **más dinámicos y con cortes más rápidos** (#4: 38 → 28 s;
   Navidad: 22 → 16 s, rehecho en Remotion con autorización de MKT) y **música chill house** (Navidad con toque navideño:
   `music.py --xmas`). Música requiere aprobación auditiva.
+- **2026-11-02** — Ronda MKT diciembre (3): aprobados #2, #4, #5, #6, #9, #10, #12. Aprendizajes: **un post, un tema**
+  (#11 mezclaba inspección de acero y peritaje de falla → solo elementos estructurales de acero); evitar redundancias del
+  tipo «integridad estructural a estructuras…» (#3); en **suelos**, hablar del **tipo de suelo** y su comportamiento
+  (#13); en saludos, **«colaboradores»** en vez de «equipos»; Navidad = pieza **conmemorativa del año** (montaje con fotos
+  de la librería ya publicadas, sin cifras). #1: título «Diagnóstico de vulnerabilidad sísmica de elementos secundarios».
 
