@@ -517,3 +517,9 @@ programado al 19-10-2026).
   DO_NOT_PUBLISH, TOP-034 descartado y evidencia auxiliar `MECANISMO_CONTRATACION` (AUX-010…016) bloqueada
   por config. Cifras institucionales (800+, 450.000, 540) confirmadas vigentes. Plazo "1 mes (?)", lista de
   organismos y superlativos se mantienen fuera del copy.
+- **2026-11-02** — Ronda MKT diciembre (3): aprobados #2, #4, #5, #6, #9, #10, #12. Aprendizajes: **un post, un tema**
+  (#11 mezclaba inspección de acero y peritaje de falla → solo elementos estructurales de acero); evitar redundancias del
+  tipo «integridad estructural a estructuras…» (#3); en **suelos**, hablar del **tipo de suelo** y su comportamiento
+  (#13); en saludos, **«colaboradores»** en vez de «equipos»; Navidad = pieza **conmemorativa del año** (montaje con fotos
+  de la librería ya publicadas, sin cifras). #1: título «Diagnóstico de vulnerabilidad sísmica de elementos secundarios».
+

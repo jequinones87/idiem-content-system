@@ -14,11 +14,15 @@
         "pos": "62% 50%"
       },
       "side": "left",
-      "svc": "Diagnóstico estructural hospitalario",
+      "svc": "Diagnóstico de vulnerabilidad sísmica de elementos secundarios",
       "msg": "Que resista no basta:<br>que siga operando.",
       "base": "Hospitales · <b>diagnósticos estructurales y revisiones sísmicas</b>",
       "created": "02-12-2026",
       "hist": [
+        {
+          "date": "02-11-2026",
+          "summary": "Título de la gráfica → «Diagnóstico de vulnerabilidad sísmica de elementos secundarios» (pedido MKT)."
+        },
         {
           "date": "19-10-2026",
           "summary": "Foto → construccion_hospital_queilen (pedido MKT). Ya usada en sep–nov: se usa por decisión de MKT."
@@ -88,6 +92,10 @@
       "base": "Chancadores, molinos y correas · <b>gestión de vulnerabilidad e integridad</b>",
       "created": "02-12-2026",
       "hist": [
+        {
+          "date": "02-11-2026",
+          "summary": "Copy: redacción sin «estructural a estructuras» (pedido MKT)."
+        },
         {
           "date": "19-10-2026",
           "summary": "Foto → geotecnia_Manejo_de_Ripios_Mineria (pedido MKT)."
@@ -205,7 +213,12 @@
         }
       },
       "created": "02-12-2026",
-      "hist": []
+      "hist": [
+        {
+          "date": "02-11-2026",
+          "summary": "Copy editado y aprobado por MKT («proyectos hospitalarios»)."
+        }
+      ]
     },
     "6": {
       "photo": {
@@ -228,9 +241,9 @@
       "photo": {
         "file": "p07.jpg",
         "source": "library",
-        "id": "PHO-0085",
-        "detalle": "casco IDIEM y tablet",
-        "drive": "https://drive.google.com/file/d/1xUlYXbYXjL1VpIvy_EewpWXAOSQtEWhQ/view",
+        "id": "interior_hospital_sotero_del_rio",
+        "detalle": "interior de hospital (foto elegida por MKT; aún no registrada en photo_manifest)",
+        "drive": "https://drive.google.com/file/d/1cWlJchsCjNOBtgHjH8sWNZL8TfT99Fvi/view",
         "pos": "50% 50%"
       },
       "carousel": {
@@ -266,7 +279,12 @@
       },
       "flag": "VERIFY: servicios del sitio WEB-088 (revisión de proyecto eléctrico) y WEB-087 (medición de resistencia de pisos) en salud; norma = RIC, sin artículo",
       "created": "02-12-2026",
-      "hist": []
+      "hist": [
+        {
+          "date": "02-11-2026",
+          "summary": "Foto → interior_hospital_sotero_del_rio; gancho reescrito (pedido MKT)."
+        }
+      ]
     },
     "8": {
       "photo": {
@@ -282,7 +300,12 @@
       "msg": "Detectar antes<br>de la falla.",
       "base": "Activos críticos mineros · <b>instrumentación y análisis de vibraciones</b>",
       "created": "02-12-2026",
-      "hist": []
+      "hist": [
+        {
+          "date": "02-11-2026",
+          "summary": "Copy editado por MKT (frase duplicada corregida: «infraestructura o equipos que hayan fallado»)."
+        }
+      ]
     },
     "9": {
       "photo": {
@@ -357,9 +380,14 @@
       "side": "right",
       "svc": "Inspección de estructuras de acero",
       "msg": "Revisar el acero<br>a tiempo.",
-      "base": "Operación minera · <b>inspección y peritajes de falla</b>",
+      "base": "Operación minera · <b>vigas, columnas, soportes y conexiones</b>",
       "created": "02-12-2026",
-      "hist": []
+      "hist": [
+        {
+          "date": "02-11-2026",
+          "summary": "Post reformulado a un solo tema: inspección de elementos estructurales de acero (sin peritaje de falla) (pedido MKT)."
+        }
+      ]
     },
     "12": {
       "photo": {
@@ -399,7 +427,12 @@
       "trace": "Efeméride con respaldo técnico: KB-IOM-045 + WEB-004 (VERIFY). Sin remediación ni cierre de faenas; sin Triaxial.",
       "flag": "VERIFY: ensayos geotécnicos para diseño de tranques de relave (WEB-004)",
       "created": "02-12-2026",
-      "hist": []
+      "hist": [
+        {
+          "date": "02-11-2026",
+          "summary": "Copy: el segundo párrafo habla del tipo de suelo (pedido MKT)."
+        }
+      ]
     },
     "14": {
       "photo": {
@@ -418,7 +451,7 @@
         "intermedias": [
           {
             "icon": "users",
-            "title": "Gracias a nuestros <span class=\"c2rb\">equipos</span>",
+            "title": "Gracias a nuestros <span class=\"c2rb\">colaboradores</span>",
             "body": "Por el trabajo de cada día en laboratorios, obras y faenas."
           },
           {
@@ -440,6 +473,10 @@
       "created": "02-12-2026",
       "hist": [
         {
+          "date": "02-11-2026",
+          "summary": "Video rehecho en Remotion (pedido MKT): misma imagen, «equipos» → «colaboradores», montaje conmemorativo del año con 8 fotos de la librería usadas en sep–dic; 20 s con música chill house navideña."
+        },
+        {
           "date": "19-10-2026",
           "summary": "Ronda MKT: rehecho en Remotion (autorizado), más dinámico y visual, cortes más rápidos (22 → 16 s), música chill house con toque navideño. MP4 con y sin música."
         },
@@ -456,8 +493,8 @@
         "file": "video/p14_navidad_musica.mp4",
         "published": "media/p14_navidad_musica.mp4",
         "silent_published": "media/p14_navidad.mp4",
-        "seconds": 16.0,
-        "how": "Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-navidad</code>, autorizado por MKT): cámara que cambia de encuadre en cada lámina, luces que titilan, destellos dorados y destello de luz en cada corte",
+        "seconds": 20.0,
+        "how": "Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-navidad</code>): imagen navideña, montaje conmemorativo con fotos del año (2026 · «Un año construyendo juntos»), cámara por lámina, luces, destellos y destello en cada corte",
         "music": "música chill house original con toque navideño (cascabeles y celesta; music.py --xmas, −17 LUFS) — requiere aprobación auditiva de MKT"
       }
     },
@@ -478,6 +515,10 @@
       "trace": "Saludo institucional — <strong>no traza a knowledge_id</strong>; mensaje validado (ciencia e ingeniería al desarrollo de la infraestructura del país).",
       "created": "02-12-2026",
       "hist": [
+        {
+          "date": "02-11-2026",
+          "summary": "Copy editado por MKT («colaboradores»; duplicado corregido)."
+        },
         {
           "date": "19-10-2026",
           "summary": "Texto «AÑO NUEVO 2027» → «¡Feliz año nuevo!» (pedido MKT)."
