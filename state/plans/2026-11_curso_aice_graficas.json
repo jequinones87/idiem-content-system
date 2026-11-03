@@ -21,18 +21,21 @@
         "fuente_txt": "Organiza: AICE · Programa e inscripción en aice.cl",
         "titulo": "Curso AICE NCh433 y NCh430 · anuncio",
         "kicker": "Curso · Actualización normativa",
-        "cifra": "NCh433",
-        "lead": "y NCh430: diseño sísmico de edificios de hormigón armado",
+        "cifra": "",
+        "lead": "Diseño sísmico de edificios de hormigón armado: actualización NCh433 y NCh430",
         "cargo": "Director de IDIEM<br>Profesor del curso",
         "listas": [
           "<b>Fechas:</b> 19 de noviembre al 4 de diciembre",
           "<b>Modalidad:</b> 3 online y 2 presenciales"
-        ],
-        "cifra_size": "108px"
+        ]
       },
       "trace": "Pieza de evento externo (AICE) — <strong>no traza a knowledge_id</strong>; datos del texto oficial del curso entregado por MKT.",
       "created": "02-11-2026",
       "hist": [
+        {
+          "date": "03-11-2026",
+          "summary": "MKT: sin dato grande; todo el texto al mismo tamaño. No se destaca la NCh433 (es una sola clase, a cargo de otro profesor): el título nombra ambas normas por igual."
+        },
         {
           "date": "02-11-2026",
           "summary": "Pieza y copy DRAFT creados a pedido de MKT con la plantilla de pieza con persona (la del reconocimiento Top 2%), sin precios y con link de inscripción."
@@ -54,8 +57,8 @@
         "nombre": "Leonardo Massone",
         "fuente_txt": "Organiza: AICE · Programa e inscripción en aice.cl",
         "titulo": "Curso AICE NCh433 y NCh430 · comienza",
-        "kicker": "Comienza este jueves",
-        "cifra": "19 nov",
+        "kicker": "Comienza el jueves 19 de noviembre",
+        "cifra": "",
         "lead": "Curso de diseño sísmico de edificios de hormigón armado: NCh433 y NCh430",
         "cargo": "Director de IDIEM<br>Profesor del curso",
         "listas": [
@@ -66,6 +69,10 @@
       "trace": "Pieza de evento externo (AICE) — <strong>no traza a knowledge_id</strong>; datos del texto oficial del curso entregado por MKT.",
       "created": "02-11-2026",
       "hist": [
+        {
+          "date": "03-11-2026",
+          "summary": "MKT: sin dato grande; todo el texto al mismo tamaño. La fecha pasa al antetítulo («Comienza el jueves 19 de noviembre»)."
+        },
         {
           "date": "02-11-2026",
           "summary": "Pieza y copy DRAFT creados a pedido de MKT con la plantilla de pieza con persona (la del reconocimiento Top 2%), sin precios y con link de inscripción."

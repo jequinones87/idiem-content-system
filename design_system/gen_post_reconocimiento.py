@@ -57,6 +57,8 @@ def render(d: dict) -> str:
     lists = "<br>".join(d["listas"])
     # `cifra_size` (opcional): baja el cuerpo de la cifra cuando el texto es largo y entraría en la foto.
     big_style = f' style="font-size:{d["cifra_size"]}"' if d.get("cifra_size") else ""
+    # Sin `cifra` (vacía) no hay dato grande: todo el texto queda al mismo tamaño (pedido MKT 03-11-2026).
+    big = f'<div class="big"{big_style}>{d["cifra"]}</div>' if d.get("cifra") else ""
     return f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><title>{d["titulo"]}</title>
 <style>{FONT_CSS}{CSS}</style></head><body><div class="export">
   <div class="photo" style="background-image:url({uri});background-position:{d.get("foto_pos", "50% 0%")}"></div>
@@ -66,7 +68,7 @@ def render(d: dict) -> str:
   <div class="copy">
     <div class="kick">{d["kicker"]}</div>
     <div class="rule"></div>
-    <div class="big"{big_style}>{d["cifra"]}</div>
+    {big}
     <div class="lead">{d["lead"]}</div>
     <div class="who"><div class="name">{d["nombre"]}</div><div class="role">{d["cargo"]}</div></div>
     <div class="lists">{lists}</div>

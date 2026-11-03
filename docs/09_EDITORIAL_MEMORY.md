@@ -526,3 +526,5 @@ programado al 19-10-2026).
   04-12): 2 piezas de evento (anuncio + inicio) con Leonardo Massone como profesor; **sin precios** (pedido MKT); link de
   inscripción de AICE; datos del texto oficial del curso entregado por MKT; sin «destacada trayectoria» (GR-04). Plantilla
   de pieza con persona (la del Top 2%). Workstation: https://claude.ai/artifact/LigrxSyBN5xrf4qukG4f6Z
+- **2026-11-03** — Curso AICE: **no destacar la NCh433** en piezas de Leonardo Massone (esa norma es una sola clase y la dicta
+  Fabián Rojas); en las piezas con persona, si MKT lo pide, **todo el texto al mismo tamaño** (sin dato grande: `cifra` vacía).
