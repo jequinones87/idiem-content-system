@@ -379,10 +379,14 @@
       },
       "side": "right",
       "svc": "Inspección de estructuras de acero",
-      "msg": "Revisar el acero<br>a tiempo.",
+      "msg": "Revisar la estructura<br>a tiempo",
       "base": "Operación minera · <b>vigas, columnas, soportes y conexiones</b>",
       "created": "02-12-2026",
       "hist": [
+        {
+          "date": "03-11-2026",
+          "summary": "Título de la pieza: «Revisar el acero a tiempo.» → «Revisar la estructura a tiempo» (pedido MKT)."
+        },
         {
           "date": "02-11-2026",
           "summary": "Post reformulado a un solo tema: inspección de elementos estructurales de acero (sin peritaje de falla) (pedido MKT)."
