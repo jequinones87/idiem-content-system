@@ -478,6 +478,10 @@
       "hist": [
         {
           "date": "03-11-2026",
+          "summary": "Colaboradores: fotos más grandes, misma composición y tamaño que el montaje de 00:05 (grilla 4×2, 236 px) con el título bajo la grilla; quedan 8 fotos (las 5 de MKT + 3 de la librería con personas en primer plano). Música sin cambios."
+        },
+        {
+          "date": "03-11-2026",
           "summary": "Ronda MKT: claim del año → «Un año de ciencia e ingeniería al servicio del país»; clientes primero; mosaico de colaboradores (fotos de MKT + librería); música más navideña. 22 s."
         },
         {
@@ -502,7 +506,7 @@
         "published": "media/p14_navidad_musica.mp4",
         "silent_published": "media/p14_navidad.mp4",
         "seconds": 22.0,
-        "how": "Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-navidad</code>): imagen navideña, montaje del año con 8 fotos de proyectos («2026 · Un año de ciencia e ingeniería al servicio del país»), gracias a clientes y luego a colaboradores con mosaico de 10 fotos del equipo (5 compartidas por MKT + 5 de la librería ya publicadas)",
+        "how": "Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-navidad</code>): imagen navideña, montaje del año con 8 fotos de proyectos («2026 · Un año de ciencia e ingeniería al servicio del país»), gracias a clientes y luego a colaboradores con mosaico 4×2 de 8 fotos del equipo al mismo tamaño que el montaje del año (5 compartidas por MKT + 3 de la librería ya publicadas)",
         "music": "música original más navideña (music.py --xmas --xmas-level 2: melodía de caja de música, cascabeles y celesta; batería suave; −17 LUFS) — requiere aprobación auditiva de MKT"
       }
     },
