@@ -429,6 +429,10 @@
       "created": "02-12-2026",
       "hist": [
         {
+          "date": "03-11-2026",
+          "summary": "Copy editado por MKT («Este 5 de Diciembre es el Día Mundial del Suelo»)."
+        },
+        {
           "date": "02-11-2026",
           "summary": "Copy: el segundo párrafo habla del tipo de suelo (pedido MKT)."
         }
@@ -450,14 +454,14 @@
         },
         "intermedias": [
           {
-            "icon": "users",
-            "title": "Gracias a nuestros <span class=\"c2rb\">colaboradores</span>",
-            "body": "Por el trabajo de cada día en laboratorios, obras y faenas."
-          },
-          {
             "icon": "hard-hat",
             "title": "Gracias a nuestros <span class=\"c2rb\">clientes</span>",
             "body": "Por confiar en la ingeniería para construir una infraestructura más segura."
+          },
+          {
+            "icon": "users",
+            "title": "Gracias a nuestros <span class=\"c2rb\">colaboradores</span>",
+            "body": "Por el trabajo de cada día en laboratorios, obras y faenas."
           }
         ],
         "cierre": {
@@ -472,6 +476,10 @@
       },
       "created": "02-12-2026",
       "hist": [
+        {
+          "date": "03-11-2026",
+          "summary": "Ronda MKT: claim del año → «Un año de ciencia e ingeniería al servicio del país»; clientes primero; mosaico de colaboradores (fotos de MKT + librería); música más navideña. 22 s."
+        },
         {
           "date": "02-11-2026",
           "summary": "Video rehecho en Remotion (pedido MKT): misma imagen, «equipos» → «colaboradores», montaje conmemorativo del año con 8 fotos de la librería usadas en sep–dic; 20 s con música chill house navideña."
@@ -493,9 +501,9 @@
         "file": "video/p14_navidad_musica.mp4",
         "published": "media/p14_navidad_musica.mp4",
         "silent_published": "media/p14_navidad.mp4",
-        "seconds": 20.0,
-        "how": "Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-navidad</code>): imagen navideña, montaje conmemorativo con fotos del año (2026 · «Un año construyendo juntos»), cámara por lámina, luces, destellos y destello en cada corte",
-        "music": "música chill house original con toque navideño (cascabeles y celesta; music.py --xmas, −17 LUFS) — requiere aprobación auditiva de MKT"
+        "seconds": 22.0,
+        "how": "Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-navidad</code>): imagen navideña, montaje del año con 8 fotos de proyectos («2026 · Un año de ciencia e ingeniería al servicio del país»), gracias a clientes y luego a colaboradores con mosaico de 10 fotos del equipo (5 compartidas por MKT + 5 de la librería ya publicadas)",
+        "music": "música original más navideña (music.py --xmas --xmas-level 2: melodía de caja de música, cascabeles y celesta; batería suave; −17 LUFS) — requiere aprobación auditiva de MKT"
       }
     },
     "15": {
