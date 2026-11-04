@@ -27,12 +27,16 @@
           "<b>Fecha:</b> miércoles 11 de noviembre · 11:45 hrs"
         ],
         "fuente_txt": "Organiza: Centro de Innovación del Hormigón UC",
-        "sub": "<b>Bloque 2:</b><br>Desarrollo de Hormigones Sustentables"
+        "sub": "Desarrollo de Hormigones Sustentables"
       },
       "trace": "Pieza de evento externo — <strong>no traza a knowledge_id</strong>; datos del programa oficial del congreso.",
       "flag": "Foto entregada en el chat: confirmar uso y subirla a la librería de Drive",
       "created": "04-11-2026",
       "hist": [
+        {
+          "date": "04-11-2026",
+          "summary": "MKT: se quita «Bloque 2:»; bajo la línea roja queda solo «Desarrollo de Hormigones Sustentables»."
+        },
         {
           "date": "04-11-2026",
           "summary": "MKT: bajo la línea roja, antes del título de la ponencia, «Bloque 2: Desarrollo de Hormigones Sustentables»; se quita la línea «Eje» de abajo para no repetirla. La fuente queda en una línea (el link va en el copy) para dar aire sobre el eslogan."
