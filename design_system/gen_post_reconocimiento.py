@@ -40,6 +40,8 @@ body{font-family:"Montserrat",system-ui,sans-serif}
 .kick{font-size:24px;font-weight:700;letter-spacing:.18em;text-transform:uppercase}
 .rule{width:120px;height:7px;background:var(--red);border-radius:2px}
 .big{white-space:nowrap;font-size:132px;font-weight:700;line-height:.9;letter-spacing:-.03em;color:#fff}
+.sub{font-size:28px;font-weight:600;line-height:1.25;color:rgba(255,255,255,.9)}
+.sub b{color:var(--red);font-weight:700}
 .lead{font-size:38px;font-weight:700;line-height:1.12;letter-spacing:-.01em;text-wrap:balance}
 .who{margin-top:14px;display:flex;flex-direction:column;gap:6px}
 .name{font-size:36px;font-weight:700}
@@ -59,6 +61,8 @@ def render(d: dict) -> str:
     big_style = f' style="font-size:{d["cifra_size"]}"' if d.get("cifra_size") else ""
     # Sin `cifra` (vacía) no hay dato grande: todo el texto queda al mismo tamaño (pedido MKT 03-11-2026).
     big = f'<div class="big"{big_style}>{d["cifra"]}</div>' if d.get("cifra") else ""
+    # `sub` (opcional): línea de contexto bajo la barra roja, antes de la cifra/bajada (p. ej. bloque de un congreso).
+    sub = f'<div class="sub">{d["sub"]}</div>' if d.get("sub") else ""
     return f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><title>{d["titulo"]}</title>
 <style>{FONT_CSS}{CSS}</style></head><body><div class="export">
   <div class="photo" style="background-image:url({uri});background-position:{d.get("foto_pos", "50% 0%")}"></div>
@@ -68,6 +72,7 @@ def render(d: dict) -> str:
   <div class="copy">
     <div class="kick">{d["kicker"]}</div>
     <div class="rule"></div>
+    {sub}
     {big}
     <div class="lead">{d["lead"]}</div>
     <div class="who"><div class="name">{d["nombre"]}</div><div class="role">{d["cargo"]}</div></div>
