@@ -1,0 +1,104 @@
+{
+  "name": "IDIEM · dic-2026 · Navidad (24 dic)",
+  "photo": {
+    "file": "../../../../design_system/assets/month_2026-12/p14_video.jpg",
+    "focus": "62% 30%",
+    "zoom": 1.1,
+    "sparkles": {
+      "twinkle": [
+        {
+          "x": 771,
+          "y": 3,
+          "r": 18
+        },
+        {
+          "x": 508,
+          "y": 102,
+          "r": 18
+        },
+        {
+          "x": 440,
+          "y": 68,
+          "r": 16
+        },
+        {
+          "x": 728,
+          "y": 174,
+          "r": 17
+        },
+        {
+          "x": 891,
+          "y": 231,
+          "r": 18
+        },
+        {
+          "x": 465,
+          "y": 289,
+          "r": 17
+        },
+        {
+          "x": 578,
+          "y": 316,
+          "r": 17
+        },
+        {
+          "x": 747,
+          "y": 337,
+          "r": 17
+        },
+        {
+          "x": 898,
+          "y": 373,
+          "r": 17
+        },
+        {
+          "x": 1028,
+          "y": 361,
+          "r": 18
+        },
+        {
+          "x": 375,
+          "y": 308,
+          "r": 16
+        }
+      ],
+      "drift": 18
+    }
+  },
+  "cover": {
+    "eyebrow": "NAVIDAD 2026",
+    "title": "Felices *fiestas*"
+  },
+  "steps": [
+    {
+      "icon": "users",
+      "title": [
+        "Gracias a nuestros",
+        "[equipos]"
+      ],
+      "body": [
+        "Por el trabajo de cada día en",
+        "laboratorios, obras y faenas."
+      ]
+    },
+    {
+      "icon": "hard-hat",
+      "title": [
+        "Gracias a nuestros",
+        "[clientes]"
+      ],
+      "body": [
+        "Por confiar en la ingeniería para",
+        "construir una infraestructura más",
+        "segura."
+      ]
+    }
+  ],
+  "closing": {
+    "body": [
+      "Les deseamos una Navidad en paz,",
+      "junto a quienes más quieren."
+    ],
+    "url": "idiem.cl"
+  }
+}

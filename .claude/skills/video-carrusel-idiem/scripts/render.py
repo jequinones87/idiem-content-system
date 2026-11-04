@@ -20,7 +20,8 @@ from playwright.async_api import async_playwright
 
 
 async def open_page(p, html):
-    b = await p.chromium.launch()
+    # PW_CHROMIUM: Chromium ya instalado (p. ej. /opt/pw-browsers/chromium en sesiones cloud)
+    b = await p.chromium.launch(executable_path=os.environ.get("PW_CHROMIUM") or None)
     pg = await b.new_page(viewport={"width": 1080, "height": 1080})
     await pg.goto(html.resolve().as_uri() + "?capture")
     await pg.evaluate("document.fonts.ready")

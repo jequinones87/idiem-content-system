@@ -1,0 +1,83 @@
+{
+  "month": "2026-11",
+  "set": "2026-11_curso_aice",
+  "status": "DRAFT",
+  "photo_dir": "design_system/assets",
+  "note": "Pieza con persona = plantilla de reconocimiento (design_system/gen_post_reconocimiento.py), aprobada por MKT el 15-10-2026; misma foto en ambos posts.",
+  "posts": {
+    "1": {
+      "photo": {
+        "file": "leonardo_massone_02.jpg",
+        "source": "library",
+        "id": "07 LEONARDO MASSONE 02.jpg",
+        "detalle": "retrato de Leonardo Massone (carpeta Fotos Expositores Webinars)",
+        "drive": "https://drive.google.com/file/d/115XCLy7UvMjoydHkEmrLCAGWxMU9eKRY/view",
+        "pos": "50% 0%"
+      },
+      "person": {
+        "foto": "design_system/assets/leonardo_massone_02.jpg",
+        "foto_pos": "50% 0%",
+        "nombre": "Leonardo Massone",
+        "fuente_txt": "Organiza: AICE · Programa e inscripción en aice.cl",
+        "titulo": "Curso AICE NCh433 y NCh430 · anuncio",
+        "kicker": "Curso · Actualización normativa",
+        "cifra": "",
+        "lead": "Diseño sísmico de edificios de hormigón armado: actualización NCh433 y NCh430",
+        "cargo": "Director de IDIEM<br>Profesor del curso",
+        "listas": [
+          "<b>Fechas:</b> 19 de noviembre al 4 de diciembre",
+          "<b>Modalidad:</b> 3 online y 2 presenciales"
+        ]
+      },
+      "trace": "Pieza de evento externo (AICE) — <strong>no traza a knowledge_id</strong>; datos del texto oficial del curso entregado por MKT.",
+      "created": "02-11-2026",
+      "hist": [
+        {
+          "date": "03-11-2026",
+          "summary": "MKT: sin dato grande; todo el texto al mismo tamaño. No se destaca la NCh433 (es una sola clase, a cargo de otro profesor): el título nombra ambas normas por igual."
+        },
+        {
+          "date": "02-11-2026",
+          "summary": "Pieza y copy DRAFT creados a pedido de MKT con la plantilla de pieza con persona (la del reconocimiento Top 2%), sin precios y con link de inscripción."
+        }
+      ]
+    },
+    "2": {
+      "photo": {
+        "file": "leonardo_massone_02.jpg",
+        "source": "library",
+        "id": "07 LEONARDO MASSONE 02.jpg",
+        "detalle": "retrato de Leonardo Massone (carpeta Fotos Expositores Webinars)",
+        "drive": "https://drive.google.com/file/d/115XCLy7UvMjoydHkEmrLCAGWxMU9eKRY/view",
+        "pos": "50% 0%"
+      },
+      "person": {
+        "foto": "design_system/assets/leonardo_massone_02.jpg",
+        "foto_pos": "50% 0%",
+        "nombre": "Leonardo Massone",
+        "fuente_txt": "Organiza: AICE · Programa e inscripción en aice.cl",
+        "titulo": "Curso AICE NCh433 y NCh430 · comienza",
+        "kicker": "Comienza el jueves 19 de noviembre",
+        "cifra": "",
+        "lead": "Curso de diseño sísmico de edificios de hormigón armado: NCh433 y NCh430",
+        "cargo": "Director de IDIEM<br>Profesor del curso",
+        "listas": [
+          "<b>Teoría:</b> fundamentos y cambios normativos",
+          "<b>Práctica:</b> aplicaciones de diseño estructural"
+        ]
+      },
+      "trace": "Pieza de evento externo (AICE) — <strong>no traza a knowledge_id</strong>; datos del texto oficial del curso entregado por MKT.",
+      "created": "02-11-2026",
+      "hist": [
+        {
+          "date": "03-11-2026",
+          "summary": "MKT: sin dato grande; todo el texto al mismo tamaño. La fecha pasa al antetítulo («Comienza el jueves 19 de noviembre»)."
+        },
+        {
+          "date": "02-11-2026",
+          "summary": "Pieza y copy DRAFT creados a pedido de MKT con la plantilla de pieza con persona (la del reconocimiento Top 2%), sin precios y con link de inscripción."
+        }
+      ]
+    }
+  }
+}

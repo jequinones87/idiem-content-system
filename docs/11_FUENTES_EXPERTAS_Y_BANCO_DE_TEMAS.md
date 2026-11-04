@@ -40,12 +40,21 @@
 | SRC-004 | Vulnerabilidad estructural (vida avanzada) y sísmica en Elementos No Estructurales | Sergio Tapia Pérez · Jefe de Proyectos, Div. Estructuras Peritajes | 14-07-2026 | IHA |
 | SRC-005 | Reglamento RIC en Salud (DS N°8) | Sergio Reygadas Veragua · Jefe de Proyectos Eléctricos, DES | s/f | IHA |
 | SRC-006 | Vulnerabilidad de incendio en infraestructura y faenas mineras | Diego Olave | 19-08-2026 | IOM |
+| SRC-007 | División de Aguas: servicios MOP–DOH y Ley 21.094 (presentación comercial) | *(sin expositor)* | 08-2026 | IPR (confirmada MKT 28-10) |
+| SRC-008 | Estudios de Aluviones y Obras de Mitigación Aluvional (MOP-DOH) — presentación completa del servicio | *(sin expositor)* | 06-2026 | IPR (validada MKT 28-10) |
+| SRC-009 | Oferta integral IDIEM · Defensas Fluviales y Control Aluvional (síntesis de SRC-008, "para kike") | *(sin expositor)* | 28-10-2026 | IPR (validada MKT 28-10) |
 
 Notas:
 - **19-10-2026:** MKT volvió a compartir SRC-002 y SRC-003 (PDF) y SRC-004, 005 y 006 (Drive). No hay
   fuentes nuevas: se releyeron completas y se sumaron 14 afirmaciones y 7 temas (TOP-023 a TOP-029).
 - SRC-006 se leyó completa: replica para minería el marco de SRC-001, por eso SRC-001#C01–C10 también
   la citan. Agrega monitoreo en faena (temperaturas, vibración de polines) y criticidad (NCC 40).
+- **28-10-2026:** el usuario compartió SRC-008 (Drive, leída completa, 16 láminas) y SRC-009 (lámina
+  única subida al chat). Se sumaron 13 afirmaciones (SRC-008#C01–C11, SRC-009#C01–C02) y 3 temas
+  (TOP-035 a TOP-037; TOP-030–034 quedan reservados para la rama de División de Aguas). **Célula propuesta, no validada:** el servicio equivalente en 2A.2 (R0002
+  "mitigación de riesgos naturales", R0001 "peligros naturales") está como `RESERVE_FACTUAL` fuera de
+  las células priorizadas y **no tiene knowledge_id activo**; las capacidades quedan VERIFY hasta que MKT
+  confirme vigencia y célula.
 - SRC-004 sigue truncada al final, en el proceso AITO; el detalle del proceso (C07) queda en VERIFY.
 
 ### Ideas fuerza por fuente
@@ -124,6 +133,29 @@ Notas:
   - ~~AITO (Asesoría a la Inspección Técnica de Obra)~~ — **no publicar** (MKT 19-10-2026): C05 y C07
     quedan en DO_NOT_PUBLISH y TOP-002 descartado.
 
+**SRC-008 / SRC-009 · Aluviones y mitigación aluvional (MOP-DOH)**
+- Oferta en 5 etapas (SRC-009#C01, **VERIFY**): diagnóstico (catastro, sectores expuestos) → estudios
+  básicos y de terreno (hidrología, geología, geomorfología, susceptibilidad, topografía, mecánica de
+  suelos, geotecnia, geofísica) → modelación numérica de crecidas y aluviones con cambio climático →
+  zonificación de la amenaza → diseño de obras de mitigación (alternativas, presupuestos, evaluación
+  económica, TdR). Posicionamiento: socio técnico del ciclo completo (C02, **VERIFY**).
+- Oferta formal (SRC-008#C01–C02, **VERIFY**): evaluación de amenaza por crecidas líquidas y flujos
+  detríticos hasta factibilidad; asesoría de mejora continua del Manual de Quebradas.
+- Conceptos **SAFE**: zonificación = intensidad (h, h·v) × probabilidad, inundación ≠ aluvión (C03);
+  factores de susceptibilidad y su peso según zona climática (C04); aluvión de diseño = hidrograma de
+  crecida + sedimentos al ápice (C05); procesos: flujo de detritos, deslizamiento, caída de rocas (C06);
+  mitigación con barreras dinámicas, SBN y obras de desvío/retención (C07).
+- **VERIFY:** ponderaciones y umbrales del Manual en marcha blanca (C08); Plan Nacional de Quebradas,
+  25M 2015 y Manual como futura Norma Técnica MOP (C09).
+- **INTERNAL:** proyectos con nombre y cifras (Camiña/Tarapacá, Plan Atacama, El Carmen/El Tránsito,
+  Macul, río Mosco) (C10–C11).
+- **MKT 28-10-2026:** servicio vigente y célula IPR confirmados → capacidades C01/C02 (ambas fuentes)
+  pasan a SAFE con `validated_by`. Proyectos con nombre (C10–C11) → DO_NOT_PUBLISH; Manual de
+  Quebradas y Plan Nacional (C08–C09) no se usan. Tono educativo y explicativo, no explícitamente
+  comercial, pero mostrando el servicio y orientado a concretar reuniones. Extra A = video; extra B = carrusel.
+- Contingencia de lluvias y aluviones de octubre 2026: tono sobrio; no usar eventos con víctimas como
+  gancho ni sugerir que IDIEM participó en ellos.
+
 **SRC-005 · RIC en Salud (Reygadas)**
 - La transición la define la fecha y condición del permiso de edificación (oficios de la SEC).
 - Pasó de 1 norma a 19 pliegos (de 175 a 478 páginas).
@@ -139,7 +171,34 @@ Notas:
 - Efecto "bola de nieve" y decisiones por etapa y por rol.
 - Cifras de casos (+86,1 %, 10–25 %, 8–12 meses): **INTERNAL**.
 
-## Banco de temas candidatos (29; 1 descartado)
+**SRC-007 · División de Aguas y Ley 21.094 (recibida 28-10-2026)**
+- Llegó por subida directa (no está en Drive). Transcripción literal en
+  `knowledge/expert_sources/SRC-007_division_aguas_ley_21094.md`; el PPTX (~21 MB) no se versiona.
+- **2A.2 no tiene la División de Aguas.** MKT confirmó (28-10-2026) que sus servicios están **vigentes y
+  se pueden comunicar**: C01–C03 son SAFE y se citan como `auxiliary_id` (SRC-007#Cxx).
+- **Célula confirmada por MKT:** aguas, con foco en **INFRA PÚBLICA RESILIENTE** (también el caso
+  Araucanía, aunque abastezca postas rurales).
+- Servicios declarados (C01): caracterización de recursos hídricos; diagnóstico de infraestructura de
+  suministro de agua; estudios hidrogeológicos (agua subterránea); modelación hidrológica e
+  hidrogeológica; ingeniería de detalle de agua rural.
+- Riesgo aluvional en 5 etapas (C02): diagnóstico → estudios básicos y de terreno → modelación de
+  crecidas y aluviones con cambio climático → zonificación de la amenaza → diseño de obras de mitigación.
+- Agua potable rural (C03): diagnóstico físico, social y legal → alternativas → ingeniería de detalle →
+  perforación de pozos con prueba de bombeo.
+- Proyectos en curso con nombre (C04–C07: Araucanía DGOP-DOH, Biobío DGA, Magallanes DGA, Quebrada de
+  Macul): **SAFE — MKT autorizó nombrar proyectos y mandantes** (28-10-2026). Mantener fechas y alcances
+  literales.
+- **Ley 21.094** (C08–C12, C14): **DO_NOT_PUBLISH — para RRSS no se aborda la Ley de Universidades**
+  (MKT, 28-10-2026). Lo mismo aplica a AUX-010…AUX-016 de 2A.2: quedan bloqueados por
+  `config/cell_rules.json → blocked_auxiliary_types` y el bloqueo se registra en la ficha de hechos.
+  El dato de que el caso Araucanía se contrató por Ley 21.094 tampoco va al copy.
+- **INTERNAL:** plazo de toma de razón "1 mes (?)" y la lista de 16 organismos con convenios (C13, C15).
+  **DO_NOT_PUBLISH:** "líder en Chile", "referentes", "socio técnico para todo el ciclo" (C17). MKT
+  confirmó mantenerlos fuera del copy (28-10-2026).
+- **Cifras institucionales vigentes (MKT, 28-10-2026):** 800+ ingenieros y técnicos, 450.000 ensayos al año,
+  540 estudios de ingeniería al año, 13 divisiones, Facultad de Ingeniería de la U. de Chile (C16, SAFE).
+
+## Banco de temas candidatos (37; 2 descartados)
 
 | ID | Célula | Tema | Sugerencia (arquetipo · hook · formato) | Cuidado |
 |---|---|---|---|---|
@@ -172,6 +231,14 @@ Notas:
 | TOP-027 | IHA | Lo que enseñaron los incendios hospitalarios del siglo pasado | evidence_learning · data_point · carrusel | citar NFPA |
 | TOP-028 | IHA | Salas eléctricas de un hospital: polvo, calor y arcos | data_implication · insight · estático | — |
 | TOP-029 | IOM | ¿Quién define qué es crítico? Criticidad en el análisis de riesgo | technical_question · question · estático | — |
+| TOP-030 | IPR | Agua potable rural: diagnosticar lo físico, lo social y lo legal antes de diseñar | process_result · process_step · carrusel | — |
+| TOP-031 | IPR | Aluviones: del mapa de amenaza a la obra de mitigación | risk_prevention · risk · carrusel | — |
+| TOP-032 | IPR | ¿Cuánta agua subterránea hay realmente? Hidrogeología y modelación | technical_question · question · estático | — |
+| TOP-033 | IPR | Planificar el agua por cuenca | data_implication · insight · estático | — (nombres autorizados) |
+| ~~TOP-034~~ | IPR | ~~Convenios con universidades estatales (Ley 21.094, art. 37)~~ | — | **DESCARTADO (MKT 28-10): la Ley de Universidades no se aborda en RRSS** |
+| TOP-035 | IPR | Un aluvión no es una crecida: por qué la amenaza se zonifica distinto | evidence_learning · contrast · carrusel | contingencia; sin proyectos con nombre · usado: extra nov A (video) |
+| TOP-036 | IPR | Del diagnóstico a la obra: ciclo de gestión del riesgo aluvional en 5 etapas | process_result · question · carrusel | sin proyectos con nombre · usado: extra nov B (carrusel) |
+| TOP-037 | IPR | ¿Qué hace que una quebrada sea más propensa a generar aluviones? | technical_question · question · estático | sin cifras de ponderación (C08) |
 
 **Lectura para la planificación:** este material **repone la célula Salud (IHA)**, que quedó sin
 ítems frescos tras noviembre: 22 temas IHA vigentes (TOP-002 descartado) y 6 IOM listos para diciembre en adelante.

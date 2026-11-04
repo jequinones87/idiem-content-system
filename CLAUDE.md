@@ -55,6 +55,20 @@ Build a deterministic, auditable content-planning and drafting system for IDIEM 
 - Do not duplicate the knowledge base into prompt text when structured retrieval is available.
 - Keep future visual/assets integration behind an interface.
 
+## Antes de producir cualquier pieza (OBLIGATORIO desde 28-10-2026)
+
+Vale para grillas mensuales, extras, videos y pedidos sueltos. Método vigente por formato:
+`docs/14_PLAYBOOK_PRODUCCION.md` + `config/production_registry.json`.
+
+1. **Ramas:** `PYTHONPATH=src python -m idiem.preflight` (el hook de inicio de sesión muestra el resumen). Si
+   lista ramas con trabajo no integrado, fusionarlas en la rama de trabajo (o preguntar) **antes** de proponer:
+   ahí viven decisiones de MKT que no se ven desde otra rama. Rama de integración: `claude/file-reading-nsposu`.
+2. **Lo ya hecho:** abrir el workstation y los `state/plans/*_{asignacion,copies,graficas}.json` de los 2 últimos
+   meses y **reutilizar** sus plantillas, generadores y videos de referencia; nada de variantes nuevas sin MKT.
+3. **IDs:** fuentes `SRC-*` y temas `TOP-*` con el siguiente ID libre que informa el preflight (cuenta todas las ramas).
+4. **Entrega:** siempre un workstation registrado en `config/production_registry.json` (los tests fallan si falta).
+5. Si el pedido no calza con ningún método del playbook: preguntar a MKT (fail closed).
+
 ## Editorial memory (aprendizajes del equipo)
 
 Antes de escribir o corregir cualquier copy/pieza, lee `docs/09_EDITORIAL_MEMORY.md`.
@@ -88,6 +102,15 @@ aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
   repitas `knowledge_id`, subtemas, claims, pain points, ganchos ni CTAs recientes; (3) **actualiza
   hechos** si cambiaron. Si 2A.2 no tiene material fresco, preferir **menos posts sólidos** o pedir
   insumos antes que rellenar (fail closed).
+- **Formato de entrega — UNA WORKSTATION POR MES (OBLIGATORIO, usuario 19-10-2026):** las propuestas de
+  posts de cada mes se entregan **siempre** como su propio artefacto workstation (como sep, oct, nov y dic), con
+  gráfica por pieza, copy editable, traza, historial y botones (listo para aplicar, aprobar, LinkedIn,
+  regeneración, PNG/PDF, agenda). **Nunca** entregar los copies como texto en el chat. Generador:
+  `design_system/gen_month_ws.py` (lee `state/plans/AAAA-MM_{asignacion,copies,graficas}.json`; capacidades
+  `db` + `downloads`; pasar `--ws-url` con la URL propia del mes). URLs por mes en `docs/PENDIENTES.me`.
+- **También los extras** (MKT 2026-10-28): todo post o juego de posts fuera de grilla se entrega en
+  un workstation propio con los mismos botones y funciones de oct/nov/dic (`design_system/gen_month_ws.py`; extras con `--set`).
+  Carruseles siempre con la Plantilla 02 estándar, sin variantes de diseño por post.
 - **Workstation — historial de cambios OBLIGATORIO** (MKT 2026-09-04): cada tarjeta muestra el bloque
   "Historial de cambios aplicados (N)" y se actualiza en cada ronda aplicada y republicada.
 - **Fotos siempre desde la librería de Drive de IDIEM.** Archivos > ~6 MB fallan al descargar por el
@@ -156,6 +179,8 @@ Antes de hacer cualquier video, decidir la herramienta con esta regla (en orden;
    - subtítulos sincronizados con voz;
    - cifras o gráficos animados, mapas de proyectos;
    - formatos distintos de 1:1 (vertical 9:16, horizontal 16:9).
+   - cuando MKT pide un video **más gráfico que texto** o con cortes rápidos, aunque parta de un carrusel o post
+     (MKT 28-10-2026, extra de aluviones; referencia: video #4 de diciembre, `idiem-controversias`).
 3. **No calza en ninguno, o hay duda** → no elegir: preguntar a MKT (fail closed).
 
 Condiciones para usar Remotion (si falta una, el video queda en `DRAFT` y se informa el bloqueo):
@@ -180,7 +205,8 @@ MKT comparte presentaciones de especialistas IDIEM como insumo. Se registran en
 SAFE/VERIFY/INTERNAL, temas `TOP-*`) con vista legible en `docs/11_FUENTES_EXPERTAS_Y_BANCO_DE_TEMAS.md`.
 Al planificar cada mes, revisar este banco junto a 2A.2. Capacidades IDIEM de las `SRC-*` validadas por
 MKT (`validated_by`) se usan como auxiliary_id; incidentes con nombre (VERIFY) y cifras de proyectos
-(INTERNAL) no van al copy sin validación. **Nunca nombrar ni citar a los expositores ni las charlas de
+(INTERNAL) no van al copy sin validación. **La Ley 21.094 (Ley de Universidades) no se aborda en RRSS**
+(MKT 28-10-2026; bloqueada en `config/cell_rules.json → blocked_auxiliary_types`). **Nunca nombrar ni citar a los expositores ni las charlas de
 origen**: el foco es el tema.
 
 Servicios del sitio web (desde 19-10-2026): `config/topic_bank/web_services.json` (`WEB-*`, texto literal

@@ -225,6 +225,50 @@
       "flags": [
         "sin claims técnicos ni capacidades (CONTENT_GAP)"
       ]
+    },
+    {
+      "seq": "2026-11-EXTRA-A",
+      "date": "2026-11-03",
+      "type": "EXTRA_CONTINGENCIA",
+      "theme": "Prevenir empieza por conocer la amenaza: crecida líquida o flujo detrítico y zonificación",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "knowledge_id": null,
+      "auxiliary_ids": [
+        "SRC-008#C01",
+        "SRC-008#C03",
+        "SRC-008#C05",
+        "SRC-008#C06",
+        "SRC-009#C01"
+      ],
+      "archetype": "technical_question",
+      "hook_type": "technical_claim",
+      "cta_type": "deep_dive",
+      "format": "VIDEO (Remotion, motion-graphics-ia/idiem-aluviones, 32 s, con música)",
+      "flags": [
+        "detalle en state/plans/2026-11_extras_aluviones_{asignacion,copies,graficas}.json (workstation propio)",
+        "DRAFT"
+      ]
+    },
+    {
+      "seq": "2026-11-EXTRA-B",
+      "date": "2026-11-19",
+      "type": "EXTRA_CONTINGENCIA",
+      "theme": "¿Dónde podría bajar el próximo aluvión? Gestión del riesgo aluvional en 5 etapas",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "knowledge_id": null,
+      "auxiliary_ids": [
+        "SRC-009#C01",
+        "SRC-009#C02",
+        "SRC-008#C01"
+      ],
+      "archetype": "project_challenge",
+      "hook_type": "question",
+      "cta_type": "service_discovery",
+      "format": "CARRUSEL (portada + 5 etapas + cierre)",
+      "flags": [
+        "detalle en state/plans/2026-11_extras_aluviones_{asignacion,copies,graficas}.json (workstation propio)",
+        "DRAFT"
+      ]
     }
   ],
   "backup_items": [

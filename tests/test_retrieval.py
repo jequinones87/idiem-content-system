@@ -47,3 +47,17 @@ def test_compatible_auxiliary_is_same_cell_and_usable(kb):
 def test_transporte_cell_returns_no_items(kb):
     engine = RetrievalEngine(kb)
     assert engine.retrieve_by_cell("INFRA CRÍTICA TRANSPORTE") == []
+
+
+def test_contracting_mechanism_auxiliary_is_blocked_by_config(kb):
+    # MKT 28-10-2026: Ley 21.094 no se aborda en RRSS (config/cell_rules.json)
+    from idiem.factsheet import build_fact_sheet
+
+    engine = RetrievalEngine(kb)
+    cell = "INFRA PÚBLICA RESILIENTE"
+    assert all(a.type != "MECANISMO_CONTRATACION" for a in engine._compatible_auxiliary(cell))
+    blocked = {a.auxiliary_id for a, _ in engine._blocked_auxiliary(cell)}
+    assert {"AUX-010", "AUX-016"} <= blocked
+    sheet = build_fact_sheet(kb, cell)
+    assert not blocked & set(sheet.auxiliary_ids)
+    assert any(b.startswith("[AUX-010] Bloqueado por config") for b in sheet.blocked_claims)
