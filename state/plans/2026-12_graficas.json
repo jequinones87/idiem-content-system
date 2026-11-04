@@ -241,10 +241,10 @@
       "photo": {
         "file": "p07.jpg",
         "source": "library",
-        "id": "interior_hospital_sotero_del_rio",
-        "detalle": "interior de hospital (foto elegida por MKT; aún no registrada en photo_manifest)",
-        "drive": "https://drive.google.com/file/d/1cWlJchsCjNOBtgHjH8sWNZL8TfT99Fvi/view",
-        "pos": "50% 50%"
+        "id": "foto_mkt_edificio_salud_2026-11-04",
+        "detalle": "edificio de salud en obra, vista exterior (foto entregada por MKT en el chat 04-11-2026; aún no registrada en photo_manifest)",
+        "drive": "entregada por MKT en el chat (04-11-2026) — original en design_system/assets/month_2026-12/p07_original.webp",
+        "pos": "52% 50%"
       },
       "carousel": {
         "portada": {
@@ -280,6 +280,10 @@
       "flag": "VERIFY: servicios del sitio WEB-088 (revisión de proyecto eléctrico) y WEB-087 (medición de resistencia de pisos) en salud; norma = RIC, sin artículo",
       "created": "02-12-2026",
       "hist": [
+        {
+          "date": "04-11-2026",
+          "summary": "Foto → edificio de salud en obra, vista exterior (foto entregada por MKT); reemplaza el interior de hospital."
+        },
         {
           "date": "02-11-2026",
           "summary": "Foto → interior_hospital_sotero_del_rio; gancho reescrito (pedido MKT)."
