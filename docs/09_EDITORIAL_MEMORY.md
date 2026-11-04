@@ -532,4 +532,7 @@ programado al 19-10-2026).
   basado en el mensaje institucional validado; «Un año construyendo juntos» «suena a poco»); en saludos, **clientes
   primero**, luego colaboradores; el video de cierre de año muestra **fotos de colaboradores** (MKT compartió 5 en el chat:
   `design_system/assets/month_2026-12/equipo_navidad/`); música **más navideña** (`music.py --xmas --xmas-level 2`).
-
+- **2026-11-04** — 2° Congreso Nacional del Hormigón (Centro de Innovación del Hormigón UC, 11-nov): pieza de evento con la
+  ponencia de **Claudio Olate** (especialista en Hormigones, División Hormigones Ingeniería) «Áridos Reciclados de Hormigón
+  Endurecido como Reemplazo de Áridos de Origen Natural en Mezclas de Hormigón». 2A.2 no respalda capacidades IDIEM en áridos
+  reciclados: el copy informa la ponencia, sin resultados ni capacidades. Workstation: https://claude.ai/artifact/UfBNL573ep2EMZiKSwextM

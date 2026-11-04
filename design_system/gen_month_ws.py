@@ -397,8 +397,8 @@ def assemble(month: str, build: Path, out: Path, ws_url: str, applied: str) -> N
         art_n = str(n_posts)
     art = ARTIFACT.replace("<title>Workstation __MES__ IDIEM</title>", f"<title>{TITLE}</title>") if TITLE else ARTIFACT
     html = (art.replace("__MES__", mes.capitalize()).replace("__MESL__", mes)
-            .replace("Los __N__ posts", f"Las {art_n} piezas" if n_posts == 0 else "Los __N__ posts")
-            .replace("__N__ posts", f"{art_n} {'piezas' if n_posts == 0 else 'posts'}").replace("__N__", art_n).replace("__EXTRA__", extra).replace("__MONTH__", month)
+            .replace("Los __N__ posts", (f"La {art_n} pieza" if art_n == "1" else f"Las {art_n} piezas") if n_posts == 0 else "Los __N__ posts")
+            .replace("__N__ posts", f"{art_n} {('pieza' if art_n == '1' else 'piezas') if n_posts == 0 else 'posts'}").replace("__N__", art_n).replace("__EXTRA__", extra).replace("__MONTH__", month)
             .replace("__CARDS__", "\n".join(cards)).replace("__PLAN__", _pfx(month)).replace("__STATE__", json.dumps(init))
             .replace("__CSS__", css).replace("__JS__", js).replace("__CFG__", json.dumps(cfg)))
     out.write_text(html, encoding="utf-8")

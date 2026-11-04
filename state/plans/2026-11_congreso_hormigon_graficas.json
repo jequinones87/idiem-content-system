@@ -1,0 +1,43 @@
+{
+  "month": "2026-11",
+  "set": "2026-11_congreso_hormigon",
+  "status": "DRAFT",
+  "photo_dir": "design_system/assets",
+  "note": "Pieza con persona (plantilla del reconocimiento), todo el texto al mismo tamaño como en el curso AICE.",
+  "posts": {
+    "1": {
+      "photo": {
+        "file": "claudio_olate.jpg",
+        "source": "library",
+        "id": "foto entregada por MKT (chat 04-11-2026)",
+        "detalle": "retrato de Claudio Olate en pasillo",
+        "drive": "https://drive.google.com/",
+        "pos": "58% 50%"
+      },
+      "person": {
+        "titulo": "2° Congreso Nacional del Hormigón · Claudio Olate",
+        "foto": "design_system/assets/claudio_olate.jpg",
+        "foto_pos": "58% 50%",
+        "kicker": "2° Congreso Nacional del Hormigón",
+        "cifra": "",
+        "lead": "Áridos reciclados de hormigón endurecido como reemplazo de áridos de origen natural en mezclas de hormigón",
+        "nombre": "Claudio Olate",
+        "cargo": "Especialista en Hormigones<br>División Hormigones Ingeniería",
+        "listas": [
+          "<b>Fecha:</b> miércoles 11 de noviembre · 11:45 hrs",
+          "<b>Eje:</b> Desarrollo de Hormigones Sustentables"
+        ],
+        "fuente_txt": "Organiza: Centro de Innovación del Hormigón UC · centrohormigon.uc.cl"
+      },
+      "trace": "Pieza de evento externo — <strong>no traza a knowledge_id</strong>; datos del programa oficial del congreso.",
+      "flag": "Foto entregada en el chat: confirmar uso y subirla a la librería de Drive",
+      "created": "04-11-2026",
+      "hist": [
+        {
+          "date": "04-11-2026",
+          "summary": "Pieza y copy DRAFT creados a pedido de MKT con la plantilla de pieza con persona, sin dato grande (mismo criterio que el curso AICE)."
+        }
+      ]
+    }
+  }
+}
