@@ -241,10 +241,10 @@
       "photo": {
         "file": "p07.jpg",
         "source": "library",
-        "id": "interior_hospital_sotero_del_rio",
-        "detalle": "interior de hospital (foto elegida por MKT; aún no registrada en photo_manifest)",
-        "drive": "https://drive.google.com/file/d/1cWlJchsCjNOBtgHjH8sWNZL8TfT99Fvi/view",
-        "pos": "50% 50%"
+        "id": "foto_mkt_edificio_salud_2026-11-04",
+        "detalle": "edificio de salud en obra, vista exterior (foto entregada por MKT en el chat 04-11-2026; aún no registrada en photo_manifest)",
+        "drive": "entregada por MKT en el chat (04-11-2026) — original en design_system/assets/month_2026-12/p07_original.webp",
+        "pos": "52% 50%"
       },
       "carousel": {
         "portada": {
@@ -280,6 +280,10 @@
       "flag": "VERIFY: servicios del sitio WEB-088 (revisión de proyecto eléctrico) y WEB-087 (medición de resistencia de pisos) en salud; norma = RIC, sin artículo",
       "created": "02-12-2026",
       "hist": [
+        {
+          "date": "04-11-2026",
+          "summary": "Foto → edificio de salud en obra, vista exterior (foto entregada por MKT); reemplaza el interior de hospital."
+        },
         {
           "date": "02-11-2026",
           "summary": "Foto → interior_hospital_sotero_del_rio; gancho reescrito (pedido MKT)."
@@ -379,10 +383,14 @@
       },
       "side": "right",
       "svc": "Inspección de estructuras de acero",
-      "msg": "Revisar el acero<br>a tiempo.",
+      "msg": "Revisar la estructura<br>a tiempo",
       "base": "Operación minera · <b>vigas, columnas, soportes y conexiones</b>",
       "created": "02-12-2026",
       "hist": [
+        {
+          "date": "03-11-2026",
+          "summary": "Título de la pieza: «Revisar el acero a tiempo.» → «Revisar la estructura a tiempo» (pedido MKT)."
+        },
         {
           "date": "02-11-2026",
           "summary": "Post reformulado a un solo tema: inspección de elementos estructurales de acero (sin peritaje de falla) (pedido MKT)."
@@ -429,6 +437,10 @@
       "created": "02-12-2026",
       "hist": [
         {
+          "date": "03-11-2026",
+          "summary": "Copy editado por MKT («Este 5 de Diciembre es el Día Mundial del Suelo»)."
+        },
+        {
           "date": "02-11-2026",
           "summary": "Copy: el segundo párrafo habla del tipo de suelo (pedido MKT)."
         }
@@ -450,14 +462,14 @@
         },
         "intermedias": [
           {
-            "icon": "users",
-            "title": "Gracias a nuestros <span class=\"c2rb\">colaboradores</span>",
-            "body": "Por el trabajo de cada día en laboratorios, obras y faenas."
-          },
-          {
             "icon": "hard-hat",
             "title": "Gracias a nuestros <span class=\"c2rb\">clientes</span>",
             "body": "Por confiar en la ingeniería para construir una infraestructura más segura."
+          },
+          {
+            "icon": "users",
+            "title": "Gracias a nuestros <span class=\"c2rb\">colaboradores</span>",
+            "body": "Por el trabajo de cada día en laboratorios, obras y faenas."
           }
         ],
         "cierre": {
@@ -472,6 +484,22 @@
       },
       "created": "02-12-2026",
       "hist": [
+        {
+          "date": "04-11-2026",
+          "summary": "Música → «Warm Christmas Swing» (pista entregada por MKT), con fade-out al final para que no termine de golpe."
+        },
+        {
+          "date": "03-11-2026",
+          "summary": "Colaboradores: la primera foto del mosaico se reemplaza por la nueva foto compartida por MKT (equipo IDIEM junto al pendón y póster en un evento); la foto anterior del evento con auspiciadores sale del video."
+        },
+        {
+          "date": "03-11-2026",
+          "summary": "Colaboradores: fotos más grandes, misma composición y tamaño que el montaje de 00:05 (grilla 4×2, 236 px) con el título bajo la grilla; quedan 8 fotos (las 5 de MKT + 3 de la librería con personas en primer plano). Música sin cambios."
+        },
+        {
+          "date": "03-11-2026",
+          "summary": "Ronda MKT: claim del año → «Un año de ciencia e ingeniería al servicio del país»; clientes primero; mosaico de colaboradores (fotos de MKT + librería); música más navideña. 22 s."
+        },
         {
           "date": "02-11-2026",
           "summary": "Video rehecho en Remotion (pedido MKT): misma imagen, «equipos» → «colaboradores», montaje conmemorativo del año con 8 fotos de la librería usadas en sep–dic; 20 s con música chill house navideña."
@@ -493,9 +521,9 @@
         "file": "video/p14_navidad_musica.mp4",
         "published": "media/p14_navidad_musica.mp4",
         "silent_published": "media/p14_navidad.mp4",
-        "seconds": 20.0,
-        "how": "Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-navidad</code>): imagen navideña, montaje conmemorativo con fotos del año (2026 · «Un año construyendo juntos»), cámara por lámina, luces, destellos y destello en cada corte",
-        "music": "música chill house original con toque navideño (cascabeles y celesta; music.py --xmas, −17 LUFS) — requiere aprobación auditiva de MKT"
+        "seconds": 22.0,
+        "how": "Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-navidad</code>): imagen navideña, montaje del año con 8 fotos de proyectos («2026 · Un año de ciencia e ingeniería al servicio del país»), gracias a clientes y luego a colaboradores con mosaico 4×2 de 8 fotos del equipo al mismo tamaño que el montaje del año (5 compartidas por MKT + 3 de la librería ya publicadas)",
+        "music": "«Warm Christmas Swing» (pista entregada por MKT 04-11-2026; metadatos: generada con Suno): primeros 22 s, fade-out de 3,5 s al cierre (18,5→22 s), normalizada a −17 LUFS. Original en design_system/assets/month_2026-12/audio/. Requiere confirmar derechos de uso comercial."
       }
     },
     "15": {

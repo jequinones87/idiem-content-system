@@ -528,3 +528,8 @@ programado al 19-10-2026).
   de pieza con persona (la del Top 2%). Workstation: https://claude.ai/artifact/LigrxSyBN5xrf4qukG4f6Z
 - **2026-11-03** — Curso AICE: **no destacar la NCh433** en piezas de Leonardo Massone (esa norma es una sola clase y la dicta
   Fabián Rojas); en las piezas con persona, si MKT lo pide, **todo el texto al mismo tamaño** (sin dato grande: `cifra` vacía).
+- **2026-11-03** — Navidad (MKT): el claim del año debe tener peso («Un año de ciencia e ingeniería al servicio del país»,
+  basado en el mensaje institucional validado; «Un año construyendo juntos» «suena a poco»); en saludos, **clientes
+  primero**, luego colaboradores; el video de cierre de año muestra **fotos de colaboradores** (MKT compartió 5 en el chat:
+  `design_system/assets/month_2026-12/equipo_navidad/`); música **más navideña** (`music.py --xmas --xmas-level 2`).
+

@@ -33,6 +33,8 @@ def main():
     ap.add_argument("--seed", type=int, default=7)
     ap.add_argument("--xmas", action="store_true",
                     help="toque navideño: cascabeles en el groove y celesta arpegiada (solo si MKT lo pide)")
+    ap.add_argument("--xmas-level", type=float, default=1.0,
+                    help="intensidad del toque navideño (1 = sutil; 2 = más navideño: melodía de caja de música y batería más suave)")
     a = ap.parse_args()
     out = pathlib.Path(a.outdir)
     tl = json.loads((out / "timeline.json").read_text())
@@ -205,10 +207,24 @@ def main():
                 if tt < DUR - 0.5:
                     pan = 0.3 + 0.4 * (j % 2)
                     place(xm, celesta(mn, 0.55 if groove(tt) else 0.35), tt, math.cos(pan * math.pi / 2), math.sin(pan * math.pi / 2))
+        if a.xmas_level > 1:
+            # melodía original de caja de música (pentatónica sobre cada acorde, una frase por compás)
+            motif = [(0, 0, 0.9), (1.5, 2, 0.7), (2, 4, 0.8), (3, 2, 0.6)]  # (pulso, grado, velocidad)
+            for bi, name in enumerate(bars):
+                b0 = bi * BAR; root = sorted(CH[name][1])[0] + 24
+                scale = [0, 2, 4, 7, 9, 12]
+                for beat, deg, vel in motif:
+                    tt = b0 + beat * BEAT
+                    if tt < DUR - 0.6:
+                        place(xm, celesta(root + scale[deg], vel * 0.9), tt, 0.55, 0.45)
 
     G = dict(kick=0.52, bass=0.40, pad=0.05, keys=0.17, hats=0.11, shk=0.05, clap=0.12, fx=0.035)
-    dry = kick * G['kick'] + bass * G['bass'] + pad * G['pad'] + keys * G['keys'] + hats * G['hats'] + shk * G['shk'] + clap * G['clap'] + fx * G['fx'] + xm * 0.11
-    send = pad * G['pad'] * 0.5 + keys * G['keys'] * 0.6 + clap * G['clap'] * 0.8 + hats * G['hats'] * 0.15 + fx * G['fx'] * 0.9 + xm * 0.11 * 0.7
+    if a.xmas and a.xmas_level > 1:  # más navideño: la batería da paso a campanas y celesta
+        soft = 1 / (1 + 0.45 * (a.xmas_level - 1))
+        for k in ("kick", "hats", "clap", "shk"): G[k] *= soft
+        G["pad"] *= 1.6
+    dry = kick * G['kick'] + bass * G['bass'] + pad * G['pad'] + keys * G['keys'] + hats * G['hats'] + shk * G['shk'] + clap * G['clap'] + fx * G['fx'] + xm * 0.11 * a.xmas_level
+    send = pad * G['pad'] * 0.5 + keys * G['keys'] * 0.6 + clap * G['clap'] * 0.8 + hats * G['hats'] * 0.15 + fx * G['fx'] * 0.9 + xm * 0.11 * a.xmas_level * 0.7
     mix = filt(dry + reverb(send) * 0.5, 'highpass', 28)
     g = np.clip(t_all / 0.25, 0, 1) * np.clip((DUR - t_all) / 1.6, 0, 1) ** 1.5
     mix = np.tanh((mix * g[:, None])[:int(DUR * SR)] * 1.15) / 1.15
