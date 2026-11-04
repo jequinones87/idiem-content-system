@@ -481,6 +481,10 @@
       "created": "02-12-2026",
       "hist": [
         {
+          "date": "04-11-2026",
+          "summary": "Música → «Warm Christmas Swing» (pista entregada por MKT), con fade-out al final para que no termine de golpe."
+        },
+        {
           "date": "03-11-2026",
           "summary": "Colaboradores: la primera foto del mosaico se reemplaza por la nueva foto compartida por MKT (equipo IDIEM junto al pendón y póster en un evento); la foto anterior del evento con auspiciadores sale del video."
         },
@@ -515,7 +519,7 @@
         "silent_published": "media/p14_navidad.mp4",
         "seconds": 22.0,
         "how": "Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-navidad</code>): imagen navideña, montaje del año con 8 fotos de proyectos («2026 · Un año de ciencia e ingeniería al servicio del país»), gracias a clientes y luego a colaboradores con mosaico 4×2 de 8 fotos del equipo al mismo tamaño que el montaje del año (5 compartidas por MKT + 3 de la librería ya publicadas)",
-        "music": "música original más navideña (music.py --xmas --xmas-level 2: melodía de caja de música, cascabeles y celesta; batería suave; −17 LUFS) — requiere aprobación auditiva de MKT"
+        "music": "«Warm Christmas Swing» (pista entregada por MKT 04-11-2026; metadatos: generada con Suno): primeros 22 s, fade-out de 3,5 s al cierre (18,5→22 s), normalizada a −17 LUFS. Original en design_system/assets/month_2026-12/audio/. Requiere confirmar derechos de uso comercial."
       }
     },
     "15": {
