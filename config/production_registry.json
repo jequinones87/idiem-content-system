@@ -1,7 +1,7 @@
 {
   "_comment": "Registro ÚNICO de lo producido y de los métodos vigentes. Lo leen docs/14_PLAYBOOK_PRODUCCION.md, `python -m idiem.preflight` y tests/test_production_registry.py. Actualizarlo en el mismo commit en que se publica un workstation nuevo o se aprueba un método nuevo.",
   "version": 1,
-  "updated": "2026-11-04",
+  "updated": "2026-11-10",
   "integration": {
     "branch": "claude/file-reading-nsposu",
     "note": "Rama de integración de facto (los PR #2–#6 apuntan a ella; el PR #1 la lleva a `main`, que sigue vacía). Toda rama de trabajo nueva parte de aquí y vuelve a ella por PR. Antes de producir, `python -m idiem.preflight` lista las ramas con trabajo que todavía no está integrado."
@@ -77,6 +77,15 @@
       "url": "https://claude.ai/artifact/UfBNL573ep2EMZiKSwextM",
       "generator": "design_system/gen_month_ws.py --set 2026-11_congreso_hormigon",
       "data": "2026-11_congreso_hormigon",
+      "status": "DRAFT · en revisión MKT"
+    },
+    {
+      "id": "2026-11_seminario_nch430",
+      "period": "2026-11",
+      "kind": "evento",
+      "url": "https://claude.ai/artifact/LJH8aXJ5RtRntVLPsqvde2",
+      "generator": "design_system/gen_month_ws.py --set 2026-11_seminario_nch430",
+      "data": "2026-11_seminario_nch430",
       "status": "DRAFT · en revisión MKT"
     }
   ],
@@ -155,10 +164,14 @@
         "cargo",
         "listas",
         "fuente_txt",
-        "foto"
+        "foto",
+        "layout",
+        "fecha_box",
+        "sub"
       ],
-      "reference": "reconocimiento Top 2% (14-10, aprobado por MKT 15-10) y curso AICE NCh433/NCh430 (nov 2026); ponencia Claudio Olate, 2° Congreso Nacional del Hormigón (nov 2026)",
-      "when": "reconocimientos, eventos o anuncios protagonizados por una persona de IDIEM"
+      "reference": "reconocimiento Top 2% (14-10, aprobado por MKT 15-10) y curso AICE NCh433/NCh430 (nov 2026); ponencia Claudio Olate, 2° Congreso Nacional del Hormigón (nov 2026); seminario Nueva NCh430 con Leonardo Massone (nov 2026, layout «espejo» + cuadro de fecha, pedido MKT 10-11)",
+      "when": "reconocimientos, eventos o anuncios protagonizados por una persona de IDIEM",
+      "variants": "layout por defecto: retrato a la derecha; layout \"espejo\": retrato a la izquierda (MKT 10-11-2026). fecha_box {dia, mes, detalle} opcional para eventos."
     }
   }
 }

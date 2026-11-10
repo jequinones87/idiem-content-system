@@ -50,6 +50,22 @@ body{font-family:"Montserrat",system-ui,sans-serif}
 .lists b{color:#fff}
 .src{margin-top:4px;font-size:18px;font-weight:400;color:rgba(255,255,255,.7)}
 .slogan{position:absolute;left:72px;bottom:66px;width:300px;height:auto}
+/* layout "espejo" (MKT 10-11-2026, seminario NCh430): retrato a la izquierda, panel a la derecha */
+.espejo .photo,.espejo .fade{left:0;right:auto;width:470px}
+.espejo .fade{background:linear-gradient(270deg,rgba(47,48,48,1) 0%,rgba(47,48,48,0) 22%),
+             linear-gradient(0deg,rgba(47,48,48,.55) 0%,rgba(47,48,48,0) 26%)}
+.espejo .ring{left:auto;right:-330px}
+.espejo .logo,.espejo .slogan{left:530px}
+.espejo .copy{left:530px;width:490px;top:210px;gap:20px}
+.espejo .lead{font-size:32px}
+.espejo .role{font-size:24px;line-height:1.3}
+.espejo .src{font-size:17px}
+/* bloque de fecha (opcional): cuadro rojo con día y mes + detalle a la derecha */
+.date{display:flex;align-items:center;gap:22px}
+.date .box{background:var(--red);border-radius:6px;padding:12px 18px 10px;text-align:center;line-height:1}
+.date .d{font-size:64px;font-weight:800;letter-spacing:-.02em}
+.date .m{font-size:22px;font-weight:700;letter-spacing:.16em;margin-top:4px}
+.date .t{font-size:24px;font-weight:600;line-height:1.35;color:rgba(255,255,255,.92)}
 """
 
 
@@ -63,8 +79,14 @@ def render(d: dict) -> str:
     big = f'<div class="big"{big_style}>{d["cifra"]}</div>' if d.get("cifra") else ""
     # `sub` (opcional): línea de contexto bajo la barra roja, antes de la cifra/bajada (p. ej. bloque de un congreso).
     sub = f'<div class="sub">{d["sub"]}</div>' if d.get("sub") else ""
+    # `fecha_box` (opcional): {"dia","mes","detalle"} → cuadro rojo con la fecha del evento.
+    fb = d.get("fecha_box")
+    date = (f'<div class="date"><div class="box"><div class="d">{fb["dia"]}</div><div class="m">{fb["mes"]}</div></div>'
+            f'<div class="t">{fb["detalle"]}</div></div>') if fb else ""
+    # `layout` (opcional): "espejo" = retrato a la izquierda y panel a la derecha. Por defecto, retrato a la derecha.
+    layout = " espejo" if d.get("layout") == "espejo" else ""
     return f"""<!doctype html><html lang="es"><head><meta charset="utf-8"><title>{d["titulo"]}</title>
-<style>{FONT_CSS}{CSS}</style></head><body><div class="export">
+<style>{FONT_CSS}{CSS}</style></head><body><div class="export{layout}">
   <div class="photo" style="background-image:url({uri});background-position:{d.get("foto_pos", "50% 0%")}"></div>
   <div class="fade"></div>
   <svg class="ring" viewBox="0 0 850 850" aria-hidden="true"><path d="{RING}"/></svg>
@@ -75,8 +97,9 @@ def render(d: dict) -> str:
     {sub}
     {big}
     <div class="lead">{d["lead"]}</div>
+    {date}
     <div class="who"><div class="name">{d["nombre"]}</div><div class="role">{d["cargo"]}</div></div>
-    <div class="lists">{lists}</div>
+    {f'<div class="lists">{lists}</div>' if lists else ""}
     <div class="src">{d["fuente_txt"]}</div>
   </div>
   <img class="slogan" src="{SLOGAN}" alt="Elige bien. Elige idiem.">

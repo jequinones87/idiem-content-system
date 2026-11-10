@@ -536,3 +536,9 @@ programado al 19-10-2026).
   ponencia de **Claudio Olate** (especialista en Hormigones, División Hormigones Ingeniería) «Áridos Reciclados de Hormigón
   Endurecido como Reemplazo de Áridos de Origen Natural en Mezclas de Hormigón». 2A.2 no respalda capacidades IDIEM en áridos
   reciclados: el copy informa la ponencia, sin resultados ni capacidades. Workstation: https://claude.ai/artifact/UfBNL573ep2EMZiKSwextM
+- **2026-11-10** — Seminario «Nueva NCh430: 16 años de conocimiento después del 27F» (DIC U. de Chile, ACHISINA, AICE Chile,
+  ACI Chile Chapter; lunes 16-nov 18:20, Auditorio Enrique d'Etigny): pieza de evento con **Leonardo Massone** como relator.
+  MKT pidió **variar la gráfica**: la plantilla de pieza con persona suma `layout: "espejo"` (retrato a la izquierda, panel a la
+  derecha) y `fecha_box` (cuadro rojo con día y mes); son opciones de la plantilla para todos, no una excepción del post. El texto
+  del afiche está en voz de los organizadores («Te invitamos…»): IDIEM no organiza, así que el copy informa la participación.
+  El afiche solo trae QR: **falta URL de inscripción**. Workstation: https://claude.ai/artifact/LJH8aXJ5RtRntVLPsqvde2

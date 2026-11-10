@@ -1,0 +1,20 @@
+{
+  "month": "2026-11",
+  "set": "2026-11_seminario_nch430",
+  "status": "DRAFT",
+  "copies": {
+    "1": "🏗️ ¿Cómo cambia el diseño de estructuras de hormigón armado en Chile con la nueva NCh430, 16 años después del 27F?\n\nLeonardo Massone, director de #IDIEM, será relator en el seminario «Nueva NCh430: 16 años de conocimiento después del 27F», organizado por el Departamento de Ingeniería Civil de la Universidad de Chile, ACHISINA, AICE Chile y ACI Chile Chapter.\n\n🎙️ Junto a José Pablo Murillo Goñi, subgerente técnico de Santolaya Ingenieros Consultores, presentará «Disposiciones de la nueva norma NCh430: Hormigón Armado – Requisitos de Diseño y Cálculo», con ejemplos prácticos de diseño.\n\nLeonardo es ingeniero civil estructural de la Universidad de Chile y Ph.D. de la Universidad de California, Los Ángeles (UCLA). Ha participado en el desarrollo de normativa nacional e internacional, incluida la NCh430 y un comité del ACI 318. 📐\n\n📅 Lunes 16 de noviembre\n🕡 18:20 hrs\n📍 Auditorio Enrique d'Etigny, Beauchef 851, Santiago (presencial)\n\nAl término habrá un cóctel de camaradería.\n\n🔗 Inscripciones: [link pendiente de MKT]\n\n#IDIEM #NCh430 #HormigónArmado #IngenieríaEstructural #DiseñoSísmico"
+  },
+  "chars": {
+    "1": 1095
+  },
+  "fact_check": {
+    "1": "Título del seminario y de la charla, relatores y cargos (Massone: Director de IDIEM, Ingeniero Civil Estructural U. de Chile, Ph.D UCLA; Murillo: Sub-Gerente técnico Santolaya Ingenieros Consultores), fecha, hora, lugar, modalidad presencial, cóctel y organizadores → afiche/texto entregado por MKT (10-11-2026). Participación en NCh430 y comité ACI 318 → bio AICE ya usada en el set 2026-11_curso_aice. Sin afirmaciones sobre el 27F ni capacidades IDIEM (no trazan a 2A.2)."
+  },
+  "source": "Afiche y texto del seminario entregados por MKT en el chat (10-11-2026); bio AICE (set 2026-11_curso_aice).",
+  "verify_before_publish": [
+    "Link de inscripción: el afiche solo trae QR; reemplazar «[link pendiente de MKT]»",
+    "Confirmar fecha de publicación (propuesta: jueves 12-nov)",
+    "Confirmar cargo de Murillo en minúsculas/forma («subgerente técnico»)"
+  ]
+}

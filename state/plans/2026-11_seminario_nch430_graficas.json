@@ -1,0 +1,47 @@
+{
+  "month": "2026-11",
+  "set": "2026-11_seminario_nch430",
+  "status": "DRAFT",
+  "photo_dir": "design_system/assets",
+  "note": "Pieza con persona en layout «espejo» + cuadro de fecha (variación pedida por MKT 10-11-2026).",
+  "posts": {
+    "1": {
+      "photo": {
+        "file": "leonardo_massone_03.jpg",
+        "source": "library",
+        "id": "1TOXyRPNeqKqsvbYvAtKFBZsqIdGz7iH1",
+        "detalle": "07 LEONARDO MASSONE 03 (brazos cruzados, fondo gris)",
+        "drive": "https://drive.google.com/file/d/1TOXyRPNeqKqsvbYvAtKFBZsqIdGz7iH1/view",
+        "pos": "50% 0%"
+      },
+      "person": {
+        "titulo": "Seminario Nueva NCh430 · Leonardo Massone",
+        "foto": "design_system/assets/leonardo_massone_03.jpg",
+        "foto_pos": "50% 0%",
+        "layout": "espejo",
+        "kicker": "Seminario",
+        "sub": "Nueva NCh430: 16 años de conocimiento después del 27F",
+        "cifra": "",
+        "lead": "Disposiciones de la nueva norma NCh430: Hormigón Armado – Requisitos de Diseño y Cálculo",
+        "fecha_box": {
+          "dia": "16",
+          "mes": "NOV",
+          "detalle": "Lunes · 18:20 hrs<br>Auditorio Enrique d'Etigny<br>Beauchef 851 · presencial"
+        },
+        "nombre": "Leonardo Massone",
+        "cargo": "Director de IDIEM<br>Ingeniero Civil Estructural, U. de Chile<br>Ph.D. UCLA",
+        "listas": [],
+        "fuente_txt": "Organizan: DIC U. de Chile, ACHISINA,<br>AICE Chile y ACI Chile Chapter"
+      },
+      "trace": "Pieza de evento externo — <strong>no traza a knowledge_id</strong>; datos del afiche del seminario entregado por MKT.",
+      "flag": "Sin link de inscripción (el afiche solo trae QR): pedir URL a MKT",
+      "created": "10-11-2026",
+      "hist": [
+        {
+          "date": "10-11-2026",
+          "summary": "Pieza y copy DRAFT creados a pedido de MKT: misma plantilla de pieza con persona, con gráfica variada (retrato a la izquierda, panel a la derecha y cuadro rojo con la fecha)."
+        }
+      ]
+    }
+  }
+}
