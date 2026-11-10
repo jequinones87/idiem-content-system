@@ -1,0 +1,26 @@
+{
+  "month": "2026-11",
+  "set": "2026-11_congreso_hormigon",
+  "status": "DRAFT — pendiente aprobación MKT",
+  "origin": "Pedido MKT 04-11-2026: comunicar el 2° Congreso Nacional del Hormigón y destacar la ponencia de Claudio Olate (especialista en Hormigones, División Hormigones Ingeniería). Foto entregada por MKT en el chat.",
+  "evidence_note": "Pieza de evento externo: no traza a knowledge_id. Programa oficial «Line up» del 2° Congreso Nacional del Hormigón (Centro de Innovación del Hormigón UC), PDF entregado por MKT el 04-11-2026.",
+  "posts": [],
+  "extra": [
+    {
+      "seq": 1,
+      "date": "2026-11-10",
+      "type": "EVENTO",
+      "theme": "2° Congreso Nacional del Hormigón: ponencia de Claudio Olate sobre áridos reciclados",
+      "cell": "institucional (evento externo)",
+      "knowledge_id": null,
+      "archetype": "institutional_or_occasion",
+      "hook_type": "question",
+      "cta_type": "event",
+      "format": "ESTÁTICO (pieza con persona)",
+      "flags": [
+        "fecha propuesta: confirmar con MKT (el congreso es el 11-nov)",
+        "post de evento con URL: exento del tope de 900 (ref. 1300)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "month": "2026-11",
+  "set": "2026-11_seminario_nch430",
+  "status": "DRAFT — pendiente aprobación MKT",
+  "origin": "Pedido MKT 10-11-2026: comunicar que Leonardo Massone será relator en el seminario «Nueva NCh430: 16 años de conocimiento después del 27F», detallando su trabajo; variar la gráfica respecto de los posts anteriores.",
+  "evidence_note": "Pieza de evento externo: no traza a knowledge_id. Afiche y texto del seminario entregados por MKT en el chat (10-11-2026).",
+  "posts": [],
+  "extra": [
+    {
+      "seq": 1,
+      "date": "2026-11-12",
+      "type": "EVENTO",
+      "theme": "Seminario Nueva NCh430: Leonardo Massone expone las disposiciones de la nueva norma",
+      "cell": "institucional (evento externo)",
+      "knowledge_id": null,
+      "archetype": "institutional_or_occasion",
+      "hook_type": "question",
+      "cta_type": "event",
+      "format": "ESTÁTICO (pieza con persona, layout espejo)",
+      "flags": [
+        "fecha propuesta: jueves 12-nov (el seminario es el lunes 16-nov)",
+        "sin URL de inscripción: el afiche solo trae QR",
+        "Massone protagoniza 3 piezas en ~2 semanas (AICE 5-nov y 17-nov + esta): confirmar calendario con MKT",
+        "post de evento: exento del tope de 900 (ref. 1300)"
+      ]
+    }
+  ]
+}

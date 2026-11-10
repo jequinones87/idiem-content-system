@@ -85,7 +85,9 @@ def main():
 
     data = {
         "timing": timing,
-        "photo": {"focus": photo.get("focus", "50% 50%"), "zoom": photo.get("zoom", 1.10), "glow": photo.get("glow")},
+        "photo": {"focus": photo.get("focus", "50% 50%"), "zoom": photo.get("zoom", 1.10), "glow": photo.get("glow"),
+                  # capa festiva opcional (solo si MKT la pide): luces que titilan + destellos que suben
+                  "sparkles": photo.get("sparkles")},
         "cover": cfg["cover"],
         "steps": [{"title": s["title"], "body": s["body"], "iconSvg": icon_svg(s["icon"])} for s in steps],
         "closing": cfg["closing"],

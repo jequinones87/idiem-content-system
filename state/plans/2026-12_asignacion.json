@@ -1,0 +1,452 @@
+{
+  "month": "2026-12",
+  "status": "PROPUESTA v3 — respuestas MKT 19-10 aplicadas; los VERIFY se validan, bloquean o ajustan en la revisión de cada post",
+  "rebalance_note": "12 posts base (pedido MKT) + 3 piezas fuera del conteo (Día Mundial del Suelo, Navidad en video, Año Nuevo). Minería 5 · Salud 5 · Pública 2. Lab Minero Digital entra solo vía la efeméride del suelo (geosintéticos, VERIFY). Salud se repone con el banco de temas (SRC-* validadas por MKT) y el cruce web (WEB-*, VERIFY = disponible, MKT 19-10-2026).",
+  "inputs_reviewed": [
+    "content/archive/2026-10.json",
+    "state/plans/2026-11_asignacion.json",
+    "state/published_ledger.json",
+    "origin/claude/inspiring-hopper-f45s0m: config/topic_bank/expert_sources.json (relectura 19-10, TOP-001..029, AITO DO_NOT_PUBLISH), docs/09 checklist ✅, config/efemerides.json (Navidad y Año Nuevo)",
+    "origin/claude/exciting-meitner-captwe: config/topic_bank/web_services.json + web_crosswalk.json (WEB-*, VERIFY = disponible)",
+    "origin/claude/charming-lovelace-axj5lx: CLAUDE.md § Videos para LinkedIn (sin gate de licencia Remotion)"
+  ],
+  "diversity_check": {
+    "basis": "12 posts base; efeméride y saludos = institutional_or_occasion, fuera del conteo (MKT 19-10-2026)",
+    "errors": [],
+    "distinct_archetypes": 7,
+    "archetypes": {
+      "technical_question": 2,
+      "problem_impact_capability": 2,
+      "project_challenge": 2,
+      "process_result": 2,
+      "risk_prevention": 1,
+      "capability_application": 1,
+      "data_implication": 2
+    },
+    "hooks": {
+      "question": 2,
+      "contrast": 3,
+      "scenario": 2,
+      "risk": 1,
+      "technical_claim": 1,
+      "insight": 2,
+      "process_step": 1
+    },
+    "ctas": {
+      "technical_conversation": 3,
+      "deep_dive": 3,
+      "service_discovery": 3,
+      "commercial_contact": 2,
+      "knowledge": 1
+    }
+  },
+  "posts": [
+    {
+      "seq": 1,
+      "date": "2026-12-01",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "knowledge_id": null,
+      "auxiliary_ids": [
+        "SRC-004#C04",
+        "SRC-004#C06",
+        "SRC-004#C03"
+      ],
+      "topic_id": "TOP-001",
+      "format": "STATIC",
+      "theme": "¿Seguirá operativo después del terremoto? Elementos no estructurales en hospitales",
+      "archetype": "technical_question",
+      "hook_type": "question",
+      "cta_type": "technical_conversation",
+      "pain_point": "una estructura que resiste el sismo no garantiza que el hospital siga funcionando",
+      "main_claim": "diagnósticos estructurales y revisiones sísmicas para infraestructura hospitalaria",
+      "flags": [
+        "capacidad desde SRC-004#C03 (validada MKT 14-10-2026)",
+        "sin AITO (SRC-004#C05/C07 DO_NOT_PUBLISH)"
+      ]
+    },
+    {
+      "seq": 2,
+      "date": "2026-12-03",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "knowledge_id": "KB-IOM-026",
+      "auxiliary_ids": [
+        "SRC-001#C04",
+        "SRC-001#C05",
+        "SRC-001#C07",
+        "EXT-0005"
+      ],
+      "topic_id": "TOP-018 + TOP-021",
+      "format": "CAROUSEL",
+      "theme": "Tres niveles de análisis de riesgo de incendio (y por qué el checklist no basta)",
+      "archetype": "problem_impact_capability",
+      "hook_type": "contrast",
+      "cta_type": "deep_dive",
+      "pain_point": "un análisis de riesgo de incendio que solo revisa la norma o que quedó desactualizado frente a cambios en la operación",
+      "main_claim": "ingeniería y evaluación de riesgos de incendios en infraestructura de operación minera",
+      "flags": [
+        "USE_AUDITED_CORRECTION",
+        "no nombrar expositor ni charla",
+        "sin incidentes con nombre (VERIFY)"
+      ]
+    },
+    {
+      "seq": 3,
+      "date": "2026-12-07",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "knowledge_id": "KB-IOM-052",
+      "auxiliary_ids": [],
+      "format": "STATIC",
+      "theme": "Integridad de equipos estáticos y de soporte: chancadores, molinos y correas",
+      "archetype": "project_challenge",
+      "hook_type": "scenario",
+      "cta_type": "service_discovery",
+      "pain_point": "equipos que operan sin pausa y cuya estructura de soporte se deteriora sin que se vea",
+      "main_claim": "gestión de vulnerabilidad e integridad estructural aplicada a chancadores, molinos y correas",
+      "flags": [
+        "USE_AUDITED_CORRECTION",
+        "misma familia que nov #3 (infra eléctrica): activo y pain point distintos"
+      ]
+    },
+    {
+      "seq": 4,
+      "date": "2026-12-09",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "knowledge_id": "KB-IPR-006",
+      "auxiliary_ids": [
+        "WEB-001 (VERIFY: modalidades EP, EPC, EPCM, BOT)",
+        "WEB-051"
+      ],
+      "format": "VIDEO",
+      "delivery": "VIDEO_MP4 1080×1080 motion graphics con Remotion (regla 2 de CLAUDE.md: gráficos/diagramas animados, formato que la skill de carrusel no cubre). Sin voz ni IA generativa; Montserrat incrustada; logo vectorial; textos aprobados literales. Primer video de este formato → aprobación MKT antes de repetirlo. Requiere add_repo jequinones87/motion-graphics-ia al producir.",
+      "video_concept": "Relato visual de una controversia: línea de tiempo del contrato que se 'quiebra' (cambio → atraso → disputa), dos versiones que chocan en pantalla (opinión vs opinión) y el peritaje técnico que ordena la evidencia (documentos, programa, costos) hasta una base común. 30–40 s, ritmo dinámico pero sobrio.",
+      "theme": "Peritajes técnicos para resolver controversias contractuales",
+      "archetype": "process_result",
+      "hook_type": "contrast",
+      "cta_type": "commercial_contact",
+      "pain_point": "una controversia contractual que se discute con opiniones y no con evidencia técnica",
+      "main_claim": "estudios técnicos y peritajes para la resolución de controversias en contratos de ingeniería, construcción, EPC y BOT, públicos y privados",
+      "flags": [
+        "NO generalizar a 'Sistema de concesiones' (nota 2A.2)",
+        "sin casos ni cifras",
+        "CTA comercial sin fórmulas sobreusadas",
+        "pedido MKT 19-10: video visual, atractivo y dinámico"
+      ]
+    },
+    {
+      "seq": 5,
+      "date": "2026-12-11",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "knowledge_id": null,
+      "auxiliary_ids": [
+        "SRC-002#C08",
+        "SRC-002#C10"
+      ],
+      "topic_id": "TOP-007",
+      "format": "CAROUSEL",
+      "theme": "Planificar la puesta en marcha de un hospital desde el diseño",
+      "archetype": "risk_prevention",
+      "hook_type": "risk",
+      "cta_type": "deep_dive",
+      "pain_point": "fallas en pruebas integradas (HVAC, gases medicinales, respaldo eléctrico) que aparecen al final de la obra",
+      "main_claim": "hoja de ruta de mitigación en 3 fases, con verificación de puesta en marcha",
+      "flags": [
+        "no plantearlo como contractual (TOP de controversias Salud: dejar ≥ 2 meses desde nov #4)"
+      ]
+    },
+    {
+      "seq": 6,
+      "date": "2026-12-14",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "knowledge_id": "KB-IOM-064",
+      "auxiliary_ids": [
+        "KB-IOM-005",
+        "KB-IOM-022"
+      ],
+      "format": "STATIC",
+      "theme": "Impacto acústico en proyectos mineros: de la construcción al abandono",
+      "archetype": "capability_application",
+      "hook_type": "technical_claim",
+      "cta_type": "service_discovery",
+      "pain_point": "el ruido de un proyecto minero cambia en cada etapa y puede afectar su entorno",
+      "main_claim": "estudios de impacto acústico con modelos de propagación y mapas de ruido para proyectos mineros, en construcción, operación, ampliación y abandono",
+      "flags": [
+        "KB-IOM-022 USE_WITH_MATIZ: solo nombrar el modelo",
+        "norma: D.S. 38/2011 MMA (futuro D.D. 14/24) solo si aplica",
+        "acústica ya en sep y oct (edificación): aquí aplicación minera"
+      ]
+    },
+    {
+      "seq": 7,
+      "date": "2026-12-16",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "knowledge_id": null,
+      "auxiliary_ids": [
+        "SRC-005#C12",
+        "SRC-005#C05",
+        "SRC-005#C04",
+        "SRC-005#C06",
+        "SRC-005#C01",
+        "EXT-0082",
+        "WEB-002 (VERIFY: revisión integral de especialidades, incl. eléctrica)",
+        "WEB-087 (VERIFY: mediciones de resistencia eléctrica de pisos)"
+      ],
+      "topic_id": "TOP-012 + TOP-015 (replanteado hacia el trabajo IDIEM)",
+      "format": "CAROUSEL",
+      "theme": "En un hospital, la instalación eléctrica no se supone: se demuestra",
+      "archetype": "problem_impact_capability",
+      "hook_type": "contrast",
+      "cta_type": "technical_conversation",
+      "pain_point": "con el RIC ya no basta instalar según criterio: hay que demostrar con evidencia, y en salud el Grupo 2 es la máxima criticidad",
+      "main_claim": "revisión de proyectos de especialidades (incluida la eléctrica) para verificar cumplimiento normativo y mediciones eléctricas en recintos de salud",
+      "status": "VERIFY",
+      "flags": [
+        "pedido MKT 19-10: enfocar en el trabajo IDIEM",
+        "EXT-0082 está en IPR (mandantes públicos): se aplica a salud por prioridad GR-12; MKT confirma",
+        "no se afirma que IDIEM 'diseña' instalaciones eléctricas: solo revisión y mediciones",
+        "norma de referencia = la de SRC-005 (RIC), no la del sitio (MKT 19-10-2026)",
+        "[No verificado] el artículo del RIC que rige la medición de pisos no está en SRC-005: nombrar el RIC sin artículo o validar en la revisión del post",
+        "VERIFY se resuelve en la revisión del post (MKT 19-10-2026)"
+      ],
+      "norm_reference": "RIC (DS N°8, pliegos vigentes desde 12-07-2021; RIC N°11 centros asistenciales, RIC N°08 sistemas de emergencia), según SRC-005. NO la NCh4/2003 que cita el sitio (decisión MKT 19-10-2026)."
+    },
+    {
+      "seq": 8,
+      "date": "2026-12-18",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "knowledge_id": "KB-IOM-023",
+      "auxiliary_ids": [
+        "SRC-003#C09",
+        "SRC-006#C01",
+        "SRC-001#C10"
+      ],
+      "topic_id": "TOP-020",
+      "format": "STATIC",
+      "theme": "La curva P-F: detectar el deterioro antes de la falla",
+      "archetype": "data_implication",
+      "hook_type": "insight",
+      "cta_type": "service_discovery",
+      "pain_point": "esperar la falla para actuar en activos críticos",
+      "main_claim": "monitoreo preventivo de activos críticos (instrumentación, vibraciones)",
+      "flags": [
+        "USE_AUDITED_CORRECTION: decir 'preventivo', NUNCA 'predictivo'",
+        "monitoreo ya en nov (relaves, SIM): foco en el concepto P-F y sus límites"
+      ]
+    },
+    {
+      "seq": 9,
+      "date": "2026-12-21",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "knowledge_id": null,
+      "auxiliary_ids": [
+        "EXT-0082",
+        "WEB-088",
+        "WEB-089 (VERIFY: revisión normativa en modelos BIM)"
+      ],
+      "format": "STATIC",
+      "theme": "Revisar el proyecto antes de construirlo: validación normativa de arquitectura, estructura y especialidades",
+      "archetype": "process_result",
+      "hook_type": "process_step",
+      "cta_type": "commercial_contact",
+      "pain_point": "errores de proyecto que se descubren en obra, cuando corregirlos cuesta más",
+      "main_claim": "revisión de proyectos y validación normativa (arquitectura, estructura y especialidades) y coordinación BIM para mandantes públicos",
+      "flags": [
+        "aplicación explícita a mandante público (regla IPR)",
+        "no repetir el post de Día de la Arquitectura de oct (sustentabilidad)"
+      ]
+    },
+    {
+      "seq": 10,
+      "date": "2026-12-23",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "knowledge_id": null,
+      "auxiliary_ids": [
+        "SRC-003#C05",
+        "SRC-003#C01",
+        "WEB-073 (VERIFY: simulación de humos y evacuación en hospitales)",
+        "KB-IPR-019"
+      ],
+      "topic_id": "TOP-009",
+      "format": "CAROUSEL",
+      "theme": "Evacuar o defender en sitio: el dilema de la seguridad contra incendios en hospitales",
+      "archetype": "technical_question",
+      "hook_type": "question",
+      "cta_type": "knowledge",
+      "pain_point": "pacientes que no pueden evacuar por sí mismos cuando hay humo",
+      "main_claim": "simulación de humos y evacuación de personas aplicada a hospitales",
+      "status": "VERIFY",
+      "flags": [
+        "casos nacionales con nombre = VERIFY: no van",
+        "nov #6 fue incendios (genérico) y #2 de este mes es incendio minero: ángulo hospitalario (evacuación)",
+        "KB-IPR-019 USE_WITH_MATIZ"
+      ]
+    },
+    {
+      "seq": 11,
+      "date": "2026-12-28",
+      "cell": "INFRA OPERACIÓN MINERA",
+      "knowledge_id": "KB-IOM-027",
+      "auxiliary_ids": [
+        "EXT-0005"
+      ],
+      "format": "STATIC",
+      "theme": "Inspección de estructuras de acero en planta",
+      "archetype": "project_challenge",
+      "hook_type": "scenario",
+      "cta_type": "technical_conversation",
+      "pain_point": "estructuras de acero expuestas a corrosión, carga y vibración que nadie revisa hasta que muestran daño",
+      "main_claim": "inspección de estructuras de acero y peritajes de falla en elementos mecánicos",
+      "flags": [
+        "USE_AUDITED_CORRECTION",
+        "oct #8 fue peritaje de componentes (IPR): aquí foco en inspección de estructuras, no en el peritaje"
+      ]
+    },
+    {
+      "seq": 12,
+      "date": "2026-12-30",
+      "cell": "INFRA HOSPITALARIA Y ASISTENCIAL",
+      "knowledge_id": null,
+      "auxiliary_ids": [
+        "SRC-004#C01",
+        "SRC-004#C02",
+        "SRC-004#C03"
+      ],
+      "topic_id": "TOP-003",
+      "format": "STATIC",
+      "theme": "Hospitales que envejecen: cómo se acumula la vulnerabilidad",
+      "archetype": "data_implication",
+      "hook_type": "insight",
+      "cta_type": "deep_dive",
+      "pain_point": "deterioro, ampliaciones y equipos más pesados que suman vulnerabilidad sin que nadie la mida",
+      "main_claim": "diagnósticos estructurales: estado de conservación, levantamiento de daños y propuestas de refuerzo",
+      "flags": [
+        "misma capacidad que #1 (diagnóstico): ángulo distinto (envejecimiento vs operación post-sismo); es la opción más débil de la grilla",
+        "alternativa: TOP-025 (diseño de licitación vs operación clínica)",
+        "se mantiene (MKT 19-10); se valida o ajusta en la revisión del post"
+      ]
+    }
+  ],
+  "extra": [
+    {
+      "seq": 13,
+      "date": "2026-12-05",
+      "type": "EFEMERIDE",
+      "theme": "Día Mundial del Suelo — suelo, depósitos y relaves: estabilidad desde el diseño",
+      "cell": "INFRA OPERACIÓN MINERA (seguridad estructural) + LAB MINERO DIGITAL (ensayos geotécnicos)",
+      "knowledge_id": "KB-IOM-045",
+      "auxiliary_ids": [
+        "KB-LMD-021 (núcleo técnico; sin superlativos)",
+        "WEB-004 (VERIFY: ensayos geotécnicos especiales para diseño de tranques de relave)"
+      ],
+      "format": "STATIC",
+      "archetype": "institutional_or_occasion",
+      "hook_type": "insight",
+      "cta_type": "knowledge",
+      "pain_point": "un depósito o tranque cuyo suelo y materiales no se caracterizaron bien compromete el territorio que lo rodea",
+      "main_claim": "seguridad estructural en depósitos y relaves, y ensayos geotécnicos para el diseño de tranques",
+      "status": "VERIFY",
+      "flags": [
+        "decisión MKT 19-10: tema de respaldo elegido para el Día del Suelo (geosintéticos queda como respaldo)",
+        "KB-IOM-045 USE_AUDITED_CORRECTION",
+        "[Inferencia] el vínculo con 'uso sustentable del suelo' es el encuadre editorial; no se afirma servicio de remediación ni cierre",
+        "recencia: nov #1 fue instrumentación de relaves y oct #6 Triaxial (tranques): foco en diseño/caracterización, sin repetir instrumentación ni nombrar el Triaxial con claims",
+        "VERIFY (WEB-004) se resuelve en la revisión del post"
+      ]
+    },
+    {
+      "seq": 14,
+      "date": "2026-12-24",
+      "type": "SALUDO",
+      "theme": "Navidad",
+      "cell": "institucional",
+      "knowledge_id": null,
+      "format": "VIDEO",
+      "delivery": "VIDEO_MP4 1080×1080 con la skill video-carrusel-idiem (carrusel institucional corto: portada + 2 láminas + cierre, aprobado antes por MKT)",
+      "archetype": "institutional_or_occasion",
+      "hook_type": "insight",
+      "cta_type": "knowledge",
+      "flags": [
+        "no traza a knowledge_id: sin proyectos, cifras ni fechas",
+        "música solo si MKT la pide; requiere aprobación auditiva",
+        "CTA knowledge seguido de #10: aceptado por ser saludo fuera del conteo"
+      ]
+    },
+    {
+      "seq": 15,
+      "date": "2026-12-31",
+      "type": "SALUDO",
+      "theme": "Año Nuevo",
+      "cell": "institucional",
+      "knowledge_id": null,
+      "format": "STATIC",
+      "archetype": "institutional_or_occasion",
+      "hook_type": "scenario",
+      "cta_type": "knowledge",
+      "flags": [
+        "no traza a knowledge_id: sin balance del año con cifras ni proyectos"
+      ]
+    }
+  ],
+  "content_gaps": [
+    {
+      "cell": "LAB MINERO DIGITAL",
+      "status": "CONTENT_GAP",
+      "reason": "Los 21 KB-LMD de 2A.2 ya se usaron sep-nov; solo entra la efeméride con material web en VERIFY."
+    },
+    {
+      "cell": "INFRA CRÍTICA TRANSPORTE",
+      "status": "CONTENT_GAP",
+      "reason": "Sin conocimiento técnico activo (Metro/EFE)."
+    }
+  ],
+  "backup_items": [
+    "Día del Suelo alternativo: WEB-139 + WEB-106 inspección de impermeabilización con geosintéticos (VERIFY)",
+    "TOP-025 Diseño de licitación vs operación clínica (SRC-002#C11, C09)",
+    "TOP-019 Correas, CAEX y envolventes: riesgo de incendio en faena (KB-IOM-018)",
+    "KB-IPR-022 Puente Viejo Cautín (EXPERT_INPUT_REQUIRED: evidencia mínima)",
+    "KB-IPR-007 Panel Técnico de Concesiones (verificar vigencia GR-13)"
+  ],
+  "mkt_decisions": [
+    {
+      "date": "2026-10-19",
+      "decision": "12 posts base (no 10)."
+    },
+    {
+      "date": "2026-10-19",
+      "decision": "RIC replanteado hacia el trabajo IDIEM en la materia (#7)."
+    },
+    {
+      "date": "2026-10-19",
+      "decision": "Día del Suelo reorientado a uso sustentable del suelo, foco minería, con servicio IDIEM identificado (#13)."
+    },
+    {
+      "date": "2026-10-19",
+      "decision": "AITO no se usa más (TOP-002 DISCARDED)."
+    },
+    {
+      "date": "2026-10-19",
+      "decision": "Peritajes de controversias (#4) como video visual, atractivo y dinámico."
+    },
+    {
+      "date": "2026-10-19",
+      "decision": "#7: la referencia normativa es la de la presentación (RIC, DS N°8), no la NCh4/2003 del sitio."
+    },
+    {
+      "date": "2026-10-19",
+      "decision": "Día del Suelo: seguridad estructural de depósitos y relaves + ensayos geotécnicos para tranques."
+    },
+    {
+      "date": "2026-10-19",
+      "decision": "Temas con VERIFY se mantienen; se validan, bloquean o ajustan en la revisión de cada post."
+    }
+  ],
+  "removed": [
+    {
+      "theme": "AITO (TOP-002)",
+      "reason": "decisión MKT 19-10: no se usa más"
+    },
+    {
+      "theme": "Caso Puente Viejo Cautín",
+      "reason": "evidencia 2A.2 mínima; pasa a respaldo"
+    }
+  ]
+}

@@ -24,6 +24,8 @@ body{display:flex;align-items:center;justify-content:center;font-family:"Montser
 #photo img{position:absolute;inset:0;width:1080px;height:1080px;display:block;object-fit:cover}
 #glow{border-radius:50%;mix-blend-mode:screen;opacity:0;
   background:radial-gradient(circle,rgba(255,255,255,.55) 0%,rgba(214,232,255,.22) 28%,rgba(214,232,255,0) 68%)}
+.spk{border-radius:50%;mix-blend-mode:screen;pointer-events:none;
+  background:radial-gradient(circle,rgba(255,244,214,.95) 0%,rgba(255,214,140,.45) 30%,rgba(255,214,140,0) 70%)}
 #overlay{inset:0;background:linear-gradient(to bottom,rgba(23,24,26,.62) 0%,rgba(23,24,26,.73) 42%,rgba(23,24,26,.72) 100%)}
 #panel{inset:0;background:radial-gradient(circle 1400px at 85% 8%,rgb(51,56,59) 0%,rgb(41,46,49) 42%,rgb(33,38,41) 66%,rgb(25,29,32) 96%)}
 
@@ -138,6 +140,21 @@ var CONFIG = __CONFIG__;
   var G = C.photo && C.photo.glow;
   if(G){ glow.style.left=(G.x-G.r)+"px"; glow.style.top=(G.y-G.r)+"px"; glow.style.width=glow.style.height=(2*G.r)+"px"; }
   else glow.remove();
+  // Capa festiva opcional (config photo.sparkles; pedido MKT dic-2026): determinística, sin azar.
+  //  - twinkle: luces fijas sobre la foto que titilan (sobre luces reales de la imagen)
+  //  - drift: destellos dorados que suben lento por toda la pieza (bokeh sutil)
+  var SP = (C.photo && C.photo.sparkles) || null, spk = [];
+  if(SP){
+    var host = $("#photo");
+    (SP.twinkle||[]).forEach(function(p,i){var d=document.createElement("div");d.className="spk abs";
+      d.style.left=(p.x-p.r)+"px";d.style.top=(p.y-p.r)+"px";d.style.width=d.style.height=(2*p.r)+"px";
+      host.appendChild(d);spk.push({el:d,kind:"tw",ph:(i*0.618)%1,per:1.6+((i*37)%10)/10});});
+    var n = SP.drift||0;
+    for(var i=0;i<n;i++){var d=document.createElement("div");d.className="spk abs";
+      var r=6+((i*53)%10);d.style.width=d.style.height=(2*r)+"px";
+      $("#stage").insertBefore(d,$("#slogan"));
+      spk.push({el:d,kind:"dr",x:((i*997)%1000)/1000*1080,ph:((i*389)%1000)/1000,sp:0.05+((i*71)%10)/220,r:r});}
+  }
 
   // ---------- motor de línea de tiempo ----------
   var E = {
@@ -244,6 +261,13 @@ var CONFIG = __CONFIG__;
       }
       if(hasTr) el.style.transform = tr;
       if(cl) el.style.clipPath = "inset(-20% "+cl[0].toFixed(3)+"% -20% "+cl[1].toFixed(3)+"%)";
+    });
+    spk.forEach(function(s){
+      if(s.kind==="tw"){s.el.style.opacity=(0.25+0.75*Math.pow(0.5+0.5*Math.sin(2*Math.PI*(t/s.per+s.ph)),2)).toFixed(4);}
+      else{var y=1080+40-((t*s.sp*1080/6+s.ph*1160)%1160);var sw=14*Math.sin(2*Math.PI*(t/7+s.ph));
+        s.el.style.left=(s.x+sw-s.r).toFixed(2)+"px";s.el.style.top=(y-s.r).toFixed(2)+"px";
+        var fade=Math.min(1,Math.max(0,(1080-y)/200))*Math.min(1,Math.max(0,y/160));
+        s.el.style.opacity=(0.55*fade).toFixed(4);}
     });
     if(G) glow.style.opacity = (0.16 + 0.12*Math.sin(t*2*Math.PI/2.6) + 0.05*Math.sin(t*2*Math.PI/0.9)).toFixed(4);
   }

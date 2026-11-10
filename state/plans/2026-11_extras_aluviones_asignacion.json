@@ -1,0 +1,67 @@
+{
+  "month": "2026-11",
+  "set": "2026-11_extras_aluviones",
+  "status": "DRAFT — pendiente aprobación MKT",
+  "origin": "Extras por contingencia de lluvias y aluviones (oct-2026). Pedido MKT 28-10-2026: tono educativo y explicativo, no explícitamente comercial, que muestre el servicio y apunte a concretar reuniones; muy visual y con poco texto.",
+  "evidence_note": "Sin knowledge_id: en 2A.2 el servicio solo existe como RESERVE_FACTUAL (R0001/R0002). Servicio vigente y célula IPR confirmados por MKT 28-10-2026; se traza a auxiliary_id SRC-008/SRC-009 (config/topic_bank/expert_sources.json). Sin proyectos con nombre ni Manual de Quebradas (MKT 28-10-2026).",
+  "posts": [
+    {
+      "seq": 1,
+      "date": "2026-11-03",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "knowledge_id": "EXTRA-ALUV",
+      "auxiliary_ids": [
+        "SRC-008#C01",
+        "SRC-008#C03",
+        "SRC-008#C05",
+        "SRC-008#C06",
+        "SRC-009#C01"
+      ],
+      "topic": "TOP-035",
+      "format": "VIDEO",
+      "theme": "Prevenir empieza por conocer la amenaza: crecida líquida o flujo detrítico y zonificación",
+      "archetype": "technical_question",
+      "hook_type": "technical_claim",
+      "cta_type": "deep_dive",
+      "pain_point": "confundir crecida con aluvión al evaluar y mitigar una quebrada",
+      "main_claim": "la amenaza aluvional se zonifica cruzando intensidad del flujo y probabilidad",
+      "flags": [
+        "sin knowledge_id: 2A.2 solo tiene el servicio como RESERVE_FACTUAL (R0001/R0002)",
+        "sin proyectos con nombre ni Manual de Quebradas (MKT 28-10-2026)"
+      ],
+      "delivery": "VIDEO_MP4 1080×1080 motion graphics con Remotion (pedido MKT 28-10-2026: más gráfico que texto, cortes más rápidos; referencia: video #4 de diciembre). Proyecto motion-graphics-ia/idiem-aluviones."
+    },
+    {
+      "seq": 2,
+      "date": "2026-11-19",
+      "cell": "INFRA PÚBLICA RESILIENTE",
+      "knowledge_id": "EXTRA-ALUV",
+      "auxiliary_ids": [
+        "SRC-009#C01",
+        "SRC-009#C02",
+        "SRC-008#C01"
+      ],
+      "topic": "TOP-036",
+      "format": "CARRUSEL",
+      "theme": "¿Dónde podría bajar el próximo aluvión? Gestión del riesgo aluvional en 5 etapas",
+      "archetype": "project_challenge",
+      "hook_type": "question",
+      "cta_type": "service_discovery",
+      "pain_point": "no saber de antemano qué sectores quedarían expuestos a un aluvión",
+      "main_claim": "oferta integral IDIEM en 5 etapas para la gestión del riesgo aluvional",
+      "flags": [
+        "sin knowledge_id: 2A.2 solo tiene el servicio como RESERVE_FACTUAL (R0001/R0002)",
+        "sin proyectos con nombre ni Manual de Quebradas (MKT 28-10-2026)"
+      ]
+    }
+  ],
+  "extra": [],
+  "grid_check": {
+    "note": "Insertados entre posts de la grilla v3 sin repetir arquetipo/hook/CTA con los vecinos (11-02 risk_prevention/scenario/technical_conversation · 11-04 evidence_learning/insight/knowledge; 11-18 capability_application/contrast/deep_dive · 11-20 problem_impact_capability/risk/commercial_contact). Conteos del mes con extras: technical_question 2, project_challenge 2; deep_dive 3, service_discovery 3 (en el tope de 3). Ajuste 28-10: extra A pasa a hook technical_claim (nov: 3/3, sin repetir con vecinos 11-02 scenario y 11-04 insight)."
+  },
+  "verify_before_publish": [
+    "Fotos de la presentación SRC-008: confirmar derechos de uso y consentimiento de las personas visibles (contension2: 3 personas; contension3: trabajadores)",
+    "contension3 muestra una ciudad reconocible al fondo y aluvion2.jpg un poblado real afectado: confirmar que no identifican proyectos que no se nombran",
+    "Música del video: requiere aprobación auditiva de una persona"
+  ]
+}
