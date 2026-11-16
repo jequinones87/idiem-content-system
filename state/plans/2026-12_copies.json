@@ -16,8 +16,8 @@
     "11": "🏗️ En una planta minera, vigas, columnas, soportes y conexiones de acero sostienen la operación día y noche. Muchas veces nadie los revisa hasta que muestran un daño.\n\nLa corrosión, las deformaciones y las fisuras avanzan con el tiempo y no siempre se ven desde la operación diaria. Inspeccionar estos elementos estructurales permite detectarlas cuando todavía hay margen para decidir.\n\nEn #IDIEM realizamos inspección de estructuras de acero para la operación minera, con inspecciones estructurales especializadas que evalúan fisuras, deformaciones y corrosión. 🔩\n\nEs información de terreno para decidir con base técnica.\n\n¿Cuándo fue la última inspección de las estructuras de acero de tu planta? Coordina una conversación con nuestro equipo en https://idiem.cl\n\n#IDIEM #Minería #EstructurasDeAcero #Inspección #Seguridad",
     "12": "🩺 La vulnerabilidad de un hospital se parece al estado de salud de una persona: frente al mismo sismo, no todos responden igual.\n\nCon los años se suman factores: materiales que se deterioran (humedad, corrosión de armaduras, fisuración), ampliaciones sin una verificación estructural rigurosa, equipos cada vez más pesados y sismos importantes cada 15 a 20 años sin reparaciones que restituyan la resistencia original.\n\nLa implicancia: un recinto puede verse en buen estado y haber perdido capacidad para cumplir su función. 📊\n\nEn #IDIEM realizamos diagnósticos estructurales para infraestructura hospitalaria: estado de conservación, levantamiento de daños, planos actualizados y propuestas de refuerzo, de lo conceptual al detalle.\n\n👉 Más sobre diagnóstico estructural en salud en https://idiem.cl\n\n#IDIEM #Salud #Hospitales #DiagnósticoEstructural #VidaÚtil",
     "13": "🌍 Este 5 de Diciembre es el Día Mundial del Suelo. En minería, el suelo también es la base de los depósitos y tranques de relaves que acompañan a la operación.\n\nNo todo suelo se comporta igual: su tipo, granulometría y humedad definen cómo responde bajo la carga de un depósito. Por eso cuidarlo empieza por caracterizarlo con ensayos geotécnicos, la base para diseñar un tranque sobre información confiable. ⛏️\n\nEn #IDIEM realizamos ensayos geotécnicos para el diseño de tranques de relave, y gestionamos la vulnerabilidad e integridad estructural de depósitos y relaves en la industria minera.\n\nConocer el terreno es también una forma de cuidarlo. 🌱\n\nEn este Día del Suelo, una pregunta abierta: ¿cuánto sabemos del terreno sobre el que construimos?\n\n#IDIEM #DíaMundialDelSuelo #Minería #Geotecnia #Relaves",
-    "14": "🎄 Detrás de cada proyecto hay personas: equipos que ensayan, inspeccionan y estudian, y clientes que confían en la ingeniería para construir mejor.\n\nEn esta Navidad agradecemos a nuestros clientes y colaboradores por el camino compartido este año.\n\nLes deseamos una Navidad en paz, junto a quienes más quieren. ✨\n\n¡Felices fiestas de parte de todo IDIEM!\n\n#IDIEM #Navidad #FelicesFiestas #Ingeniería",
-    "15": "🎆 Termina un año de ensayos, inspecciones, estudios y conversaciones técnicas con quienes construyen y operan la infraestructura.\n\nGracias a nuestros colaboradores y clientes por cada desafío compartido en 2026.\n\nPara 2027 renovamos nuestro compromiso de aportar ciencia e ingeniería al desarrollo de la infraestructura del país. 🇨🇱\n\n¡Feliz Año Nuevo!\n\n#IDIEM #AñoNuevo #Ingeniería #Infraestructura"
+    "14": "🎄 Detrás de cada proyecto hay personas: equipos que ensayan, inspeccionan y estudian, y clientes que confían en nuestro trabajo.\n\nEn esta Navidad agradecemos a nuestros clientes y colaboradores por el camino compartido este año.\n\nLes deseamos una feliz Navidad. ✨\n\n¡Felices fiestas de parte de todo IDIEM!\n\n#IDIEM #Navidad #FelicesFiestas #Ensayos",
+    "15": "🎆 Cerramos 2026 agradeciendo la confianza de quienes trabajan con nosotros.\n\nGracias a nuestros colaboradores y clientes por cada ensayo, inspección y estudio que compartimos este año.\n\nPara 2027 renovamos nuestro compromiso: entregar, desde nuestros ensayos y laboratorios de estructuras y materiales, información técnica confiable para decidir. 🇨🇱\n\n¡Feliz Año Nuevo!\n\n#IDIEM #AñoNuevo #Ensayos #Laboratorio"
   },
   "carousels": {
     "2": {
@@ -153,7 +153,7 @@
         {
           "icon": "handshake",
           "title": "Gracias a nuestros <span class=\"c2rb\">clientes</span>",
-          "body": "Por confiar en la ingeniería para construir una infraestructura más segura."
+          "body": "Por confiar en nuestros ensayos, laboratorios e inspecciones."
         },
         {
           "icon": "users",
@@ -162,7 +162,7 @@
         }
       ],
       "cierre": {
-        "bajada": "Les deseamos una Navidad en paz, junto a quienes más quieren."
+        "bajada": "Les deseamos una feliz Navidad."
       }
     }
   },
@@ -239,7 +239,7 @@
     "12": "SRC-004#C01 (analogía del estado de salud), SRC-004#C02 (factores de deterioro; sismos cada ~15–20 años) + SRC-004#C03 (diagnósticos estructurales, servicio validado MKT 14-10). [Inferencia] 'puede verse en buen estado y haber perdido capacidad' = implicancia del dato.",
     "13": "KB-IOM-045 (seguridad estructural en depósitos y relaves, servicio padre: gestión de vulnerabilidad e integridad) + WEB-004 VERIFY (ensayos geotécnicos para diseño de tranques de relave). Crecimiento del depósito = memoria MKT 05-10. [Inferencia] vínculo con cuidado del suelo = encuadre editorial; sin remediación ni cierre; sin Triaxial ni superlativos. · Tipo de suelo, granulometría y humedad: EXT-0116 (clasificación de suelos, granulometrías, humedad) + WEB-004 (caracterización geotécnica del suelo, VERIFY).",
     "14": "Institucional (Navidad): sin knowledge_id, proyectos ni cifras.",
-    "15": "Institucional (Año Nuevo): sin knowledge_id; mensaje validado 'ciencia e ingeniería al desarrollo de la infraestructura del país'."
+    "15": "Institucional (Año Nuevo): sin knowledge_id; posicionamiento indicado por MKT 16-11-2026 (ensayos, laboratorios de estructuras y materiales; IDIEM no construye ni se presenta como empresa de ingeniería)."
   },
   "verify_before_publish": [
     "#4 WEB-001 'imparcial e independiente' y WEB-042 'plazos/costos' (guion del video)",
@@ -263,7 +263,7 @@
     "11": 823,
     "12": 860,
     "13": 808,
-    "14": 399,
-    "15": 398
+    "14": 347,
+    "15": 408
   }
 }

@@ -74,6 +74,11 @@ aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
   no la plantilla por defecto (ver sección siguiente).
 - **Saludos institucionales** (Fiestas Patrias, etc.) NO trazan a knowledge_id: mensaje
   general, sin proyectos/fechas/cifras no respaldadas por 2A.2.
+- **Posicionamiento (MKT 16-11-2026):** IDIEM **no es una empresa de ingeniería**: se dedica a **ensayos,
+  laboratorios de estructuras y materiales**, y **no construye**. Nunca presentar a IDIEM como "empresa de
+  ingeniería" ni escribir "aportamos ciencia e ingeniería", "construir con nosotros" o "construimos" (reemplaza el
+  antiguo mensaje "ciencia e ingeniería al desarrollo de la infraestructura del país"). En saludos: "Un año más…",
+  "Les deseamos una feliz Navidad.", Año Nuevo en torno a la confianza.
 - **Efemérides del sector:** al armar la grilla de CADA mes, revisa `config/efemerides.json`
   y suma la pieza conmemorativa si el mes cae en una fecha clave (adicional a los 12 posts,
   como el saludo de Fiestas Patrias). Las que tienen respaldo técnico en 2A.2 (arquitectura,

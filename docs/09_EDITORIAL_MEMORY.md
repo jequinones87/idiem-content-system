@@ -135,6 +135,8 @@ como regla para **diciembre en adelante**. Se recorre **antes** de presentar la 
     en los **3 meses previos** (el QA lo avisa); anillo rojo al lado contrario de la cara (09-04); al dividir
     una foto, igualar la exposición de ambas mitades (09-21). Sin siglas de célula en la pieza.
 14. Videos: solo con la skill `video-carrusel-idiem` (el método propio fue rechazado, 13-10).
+14b. **Posicionamiento (16-11):** ninguna pieza ni copy presenta a IDIEM como "empresa de ingeniería" ni dice
+    que IDIEM construye; IDIEM = ensayos, laboratorios de estructuras y materiales (ver "Piezas institucionales").
 
 **E. Antes de programar**
 15. **Ningún post se programa con un `VERIFY` abierto.** El #8 de noviembre quedó programado con la vigencia
@@ -230,9 +232,25 @@ capacidades técnicas (la célula ICT no tiene conocimiento activo).
 - Los **saludos** (Fiestas Patrias, etc.) son piezas conmemorativas que **NO trazan a
   un knowledge_id**. Se mantienen **generales**: sin afirmar proyectos, fechas ni
   cifras específicas de IDIEM que no estén respaldadas por la librería 2A.2.
-- Mensaje válido: aporte general de "ciencia e ingeniería al desarrollo de la
-  infraestructura del país". Si se quieren hitos concretos (año de fundación, obras
-  emblemáticas), deben confirmarse contra la librería antes de publicarse.
+- ~~Mensaje válido: aporte general de "ciencia e ingeniería al desarrollo de la
+  infraestructura del país".~~ **Reemplazado por MKT el 16-11-2026** (ver "Posicionamiento" abajo).
+  Si se quieren hitos concretos (año de fundación, obras emblemáticas), deben confirmarse contra la
+  librería antes de publicarse.
+- **Posicionamiento institucional (MKT, 16-11-2026) — OBLIGATORIO:** IDIEM **no es una empresa
+  dedicada a la ingeniería**: se dedica a **ensayos, laboratorios de estructuras y materiales**. Y
+  **IDIEM no construye**. En saludos, efemérides y textos institucionales:
+  - no usar "aportamos ciencia e ingeniería…", "un año de ciencia e ingeniería", "#Ingeniería" como
+    identidad, "construir con nosotros", "construimos", "confían en la ingeniería para construir";
+  - sí: ensayos, laboratorios de estructuras y materiales, inspección, información técnica confiable,
+    **confianza** de clientes y colaboradores.
+  - Los nombres de servicio literales de 2A.2 (p. ej. "ingeniería y evaluación de riesgos de incendios")
+    no se reescriben por esta regla sin decisión de MKT; [Inferencia] la regla aplica a cómo IDIEM se
+    presenta a sí mismo, no a borrar servicios de la librería — confirmar con MKT ante la duda.
+- **Saludos de fin de año (MKT, 16-11-2026):** la frase del año va como **"Un año más…"** (no "Un año
+  de…", que suena a un solo año); el deseo se dice simple: **"Les deseamos una feliz Navidad."**, sin
+  detalle adicional. Año Nuevo: eje en la **confianza**. Fotos del montaje del año: preferir **ensayos,
+  laboratorio y terreno** antes que obras; para Año Nuevo, **fotos de territorio** (terreno a lo largo de
+  Chile, con presencia IDIEM).
 
 ## Memoria de contenidos por mes (archivo)
 
@@ -480,4 +498,9 @@ programado al 19-10-2026).
   basado en el mensaje institucional validado; «Un año construyendo juntos» «suena a poco»); en saludos, **clientes
   primero**, luego colaboradores; el video de cierre de año muestra **fotos de colaboradores** (MKT compartió 5 en el chat:
   `design_system/assets/month_2026-12/equipo_navidad/`); música **más navideña** (`music.py --xmas --xmas-level 2`).
-
+- **2026-11-16** — Navidad y Año Nuevo (MKT): **IDIEM no es empresa de ingeniería, sino de ensayos, laboratorios de
+  estructuras y materiales; IDIEM no construye** (regla permanente, ver "Piezas institucionales"). Navidad: «Un año de
+  ciencia e ingeniería al servicio del país» → **«Un año más al servicio del país»**; cierre → **«Les deseamos una feliz
+  Navidad.»**; clientes: «Por confiar en nuestros ensayos, laboratorios e inspecciones.»; montaje 2026 con fotos de
+  ensayos/laboratorio/terreno (`design_system/assets/month_2026-12/montaje_2026/`). Año Nuevo: «Gracias por construir con
+  nosotros» → **«Gracias por su confianza»**; foto de territorio (profesional IDIEM en Isla de Pascua).
