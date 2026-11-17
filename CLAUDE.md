@@ -78,7 +78,8 @@ aplicación obligatoria en posts futuros. Reglas factuales críticas ya fijadas:
   laboratorios de estructuras y materiales**, y **no construye**. Nunca presentar a IDIEM como "empresa de
   ingeniería" ni escribir "aportamos ciencia e ingeniería", "construir con nosotros" o "construimos" (reemplaza el
   antiguo mensaje "ciencia e ingeniería al desarrollo de la infraestructura del país"). En saludos: "Un año más…",
-  "Les deseamos una feliz Navidad.", Año Nuevo en torno a la confianza.
+  "Les deseamos una feliz Navidad.", Año Nuevo en torno a la confianza. **Excepción (MKT 17-11-2026):** los nombres de servicio
+  literales de 2A.2 que dicen "ingeniería" (p. ej. "ingeniería y evaluación de riesgos de incendios") se mantienen.
 - **Efemérides del sector:** al armar la grilla de CADA mes, revisa `config/efemerides.json`
   y suma la pieza conmemorativa si el mes cae en una fecha clave (adicional a los 12 posts,
   como el saludo de Fiestas Patrias). Las que tienen respaldo técnico en 2A.2 (arquitectura,

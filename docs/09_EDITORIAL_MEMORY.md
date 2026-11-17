@@ -243,9 +243,10 @@ capacidades técnicas (la célula ICT no tiene conocimiento activo).
     identidad, "construir con nosotros", "construimos", "confían en la ingeniería para construir";
   - sí: ensayos, laboratorios de estructuras y materiales, inspección, información técnica confiable,
     **confianza** de clientes y colaboradores.
-  - Los nombres de servicio literales de 2A.2 (p. ej. "ingeniería y evaluación de riesgos de incendios")
-    no se reescriben por esta regla sin decisión de MKT; [Inferencia] la regla aplica a cómo IDIEM se
-    presenta a sí mismo, no a borrar servicios de la librería — confirmar con MKT ante la duda.
+  - **Excepción confirmada por MKT (17-11-2026):** los **nombres de servicio** literales de 2A.2 que
+    contienen "ingeniería" (p. ej. "ingeniería y evaluación de riesgos de incendios", post #2 de diciembre)
+    **se mantienen**. La regla aplica a cómo IDIEM se presenta a sí mismo (identidad, saludos, claims
+    institucionales), no al nombre de un servicio.
 - **Saludos de fin de año (MKT, 16-11-2026):** la frase del año va como **"Un año más…"** (no "Un año
   de…", que suena a un solo año); el deseo se dice simple: **"Les deseamos una feliz Navidad."**, sin
   detalle adicional. Año Nuevo: eje en la **confianza**. Fotos del montaje del año: preferir **ensayos,
@@ -504,3 +505,6 @@ programado al 19-10-2026).
   Navidad.»**; clientes: «Por confiar en nuestros ensayos, laboratorios e inspecciones.»; montaje 2026 con fotos de
   ensayos/laboratorio/terreno (`design_system/assets/month_2026-12/montaje_2026/`). Año Nuevo: «Gracias por construir con
   nosotros» → **«Gracias por su confianza»**; foto de territorio (profesional IDIEM en Isla de Pascua).
+- **2026-11-17** — MKT confirma la **excepción**: los nombres de servicio de 2A.2 con "ingeniería" se mantienen
+  (p. ej. #2 dic «ingeniería y evaluación de riesgos de incendios»); la regla de posicionamiento rige la identidad
+  institucional, no los nombres de servicio.
