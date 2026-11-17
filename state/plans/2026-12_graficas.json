@@ -485,6 +485,10 @@
       "created": "02-12-2026",
       "hist": [
         {
+          "date": "17-11-2026",
+          "summary": "Montaje 2026 (MKT): se reemplazan 6 fotos; entran 2 fotos de MKT (camioneta IDIEM en la Mano del Desierto; casco IDIEM sobre vigas de acero) y 4 posiciones quedan como cuadro rojo hasta recibir fotos. Siguen triaxial y sondaje."
+        },
+        {
           "date": "16-11-2026",
           "summary": "Ronda MKT: «Un año de ciencia e ingeniería…» → «Un año más al servicio del país»; cierre → «Les deseamos una feliz Navidad.»; clientes: «Por confiar en nuestros ensayos, laboratorios e inspecciones.» (IDIEM no se presenta como empresa de ingeniería ni dice que construye); montaje 2026 con fotos nuevas de ensayos, laboratorio y terreno."
         },
@@ -526,7 +530,7 @@
         "published": "media/p14_navidad_musica.mp4",
         "silent_published": "media/p14_navidad.mp4",
         "seconds": 22.0,
-        "how": "Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-navidad</code>): imagen navideña, montaje del año con 8 fotos de ensayos, laboratorio y terreno («2026 · Un año más al servicio del país»), gracias a clientes y luego a colaboradores con mosaico 4×2 de 8 fotos del equipo (5 compartidas por MKT + 3 de la librería ya publicadas)",
+        "how": "Remotion (repo <code>motion-graphics-ia</code>, proyecto <code>idiem-navidad</code>): imagen navideña, montaje del año 4×2: triaxial, camioneta IDIEM (Mano del Desierto, MKT), sondaje, casco IDIEM sobre vigas de acero (MKT) y 4 cuadros rojos a la espera de fotos de MKT («2026 · Un año más al servicio del país»), gracias a clientes y luego a colaboradores con mosaico 4×2 de 8 fotos del equipo (5 compartidas por MKT + 3 de la librería ya publicadas)",
         "music": "«Warm Christmas Swing» (pista entregada por MKT 04-11-2026; metadatos: generada con Suno): primeros 22 s, fade-out de 3,5 s al cierre (18,5→22 s), normalizada a −17 LUFS. Original en design_system/assets/month_2026-12/audio/. Requiere confirmar derechos de uso comercial."
       }
     },
