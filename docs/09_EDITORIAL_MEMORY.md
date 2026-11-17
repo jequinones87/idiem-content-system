@@ -508,3 +508,7 @@ programado al 19-10-2026).
 - **2026-11-17** — MKT confirma la **excepción**: los nombres de servicio de 2A.2 con "ingeniería" se mantienen
   (p. ej. #2 dic «ingeniería y evaluación de riesgos de incendios»); la regla de posicionamiento rige la identidad
   institucional, no los nombres de servicio.
+- **2026-11-17** — Año Nuevo (MKT): el texto de la imagen debe **agradecer el trabajo del año y mirar con optimismo al
+  próximo (muchos proyectos)**: emotivo, agradecido y positivo, **tratando de tú** («Gracias por este año juntos.» · «Por
+  tu trabajo y tu confianza. ¡Vamos por un 2027 lleno de nuevos proyectos!»). Foto: **equipo IDIEM posando**, con el
+  énfasis en las personas y no en el recinto (letrero del hospital fuera del recorte).

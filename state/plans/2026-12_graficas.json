@@ -542,19 +542,23 @@
       "photo": {
         "file": "p15.jpg",
         "source": "library",
-        "id": "generica_profesional_idiem_isla_de_pascua",
-        "detalle": "profesional IDIEM en terreno en Isla de Pascua (Ahu Tongariki), de espaldas, chaleco IDIEM — foto «territorio» (elegida para MKT; aún no registrada en photo_manifest)",
-        "drive": "https://drive.google.com/file/d/1iLwIm4TDYkqk4vO40Kbzn7ukKFhmbz8C/view",
-        "pos": "12% 50%"
+        "id": "WhatsApp Image 2026-10-19 at 15.30.18 (1)",
+        "detalle": "equipo IDIEM posando en terreno con chalecos y cascos IDIEM (foto elegida por MKT) · recorte con énfasis en el equipo; el letrero del recinto queda fuera",
+        "drive": "https://drive.google.com/file/d/13OZguEiuUeL8sPMZIhVNOFv29lLKVvb3/view",
+        "pos": "50% 50%"
       },
       "special": {
         "kicker": "¡FELIZ AÑO NUEVO!",
-        "title": "Gracias por<br>su <span class=\"fpred\">confianza</span>.",
-        "sub": "Ensayos y laboratorios de estructuras y materiales, al servicio del país."
+        "title": "Gracias por este<br>año <span class=\"fpred\">juntos</span>.",
+        "sub": "Por tu trabajo y tu confianza. ¡Vamos por un 2027 lleno de nuevos proyectos!"
       },
       "trace": "Saludo institucional — <strong>no traza a knowledge_id</strong>; posicionamiento indicado por MKT 16-11-2026 (ensayos, laboratorios de estructuras y materiales).",
       "created": "02-12-2026",
       "hist": [
+        {
+          "date": "17-11-2026",
+          "summary": "Ronda MKT: foto → equipo IDIEM posando (WhatsApp 2026-10-19 15.30.18 (1)), recortada con énfasis en el equipo y sin el letrero del recinto; texto de la imagen reformulado: agradecido, emotivo y positivo, tratando de tú («Gracias por este año juntos.» · «Por tu trabajo y tu confianza. ¡Vamos por un 2027 lleno de nuevos proyectos!»)."
+        },
         {
           "date": "16-11-2026",
           "summary": "Ronda MKT: texto reformulado en torno a la confianza («Gracias por construir con nosotros» → «Gracias por su confianza»); sin «ciencia e ingeniería» ni «construir» (IDIEM no construye); foto → profesional IDIEM en Isla de Pascua (foto territorio)."
