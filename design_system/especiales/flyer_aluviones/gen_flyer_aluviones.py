@@ -63,7 +63,7 @@ body{{background:#111;font-family:Montserrat,sans-serif}}
   <img src="{L_MOP}" style="height:104px" alt="MOP · Dirección de Obras Hidráulicas">
   <div class="sep"></div><img src="{L_FCFM}" style="width:236px" alt="FCFM Geología Universidad de Chile">
   <div class="sep"></div><img src="{L_AMTC}" style="width:150px" alt="AMTC">
-  <div class="sep"></div><img src="{L_IDIEM}" style="width:132px" alt="idiem">
+  <div class="sep"></div><img src="{L_IDIEM}" style="width:172px" alt="idiem">
  </div></div>
 </div></body></html>"""
 out=S/'scratchpad/flyer/flyer.html'; out.write_text(html)
