@@ -55,7 +55,7 @@ body{{background:#111;font-family:Montserrat,sans-serif}}
  <div class="hr"></div>
  <div class="row"><img src="{IC_CLK}" alt=""><b>09:30 a 13:00 hrs.</b></div>
  <div class="hr"></div>
- <div class="row"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg><div class="loc"><b>Auditorio D’Etigny</b><span>FCFM – Universidad de Chile<br>Av. Beauchf 851, Santiago</span></div></div>
+ <div class="row"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg><div class="loc"><b>Auditorio D’Etigny</b><span>FCFM – Universidad de Chile<br>Av. Beauchef 851, Santiago</span></div></div>
 </div>
 <div class="aud">Actividad dirigida a instituciones públicas, empresas, universidades, tomadores de decisión y profesionales vinculados a las áreas hidrología, peligros geológicos por remociones de masa, hidráulica fluvial y aluvional, el desarrollo de medidas de mitigación y la planificación territorial.</div>
 <div class="foot"><div class="org">ORGANIZAN</div><div class="orgbar"></div>
